@@ -1,0 +1,28 @@
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php $id = credencialTableClass::ID ?>
+<?php $nombre = credencialTableClass::NOMBRE ?>
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('credencial', ((isset($objCredencial) == TRUE) ? 'update' : 'create')) ?>">
+    <?php if (isset($objCredencial)): ?>
+    <input type="hidden" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, TRUE) ?>" value="<?php echo $objCiudad[0]->$id ?>">
+    <?php endif; ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6-offset-3">
+                <table class="table table-responsive ">    
+                    <tr>
+                        <th>  <?php echo i18n::__('credencial', NULL, 'credencial') ?>:</th>
+                        <th> <input placeholder="<?php echo ((isset($objCiudad) == FALSE) ? i18n::__('credencial', NULL, 'credencial') : $objCredencial[0]->$nombre = ucwords($objCredencial[0]->$nombre)) ?>" type="text" name="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" ></th>   
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                    <div class="titulo">
+                        <input type="submit" value="<?php echo i18n::__(((isset($objCredencial) == TRUE) ? 'edit' : 'register'), NULL,  'user') ?>">
+                    </div>
+                    </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>

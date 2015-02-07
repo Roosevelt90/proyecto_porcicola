@@ -1,0 +1,23 @@
+all:
+  favicon: hola.ico
+  title: ola mundo
+
+  meta:
+    - charset="UTF-8"
+  javascript:
+    - jquery-1.11.1.min.js
+    - index.js
+    - bootstrap.js
+  stylesheet:
+    - bootstrap.css
+    - main.css
+    
+shfSecurity:
+  index:
+    title: Inicio de session del usuario
+    stylesheet:
+      - signin.css
+      
+ciudad:
+  index:
+    title: Ciudad

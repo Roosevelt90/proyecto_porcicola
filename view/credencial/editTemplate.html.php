@@ -1,0 +1,20 @@
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4-offset-4 titulo">
+            <h2><?php echo i18n::__('edit',  NULL,  'credencial') ?> :</h2>
+            <br>   
+            <?php // print_r($objCredencial) ?>
+            <h3><?php echo $objCredencial[0]->nombre = ucwords($objCredencial[0]->ciudad) ?></h3>
+        </div>
+    </div>
+</div>
+<?php view::includePartial('credencial/formCredencial', array('objCredencial' => $objCredencial))?>
+

@@ -1,0 +1,27 @@
+mvcBasicPackage:
+  # - libs/FirePHPCore/FirePHP.class.php
+  # - libs/FirePHPCore/fb.php
+  # - libs/fpdf/fpdf.php
+  - libs/vendor/interfaces/controllerActionInterface.php
+  - libs/vendor/interfaces/controllerInterface.php
+  - libs/vendor/interfaces/hookInterface.php
+  - libs/vendor/interfaces/i18nInterface.php
+  - libs/vendor/interfaces/requestInterface.php
+  - libs/vendor/interfaces/routingInterface.php
+  - libs/vendor/interfaces/sessionInterface.php
+  - libs/vendor/interfaces/tableInterface.php
+  # - libs/vendor/autoLoadClass.php
+  # - libs/vendor/cacheManagerClass.php
+  # - libs/vendor/camelCaseClass.php
+  # - libs/vendor/configClass.php
+  - libs/vendor/controllerClass.php
+  - libs/vendor/dispatchClass.php
+  - libs/vendor/hookClass.php
+  - libs/vendor/i18nClass.php
+  - libs/vendor/modelClass.php
+  - libs/vendor/requestClass.php
+  - libs/vendor/routingClass.php
+  - libs/vendor/sessionClass.php
+  - libs/vendor/tableBaseClass.php
+  - libs/vendor/viewClass.php
+  # - libs/yaml/sfYaml.php

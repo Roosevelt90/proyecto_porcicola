@@ -1,0 +1,401 @@
+homepage:
+  url:    /
+  param:  { module: default, action: index, format: html }
+  load:
+      
+recuperar_index:
+  url:    /recuperar/index
+  param:  { module: recuperar, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    
+consultar_index:
+  url:    /recuperar/consultar
+  param:  { module: recuperar, action: consultar, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    
+recuperar_recuperar:
+  url:    /recuperar/recuperar
+  param:  { module: recuperar, action: recuperar, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+
+##-------------------------- shfSecurity --------------------------##
+shfSecurity_index:
+  url:    /signin
+  param:  { module: shfSecurity, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+shfSecurity_login:
+  url:    /login
+  param:  { module: shfSecurity, action: login, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+shfSecurity_logout:
+  url:    /logout
+  param:  { module: shfSecurity, action: logout, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+##-------------------------- shfSecurity --------------------------##
+
+##-------------------------- EJEMPLO --------------------------##
+default_index:
+  url:    /usuarios/index
+  param:  { module: usuario, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_insert_Datos:
+  url:  /usuarios/datos
+  param:  { module: usuario, action: insertDatos, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_insert:
+  url:    /usuarios/insertar
+  param:  { module: usuario, action: insert, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+
+default_create:
+  url:    /usuarios/crear
+  param:  { module: usuario, action: create, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+default_edit:
+  url:    /usuario/editar
+  param:  { module: usuario, action: edit, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_update:
+  url:    /usuario/actualizar
+  param:  { module: usuario, action: update, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_delete:
+  url:    /usuario/eliminar
+  param:  { module: usuario, action: delete, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_deleteSelect:
+  url:    /usuario/eliminarSeleccion
+  param:  { module: usuario, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+depto_reporte:
+  url:    /usuario/reporte
+  param:  { module: usuario, action: report, format: pdf }
+##-------------------------- EJEMPLO --------------------------##
+
+
+##----------------DEPARTAMENTO------------##
+depto_index:
+  url:    /depto/index
+  param:  { module: departamento, action: index, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+depto_deleteSelect:
+  url:    /depto/eliminarSeleccion
+  param:  { module: departamento, action: deleteSelect, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+depto_insert:
+  url:    /depto/insertar
+  param:  { module: departamento, action: insert, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+
+depto_create:
+  url:    /depto/crear
+  param:  { module: departamento, action: create, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+depto_edit:
+  url:    /depto/editar
+  param:  { module: departamento, action: edit, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+
+depto_update:
+  url:    /depto/actualizar
+  param:  { module: departamento, action: update, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+
+depto_delete:
+  url:    /depto/eliminar
+  param:  { module: departamento, action: delete, format: html }
+  load:
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+
+
+
+##----------------CIUDAD-----------------##
+
+ciudad_index:
+  url:    /ciudad/index
+  param:  { module: ciudad, action: index, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+
+ciudad_insert:
+  url:    /ciudad/insertar
+  param:  { module: ciudad, action: insert, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+ciudad_create:
+  url:    /ciudad/crear
+  param:  { module: ciudad, action: create, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+ciudad_edit:
+  url:    /ciudad/editar
+  param:  { module: ciudad, action: edit, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+ciudad_update:
+  url:    /ciudad/actualizar
+  param:  { module: ciudad, action: update, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    
+ciudad_delete:
+  url:    /ciudad/eliminar
+  param:  { module: ciudad, action: delete, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_deleteSelect:
+  url:    /ciudad/eliminarSeleccion
+  param:  { module: ciudad, action: deleteSelect, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+
+
+
+##----------------DATOS USUARIO-----------------##
+
+dataUser_index:
+  url:    /datos/index
+  param:  { module: dataUser, action: index, format: html }
+  load:
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.phps.php
+
+dataUser_insert:
+  url:    /datos/insertar
+  param:  { module: dataUser, action: insert, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+dataUser_create:
+  url:    /datos/crear
+  param:  { module: dataUser, action: create, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+dataUser_edit:
+  url:    /datos/editar
+  param:  { module: dataUser, action: edit, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+dataUser_update:
+  url:    /datos/actualizar
+  param:  { module: dataUser, action: update, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+dataUser_delete:
+  url:    /datos/eliminar
+  param:  { module: dataUser, action: delete, format: html }
+  load:
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+dataUser_deleteSelect:
+  url:    /datos/eliminarSeleccion
+  param:  { module: dataUser, action: deleteSelect, format: html }
+  load:
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+    
+    
+    
+############### CREDENCIAL ##########################
+
+credencial_index:
+  url:    /credencial/index
+  param:  { module: credencial, action: index, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_insert:
+  url:    /credencial/insertar
+  param:  { module: credencial, action: insert, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_create:
+  url:    /credencial/crear
+  param:  { module: credencial, action: create, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_edit:
+  url:    /credencial/editar
+  param:  { module: credencial, action: edit, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_update:
+  url:    /credencial/actualizar
+  param:  { module: credencial, action: update, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_delete:
+  url:    /credencial/eliminar
+  param:  { module: credencial, action: delete, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_deleteSelect:
+  url:    /credencial/eliminarSeleccion
+  param:  { module: credencial, action: deleteSelect, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+    
+    
+    
+    
+    
+Usuario_Credencial_index:
+  url:    /userCredencial/index
+  param:  { module: usuarioCredencial, action: index, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php

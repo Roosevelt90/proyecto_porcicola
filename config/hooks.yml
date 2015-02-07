@@ -1,0 +1,19 @@
+ini:
+  - security
+
+end:
+  - log
+
+configLoader:
+  security:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+  log:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php

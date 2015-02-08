@@ -11,23 +11,23 @@ use mvc\session\sessionClass as session;
  */
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-        
-        $fields = array (
-        departamentoBaseTableClass::ID,
-        departamentoBaseTableClass::NOMBRE
-        );
-        
-    $this->objDepto = ciudadTableClass::getAll2($fields, false);
-      $this->defineView('insert', 'ciudad', session::getInstance()->getFormatOutput());
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+    public function execute() {
+        try {
+
+            $fields = array(
+                departamentoBaseTableClass::ID,
+                departamentoBaseTableClass::NOMBRE
+            );
+
+            $this->objDepto = ciudadTableClass::getAll2($fields, false);
+            $this->defineView('insert', 'ciudad', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

@@ -24,7 +24,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
+                <!--<a href="<?php // echo routing::getInstance()->getUrlWeb('dataUser', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>-->
                 <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             </div>
         </div>
@@ -56,7 +56,6 @@ use mvc\i18n\i18nClass as i18n ?>
                         <td><?php echo $key->$direccion ?></td>
                         <td><?php echo $key->$nom_ciudad ?></td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-sm disabled">Ver</a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'edit', array(datosUsuarioBaseTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
                             <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
                         </td>

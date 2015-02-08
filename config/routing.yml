@@ -79,6 +79,8 @@ default_insert_Datos:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
 
 default_insert:
   url:    /usuarios/insertar

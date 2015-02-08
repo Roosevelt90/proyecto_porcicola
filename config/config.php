@@ -28,8 +28,8 @@ if (config::getDbUnixSocket() !== null) {
   );
 }
 
-config::setPathAbsolute('/var/www/html/porcicola/');
-config::setUrlBase('http://localhost/porcicola/web/');
+config::setPathAbsolute('/var/www/html/ProyectoPorcicola/');
+config::setUrlBase('http://localhost/ProyectoPorcicola/web/');
 
 config::setScope('dev'); // prod
 config::setDefaultCulture('es');
@@ -47,8 +47,8 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
-config::setCookiePath('/porcicola/web/' . config::getIndexFile());
-config::setCookieDomain('http://localhost/');
+config::setCookiePath('/ProyectoPorcicola/web/' . config::getIndexFile());
+config::setCookieDomain('http://127.0.0.1/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serían 8 horas
 
 config::setDefaultModule('default');

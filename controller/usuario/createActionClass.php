@@ -28,9 +28,9 @@ class createActionClass extends controllerClass implements controllerActionInter
                 if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
                     throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
                 }
-                
-                if ($password !== $repetirPassword){
-                    throw new PDOException(i18n::__(00004, null , 'errors', array(':password' => usuarioTableClass::SECOND_PASSWORD)),00004);                     
+
+                if ($password !== $repetirPassword) {
+                    throw new PDOException(i18n::__(00004, null, 'errors', array(':password' => usuarioTableClass::SECOND_PASSWORD)), 00004);
                 }
 
                 $data = array(
@@ -40,26 +40,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                     usuarioTableClass::RESPUESTA_SECRETA => $respuesta
                 );
                 usuarioTableClass::insert($data);
-                $fields = array(
-                usuarioTableClass::ID,
-                usuarioTableClass::USER,
-                usuarioTableClass::CREATED_AT
-                );
-//$fecha = date('Y-m-d H:i');
-                
-                $where = array(
-                usuarioTableClass::USER => $usuario
-                );
-//         echo $fecha;
-                $this->objUsuario = usuarioTableClass::getAll($fields, true, null ,null,null,null, $where);
-                              routing::getInstance()->redirect('usuario', 'index');
 
-//                $this->defineView('insertDatos', 'usuario',  session::getInstance()->getFormatOutput());
-//                 print_r($objUsuario);
-
-//                routing::getInstance()->getUrlWeb('dataUser', 'insert', array('objUsuario' => $objUsuario));
-//                echo 1;
-//                routing::getInstance()->redsirect('dataUser', 'insert', $objUsuario);
+                routing::getInstance()->redirect('dataUser', 'insert', array('str' => $usuario));
             } else {
                 routing::getInstance()->redirect('usuario', 'index');
             }

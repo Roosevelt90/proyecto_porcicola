@@ -248,9 +248,10 @@ namespace mvc\model\table {
 
                 $sql = "UPDATE $table SET ";
                 $sqlID = "SELECT id FROM $table";
-
                 foreach ($data as $key => $value) {
-                    $sql = $sql . " " . $key . " = '" . $value . "', ";
+                    if (!empty($value)) {
+                        $sql = $sql . " " . $key . " = '" . $value . "', ";
+                    };
                 }
 
                 $newLeng = strlen($sql) - 2;
@@ -406,7 +407,7 @@ namespace mvc\model\table {
                     $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
                 }
 //                echo $sql;
-        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+                return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
             } catch (\PDOException $exc) {
                 throw $exc;
             }

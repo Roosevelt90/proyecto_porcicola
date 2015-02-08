@@ -15,34 +15,34 @@ use mvc\i18n\i18nClass as i18n;
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
-        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+                $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
+                $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
+                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
 
-        $ids = array(
-            usuarioTableClass::ID => $id
-        );
+                $ids = array(
+                    usuarioTableClass::ID => $id
+                );
 
-        $data = array(
-            usuarioTableClass::USER => $usuario,
-            usuarioTableClass::PASSWORD => $password
-        );
+                $data = array(
+                    usuarioTableClass::USER => $usuario,
+                    usuarioTableClass::PASSWORD => $password
+                );
 
-        usuarioTableClass::update($ids, $data);
-      }
+                usuarioTableClass::update($ids, $data);
+            }
 
-      routing::getInstance()->redirect('usuario', 'index');
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+            routing::getInstance()->redirect('usuario', 'index');
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

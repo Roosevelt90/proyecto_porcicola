@@ -16,29 +16,29 @@ class editActionClass extends controllerClass implements controllerActionInterfa
     public function execute() {
         try {
             if (request::getInstance()->hasRequest(ciudadTableClass::ID)) {
-$fields = array(
-                datosUsuarioTableClass::APELLIDOS,
-                datosUsuarioTableClass::CEDULA,
-                datosUsuarioTableClass::CREATED_AT,
-                datosUsuarioTableClass::DIRECCION,
-                datosUsuarioTableClass::ID,
-                datosUsuarioTableClass::NOMBRE,
-                datosUsuarioTableClass::TELEFONO
-            );
-$where = array (
-datosUsuarioTableClass::ID =>  request::getInstance()->getRequest(datosUsuarioTableClass::ID)
-);
-$fields2 = array(
-       ciudadTableClass::ID,
-       ciudadTableClass::NOMBRE
-       ); 
-       $field = array(
-       usuarioTableClass::ID,
-       usuarioTableClass::USER
-       );
-       $this->objUsuario = usuarioTableClass::getAll(   $field);
-       $this->objCiudad = ciudadTableClass::getAll3($fields2);
-            $this->objDatos = datosUsuarioTableClass::getAll3($fields, false, null,null,null,null, $where);
+                $fields = array(
+                    datosUsuarioTableClass::APELLIDOS,
+                    datosUsuarioTableClass::CEDULA,
+                    datosUsuarioTableClass::CREATED_AT,
+                    datosUsuarioTableClass::DIRECCION,
+                    datosUsuarioTableClass::ID,
+                    datosUsuarioTableClass::NOMBRE,
+                    datosUsuarioTableClass::TELEFONO
+                );
+                $where = array(
+                    datosUsuarioTableClass::ID => request::getInstance()->getRequest(datosUsuarioTableClass::ID)
+                );
+                $fields2 = array(
+                    ciudadTableClass::ID,
+                    ciudadTableClass::NOMBRE
+                );
+                $field = array(
+                    usuarioTableClass::ID,
+                    usuarioTableClass::USER
+                );
+                $this->objUsuario = usuarioTableClass::getAll($field);
+                $this->objCiudad = ciudadTableClass::getAll3($fields2);
+                $this->objDatos = datosUsuarioTableClass::getAll3($fields, false, null, null, null, null, $where);
                 $this->defineView('edit', 'dataUser', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('ciudad', 'index');

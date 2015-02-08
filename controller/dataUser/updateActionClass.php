@@ -16,7 +16,6 @@ class updateActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
                 $id = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::ID, true));
-                $idUsuario = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::USUARIO_ID, true));
                 $nombre = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true));
                 $apellidos = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true));
                 $cedula = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CEDULA, true));
@@ -27,7 +26,6 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     datosUsuarioTableClass::ID => $id
                 );
                 $data = array(
-                    datosUsuarioTableClass::USUARIO_ID => $idUsuario,
                     datosUsuarioTableClass::NOMBRE => $nombre,
                     datosUsuarioTableClass::APELLIDOS => $apellidos,
                     datosUsuarioTableClass::CEDULA => $cedula,

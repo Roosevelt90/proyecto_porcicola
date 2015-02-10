@@ -1,6 +1,6 @@
 all:
   favicon: hola.ico
-  title: ola mundo
+  title: Titulo de la pagina general
 
   meta:
     - charset="UTF-8"
@@ -14,7 +14,7 @@ all:
     
 shfSecurity:
   index:
-    title: Inicio de session del usuario
+    title: Identificacion del sistema
     stylesheet:
       - signin.css
       

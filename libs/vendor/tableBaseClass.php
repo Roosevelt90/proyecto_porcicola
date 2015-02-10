@@ -224,7 +224,7 @@ namespace mvc\model\table {
                     $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
                 }
 
-//echo $sql;
+//echo $sql;   
                 return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
             } catch (\PDOException $exc) {
                 throw $exc;

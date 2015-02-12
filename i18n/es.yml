@@ -2,14 +2,14 @@
 culture:                  Español
 dictionary:
   default:
-    user:                 Usuario
+    user:                 Administracion de usuario
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
     
   user:
     newUser:              Registro de un nuevo usuario 
-    user:                 Usuario
+    user:                 Nombre de usuario
     pass:                 Contraseña
     rePass:               Repetir contraseña
     register:             Registrar
@@ -58,6 +58,10 @@ dictionary:
     00002:                La dirección que solicita no está registrada.
     00003:                Los datos de usuario y contrseña son inválidos.
     00004:                Las contraseñas no son iguales
+    00005:                El nombre de usuario ya se encuentra registrado
+    
+    10005:                No se admite caracteres especiales
+    10006:                Hay campos vacios que son obligatorios
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

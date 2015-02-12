@@ -14,6 +14,7 @@ mvcBasicPackage:
   # - libs/vendor/cacheManagerClass.php
   # - libs/vendor/camelCaseClass.php
   # - libs/vendor/configClass.php
+  - libs/vendor/validatorFieldsClass.php
   - libs/vendor/controllerClass.php
   - libs/vendor/dispatchClass.php
   - libs/vendor/hookClass.php

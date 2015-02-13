@@ -9,14 +9,14 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>
-                <?php // echo i18n::__('read', NULL, 'user') ?>
+                <?php  echo i18n::__('read', NULL, 'userCredencial') ?>
             </h2>
         </div>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
                 <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             </div>
         </div>

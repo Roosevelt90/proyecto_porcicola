@@ -92,6 +92,7 @@ default_insert:
     - model/recuperarTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - libs/validate/validatorFieldsClass.php
 
 default_create:
   url:    /usuarios/crear
@@ -103,6 +104,7 @@ default_create:
     - model/recuperarTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 default_edit:
   url:    /usuario/editar
@@ -398,6 +400,20 @@ credencial_deleteSelect:
 Usuario_Credencial_index:
   url:    /userCredencial/index
   param:  { module: usuarioCredencial, action: index, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+Usuario_Credencial_insert:
+  url:    /userCredencial/insertar
+  param:  { module: usuarioCredencial, action: insert, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+Usuario_Credencial_crear:
+  url:    /userCredencial/crear
+  param:  { module: usuarioCredencial, action: create, format: html }
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php

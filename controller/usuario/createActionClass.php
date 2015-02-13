@@ -36,7 +36,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     $respuesta
                 );
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
-                if ($validatorEmpty == true) {
+                if ($validatorEmpty == false) {
                     throw new PDOException(i18n::__(10006, null, 'errors', null, 10006));
                 }
                 

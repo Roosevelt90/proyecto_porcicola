@@ -52,6 +52,10 @@ dictionary:
     new:                  Registra una nueva credencial
     credencial:           Credencial
     edit:                 Modificar el nombre de la credencial
+  
+  userCredencial:
+    read:                 Roles asignados
+    new:                  Asignam
     
   errors:
     00001:                El módulo y la acción solicitada, no existe.

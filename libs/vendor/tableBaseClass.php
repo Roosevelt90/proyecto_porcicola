@@ -250,7 +250,7 @@ namespace mvc\model\table {
                 $sqlID = "SELECT id FROM $table";
                 foreach ($data as $key => $value) {
                     if (!empty($value)) {
-                        $sql = $sql . " " . $key . " = '" . $value . "', ";
+                    $sql = $sql . " " . $key . " = '" . $value . "', ";
                     };
                 }
 

@@ -1,5 +1,5 @@
 all:
-  favicon: hola.ico
+  favicon: favicon.ico
   title: Titulo de la pagina general
 
   meta:

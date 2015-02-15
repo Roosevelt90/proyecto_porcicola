@@ -17,6 +17,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
+         
             $fields = array(
                 datosUsuarioTableClass::APELLIDOS,
                 datosUsuarioTableClass::CEDULA,
@@ -36,7 +37,12 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $fJoin2 = ciudadTableClass::ID;
             $fJoin3 = datosUsuarioTableClass::USUARIO_ID;
             $fJoin4 = usuarioBaseTableClass::ID;
-            $this->objDatos = datosUsuarioTableClass::getAll($fields, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, true);            
+            
+            $where = array(
+            datosUsuarioTableClass::USUARIO_ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+            );
+            
+            $this->objDatos = datosUsuarioTableClass::getAll($fields, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, true, null, null, null, null, $where);            
             $this->defineView('index', 'dataUser', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

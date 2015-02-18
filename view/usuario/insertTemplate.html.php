@@ -12,4 +12,4 @@
     </div>
 </div>
 <br>
-<?php view::includePartial('usuario/formUser', array('objRecuperar' => $objRecuperar)) ?>
+<?php view::includePartial('usuario/formUser', array('objRecuperar' => $objRecuperar, 'objCiudad' => $objCiudad)) ?>

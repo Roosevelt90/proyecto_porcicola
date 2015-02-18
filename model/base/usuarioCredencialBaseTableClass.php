@@ -13,6 +13,7 @@ class usuarioCredencialBaseTableClass extends tableBaseClass {
   const USUARIO_ID = 'usuario_id';
   const CREDENCIAL_ID = 'credencial_id';
   const CREATED_AT = 'created_at';
+  const CREDENCIAL_DEFAULT = 4;
 
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato

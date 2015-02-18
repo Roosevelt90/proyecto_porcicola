@@ -19,7 +19,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-
+                // usuario
                 $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
                 $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
                 $repetirPassword = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::SECOND_PASSWORD, true));
@@ -27,20 +27,32 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $respuesta = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::RESPUESTA_SECRETA, true));
                 $nombreUsuario = usuarioTableClass::USER;
 
-                
+                //datos del usuario
+                $nombre = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true));
+                $apellidos = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true));
+                $cedula = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CEDULA, true));
+                $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
+                $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
+                $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
+                $credencialDefault = usuarioCredencialTableClass::CREDENCIAL_DEFAULT;
+
+
                 //validar si los campos estan vacios
                 $datos = array(
                     $usuario,
                     $password,
                     $repetirPassword,
-                    $respuesta
+                    $respuesta,
+                    $nombre,
+                    $apellidos,
+                    $cedula,
                 );
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
                 if ($validatorEmpty == false) {
                     throw new PDOException(i18n::__(10006, null, 'errors', null, 10006));
                 }
-                
-                
+
+
                 //Validar si el nombre existe 
                 $fields = array(
                     usuarioTableClass::USER
@@ -53,6 +65,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     }
                 }
 
+
                 //Validar si tiene caracteres especiales
                 $validacionUsuario = validator::getInstance()->validatorCharactersSpecial($usuario);
                 if ($validacionUsuario == true) {
@@ -64,10 +77,12 @@ class createActionClass extends controllerClass implements controllerActionInter
                     throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
                 }
 
-                //validar la longitud del nombre d eusuario
+
+                //validar la longitud del nombre de eusuario
                 if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
                     throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
                 }
+
 
                 //validar si las contraseñas coinciden
                 if ($password !== $repetirPassword) {
@@ -75,7 +90,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 }
 
 
-
+                //Insertar la informacion del usuario
                 $data = array(
                     usuarioTableClass::USER => $usuario,
                     usuarioTableClass::PASSWORD => md5($password),
@@ -84,7 +99,37 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
                 usuarioTableClass::insert($data);
 
-                routing::getInstance()->redirect('dataUser', 'insert', array('str' => $usuario));
+                //obtener el ultimo registro que ha sido insertado
+                $fieldsUsuario = array(
+                    usuarioTableClass::ID,
+                    usuarioTableClass::USER
+                );
+                $orderBy = array(
+                    usuarioTableClass::ID
+                );
+                $objUsuario = usuarioTableClass::getAll($fieldsUsuario, true, $orderBy, 'DESC', 1);
+                $idUsuario = $objUsuario[0]->id;
+
+                //
+                $dataUsuario = array(
+                    datosUsuarioTableClass::USUARIO_ID => $idUsuario,
+                    datosUsuarioTableClass::NOMBRE => $nombre,
+                    datosUsuarioTableClass::APELLIDOS => $apellidos,
+                    datosUsuarioTableClass::CEDULA => $cedula,
+                    datosUsuarioTableClass::DIRECCION => $direccion,
+                    datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
+                    datosUsuarioTableClass::TELEFONO => $telefono
+                );
+                datosUsuarioTableClass::insert($dataUsuario);
+
+                //asignacion del rol default (invitado)
+
+                $dataUsuarioCredencial = array(
+                    usuarioCredencialBaseTableClass::USUARIO_ID => $idUsuario,
+                    usuarioCredencialTableClass::CREDENCIAL_ID => $credencialDefault
+                );
+                usuarioCredencialTableClass::insert($dataUsuarioCredencial);
+                routing::getInstance()->redirect('usuario', 'index');
             } else {
                 routing::getInstance()->redirect('usuario', 'index');
             }
@@ -94,8 +139,6 @@ class createActionClass extends controllerClass implements controllerActionInter
             echo '<pre>';
             print_r($exc->getTrace());
             echo '</pre>';
-            
-            
         }
     }
 

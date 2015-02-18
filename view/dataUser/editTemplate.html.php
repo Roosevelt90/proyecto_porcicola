@@ -16,5 +16,5 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </div>
-<?php view::includePartial('dataUser/formDatos', array('objDatos' => $objDatos, 'objCiudad'=>$objCiudad, 'objUsuario'=> $objUsuario)) ?>
+<?php view::includePartial('dataUser/formUser', array('objDatos' => $objDatos, 'objCiudad'=>$objCiudad, 'objUsuario'=> $objUsuario)) ?>
 

@@ -1,4 +1,5 @@
 <?php
+
 use mvc\routing\routingClass as routing ?>
 
 <?php $id = datosUsuarioTableClass::ID ?>
@@ -7,31 +8,32 @@ use mvc\routing\routingClass as routing ?>
 <?php $cedula = datosUsuarioTableClass::CEDULA ?>
 <?php $direccion = datosUsuarioTableClass::DIRECCION ?>
 <?php $telefono = datosUsuarioTableClass::TELEFONO ?>
-<?php $user = usuarioTableClass::USER  ?>
+<?php $user = usuarioTableClass::USER ?>
 <?php $nom_ciudad = ciudadTableClass::NOMBRE ?>
 
-    <?php
+<?php
+
 use mvc\i18n\i18nClass as i18n ?>
 
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>
-                <?php echo i18n::__('read', NULL, 'datos') ?>
+<?php echo i18n::__('read', NULL, 'datos') ?>
             </h2>
         </div>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <!--<a href="<?php // echo routing::getInstance()->getUrlWeb('dataUser', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>-->
+                <!--<a href="<?php // echo routing::getInstance()->getUrlWeb('dataUser', 'insert')  ?>" class="btn btn-success btn-xs">Nuevo</a>-->
                 <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             </div>
         </div>
         <table class="table table-bordered table-responsive">
             <thead>
                 <tr>
-                         <td><input type="checkbox" id="chkAll"></td> 
+                    <td><input type="checkbox" id="chkAll"></td> 
                     <th>Id</th>
                     <th>Usuario</th>
                     <th>Nombre</th>
@@ -44,9 +46,9 @@ use mvc\i18n\i18nClass as i18n ?>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objDatos as $key): ?>
+<?php foreach ($objDatos as $key): ?>
                     <tr>
-                                                <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>                 
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>                 
                         <td><?php echo $key->$id ?></td>
                         <td><?php echo $key->$user ?></td>
                         <td><?php echo $key->$nombre ?></td>
@@ -60,7 +62,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
                         </td>
                     </tr>
-                <?php endforeach ?>
+<?php endforeach ?>
             </tbody>
         </table>
     </form>

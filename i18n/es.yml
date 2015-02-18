@@ -37,7 +37,7 @@ dictionary:
     
     
   datos:
-    read:                 Datos de usuario registrados en nuestro sistema
+    read:                 Datos personales del usuario
     new:                  Datos personales al usuario
     name:                 Nombre
     cc:                   Cedula

@@ -21,6 +21,12 @@ class insertActionClass extends controllerClass implements controllerActionInter
                 recuperarTableClass::ID,
                 recuperarTableClass::PREGUNTA_SECRETA
             );
+            $fieldsCiudad = array(
+                ciudadTableClass::ID,
+                ciudadTableClass::NOMBRE
+            );
+
+            $this->objCiudad = ciudadTableClass::getAll3($fieldsCiudad);
             $this->objRecuperar = recuperarTableClass::getAll($fields, false);
             $this->defineView('insert', 'usuario', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

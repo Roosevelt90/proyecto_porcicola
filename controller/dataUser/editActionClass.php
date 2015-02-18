@@ -28,16 +28,16 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $where = array(
                     datosUsuarioTableClass::ID => request::getInstance()->getRequest(datosUsuarioTableClass::ID)
                 );
-                $fields2 = array(
+                $fieldsCiudad = array(
                     ciudadTableClass::ID,
                     ciudadTableClass::NOMBRE
                 );
-                $field = array(
+                $fieldsUsuario = array(
                     usuarioTableClass::ID,
                     usuarioTableClass::USER
                 );
-                $this->objUsuario = usuarioTableClass::getAll($field);
-                $this->objCiudad = ciudadTableClass::getAll3($fields2);
+                $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario);
+                $this->objCiudad = ciudadTableClass::getAll3($fieldsCiudad);
                 $this->objDatos = datosUsuarioTableClass::getAll3($fields, false, null, null, null, null, $where);
                 $this->defineView('edit', 'dataUser', session::getInstance()->getFormatOutput());
             } else {

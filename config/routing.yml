@@ -92,6 +92,8 @@ default_insert:
     - model/recuperarTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
     - libs/validate/validatorFieldsClass.php
 
 default_create:
@@ -104,21 +106,41 @@ default_create:
     - model/recuperarTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
     - libs/validate/validatorFieldsClass.php
     
 default_edit:
   url:    /usuario/editar
   param:  { module: usuario, action: edit, format: html }
   load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - libs/validate/validatorFieldsClass.php
 
 default_update:
   url:    /usuario/actualizar
   param:  { module: usuario, action: update, format: html }
   load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - libs/validate/validatorFieldsClass.php
 
 default_delete:
   url:    /usuario/eliminar
@@ -306,10 +328,13 @@ dataUser_edit:
     - model/ciudadTableClass.php
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 dataUser_update:
   url:    /datos/actualizar
@@ -319,10 +344,13 @@ dataUser_update:
     - model/ciudadTableClass.php
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 dataUser_delete:
   url:    /datos/eliminar

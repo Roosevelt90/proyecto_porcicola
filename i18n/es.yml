@@ -57,6 +57,10 @@ dictionary:
     read:                 Roles asignados
     new:                  Asignam
     
+    
+  raza:
+    read:                   departamentos registrados
+    
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.

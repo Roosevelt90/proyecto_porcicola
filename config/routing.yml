@@ -445,3 +445,12 @@ Usuario_Credencial_crear:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+    
+raza_index:
+  url:  /raza/index
+  param: { module: raza, action: index, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+

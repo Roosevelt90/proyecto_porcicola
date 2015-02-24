@@ -30,9 +30,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                     ciudadTableClass::ID,
                     ciudadTableClass::NOMBRE
                 );
+                $fieldsTipoDocumento = array(
+                tipoDocumentoUsuarioTableClass::ID,
+                tipoDocumentoUsuarioTableClass::DESCRIPCION
+                );
                 $fields = array(
                     datosUsuarioTableClass::APELLIDOS,
-                    datosUsuarioTableClass::CEDULA,
+                    datosUsuarioTableClass::NUMERO_DOCUMENTO,
                     datosUsuarioTableClass::CREATED_AT,
                     datosUsuarioTableClass::DIRECCION,
                     datosUsuarioTableClass::ID,
@@ -43,9 +47,10 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                     datosUsuarioTableClass::USUARIO_ID => request::getInstance()->getRequest(usuarioTableClass::ID)
                 );
 
+                $this->objTipoDoc = tipoDocumentoUsuarioTableClass::getAll($fieldsTipoDocumento, false);
                 $this->objDatos = datosUsuarioTableClass::getAll3($fields, false, null, null, null, null, $where);
                 $this->objCiudad = ciudadTableClass::getAll3($fieldsCiudad);
-                $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true, null, null, null, null, $whereUsuario);
+                $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true);
                 $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('usuario', 'index');

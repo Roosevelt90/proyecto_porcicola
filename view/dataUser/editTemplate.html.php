@@ -14,7 +14,8 @@ use mvc\view\viewClass as view ?>
             <br>   
             <h3><?php echo $objDatos[0]->nombre = ucwords($objDatos[0]->nombre) ?></h3>
         </div>
+        <?php        print_r($objUsuario) ?>
     </div>
 </div>
-<?php view::includePartial('dataUser/formUser', array('objDatos' => $objDatos, 'objCiudad'=>$objCiudad, 'objUsuario'=> $objUsuario)) ?>
+<?php view::includePartial('dataUser/formDatos', array('objDatos' => $objDatos, 'objCiudad'=>$objCiudad, 'objUsuario'=> $objUsuario, 'objTipoDoc' => $objTipoDoc)) ?>
 

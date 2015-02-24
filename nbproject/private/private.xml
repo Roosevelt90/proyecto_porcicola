@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/ProyectoPorcicola/model/procesoCompraTableClass.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/config/routing.yml</file>
+            <file>file:/var/www/html/ProyectoPorcicola/config/config.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/controller/usuario/createActionClass.php</file>
         </group>
     </open-files>
 </project-private>

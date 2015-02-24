@@ -1,11 +1,9 @@
 <?php
-
 use mvc\routing\routingClass as routing ?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $id = usuarioTableClass::ID ?>
 <?php $creacion = usuarioBaseTableClass::CREATED_AT ?>
 <?php
-
 use mvc\i18n\i18nClass as i18n ?>
 <div class="container container-fluid">
     <div class="row">

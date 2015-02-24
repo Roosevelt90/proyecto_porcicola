@@ -94,6 +94,8 @@ default_insert:
     - model/datosUsuarioTableClass.php
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     - libs/validate/validatorFieldsClass.php
 
 default_create:
@@ -108,6 +110,8 @@ default_create:
     - model/datosUsuarioTableClass.php
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     - libs/validate/validatorFieldsClass.php
     
 default_edit:
@@ -123,6 +127,8 @@ default_edit:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
     - model/base/recuperarBaseTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     - model/recuperarTableClass.php
     - libs/validate/validatorFieldsClass.php
 
@@ -139,6 +145,8 @@ default_update:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
     - model/base/recuperarBaseTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     - model/recuperarTableClass.php
     - libs/validate/validatorFieldsClass.php
 
@@ -293,6 +301,8 @@ dataUser_index:
     - model/departamentoTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.phps.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
 
 dataUser_insert:
   url:    /datos/insertar
@@ -334,6 +344,8 @@ dataUser_edit:
     - model/usuarioTableClass.php
     - model/base/recuperarBaseTableClass.php
     - model/recuperarTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     - libs/validate/validatorFieldsClass.php
     
 dataUser_update:
@@ -350,6 +362,8 @@ dataUser_update:
     - model/usuarioTableClass.php
     - model/base/recuperarBaseTableClass.php
     - model/recuperarTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     - libs/validate/validatorFieldsClass.php
     
 dataUser_delete:

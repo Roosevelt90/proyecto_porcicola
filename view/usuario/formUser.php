@@ -1,5 +1,4 @@
 <?php
-
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
@@ -11,11 +10,14 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $id = datosUsuarioTableClass::ID ?>
 <?php $nombre = datosUsuarioTableClass::NOMBRE ?>
 <?php $apellidos = datosUsuarioTableClass::APELLIDOS ?>
-<?php $cedula = datosUsuarioTableClass::CEDULA ?>
+<?php $numeroDocumento = datosUsuarioTableClass::NUMERO_DOCUMENTO ?>
+<?php $tipoDocumento = datosUsuarioTableClass::TIPO_DOC ?>
 <?php $direccion = datosUsuarioTableClass::DIRECCION ?>
 <?php $telefono = datosUsuarioTableClass::TELEFONO ?>
 <?php $user = usuarioTableClass::USER ?>
 <?php $nom_ciudad = ciudadTableClass::NOMBRE ?>
+<?php $descripcionTipoDoc = tipoDocumentoUsuarioTableClass::DESCRIPCION ?>
+<?php $idTipoDoc = tipoDocumentoUsuarioTableClass::ID ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('usuario', ((isset($objUsuario) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objUsuario)): ?>
         <input type="hidden" name="<?php echo usuarioTableClass::getNameField(usuarioBaseTableClass::ID, TRUE) ?>" value="<?php echo $objUsuario[0]->$idUsuario ?>">
@@ -81,29 +83,32 @@ use mvc\i18n\i18nClass as i18n ?>
 
                     <tr>
                         <th>
-                            <?php echo i18n::__('cc', null, 'datos') ?>:
+                            <?php echo i18n::__('tipoDoc', null, 'datos') ?>:
                         </th>
                         <th>
-                            <?php
-                            if (isset($objDatos) == false) {
-                                ?>
-                                <input placeholder="<?php echo i18n::__('cc', null, 'datos') ?>"  type='text'  name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CEDULA, true) ?>">
-
-                                <?php
-                            } else {
-                                ?>
-                                <input value="<?php echo $objDatos[0]->$cedula ?>" placeholder="<?php echo i18n::__('cc', null, 'datos') ?>"  type='text' readonly name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CEDULA, true) ?>">
-                                <?php
-                            }
-                            ?>
-                        </th>                        
+                            <select name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TIPO_DOC, true) ?>">
+                                <?php foreach ($objTipoDoc as $key): ?>
+                                <option value="<?php echo $key->$idTipoDoc ?>">
+                                    <?php echo $key->$descripcionTipoDoc ?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <?php echo i18n::__('numberDoc', null, 'datos') ?>:
+                        </th>
+                        <th>
+                            <input placeholder="<?php echo i18n::__('numberDoc', null, 'datos') ?>" type="number" required min="0" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NUMERO_DOCUMENTO, true) ?>"> 
+                        </th>
                     </tr>
                     <tr>
                         <th>
                             <?php echo i18n::__('dir', null, 'datos') ?>:
                         </th>
                         <th>
-                            <input placeholder="<?php echo ((isset($objDatos) == false) ? i18n::__('lastName', null, 'datos') : $objDatos[0]->$direccion = ucwords($objDatos[0]->$direccion)) ?>" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true) ?>">
+                            <input placeholder="<?php echo ((isset($objDatos) == false) ? i18n::__('dir', null, 'datos') : $objDatos[0]->$direccion = ucwords($objDatos[0]->$direccion)) ?>" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true) ?>">
                         </th>                        
                     </tr>
                     <tr>

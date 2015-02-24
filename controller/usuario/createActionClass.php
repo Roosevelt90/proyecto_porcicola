@@ -30,7 +30,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                 //datos del usuario
                 $nombre = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true));
                 $apellidos = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true));
-                $cedula = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CEDULA, true));
+                $tipoDocumento = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TIPO_DOC, true));
+                $numeroDocumento = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NUMERO_DOCUMENTO, true));
                 $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
                 $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
                 $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
@@ -45,7 +46,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     $respuesta,
                     $nombre,
                     $apellidos,
-                    $cedula,
+                    $numeroDocumento,
                 );
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
                 if ($validatorEmpty == false) {
@@ -110,12 +111,13 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $objUsuario = usuarioTableClass::getAll($fieldsUsuario, true, $orderBy, 'DESC', 1);
                 $idUsuario = $objUsuario[0]->id;
 
-                //
+                //insertar datos usuarior
                 $dataUsuario = array(
                     datosUsuarioTableClass::USUARIO_ID => $idUsuario,
                     datosUsuarioTableClass::NOMBRE => $nombre,
                     datosUsuarioTableClass::APELLIDOS => $apellidos,
-                    datosUsuarioTableClass::CEDULA => $cedula,
+                    datosUsuarioTableClass::TIPO_DOC => $tipoDocumento,
+                    datosUsuarioTableClass::NUMERO_DOCUMENTO => $numeroDocumento,
                     datosUsuarioTableClass::DIRECCION => $direccion,
                     datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
                     datosUsuarioTableClass::TELEFONO => $telefono

@@ -25,7 +25,12 @@ class insertActionClass extends controllerClass implements controllerActionInter
                 ciudadTableClass::ID,
                 ciudadTableClass::NOMBRE
             );
+            $fieldsTipoDoc = array(
+                tipoDocumentoUsuarioTableClass::ID,
+                tipoDocumentoUsuarioTableClass::DESCRIPCION
+            );
 
+            $this->objTipoDoc = tipoDocumentoUsuarioTableClass::getAll($fieldsTipoDoc, false);
             $this->objCiudad = ciudadTableClass::getAll3($fieldsCiudad);
             $this->objRecuperar = recuperarTableClass::getAll($fields, false);
             $this->defineView('insert', 'usuario', session::getInstance()->getFormatOutput());

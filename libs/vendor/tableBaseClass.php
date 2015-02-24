@@ -250,7 +250,7 @@ namespace mvc\model\table {
                 $sqlID = "SELECT id FROM $table";
                 foreach ($data as $key => $value) {
                     if (!empty($value)) {
-                    $sql = $sql . " " . $key . " = '" . $value . "', ";
+                        $sql = $sql . " " . $key . " = '" . $value . "', ";
                     };
                 }
 
@@ -302,7 +302,7 @@ namespace mvc\model\table {
          * variables publica los nombres de las columnas de la consulta.
          * @throws \PDOException
          */
-        public static function getAllJoin($table, $table2, $table3, $fields, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null) {
+        public static function getAllJoin($table, $table2, $table3, $table4, $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null) {
             try {
 
                 $sql = 'SELECT ';
@@ -319,6 +319,11 @@ namespace mvc\model\table {
                     foreach ($fields3 as $field) {
                         $sql = $sql . $table3 . '.' . $field . ', ';
                     }
+                    if ($fields4 != null) {
+                        foreach ($fields4 as $field) {
+                            $sql = $sql . $table4 . '.' . $field . ', ';
+                        }
+                    }
                 };
                 $newLeng = strlen($sql) - 2;
                 $sql = substr($sql, 0, $newLeng);
@@ -332,41 +337,35 @@ namespace mvc\model\table {
                     $sql = $sql . ',' . ' ' . $table3;
                 };
 
+                if ($table4 != null) {
+                    $sql = $sql . ',' . ' ' . $table4;
+                };
+
                 $flag = false;
 
-                if ($table2 !== null AND $table3 !== null) {
+                if ($table2 !== null AND $table3 !== null and $table4 !== null) {
+
+                    $sql = $sql . ' WHERE ' . $table . '.' . $fJoin1 . ' = ' . $table2 . '.' . $fJoin2 . ' AND ' . $table . '.' . $fJoin3 . ' = ' . $table3 . '.' . $fJoin4 . ' AND ' . $table . '.' . $fJoin5 . ' = ' . $table4 . '.' . $fJoin6;
+                    if ($deletedLogical === true) {
+                        $sql = $sql . ' AND ' . $table . '.' . self::$fieldDeleteAt . ' IS NULL';
+                    }
+                    $flag = true;
+                } else if ($table2 !== null AND $table3 !== null) {
+
                     $sql = $sql . ' WHERE ' . $table . '.' . $fJoin1 . ' = ' . $table2 . '.' . $fJoin2 . ' AND ' . $table . '.' . $fJoin3 . ' = ' . $table3 . '.' . $fJoin4;
 
                     if ($deletedLogical === true) {
                         $sql = $sql . ' AND ' . $table . '.' . self::$fieldDeleteAt . ' IS NULL';
                     }
-
-
                     $flag = true;
                 } else {
+
                     $sql = $sql . ' WHERE ' . $table . '.' . $fJoin1 . ' = ' . $table2 . '.' . $fJoin2;
 
                     if ($deletedLogical === true) {
                         $sql = $sql . ' AND ' . $table . '.' . self::$fieldDeleteAt . ' IS NULL';
                     }
-
-
-                    $flag = true;
                 }
-
-//            if ($table2 !== null){
-//                        $sql = $sql . ' WHERE ' . $table. '.' .$fJoin1 . ' = ' . $table2. '.'.$fJoin2;       
-//            $flag = true;
-//            }
-//        if ($deletedLogical === true) {
-//          $sql = $sql . ' WHERE ' . $table . '.' . self::$fieldDeleteAt . ' IS NULL';
-//          $flag = true;
-//        }
-//
-//        if ($deletedLogical === false and is_array($where) === true) {
-//          //$sql = $sql . ' WHERE ';
-//          $flag = false;
-//        }
 
                 if (is_array($where) === true) {
                     foreach ($where as $field => $value) {

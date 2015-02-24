@@ -40,7 +40,8 @@ dictionary:
     read:                 Datos personales del usuario
     new:                  Datos personales al usuario
     name:                 Nombre
-    cc:                   Cedula
+    tipoDoc:              Tipo de documento
+    numberDoc:            Numero de documento
     lastName:             Apellido
     register:             Registrar
     tel:                  Telefono

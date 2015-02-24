@@ -18,21 +18,45 @@ class updateActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-
+              
+                //usuario
                 $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
                 $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-
-                $ids = array(
+                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));             
+                
+                $idUser = array(
                     usuarioTableClass::ID => $id
                 );
-
-                $data = array(
+                $dataUser = array(
                     usuarioTableClass::USER => $usuario,
                     usuarioTableClass::PASSWORD => $password
                 );
+                
+                
+                 //datos usuario
+                $nombre = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true));
+                $apellidos = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true));
+                $tipoDocumento = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TIPO_DOC, true));
+                $numeroDocumento = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NUMERO_DOCUMENTO, true));
+                $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
+                $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
+                $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
 
-                usuarioTableClass::update($ids, $data);
+                $datosUsuario = array(
+                datosUsuarioTableClass::NOMBRE => $nombre,
+                datosUsuarioTableClass::APELLIDOS => $apellidos,
+                datosUsuarioTableClass::TIPO_DOC => $tipoDocumento,
+                datosUsuarioTableClass::NUMERO_DOCUMENTO => $numeroDocumento,
+                datosUsuarioTableClass::DIRECCION => $direccion,
+                datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
+                datosUsuarioTableClass::TELEFONO => $telefono
+                );
+                $idData = array(
+                datosUsuarioTableClass::USUARIO_ID => $id
+                );
+
+                datosUsuarioTableClass::update($idData, $datosUsuario);
+                usuarioTableClass::update($idUser, $dataUser);
             }
 
             routing::getInstance()->redirect('usuario', 'index');

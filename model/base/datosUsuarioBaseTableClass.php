@@ -2,7 +2,8 @@
 
 use mvc\model\table\tableBaseClass;
 
-class datosUsuarioBaseTableClass  extends tableBaseClass {
+class datosUsuarioBaseTableClass extends tableBaseClass {
+
     private $id,
             $created_at,
             $updated_at,
@@ -11,10 +12,11 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
             $telefono,
             $direccion,
             $nombre,
-            $cedula,
+            $numero_documento,
+            $tipo_doc_id,
             $usuario_id,
             $ciudad_id;
-    
+
     const ID = 'id';
     const CREATED_AT = 'created_at';
     const UPDATED__aT = 'updated_at';
@@ -23,10 +25,11 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
     const TELEFONO = 'telefono';
     const DIRECCION = 'direccion';
     const NOMBRE = 'nombre';
-    const CEDULA = 'cedula';
+    const NUMERO_DOCUMENTO = 'numero_documento';
+    const TIPO_DOC = 'tipo_doc_id';
     const USUARIO_ID = 'usuario_id';
     const CIUDAD_ID = 'ciudad_id';
-    
+
     function getId() {
         return $this->id;
     }
@@ -59,8 +62,12 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
         return $this->nombre;
     }
 
-    function getCedula() {
-        return $this->cedula;
+    function getNumero_documento() {
+        return $this->numero_documento;
+    }
+
+    function getTipo_doc_id() {
+        return $this->tipo_doc_id;
     }
 
     function getUsuario_id() {
@@ -103,8 +110,12 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
         $this->nombre = $nombre;
     }
 
-    function setCedula($cedula) {
-        $this->cedula = $cedula;
+    function setNumero_documento($numero_documento) {
+        $this->numero_documento = $numero_documento;
+    }
+
+    function setTipo_doc_id($tipo_doc_id) {
+        $this->tipo_doc_id = $tipo_doc_id;
     }
 
     function setUsuario_id($usuario_id) {
@@ -115,7 +126,7 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
         $this->ciudad_id = $ciudad_id;
     }
 
- /**
+    /**
      * Método para obtener el nombre del campo más la tabla ya sea en formato
      * DB (.) o en formato HTML (_)
      *
@@ -139,10 +150,14 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
     public static function getNameTable2() {
         return 'ciudad';
     }
-    public static function getNameTable3(){
+
+    public static function getNameTable3() {
         return 'usuario';
     }
 
+    public static function getNameTable4() {
+        return 'tipo_documento_usuario';
+    }
     /**
      * Método para borrar un registro de una tabla X en la base de datos
      *
@@ -186,15 +201,15 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
      * variables publica los nombres de las columnas de la consulta o una
      * instancia de \PDOException en caso de fracaso.
      */
-    public static function getAll($fields, $fields2, $fields3, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
-        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), $fields, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+    public static function getAll($fields, $fields2, $fields3, $fields4, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
-    
-    public static function getAll2($fields2, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null){
+
+    public static function getAll2($fields2, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
         return parent::getAll(self::getNameTable2(), $fields2, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
-    
-    public static function getAll3($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null){
+
+    public static function getAll3($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
         return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
 
@@ -213,4 +228,3 @@ class datosUsuarioBaseTableClass  extends tableBaseClass {
     }
 
 }
-

@@ -10,7 +10,7 @@ usuario:
   index:
     security: true
     credentials:
-      - [admin]
+      - [admin, invitado]
   insert:
     security: true
     credentials:

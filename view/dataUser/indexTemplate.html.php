@@ -5,7 +5,8 @@ use mvc\routing\routingClass as routing ?>
 <?php $id = datosUsuarioTableClass::ID ?>
 <?php $nombre = datosUsuarioTableClass::NOMBRE ?>
 <?php $apellidos = datosUsuarioTableClass::APELLIDOS ?>
-<?php $cedula = datosUsuarioTableClass::CEDULA ?>
+<?php $tipoDocumento = tipoDocumentoUsuarioTableClass::DESCRIPCION ?>
+<?php $numeroDocumento = datosUsuarioTableClass::NUMERO_DOCUMENTO ?>
 <?php $direccion = datosUsuarioTableClass::DIRECCION ?>
 <?php $telefono = datosUsuarioTableClass::TELEFONO ?>
 <?php $user = usuarioTableClass::USER ?>
@@ -26,19 +27,20 @@ use mvc\i18n\i18nClass as i18n ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <!--<a href="<?php // echo routing::getInstance()->getUrlWeb('dataUser', 'insert')  ?>" class="btn btn-success btn-xs">Nuevo</a>-->
+                <!--<a href="<?php // echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-success btn-xs">Nuevo</a>-->
                 <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             </div>
         </div>
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered table-responsive table-condensed">
             <thead>
-                <tr>
+                <tr class="active">
                     <td><input type="checkbox" id="chkAll"></td> 
                     <th>Id</th>
                     <th>Usuario</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
-                    <th>Cedula</th>
+                    <th>Tipo de documento</th>
+                    <th>Numero de documento</th>
                     <th>Telefono</th>
                     <th>Direccion</th>
                     <th>Ciudad</th>
@@ -53,7 +55,8 @@ use mvc\i18n\i18nClass as i18n ?>
                         <td><?php echo $key->$user ?></td>
                         <td><?php echo $key->$nombre ?></td>
                         <td><?php echo $key->$apellidos ?></td>
-                        <td><?php echo $key->$cedula ?></td>
+                        <td><?php echo $key->$tipoDocumento ?></td>
+                        <td><?php echo $key->$numeroDocumento ?></td>
                         <td><?php echo $key->$telefono ?></td>
                         <td><?php echo $key->$direccion ?></td>
                         <td><?php echo $key->$nom_ciudad ?></td>

@@ -8,7 +8,7 @@ class loteBaseTableClass extends tableBaseClass {
             $nombre_lote;
 
     const ID = 'id';
-    const NOMBRE_RAZA = 'nombre_lote';
+    const NOMBRE = 'nombre_lote';
 
     function getId() {
         return $this->id;

@@ -24,7 +24,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
         <table class="table table-bordered table-responsive">
             <thead>
-                <tr>
+                <tr class="active">
                          <td><input type="checkbox" id="chkAll"></td> 
                     <th>Id</th>
                     <th>Nombre</th>

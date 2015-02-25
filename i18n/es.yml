@@ -60,7 +60,22 @@ dictionary:
     
     
   raza:
-    read:                   departamentos registrados
+    read:                 Razas registradas 
+    edit:                 Modificar raza
+    raza:                 Raza
+    new:                  Registro de una nueva raza
+    
+  lote:
+    read:                 Lotes registrados 
+    edit:                 Modificar lote
+    lote:                 Lote
+    new:                  Registro de un nuevo lote
+    
+  insumo:
+    read:                 Insumos registrados en nuestro sistema 
+    edit:                 Modificar insumo
+    insumo:               Insumo
+    new:                  Registro de un nuevo insumo
     
   errors:
     00001:                El módulo y la acción solicitada, no existe.

@@ -2,7 +2,7 @@
   <VerLbl/>
   <VerNotes/>
   <DefTblOpts/>
-  <DocFolder>/home/roosevelt</DocFolder>
+  <DocFolder>/var/www/html/ProyectoPorcicola/sql</DocFolder>
   <Sch Cm="" nm="public">
     <Tbl UsSo="1" nm="animal">
       <TblOpts>WITHOUT OIDS</TblOpts>
@@ -22,24 +22,29 @@
       <Cl au="0" df="" nm="precio_animal" nu="0">
         <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="Genero_Id" nu="0">
+      <Cl au="0" df="" nm="genero_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="Lote_Id" nu="0">
+      <Cl au="0" df="" nm="lote_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="Raza_Id" nu="0">
+      <Cl au="0" df="" nm="raza" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Fk deAc="3" nm="fk_Genero" prLkCl="Id" upAc="3">
-        <PrTb mn="0" nm="Genero" oe="1" sch="public" zr="0"/>
+      <Fk deAc="3" nm="fk_animal_raza" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="raza" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="animal" oe="0" sch="public" zr="1"/>
-        <ClPr cdCl="Genero_Id" prCl="Id"/>
+        <ClPr cdCl="raza" prCl="id"/>
       </Fk>
-      <Fk deAc="3" nm="fk_Lote" prLkCl="Id" upAc="3">
-        <PrTb mn="0" nm="Lote" oe="1" sch="public" zr="0"/>
+      <Fk deAc="3" nm="fk_Genero" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="genero" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="animal" oe="0" sch="public" zr="1"/>
-        <ClPr cdCl="Lote_Id" prCl="Id"/>
+        <ClPr cdCl="genero_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Lote" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="lote" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="animal" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="lote_id" prCl="id"/>
       </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
@@ -68,6 +73,11 @@
       <Cl au="0" df="" nm="usuario_id" nu="1">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="3" nm="bitacora_id" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="bitacora" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="usuario_id" prCl="id"/>
+      </Fk>
       <Idx clu="0" ftx="0" nm="bitacora_fecha_Idx" spa="0" unq="0">
         <ClNs>fecha</ClNs>
         <OptTx>USING btree</OptTx>
@@ -88,14 +98,14 @@
       <Cl au="0" df="" nm="nombre_ciudad" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="departamento_id" nu="1">
+      <Cl au="0" df="" nm="departamento_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="deleted_at" nu="1">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="3" nm="fk_Departamento" prLkCl="departamento_id" upAc="3">
-        <PrTb mn="0" nm="departamento" oe="1" sch="public" zr="1"/>
+        <PrTb mn="0" nm="departamento" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="ciudad" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="departamento_id" prCl="departamento_id"/>
       </Fk>
@@ -104,19 +114,29 @@
     </Tbl>
     <Tbl UsSo="1" nm="compra_insumo">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkcompra_insumo"/>
-      <Cl au="1" df="nextval('&quot;compra_insumo_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkcompra_insumo"/>
+      <Cl au="1" df="nextval('&quot;compra_insumo_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="fecha_hora_compra" nu="0">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="usuario_Id" nu="0">
+      <Cl au="0" df="" nm="usuario_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="Insumo_Id" nu="0">
+      <Cl au="0" df="" nm="insumo_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="3" nm="fk_compra_insumo_insumo" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="insumo" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="compra_insumo" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="insumo_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_compra_insumo_usuario" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="compra_insumo" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="usuario_id" prCl="id"/>
+      </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
@@ -168,19 +188,32 @@
       <Cl au="0" df="" nm="nombre" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="cedula" nu="0">
-        <DT arr="0" ds="VarChar" en="" id="12" ln="11" sc="null" sg="1" un="0"/>
+      <Cl au="0" df="" nm="numero_documento" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="usuario_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="ciudad_id" nu="1">
+      <Cl au="0" df="" nm="ciudad_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tipo_doc_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="3" nm="fk_datos_usuario_Ciudad" prLkCl="id" upAc="3">
-        <PrTb mn="0" nm="ciudad" oe="1" sch="public" zr="1"/>
+        <PrTb mn="0" nm="ciudad" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="datos_usuario" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="ciudad_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_datos_usuario_tipo_doc" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="tipo_documento_usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="datos_usuario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="tipo_doc_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="usuario_id" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="datos_usuario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="usuario_id" prCl="id"/>
       </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
@@ -209,30 +242,35 @@
       <Cl au="0" df="" nm="Insumo_Id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Fk deAc="3" nm="fk_Insumo" prLkCl="Id" upAc="3">
-        <PrTb mn="0" nm="Insumo" oe="1" sch="public" zr="0"/>
+      <Fk deAc="3" nm="fk_Insumo" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="insumo" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="detalle_compra_insumo" oe="0" sch="public" zr="1"/>
-        <ClPr cdCl="Insumo_Id" prCl="Id"/>
+        <ClPr cdCl="Insumo_Id" prCl="id"/>
       </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
     <Tbl UsSo="1" nm="detalle_proceso_compra">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id, animal_Id" nm="pkdetalle_proceso_compra"/>
-      <Cl au="1" df="nextval('&quot;detalle_proceso_compra_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id, animal_id" nm="pkdetalle_proceso_compra"/>
+      <Cl au="1" df="nextval('&quot;detalle_proceso_compra_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="animal_Id" nu="0">
+      <Cl au="0" df="" nm="animal_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="3" nm="fk_detalle_proceso_compra_animal" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="animal" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="detalle_proceso_compra" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="animal_id" prCl="id"/>
+      </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
     <Tbl UsSo="1" nm="detalle_proceso_venta">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkdetalle_proceso_venta"/>
-      <Cl au="1" df="nextval('&quot;detalle_proceso_venta_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkdetalle_proceso_venta"/>
+      <Cl au="1" df="nextval('&quot;detalle_proceso_venta_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="peso_Animal" nu="0">
@@ -241,19 +279,24 @@
       <Cl au="0" df="" nm="precio_animal" nu="0">
         <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="animal_Id" nu="0">
+      <Cl au="0" df="" nm="animal_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="3" nm="fk_detalle_proceso_venta_animal" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="animal" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="detalle_proceso_venta" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="animal_id" prCl="id"/>
+      </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
-    <Tbl UsSo="1" nm="Genero">
+    <Tbl UsSo="1" nm="genero">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkGenero"/>
-      <Cl au="1" df="nextval('&quot;Genero_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkGenero"/>
+      <Cl au="1" df="nextval('&quot;Genero_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="nombreGenero" nu="0">
+      <Cl au="0" df="" nm="nombre_genero" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="siglas" nu="0">
@@ -262,25 +305,25 @@
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
-    <Tbl UsSo="1" nm="Insumo">
+    <Tbl UsSo="1" nm="insumo">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkInsumo"/>
-      <Cl au="1" df="nextval('&quot;Insumo_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkInsumo"/>
+      <Cl au="1" df="nextval('&quot;Insumo_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="nombreInsumo" nu="0">
+      <Cl au="0" df="" nm="nombre_insumo" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
       </Cl>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
-    <Tbl UsSo="1" nm="Lote">
+    <Tbl UsSo="1" nm="lote">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkLote"/>
-      <Cl au="1" df="nextval('&quot;Lote_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkLote"/>
+      <Cl au="1" df="nextval('&quot;Lote_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="nombreLote" nu="0">
+      <Cl au="0" df="" nm="nombre_lote" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
       </Cl>
       <UniqueConstraints/>
@@ -288,41 +331,51 @@
     </Tbl>
     <Tbl UsSo="1" nm="proceso_compra">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkproceso_compra"/>
-      <Cl au="1" df="nextval('&quot;proceso_compra_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkproceso_compra"/>
+      <Cl au="1" df="nextval('&quot;proceso_compra_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="fecha_hora_compra" nu="0">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="usuario_Id" nu="0">
+      <Cl au="0" df="" nm="usuario_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="3" nm="fk_proceso_compra_usuario" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="proceso_compra" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="usuario_id" prCl="id"/>
+      </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
     <Tbl UsSo="1" nm="proceso_venta">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkproceso_venta"/>
-      <Cl au="1" df="nextval('&quot;proceso_venta_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkproceso_venta"/>
+      <Cl au="1" df="nextval('&quot;proceso_venta_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="fecha_hora_venta" nu="0">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="usuario_Id" nu="0">
+      <Cl au="0" df="" nm="usuario_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Fk deAc="3" nm="fk_proceso_venta_usuario" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="proceso_venta" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="usuario_id" prCl="id"/>
+      </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
-    <Tbl UsSo="1" nm="Raza">
+    <Tbl UsSo="1" nm="raza">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkRaza"/>
-      <Cl au="1" df="nextval('&quot;Raza_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkRaza"/>
+      <Cl au="1" df="nextval('&quot;Raza_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="nombreRaza" nu="0">
+      <Cl au="0" df="" nm="nombre_raza" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
       </Cl>
       <UniqueConstraints/>
@@ -343,11 +396,11 @@
       <Cl au="0" df="" nm="created_at" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="32" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="usuario_Id" nu="1">
+      <Cl au="0" df="" nm="usuario_Id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="3" nm="fk_recordar_me_usuario" prLkCl="id" upAc="3">
-        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="1"/>
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="recordar_me" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="usuario_Id" prCl="id"/>
       </Fk>
@@ -376,8 +429,8 @@
     </Tbl>
     <Tbl UsSo="1" nm="registro_parto">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkregistro_parto"/>
-      <Cl au="1" df="nextval('&quot;registro_parto_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkregistro_parto"/>
+      <Cl au="1" df="nextval('&quot;registro_parto_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="fecha_nacimiento" nu="0">
@@ -392,48 +445,70 @@
       <Cl au="0" df="0" nm="nacidos_muertos" nu="1">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="Raza_Id" nu="1">
+      <Cl au="0" df="" nm="raza_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="animal_Id" nu="1">
+      <Cl au="0" df="" nm="animal_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Fk deAc="3" nm="fk_Raza" prLkCl="Id" upAc="3">
-        <PrTb mn="0" nm="Raza" oe="1" sch="public" zr="1"/>
+      <Fk deAc="3" nm="animal_id" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="animal" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="registro_parto" oe="0" sch="public" zr="1"/>
-        <ClPr cdCl="Raza_Id" prCl="Id"/>
+        <ClPr cdCl="animal_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_Raza" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="raza" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="registro_parto" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="raza_id" prCl="id"/>
       </Fk>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
     <Tbl UsSo="1" nm="registro_vacunacion">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkregistro_vacunacion"/>
-      <Cl au="1" df="nextval('&quot;registro_vacunacion_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkregistro_vacunacion"/>
+      <Cl au="1" df="nextval('&quot;registro_vacunacion_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="fecha_hora_vacunacion" nu="0">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="animal_Id" nu="1">
+      <Cl au="0" df="" nm="animal_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="usuario_Id" nu="1">
+      <Cl au="0" df="" nm="usuario_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="Vacuna_Id" nu="1">
+      <Cl au="0" df="" nm="vacuna_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="3" nm="fk_animal" prLkCl="id" upAc="3">
-        <PrTb mn="0" nm="animal" oe="1" sch="public" zr="1"/>
+        <PrTb mn="0" nm="animal" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="registro_vacunacion" oe="0" sch="public" zr="1"/>
-        <ClPr cdCl="animal_Id" prCl="id"/>
+        <ClPr cdCl="animal_id" prCl="id"/>
       </Fk>
-      <Fk deAc="3" nm="fk_Vacuna" prLkCl="Id" upAc="3">
-        <PrTb mn="0" nm="Vacuna" oe="1" sch="public" zr="1"/>
+      <Fk deAc="3" nm="fk_registro_vacunacion_usuario" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="registro_vacunacion" oe="0" sch="public" zr="1"/>
-        <ClPr cdCl="Vacuna_Id" prCl="Id"/>
+        <ClPr cdCl="usuario_id" prCl="id"/>
       </Fk>
+      <Fk deAc="3" nm="fk_Vacuna" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="vacuna" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="registro_vacunacion" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="vacuna_id" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tipo_documento_usuario">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="id" nm="pktipo_doc"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
@@ -464,14 +539,14 @@
       <Cl au="0" df="" nm="last_login_at" nu="1">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="respuesta_secreta" nu="1">
+      <Cl au="0" df="" nm="respuesta_secreta" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="recuperar_id" nu="1">
+      <Cl au="0" df="" nm="recuperar_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="3" nm="fk_usuario_restaurar" prLkCl="id" upAc="3">
-        <PrTb mn="0" nm="recuperar" oe="1" sch="public" zr="1"/>
+        <PrTb mn="0" nm="recuperar" oe="1" sch="public" zr="0"/>
         <CdTb mn="1" nm="usuario" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="recuperar_id" prCl="id"/>
       </Fk>
@@ -526,19 +601,19 @@
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
-    <Tbl UsSo="1" nm="Vacuna">
+    <Tbl UsSo="1" nm="vacuna">
       <TblOpts>WITHOUT OIDS</TblOpts>
-      <Pk ClNs="Id" nm="pkVacuna"/>
-      <Cl au="1" df="nextval('&quot;Vacuna_Id_seq&quot;'::regclass)" nm="Id" nu="0">
+      <Pk ClNs="id" nm="pkVacuna"/>
+      <Cl au="1" df="nextval('&quot;Vacuna_Id_seq&quot;'::regclass)" nm="id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="nombreVacuna" nu="0">
+      <Cl au="0" df="" nm="nombre_vacuna" nu="0">
         <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="lote_vacuna" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="fehca_fabricacion_vacuna" nu="0">
+      <Cl au="0" df="" nm="fecha_fabricacion_vacuna" nu="0">
         <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="fecha_vencimiento_Vacuna" nu="0">
@@ -646,88 +721,161 @@
       <DbTableRectangleFill>HeaderFooterFill</DbTableRectangleFill>
       <svg path=""/>
     </DiaProps>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="animal" x="409" y="265"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="bitacora" x="1555" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="ciudad" x="387" y="493"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="compra_insumo" x="1851" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="credencial" x="50" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="datos_usuario" x="50" y="493"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="departamento" x="757" y="493"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="detalle_compra_insumo" x="410" y="861"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="detalle_proceso_compra" x="2171" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="detalle_proceso_venta" x="1555" y="183"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="Genero" x="50" y="265"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="Insumo" x="50" y="861"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="Lote" x="755" y="400"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="proceso_compra" x="1851" y="183"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="proceso_venta" x="2171" y="183"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="Raza" x="50" y="703"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="recordar_me" x="1116" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="recuperar" x="365" y="172"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="registro_parto" x="395" y="703"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="registro_vacunacion" x="755" y="265"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="usuario" x="738" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="usuario_credencial" x="387" y="50"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="Vacuna" x="1156" y="265"/>
-    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.animal.fk_Genero" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+    <TbGl bkCl="ff6666ff" sch="public" tbl="animal" x="450" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="bitacora" x="1655" y="372"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="ciudad" x="2082" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="compra_insumo" x="1685" y="263"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="credencial" x="529" y="727"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="datos_usuario" x="1695" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="departamento" x="2452" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="detalle_compra_insumo" x="2430" y="263"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="detalle_proceso_compra" x="123" y="198"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="detalle_proceso_venta" x="127" y="266"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="genero" x="86" y="360"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="insumo" x="2065" y="263"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="lote" x="105" y="441"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="proceso_compra" x="847" y="849"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="proceso_venta" x="868" y="930"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="raza" x="101" y="509"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="recordar_me" x="903" y="1011"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="recuperar" x="1625" y="505"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="registro_parto" x="50" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="registro_vacunacion" x="796" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="tipo_documento_usuario" x="2082" y="159"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="usuario" x="1247" y="50"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="usuario_credencial" x="866" y="727"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="vacuna" x="367" y="592"/>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.animal.fk_animal_raza" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="289" x2="409" y1="298" y2="298"/>
+        <positionableLine lineRole="PARENT_LINE" x1="353" x2="631" y1="535" y2="535"/>
+        <positionableLine lineRole="CHILD_LINE" x1="635" x2="635" y1="204" y2="531"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.animal.fk_Lote" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.animal.fk_Genero" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="PARENT_LINE" x1="732" x2="526" y1="426" y2="426"/>
-        <positionableLine lineRole="CHILD_LINE" x1="522" x2="522" y1="419" y2="422"/>
+        <positionableLine lineRole="PARENT_LINE" x1="353" x2="557" y1="393" y2="393"/>
+        <positionableLine lineRole="CHILD_LINE" x1="561" x2="561" y1="204" y2="389"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.animal.fk_Lote" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="353" x2="594" y1="467" y2="467"/>
+        <positionableLine lineRole="CHILD_LINE" x1="598" x2="598" y1="204" y2="463"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.bitacora.bitacora_id" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1439" x2="1439" y1="230" y2="427"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1632" x2="1443" y1="431" y2="431"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="EAST" nm="public.ciudad.fk_Departamento" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="757" x2="637" y1="519" y2="519"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="2452" x2="2332" y1="76" y2="76"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.compra_insumo.fk_compra_insumo_insumo" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="2065" x2="1945" y1="289" y2="289"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.compra_insumo.fk_compra_insumo_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1471" x2="1471" y1="230" y2="298"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1662" x2="1475" y1="302" y2="302"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="EAST" nm="public.datos_usuario.fk_datos_usuario_Ciudad" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="387" x2="267" y1="532" y2="532"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="2082" x2="1962" y1="89" y2="89"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.datos_usuario.fk_datos_usuario_tipo_doc" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="2082" x2="1962" y1="185" y2="185"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.datos_usuario.usuario_id" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1505" x2="1695" y1="128" y2="128"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="public.detalle_compra_insumo.fk_Insumo" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="290" x2="410" y1="887" y2="887"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="2310" x2="2430" y1="289" y2="289"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.recordar_me.fk_recordar_me_usuario" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.detalle_proceso_compra.fk_detalle_proceso_compra_animal" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="996" x2="1116" y1="96" y2="96"/>
+        <positionableLine lineRole="PARENT_LINE" x1="487" x2="487" y1="204" y2="220"/>
+        <positionableLine lineRole="CHILD_LINE" x1="343" x2="483" y1="224" y2="224"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.registro_parto.fk_Raza" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.detalle_proceso_venta.fk_detalle_proceso_venta_animal" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="275" x2="395" y1="729" y2="729"/>
+        <positionableLine lineRole="PARENT_LINE" x1="524" x2="524" y1="204" y2="301"/>
+        <positionableLine lineRole="CHILD_LINE" x1="353" x2="520" y1="305" y2="305"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.proceso_compra.fk_proceso_compra_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1311" x2="1311" y1="230" y2="878"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1130" x2="1307" y1="882" y2="882"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.proceso_venta.fk_proceso_venta_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1343" x2="1343" y1="230" y2="959"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1140" x2="1339" y1="963" y2="963"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.recordar_me.fk_recordar_me_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1375" x2="1375" y1="230" y2="1053"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1150" x2="1371" y1="1057" y2="1057"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.registro_parto.animal_id" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="450" x2="310" y1="109" y2="109"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.registro_parto.fk_Raza" parentEdge="NORTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="205" x2="205" y1="509" y2="168"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="public.registro_vacunacion.fk_animal" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="635" x2="755" y1="311" y2="311"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="676" x2="796" y1="96" y2="96"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.registro_vacunacion.fk_Vacuna" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.registro_vacunacion.fk_registro_vacunacion_usuario" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="1156" x2="1036" y1="311" y2="311"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="1247" x2="1077" y1="96" y2="96"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.usuario.fk_usuario_restaurar" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.registro_vacunacion.fk_Vacuna" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="618" x2="738" y1="189" y2="189"/>
+        <positionableLine lineRole="PARENT_LINE" x1="699" x2="932" y1="644" y2="644"/>
+        <positionableLine lineRole="CHILD_LINE" x1="936" x2="936" y1="165" y2="640"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.usuario.fk_usuario_restaurar" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1602" x2="1411" y1="531" y2="531"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1407" x2="1407" y1="230" y2="527"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="public.usuario_credencial.fk_credencial" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="267" x2="387" y1="89" y2="89"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="746" x2="866" y1="766" y2="766"/>
       </positionableLines>
     </FkGl>
-    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.usuario_credencial.fk_usuario" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.usuario_credencial.fk_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="738" x2="608" y1="89" y2="89"/>
+        <positionableLine lineRole="PARENT_LINE" x1="1279" x2="1279" y1="230" y2="762"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1110" x2="1275" y1="766" y2="766"/>
       </positionableLines>
     </FkGl>
     <Notes/>

@@ -14,7 +14,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             razaBaseTableClass::ID,
             razaBaseTableClass::NOMBRE_RAZA
             );
-            $this->objRaza = razaBaseTableClass::getAll($fields, FALSE);
+            $this->objRaza = razaBaseTableClass::getAll($fields, true);
             $this->defineView('index', 'raza', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
       echo $exc->getMessage();

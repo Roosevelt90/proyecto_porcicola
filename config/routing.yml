@@ -460,6 +460,8 @@ Usuario_Credencial_crear:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
     
+    
+########### RAZA ###########    
 raza_index:
   url:  /raza/index
   param: { module: raza, action: index, format: html }
@@ -467,4 +469,147 @@ raza_index:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
+raza_insert:
+  url:    /raza/insertar
+  param:  { module: raza, action: insert, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+raza_create:
+  url:    /raza/crear
+  param:  { module: raza, action: create, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+raza_edit:
+  url:    /raza/editar
+  param:  { module: raza, action: edit, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+raza_update:
+  url:    /raza/actualizar
+  param:  { module: raza, action: update, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+raza_delete:
+  url:    /raza/eliminar
+  param:  { module: raza, action: delete, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+raza_deleteSelect:
+  url:    /raza/eliminarSeleccion
+  param:  { module: raza, action: deleteSelect, format: html }
+  load:
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
 
+########### LOTE ###########    
+lote_index:
+  url:  /lote/index
+  param: { module: lote, action: index, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    
+lote_insert:
+  url:    /lote/insertar
+  param:  { module: lote, action: insert, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    
+lote_create:
+  url:    /lote/crear
+  param:  { module: lote, action: create, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    
+lote_edit:
+  url:    /lote/editar
+  param:  { module: lote, action: edit, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    
+lote_update:
+  url:    /lote/actualizar
+  param:  { module: lote, action: update, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    
+lote_delete:
+  url:    /lote/eliminar
+  param:  { module: lote, action: delete, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    
+lote_deleteSelect:
+  url:    /lote/eliminarSeleccion
+  param:  { module: lote, action: deleteSelect, format: html }
+  load:
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+
+
+
+########### INSUMO ###########    
+insumo_index:
+  url:  /insumo/index
+  param: { module: insumo, action: index, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_insert:
+  url:    /insumo/insertar
+  param:  { module: insumo, action: insert, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_create:
+  url:    /insumo/crear
+  param:  { module: insumo, action: create, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_edit:
+  url:    /insumo/editar
+  param:  { module: insumo, action: edit, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_update:
+  url:    /insumo/actualizar
+  param:  { module: insumo, action: update, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_delete:
+  url:    /insumo/eliminar
+  param:  { module: insumo, action: delete, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_deleteSelect:
+  url:    /insumo/eliminarSeleccion
+  param:  { module: insumo, action: deleteSelect, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php

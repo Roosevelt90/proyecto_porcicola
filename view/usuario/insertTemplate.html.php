@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
-            <br>
+            
             <h2>  <?php echo i18n::__('newUser', $culture = NULL, $dictionary = 'user') ?>
             </h2>
         </div>

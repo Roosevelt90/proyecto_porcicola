@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/ProyectoPorcicola/view/dataUser/indexTemplate.html.php</file>
-            <file>file:/var/www/html/ProyectoPorcicola/controller/usuario/editActionClass.php</file>
-            <file>file:/var/www/html/ProyectoPorcicola/controller/dataUser/editActionClass.php</file>
-            <file>file:/var/www/html/ProyectoPorcicola/view/dataUser/editTemplate.html.php</file>
-            <file>file:/var/www/html/ProyectoPorcicola/view/dataUser/formDatos.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/web/css/main.css</file>
+            <file>file:/var/www/html/ProyectoPorcicola/view/shfSecurity/loginFormTemplate.html.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/view/default/indexTemplate.html.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/config/routing.yml</file>
+            <file>file:/var/www/html/ProyectoPorcicola/view/usuario/indexTemplate.html.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/web/css/signin.css</file>
+            <file>file:/var/www/html/ProyectoPorcicola/config/view.yml</file>
+            <file>file:/var/www/html/ProyectoPorcicola/view/usuario/deleteTemplate.json.php</file>
+            <file>file:/var/www/html/ProyectoPorcicola/libs/vendor/view/head.php</file>
         </group>
     </open-files>
 </project-private>

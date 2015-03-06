@@ -9,10 +9,8 @@ use mvc\view\viewClass as view ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
-            <h2><?php echo i18n::__('editUser', $culture = NULL, $dictionary = 'user') ?> :</h2>
+            <h2><?php echo i18n::__('editUser', $culture = NULL, $dictionary = 'user') ?>: <?php echo $objUsuario[0]->user_name = ucwords($objUsuario[0]->user_name) ?></h2>
 
-            <br>   
-            <h3><?php echo $objUsuario[0]->user_name = ucwords($objUsuario[0]->user_name) ?></h3>
         </div>
     </div>
 </div>

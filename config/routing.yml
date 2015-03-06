@@ -152,18 +152,22 @@ default_update:
 
 default_delete:
   url:    /usuario/eliminar
-  param:  { module: usuario, action: delete, format: html }
+  param:  { module: usuario, action: delete, format: json }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
 
 default_deleteSelect:
   url:    /usuario/eliminarSeleccion
-  param:  { module: usuario, action: deleteSelect, format: html }
+  param:  { module: usuario, action: deleteSelect, format: json }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
 depto_reporte:
   url:    /usuario/reporte
   param:  { module: usuario, action: report, format: pdf }

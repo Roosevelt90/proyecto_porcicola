@@ -21,6 +21,9 @@ dictionary:
     modify:               Modificar
     quest:                Pregunta de seguridad
     answer:               Respuesta de seguridad
+    delete:               Eliminar
+    confirmDelete:        Eliminar usuario
+    bodyDelete:           Desea eliminar el registro
     
   depto:
     read:                 Departamento registrados en nuestro sistema

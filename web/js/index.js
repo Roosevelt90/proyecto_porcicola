@@ -1,3 +1,19 @@
+function eliminar(id, variable, url){
+    $.ajax({
+        url: url,
+        data: variable + '=' + id,
+        dataType: 'json',
+        type: 'POST',
+        success: function(data){
+           location.reload();
+        },
+        error: function(objeto, quepaso, otroobj){
+            alert ("estas viendo esto por q fallo"),
+            alert ("paso lo siguiente :" + quepaso)       
+        }
+    });
+}
+
 function confirmarEliminar(id) {
   var rsp = confirm("¿Esta seguro de querer eliminar el registro indicado?");
   if (rsp == true) {
@@ -12,6 +28,7 @@ function borrarSeleccion() {
     $('#frmDeleteAll').submit();
   }
 }
+
 
 $(document).ready(function(){
   $('#chkAll').click(function(){

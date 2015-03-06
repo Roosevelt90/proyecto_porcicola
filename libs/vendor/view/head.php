@@ -13,3 +13,9 @@
                 SHF 1.0.0
             </div>
         <?php endif; ?>
+        <div class="saltos">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div class="saltosLogin">
+            <br/><br/><br/>
+        </div>

@@ -10,7 +10,7 @@ all:
     - bootstrap.js
   stylesheet:
     - bootstrap.css
-    - main.css
+    - font-awesome.css
     
 shfSecurity:
   index:
@@ -18,6 +18,11 @@ shfSecurity:
     stylesheet:
       - signin.css
       
-ciudad:
+usuario:
+  index:  
+    stylesheet:
+      - main.css
+default:
   index:
-    title: Ciudad
+    stylesheet:
+      - main.css

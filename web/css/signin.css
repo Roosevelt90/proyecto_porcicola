@@ -1,8 +1,12 @@
+.saltos{
+    display: none;
+}
+
 body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
-  background-image: url('../img/b1fabric026.jpg');
+  background-image: url('../img/fondo.png');
 }
 
 .form-signin {

@@ -31,6 +31,12 @@ namespace mvc\validatorFields {
                 return (empty($value) ? false : true);
             }
         }
+        public function validateDate($date) {
+            return ($date == date() ? false : true);
+        }
+        public function validateCharactersNumber($data) {
+            return(is_numeric($data) ? false : true);
+        }
 
     }
 

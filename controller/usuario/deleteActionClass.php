@@ -15,27 +15,37 @@ use mvc\i18n\i18nClass as i18n;
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST') and request::getInstance()->isAjaxRequest()) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
-        
-        $ids = array(
-            usuarioTableClass::ID => $id
-        );
-        usuarioTableClass::delete($ids, true);
-  
-      } 
-        routing::getInstance()->redirect('usuario', 'index');
-      
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+                $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
+
+                $ids = array(
+                    usuarioTableClass::ID => $id
+                );
+
+                $idDato = array(
+                    datosUsuarioTableClass::USUARIO_ID => $id
+                );
+                datosUsuarioTableClass::delete($idDato, true);
+                usuarioTableClass::delete($ids, true);
+
+                $this->arrayAjax = array(
+                    'code' => 11,
+                    'msg' => 'La eliminacion ha sido exitosa'
+                );
+                $this->defineView('delete', 'usuario', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('usuario', 'index');
+            }
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

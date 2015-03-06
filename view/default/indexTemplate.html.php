@@ -3,8 +3,7 @@
 use mvc\routing\routingClass as routing ?>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 titulo">
-            <br>
+        <div class="col-xs-4-offset-4 titulo">  
             <h2>
                 Seleccione una tabla 
             </h2>
@@ -15,7 +14,7 @@ use mvc\routing\routingClass as routing ?>
         <div class="coo-xs-10-offset-1">
             <div class="table-responsive">
                 <div class="btn-group btn-group-lg btn-group-justified">
-                    <a  onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>'" class="btn btn-info">Usuario</a>                      
+                    <a  onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>'" class="btn btn-trasparente">Usuario</a>                      
                     <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index') ?>'" class="btn btn-info">Datos usuario</a>
                     <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>'" class="btn btn-info">Credencial</a>
                     <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>'" class="btn btn-info ">Usuario credencial</a>

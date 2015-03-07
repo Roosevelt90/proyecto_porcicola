@@ -19,7 +19,16 @@ shfSecurity:
       - signin.css
       
 usuario:
-  index:  
+  index:
+    title: Gestion de usuarios
+    stylesheet:
+      - main.css
+  insert:
+    title: Gestion de usuarios
+    stylesheet:
+      - main.css
+  edit:
+    title: Gestion de usuarios
     stylesheet:
       - main.css
 default:

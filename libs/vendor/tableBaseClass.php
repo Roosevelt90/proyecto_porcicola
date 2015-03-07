@@ -412,6 +412,44 @@ namespace mvc\model\table {
             }
         }
 
+        /**
+         * Método para contar todos los registros de una tabla
+         *
+         * @param string $table Nombre de la primera tabla
+         * @param boolean $deletedLogical [optional] Indicación de borrado lógico
+         * o borrado físico
+         * @return mixed una instancia de una clase estandar, la cual tendrá como
+         * variables publica los nombres de las columnas de la consulta.
+         * @throws \PDOException
+         */
+        public static function getAllCount($table, $fields, $deletedLogical = true, $lines = null) {
+            try {
+                $sql = 'SELECT ';
+                $sql = $sql . 'COUNT' . '(' . $table . '.' . $fields[0] . ') as cantidad' . ' ' . ')';
+
+                $newLeng = strlen($sql) - 2;
+                $sql = substr($sql, 0, $newLeng);
+
+                $sql = $sql . ' FROM ' . $table;
+
+                $flag = false;
+
+                if ($deletedLogical === true) {
+                    $sql = $sql . ' WHERE ' . $table . '.' . self::$fieldDeleteAt . ' IS NULL';
+                    $flag = true;
+                }
+                if ($deletedLogical === false and is_array($where) === true) {
+                    $flag = false;
+                }
+                $count = model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+                return ceil($count[0]->cantidad / $lines);
+//                print_r($count);
+//            echo $sql; 
+            } catch (\PDOException $exc) {
+                throw $exc;
+            }
+        }
+
     }
 
 }

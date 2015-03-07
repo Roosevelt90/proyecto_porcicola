@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>
-<?php echo i18n::__('read', NULL, 'user') ?>
+                <?php echo i18n::__('read', NULL, 'user') ?>
             </h2>
         </div>
     </div>
@@ -28,13 +28,13 @@ use mvc\i18n\i18nClass as i18n ?>
                     <thead>
                         <tr class="active">
                             <th><input type="checkbox" id="chkAll"></th>
-                            <th>Usuario</th>
+                            <th><?php echo i18n::__('usuario', null, 'user') ?></th>
                             <th>Fecha de creacion</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-<?php foreach ($objUsuarios as $usuario): ?>
+                        <?php foreach ($objUsuarios as $usuario): ?>
                             <tr>
                                 <td><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
                                 <td><?php echo $usuario->$usu ?></td>
@@ -55,7 +55,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                         <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete', null, 'user') ?></h4>
                                     </div>
                                     <div class="modal-body">
-                                      ¿<?php echo i18n::__('bodyDelete', null, 'user') ?> <?php echo $usuario->$usu ?>?
+                                        ¿<?php echo i18n::__('bodyDelete', null, 'user') ?> <?php echo $usuario->$usu ?>?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -64,11 +64,23 @@ use mvc\i18n\i18nClass as i18n ?>
                                 </div>
                             </div>
                         </div>
-<?php endforeach ?>
+                    <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
     </form>
+    <div class="text-right">
+        <nav>
+            <ul class="pagination" id="slqPaginador">
+                <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
+                <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                    <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
+                    <?php $count ++ ?>        
+                <?php endfor ?>
+                <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
+            </ul>
+        </nav>
+    </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
     </form>

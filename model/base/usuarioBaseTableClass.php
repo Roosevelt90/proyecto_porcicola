@@ -228,6 +228,29 @@ class usuarioBaseTableClass extends tableBaseClass {
   public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
     return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
   }
+  
+  
+  
+   /**
+   * Método para contar todos los registros de una tabla
+   *
+   * @param array $fields Array con los nombres de los campos a solicitar
+   * @param boolean $deletedLogical [optional] Indicación de borrado lógico
+   * o borrado físico
+   * @param array $orderBy [optional] Array con el o los nombres de los campos
+   * por los cuales se ordenará la consulta
+   * @param string $order [optional] Forma de ordenar la consulta
+   * (por defecto NULL), pude ser ASC o DESC
+   * @param integer $limit [optional] Cantidad de resultados a mostrar
+   * @param integer $offset [optional] Página solicitadad sobre la cantidad
+   * de datos a mostrar
+   * @return mixed una instancia de una clase estandar, la cual tendrá como
+   * variables publica los nombres de las columnas de la consulta o una
+   * instancia de \PDOException en caso de fracaso.
+   */
+  public static function getAllCount($fields, $deletedLogical = true, $lines = null, $table = null) {
+    return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
+  }
 
   /**
    * Método para actualizar un registro en una tabla de una base de datos

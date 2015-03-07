@@ -17,6 +17,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
+        
+        
 
       $fields = array(
           usuarioTableClass::ID,
@@ -26,7 +28,18 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           usuarioTableClass::USER
       );
-      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+      if (request::getInstance()->hasGet('page')){
+          $page = request::getInstance()->getGet('page') - 1;
+          $page = $page * config::getRowGrid();
+      }
+      $f = array(
+      usuarioTableClass::ID
+      );
+      $lines = config::getRowGrid();
+      $this->cntPages = usuarioTableClass::getAllCount($f, true, $lines);
+      $this->page = request::getInstance()->getGet('page');
+      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
       $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

@@ -3,7 +3,11 @@ body{
    background-repeat: no-repeat;
    background-size: 100% ;
     //background-origin: content-box
+}
 
+.btn-selected{
+      background-color: #e0e0e0;
+  background-image: none;
 }
 
 .saltosLogin{

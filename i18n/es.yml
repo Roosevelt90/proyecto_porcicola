@@ -2,12 +2,23 @@
 culture:                  Español
 dictionary:
   default:
-    user:                 Administracion de usuario
+    user:                 Usuario
+    dataUser:             Datos usuario
+    credencial:           Credenciales
+    userCredencial:       Asignacion de credencial
+    depto:                Departamento
+    city:                 Ciudad
+    raza:                 Raza
+    lote:                 Lote
+    insumo:               Insumo
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
+    delete:               Eliminar
+    modules:              Seleccione un modulo
     
   user:
+    usuario:              Usuario
     newUser:              Registro de un nuevo usuario 
     user:                 Nombre de usuario
     pass:                 Contraseña

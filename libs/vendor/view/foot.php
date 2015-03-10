@@ -4,7 +4,7 @@
   Tiempo usado: <?php //echo number_format((microtime(true) - $GLOBALS['timeIni']), '4', '.', '\'') ?> segundos
 </div>-->
 <div class="copyright">
-copyright <?php date(Y) ?> &copysr; 
+copyright <?php echo date('Y') ?> &copysr; 
 </div>
 </body>
 </html>

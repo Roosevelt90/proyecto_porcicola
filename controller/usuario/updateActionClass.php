@@ -18,12 +18,12 @@ class updateActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-              
+
                 //usuario
                 $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
                 $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));             
-                
+                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
+
                 $idUser = array(
                     usuarioTableClass::ID => $id
                 );
@@ -31,9 +31,9 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     usuarioTableClass::USER => $usuario,
                     usuarioTableClass::PASSWORD => $password
                 );
-                
-                
-                 //datos usuario
+
+
+                //datos usuario
                 $nombre = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true));
                 $apellidos = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true));
                 $tipoDocumento = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TIPO_DOC, true));
@@ -43,23 +43,26 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
 
                 $datosUsuario = array(
-                datosUsuarioTableClass::NOMBRE => $nombre,
-                datosUsuarioTableClass::APELLIDOS => $apellidos,
-                datosUsuarioTableClass::TIPO_DOC => $tipoDocumento,
-                datosUsuarioTableClass::NUMERO_DOCUMENTO => $numeroDocumento,
-                datosUsuarioTableClass::DIRECCION => $direccion,
-                datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
-                datosUsuarioTableClass::TELEFONO => $telefono
+                    datosUsuarioTableClass::NOMBRE => $nombre,
+                    datosUsuarioTableClass::APELLIDOS => $apellidos,
+                    datosUsuarioTableClass::TIPO_DOC => $tipoDocumento,
+                    datosUsuarioTableClass::NUMERO_DOCUMENTO => $numeroDocumento,
+                    datosUsuarioTableClass::DIRECCION => $direccion,
+                    datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
+                    datosUsuarioTableClass::TELEFONO => $telefono
                 );
                 $idData = array(
-                datosUsuarioTableClass::USUARIO_ID => $id
+                    datosUsuarioTableClass::USUARIO_ID => $id
                 );
 
                 datosUsuarioTableClass::update($idData, $datosUsuario);
                 usuarioTableClass::update($idUser, $dataUser);
+                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'user'));
+                routing::getInstance()->redirect('usuario', 'index');
+            } else {
+                session::getInstance()->setError(i18n::__('errorUpdate', null, 'user'));
+                routing::getInstance()->redirect('usuario', 'index');
             }
-
-            routing::getInstance()->redirect('usuario', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

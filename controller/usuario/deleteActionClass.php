@@ -36,7 +36,9 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'msg' => 'La eliminacion ha sido exitosa'
                 );
                 $this->defineView('delete', 'usuario', session::getInstance()->getFormatOutput());
+                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'user'));
             } else {
+                session::getInstance()->setError(i18n::__('errorDelete', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');
             }
         } catch (PDOException $exc) {

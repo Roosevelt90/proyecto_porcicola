@@ -24,14 +24,20 @@ usuario:
     stylesheet:
       - main.css
   insert:
-    title: Gestion de usuarios
+    title: Registro de un nuevo usuario
     stylesheet:
       - main.css
   edit:
-    title: Gestion de usuarios
+    title: Modificar un usuario
     stylesheet:
       - main.css
 default:
   index:
+    stylesheet:
+      - main.css
+
+raza:
+  index:
+    title: Gestion de raza
     stylesheet:
       - main.css

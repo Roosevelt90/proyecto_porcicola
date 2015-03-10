@@ -16,6 +16,7 @@ dictionary:
     update:               Actualizar
     delete:               Eliminar
     modules:              Seleccione un modulo
+    action:               Acciones
     
   user:
     usuario:              Usuario
@@ -35,6 +36,15 @@ dictionary:
     delete:               Eliminar
     confirmDelete:        Eliminar usuario
     bodyDelete:           Desea eliminar el registro
+    date:                 Fecha de creacion
+    succesCreate:         El usuario se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el usuario vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los usuarios seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el usuario exitosamente
+    errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
+    succesUpdate:         El usuario se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
     
   depto:
     read:                 Departamento registrados en nuestro sistema

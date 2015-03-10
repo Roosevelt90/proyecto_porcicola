@@ -161,7 +161,7 @@ default_delete:
 
 default_deleteSelect:
   url:    /usuario/eliminarSeleccion
-  param:  { module: usuario, action: deleteSelect, format: json }
+  param:  { module: usuario, action: deleteSelect, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php

@@ -2,7 +2,7 @@
 
 use mvc\config\configClass as config;
 
-config::setRowGrid(10);
+config::setRowGrid(3);
 
 config::setDbHost('127.0.0.1');
 config::setDbDriver('pgsql'); // pgsql

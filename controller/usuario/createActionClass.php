@@ -131,8 +131,10 @@ class createActionClass extends controllerClass implements controllerActionInter
                     usuarioCredencialTableClass::CREDENCIAL_ID => $credencialDefault
                 );
                 usuarioCredencialTableClass::insert($dataUsuarioCredencial);
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');
             } else {
+                session::getInstance()->setError(i18n::__('errorCreate', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');
             }
         } catch (PDOException $exc) {

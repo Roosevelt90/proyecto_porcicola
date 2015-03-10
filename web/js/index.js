@@ -35,11 +35,9 @@ function confirmarEliminar(id) {
 }
 
 function borrarSeleccion() {
-    var rsp = confirm("¿Esta seguro de querer eliminar los registros seleccionados?");
-    if (rsp == true) {
-        $('#frmDeleteAll').submit();
+ $("#myModalEliminarMasivo").modal("toggle"); 
     }
-}
+
 
 
 $(document).ready(function () {
@@ -52,4 +50,10 @@ $(document).ready(function () {
             }
         });
     });
+// $('input[name="chk[]"]').each(function (index, element){
+//             if ($(element).is(':checked') == true) {
+//                 $('#btnDeleteMasivo').removeClass('disabled');
+//             }
+//             });
+ 
 });

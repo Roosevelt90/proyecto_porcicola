@@ -113,6 +113,9 @@ default_create:
     - model/base/tipoDocumentoUsuarioBaseTableClass.php
     - model/tipoDocumentoUsuarioTableClass.php
     - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 default_edit:
   url:    /usuario/editar

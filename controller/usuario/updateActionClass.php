@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -58,6 +59,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 datosUsuarioTableClass::update($idData, $datosUsuario);
                 usuarioTableClass::update($idUser, $dataUser);
                 session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'user'));
+                log::register(i18n::__('update'), usuarioTableClass::getNameTable());
                 routing::getInstance()->redirect('usuario', 'index');
             } else {
                 session::getInstance()->setError(i18n::__('errorUpdate', null, 'user'));

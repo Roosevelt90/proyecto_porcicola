@@ -8,6 +8,7 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 use mvc\validatorFields\validatorFieldsClass as validator;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -132,6 +133,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
                 usuarioCredencialTableClass::insert($dataUsuarioCredencial);
                 session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'user'));
+                log::register(i18n::__('create'), usuarioTableClass::getNameTable());
                 routing::getInstance()->redirect('usuario', 'index');
             } else {
                 session::getInstance()->setError(i18n::__('errorCreate', null, 'user'));

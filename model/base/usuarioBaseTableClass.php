@@ -34,7 +34,9 @@ class usuarioBaseTableClass extends tableBaseClass {
   const DELETED_AT = 'deleted_at';
   const RESPUESTA_SECRETA = 'respuesta_secreta';
   const RESTAURAR_ID = 'recuperar_id';
-  
+  const OBSERVACION = 'observacion';
+
+
   function getRespuesta_secreta() {
       return $this->respuesta_secreta;
   }

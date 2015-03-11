@@ -57,6 +57,10 @@ use mvc\routing\routingClass as routing ?>
                                     </div>
                                     <div class="modal-body">
                                         ¿<?php echo i18n::__('bodyDelete', null, 'user') ?> <?php echo $usuario->$usu ?>?
+                                        <h3>Motivo por el cual desea eliminar?</h3>
+                                        <textarea name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::OBSERVACION, true) ?>">
+                                            
+                                        </textarea>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

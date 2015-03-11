@@ -2,6 +2,7 @@ function eliminar(id, variable, url) {
     $.ajax({
         url: url,
         data: variable + '=' + id,
+//        data2: idB,
         dataType: 'json',
         type: 'POST',
         success: function (data) {
@@ -15,13 +16,6 @@ function eliminar(id, variable, url) {
 }
 
 function paginador(objeto, url) {
-//    var anterior = document.getElementById('anterior');
-//    if (objeto !== 1) {
-//        alert("ola" + objeto);
-//    } else {
-////    window.location.href = url + '?page=' + objeto;
-//     anterior.disabled = true;
-//    }
     window.location.href = url + '?page=' + objeto;
 
 }

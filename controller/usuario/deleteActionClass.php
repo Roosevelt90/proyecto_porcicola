@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -20,7 +21,8 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST') and request::getInstance()->isAjaxRequest()) {
 
                 $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
-
+//$observacion = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::OBSERVACION, true));
+                
                 $ids = array(
                     usuarioTableClass::ID => $id
                 );
@@ -36,6 +38,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'msg' => 'La eliminacion ha sido exitosa'
                 );
                 $this->defineView('delete', 'usuario', session::getInstance()->getFormatOutput());
+                log::register(i18n::__('delete'), usuarioTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'user'));
             } else {
                 session::getInstance()->setError(i18n::__('errorDelete', null, 'user'));

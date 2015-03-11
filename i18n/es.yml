@@ -17,6 +17,9 @@ dictionary:
     delete:               Eliminar
     modules:              Seleccione un modulo
     action:               Acciones
+    create:               Insertar
+    update:               Modificar
+    delete:               Eliminar
     
   user:
     usuario:              Usuario

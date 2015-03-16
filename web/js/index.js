@@ -2,7 +2,6 @@ function eliminar(id, variable, url) {
     $.ajax({
         url: url,
         data: variable + '=' + id,
-//        data2: idB,
         dataType: 'json',
         type: 'POST',
         success: function (data) {

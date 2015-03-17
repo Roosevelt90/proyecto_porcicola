@@ -2,12 +2,12 @@
 
 namespace mvc\dispatch {
 
-    use mvc\config\configClass;
-    use mvc\routing\routingClass;
-    use mvc\autoload\autoLoadClass;
-    use mvc\session\sessionClass;
-    use mvc\i18n\i18nClass;
-    use mvc\hook\hookClass;
+    use mvc\config\configClass as config;
+    use mvc\routing\routingClass as routing;
+    use mvc\autoload\autoLoadClass as autoLoad;
+    use mvc\session\sessionClass as session;
+    use mvc\i18n\i18nClass as i18n;
+    use mvc\hook\hookClass as hook;
 
     /**
      * Description of dispatchClass
@@ -16,18 +16,23 @@ namespace mvc\dispatch {
      */
     class dispatchClass {
 
+        /**
+         * Variable estatica para guardar la instancia de la clase dispatchClass
+         * @var dispatchClass 
+         */
         private static $instance;
 
+        /**
+         * Constructor del dispatch el cual mantiene controlado
+         * la entrada de la primera ves al sistema
+         */
         public function __construct() {
-
-
-            if (!sessionClass::getInstance()->hasFirstCall()) {
-                sessionClass::getInstance()->setFirstCall(true);
+            if (!session::getInstance()->hasFirstCall()) {
+                session::getInstance()->setFirstCall(true);
             }
         }
 
         /**
-         *
          * 
          * @return dispatchClass
          */
@@ -40,12 +45,12 @@ namespace mvc\dispatch {
 
         public function main($module = null, $action = null) {
             try {
-                i18nClass::setCulture(configClass::getDefaultCulture());
-                routingClass::getInstance()->registerModuleAndAction($module, $action);
-                autoLoadClass::getInstance()->loadIncludes();
-                hookClass::hooksIni();
+                i18n::setCulture(config::getDefaultCulture());
+                routing::getInstance()->registerModuleAndAction($module, $action);
+                autoLoad::getInstance()->loadIncludes();
+                hook::hooksIni();
                 $controller = $this->loadModuleAndAction();
-                hookClass::hooksEnd();
+                hook::hooksEnd();
                 $controller->renderView();
             } catch (\Exception $exc) {
                 echo $exc->getMessage();
@@ -57,11 +62,11 @@ namespace mvc\dispatch {
         }
 
         private function checkFile($controllerFolder, $controllerFile) {
-            return is_file(configClass::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php');
+            return is_file(config::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php');
         }
 
         private function includeFileAndInitialize($controllerFolder, $controllerFile) {
-            include_once configClass::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php';
+            include_once config::getPathAbsolute() . 'controller/' . $controllerFolder . '/' . $controllerFile . '.php';
             return new $controllerFile();
         }
 
@@ -71,10 +76,10 @@ namespace mvc\dispatch {
          * @throws \Exception
          */
         private function loadModuleAndAction() {
-            $controllerFolder = sessionClass::getInstance()->getModule();
+            $controllerFolder = session::getInstance()->getModule();
             $controllerFile = $controllerFolder . 'Class';
-            $action = sessionClass::getInstance()->getAction() . 'Action';
-            $controllerFileAction = sessionClass::getInstance()->getAction() . 'ActionClass';
+            $action = session::getInstance()->getAction() . 'Action';
+            $controllerFileAction = session::getInstance()->getAction() . 'ActionClass';
             $controller = false;
             if ($this->checkFile($controllerFolder, $controllerFile)) {
                 $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFile);
@@ -84,15 +89,14 @@ namespace mvc\dispatch {
                     $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFileAction);
                     $this->executeAction($controller, 'execute');
                 } else {
-                    throw new \Exception(i18nClass::__(00001, null, 'errors'), 00001);
+                    throw new \Exception(i18n::__(00001, null, 'errors'), 00001);
                 }
             } elseif ($this->checkFile($controllerFolder, $controllerFileAction)) {
                 $controller = $this->includeFileAndInitialize($controllerFolder, $controllerFileAction);
                 $this->executeAction($controller, 'execute');
             } else {
-                throw new \Exception(i18nClass::__(00001, null, 'errors'), 00001);
+                throw new \Exception(i18n::__(00001, null, 'errors'), 00001);
             }
-
             return $controller;
         }
 

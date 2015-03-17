@@ -8,6 +8,7 @@ all:
     - jquery-1.11.1.min.js
     - index.js
     - bootstrap.js
+    - main.js
   stylesheet:
     - bootstrap.css
     - font-awesome.css

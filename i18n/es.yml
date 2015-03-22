@@ -20,6 +20,41 @@ dictionary:
     create:               Insertar
     update:               Modificar
     delete:               Eliminar
+    confirmDelete:        Desea eliminar el registro
+    cancel:               Cancelar
+    confirm:              Eliminar registro
+    deleteMasive:         Confirmar eliminar los elementos seleccionados
+    confirmDeleteMasive:  Desea eliminar los elementos seleccionados
+    succesCreate:         El registro se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el registro vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el registro exitosamente
+    errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
+    succesUpdate:         El registro se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
+   
+    
+  animal:
+    edit:                 Editar el registro del animal
+    animal:               Animal
+    new:                  Registra un nuevo animal
+    peso:                 Peso
+    edad:                 Edad (meses)
+    fecha:                Fecha de nacimiento
+    genero:               Genero
+    lote:                 Lote
+    raza:                 Raza
+    succesCreate:         El animal se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el animal vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el registro exitosamente
+    errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
+    succesUpdate:         El registro se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
+    read:                 Registro de animales en nuestro sistema
+    confirm:              Desea eliminar el registro
     
   user:
     usuario:              Usuario

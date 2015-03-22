@@ -3,7 +3,7 @@
 use mvc\i18n\i18nClass as i18n ?>
     <?php $id = razaTableClass::ID ?>
     <?php $nombre = razaTableClass::NOMBRE_RAZA ?>
-<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('raza', ((isset($objRaza) == TRUE) ? 'update' : 'create')) ?>">
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objRaza) == TRUE) ? 'updateRaza' : 'createRaza')) ?>">
 <?php if (isset($objRaza)): ?>
     <input type="hidden" name="<?php echo razaTableClass::getNameField(razaTableClass::ID, TRUE) ?>" value="<?php echo $objRaza[0]->$id ?>">
 <?php endif; ?>

@@ -38,6 +38,11 @@ shfSecurity_index:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
+install_index:
+  url:    /install
+  param:  { module: config, action: index, format: html }
+
+
 shfSecurity_login:
   url:    /login
   param:  { module: shfSecurity, action: login, format: html }
@@ -63,6 +68,14 @@ shfSecurity_logout:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+
+shfSecurity_noPermission:
+  url:    /sin_permisos
+  param:  { module: shfSecurity, action: noPermission, format: html }
+
+shfSecurity_exception:
+  url:    /exception
+  param:  { module: shfSecurity, action: exception, format: html }
 ##-------------------------- shfSecurity --------------------------##
 
 ##-------------------------- EJEMPLO --------------------------##
@@ -471,49 +484,49 @@ Usuario_Credencial_crear:
 ########### RAZA ###########    
 raza_index:
   url:  /raza/index
-  param: { module: raza, action: index, format: html }
+  param: { module: animal, action: indexRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
 raza_insert:
   url:    /raza/insertar
-  param:  { module: raza, action: insert, format: html }
+  param:  { module: animal, action: insertRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
 raza_create:
   url:    /raza/crear
-  param:  { module: raza, action: create, format: html }
+  param:  { module: animal, action: createRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
 raza_edit:
   url:    /raza/editar
-  param:  { module: raza, action: edit, format: html }
+  param:  { module: animal, action: editRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
 raza_update:
   url:    /raza/actualizar
-  param:  { module: raza, action: update, format: html }
+  param:  { module: animal, action: updateRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
 raza_delete:
   url:    /raza/eliminar
-  param:  { module: raza, action: delete, format: json }
+  param:  { module: animal, action: deleteRaza, format: json }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
     
 raza_deleteSelect:
   url:    /raza/eliminarSeleccion
-  param:  { module: raza, action: deleteSelect, format: html }
+  param:  { module: animal, action: deleteSelectRaza, format: html }
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
@@ -522,49 +535,49 @@ raza_deleteSelect:
 ########### LOTE ###########    
 lote_index:
   url:  /lote/index
-  param: { module: lote, action: index, format: html }
+  param: { module: animal, action: indexLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
 lote_insert:
   url:    /lote/insertar
-  param:  { module: lote, action: insert, format: html }
+  param:  { module: animal, action: insertLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
 lote_create:
   url:    /lote/crear
-  param:  { module: lote, action: create, format: html }
+  param:  { module: animal, action: createLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
 lote_edit:
   url:    /lote/editar
-  param:  { module: lote, action: edit, format: html }
+  param:  { module: animal, action: editLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
 lote_update:
   url:    /lote/actualizar
-  param:  { module: lote, action: update, format: html }
+  param:  { module: animal, action: updateLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
 lote_delete:
   url:    /lote/eliminar
-  param:  { module: lote, action: delete, format: html }
+  param:  { module: animal, action: deleteLote, format: json }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
 lote_deleteSelect:
   url:    /lote/eliminarSeleccion
-  param:  { module: lote, action: deleteSelect, format: html }
+  param:  { module: animal, action: deleteSelectLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
@@ -620,3 +633,112 @@ insumo_deleteSelect:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+    
+    
+    
+##-------------------------- ANIMAL --------------------------##
+animal_index:
+  url:    /animal/index
+  param:  { module: animal, action: indexAnimal, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+animal_insert:
+  url:    /animal/insertar
+  param:  { module: animal, action: insertAnimal, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+animal_create:
+  url:    /animal/crear
+  param:  { module: animal, action: createAnimal, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+animal_edit:
+  url:    /animal/editar
+  param:  { module: animal, action: editAnimal, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+animal_update:
+  url:    /animal/actualizar
+  param:  { module: animal, action: updateAnimal, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+animal_delete:
+  url:    /animal/eliminar
+  param:  { module: animal, action: deleteAnimal, format: json }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+
+animal_deleteSelect:
+  url:    /animal/eliminarSeleccion
+  param:  { module: animal, action: deleteSelectAnimal, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    
+animal_reporte:
+  url:    /animal/reporte
+  param:  { module: animal, action: reportAnimal, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php

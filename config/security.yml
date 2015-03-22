@@ -5,6 +5,10 @@ shfSecurity:
     security: false
   logout:
     security: true
+  noPermission:
+    security: false
+  exception:
+    security: false
 
 usuario:
   index:
@@ -158,4 +162,36 @@ lote:
     security: true
     credentials:
       - [admin]
+      
+      
+animal:
+  indexAnimal:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertAnimal:
+    security: true
+    credentials:
+      - [admin]
+  createAnimal:
+    security: true
+    credentials:
+      - [admin]
+  editAnimal:
+    security: true
+    credentials:
+      - [admin]
+  updateAnimal:
+    security: true
+    credentials:
+      - [admin]
+  deleteAnimal:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectAnimal:
+    security: true
+    credentials:
+      - [admin]
+
       

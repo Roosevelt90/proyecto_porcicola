@@ -1,7 +1,7 @@
   <?php use mvc\session\sessionClass as session ?>
   <?php if(\mvc\config\configClass::getScope() === 'dev'): ?>
   <div id="mvcMain" class="shfDevelopmentBar">
-    <i class="fa fa-leaf mvcPointer"></i> SHF 1.0.2 |
+    <i class="fa fa-leaf mvcPointer"></i> SHF 1.0.4 |
     <i class="fa fa-dashboard"></i> <?php echo number_format((memory_get_usage() / 1048576), '3', '.', '\'') ?> MB |
     <i class="fa fa-clock-o"></i> <?php echo number_format((microtime(true) - $GLOBALS['timeIni']), '4', '.', '\'') ?> seg.
     <?php if (session::getInstance()->hasAttribute('mvcDbQuery')): ?>

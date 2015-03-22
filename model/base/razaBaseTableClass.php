@@ -109,5 +109,21 @@ function getId() {
   public static function update($ids, $data, $table = null) {
     return parent::update($ids, $data, self::getNameTable());
   }
+  
+    /**
+     * Método para contar todos los registros de una tabla
+     *
+     * @param array $fields Array con los nombres de los campos a solicitar
+     * @param boolean $deletedLogical [optional] Indicación de borrado lógico
+     * o borrado físico
+     * @param integer $lines variable con la cantidad de de campos que devuelve
+     * el sistema
+     * @return mixed una instancia de una clase estandar, la cual tendrá como
+     * variables publica cantidad de paginas para visualizar en el paginador.
+     * instancia de \PDOException en caso de fracaso.
+     */
+    public static function getAllCount($fields, $deletedLogical = true, $lines = null, $table = null) {
+        return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
+    }
 
 }

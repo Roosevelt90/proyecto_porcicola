@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
+class deleteSelectLoteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -25,10 +25,10 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                     $ids = array(
                         loteTableClass::ID => $id
                     );
-                    loteTableClass::delete($ids, false);
+                    loteTableClass::delete($ids, true);
                 }
             }
-            routing::getInstance()->redirect('lote', 'index');
+            routing::getInstance()->redirect('animal', 'indexLote');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

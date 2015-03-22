@@ -10,11 +10,11 @@ use mvc\routing\routingClass as routing;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteActionClass extends controllerClass implements controllerActionInterface {
+class deleteLoteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-            if (request::getInstance()->isMethod('POST')) {
+            if (request::getInstance()->isMethod('POST') and request::getInstance()->isAjaxRequest()) {
 
                 $id = request::getInstance()->getPost(loteTableClass::getNameField(loteTableClass::ID, true));
 
@@ -22,8 +22,17 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     loteTableClass::ID => $id
                 );
                 loteTableClass::delete($ids, false);
+                $this->arrayAjax = array(
+                    'code' => 11,
+                    'msg' => 'La eliminacion ha sido exitosa'
+                );
+                $this->defineView('delete', 'lote', session::getInstance()->getFormatOutput());
+                log::register(i18n::__('delete'), loteTableClass::getNameTable());
+                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+            } else {
+                session::getInstance()->setError(i18n::__('errorDelete'));
+                routing::getInstance()->redirect('animal', 'indexLote');
             }
-            routing::getInstance()->redirect('lote', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

@@ -6,7 +6,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 
-class editActionClass extends controllerClass implements controllerActionInterface {
+class editLoteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {

@@ -5,7 +5,7 @@ use mvc\controller\controllerClass;
 use mvc\session\sessionClass as session;
 
 
-class insertActionClass extends controllerClass implements controllerActionInterface {
+class insertRazaActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {

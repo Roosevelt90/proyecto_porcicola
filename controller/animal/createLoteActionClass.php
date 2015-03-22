@@ -6,21 +6,21 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\i18n\i18nClass as i18n;
 
-class createActionClass extends controllerClass implements controllerActionInterface {
+class createLoteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $nombre = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::NOMBRE_RAZA, true));
+                $nombre = request::getInstance()->getPost(loteTableClass::getNameField(loteTableClass::NOMBRE, true));
 
                 $data = array(
-                    razaTableClass::NOMBRE_RAZA => $nombre
+                    loteTableClass::NOMBRE => $nombre
                 );
 
-                razaTableClass::insert($data);
+                loteTableClass::insert($data);
             }
-            routing::getInstance()->redirect('raza', 'index');
+            routing::getInstance()->redirect('animal', 'indexLote');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

@@ -4,7 +4,7 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\session\sessionClass as session;
 
-class insertActionClass extends controllerClass implements controllerActionInterface {
+class insertLoteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {

@@ -5,25 +5,26 @@ use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 
-/**
- * Description of ejemploClass
- *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
- */
-class deleteActionClass extends controllerClass implements controllerActionInterface {
+class updateRazaActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-
                 $id = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::ID, true));
+                $nombre = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::NOMBRE_RAZA, true));
 
                 $ids = array(
                     razaTableClass::ID => $id
                 );
-                razaTableClass::delete($ids, false);
+
+                $data = array(
+                    razaTableClass::NOMBRE_RAZA => $nombre
+                );
+
+                razaTableClass::update($ids, $data);
             }
-            routing::getInstance()->redirect('raza', 'index');
+
+            routing::getInstance()->redirect('animal', 'indexRaza');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

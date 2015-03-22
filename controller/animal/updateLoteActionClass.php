@@ -5,7 +5,7 @@ use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 
-class updateActionClass extends controllerClass implements controllerActionInterface {
+class updateLoteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -24,7 +24,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 loteTableClass::update($ids, $data);
             }
 
-            routing::getInstance()->redirect('lote', 'index');
+            routing::getInstance()->redirect('animal', 'indexLote');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

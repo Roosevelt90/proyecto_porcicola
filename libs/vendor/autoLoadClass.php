@@ -2,13 +2,12 @@
 
 namespace mvc\autoload {
 
-    include_once __DIR__ . '/interfaces/sessionInterface.php';
+  include_once __DIR__ . '/interfaces/sessionInterface.php';
   include_once __DIR__ . '/sessionClass.php';
   include_once __DIR__ . '/configClass.php';
   include_once __DIR__ . '/../../config/config.php';
   include_once __DIR__ . '/../yaml/sfYaml.php';
   include_once __DIR__ . '/cacheManagerClass.php';
-
 
   use mvc\config\configClass;
   use mvc\session\sessionClass;
@@ -20,8 +19,6 @@ namespace mvc\autoload {
    * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
    */
   class autoLoadClass {
-      
-      
 
     /**
      * Variable estatica para guardar la instancia de la clase autoLoadClass
@@ -30,7 +27,6 @@ namespace mvc\autoload {
     private static $instance;
 
     /**
-     *
      * Instanciación de la clase autoLoadClass
      * @return autoLoadClass
      */
@@ -41,8 +37,7 @@ namespace mvc\autoload {
       return self::$instance;
     }
 
-    
-        /**
+    /**
      * Carga los archivos básicos declarados en loader.yml
      * en el punto mvcBasicPackage
      * @return null
@@ -52,10 +47,9 @@ namespace mvc\autoload {
       foreach ($includes['mvcBasicPackage'] as $include) {
         include_once configClass::getPathAbsolute() . $include;
       }
-       return null;
+      return null;
     }
 
-    
     /**
      * Carga los archivos declarados en el punto "load" del archivo routing.yml
      * de la ruta exigida al sistema

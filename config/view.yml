@@ -36,9 +36,46 @@ default:
   index:
     stylesheet:
       - main.css
+    javascript:
+      - index.js
 
-raza:
-  index:
+      
+animal:
+  indexAnimal:
+    title: Gestion de cerdos
+    stylesheet:
+      - main.css
+  insertAnimal:
+    title: Registro de un nuevo cerdo
+    stylesheet:
+      - main.css
+  editAnimal:
+    title: Modificar un cerdo
+    stylesheet:
+      - main.css
+      
+  indexRaza:
     title: Gestion de raza
+    stylesheet:
+      - main.css
+  insertRaza:
+    title: Registro de una nueva raza
+    stylesheet:
+      - main.css
+  editRaza:
+    title: Modificar raza
+    stylesheet:
+      - main.css
+      
+  indexLote:
+    title: Gestion de lotes
+    stylesheet:
+      - main.css
+  insertLote:
+    title: Registro de un nuevo lote
+    stylesheet:
+      - main.css
+  editLote:
+    title: Modificar un lote
     stylesheet:
       - main.css

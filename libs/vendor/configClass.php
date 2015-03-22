@@ -40,6 +40,8 @@ namespace mvc\config {
     private static $cookie_domain;
     private static $cookie_time;
     private static $row_grid;
+    private static $default_module_permission;
+    private static $default_action_permission;
 
     /**
      * Obtiene la URL base del sistema
@@ -424,6 +426,22 @@ namespace mvc\config {
 
     public static function setDbUnixSocket($db_unix_socket) {
       self::$db_unix_socket = $db_unix_socket;
+    }
+    
+    public static function getDefaultModulePermission() {
+      return self::$default_module_permission;
+    }
+
+    public static function getDefaultActionPermission() {
+      return self::$default_action_permission;
+    }
+
+    public static function setDefaultModulePermission($default_module_permission) {
+      self::$default_module_permission = $default_module_permission;
+    }
+
+    public static function setDefaultActionPermission($default_action_permission) {
+      self::$default_action_permission = $default_action_permission;
     }
 
   }

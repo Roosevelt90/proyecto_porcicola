@@ -12,7 +12,7 @@ namespace mvc\request {
   class requestClass implements requestInterface {
 
     private $post;
-    private $get_;
+    private $get;
     private $request;
     private $cookie;
     private $files;

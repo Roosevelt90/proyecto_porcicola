@@ -31,10 +31,11 @@ namespace hook\security {
 
           // verifico permisos de acceso
           if (!self::verifyCredentials($securityYml, session::getInstance()->getModule(), session::getInstance()->getAction())) {
-            // mostrar ventana de que no tiene permisos para entrar al sistema
-            echo 'usted no tiene permisos para entrar al sistema';
-            exit();
+            routing::getInstance()->forward(config::getDefaultModulePermission(), config::getDefaultActionPermission());
           }
+        } else {
+          session::getInstance()->deleteAttribute('shfSecurityModuleGO');
+          session::getInstance()->deleteAttribute('shfSecurityActionGO');
         }
       } catch (\PDOException $exc) {
         throw $exc;

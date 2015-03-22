@@ -33,8 +33,9 @@ use mvc\i18n\i18nClass as i18n ?>
                     <div class="menuDesplegableAnimal">
                         <input type="checkbox" id="toggleboxAnimal" />
                         <ul>
-                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('raza', 'index') ?>'" class="btn btn-ttc"><?php echo i18n::__('raza') ?></a></li>
-                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('lote', 'index') ?>'" class="btn btn-ttc"><?php echo i18n::__('lote') ?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>'" class="btn btn-ttc">Animal</a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRaza') ?>'" class="btn btn-ttc"><?php echo i18n::__('raza') ?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>'" class="btn btn-ttc"><?php echo i18n::__('lote') ?></a></li>
                             <li><label for="toggleboxAnimal"></label></li>
                         </ul>
                         <label class="fa  fa-3x" for="toggleboxAnimal">Animal</label>

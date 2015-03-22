@@ -3,7 +3,7 @@
 use mvc\i18n\i18nClass as i18n ?>
     <?php $id = loteTableClass::ID ?>
     <?php $nombre = loteTableClass::NOMBRE ?>
-<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('lote', ((isset($objLote) == TRUE) ? 'update' : 'create')) ?>">
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objLote) == TRUE) ? 'updateLote' : 'createLote')) ?>">
 <?php if (isset($objLote)): ?>
     <input type="hidden" name="<?php echo loteTableClass::getNameField(loteTableClass::ID, TRUE) ?>" value="<?php echo $objLote[0]->$id ?>">
 <?php endif; ?>

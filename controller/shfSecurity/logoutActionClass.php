@@ -27,13 +27,10 @@ class logoutActionClass extends controllerClass implements controllerActionInter
         recordarMeTableClass::deleteSession(request::getInstance()->getCookie(config::getCookieNameRememberMe()), request::getInstance()->getServer('REMOTE_ADDR'));
         setcookie(config::getCookieNameRememberMe(), '', time() - config::getCookieTime(), config::getCookiePath());
       }
-      routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
+      routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

@@ -14,7 +14,7 @@ namespace mvc\interfaces {
 
     public function redirect($module, $action = null, $variables = null);
 
-    public function forward($module, $action, $variables = null);
+    public function forward($module, $action);
 
     public function validateRouting($routing);
 

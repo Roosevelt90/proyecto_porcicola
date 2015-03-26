@@ -19,6 +19,13 @@ shfSecurity:
     stylesheet:
       - signin.css
       
+config:
+  index:
+    title: Configuracion del sistema
+    stylesheet:
+      - main.css
+      - installer.css
+      
 usuario:
   index:
     title: Gestion de usuarios

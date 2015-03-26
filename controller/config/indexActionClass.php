@@ -16,8 +16,8 @@ use mvc\i18n\i18nClass as i18n;
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
-        try {
-           echo 1;
+        try { 
+           $this->defineView('index', 'config', session::getInstance()->getFormatOutput());
             } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

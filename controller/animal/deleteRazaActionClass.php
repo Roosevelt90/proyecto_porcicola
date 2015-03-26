@@ -4,6 +4,7 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -30,15 +31,13 @@ class deleteRazaActionClass extends controllerClass implements controllerActionI
                 log::register(i18n::__('delete'), razaTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete'));
             } else {
+                log::register(i18n::__('delete'), razaTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

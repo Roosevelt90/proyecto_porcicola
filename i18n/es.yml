@@ -2,6 +2,10 @@
 culture:                  Español
 dictionary:
   default:
+    report:               Descargar reporte
+    buscar:               Buscar
+    new:                  Nuevo registro
+    deleteFilter:         Eliminar filtros
     user:                 Usuario
     dataUser:             Datos usuario
     credencial:           Credenciales
@@ -18,8 +22,11 @@ dictionary:
     modules:              Seleccione un modulo
     action:               Acciones
     create:               Insertar
+    errorCreateBitacora:  Se ha producido un error al crear
     update:               Modificar
+    errorUpdateBitacora:  Se ha producido un error al modificar
     delete:               Eliminar
+    errorDeleteBitacora:  Se ha producido un error al eliminar
     confirmDelete:        Desea eliminar el registro
     cancel:               Cancelar
     confirm:              Eliminar registro
@@ -148,6 +155,8 @@ dictionary:
     
     10005:                No se admite caracteres especiales
     10006:                Hay campos vacios que son obligatorios
+    10007:                Solo se permiten numeros
+    10008:                El formato de fecha no coincide
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

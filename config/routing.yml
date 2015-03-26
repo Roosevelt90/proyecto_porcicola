@@ -41,6 +41,13 @@ shfSecurity_index:
 install_index:
   url:    /install
   param:  { module: config, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+install_create:
+  url:    /install/config
+  param:  { module: config, action: create, format: html }
 
 
 shfSecurity_login:
@@ -495,6 +502,9 @@ raza_insert:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 raza_create:
   url:    /raza/crear
@@ -502,6 +512,9 @@ raza_create:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 raza_edit:
   url:    /raza/editar
@@ -509,6 +522,9 @@ raza_edit:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 raza_update:
   url:    /raza/actualizar
@@ -516,6 +532,9 @@ raza_update:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 raza_delete:
   url:    /raza/eliminar
@@ -523,6 +542,9 @@ raza_delete:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 raza_deleteSelect:
   url:    /raza/eliminarSeleccion
@@ -530,6 +552,9 @@ raza_deleteSelect:
   load:
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 
 ########### LOTE ###########    
@@ -540,12 +565,16 @@ lote_index:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
     
+    
 lote_insert:
   url:    /lote/insertar
   param:  { module: animal, action: insertLote, format: html }
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 lote_create:
   url:    /lote/crear
@@ -553,6 +582,10 @@ lote_create:
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 lote_edit:
   url:    /lote/editar
@@ -560,6 +593,9 @@ lote_edit:
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 lote_update:
   url:    /lote/actualizar
@@ -567,6 +603,10 @@ lote_update:
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 lote_delete:
   url:    /lote/eliminar
@@ -574,6 +614,9 @@ lote_delete:
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 lote_deleteSelect:
   url:    /lote/eliminarSeleccion
@@ -581,6 +624,9 @@ lote_deleteSelect:
   load:
     - model/base/loteBaseTableClass.php
     - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 
 
@@ -663,6 +709,9 @@ animal_insert:
     - model/loteTableClass.php
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 animal_create:
   url:    /animal/crear
@@ -721,6 +770,9 @@ animal_delete:
   load:
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 animal_deleteSelect:
   url:    /animal/eliminarSeleccion
@@ -728,6 +780,9 @@ animal_deleteSelect:
   load:
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 animal_reporte:
   url:    /animal/reporte
@@ -742,3 +797,11 @@ animal_reporte:
     - model/loteTableClass.php
     - model/base/generoBaseTableClass.php
     - model/generoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+animal_delete_filters:
+  url:    /borrar_filtros
+  param:  { module: animal, action: deleteFiltersAnimal, format: html }
+    

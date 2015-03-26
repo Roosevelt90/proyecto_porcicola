@@ -22,7 +22,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     <tr>
                         <th>  <?php echo i18n::__('peso', NULL, 'animal') ?>:</th>
                         <th> 
-                            <input placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('peso', NULL, 'animal') : $objAnimal[0]->$peso = ucwords($objAnimal[0]->$peso)) ?>" type="text" name="<?php echo animalTableClass::getNameField(animalTableClass::PESO, true) ?>" >
+                            <input required  placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('peso', NULL, 'animal') : $objAnimal[0]->$peso = ucwords($objAnimal[0]->$peso)) ?>" type="number" min="0"  name="<?php echo animalTableClass::getNameField(animalTableClass::PESO, true) ?>" >
                         </th>   
                     </tr>
                     <tr>

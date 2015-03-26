@@ -10,6 +10,18 @@ shfSecurity:
   exception:
     security: false
 
+default:
+  index:
+    security: true
+    credentials:
+      - [admin, invitado]
+      
+config:
+  index:
+    security: false
+  create:
+    security: false
+
 usuario:
   index:
     security: true
@@ -103,66 +115,6 @@ insumo:
     credentials:
       - [admin]
       
-raza:
-  index:
-    security: true
-    credentials:
-      - [admin, invitado]
-  insert:
-    security: true
-    credentials:
-      - [admin]
-  create:
-    security: true
-    credentials:
-      - [admin]
-  edit:
-    security: true
-    credentials:
-      - [admin]
-  update:
-    security: true
-    credentials:
-      - [admin]
-  delete:
-    security: true
-    credentials:
-      - [admin]
-  deleteSelect:
-    security: true
-    credentials:
-      - [admin]
-      
-lote:
-  index:
-    security: true
-    credentials:
-      - [admin, invitado]
-  insert:
-    security: true
-    credentials:
-      - [admin]
-  create:
-    security: true
-    credentials:
-      - [admin]
-  edit:
-    security: true
-    credentials:
-      - [admin]
-  update:
-    security: true
-    credentials:
-      - [admin]
-  delete:
-    security: true
-    credentials:
-      - [admin]
-  deleteSelect:
-    security: true
-    credentials:
-      - [admin]
-      
       
 animal:
   indexAnimal:
@@ -193,5 +145,60 @@ animal:
     security: true
     credentials:
       - [admin]
-
+  indexRaza:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertRaza:
+    security: true
+    credentials:
+      - [admin]
+  createRaza:
+    security: true
+    credentials:
+      - [admin]
+  editRaza:
+    security: true
+    credentials:
+      - [admin]
+  updateRaza:
+    security: true
+    credentials:
+      - [admin]
+  deleteRaza:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectRaza:
+    security: true
+    credentials:
+      - [admin]
+  indexLote:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertLote:
+    security: true
+    credentials:
+      - [admin]
+  createLote:
+    security: true
+    credentials:
+      - [admin]
+  editLote:
+    security: true
+    credentials:
+      - [admin]
+  updateLote:
+    security: true
+    credentials:
+      - [admin]
+  deleteLote:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectLote:
+    security: true
+    credentials:
+      - [admin]
       

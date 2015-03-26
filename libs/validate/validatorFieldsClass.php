@@ -32,7 +32,9 @@ namespace mvc\validatorFields {
             }
         }
         public function validateDate($date) {
-            return ($date == date() ? false : true);
+             $pattern="/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
+             return ((preg_match($pattern,$date)) ? true : false);
+
         }
         public function validateCharactersNumber($data) {
             return(is_numeric($data) ? false : true);

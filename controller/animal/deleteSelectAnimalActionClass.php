@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -25,21 +26,20 @@ class deleteSelectAnimalActionClass extends controllerClass implements controlle
                     $ids = array(
                         animalTableClass::ID => $id
                     );
+                    animalTableClass::delete($ids, true);
                 }
-                animalTableClass::delete($ids, true);
 
-                session::getInstance()->setSuccess(i18n::__('succesDeleteMasivo', null, 'animal'));
+                log::register(i18n::__('delete'), animalTableClass::getNameTable());
+                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
             } else {
+                log::register(i18n::__('errorDelete'), animalTableClass::getNameTable());
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo', null, 'user'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

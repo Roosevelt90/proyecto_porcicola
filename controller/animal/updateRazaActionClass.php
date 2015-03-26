@@ -4,7 +4,14 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+use hook\log\logHookClass as log;
+use mvc\session\sessionClass as session;
 
+/**
+ * Description of ejemploClass
+ *
+ * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ */
 class updateRazaActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
@@ -21,16 +28,18 @@ class updateRazaActionClass extends controllerClass implements controllerActionI
                     razaTableClass::NOMBRE_RAZA => $nombre
                 );
 
-                razaTableClass::update($ids, $data);
+                razaTableClass::update($ids, $data); 
+          //      session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+          //      log::register(i18n::__('update'), razaTableClass::getNameTable());
+                routing::getInstance()->redirect('animal', 'indexRaza');
+            } else {
+                log::register(i18n::__('update'), razaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
+                session::getInstance()->setError(i18n::__('errorUpdate'));
+                routing::getInstance()->redirect('animal', 'indexRaza');
             }
-
-            routing::getInstance()->redirect('animal', 'indexRaza');
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

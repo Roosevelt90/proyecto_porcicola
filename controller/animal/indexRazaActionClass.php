@@ -36,11 +36,8 @@ class indexRazaActionClass extends controllerClass implements controllerActionIn
             $this->objRaza = razaBaseTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
             $this->defineView('index', 'raza', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

@@ -440,21 +440,21 @@ namespace mvc\model\table {
                 
                 if($where !== null){
                     foreach ($where as $field => $value) {
-//                        if (is_array($value)) {
-//                            if ($flag === false) {
-//                                $sql = $sql . ' WHERE ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
-//                                $flag = true;
-//                            } else {
-//                                $sql = $sql . ' AND ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
-//                            }
-//                        } else {
-//                            if ($flag === false) {
+                        if (is_array($value)) {
+                            if ($flag === false) {
+                                $sql = $sql . ' WHERE ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
+                                $flag = true;
+                            } else {
+                                $sql = $sql . ' AND ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
+                            }
+                        } else {
+                            if ($flag === false) {
                                 $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
                                 $flag = true;
-//                            } else {
-//                                $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
-//                            }
-//                        }
+                            } else {
+                                $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                            }
+                        }
                     }
                 }
                 

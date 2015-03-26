@@ -71,18 +71,16 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 );
                 animalTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'animal'));
-                log::register(i18n::__('create'), '1', animalTableClass::getNameTable());
+                log::register(i18n::__('create'), animalTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexAnimal');
             } else {
+                log::register(i18n::__('create'), animalTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

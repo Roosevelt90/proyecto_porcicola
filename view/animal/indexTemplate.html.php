@@ -27,11 +27,14 @@ use mvc\view\viewClass as view ?>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
         <div class="row">
-            <div class="col-xs-4-offset-4 nuevo">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class="btn btn-success btn-xs">Reporte</a>
-                <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active">Buscar</a>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs">Nuevo</a>
-                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
+            <div class="col-xs-3 text-center">
+                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>
+                <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"><?php echo i18n::__('deleteFilter') ?></a>  
+            </div>
+                <div class="col-xs-4-offset-2 nuevo">
+                    <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+                    <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
             </div>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -169,6 +172,7 @@ use mvc\view\viewClass as view ?>
                             </th>
                             <th>
                                 <select name="filter[genero]">
+                                    <option>...</option>
                                     <?php foreach ($objGenero as $key): ?>
                                         <option value="<?php echo $key->id ?>">
                                             <?php echo $key->nombre_genero ?>
@@ -183,6 +187,7 @@ use mvc\view\viewClass as view ?>
                             </th>
                             <th>
                                 <select name="filter[lote]">
+                                    <option>...</option>
                                     <?php foreach ($objLote as $key): ?>
                                         <option value="<?php echo $key->id ?>">
                                             <?php echo $key->nombre_lote ?>
@@ -197,6 +202,7 @@ use mvc\view\viewClass as view ?>
                             </th>
                             <th>
                                 <select name="filter[raza]">
+                                    <option>... </option>
                                     <?php foreach ($objRaza as $key): ?>
                                         <option value="<?php echo $key->id ?>">
                                             <?php echo $key->nombre_raza ?>

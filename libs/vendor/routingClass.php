@@ -42,10 +42,10 @@ namespace mvc\routing {
     public function validateRouting($module, $action = null) {
       $yamlRouting = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/routing.yml', 'routingYaml');
       if (preg_match('/^@\w+/', $module) === 1 and $action === null) {
-        if (!isset($yamlRouting[$module])) {
-          throw new Exception('La ruta "' . $module . '" no está definida');
+        if (!isset($yamlRouting[substr($module, 1)])) {
+          throw new \Exception('La ruta "' . $module . '" no está definida');
         } else {
-          $answer = $yamlRouting[$module];
+          $answer = $yamlRouting[substr($module, 1)];
         }
       } else {
         $flag = true;
@@ -57,7 +57,7 @@ namespace mvc\routing {
           }
         }
         if ($flag === true) {
-          throw new Exception('El módulo "' . $module . '" y acción "' . $action . '"no está definido');
+          throw new \Exception('El módulo "' . $module . '" y acción "' . $action . '"no está definido');
         }
       }
       return $answer;
@@ -73,7 +73,7 @@ namespace mvc\routing {
      * @param string|array $action [optional]
      */
     public function forward($module, $action = null) {
-      if (preg_match('/^@/', $module) === 1) {
+      if (preg_match('/^@\w+/', $module) === 1) {
         $routing = $this->validateRouting($module);
         $module = $routing['param']['module'];
         $action = $routing['param']['action'];
@@ -108,7 +108,7 @@ namespace mvc\routing {
      * @param array $variables [optional]
      */
     public function getUrlWeb($module, $action = null, $variables = null) {
-      if (preg_match('/(^\@)(\w+)/', $module) === 1) {
+      if (preg_match('/^@\w+/', $module) === 1) {
         $routing = $this->validateRouting($module);
         $module = $routing['param']['module'];
         $variables = $this->genVariables($action);
@@ -131,8 +131,12 @@ namespace mvc\routing {
      * @param array $variables [optional]
      */
     public function redirect($module, $action = null, $variables = null) {
-      if (preg_match('/(^\@)(\w+)/', $module) === 1 and $action === null) {
-        header('Location: ' . $this->getUrlWeb($module, $action));
+      if (preg_match('/^@\w+/', $module) === 1 and $action === null) {
+        $routing = $this->validateRouting($module);
+        $module = $routing['param']['module'];
+        $variables = $this->genVariables($action);
+        $action = $routing['param']['action'];
+        header('Location: ' . $this->getUrlWeb($module, $action, $variables));
       } else {
         header('Location: ' . $this->getUrlWeb($module, $action, $variables));
       }

@@ -1,4 +1,4 @@
-Soho Framework v1.0.4
+Soho Framework v1.0.10
 =============
 
 Implementación MVC para los aprendices del SENA

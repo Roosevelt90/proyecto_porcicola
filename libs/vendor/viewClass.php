@@ -2,20 +2,20 @@
 
 namespace mvc\view {
 
-    use mvc\config\configClass;
-    use mvc\session\sessionClass;
-    use mvc\cache\cacheManagerClass;
+  use mvc\config\configClass;
+  use mvc\session\sessionClass;
+  use mvc\cache\cacheManagerClass;
 
-    /**
-     * Description of viewClass - vyo͞o
-     *
-     * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
-     */
-    class viewClass {
+  /**
+   * Description of viewClass - vyo͞o
+   *
+   * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+   */
+  class viewClass {
 
-        static public function includeHandlerMessage() {
-            include_once configClass::getPathAbsolute() . 'libs/vendor/view/handlerMessage.php';
-        }
+    static public function includeHandlerMessage() {
+      include_once configClass::getPathAbsolute() . 'libs/vendor/view/handlerMessage.php';
+    }
 
     static public function getMessageError($key) {
       include configClass::getPathAbsolute() . 'libs/vendor/view/messageError.php';
@@ -53,48 +53,48 @@ namespace mvc\view {
       return $metas;
     }
 
-        static public function genStylesheet() {
-            $module = sessionClass::getInstance()->getModule();
-            $action = sessionClass::getInstance()->getAction();
-            $stylesheet = '';
-            $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
-            foreach ($includes['all']['stylesheet'] as $include) {
-                $stylesheet .= '<link rel="stylesheet" href="' . configClass::getUrlBase() . 'css/' . $include . '">';
-            }
-            if (isset($includes[$module][$action]['stylesheet'])) {
-                foreach ($includes[$module][$action]['stylesheet'] as $include) {
-                    $stylesheet .= '<link rel="stylesheet" href="' . configClass::getUrlBase() . 'css/' . $include . '">';
-                }
-            }
-            return $stylesheet;
+    static public function genStylesheet() {
+      $module = sessionClass::getInstance()->getModule();
+      $action = sessionClass::getInstance()->getAction();
+      $stylesheet = '';
+      $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
+      foreach ($includes['all']['stylesheet'] as $include) {
+        $stylesheet .= '<link rel="stylesheet" href="' . configClass::getUrlBase() . 'css/' . $include . '">';
+      }
+      if (isset($includes[$module][$action]['stylesheet'])) {
+        foreach ($includes[$module][$action]['stylesheet'] as $include) {
+          $stylesheet .= '<link rel="stylesheet" href="' . configClass::getUrlBase() . 'css/' . $include . '">';
         }
+      }
+      return $stylesheet;
+    }
 
-        static public function genJavascript() {
-            $module = sessionClass::getInstance()->getModule();
-            $action = sessionClass::getInstance()->getAction();
-            $javascript = '';
-            $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
-            foreach ($includes['all']['javascript'] as $include) {
-                $javascript .= '<script src="' . configClass::getUrlBase() . 'js/' . $include . '"></script>';
-            }
-            if (isset($includes[$module][$action]['javascript'])) {
-                foreach ($includes[$module][$action]['javascript'] as $include) {
-                    $javascript .= '<script src="' . configClass::getUrlBase() . 'js/' . $include . '"></script>';
-                }
-            }
-            return $javascript;
+    static public function genJavascript() {
+      $module = sessionClass::getInstance()->getModule();
+      $action = sessionClass::getInstance()->getAction();
+      $javascript = '';
+      $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
+      foreach ($includes['all']['javascript'] as $include) {
+        $javascript .= '<script src="' . configClass::getUrlBase() . 'js/' . $include . '"></script>';
+      }
+      if (isset($includes[$module][$action]['javascript'])) {
+        foreach ($includes[$module][$action]['javascript'] as $include) {
+          $javascript .= '<script src="' . configClass::getUrlBase() . 'js/' . $include . '"></script>';
         }
+      }
+      return $javascript;
+    }
 
-        /**
-         * Funcion estatica publica que incluye un favicon en las vistas del sistema
-         * @author Leonardo Betancourt Caicedo <leobetacai@gmail.com>
-         * @return string
-         */
-        static public function genFavicon() {
-            $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
-            $favicon = '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" type="image/x-icon">';
-            return $favicon;
-        }
+    /**
+     * Funcion estatica publica que incluye un favicon en las vistas del sistema
+     * @author Leonardo Betancourt Caicedo <leobetacai@gmail.com>
+     * @return string
+     */
+    static public function genFavicon() {
+      $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
+      $favicon = '<link rel="icon" href="' . configClass::getUrlBase() . 'img/' . $includes['all']['favicon'] . '" type="image/x-icon">';
+      return $favicon;
+    }
 
     /**
      * Funcion diseñada para integrar un titulo a cada vista de el sistema de el portal
@@ -163,6 +163,6 @@ namespace mvc\view {
       }
     }
 
-    }
+  }
 
 }

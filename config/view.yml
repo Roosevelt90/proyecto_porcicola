@@ -1,9 +1,10 @@
 all:
   favicon: favicon.ico
-  title: Titulo de la pagina general
+  title: Granja Porcicola
 
   meta:
     - charset="UTF-8"
+    - http-equiv="X-UA-Compatible" content="IE=edge"
   javascript:
     - jquery-1.11.1.min.js
     - index.js
@@ -86,3 +87,166 @@ animal:
     title: Modificar un lote
     stylesheet:
       - main.css
+      
+empleado:
+  indexEmpleado:
+    title: empleados
+    stylesheet:
+      - main.css
+  insertEmpleado:
+    title: Registro de un nuevo empleado
+    stylesheet:
+      - main.css
+  
+  editEmpleado:
+    title: Modificar empleado
+    stylesheet:
+      - main.css
+  defaultEmpleado:
+  index:
+    stylesheet:
+      - main.css
+      
+  indexCargo:
+    title: cargo
+    stylesheet:
+      - main.css
+  insertCargo:
+    title: Registro de un nuevo cargo
+    stylesheet:
+      - main.css
+  
+  editCargo:
+    title: Modificar Cargo
+    stylesheet:
+      - main.css
+  defaultCargo:
+  index:
+    stylesheet:
+      - main.css
+      
+  indexVacuna:
+    title: vacuna
+    stylesheet:
+      - main.css
+  insertVacuna:
+    title: Registro de un nueva Vacuna
+    stylesheet:
+      - main.css
+  
+  editVacuna:
+    title: Modificar Vacuna
+    stylesheet:
+      - main.css
+  defaultVacuna:
+  index:
+    stylesheet:
+      - main.css
+   
+dpVenta:
+  index:
+    title: Gestion de facturas
+    stylesheet:
+      - main.css
+  insert:
+    title: Registro de un nueva factura
+    stylesheet:
+      - main.css
+  edit:
+    title: Modificar una factura
+    stylesheet:
+      - main.css
+
+pVenta:
+  index:
+    title: Gestion de facturas de venta
+    stylesheet:
+      - main.css
+  insert:
+    title: Registro de una nueva factura de venta
+    stylesheet:
+      - main.css
+  edit:
+    title: Modificar un factura de venta
+    stylesheet:
+      - main.css
+
+vacunacion:
+  indexVacunacion:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  insertVacunacion:
+    tittle: Ingresar un registro
+    stylesheet:
+      - main.css    
+  createVacunacion:
+    tittle: Ingresar un registro
+    stylesheet:
+      - main.css    
+  editVacunacion:
+    tittle: Modificar un registro
+    stylesheet:
+      - main.css    
+  updateVacunacion:
+    tittle: Modificar un registro
+    stylesheet:
+      - main.css    
+  viewVacunacion:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  indexDetalleVacunacion:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  insertDetalleVacunacion:
+    tittle: Ingresar un detalle
+    stylesheet:
+      - main.css    
+  createDetalleVacunacion:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  editDetalleVacunacion:
+    tittle: Nodificar un registro
+    stylesheet:
+      - main.css    
+  updateDetalleVacunacion:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  viewDetalleVacunacion:
+    tittle: Vista de los registros
+    stylesheet:
+      - main.css    
+  indexVacuna:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  insertVacuna:
+    tittle: Ingresar un detalle
+    stylesheet:
+      - main.css    
+  createVacuna:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  editVacuna:
+    tittle: Nodificar un registro
+    stylesheet:
+      - main.css    
+  updateVacuna:
+    tittle: Registros de vacunacion
+    stylesheet:
+      - main.css    
+  viewVacuna:
+    tittle: Vista de los registros
+    stylesheet:
+      - main.css    
+
+factura:
+  indexFacturaCompra:
+    tittle: Registros de compras
+    stylesheet:
+      - main.css    

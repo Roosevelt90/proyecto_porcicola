@@ -8,15 +8,14 @@ class vacunaBaseTableClass extends tableBaseClass {
             $nombre_vacuna,
             $lote_vacuna,
             $fecha_fabricacion_vacuna,
-            $fecha_vencimiento_vacuna,
-            $dosis_vacuna;
+            $fecha_vencimiento_vacuna;
 
     const ID = 'id';
     const NOMBRE_VACUNA = 'nombre_vacuna';
     const LOTE_VACUNA = 'lote_vacuna';
     const FECHA_FABRICACION = 'fecha_fabricacion_vacuna';
     const FECHA_VENCIMIENTO = 'fecha_vencimiento_vacuna';
-    const DOSIS = 'dosis_vacuna';
+    const VALOR = 'valor_vacuna';
 
     function getId() {
         return $this->id;
@@ -38,10 +37,6 @@ class vacunaBaseTableClass extends tableBaseClass {
         return $this->fecha_vencimiento_vacuna;
     }
 
-    function getDosis_vacuna() {
-        return $this->dosis_vacuna;
-    }
-
     function setId($id) {
         $this->id = $id;
     }
@@ -60,10 +55,6 @@ class vacunaBaseTableClass extends tableBaseClass {
 
     function setFecha_vencimiento_vacuna($fecha_vencimiento_vacuna) {
         $this->fecha_vencimiento_vacuna = $fecha_vencimiento_vacuna;
-    }
-
-    function setDosis_vacuna($dosis_vacuna) {
-        $this->dosis_vacuna = $dosis_vacuna;
     }
 
     /**
@@ -146,6 +137,22 @@ class vacunaBaseTableClass extends tableBaseClass {
      */
     public static function update($ids, $data, $table = null) {
         return parent::update($ids, $data, self::getNameTable());
+    }
+
+    /* Método para contar todos los registros de una tabla
+     *
+     * @param array $fields Array con los nombres de los campos a solicitar
+     * @param boolean $deletedLogical [optional] Indicación de borrado lógico
+     * o borrado físico
+     * @param integer $lines variable con la cantidad de de campos que devuelve
+     * el sistema
+     * @return mixed una instancia de una clase estandar, la cual tendrá como
+     * variables publica cantidad de paginas para visualizar en el paginador.
+     * instancia de \PDOException en caso de fracaso.
+     */
+
+    public static function getAllCount($fields, $deletedLogical = true, $lines = null, $table = null) {
+        return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
     }
 
 }

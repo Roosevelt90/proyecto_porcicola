@@ -104,15 +104,15 @@ class ciudadBaseTableClass extends tableBaseClass {
      * variables publica los nombres de las columnas de la consulta o una
      * instancia de \PDOException en caso de fracaso.
      */
-    public static function getAll($fields, $fields2, $fields3 = null, $fJoin1 = null, $fJoin2= null, $fJoin13 = null, $fJoin4 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
-        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), null, $fields, $fields2, null, $fJoin1, $fJoin2, null, null, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
-    }
+//    public static function getAll($fields, $fields2, $fields3 = null, $fJoin1 = null, $fJoin2= null, $fJoin13 = null, $fJoin4 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+//        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), null, $fields, $fields2, null, $fJoin1, $fJoin2, null, null, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+//    }
+//    
+//    public static function getAll2($fields2, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null){
+//        return parent::getAll(self::getNameTable2(), $fields2, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+//    }
     
-    public static function getAll2($fields2, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null){
-        return parent::getAll(self::getNameTable2(), $fields2, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
-    }
-    
-    public static function getAll3($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null){
+    public static function getAll($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null){
         return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
 

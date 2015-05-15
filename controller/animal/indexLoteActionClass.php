@@ -30,7 +30,7 @@ class indexLoteActionClass extends controllerClass implements controllerActionIn
             );
             $lines = config::getRowGrid();
 
-            $this->cntPages = loteTableClass::getAllCount($f, false, $lines);
+            $this->cntPages = loteTableClass::getAllCount($f, true, $lines);
             $this->page = request::getInstance()->getGet('page');
             $this->objLote = loteTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
             $this->defineView('index', 'lote', session::getInstance()->getFormatOutput());

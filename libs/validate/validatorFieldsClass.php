@@ -24,6 +24,7 @@ namespace mvc\validatorFields {
 
         public function validatorCharactersSpecial($fields) {
             return (ereg("^[a-zA-Z0-9]{3,20}$", $fields) ? false : true );
+            
         }
 
         public function validateFieldsEmpty($datos) {

@@ -12,7 +12,8 @@ mvcBasicPackage:
   - libs/vendor/interfaces/tableInterface.php
   # - libs/vendor/autoLoadClass.php
   # - libs/vendor/cacheManagerClass.php
-  # - libs/vendor/camelCaseClass.php
+  - libs/vendor/camelCaseClass.php
+  - libs/vendor/componentClass.php
   # - libs/vendor/configClass.php
   - libs/vendor/controllerClass.php
   - libs/vendor/dispatchClass.php
@@ -23,5 +24,6 @@ mvcBasicPackage:
   - libs/vendor/routingClass.php
   - libs/vendor/sessionClass.php
   - libs/vendor/tableBaseClass.php
+  - libs/vendor/validatorClass.php
   - libs/vendor/viewClass.php
   # - libs/yaml/sfYaml.php

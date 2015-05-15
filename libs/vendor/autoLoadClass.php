@@ -5,6 +5,7 @@ namespace mvc\autoload {
   include_once __DIR__ . '/interfaces/sessionInterface.php';
   include_once __DIR__ . '/sessionClass.php';
   include_once __DIR__ . '/configClass.php';
+  include_once __DIR__ . '/../../config/myConfigClass.php';
   include_once __DIR__ . '/../../config/config.php';
   include_once __DIR__ . '/../yaml/sfYaml.php';
   include_once __DIR__ . '/cacheManagerClass.php';

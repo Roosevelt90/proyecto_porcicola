@@ -1,7 +1,7 @@
 <?php
 
 use mvc\model\modelClass as model;
-use mvc\config\configClass as config;
+use mvc\config\myConfigClass as config;
 
 /**
  * Description of credencialTableClass
@@ -9,5 +9,5 @@ use mvc\config\configClass as config;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class credencialTableClass extends credencialBaseTableClass {
-  
+
 }

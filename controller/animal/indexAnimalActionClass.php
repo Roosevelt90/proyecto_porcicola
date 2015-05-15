@@ -27,18 +27,18 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                     $peso = validate::getInstance()->validateCharactersNumber($filter['peso']);
                     if ($peso == true) {
                         throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
-                    }
+                    } //close if
                     $where[animalTableClass::PESO] = $filter['edad'];
-                }
+                } //close if
 
 
                 if (isset($filter['edad']) and $filter['edad'] !== null and $filter['edad'] !== '') {
                     $edad = validate::getInstance()->validateCharactersNumber($filter['edad']);
                     if ($edad == false) {
                         throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
-                    }
+                    } //close if
                     $where[animalTableClass::EDAD] = $filter['edad'];
-                }
+                } //close if
                 
                 if (isset($filter['fecha_inicial']) and isset($filter['fecha_fin']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '') {
 
@@ -110,11 +110,11 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             );
             $lines = config::getRowGrid();
 
-            $this->cntPages = animalTableClass::getAllCount($f, false, $lines, $where);
+            $this->cntPages = animalTableClass::getAllCount($f, true, $lines, $where);
             $this->page = request::getInstance()->getGet('page');
-            $this->objLote = loteTableClass::getAll($fieldsLote, true);
+            $this->objLote = loteTableClass::getAll($fieldsLote, false);
             $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
-            $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
+            $this->objRaza = razaTableClass::getAll($fieldsRaza, false);
             $this->objAnimal = animalTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->defineView('index', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

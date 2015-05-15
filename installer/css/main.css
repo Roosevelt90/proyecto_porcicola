@@ -1,0 +1,1110 @@
+body{
+    /*    width: 1024px;
+        height: 800px;*/
+    /*    background-repeat: no-repeat;
+        background-size: 100% ;*/
+    /*background:  no-repeat fixed center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width:100%;
+    height:auto;
+    background-image: url("../img/grilla.png");
+}
+
+.logout{
+    background-repeat: no-repeat;
+    background-position:right;
+    background-image: url("../img/logout.jpg") ;
+}
+
+.btn-selected{
+    background-color: #e0e0e0;
+    background-image: none;
+}
+
+.saltosLogin{
+    display: none;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.titulo{
+    background-color: #5ab644;
+    text-align: center;
+}
+.nuevo{
+    // background-color: #6666ff;
+    width: 400px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0 auto;
+    text-align: center;
+}
+footer{
+    width: 400px;
+    height: 50px;
+    //background-color: #6666ff;
+    margin: 240px auto;
+    text-align: center;
+}
+
+.shfDevelopmentBar {
+    background-color: rgb(61,35,0);
+    position: fixed;
+    right: 0px;
+    color: #ffffff;
+    /*width: 500px;*/
+    z-index: 2147483647;
+    padding: 3px 3px 3px 5px;
+    border-radius: 0px 0px 0px 5px;
+    font-size: 0.8em;
+    text-shadow: 1px 1px 2px rgba(20, 20, 20, 1);
+    top: 0px;
+}
+
+.mvcPointer {
+    cursor: pointer;
+}
+
+/*BOTON DESPLEGABLE*/
+
+/*MODULO USUARIOS*/
+.menuDesplegable {
+    margin-left: 50px;
+    margin-bottom: 7px;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegable, .menuDesplegable * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegable input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegable > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegable > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegable ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegable li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegable ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegable ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegable input[type="checkbox"]:checked ~ label, .menuDesplegable ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegable > label:hover, .menuDesplegable > label:hover::after, .menuDesplegable input[type="checkbox"]:checked ~ label, .menuDesplegable input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegable input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegable li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegable li a:hover {
+    background: black;
+    color: white;
+}
+
+
+/*MODULO ANIMAL*/
+.menuDesplegableAnimal {
+    margin-left: 50px;
+    position: relative;
+    margin-bottom: 7px;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegableAnimal, .menuDesplegableAnimal * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegableAnimal input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegableAnimal > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegableAnimal > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegableAnimal ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegableAnimal li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegableAnimal ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegableAnimal ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegableAnimal input[type="checkbox"]:checked ~ label, .menuDesplegableAnimal ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegableAnimal > label:hover, .menuDesplegableAnimal > label:hover::after, .menuDesplegableAnimal input[type="checkbox"]:checked ~ label, .menuDesplegableAnimal input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegableAnimal input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegableAnimal li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegableAnimal li a:hover {
+    background: black;
+    color: white;
+}
+
+
+/*MODULO INSUMO*/
+.menuDesplegableInsumo {
+    margin-left: 50px;
+    position: relative;
+    margin-bottom: 7px;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegableInsumo, .menuDesplegableInsumo * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegableInsumo input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegableInsumo > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegableInsumo > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegableInsumo ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegableInsumo li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegableInsumo ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegableInsumo ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegableInsumo input[type="checkbox"]:checked ~ label, .menuDesplegableInsumo ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegableInsumo > label:hover, .menuDesplegableInsumo > label:hover::after, .menuDesplegableInsumo input[type="checkbox"]:checked ~ label, .menuDesplegableInsumo input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegableInsumo input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegableInsumo li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegableInsumo li a:hover {
+    background: black;
+    color: white;
+}
+
+
+/*MODULO LOCALIDAD*/
+.menuDesplegableLocalidad {
+    margin-left: 50px;
+    margin-bottom: 7px;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegableLocalidad, .menuDesplegableLocalidad * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegableLocalidad input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegableLocalidad > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegableLocalidad > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegableLocalidad ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegableLocalidad li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegableLocalidad ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegableLocalidad ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegableLocalidad input[type="checkbox"]:checked ~ label, .menuDesplegableLocalidad ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegableLocalidad > label:hover, .menuDesplegableLocalidad > label:hover::after, .menuDesplegableLocalidad input[type="checkbox"]:checked ~ label, .menuDesplegableLocalidad input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegableLocalidad input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegableLocalidad li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegableLocalidad li a:hover {
+    background: black;
+    color: white;
+}
+
+
+/*MODULO EMPLEADO*/
+.menuDesplegableEmpleado {
+    margin-left: 50px;
+    margin-bottom: 7px;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+
+.menuDesplegableEmpleado, .menuDesplegableEmpleado * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegableEmpleado input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegableEmpleado > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegableEmpleado > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegableEmpleado ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegableEmpleado li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegableEmpleado ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegableEmpleado ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegableEmpleado input[type="checkbox"]:checked ~ label, .menuDesplegableEmpleado ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360Âº */
+}
+
+.menuDesplegableEmpleado > label:hover, .menuDesplegableEmpleado > label:hover::after, .menuDesplegableEmpleado input[type="checkbox"]:checked ~ label, .menuDesplegableEmpleado input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegableEmpleado input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeÃ±a animaciÃ³n */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegableEmpleado li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegableEmpleado li a:hover {
+    background: black;
+    color: white;
+}
+
+
+.menuDesplegabledpVenta li a:hover {
+    background: black;
+    color: white;
+}
+/*MODULO FACTURA*/
+.menuDesplegabledpVenta {
+    margin-left: 50px;
+    margin-bottom: 7px;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegabledpVenta, .menuDesplegabledpVenta * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegabledpVenta input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegabledpVenta > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegabledpVenta > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegabledpVenta ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegabledpVenta li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegabledpVenta ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegabledpVenta ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegabledpVenta input[type="checkbox"]:checked ~ label, .menuDesplegabledpVenta ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegabledpVenta > label:hover, .menuDesplegabledpVenta > label:hover::after, .menuDesplegabledpVenta input[type="checkbox"]:checked ~ label, .menuDesplegabledpVenta input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegabledpVenta input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegabledpVenta li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+
+
+/*MODULO VACUNACION*/
+.menuDesplegableVacunacion {
+    margin-left: 50px;
+    margin-bottom: 7px;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegableVacunacion, .menuDesplegableVacunacion * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegableVacunacion input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegableVacunacion > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegableVacunacion > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegableVacunacion ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegableVacunacion li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegableVacunacion ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegableVacunacion ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegableVacunacion input[type="checkbox"]:checked ~ label, .menuDesplegableVacunacion ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegableVacunacion > label:hover, .menuDesplegableVacunacion > label:hover::after, .menuDesplegableVacunacion input[type="checkbox"]:checked ~ label, .menuDesplegableVacunacion input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegableVacunacion input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegableVacunacion li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegableVacunacion li a:hover {
+    background: black;
+    color: white;
+}

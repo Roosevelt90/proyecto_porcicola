@@ -5,7 +5,7 @@ namespace mvc\camelCase {
   /**
    * Description of camelCaseClass
    *
-   * @author julianlasso
+   * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
    */
   class camelCaseClass {
 

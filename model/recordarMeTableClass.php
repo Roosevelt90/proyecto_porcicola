@@ -1,7 +1,7 @@
 <?php
 
 use mvc\model\modelClass as model;
-use mvc\config\configClass as config;
+use mvc\config\myConfigClass as config;
 
 /**
  * Description of recordarMeTableClass

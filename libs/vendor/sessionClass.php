@@ -123,9 +123,14 @@ namespace mvc\session {
      *
      * @return array from Exception|PDOException
      */
-    public function getError() {
+    public function getError($key = null) {
       $answer = $_SESSION['mvcError'];
-      unset($_SESSION['mvcError']);
+      if ($key !== null) {
+        $answer = $answer[$key];
+        unset($_SESSION['mvcError'][$key]);
+      } else {
+        unset($_SESSION['mvcError']);
+      }
       return $answer;
     }
 
@@ -163,8 +168,12 @@ namespace mvc\session {
      *
      * @param Exception|PDOException $error
      */
-    public function setError($error) {
-      $_SESSION['mvcError'][] = $error;
+    public function setError($error, $key = null) {
+      if ($key !== null) {
+        $_SESSION['mvcError'][$key] = $error;
+      } else {
+        $_SESSION['mvcError'][] = $error;
+      }
     }
 
     /**
@@ -219,8 +228,13 @@ namespace mvc\session {
       $this->setAttribute('mvcUserName', $name_user);
     }
 
-    public function hasError() {
-      return (isset($_SESSION['mvcError']) and count($_SESSION['mvcError']) > 0) ? true : false;
+    public function hasError($key = null) {
+      if ($key !== null) {
+        $rsp = (isset($_SESSION['mvcError'][$key])) ? true : false;
+      } else {
+        $rsp = (isset($_SESSION['mvcError']) and count($_SESSION['mvcError']) > 0) ? true : false;
+      }
+      return $rsp;
     }
 
     public function hasInformation() {
@@ -278,11 +292,11 @@ namespace mvc\session {
     public function hasDefaultCulture() {
       return $this->hasAttribute('mvcDefaultCulture');
     }
-    
+
     public function setDefaultCulture($default_culture) {
       $this->setAttribute('mvcDefaultCulture', $default_culture);
     }
-    
+
     public function getDefaultCulture() {
       return $this->getAttribute('mvcDefaultCulture');
     }

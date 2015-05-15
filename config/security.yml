@@ -202,3 +202,149 @@ animal:
     credentials:
       - [admin]
       
+empleado:
+  indexEmpleado:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertEmpleado:
+    security: true
+    credentials:
+      - [admin]
+  createEmpleado:
+    security: true
+    credentials:
+      - [admin]
+  editEmpleado:
+    security: true
+    credentials:
+      - [admin]
+  updateEmpleado:
+    security: true
+    credentials:
+      - [admin]
+  deleteEmpleado:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectEmpleado:
+    security: true
+    credentials:
+      - [admin]
+      
+vacunacion:
+  indexVacunacion:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  createVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  editVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  updateVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  reporteVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  traductorVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  viewVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  reporteDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  traductorDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  indexDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  createDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  editDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  updateDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]  
+  indexVacuna:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertVacuna:
+    security: true
+    credentials:
+      - [admin]
+  createVacuna:
+    security: true
+    credentials:
+      - [admin]
+  editVacuna:
+    security: true
+    credentials:
+      - [admin]
+  updateVacuna:
+    security: true
+    credentials:
+      - [admin]
+  deleteVacuna:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectVacuna:
+    security: true
+    credentials:
+      - [admin]
+      
+      
+      

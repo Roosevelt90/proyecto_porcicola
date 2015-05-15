@@ -37,6 +37,7 @@ shfSecurity_index:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - libs/date/dateClass.php
 
 install_index:
   url:    /install
@@ -65,6 +66,7 @@ shfSecurity_login:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+   
 
 shfSecurity_logout:
   url:    /logout
@@ -190,6 +192,10 @@ default_deleteSelect:
     - model/usuarioTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    
+   
+
+       
     
 depto_reporte:
   url:    /usuario/reporte
@@ -789,6 +795,7 @@ animal_reporte:
   param:  { module: animal, action: reportAnimal, format: pdf }
   load:
     - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldsClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
     - model/base/razaBaseTableClass.php
@@ -797,11 +804,762 @@ animal_reporte:
     - model/loteTableClass.php
     - model/base/generoBaseTableClass.php
     - model/generoTableClass.php
+    
+#    ----cargo---
+cargo_index:
+  url:  /cargo/index
+  param: { module: empleado, action: indexCargo, format: html }
+  load:
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    
+
+cargo_insert:
+  url:    /cargo/insertar
+  param:  { module: empleado, action: insertCargo, format: html }
+  load:
+      - model/base/cargoBaseTableClass.php
+      - model/cargoTableClass.php
+    
+    
+cargo_create:
+  url:    /cargo/crear
+  param:  { module: empleado, action: createCargo, format: html }
+  load:
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    
+cargo_edit:
+  url:    /cargo/editar
+  param:  { module: empleado, action: editCargo, format: html }
+  load:
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    
+cargo_update:
+  url:    /cargo/actualizar
+  param:  { module: empleado, action: updateCargo, format: html }
+  load:
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    
+    
+cargo_delete:
+  url:    /cargo/eliminar
+  param:  { module: empleado, action: deleteCargo, format: json }
+  load:
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    
+cargo_deleteSelect:
+  url:    /cargo/eliminarSeleccion
+  param:  { module: empleado, action: deleteSelectCargo, format: html }
+  load:
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    
+
+    
+    ##----------------EMPLEADO------------##
+empleado_index:
+  url: /empleado/index
+  param: { module: empleado, action: indexEmpleado, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+       
+empleado_deleteSelect:
+  url:    /empleado/eliminarSeleccion
+  param:  { module: empleado, action: deleteSelectEmpleado, format: json }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
+     
+empleado_insert:
+  url:    /empleado/insertar
+  param:  { module: empleado, action: insertEmpleado, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
+    
+empleado_create:
+  url:    /empleado/crear
+  param:  { module: empleado, action: createEmpleado, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    
+empleado_edit:
+  url:    /empleado/editar
+  param:  { module: empleado, action: editEmpleado, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+animal_delete_filter:
+  url:  /borrar_filtro_animal
+  param:    { module: animal, action: deleteFiltersAnimal, format: html }
+
+empleado_update:
+  url:    /empleado/actualizar
+  param:  { module: empleado, action: updateEmpleado, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
+
+empleado_delete:
+  url:    /empleado/eliminar
+  param:  { module: empleado, action: deleteEmpleado, format: json }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
+    
+traducion:
+    url: /traduccion
+    param: { module: shfSecurity, action: TraductorShfSecurity, format: html}
+    load:
+        
+        
+empleado_deleteFilters:
+    url: /borrar_filtros
+    param: { module: empleado, action: deleteFiltersEmpleado, format: json}
+    
+empleado_reporte:
+    url: /empleado/reporte
+    param: { module: empleado, action: reportEmpleado, format: pdf }
+    load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    
+
+empleado_delete_filters_empleado:
+  url:    /borrar_filtros
+  param:  { module: empleado, action: deleteFiltersEmpleado, format: html }
+    
+    
+
+empleado_deleteSelect:
+  url:    /empleado/eliminarSeleccion
+  param:  { module: empleado, action: deleteSelectEmpleado, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
 
-animal_delete_filters:
-  url:    /borrar_filtros
-  param:  { module: animal, action: deleteFiltersAnimal, format: html }
+
+#---------------------PROCESO_VENTA-------------------#
+
+dpVenta_index:
+  url:    /dpVenta/index
+  param:  { module: dpVenta, action: index, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+
+dpVenta_insert:
+  url:    /dpVenta/insertar
+  param:  { module: dpVenta, action: insert, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.phps.php
     
+dpVenta_create:
+  url:    /dpVenta/crear
+  param:  { module: dpVenta, action: create, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    
+dpVenta_edit:
+  url:    /dpVenta/editar
+  param:  { module: dpVenta, action: edit, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    
+    
+dpVenta_update:
+  url:    /dpVenta/actualizar
+  param:  { module: dpVenta, action: update, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    
+dpVenta_delete:
+  url:    /dpVenta/eliminar
+  param:  { module: dpVenta, action: delete, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    
+dpVenta_deleteSelect:
+  url:    /dpVenta/eliminarSeleccion
+  param:  { module: dpVenta, action: deleteSelect, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    
+dpVenta_reporte:
+  url:    /dpVenta/reporte
+  param:  { module: dpVenta, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.phps.php
+
+dpVenta_view:
+  url:    /pVenta/vista
+  param:  { module: pVenta, action: vista, format: html }
+  load:
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+  
+    
+#--------------CABEZERA FACTURA------------------#
+    
+pVenta_index:
+  url:    /pVenta/index
+  param:  { module: pVenta, action: index, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+
+pVenta_insert:
+  url:    /pVenta/insertar
+  param:  { module: pVenta, action: insert, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    
+pVenta_create:
+  url:    /pVenta/crear
+  param:  { module: pVenta, action: create, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php    
+    
+pVenta_edit:
+  url:    /pVenta/editar
+  param:  { module: pVenta, action: edit, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php
+    
+pVenta_update:
+  url:    /pVenta/actualizar
+  param:  { module: pVenta, action: update, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    - model/base/dpVentaBaseTableClass.php
+    - model/dpVentaTableClass.php  
+  
+pVenta_delete:
+  url:    /pVenta/eliminar
+  param:  { module: pVenta, action: delete, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    
+    
+pVenta_deleteSelect:
+  url:    /pVenta/eliminarSeleccion
+  param:  { module: pVenta, action: deleteSelect, format: html }
+  load:
+    - model/base/pVentaBaseTableClass.php
+    - model/pVentaTableClass.php
+    
+#---------------------------------------------------------------------------------
+vacunacion_index:
+  url:    /registroVacunas/index
+  param:  { module: vacunacion, action: indexVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+
+vacunacion_insert:
+  url:    /registroVacunas/insertar
+  param:  { module: vacunacion, action: insertVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+
+vacunacion_create:
+  url:    /registroVacunas/crear
+  param:  { module: vacunacion, action: createVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    
+vacunacion_edit:
+  url:    /registroVacunas/editar
+  param:  { module: vacunacion, action: editVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+
+vacunacion_update:
+  url:    /registroVacunas/actualizar
+  param:  { module: vacunacion, action: updateVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+vacunacion_delete:
+  url:    /registroVacunas/eliminar
+  param:  { module: vacunacion, action: deleteVacunacion, format: json }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+
+vacunacion_deleteSelect:
+  url:    /registroVacunas/eliminarSeleccion
+  param:  { module: vacunacion, action: deleteSelectVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+vacunacion_reporte:
+  url:    /registroVacunas/reporte
+  param:  { module: vacunacion, action: reportVacunacion, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+   
+detalleVacunacion_reporte:
+  url:    /detalleRegistroVacunas/reporte
+  param:  { module: vacunacion, action: reportDetalleVacunacion, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    
+vacunacion_deleteFiltersVacunacion:
+  url:     /borrar_filtros/vacunacion
+  param: { module: vacunacion, action: deleteFiltersVacunacion, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+vacunacion_traductor:
+  url:     /traductor/vacunacion
+  param: { module: vacunacion, action: traductorVacunacion, format: html }
+  load:
+
+vacunacion_view:
+  url:    /vacunacion/vista
+  param:  { module: vacunacion, action: viewVacunacion, format: html }
+  load:
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php   
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+
+vacunacion_deleteFiltersDetalleVacunacion:
+  url:     /borrar_filtros/detalleVacunacion
+  param: { module: vacunacion, action: deleteFilterDetalle, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+  
+    
+detalleVacunacion_index:
+  url:    /detalleVacunacion/index
+  param:  { module: vacunacion, action: indexDetalleVacunacion, format: html }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+
+detalleVacunacion_insert:
+  url:    /detalleRegistroVacunas/insertar
+  param:  { module: vacunacion, action: insertDetalleVacunacion, format: html }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+     
+
+detalleVacunacion_create:
+  url:    /detalleRegistroVacunas/crear
+  param:  { module: vacunacion, action: createDetalleVacunacion, format: html }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+
+detalleVacunacion_edit:
+  url:    /detalleRegistroVacunas/editar
+  param:  { module: vacunacion, action: editDetalleVacunacion, format: html }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+   
+
+detalleVacunacion_update:
+  url:    /detalleRegistroVacunas/actualizar
+  param:  { module: vacunacion, action: updateDetalleVacunacion, format: html }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+detalleVacunacion_delete:
+  url:    /detalleRegistroVacunas/eliminar
+  param:  { module: vacunacion, action: deleteDetalleVacunacion, format: json }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+detalleVacunacion_deleteSelect:
+  url:    /detalleRegistroVacunas/eliminarSeleccion
+  param:  { module: vacunacion, action: deleteSelectDetalleVacunacion, format: html }
+  load:
+    - model/base/detalleVacunacionBaseTableClass.php
+    - model/detalleVacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+    
+    
+#    ---------------Vacuna-------------
+vacuna_index:
+  url:  /vacuna/index
+  param: { module: vacunacion, action: indexVacuna, format: html }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    
+vacuna_insert:
+  url:    /vacuna/insertar
+  param:  { module: vacunacion, action: insertVacuna, format: html }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+vacuna_create:
+  url:    /vacuna/crear
+  param:  { module: vacunacion, action: createVacuna, format: html }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+vacuna_edit:
+  url:    /vacuna/editar
+  param:  { module: vacunacion, action: editVacuna, format: html }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+vacuna_update:
+  url:    /vacuna/actualizar
+  param:  { module: vacunacion, action: updateVacuna, format: html }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+vacuna_delete:
+  url:    /vacuna/eliminar
+  param:  { module: vacunacion, action: deleteVacuna, format: json }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+vacuna_deleteSelect:
+  url:    /vacuna/eliminarSeleccion
+  param:  { module: vacunacion, action: deleteSelectVacuna, format: html }
+  load:
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+vacuna_reporte:
+  url:    /vacunas/reporte
+  param:  { module: vacunacion, action: reportVacuna, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/vacunacionBaseTableClass.php
+    - model/vacunacionTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+   
+vacuna_deleteFiltersVacuna:
+  url:     /borrar_filtros/Vacuna
+  param: { module: vacunacion, action: deleteFilterVacuna, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+  
+  
+##------------FACTURA---------------------##
+
+proceso_compra:
+  url:      /proceso_compra
+  param:  { module: factura, action: indexFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+proceso_compra:_nuevo:
+  url:      /proceso_compra/nuevo_registro
+  param:  { module: factura, action: insertFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proceso_compra:_crear:
+  url:      /proceso_compra/crear
+  param:  { module: factura, action: createFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php

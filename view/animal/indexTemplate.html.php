@@ -28,8 +28,9 @@ use mvc\view\viewClass as view ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
         <div class="row">
             <div class="col-xs-3 text-center">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>
+                <!--<a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class=""></a>-->
                 <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+                <a href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"><?php echo i18n::__('deleteFilter') ?></a>  
             </div>
                 <div class="col-xs-4-offset-2 nuevo">
@@ -97,10 +98,11 @@ use mvc\view\viewClass as view ?>
         <nav>
             <ul class="pagination" id="slqPaginador">
                 <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
-                <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                <?php $count = 0 ?>
+                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                     <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
-                    <?php $count ++ ?>        
-                <?php endfor ?>
+                    <?php $count++ ?>        
+                <?php endfor; ?>
                 <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
             </ul>
         </nav>
@@ -218,6 +220,120 @@ use mvc\view\viewClass as view ?>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()">Buscar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- WINDOWS MODAL REPORTE -->
+<div class="modal fade" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Busqueda</h4>
+            </div>
+            <div class="modal-body">
+                <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>">
+                    <table class="table table-responsive ">    
+                        <tr>
+                            <th>  <?php echo i18n::__('peso_inicial', NULL, 'animal') ?>:</th>
+                            <th> 
+                                <input placeholder="<?php echo i18n::__('peso_inicial', NULL, 'animal') ?>" type="text" name="report[peso_inicial]" >
+                            </th>   
+                        </tr>
+                        <tr>
+                            <th>  <?php echo i18n::__('peso_fin', NULL, 'animal') ?>:</th>
+                            <th> 
+                                <input placeholder="<?php echo i18n::__('peso_fin', NULL, 'animal') ?>" type="text" name="report[peso_fin]" >
+                            </th>   
+                        </tr>
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('edad_inicial', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <input placeholder="<?php echo i18n::__('edad_inicial', NULL, 'animal') ?>" type="number" name="report[edad_inicial]" >
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('edad_fin', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <input placeholder="<?php echo i18n::__('edad_fin', NULL, 'animal') ?>" type="number" name="report[edad_fin]" >
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('fecha_inicial', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <input type="date" name="report[fecha_inicial]" >               
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('fecha_fin', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <input type="date" name="report[fecha_fin]" >               
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('genero', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <select name="report[genero]">
+                                    <option value="default">...</option>
+                                    <?php foreach ($objGenero as $key): ?>
+                                        <option value="<?php echo $key->id ?>">
+                                            <?php echo $key->nombre_genero ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('lote', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <select name="report[lote]">
+                                    <option value="default">...</option>
+                                    <?php foreach ($objLote as $key): ?>
+                                        <option value="<?php echo $key->id ?>">
+                                            <?php echo $key->nombre_lote ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <?php echo i18n::__('raza', null, 'animal') ?>:
+                            </th>
+                            <th>
+                                <select name="report[raza]">
+                                    <option value="default">... </option>
+                                    <?php foreach ($objRaza as $key): ?>
+                                        <option value="<?php echo $key->id ?>">
+                                            <?php echo $key->nombre_raza ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </th>
+                        </tr>
+                    </table>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="$('#reportForm').submit()">Buscar</button>
             </div>
         </div>
     </div>

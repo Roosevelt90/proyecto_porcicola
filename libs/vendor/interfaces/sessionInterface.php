@@ -55,11 +55,11 @@ namespace mvc\interfaces {
 
     public function setLoadFiles($load_files);
 
-    public function hasError();
+    public function hasError($key = null);
 
-    public function setError($error);
+    public function setError($error, $key = null);
 
-    public function getError();
+    public function getError($key = null);
 
     public function deleteErrorStack();
 

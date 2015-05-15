@@ -2,11 +2,43 @@
 culture:                  Español
 dictionary:
   default:
-    report:               Descargar reporte
+    Usuario y contraseña incorrectos:   Usuario y contraseña incorrectos
+    proveedor:            Nombre del proveedor
+    usuario:              Usuario
+    contraseña:           Contraseña
+    Recordar mis datos:   Recordar mis datos
+    Olvidastes tu contraseña?:  Olvidastes tu contraseña?
+    Identificacion:       Identificacion
+    Exit:                 Salir
+    lunes:                Lunes
+    martes:               Martes
+    miercoles:            Miercoles
+    jueves:               Jueves
+    viernes:              Viernes
+    sabado:               Sabado
+    domingo:              Domingo
+    enero:                Enero
+    febrero:              Febrero
+    marzo:                Marzo
+    abril:                Abril
+    mayo:                 Mayo 
+    junio:                Junio
+    julio:                Julio
+    agosto:               Agosto
+    septiembre:           Septiembre
+    octubre:              Octubre
+    noviembre:            Noviembre
+    diciembre:            Diciembre
+    Entrar:               Entrar
+    disponible_venta:     Disponible para la venta
+    reporte:              Reporte
     buscar:               Buscar
+    filterBy:             Buscar Por
     new:                  Nuevo registro
     deleteFilter:         Eliminar filtros
     user:                 Usuario
+    empleado:             Empleado
+    cargo:                Cargo
     dataUser:             Datos usuario
     credencial:           Credenciales
     userCredencial:       Asignacion de credencial
@@ -14,7 +46,10 @@ dictionary:
     city:                 Ciudad
     raza:                 Raza
     lote:                 Lote
+    localidad:            localidad
     insumo:               Insumo
+    tipoInsumo:           Tipo de insumo
+    cantidad:             Cantidad
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
@@ -30,9 +65,22 @@ dictionary:
     confirmDelete:        Desea eliminar el registro
     cancel:               Cancelar
     confirm:              Eliminar registro
+    animal:               Animal
+    name:                 Nombre
+    identification:       Id
+    eliminar filtros:     Eliminar filtros
+    borrar seleccion:     Eliminar Seleccion
+    factura:              Factura
+    pVenta:               Factura venta
+    spanish:              Español
+    english:              Ingles
+    filters:              Filtros
+    accion:               Accion
+    usuarios:             Usuarios
+    insumo:               Insumo
     deleteMasive:         Confirmar eliminar los elementos seleccionados
     confirmDeleteMasive:  Desea eliminar los elementos seleccionados
-    succesCreate:         El registro se ha registrado de forma exitosa   
+    succesCreate:         El registro se ha insertado de forma exitosa   
     errorCreate:          No se ha podido crear el registro vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
     errorDeleteMasivo:    No se ha seleccionado ningun registro
@@ -40,18 +88,45 @@ dictionary:
     errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
     succesUpdate:         El registro se ha modificado exitosamente 
     errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
-   
+    eliminarIndividual:   ¿Desea eliminar el Registro?
+    confirmDelete:        Confirmar Eliminar
+    confirm:              Confirmar
+    enfermedad:           La  vacuna fue aplicada por motivo de Enfermedad
+    gestacion:            La vacuna fue aplicada por control de gestacion
+    parto:                La vacuna fue aplicada para inducir el parto
+    rutina:               La vacuna fue aplicada por control rutinario
+    nacido:               La vacuna fue aplicada al cerdo recien nacido
+    cantidad:             Cantidad
+    valorUni:             Valor unitario
     
+    edit:                 Editar
+    crear:                Crear
+   
+  veterinario:
+    veterinario:         Veterinario
+      
   animal:
+    date_birth:           Fecha de nacimiento
+    precio_compra:        Precio de compra
+    identification:       Numero de identifacion
+    peso_inicial:         Peso inicial
+    peso_fin:             Peso final
     edit:                 Editar el registro del animal
     animal:               Animal
     new:                  Registra un nuevo animal
     peso:                 Peso
     edad:                 Edad (meses)
+    edad_inicial:         Edad inicial
+    edad_fin:             Edad final
     fecha:                Fecha de nacimiento
+    fecha_inicial:        Fecha de nacimiento inicial
+    fecha_fin:            Fecha de nacimiento final
     genero:               Genero
     lote:                 Lote
     raza:                 Raza
+    Vacunas:              Vacunas
+    Registro:     Registro vacunas
+    vacunacion:           Vacunacion
     succesCreate:         El animal se ha registrado de forma exitosa   
     errorCreate:          No se ha podido crear el animal vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
@@ -89,7 +164,12 @@ dictionary:
     succesDelete:         Se ha eliminado el usuario exitosamente
     errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
     succesUpdate:         El usuario se ha modificado exitosamente 
+    Seleccione modulo:    Select module
     errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
+    dpVenta:              Detalle Factura venta
+    pVenta:               Factura Venta
+    factura:              Factura
+    
     
   depto:
     read:                 Departamento registrados en nuestro sistema
@@ -146,6 +226,134 @@ dictionary:
     insumo:               Insumo
     new:                  Registro de un nuevo insumo
     
+  empleado:
+    read:                 Empleados registrado
+    edit:                 Modificar empleado
+    empleado:             Empleado
+    telefono:             Telefono
+    new:                  Nuevo empleado
+    confirmDelete:        Eliminar empleado
+    register:             Registrar
+    delete:               Eliminar
+    succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el empleado exitosamente
+    errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
+    succesUpdate:         El empleado se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
+    view:                 Ver
+    action:               Acciones
+    identification:       Id
+    Number of document:   Numero de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    cargo:                Cargo
+    succesCreate:         El empleado se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el empleado vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el empleado exitosamente
+    errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
+    succesUpdate:         El empleado se ha modificado exitosamente 
+    Seleccione modulo:    Seleccione modulo
+    errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
+
+
+  cargo:
+    read:                 Cargo registrados
+    cargo:                Cargo
+    edit:                 Editar Cargos
+    new:                  Nuevo cargo
+    delete:               Eliminar
+    view:                 Ver
+    
+  vacunacion:
+    vacunacion:           Vacunacion
+    vaccination:          VACUNACION
+    fechaRegistro:        Fecha del Registro
+    viewDetail:           Ver Detalle
+    insertDetail:         Insertar Detalle
+    close:                Cerrar
+    editVaccination:      EDITAR VACUNACION
+    newVaccination:       NUEVA VACUNACION
+    
+  detalleVacunacion:
+    newDetailVaccination: NUEVO DETALLE DE VACUNACION
+    vacuna:               Vacuna
+    fecha:                Fecha de la Vacunacion
+    dosis:                Dosis
+    detailVaccination:    DETALLE VACUNACION
+    filterReport:         Filtros de Reporte
+    N°:                   N° del Registro de Vacunas
+    editDetailVaccination: Editar Detalle de Registro Vacunas
+
+  cargo:
+    read:                 Cargo registrados
+    cargo:                Cargo
+    edit:                 Editar Cargos
+    new:                  Nuevo cargo
+    delete:               Eliminar
+    view:                 Ver
+    
+    
+  pVenta:
+   id:                    id
+   fecha:                 fecha-hora
+   user_id:               usuario_id
+   read:                  facturas registradas en nuestro sistema
+   edit:                  editar
+   new:                   ingrese una nueva factura
+   modify:                modificar
+   register:              registrar
+   details:               detalle
+    
+  dpVenta:
+   item:                  item
+   date:                  fecha
+   numer:                 Numero documento
+   user:                  usuario_id
+   animal_id:             id animal
+   weight:                peso
+   price:                 precio
+   details:               Ver Detalle
+   read:                  facturas registradas en nuestro sistema
+   edit:                  editar
+   new:                   ingrese una nueva factura
+   modify:                modificar
+   register:              registrar
+   insert:                insertar
+   succesCreate:         La factura se ha registrado de forma exitosa   
+   errorCreate:          No se ha podido crear la factura vuelve a intentarlo
+   succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
+   errorDeleteMasivo:    No se ha seleccionado ningun registro
+   succesDelete:         Se ha eliminado el registro exitosamente
+   errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
+   succesUpdate:         El registro se ha modificado exitosamente 
+   errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
+   confirm:              Desea eliminar el registro 
+   
+
+   Olvidastes tu contraseña? :         Olvidastes tu contraseña?
+   Recordar mis datos:                 Recordar mis datos
+   
+  vacuna:
+    vacuna:                Vacuna
+    nameVacuna:            Nombre de la vacuna
+    fecha_fabricacion:     Fecha de fabricacion de la vacuna
+    fecha_vencimiento:     Fecha de vencimiento de la vacuna
+    valor:                 Valor de la vacuna
+    read:                  Vacuna
+    new:                   Ingresar una nueva vacuna
+    lote:                  Lote de la vacuna
+    edit:                  Editar el registro de la vacuna
+    
+  facturaCompra:
+    factura:               Facutras de compra
+    fechaFactura:          Fecha de la factura
+    new:                   Registro de una nueva factura de compra
+ 
+    
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.
@@ -156,7 +364,31 @@ dictionary:
     10005:                No se admite caracteres especiales
     10006:                Hay campos vacios que son obligatorios
     10007:                Solo se permiten numeros
+    
+    
+    
+    
+    
     10008:                El formato de fecha no coincide
+    10009:                La fecha %fecha% es incorrecta
+    10010:                La fecha es mayor a la fecha actual
+    10011:                El veterinario %id_veterinario% no se ha podido insertar
+    10012:                El animal %id_animal% no se ha podido insertar
+    10013:                La vacuna %id_vacuna% no se ha podido insertar
+    10014:                La dosis %dosis_vacuna% no se ha podido insertar
+    10015:                El dato ingresado pasa el numero maximo de caracteres
+    10016:                El veterinario %id_veterinario% no se ha podido modificar
+    10017:                El animal %id_animal% no se ha podido modificar
+    10018:                La vacuna %id_vacuna% no se ha podido modificar
+    10019:                La dosis %dosis_vacuna% no se ha podido modificar
+    10020:                La fecha de vencimiento es inferior a la fecha actual
+    10021:                La fecha de fabricacion es superior a la fecha actual
+    10022:                Se ha encontrado caracteres especiales en el campo %campo%
+    10023:                El campo %campo$ debe ser llenado solo con numeros
+    
+    
+    10030:                El animal seleccionado no existe en la base de datos
+    10031:                El veterinario seleccionado no existe en la base de datos
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

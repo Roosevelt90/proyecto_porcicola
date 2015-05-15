@@ -1,0 +1,261 @@
+# Diccionario de ejemplo
+culture:                  English
+dictionary:
+  default:
+    Usuario y contraseña incorrectos: User and Password incorrect
+    usuario:              User
+    contraseña:           Password
+    Olvidastes tu contraseña?: Did your password?
+    Recordar mis datos:   Remember you data
+    Identificacion:       Identification
+    Exit:                 Exit
+    Entrar:               Enter
+    reporte:              Report
+    lunes:                Monday
+    martes:               Tuesday
+    miercoles:            Wenesday
+    jueves:               Thusday
+    viernes:              Friday
+    sabado:               Saturday
+    domingo:              Sunday
+    enero:                January
+    febrero:              February
+    marzo:                March
+    abril:                April
+    mayo:                 May 
+    junio:                June
+    julio:                July
+    agosto:               August
+    septiembre:           September
+    octubre:              October
+    noviembre:            November
+    diciembre:            December
+    buscar:               Search
+    filterBy:             Filter By
+    new:                  New Register
+    deleteFilter:         Delete Filters
+    empleado:             Employe
+    cargo:                Position
+    user:                 User
+    dataUser:             Date user
+    credencial:           Credential
+    userCredencial:       Assigment of credential
+    depto:                Departament
+    city:                 City
+    raza:                 Race
+    lote:                 Batch
+    insumo:               Input
+    empleado:             Employe
+    cargo:                Position
+    pass:                 Password
+    register:             Register
+    deleteMasive:         Confirm delete selected items
+    confirmDeleteMasive:  Want to remove the selected items?
+    update:               Update
+    delete:               Delete
+    modules:              Select module
+    action:               Actions
+    create:               Insert
+    update:               Update
+    delete:               Delet
+    view:                 View
+    localidad:            Locality
+    animal:               Animal
+    insumo:               Input
+    usuarios:             Users
+    Seleccione modulo:    Select module
+    eliminar filtros:     Delete filters
+    borrar seleccion:     Delete selection
+    filters:              Filters
+    spanish:              Spanish
+    english:              English
+    accion:               Action
+    eliminarIndividual:   Want to delete the record?
+    confirmDelete:        Confirm Delete
+    confirm:              Confirm
+    enfermedad:            The vaccine was applied by reason of illness
+    gestacion:              The vaccine was administered by controlling gestation
+    parto:                The vaccine was administered to induce labor
+    rutina:               The vaccine was applied for routine monitoring
+    nacido:               The vaccine was administered to newborn pigs
+    cancel:               Cancel
+    
+  animal:
+    animal:               Animal
+    
+  veterinario:
+    veterinario:          Veterinary
+    
+  dpVenta:
+    numer:                Number of Document
+    
+  user:
+    usuario:              user
+    newUser:              new user
+    user:                 Name user
+    pass:                 password
+    rePass:               Repet password
+    register:             register
+    editUser:             edit user
+    edit:                 edit
+    oldPass:              new password
+    read:                 user register
+    delete:               delete
+    modify:               modify
+    quest:                quest of security
+    answer:               answer of security
+    delete:               delete
+    confirmDelete:        delet user 
+    bodyDelete:           Desea eliminar el registro
+    date:                 Fecha de creacion
+    succesCreate:         El usuario se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el usuario vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los usuarios seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el usuario exitosamente
+    errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
+    succesUpdate:         El usuario se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
+    
+  depto:
+    read:                 Departament register
+    new:                  new departament
+    depto:                Departament
+    edit:                 edit departament
+ 
+    
+  city:
+    read:                 citys register
+    city:                 city
+    new:                  register one new city
+    edit:                 edit the city
+    
+    
+  datos:
+    read:                 Datos personales del usuario
+    new:                  Datos personales al usuario
+    name:                 Nombre
+    tipoDoc:              Tipo de documento
+    numberDoc:            Numero de documento
+    lastName:             Apellido
+    register:             Registrar
+    tel:                  Telefono
+    dir:                  Direccion
+    edit:                 Modificar los datos del usuario
+    
+  credencial:
+    read:                 Credeniales en nuestro sistema
+    new:                  Registra una nueva credencial
+    credencial:           Credencial
+    edit:                 Modificar el nombre de la credencial
+  
+  userCredencial:
+    read:                 Roles asignados
+    new:                  Asignam
+    
+    
+  raza:
+    read:                 Razas registradas 
+    edit:                 Modificar raza
+    raza:                 Raza
+    new:                  nueva raza
+    delete:               Eliminar
+    confirmDelete:        Eliminar raza
+    
+  lote:
+    read:                 Lotes registrados 
+    edit:                 Modificar lote
+    lote:                 Lote
+    new:                  Registro de un nuevo lote
+    
+  insumo:
+    read:                 Insumos registrados en nuestro sistema 
+    edit:                 Modificar insumo
+    insumo:               Insumo
+    new:                  Registro de un nuevo insumo
+    
+  empleado:
+    read:                 Employe register
+    edit:                 Edit employe
+    empleado:             Employe
+    telefono:             Phone
+    new:                  New employe
+    confirmDelete:        Delete employe
+    register:             Register
+    delete:               Delete
+    succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el empleado exitosamente
+    errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
+    succesUpdate:         El empleado se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
+    view:                 View
+    identification:       identification
+    Number of document:   Number of document
+    document type:        Document type
+    name:                 Name
+    city:                 City
+    cargo:                Position
+    actions:              Actions
+    
+
+
+
+  cargo:
+    read:                 position register
+    cargo:                position
+    edit:                 edit position
+    new:                  new position
+    delete:               delete
+    view:                 view
+    
+  vacunacion:
+    vaccination:          VACCINATION
+    fechaRegistro:        Date Register
+    viewDetail:           View Detail
+    insertDetail:         Insert Detail
+    close:                Close
+    editVaccination:      EDIT VACCINATION
+    newVaccination:       NEW VACCINATION
+    
+  detalleVacunacion:
+    newDetailVaccination:  NEW DETAIL VACCINATION
+    vacuna:                Vaccine
+    fecha:                 Date Of Vaccination
+    dosis:                 Dose of Vaccine
+    detailVaccination:     DETAIL VACCINATION
+    filterReport:          Filter Report
+    N°:                    N° of Register Vaccines
+    editDetailVaccination: Edit Detail Vaccination
+    
+  errors:
+    00001:                El módulo y la acción solicitada, no existe.
+    00002:                La dirección que solicita no está registrada.
+    00003:                Los datos de usuario y contrseña son inválidos.
+    00004:                Las contraseñas no son iguales
+    00005:                El nombre de usuario ya se encuentra registrado
+    
+    10005:                No se admite caracteres especiales
+    10006:                Hay campos vacios que son obligatorios
+    
+    
+    
+    
+    
+    10008:                The date format is incorrect
+    10009:                The date %fecha% is incorrect
+    10010:                The date is greater than the current date
+    10011:                The veterinary %id_veterinario% could not be inserted
+    10012:                The animal %id_animal% could not be inserted
+    10013:                The input %id_vacuna% could not be inserted
+    10014:                The dosis %dosis_vacuna% could not be inserted
+    10015:                The data passes the maximum number of characters
+    10016:                The veterinary %id_veterinario% could not change
+    10017:                The animal %id_animal% could not change
+    10018:                The input %id_vacuna% could not change
+    10019:                The dosis %dosis_vacuna% could not change
+#    00001:  Lo que buscas no existe
+#    10001:  Existe un error en la definición de los includes
+#    10002:  No hay definido un ambito (dev o prod) para la aplicación
+#    10003:  El arhivo %file% no existe
+#    10004:  El directorio %path% no pudo ser creado

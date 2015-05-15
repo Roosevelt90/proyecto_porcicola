@@ -26,7 +26,7 @@ class deleteAnimalActionClass extends controllerClass implements controllerActio
                 $ids = array(
                     animalTableClass::ID => $id
                 );
-                animalTableClass::delete($ids, false);
+                animalTableClass::delete($ids, true);
 
                 $this->arrayAjax = array(
                     'code' => 11,

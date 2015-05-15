@@ -1,0 +1,1 @@
+El proyecto ha sido instalado exitosamente /nEn caso de error contactar con el administrador del sitio al correo rdiaz02@misena.edu.co

@@ -42,6 +42,10 @@ namespace mvc\config {
     private static $row_grid;
     private static $default_module_permission;
     private static $default_action_permission;
+    
+    public static function getSohoFrameworkVersion() {
+      return '1.0.8';
+    }
 
     /**
      * Obtiene la URL base del sistema

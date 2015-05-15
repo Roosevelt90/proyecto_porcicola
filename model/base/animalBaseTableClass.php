@@ -1,26 +1,26 @@
-<?php
-
-use mvc\model\table\tableBaseClass;
+<?php use mvc\model\table\tableBaseClass;
 
 class animalBaseTableClass extends tableBaseClass {
 
     private $id,
             $peso_animal,
-            $edad_animal,
-            $fecha_ingreso,
+            $fecha_nacimiento,
+            $numero_parto,
             $precio_animal,
             $genero_id,
             $lote_id,
+            $numero_identificacion,
             $raza;
 
     const ID = 'id';
     const PESO = 'peso_animal';
-    const EDAD = 'edad_animal';
-    const FECHA_INGRESO = 'fecha_ingreso';
+    const EDAD = 'fecha_nacimiento';
+    const PARTO = 'numero_parto';
     const FECHA_FIN = 'fecha_fin';
     const PRECIO = 'precio_animal';
     const GENERO_ID = 'genero_id';
     const LOTE_ID = 'lote_id';
+    const NUMERO = 'numero_identificacion';
     const RAZA = 'raza';
 
     function getId() {
@@ -31,12 +31,12 @@ class animalBaseTableClass extends tableBaseClass {
         return $this->peso_animal;
     }
 
-    function getEdad_animal() {
-        return $this->edad_animal;
+    function getFecha_nacimiento() {
+        return $this->fecha_nacimiento;
     }
 
-    function getFecha_ingreso() {
-        return $this->fecha_ingreso;
+    function getNumero_parto() {
+        return $this->numero_parto;
     }
 
     function getPrecio_animal() {
@@ -51,6 +51,10 @@ class animalBaseTableClass extends tableBaseClass {
         return $this->lote_id;
     }
 
+    function getNumero_identificacion() {
+        return $this->numero_identificacion;
+    }
+
     function getRaza() {
         return $this->raza;
     }
@@ -63,12 +67,12 @@ class animalBaseTableClass extends tableBaseClass {
         $this->peso_animal = $peso_animal;
     }
 
-    function setEdad_animal($edad_animal) {
-        $this->edad_animal = $edad_animal;
+    function setFecha_nacimiento($fecha_nacimiento) {
+        $this->fecha_nacimiento = $fecha_nacimiento;
     }
 
-    function setFecha_ingreso($fecha_ingreso) {
-        $this->fecha_ingreso = $fecha_ingreso;
+    function setNumero_parto($numero_parto) {
+        $this->numero_parto = $numero_parto;
     }
 
     function setPrecio_animal($precio_animal) {
@@ -83,10 +87,15 @@ class animalBaseTableClass extends tableBaseClass {
         $this->lote_id = $lote_id;
     }
 
+    function setNumero_identificacion($numero_identificacion) {
+        $this->numero_identificacion = $numero_identificacion;
+    }
+
     function setRaza($raza) {
         $this->raza = $raza;
     }
 
+        
     /**
      * Método para obtener el nombre del campo más la tabla ya sea en formato
      * DB (.) o en formato HTML (_)

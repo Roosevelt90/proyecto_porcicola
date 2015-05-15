@@ -2,7 +2,7 @@
 
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
-use mvc\config\configClass as config;
+use mvc\config\myConfigClass as config;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
@@ -36,7 +36,7 @@ class loginActionClass extends controllerClass implements controllerActionInterf
             recordarMeTableClass::insert($data);
             setcookie(config::getCookieNameRememberMe(), $hash, time() + config::getCookieTime(), config::getCookiePath());
           }
-          log::register('identificación', 'NINGUNA');
+          log::register('identificacion', 'NINGUNA');
           hook\security\securityHookClass::redirectUrl();
         } else {
           session::getInstance()->setError('Usuario y contraseña incorrectos');

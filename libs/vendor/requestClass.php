@@ -40,7 +40,7 @@ namespace mvc\request {
       }
       return self::$instance;
     }
-    
+
     public function isMethod($method) {
       return ($this->getServer('REQUEST_METHOD') === $method) ? true : false;
     }
@@ -138,6 +138,9 @@ namespace mvc\request {
       $this->server['REQUEST_METHOD'] = $method;
     }
 
-  }
+    public function hasFile($param) {
+      return ($this->getFile($param)['error'] === 4) ? false : true;
+    }
 
+}
 }

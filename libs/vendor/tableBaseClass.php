@@ -180,25 +180,43 @@ namespace mvc\model\table {
                     $flag = false;
                 }
 
-                if (is_array($where) === true) {
-                    foreach ($where as $field => $value) {
-                        if (is_array($value)) {
-                            if ($flag === false) {
-                                $sql = $sql . ' WHERE ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
-                                $flag = true;
-                            } else {
-                                $sql = $sql . ' AND ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
-                            }
-                        } else {
-                            if ($flag === false) {
-                                $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
-                                $flag = true;
-                            } else {
-                                $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
-                            }
-                        }
-                    }
+        /**
+         * array(
+         *    campo => valor,
+         *    campo => array(
+         *      fecha1,
+         *      fecha2
+         *    ),
+         *    0 => valorSQL
+         * )
+         */
+        if (is_array($where) === true) {
+          foreach ($where as $field => $value) {
+            if (is_array($value)) {
+              if ($flag === false) {
+                $sql = $sql . ' WHERE ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
+                $flag = true;
+              } else {
+                $sql = $sql . ' AND ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
+              }
+            } else {
+              if ($flag === false) {
+                if (is_numeric($field)) {
+                  $sql = $sql . ' WHERE ' . $value . ' ';
+                } else {
+                  $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
                 }
+                $flag = true;
+              } else {
+                if (is_numeric($field)) {
+                  $sql = $sql . ' AND ' . $value . ' ';
+                } else {
+                  $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                }
+              }
+            }
+          }
+        }
 
                 if ($orderBy !== null) {
                     $sql = $sql . ' ORDER BY ';

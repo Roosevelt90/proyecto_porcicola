@@ -42,14 +42,30 @@ namespace mvc\view {
       $action = sessionClass::getInstance()->getAction();
       $metas = '';
       $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
-      foreach ($includes['all']['meta'] as $include) {
-        $metas .= '<meta ' . $include . '>';
+      if (isset($includes['all']['meta'])) {
+        foreach ($includes['all']['meta'] as $include) {
+          $metas .= '<meta ' . $include . '>';
+        }
       }
+
+      if (isset($includes['all']['link'])) {
+        foreach ($includes['all']['link'] as $include) {
+          $metas .= '<link ' . $include . '>';
+        }
+      }
+
       if (isset($includes[$module][$action]['meta'])) {
         foreach ($includes[$module][$action]['meta'] as $include) {
           $metas .= '<meta ' . $include . '>';
         }
       }
+
+      if (isset($includes[$module][$action]['link'])) {
+        foreach ($includes[$module][$action]['link'] as $include) {
+          $metas .= '<link ' . $include . '>';
+        }
+      }
+
       return $metas;
     }
 

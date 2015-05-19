@@ -80,7 +80,7 @@ use mvc\i18n\i18nClass as i18n ?>
                         <label class="fa  fa-3x" for="toggleboxEmpleado"><?php echo i18n::__('empleado') ?></label>
                     </div>
 
-                    <!--MENU DESPLEGABLE FACTURA-->
+<!--                    MENU DESPLEGABLE FACTURA
                     <div class="menuDesplegabledpVenta">
                         <input type="checkbox" id="toggleboxdpVenta" />
                         <ul>
@@ -90,6 +90,16 @@ use mvc\i18n\i18nClass as i18n ?>
                             <li><label for="toggleboxdpVenta"></label></li>
                         </ul>
                         <label class="fa  fa-3x" for="toggleboxdpVenta"><?php echo i18n::__('factura') ?></label>
+                    </div>-->
+                    
+                       <!--MODULO FACTURA-->
+                    <div class="menuDesplegableFactura">
+                        <input type="checkbox" id="toggleboxFactura" />
+                        <ul>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" class="btn btn-ttc"><?php echo i18n::__('facturaCompra') ?></a></li>
+                             <li><label for="toggleboxFactura"></label></li>
+                        </ul>
+                        <label class="fa  fa-3x" for="toggleboxFactura"><?php echo i18n::__('factura') ?></label>
                     </div>
 
                 </div>

@@ -6,11 +6,11 @@
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <br>
-            <h2>  <?php echo i18n::__('new',  NULL, 'depto') ?>
+            <h2>  <?php echo i18n::__('new',  NULL, 'credencial') ?>
             </h2>
         </div>
     </div>
 </div>
 <br>
-<?php view::includePartial('departamento/formDepto') ?>
+<?php view::includePartial('usuarioCredencial/formUcrede', array('objUsuario'=>$objUsuario, 'objCredencial'=>$objCredencial)) ?>
 

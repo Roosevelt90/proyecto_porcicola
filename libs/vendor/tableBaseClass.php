@@ -15,6 +15,7 @@ namespace mvc\model\table {
     class tableBaseClass implements tableInterface {
 
         protected static $fieldDeleteAt = 'deleted_at';
+        protected static $fieldStatet = 'estado';
 
         /**
          * Método para borrar un registro de una tabla X en la base de datos
@@ -180,43 +181,43 @@ namespace mvc\model\table {
                     $flag = false;
                 }
 
-        /**
-         * array(
-         *    campo => valor,
-         *    campo => array(
-         *      fecha1,
-         *      fecha2
-         *    ),
-         *    0 => valorSQL
-         * )
-         */
-        if (is_array($where) === true) {
-          foreach ($where as $field => $value) {
-            if (is_array($value)) {
-              if ($flag === false) {
-                $sql = $sql . ' WHERE ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
-                $flag = true;
-              } else {
-                $sql = $sql . ' AND ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
-              }
-            } else {
-              if ($flag === false) {
-                if (is_numeric($field)) {
-                  $sql = $sql . ' WHERE ' . $value . ' ';
-                } else {
-                  $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                /**
+                 * array(
+                 *    campo => valor,
+                 *    campo => array(
+                 *      fecha1,
+                 *      fecha2
+                 *    ),
+                 *    0 => valorSQL
+                 * )
+                 */
+                if (is_array($where) === true) {
+                    foreach ($where as $field => $value) {
+                        if (is_array($value)) {
+                            if ($flag === false) {
+                                $sql = $sql . ' WHERE ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
+                                $flag = true;
+                            } else {
+                                $sql = $sql . ' AND ' . $field . ' BETWEEN ' . ((is_numeric($value[0])) ? $value[0] : "'$value[0]'") . ' AND ' . ((is_numeric($value[1])) ? $value[1] : "'$value[1]'") . ' ';
+                            }
+                        } else {
+                            if ($flag === false) {
+                                if (is_numeric($field)) {
+                                    $sql = $sql . ' WHERE ' . $value . ' ';
+                                } else {
+                                    $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                                }
+                                $flag = true;
+                            } else {
+                                if (is_numeric($field)) {
+                                    $sql = $sql . ' AND ' . $value . ' ';
+                                } else {
+                                    $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                                }
+                            }
+                        }
+                    }
                 }
-                $flag = true;
-              } else {
-                if (is_numeric($field)) {
-                  $sql = $sql . ' AND ' . $value . ' ';
-                } else {
-                  $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
-                }
-              }
-            }
-          }
-        }
 
                 if ($orderBy !== null) {
                     $sql = $sql . ' ORDER BY ';
@@ -237,11 +238,11 @@ namespace mvc\model\table {
                     $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
                 }
 
-        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
-      } catch (\PDOException $exc) {
-        throw $exc;
-      }
-    }
+                return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+            } catch (\PDOException $exc) {
+                throw $exc;
+            }
+        }
 
         /**
          * Método para actualizar un registro en una tabla de una base de datos
@@ -286,15 +287,15 @@ namespace mvc\model\table {
                 model::getInstance()->exec($sql);
                 model::getInstance()->commit();
 
-        $row = model::getInstance()->query($sqlID);
-        $answer = $row->fetch(\PDO::FETCH_OBJ);
+                $row = model::getInstance()->query($sqlID);
+                $answer = $row->fetch(\PDO::FETCH_OBJ);
 
-        return (integer) $answer->id;
-      } catch (\PDOException $exc) {
-        model::getInstance()->rollback();
-        throw $exc;
-      }
-    }
+                return (integer) $answer->id;
+            } catch (\PDOException $exc) {
+                model::getInstance()->rollback();
+                throw $exc;
+            }
+        }
 
         /**
          * Método para leer todos los registros de una tabla para aplicar un join
@@ -483,6 +484,49 @@ namespace mvc\model\table {
 //                print_r($count);
 //            echo $sql; 
             } catch (\PDOException $exc) {
+                throw $exc;
+            }
+        }
+
+        /**
+         * Método para cambiar el estado de un registro de una tabla X en la base de datos
+         *
+         * @param string $table Nombre de la tabla
+         * @param array $ids Array con los campos que se desea cambiar de estado
+         * de inactivo a activa y viceversa
+         * asociativas y los valores por valores a tener en cuenta para el borrado.
+         * Ejemplo $ids['id'] = 1
+         * @throws \PDOException
+         * @author Roosevelt Diaz <rdiaz02@misena.edu.c
+         */
+        public static function state($ids, $table) {
+            try {
+                $fields = array(
+                    'id',
+                    'estado'
+                );
+                $answer = self::getAll($table, $fields, false, null, null, null, null, $ids);
+                foreach ($answer as $key) {
+
+                    $sql = "UPDATE $table SET ";
+                    if ($key->estado == true) {
+
+
+                        $sql = $sql . " " . ' estado ' . " = " . "' off '";
+                        $sql = $sql . ' WHERE ' . ' id ' . ' = ' . $key->id;
+                    } else {
+
+                        $sql = $sql . " " . ' estado ' . " = " . "'  on '";
+                        $sql = $sql . ' WHERE ' . ' id ' . ' = ' . $key->id;
+                    }
+                    model::getInstance()->beginTransaction();
+                    model::getInstance()->exec($sql);
+                    model::getInstance()->commit();
+                }
+            } catch (\PDOException $exc) {
+                echo $exc->getMessage();
+                // en caso de haber un error entonces se devuelve todo y se deja como estaba
+                model::getInstance()->rollback();
                 throw $exc;
             }
         }

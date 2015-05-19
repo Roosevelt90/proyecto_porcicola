@@ -2,6 +2,14 @@
 culture:                  Español
 dictionary:
   default:
+    fechaInicio:          Fecha de inicio
+    fechaFin:             Fecha final
+    inhabilitar:         Inhabilitar factura
+    habilitar:           Habilitar factura
+    factura:              Facturas
+    facturaCompra:        Facturas de compra
+    confirmInhabilitar:   Esta seguro que desea inhabilitar esta factura
+    confirmHabilitar:     Esta seguro que desea habilitar esta factura
     Usuario y contraseña incorrectos:   Usuario y contraseña incorrectos
     proveedor:            Nombre del proveedor
     usuario:              Usuario
@@ -32,6 +40,7 @@ dictionary:
     Entrar:               Entrar
     disponible_venta:     Disponible para la venta
     reporte:              Reporte
+    report:               Reporte
     buscar:               Buscar
     filterBy:             Buscar Por
     new:                  Nuevo registro
@@ -111,8 +120,10 @@ dictionary:
     identification:       Numero de identifacion
     peso_inicial:         Peso inicial
     peso_fin:             Peso final
+    precio:               Precio 
     edit:                 Editar el registro del animal
     animal:               Animal
+    report:               Reporte
     new:                  Registra un nuevo animal
     peso:                 Peso
     edad:                 Edad (meses)
@@ -206,6 +217,9 @@ dictionary:
   userCredencial:
     read:                 Roles asignados
     new:                  Asignam
+    user:                 usuario
+    credencial:           Credencial
+    edit:                 Editar
     
     
   raza:

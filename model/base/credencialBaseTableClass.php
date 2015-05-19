@@ -8,6 +8,12 @@ use mvc\model\table\tableBaseClass;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class credencialBaseTableClass extends tableBaseClass {
+    
+    private $id,
+            $nombre,
+            $created_at,
+            $updated_at,
+            $deleted_at;
 
     const ID = 'id';
     const NOMBRE = 'nombre';

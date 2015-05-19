@@ -5,7 +5,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $id = procesoCompraTableClass::ID ?>
 <?php $nombreEmpleado = empleadoTableClass::NOMBRE ?>
 <?php $nombreProveedor = proveedorTableClass::NOMBRE_COMPLETO ?>
-<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('factura', ((isset($objFacturaCompra) == TRUE) ? 'updateEFacturaCompra' : 'createFacturaCompra')) ?>">
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('factura', ((isset($objFacturaCompra) == TRUE) ? 'updateFacturaCompra' : 'createFacturaCompra')) ?>">
     <?php if (isset($objFacturaCompra)): ?>
     <input type="hidden" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" value="<?php echo $objFacturaCompra[0]->$id ?>">
     <?php endif; ?>
@@ -14,6 +14,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <div class="col-xs-6-offset-3">
 
                 <table class="table table-responsive "> 
+                     <table class="table table-responsive "> 
                     <tr>
                         <th>
                             <?php i18n::__('fechaFactura', null, 'facturaCompra') ?>
@@ -51,7 +52,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             </select>
                         </th>   
                     
-                    </tr>                    
+                    </tr>                        
                     <tr>
                         <th colspan="2">
                     <div class="titulo">

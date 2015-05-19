@@ -26,11 +26,20 @@ use mvc\i18n\i18nClass as i18n ?>
         <div class="row">
             <div class="col-xs-6-offset-3">
                 <table class="table">    
-                    <tr>
-                        <th>  <?php echo i18n::__('user', NULL, 'user') ?>:</th>
-                        <th> <input required pattern="^[A-Za-z0-9]{1,20}$" title="No se puede usar caracteres especiales"  maxlength="20"   placeholder="<?php echo  $objUsuario[0]->user_name = ucwords($objUsuario[0]->user_name) ?>" type="text" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" ></th>   
+                    <tr> 
+                    <th>
+                          
+                            <?php echo i18n::__('user', null, 'user') ?>:
+                    </th><th>
+                            <select name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::USUARIO_ID, true) ?>">
+                                <?php foreach ($objUsuario as $key): ?>
+                                <option value="<?php echo $key->$usuario ?>">
+                                    <?php echo $key->$user ?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
                     </tr>
-
                     <tr>
                         <th>
                             <?php echo i18n::__(((isset($objUsuario) == FALSE) ? 'pass' : 'oldPass'), NULL, 'user') ?>:</th>

@@ -33,6 +33,10 @@ class createActionClass extends controllerClass implements controllerActionInter
                     datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
                     datosUsuarioTableClass::TELEFONO => $telefono
                 );
+                
+                
+                usuarioTableClass::validatCreate($nombre, $apellidos, $cedula, $direccion, $telefono);
+                
                 datosUsuarioTableClass::insert($data);
 
                 $data2 = array(

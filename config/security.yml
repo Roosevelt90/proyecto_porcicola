@@ -346,5 +346,119 @@ vacunacion:
     credentials:
       - [admin]
       
+factura:
+  indexFacturaCompra:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  createFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  editFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  updateFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  reporteFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  traductorFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  viewFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  reporteDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  traductorDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  indexDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  createDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  editDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  updateDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]
+  deleteDetalleVacunacion:
+    security: true
+    credentials:
+      - [admin]  
+  indexVacuna:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertVacuna:
+    security: true
+    credentials:
+      - [admin]
+  createVacuna:
+    security: true
+    credentials:
+      - [admin]
+  editVacuna:
+    security: true
+    credentials:
+      - [admin]
+  updateVacuna:
+    security: true
+    credentials:
+      - [admin]
+  deleteVacuna:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectVacuna:
+    security: true
+    credentials:
+      - [admin]
+      
       
       

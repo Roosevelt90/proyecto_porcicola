@@ -6,11 +6,11 @@
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <br>
-            <h2>  <?php echo i18n::__('new',  NULL, 'datos').':'.' '.$usuario  ?>
+            <h2>  <?php echo i18n::__('new',  NULL, 'datos') ?>
             </h2>
         </div>
     </div>
 </div>
 <br>
-<?php view::includePartial('dataUser/formDatos', array('objCiudad'=>$objCiudad, 'objUsuario'=> $objUsuario)) ?>
+<?php view::includePartial('dataUser/formDatos', array('objCiudad'=>$objCiudad, 'objUsuario'=> $objUsuario,  'objTipoDoc'=>$objTipoDoc)) ?>
 

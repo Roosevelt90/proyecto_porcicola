@@ -201,15 +201,18 @@ class datosUsuarioBaseTableClass extends tableBaseClass {
      * variables publica los nombres de las columnas de la consulta o una
      * instancia de \PDOException en caso de fracaso.
      */
-    public static function getAll($fields, $fields2, $fields3, $fields4, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
-        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
-    }
-
-    public static function getAll2($fields2, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
-        return parent::getAll(self::getNameTable2(), $fields2, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
-    }
-
-    public static function getAll3($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
+//    public static function getAll($fields, $fields2, $fields3, $fields4, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+//        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+//    }
+//
+//    public static function getAll2($fields2, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
+//        return parent::getAll(self::getNameTable2(), $fields2, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+//    }
+//
+//    public static function getAll3($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
+//        return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+//    }
+      public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
         return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
 
@@ -223,8 +226,15 @@ class datosUsuarioBaseTableClass extends tableBaseClass {
      * datos a escribir
      * @return PDOException|boolean
      */
+    
+    public static function getAllCount($fields, $deletedLogical = true, $lines = null, $table = null) {
+    return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
+  }
+    
     public static function update($ids, $data, $table = null) {
         return parent::update($ids, $data, self::getNameTable());
     }
-
+   public static function getAllJoin($fields, $fields2, $fields3 = null, $fields4 = null, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+    }
 }

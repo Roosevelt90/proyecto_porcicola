@@ -8,13 +8,43 @@ use mvc\model\table\tableBaseClass;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class usuarioCredencialBaseTableClass extends tableBaseClass {
+    
+    private $id,
+            $usuario_id,
+            $credencial_id;
+          
 
   const ID = 'id';
   const USUARIO_ID = 'usuario_id';
   const CREDENCIAL_ID = 'credencial_id';
   const CREATED_AT = 'created_at';
   const CREDENCIAL_DEFAULT = 4;
+  
+  function getId() {
+      return $this->id;
+  }
 
+  function getUsuario_id() {
+      return $this->usuario_id;
+  }
+
+  function getCredencial_id() {
+      return $this->credencial_id;
+  }
+
+  function setId($id) {
+      $this->id = $id;
+  }
+
+  function setUsuario_id($usuario_id) {
+      $this->usuario_id = $usuario_id;
+  }
+
+  function setCredencial_id($credencial_id) {
+      $this->credencial_id = $credencial_id;
+  }
+
+  
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato
    * DB (.) o en formato HTML (_)
@@ -101,10 +131,10 @@ class usuarioCredencialBaseTableClass extends tableBaseClass {
     return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
   }
   
-  
-  public static function getAll2($fields, $fields2, $fields3, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
-        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), $fields, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+    public static function getAllJoin($fields, $fields2, $fields3 = null, $fields4 = null, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(),  $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
+ 
 
   /**
    * Método para actualizar un registro en una tabla de una base de datos

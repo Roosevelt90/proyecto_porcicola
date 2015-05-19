@@ -249,4 +249,46 @@ factura:
   indexFacturaCompra:
     tittle: Registros de compras
     stylesheet:
-      - main.css    
+      - main.css 
+      
+credencial:
+  index:
+    tittle: Registro credencial
+    stylesheet:
+     - main.css
+  edit:
+    tittle: editar credencial
+    stylesheet:
+     - main.css
+  insert:
+    tittle: insertar credencial
+    stylesheet:
+     - main.css
+     
+usuarioCredencial:
+  index:
+    tittle: Registro usuario credencial
+    stylesheet:
+     - main.css
+  edit:
+    tittle: editar usuario credencial
+    stylesheet:
+     - main.css 
+  insert:
+    tittle: editar usuario credencial
+    stylesheet:
+     - main.css   
+     
+dataUser:
+  index:
+    tittle: Registro usuario credencial
+    stylesheet:
+     - main.css
+  edit:
+    tittle: editar usuario credencial
+    stylesheet:
+     - main.css 
+  insert:
+    tittle: editar usuario credencial
+    stylesheet:
+     - main.css   

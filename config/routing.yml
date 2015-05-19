@@ -103,6 +103,8 @@ default_insert_Datos:
     - model/usuarioTableClass.php
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
+    - model/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
 
 default_insert:
   url:    /usuarios/insertar
@@ -193,9 +195,18 @@ default_deleteSelect:
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
     
-   
-
-       
+default_vista:
+  url:    /usuario/vista
+  param:  { module: usuario, action: view, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosusuarioTableClass.php
+      
     
 depto_reporte:
   url:    /usuario/reporte
@@ -322,7 +333,7 @@ ciudad_deleteSelect:
 
 ##----------------DATOS USUARIO-----------------##
 
-dataUser_index:
+#dataUser_index:
   url:    /datos/index
   param:  { module: dataUser, action: index, format: html }
   load:
@@ -332,10 +343,12 @@ dataUser_index:
     - model/ciudadTableClass.php
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.phps.php
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.phps.php
     - model/base/tipoDocumentoUsuarioBaseTableClass.php
     - model/tipoDocumentoUsuarioTableClass.php
+#    - model/recuperarBaseTableClass.php
+#    - model/recuperarTableClass.php
 
 dataUser_insert:
   url:    /datos/insertar
@@ -349,6 +362,13 @@ dataUser_insert:
     - model/usuarioTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 dataUser_create:
   url:    /datos/crear
@@ -362,6 +382,8 @@ dataUser_create:
     - model/usuarioTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosUsuarioTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
     
 dataUser_edit:
   url:    /datos/editar
@@ -478,6 +500,10 @@ Usuario_Credencial_index:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+#    - model/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#    - model/credencialBaseTableClass.php
+#    - model/credencialTableClass.php
     
 Usuario_Credencial_insert:
   url:    /userCredencial/insertar
@@ -485,6 +511,10 @@ Usuario_Credencial_insert:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+#    - model/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#    - model/credencialBaseTableClass.php
+#    - model/credencialTableClass.php
     
 Usuario_Credencial_crear:
   url:    /userCredencial/crear
@@ -492,6 +522,34 @@ Usuario_Credencial_crear:
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
+    
+Usuario_Credencial_edit:
+  url:    /userCredencial/editar
+  param:  { module: usuarioCredencial, action: edit, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+Usuario_Credencial_update:
+  url:    /userCredencial/actualizar
+  param:  { module: usuarioCredencial, action: update, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php 
+ 
+Usuario_Credencial_delete:
+  url:    /userCredencial/eliminar
+  param:  { module: usuarioCredencial, action: delete, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
+Usuario_Credencial_deleteSelect:
+  url:    /userCredencial/borrarSeleccion
+  param:  { module: usuarioCredencial, action: delectSelect, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php 
     
     
 ########### RAZA ###########    
@@ -1563,3 +1621,92 @@ proceso_compra:_crear:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    
+proceso_compra_edit:
+  url:      /proceso_compra/edit
+  param:  { module: factura, action: editFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proceso_compra_update:
+  url:      /proceso_compra/update
+  param:  { module: factura, action: updateFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proceso_compra_inhabilitar:
+  url:      /proceso_compra/eliminar
+  param:  { module: factura, action: deleteFacturaCompra, format: json }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+
+proceso_compra_eliminar_seleccion:
+  url:    /proceso_compra/eliminarSeleccion
+  param:  { module: factura, action: deleteSelectFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    
+proceso_compra_reporte:
+  url:    /compra/reporte
+  param:  { module: factura, action: reportFacturaCompra, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+compra_deleteFiltersCompra:
+  url:     /borrar_filtros/compra
+  param: { module: factura, action: deleteFilterFacturaCompra, format: html }
+
+compra_view:
+  url:    /view
+  param: { module: factura, action: viewFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php

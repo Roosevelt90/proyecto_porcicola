@@ -83,7 +83,7 @@ class detalleProcesoCompraBaseTableClass extends tableBaseClass {
     return 'tipo_insumo';
   }
   public static function getNameTable4() {
-    return 'proceso_compra';
+    return null;
   }
 
   /**

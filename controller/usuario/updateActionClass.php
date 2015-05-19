@@ -55,14 +55,17 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $idData = array(
                     datosUsuarioTableClass::USUARIO_ID => $id
                 );
+                
+               usuarioTableClass::validatUpdate($usuario, $password);
 
-                datosUsuarioTableClass::update($idData, $datosUsuario);
-                usuarioTableClass::update($idUser, $dataUser);
-                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'user'));
-                log::register(i18n::__('update'), usuarioTableClass::getNameTable());
-                routing::getInstance()->redirect('usuario', 'index');
-            } else {
-                session::getInstance()->setError(i18n::__('errorUpdate', null, 'user'));
+
+//                datosUsuarioTableClass::update($idData, $datosUsuario);
+//                usuarioTableClass::update($idUser, $dataUser);
+//                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'user'));
+//                log::register(i18n::__('update'), usuarioTableClass::getNameTable());
+//                routing::getInstance()->redirect('usuario', 'index');
+//            } else {
+//                session::getInstance()->setError(i18n::__('errorUpdate', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');
             }
         } catch (PDOException $exc) {

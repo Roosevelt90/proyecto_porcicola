@@ -2,7 +2,9 @@
 
 use mvc\model\modelClass as model;
 use mvc\config\myConfigClass as config;
-
+use mvc\request\requestClass as request;
+use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
 /**
  * Description of usuarioTableClass
  *
@@ -53,4 +55,91 @@ class usuarioTableClass extends usuarioBaseTableClass {
     }
   }
 
-}
+ public static function validatCreate($usuario, $password, $respuesta){
+     $flag = FALSE;
+     $patron = "^[a-zA-Z0-9]{3,20}$";
+     
+     if(!ereg($patron, $usuario)){
+         session::getInstance()->setError('campo usuario no permite carateres especiales');
+         $flag = true;
+         session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+         
+     }
+   
+  
+       if(!ereg($patron, $respuesta)){
+         session::getInstance()->setError('campo respuesta no permite carateres especiales');
+         $flag = true;
+         session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::RESPUESTA_SECRETA, true), true);
+         
+     }
+     
+     if($flag == true){
+         request::getInstance()->setMethod('GET');
+         routing::getInstance()->forward('usuario', 'insert');
+  
+         }
+       
+ }
+ 
+ public static function validatUpdate($usuario, $password){
+     $flag = FALSE;
+     $patron = "^[a-zA-Z0-9]{3,20}$";
+     
+     if(!ereg($patron, $usuario)){
+         session::getInstance()->setError('campo usuario no permite carateres especiales');
+         $flag = true;
+         session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+         
+     }
+   
+  
+       if(!ereg($patron, $respuesta)){
+         session::getInstance()->setError('campo respuesta no permite carateres especiales');
+         $flag = true;
+         session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::RESPUESTA_SECRETA, true), true);
+         
+     }
+     
+     if($flag == true){
+         request::getInstance()->setMethod('GET');
+         routing::getInstance()->forward('usuario', 'edit');
+  
+         }
+       
+ }
+ 
+// public static function validatUpdate($usuario, $password){
+//     $flag = FALSE;
+//     $patron = "^[a-zA-Z0-9]{3,20}$";
+//     
+//     if(!ereg($patron, $usuario)){
+//         session::getInstance()->setError('campo usuario no permite carateres especiales');
+//         $flag = true;
+//         session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
+//         
+//     }
+//   
+//  
+//     
+//     
+//     if($flag == true){
+//         request::getInstance()->setMethod('GET');
+//         routing::getInstance()->forward('usuario', 'update');
+//  
+//         }
+//         if (ereg($patron, $password)){
+//            session::getInstance()->setError('la contraseña excede de el limite de caracteres permitidos');
+//           $flag = true;
+//           session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true),true);
+//             
+         }
+       
+   
+     
+   
+         
+ 
+  
+ 
+

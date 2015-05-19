@@ -69,7 +69,7 @@ use mvc\routing\routingClass as routing ?>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach ?>
+                    <?php endforeach ?> //close foeach
                     </tbody>
                 </table>
             </div>
@@ -77,6 +77,7 @@ use mvc\routing\routingClass as routing ?>
     <div class="text-right">
         <nav>
             <ul class="pagination" id="slqPaginador">
+                <?php $count = 0 ?>
                 <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
                 <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                     <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>

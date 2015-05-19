@@ -28,13 +28,13 @@ use mvc\i18n\i18nClass as i18n ?>
                 <table class="table">    
                     <tr>
                         <th>  <?php echo i18n::__('user', NULL, 'user') ?>:</th>
-                        <th> <input required pattern="^[A-Za-z0-9]{1,20}$" title="No se puede usar caracteres especiales"  maxlength="20"   placeholder="<?php echo ((isset($objUsuario) == FALSE) ? i18n::__('user', NULL, 'user') : $objUsuario[0]->user_name = ucwords($objUsuario[0]->user_name)) ?>" type="text" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" ></th>   
+                        <th> <input   placeholder="<?php echo ((isset($objUsuario) == FALSE) ? i18n::__('user', NULL, 'user') : $objUsuario[0]->user_name = ucwords($objUsuario[0]->user_name)) ?>" type="text" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" ></th>   
                     </tr>
 
                     <tr>
                         <th>
                             <?php echo i18n::__(((isset($objUsuario) == FALSE) ? 'pass' : 'oldPass'), NULL, 'user') ?>:</th>
-                        <th><input required maxlength="20" type="password" placeholder="<?php echo i18n::__(((isset($objUsuario) == TRUE) ? 'oldPass' : 'pass'), NULL, 'user') ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) ?>"></th>
+                        <th><input required maxlength="20" min="4" type="password" placeholder="<?php echo i18n::__(((isset($objUsuario) == TRUE) ? 'oldPass' : 'pass'), NULL, 'user') ?>" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) ?>"></th>
                     </tr>
                     <?php if (isset($objRecuperar)): ?>
                         <tr>

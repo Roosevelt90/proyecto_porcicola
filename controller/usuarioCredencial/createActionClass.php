@@ -11,13 +11,15 @@ class createActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-                $nombre = request::getInstance()->getPost(departamentoBaseTableClass::getNameField(departamentoBaseTableClass::NOMBRE, true));
+                $usuario_id = request::getInstance()->getPost(usuarioCredencialBaseTableClass::getNameField(usuarioCredencialBaseTableClass::USUARIO_ID, true));
+                $credencial_id = request::getInstance()->getPost(usuarioCredencialBaseTableClass::getNameField(usuarioCredencialBaseTableClass::CREDENCIAL_ID, true));
                 $data = array(
-                    departamentoBaseTableClass::NOMBRE => $nombre
+                    usuarioCredencialBaseTableClass::USUARIO_ID => $usuario_id,
+                    usuarioCredencialBaseTableClass::CREDENCIAL_ID => $credencial_id
                 );
-                departamentoBaseTableClass::insert($data);
+                usuarioCredencialBaseTableClass::insert($data);
             }
-            routing::getInstance()->redirect('departamento', 'index');
+            routing::getInstance()->redirect('usuarioCredencial', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

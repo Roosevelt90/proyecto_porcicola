@@ -17,7 +17,7 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
-            $usuario = $_GET['str'];
+            
             $fields2 = array(
                 ciudadTableClass::ID,
                 ciudadTableClass::NOMBRE
@@ -26,11 +26,13 @@ class insertActionClass extends controllerClass implements controllerActionInter
                 usuarioTableClass::ID,
                 usuarioTableClass::USER
             );
-            $where = array(
-                usuarioTableClass::USER => $usuario
+            $fields4 = array (
+            tipoDocumentoUsuarioTableClass::ID,
+            tipoDocumentoUsuarioTableClass::DESCRIPCION
             );
-            $this->objUsuario = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-            $this->objCiudad = ciudadTableClass::getAll3($fields2);
+            $this->objTipoDoc = tipoDocumentoUsuarioTableClass::getAll($fields4, false);
+            $this->objUsuario = usuarioTableClass::getAll($fields, true, null, null, null, null);
+            $this->objCiudad = ciudadTableClass::getAll($fields2);
             $this->defineView('insert', 'dataUser', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

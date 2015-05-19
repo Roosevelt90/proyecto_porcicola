@@ -48,7 +48,14 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             datosUsuarioTableClass::USUARIO_ID => request::getInstance()->getRequest(usuarioTableClass::ID)
             );
             
-            $this->objDatos = datosUsuarioTableClass::getAll($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, null, null, null, null, $where);            
+            
+            $lines = config::getRowGrid(3);
+            $this->cntPages = datosUsuarioTableClass::getAllCount($fields, true, $lines);
+            $this->objDatos = datosUsuarioTableClass::getAllJoin($fields, $fields2, $fields3, $fields4,$fJoin1, $fJoin2, $fJoin3, $fJoin4,$fJoin5, $fJoin6, true, null,null,null,null, $where);
+            $this->objTipoDoc = tipoDocumentoUsuarioTableClass::getAll($fields4, false);
+            $this->objUsuario = usuarioTableClass::getAll($fields3, true, null, null, null, null);
+            $this->objCiudad = ciudadTableClass::getAll($fields2);
+            
             $this->defineView('index', 'dataUser', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

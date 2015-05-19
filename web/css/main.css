@@ -825,7 +825,7 @@ footer{
     color: white;
 }
 /*MODULO FACTURA*/
-.menuDesplegabledpVenta {
+/*.menuDesplegabledpVenta {
     margin-left: 50px;
     margin-bottom: 7px;
     position: relative;
@@ -837,7 +837,7 @@ footer{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-/* checkbox utilizado para alternar el estado del menu */
+ checkbox utilizado para alternar el estado del menu 
 .menuDesplegabledpVenta input[type="checkbox"] {
     position: absolute;
     left: 0;
@@ -845,9 +845,9 @@ footer{
     opacity: 0;
 }
 
-/* Icono principar para alternar el estado del menu */
+ Icono principar para alternar el estado del menu 
 .menuDesplegabledpVenta > label {
-    /*background-color: red;*/
+    background-color: red;
     background-image: url("../img/botones.jpg");
     width: 238px;
     height: 76px;
@@ -863,7 +863,7 @@ footer{
     transition: all 0.6s ease-in; 
 }
 
-/* rayas internas dentro de la etiqueta */
+ rayas internas dentro de la etiqueta 
 .menuDesplegabledpVenta > label::after {
     content: "";
     display: block;
@@ -878,7 +878,7 @@ footer{
     transition: all 0.6s ease-in; 
 }
 
-/* contenedor <UL> con las opciones del menu */
+ contenedor <UL> con las opciones del menu 
 .menuDesplegabledpVenta ul {
     margin: 0;
     padding: 0;
@@ -907,7 +907,7 @@ footer{
     padding: 0;
 }
 
-/* hace referencia a la etiqueta para cerrar el menu */
+ hace referencia a la etiqueta para cerrar el menu 
 .menuDesplegabledpVenta ul label {
     cursor: pointer;
     position: relative;
@@ -915,7 +915,7 @@ footer{
     text-align: center;
 }
 
-/* etiqueta para el boton de cerrar o recojer el menu */
+ etiqueta para el boton de cerrar o recojer el menu 
 .menuDesplegabledpVenta ul label::after {
     content: "x";
     display: inline-block;
@@ -939,15 +939,15 @@ footer{
     -moz-transform: rotatey(360deg);
     -ms-transform: rotatey(360deg);
     -webkit-transform: rotatey(360deg);
-    transform: rotatey(360deg); /* hace rotar 360º */
+    transform: rotatey(360deg);  hace rotar 360º 
 }
 
 .menuDesplegabledpVenta > label:hover, .menuDesplegabledpVenta > label:hover::after, .menuDesplegabledpVenta input[type="checkbox"]:checked ~ label, .menuDesplegabledpVenta input[type="checkbox"]:checked ~ label::after {
-    border-color: darkred; /* resaltamos cambiando el color */
+    border-color: darkred;  resaltamos cambiando el color 
 }
 
 .menuDesplegabledpVenta input[type="checkbox"]:checked ~ ul {
-    left: 8px; /* simulamos una pequeña animación */
+    left: 8px;  simulamos una pequeña animación 
     opacity: 1;
     -moz-box-shadow: 1px 1px 5px gray;
     -webkit-box-shadow: 1px 1px 5px gray;
@@ -964,7 +964,7 @@ footer{
     padding: 10px;
     padding-right: 15px;
     height: 100%;
-}
+}*/
 
 
 
@@ -1111,6 +1111,154 @@ footer{
 }
 
 .menuDesplegableVacunacion li a:hover {
+    background: black;
+    color: white;
+}
+
+
+/*MODULO FACTURA*/
+.menuDesplegableFactura {
+    margin-left: 50px;
+    margin-bottom: 7px;
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+.menuDesplegableFactura, .menuDesplegableFactura* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* checkbox utilizado para alternar el estado del menu */
+.menuDesplegableFactura input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* Icono principar para alternar el estado del menu */
+.menuDesplegableFactura > label {
+    /*background-color: red;*/
+    background-image: url("../img/botones.jpg");
+    width: 238px;
+    height: 76px;
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 6px 0;
+    cursor: pointer;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* rayas internas dentro de la etiqueta */
+.menuDesplegableFactura > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 18%;
+    top: 19%;
+    left: 0;
+    border-width: 6px 0;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in; 
+}
+
+/* contenedor <UL> con las opciones del menu */
+.menuDesplegableFactura ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 238px;
+    background: #eee;
+    left: -100%;  
+    height: 40px;  
+    font: bold 14px Verdana;
+    text-align: center;
+    list-style: none;
+    opacity: 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    -moz-perspective: 10000px;
+    perspective: 10000px;
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;   
+}
+
+.menuDesplegableFactura li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* hace referencia a la etiqueta para cerrar el menu */
+.menuDesplegableFactura ul label {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    text-align: center;
+}
+
+/* etiqueta para el boton de cerrar o recojer el menu */
+.menuDesplegableFactura ul label::after {
+    content: "x";
+    display: inline-block;
+    line-height: 14px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 10px;
+    -moz-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
+}
+
+.menuDesplegableFactura input[type="checkbox"]:checked ~ label, .menuDesplegableFactura ul label:hover::after {
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    transform: rotatey(360deg); /* hace rotar 360º */
+}
+
+.menuDesplegableFactura > label:hover, .menuDesplegableFactura > label:hover::after, .menuDesplegableFactura input[type="checkbox"]:checked ~ label, .menuDesplegableFactura input[type="checkbox"]:checked ~ label::after {
+    border-color: darkred; /* resaltamos cambiando el color */
+}
+
+.menuDesplegableFactura input[type="checkbox"]:checked ~ ul {
+    left: 8px; /* simulamos una pequeña animación */
+    opacity: 1;
+    -moz-box-shadow: 1px 1px 5px gray;
+    -webkit-box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.menuDesplegableFactura li a {
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 10px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.menuDesplegableFactura li a:hover {
     background: black;
     color: white;
 }

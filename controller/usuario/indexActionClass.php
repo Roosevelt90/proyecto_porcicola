@@ -15,39 +15,45 @@ use mvc\i18n\i18nClass as i18n;
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-        
-        
+    public function execute() {
+        try {
 
-      $fields = array(
-          usuarioTableClass::ID,
-          usuarioTableClass::USER,
-          usuarioTableClass::CREATED_AT
-      );
-      $orderBy = array(
-          usuarioTableClass::USER
-      );
-      $page = 0;
-      if (request::getInstance()->hasGet('page')){
-          $page = request::getInstance()->getGet('page') - 1;
-          $page = $page * config::getRowGrid();
-      }
-      $f = array(
-      usuarioTableClass::ID
-      );
-      $lines = config::getRowGrid();
-      $this->cntPages = usuarioTableClass::getAllCount($f, true, $lines);
-      $this->page = request::getInstance()->getGet('page');
-      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
-      $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+
+
+            $fields = array(
+                usuarioTableClass::ID,
+                usuarioTableClass::USER,
+                usuarioTableClass::CREATED_AT
+            );
+            $orderBy = array(
+                usuarioTableClass::USER
+            );
+            $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            $f = array(
+                usuarioTableClass::ID
+            );
+
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+            } else {
+                $this->page = $page;
+            }
+
+            $lines = config::getRowGrid();
+            $this->cntPages = usuarioTableClass::getAllCount($f, true, $lines);
+            $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
+            $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

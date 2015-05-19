@@ -11,7 +11,7 @@ class usuarioBaseTableClass extends tableBaseClass {
 
   protected $id;
   protected $user;
-  protected $password;
+  protected $second_password;
   protected $actived;
   protected $last_login_at;
   protected $created_at;
@@ -23,7 +23,7 @@ class usuarioBaseTableClass extends tableBaseClass {
 
   const ID = 'id';
   const USER = 'user_name';
-  const USER_LENGTH = 80;
+  const USER_LENGTH = 30;
   const PASSWORD = 'password';
   const SECOND_PASSWORD = 'repetir_password';
   const PASSWORD_LENGTH = 32;
@@ -183,6 +183,7 @@ class usuarioBaseTableClass extends tableBaseClass {
   public static function getNameTable() {
     return 'usuario';
   }
+  
 
   /**
    * Método para borrar un registro de una tabla X en la base de datos

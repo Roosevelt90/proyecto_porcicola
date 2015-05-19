@@ -11,5 +11,7 @@
         </div>
     </div>
 </div>
+
 <br>
+<?php view::includeHandlerMessage() ?>  
 <?php view::includePartial('usuario/formUser', array('objRecuperar' => $objRecuperar, 'objCiudad' => $objCiudad, 'objTipoDoc' => $objTipoDoc)) ?>

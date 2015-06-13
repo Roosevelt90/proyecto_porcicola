@@ -2,11 +2,22 @@
 culture:                  English
 dictionary:
   default:
+    dpVenta:              Detalle 
+    personal:             People
+    veterinario:          Veterinario
+    proveedor:            Proveedor
+    cliente:              Cliente
+    telefono:             Phone
+    direccion:            Addres
+    identificacion:       Number of document
+    nombre:               Name
+    pVenta:               Factura venta
     Usuario y contraseña incorrectos: User and Password incorrect
     usuario:              User
     contraseña:           Password
     Olvidastes tu contraseña?: Did your password?
     Recordar mis datos:   Remember you data
+    Escoja Idioma:        Select Lenguage/Selecione el Idioma
     Identificacion:       Identification
     Exit:                 Exit
     Entrar:               Enter
@@ -53,8 +64,10 @@ dictionary:
     confirmDeleteMasive:  Want to remove the selected items?
     update:               Update
     delete:               Delete
+    
     modules:              Select module
     action:               Actions
+    factura:              Facturacion
     create:               Insert
     update:               Update
     delete:               Delet
@@ -116,6 +129,55 @@ dictionary:
     errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
     succesUpdate:         El usuario se ha modificado exitosamente 
     errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
+  
+  cliente:
+    cliente:              Client
+    read:                 clientes registrado
+    edit:                 Modificar cliente
+    direccion:            Direccion
+    telefono:             Phone
+    new:                  Nuevo cliente
+    action:               Acciones
+    identification:       Id
+    Number of document:   Numero de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Cliente
+    insertar:             Insertar cliente
+  
+  
+  proveedor:
+    proveedor:            Prr
+    read:                 Proveedores registrados
+    edit:                 Modify Proveedor
+    direccion:            Direccion
+    telefono:             Phone
+    new:                  New proveedor
+    action:               Actions
+    identification:       Id
+    Number of document:   Number of document
+    document type:        Document type
+    name:                 Name
+    city:                 Ciudad
+    view:                 View Proveedor
+    insertar:             Insert proveedor
+  
+  
+  veterinario:
+    read:                 Veterinarios registrados
+    edit:                 Modify Veterinario
+    direccion:            Addres
+    telefono:             Phone
+    new:                  New Veterinario
+    action:               Action
+    identification:       Id
+    Number of document:   Number of document
+    document type:        Document Type
+    name:                 Name
+    city:                 City
+    view:                 View Veterinario
+    insertar:             Insert Veterinario
     
   depto:
     read:                 Departament register
@@ -179,6 +241,7 @@ dictionary:
     edit:                 Edit employe
     empleado:             Employe
     telefono:             Phone
+    direccion:            Dire
     new:                  New employe
     confirmDelete:        Delete employe
     register:             Register
@@ -210,6 +273,7 @@ dictionary:
     view:                 view
     
   vacunacion:
+    vacunacion:          Vacunacion
     vaccination:          VACCINATION
     fechaRegistro:        Date Register
     viewDetail:           View Detail
@@ -227,6 +291,17 @@ dictionary:
     filterReport:          Filter Report
     N°:                    N° of Register Vaccines
     editDetailVaccination: Edit Detail Vaccination
+    
+  vacuna:
+    vacuna:                Vacuna
+    nameVacuna:            Nombre de la vacuna
+    fecha_fabricacion:     Fecha de fabricacion de la vacuna
+    fecha_vencimiento:     Fecha de vencimiento de la vacuna
+    valor:                 Valor de la vacuna
+    read:                  Vacuna
+    new:                   Ingresar una nueva vacuna
+    lote:                  Lote de la vacuna
+    edit:                  Editar el registro de la vacuna
     
   errors:
     00001:                El módulo y la acción solicitada, no existe.

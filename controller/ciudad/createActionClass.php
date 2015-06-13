@@ -24,7 +24,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     ciudadTableClass::ID_DEPTO => $idDepto
                 );
                ciudadTableClass::insert($data);
-            }
+            }//close if
             routing::getInstance()->redirect('ciudad', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

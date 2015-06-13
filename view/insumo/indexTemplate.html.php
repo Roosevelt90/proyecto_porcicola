@@ -43,7 +43,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
                         </td>
                     </tr>
-<?php endforeach ?>
+<?php endforeach//close foreach ?>
             </tbody>
         </table>
     </form>

@@ -22,7 +22,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 );
 
                 insumoTableClass::update($ids, $data);
-            }
+            }//close if
 
             routing::getInstance()->redirect('insumo', 'index');
         } catch (PDOException $exc) {

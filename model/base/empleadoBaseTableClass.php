@@ -9,6 +9,7 @@ class empleadoBaseTableClass extends tableBaseClass {
             $nombre_completo,
             $telefono,
             $cargo_id,
+            $direccion,
             $ciudad,
             $id,
             $deleted_at;
@@ -20,6 +21,7 @@ class empleadoBaseTableClass extends tableBaseClass {
     const TEL = 'telefono';
     const CARGO = 'cargo_id';
     const CIUDAD = 'ciudad';
+    const DIRECCION = 'direccion';
     const DELETED_AT = 'deleted_at';
 
     function getId() {
@@ -46,13 +48,19 @@ class empleadoBaseTableClass extends tableBaseClass {
         return $this->cargo_id;
     }
 
+    function getDireccion() {
+        return $this->direccion;
+    }
+
     function getCiudad() {
         return $this->ciudad;
     }
-    function getDeleted_at(){
+
+    function getDeleted_at() {
         return $this->deleted_at;
     }
-                function setNumero_doc($numero_doc) {
+
+    function setNumero_doc($numero_doc) {
         $this->numero_documento = $numero_doc;
     }
 
@@ -76,12 +84,16 @@ class empleadoBaseTableClass extends tableBaseClass {
         $this->cargo = $cargo_id;
     }
 
+    function setDireccion($direccion) {
+        $this->direccion = $direccion;
+    }
+
     function setCiudad($ciudad) {
         $this->ciudad = $ciudad;
     }
-    function setDeleted_at($deleted_At){
-        $this->deleted_at=$deleted_At;
-        
+
+    function setDeleted_at($deleted_At) {
+        $this->deleted_at = $deleted_At;
     }
 
     /**
@@ -114,7 +126,7 @@ class empleadoBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable4() {
-        return 'tipo_documento_Usuario';
+        return 'tipo_documento';
     }
 
     /**

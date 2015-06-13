@@ -5,7 +5,7 @@
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('credencial', ((isset($objCredencial) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objCredencial)): ?>
     <input type="hidden" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, TRUE) ?>" value="<?php echo $objCredencial[0]->$id ?>">
-    <?php endif; ?>
+    <?php endif;//close if ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">

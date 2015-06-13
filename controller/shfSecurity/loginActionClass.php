@@ -16,39 +16,39 @@ use mvc\i18n\i18nClass as i18n;
  */
 class loginActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
-        $usuario = request::getInstance()->getPost('inputUser');
-        $password = request::getInstance()->getPost('inputPassword');
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
+                $usuario = request::getInstance()->getPost('inputUser');
+                $password = request::getInstance()->getPost('inputPassword');
 
-        if (($objUsuario = usuarioTableClass::verifyUser($usuario, $password)) !== false) {
-          hook\security\securityHookClass::login($objUsuario);
-          if (request::getInstance()->hasPost('chkRememberMe') === true) {
-            $chkRememberMe = request::getInstance()->getPost('chkRememberMe');
-            $hash = md5($objUsuario[0]->id_usuario . $objUsuario[0]->usuario . date(config::getFormatTimestamp()));
-            $data = array(
-                recordarMeTableClass::USUARIO_ID => $objUsuario[0]->id_usuario,
-                recordarMeTableClass::HASH_COOKIE => $hash,
-                recordarMeTableClass::IP_ADDRESS => request::getInstance()->getServer('REMOTE_ADDR'),
-                recordarMeTableClass::CREATED_AT => date(config::getFormatTimestamp())
-            );
-            recordarMeTableClass::insert($data);
-            setcookie(config::getCookieNameRememberMe(), $hash, time() + config::getCookieTime(), config::getCookiePath());
-          }
-          log::register('identificacion', 'NINGUNA');
-          hook\security\securityHookClass::redirectUrl();
-        } else {
-          session::getInstance()->setError('Usuario y contraseña incorrectos');
-          routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
+                if (($objUsuario = usuarioTableClass::verifyUser($usuario, $password)) !== false) {
+                    hook\security\securityHookClass::login($objUsuario);
+                    if (request::getInstance()->hasPost('chkRememberMe') === true) {
+                        $chkRememberMe = request::getInstance()->getPost('chkRememberMe');
+                        $hash = md5($objUsuario[0]->id_usuario . $objUsuario[0]->usuario . date(config::getFormatTimestamp()));
+                        $data = array(
+                            recordarMeTableClass::USUARIO_ID => $objUsuario[0]->id_usuario,
+                            recordarMeTableClass::HASH_COOKIE => $hash,
+                            recordarMeTableClass::IP_ADDRESS => request::getInstance()->getServer('REMOTE_ADDR'),
+                            recordarMeTableClass::CREATED_AT => date(config::getFormatTimestamp())
+                        );
+                        recordarMeTableClass::insert($data);
+                        setcookie(config::getCookieNameRememberMe(), $hash, time() + config::getCookieTime(), config::getCookiePath());
+                    }//close if
+                    log::register('identificacion', 'NINGUNA');
+                    hook\security\securityHookClass::redirectUrl();
+                } else {
+                    session::getInstance()->setError('Usuario y contraseña incorrectos');
+                    routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
+                }//close if
+            } else {
+                routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
+            }//close if
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
-      } else {
-        routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
-      }
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
     }
-  }
 
 }

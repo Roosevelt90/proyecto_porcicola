@@ -19,7 +19,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
 
                 insumoTableClass::insert($data);
-            }
+            }//close if
             routing::getInstance()->redirect('insumo', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

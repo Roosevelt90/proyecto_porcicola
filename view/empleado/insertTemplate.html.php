@@ -6,12 +6,13 @@
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <br>
-            <h2>  <?php echo i18n::__('empleado', null, 'new')?>
+            <h2>  <?php echo i18n::__('new', null, 'empleado')?>
             </h2>
             
         </div>
     </div>
 </div>
 <br>
-<?php view::includePartial('empleado/formEmpleado', array('objNumero_documento'=>$objNumero_doc, 'objCiudad'=>$objCiudad, 'objCargo'=>$objCargo, 'objTipo_doc'=>$objTipo_doc)) ?>
+<?php view::includeHandlerMessage()?>
+<?php view::includePartial('empleado/formEmpleado', array('objCiudad'=>$objCiudad, 'objCargo'=>$objCargo, 'objTipo_doc'=>$objTipo_doc)) ?>
 

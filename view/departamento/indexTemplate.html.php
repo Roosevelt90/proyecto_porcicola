@@ -52,4 +52,21 @@ use mvc\i18n\i18nClass as i18n ?>
         <input type="hidden" id="idDelete" name="<?php echo departamentoBaseTableClass::getNameField(departamentoBaseTableClass::ID, true) ?>">
     </form>
 </div>
+<!--    paginado-->
+<div class="text-right">
+    <nav>
+        <ul class="pagination" id="slqPaginador">
+            <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('departamento', 'index') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
+            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('departamento', 'index') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
+                <?php $count ++ ?>        
+            <?php endfor ?>
+            <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('departamento', 'index') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
+        </ul>
+    </nav>
+</div>
+<form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('departamento', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo departamentoTableClass::getNameField(departamentoTableClass::ID, true) ?>">
+
+
 

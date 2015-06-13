@@ -67,7 +67,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 //            } else {
 //                session::getInstance()->setError(i18n::__('errorUpdate', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');
-            }
+            }//close if
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

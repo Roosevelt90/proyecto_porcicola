@@ -671,7 +671,7 @@ footer{
 }
 
 
-/*MODULO EMPLEADO*/
+/*MODULO PERSONAL*/
 .menuDesplegableEmpleado {
     margin-left: 50px;
     margin-bottom: 7px;
@@ -837,7 +837,7 @@ footer{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
- checkbox utilizado para alternar el estado del menu 
+/* checkbox utilizado para alternar el estado del menu */
 .menuDesplegabledpVenta input[type="checkbox"] {
     position: absolute;
     left: 0;
@@ -845,9 +845,9 @@ footer{
     opacity: 0;
 }
 
- Icono principar para alternar el estado del menu 
+/* Icono principar para alternar el estado del menu */
 .menuDesplegabledpVenta > label {
-    background-color: red;
+    /*background-color: red;*/
     background-image: url("../img/botones.jpg");
     width: 238px;
     height: 76px;
@@ -863,7 +863,7 @@ footer{
     transition: all 0.6s ease-in; 
 }
 
- rayas internas dentro de la etiqueta 
+/* rayas internas dentro de la etiqueta */
 .menuDesplegabledpVenta > label::after {
     content: "";
     display: block;
@@ -878,7 +878,7 @@ footer{
     transition: all 0.6s ease-in; 
 }
 
- contenedor <UL> con las opciones del menu 
+/* contenedor <UL> con las opciones del menu */
 .menuDesplegabledpVenta ul {
     margin: 0;
     padding: 0;
@@ -907,7 +907,7 @@ footer{
     padding: 0;
 }
 
- hace referencia a la etiqueta para cerrar el menu 
+/* hace referencia a la etiqueta para cerrar el menu */
 .menuDesplegabledpVenta ul label {
     cursor: pointer;
     position: relative;
@@ -915,7 +915,7 @@ footer{
     text-align: center;
 }
 
- etiqueta para el boton de cerrar o recojer el menu 
+/* etiqueta para el boton de cerrar o recojer el menu */
 .menuDesplegabledpVenta ul label::after {
     content: "x";
     display: inline-block;
@@ -939,15 +939,15 @@ footer{
     -moz-transform: rotatey(360deg);
     -ms-transform: rotatey(360deg);
     -webkit-transform: rotatey(360deg);
-    transform: rotatey(360deg);  hace rotar 360º 
+    transform: rotatey(360deg); /* hace rotar 360º */
 }
 
 .menuDesplegabledpVenta > label:hover, .menuDesplegabledpVenta > label:hover::after, .menuDesplegabledpVenta input[type="checkbox"]:checked ~ label, .menuDesplegabledpVenta input[type="checkbox"]:checked ~ label::after {
-    border-color: darkred;  resaltamos cambiando el color 
+    border-color: darkred; /* resaltamos cambiando el color */
 }
 
 .menuDesplegabledpVenta input[type="checkbox"]:checked ~ ul {
-    left: 8px;  simulamos una pequeña animación 
+    left: 8px; /* simulamos una pequeña animación */
     opacity: 1;
     -moz-box-shadow: 1px 1px 5px gray;
     -webkit-box-shadow: 1px 1px 5px gray;
@@ -964,7 +964,7 @@ footer{
     padding: 10px;
     padding-right: 15px;
     height: 100%;
-}*/
+}
 
 
 

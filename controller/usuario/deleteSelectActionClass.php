@@ -28,7 +28,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                     $idsData = array(
                         datosUsuarioTableClass::USUARIO_ID => $id
                     );
-                }
+                }//close foreach
                 datosUsuarioTableClass::delete($idsData, true);
                 usuarioTableClass::delete($ids, true);
 
@@ -37,7 +37,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
             } else {
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');
-            }
+            }//close if
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

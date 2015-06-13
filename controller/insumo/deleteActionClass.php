@@ -22,7 +22,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     insumoTableClass::ID => $id
                 );
                 insumoTableClass::delete($ids, false);
-            }
+            }//close if
             routing::getInstance()->redirect('insumo', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

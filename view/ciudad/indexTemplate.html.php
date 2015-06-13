@@ -14,7 +14,7 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>
-<?php echo i18n::__('read', NULL, 'city') ?>
+                <?php echo i18n::__('read', NULL, 'city') ?>
             </h2>
         </div>
     </div>
@@ -36,19 +36,19 @@ use mvc\i18n\i18nClass as i18n ?>
                 </tr>
             </thead>
             <tbody>
-<?php foreach ($objCiudad as $key): ?>
+                <?php foreach ($objCiudad as $key): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
                         <td><?php echo $key->$id ?></td>
                         <td><?php echo $key->$nombreCiudad ?></td>
-                        <th><?php echo $key->$nombreDepto ?></th>
+                        <td><?php echo $key->$nombreDepto ?></td>
                         <td>
                             <!--<a href="#" class="btn btn-warning btn-sm disabled">Ver</a>-->
                             <a href="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'edit', array(ciudadBaseTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
                             <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
                         </td>
                     </tr>
-<?php endforeach ?>
+                <?php endforeach ?>
             </tbody>
         </table>
     </form>

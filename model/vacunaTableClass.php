@@ -27,16 +27,33 @@ class vacunaTableClass extends vacunaBaseTableClass {
             session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::VALOR, true), true);
         }
 
-        if (ereg($patternC, $nombre) == false) {
+
+
+        if (empty($nombre) or !isset($nombre) or $nombre == '') {
+
+            session::getInstance()->setError('re_pailas');
+            $flag = true;
+            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::NOMBRE_VACUNA, true), true);
+        } else if (strlen($nombre) < 3) {
+            session::getInstance()->setError('pailas');
+            $flag = true;
+            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::NOMBRE_VACUNA, true), true);
+        } else if (ereg($patternC, $nombre) == false) {
             session::getInstance()->setError(i18n::__(10022, null, 'errors', array('%campo%' => $nombre)));
             $flag = true;
             session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::NOMBRE_VACUNA, true), true);
         }
-        if (ereg($patternC, $lote) == false) {
-            session::getInstance()->setError(i18n::__(10022, null, 'errors', array('%campo%' => $lote)));
-            $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::LOTE_VACUNA, true), true);
-        }
+
+//        if (ereg($patternC, $nombre) == false) {
+//            session::getInstance()->setError(i18n::__(10022, null, 'errors', array('%campo%' => $nombre)));
+//            $flag = true;
+//            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::NOMBRE_VACUNA, true), true);
+//        }
+//        if (ereg($patternC, $lote) == false) {
+//            session::getInstance()->setError(i18n::__(10022, null, 'errors', array('%campo%' => $lote)));
+//            $flag = true;
+//            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::LOTE_VACUNA, true), true);
+//        }
 
         if ($fecha_vencimiento < $dateNow) {
             session::getInstance()->setError(i18n::__(10020, null, 'errors'));
@@ -63,7 +80,7 @@ class vacunaTableClass extends vacunaBaseTableClass {
             routing::getInstance()->forward('vacunacion', 'insertVacuna');
         }
     }
-    
+
     public static function validateEdit($lote, $id) {
         $flag = false;
 
@@ -76,7 +93,6 @@ class vacunaTableClass extends vacunaBaseTableClass {
 //            $flag = true;
 //            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::VALOR, true), true);
 //        }
-
 //        if (ereg($patternC, $nombre) == false) {
 //            session::getInstance()->setError(i18n::__(10022, null, 'errors', array('%campo%' => $nombre)));
 //            $flag = true;

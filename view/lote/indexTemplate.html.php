@@ -1,16 +1,13 @@
 <?php
-
 use mvc\routing\routingClass as routing ?>
 
 <?php $id = loteTableClass::ID ?>
 <?php $nombre = loteTableClass::NOMBRE ?>
 
 <?php
-
 use mvc\i18n\i18nClass as i18n ?>
 
 <?php
-
 use mvc\view\viewClass as view ?>
 
 <div class="container container-fluid">
@@ -68,7 +65,7 @@ use mvc\view\viewClass as view ?>
                         </div>
                     </div>
                 </div>
-            <?php endforeach ?>
+            <?php endforeach//close foreach ?>
             </tbody>
         </table>
     </form>
@@ -80,7 +77,7 @@ use mvc\view\viewClass as view ?>
                 <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                     <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
                     <?php $count ++ ?>        
-                <?php endfor; ?>
+                <?php endfor; //close for ?>
                 <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
             </ul>
         </nav>
@@ -104,4 +101,3 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </div>
-

@@ -25,7 +25,7 @@ class TraductorShfSecurityActionClass extends controllerClass implements control
                 header('Location: '.$dir); 
             } else {
                 routing::getInstance()->redirect('shfSecurity', 'login');
-            }
+            }//close if
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

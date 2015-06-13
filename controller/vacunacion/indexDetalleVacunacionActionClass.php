@@ -35,7 +35,7 @@ class indexDetalleVacunacionActionClass extends controllerClass implements contr
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }
+            }//close if
 
             $f = array(
                 detalleVacunacionTableClass::ID

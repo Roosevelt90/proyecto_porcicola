@@ -88,7 +88,7 @@ animal:
     stylesheet:
       - main.css
       
-empleado:
+personal:
   indexEmpleado:
     title: empleados
     stylesheet:
@@ -97,7 +97,6 @@ empleado:
     title: Registro de un nuevo empleado
     stylesheet:
       - main.css
-  
   editEmpleado:
     title: Modificar empleado
     stylesheet:
@@ -111,6 +110,7 @@ empleado:
     title: cargo
     stylesheet:
       - main.css
+      
   insertCargo:
     title: Registro de un nuevo cargo
     stylesheet:
@@ -120,6 +120,110 @@ empleado:
     title: Modificar Cargo
     stylesheet:
       - main.css
+      
+  defaultCargo:
+  index:
+    stylesheet:
+      - main.css
+      
+  indexCliente:
+      title: clientes
+      sylesheet:
+       - main.css
+       
+  defaultCliente:
+  index:
+    stylesheet:
+      - main.css
+      
+  indexProveedor:
+      title: proveedor
+      sylesheet:
+       - main.css
+       
+  defaultProveedor:
+  index:
+    stylesheet:
+      - main.css
+      
+  indexVeterinario:
+    title: veterinario
+    stylesheet:
+      - main.css
+      
+  insertVeterinario:
+    title: Registro de un nuevo veterinario
+    stylesheet:
+      - main.css
+      
+  editVeterinario:
+    title: Modificar veterinario
+    stylesheet:
+      - main.css
+      
+  defaultVeterinario:
+  index:
+    stylesheet:
+      - main.css
+      
+            
+      
+  insertCargo:
+    title: Registro de un nuevo cargo
+    stylesheet:
+      - main.css
+  
+  editCargo:
+    title: Modificar Cargo
+    stylesheet:
+      - main.css
+
+  indexCliente:
+    title: clientes
+    stylesheet:
+      - main.css
+      
+  insertCliente:
+    title: Registro de un nuevo Cliente
+    stylesheet:
+      - main.css
+      
+  editCliente:
+    title: Modificar CLiente
+    stylesheet:
+      - main.css
+  
+  indexProveedor:
+    title: proveedor
+    stylesheet:
+       - main.css
+       
+  insertProveedor:
+    title: Nuevo proveedor
+    stylesheet:
+      - main.css
+  editProveedor:
+    title: Editar proveedor
+    stylesheet:
+      - main.css
+           
+  indexVeterinario:
+    title: veterinario
+    stylesheet:
+      - main.css
+      
+  insertVeterinario:
+    title: Nuevo veterinario
+    stylesheet:
+      - main.css
+      
+  editVeterinario:
+    title: Modificar veterinario
+    stylesheet:
+      - main.css
+      
+
+      
   defaultCargo:
   index:
     stylesheet:
@@ -142,6 +246,10 @@ empleado:
   index:
     stylesheet:
       - main.css
+  indexVacuna:
+    title: vacunas
+    stylesheet:
+       - main.css
    
 dpVenta:
   index:
@@ -251,6 +359,21 @@ factura:
     stylesheet:
       - main.css 
       
+  insertFacturaCompra:
+    tittle: Nueva factura de compra
+    stylesheet:
+      - main.css       
+
+  indexFacturaVenta:
+    tittle: Registros de ventas
+    stylesheet:
+      - main.css 
+      
+  insertFacturaVenta:
+    tittle: Nueva factura de venta
+    stylesheet:
+      - main.css     
+      
 credencial:
   index:
     tittle: Registro credencial
@@ -292,3 +415,6 @@ dataUser:
     tittle: editar usuario credencial
     stylesheet:
      - main.css   
+     
+     
+

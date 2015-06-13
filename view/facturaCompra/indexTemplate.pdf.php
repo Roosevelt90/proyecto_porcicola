@@ -47,5 +47,5 @@ foreach ($objAnimal as $key) {
     $pdf->Cell(30, 10, utf8_encode($key->nombre_lote), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre_raza), 1);
     $pdf->Ln();
-}
+}//close foreach
 $pdf->Output();

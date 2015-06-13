@@ -27,12 +27,12 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $data = array(
                     credencialTableClass::NOMBRE => $nombre
                 );
- 
+
                 credencialTableClass::insert($data);
-                
-                
+
+
                 credencialTableClass::validatCreate($nombre);
-            }
+            }//close if
             routing::getInstance()->redirect('credencial', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

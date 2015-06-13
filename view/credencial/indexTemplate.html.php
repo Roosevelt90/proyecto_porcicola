@@ -1,17 +1,19 @@
 <?php
+
 use mvc\routing\routingClass as routing ?>
 
 <?php $id = credencialTableClass::ID ?>
 <?php $nombre = credencialTableClass::NOMBRE ?>
 
 <?php
+
 use mvc\i18n\i18nClass as i18n ?>
 
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>
-<?php echo i18n::__('read', NULL, 'credencial') ?>
+                <?php echo i18n::__('read', NULL, 'credencial') ?>
             </h2>
         </div>
     </div>
@@ -32,7 +34,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 </tr>
             </thead>
             <tbody>
-<?php foreach ($objCredencial as $key): ?>
+                <?php foreach ($objCredencial as $key): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
                         <td><?php echo $key->$id ?></td>
@@ -43,7 +45,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
                         </td>
                     </tr>
-<?php endforeach ?>
+                <?php endforeach//close foreach  ?>
             </tbody>
         </table>
     </form>

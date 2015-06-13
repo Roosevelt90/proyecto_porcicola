@@ -13,7 +13,7 @@ class deleteFilterFacturaCompraActionClass extends controllerClass implements co
         try {
             if (session::getInstance()->hasAttribute('facturaCompraFilter')) {
                 session::getInstance()->deleteAttribute('facturaCompraFilter');
-            }
+            }//clse if
 
             routing::getInstance()->redirect('factura', 'indexFacturaCompra');
         } catch (PDOException $exc) {

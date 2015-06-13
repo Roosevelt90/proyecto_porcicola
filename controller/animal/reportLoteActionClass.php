@@ -20,17 +20,17 @@ class reportLoteActionClass extends controllerClass implements controllerActionI
             $where = null;
             if (session::getInstance()->hasAttribute('loteFiltersAnimal')) {
                 $where = session::getInstance()->getAttribute('loteFiltersAnimal');
-            }
+            }//close if
 
-$fields = array(
-loteTableClass::ID,
-loteTableClass::NOMBRE
-);
+            $fields = array(
+                loteTableClass::ID,
+                loteTableClass::NOMBRE
+            );
 
-$orderBy = array(
-loteTableClass::ID
-);
-            
+            $orderBy = array(
+                loteTableClass::ID
+            );
+
             $this->objLote = loteTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
             $this->mensaje = 'Informe de los lotes en nuestro sistema';
             $this->defineView('index', 'lote', session::getInstance()->getFormatOutput());
@@ -41,5 +41,3 @@ loteTableClass::ID
     }
 
 }
-
-

@@ -21,7 +21,7 @@ class exceptionActionClass extends controllerClass implements controllerActionIn
       $this->defineView('exception', 'shfSecurity', session::getInstance()->getFormatOutput());
     } else {
       routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
-    }
+    }//close if
   }
 
 }

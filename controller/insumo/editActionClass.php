@@ -22,7 +22,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $this->defineView('edit', 'insumo', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('insumo', 'index');
-            }
+            }//close if
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

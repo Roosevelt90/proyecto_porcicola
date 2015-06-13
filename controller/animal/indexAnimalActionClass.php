@@ -45,20 +45,20 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                     $date = validate::getInstance()->validateDate($filter['fecha_inicial']);
                     if ($date == false) {
                         throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
-                    }
+                    }//close if
                     $date = validate::getInstance()->validateDate($filter['fecha_fin']);
                     if ($date == false) {
                         throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
-                    }
+                    }//close if
                     $where[animalTableClass::FECHA_INGRESO] = array(
                         date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
                         date(config::getFormatTimestamp(), strtotime($filter['fecha_fin'] . ' 23.59.59'))
                     );
-                }
+                }//close if
                 session::getInstance()->setAttribute('animalFiltersAnimal', $where);
             } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
                 $where = session::getInstance()->getAttribute('animalFiltersAnimal');
-            }
+            }//close if
 
 
             $fieldsRaza = array(
@@ -104,7 +104,7 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }
+            }//close if
             $f = array(
                 animalTableClass::ID
             );

@@ -6,15 +6,16 @@ class proveedorBaseTableClass extends tableBaseClass {
 
     private $id,
             $numero_documento,
+            $tipo_documento_id,
             $nombre_completo,
             $telefono,
-            $direccion,
             $id_ciudad,
-            $tipo_documento;
-    
+            $direccion;
+           
+
     const ID = 'id';
     const NUMERO_DOCUMENTO = 'numero_documento';
-    const NOMBRE_COMPLETO = 'nombre_completo';
+    const NOMBRE_COMPLETO = 'nombre_completo_proveedor';
     const TELEFONO = 'telefono';
     const DIRECCION = 'direccion';
     const ID_CIUDAD = 'id_ciudad';

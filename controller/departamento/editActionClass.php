@@ -24,7 +24,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $this->defineView('edit', 'departamento', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('departamento', 'index');
-      }
+      }//close if
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

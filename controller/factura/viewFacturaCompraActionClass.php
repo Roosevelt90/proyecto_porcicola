@@ -16,6 +16,23 @@ use mvc\i18n\i18nClass as i18n;
 class viewFacturaCompraActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
+        
+        
+        /*$where = array(
+            'campo' => 'valor',
+            'campo' => array(
+                'valor de rango inicial',
+                'valor de rango final'
+            ),
+            'campo LIKE "hola%" OR campo LIKE "%hola" OR campo "%valor%"'
+        );*/
+        
+        
+        
+        
+        
+        
+        
         try {
             if (request::getInstance()->hasRequest(procesoCompraTableClass::ID)) {
                 $idFactura = request::getInstance()->getRequest(procesoCompraTableClass::ID);

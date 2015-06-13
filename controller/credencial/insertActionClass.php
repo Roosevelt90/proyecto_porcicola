@@ -15,20 +15,20 @@ use mvc\i18n\i18nClass as i18n;
  */
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-        $fields = array (
-        credencialTableClass::NOMBRE
-        );
-        $this->objCreden = credencialTableClass::getAll($fields);
-        $this->defineView('insert', 'credencial', session::getInstance()->getFormatOutput());        
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+    public function execute() {
+        try {
+            $fields = array(
+                credencialTableClass::NOMBRE
+            );
+            $this->objCreden = credencialTableClass::getAll($fields);
+            $this->defineView('insert', 'credencial', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

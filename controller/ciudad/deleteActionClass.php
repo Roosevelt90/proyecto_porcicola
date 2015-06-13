@@ -26,7 +26,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         );
         ciudadTableClass::delete($ids, false);
   
-      } 
+      }//close if 
         routing::getInstance()->redirect('ciudad', 'index');
       
     } catch (PDOException $exc) {

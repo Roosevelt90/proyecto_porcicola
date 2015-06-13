@@ -40,7 +40,7 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
                 if ($validatorEmpty == false) {
                     throw new PDOException(i18n::__(10006, null, 'errors', null, 10006));
-                }
+                }//close if
 
 
                 //Validar el formato de fecha
@@ -52,12 +52,12 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 $validacionNumericos = validator::getInstance()->validateCharactersNumber($peso);
                 if ($validacionNumericos == true) {
                     throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
-                }
+                }//close if
 
                 $validacionNumericos = validator::getInstance()->validateCharactersNumber($edad);
                 if ($validacionNumericos == true) {
                     throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
-                }
+                }//close if
 
 
                 //Insertar la informacion del usuario
@@ -77,7 +77,7 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 log::register(i18n::__('create'), animalTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
-            }
+            }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

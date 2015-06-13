@@ -30,15 +30,15 @@ use mvc\i18n\i18nClass as i18n;
                 $flag = true;
             }
             if ($day == "Tue") {
-                $day = "Martes";
+                $day =  i18n::__('martes', null);
                 $flag = true;
             }
-            if ($day == "Wed") {
-                $day = "Miercoles";
+            if ($day == "Wen") {
+                $day =  i18n::__('miercoles', null);
                 $flag = true;
             }
             if ($day == "Thu") {
-                $day = "Jueves";
+                $day =  i18n::__('jueves', null);
                 $flag = true;
             }
             if ($day == "Fri") {

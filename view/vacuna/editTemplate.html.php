@@ -12,5 +12,6 @@
         </div>
     </div>
 </div>
+<?php view::includeHandlerMessage() ?>
 <?php view::includePartial('vacuna/formVacuna', array('objVacuna' => $objVacuna)) ?>
 

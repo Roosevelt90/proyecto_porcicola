@@ -23,7 +23,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         );
         departamentoTableClass::delete($ids, true);
   
-      } 
+      }//close if 
         routing::getInstance()->redirect('departamento', 'index');
       
     } catch (PDOException $exc) {

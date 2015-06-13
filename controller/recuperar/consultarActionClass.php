@@ -56,10 +56,10 @@ class consultarActionClass extends controllerClass implements controllerActionIn
                 } else {
                     echo 'Los datos son incorrectos por favor verificalos';
 //                    routing::getInstance()->getUrlWeb('default', 'index');
-                }
+                }//close if
             } else {
                 echo 'El nombre de usuario' . ' ' . $user . ' ' . 'no existe';
-            }
+            }//close if
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

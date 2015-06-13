@@ -19,6 +19,39 @@ class vacunacionBaseTableClass extends tableBaseClass {
     const VETERINARIO = 'id_veterinario';
     const FECHA = 'fecha_registro';
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getId_animal() {
+        return $this->id_animal;
+    }
+
+    function getId_veterinario() {
+        return $this->id_veterinario;
+    }
+
+    function getFecha_registro() {
+        return $this->fecha_registro;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setId_animal($id_animal) {
+        $this->id_animal = $id_animal;
+    }
+
+    function setId_veterinario($id_veterinario) {
+        $this->id_veterinario = $id_veterinario;
+    }
+
+    function setFecha_registro($fecha_registro) {
+        $this->fecha_registro = $fecha_registro;
+    }
+
+        
     /**
      * Método para obtener el nombre del campo más la tabla ya sea en formato
      * DB (.) o en formato HTML (_)

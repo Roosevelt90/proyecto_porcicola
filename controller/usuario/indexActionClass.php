@@ -17,9 +17,6 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
-
-
-
             $fields = array(
                 usuarioTableClass::ID,
                 usuarioTableClass::USER,
@@ -32,7 +29,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }
+            }//close if
             $f = array(
                 usuarioTableClass::ID
             );
@@ -41,7 +38,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 $this->page = request::getInstance()->getGet('page');
             } else {
                 $this->page = $page;
-            }
+            }//close if
 
             $lines = config::getRowGrid();
             $this->cntPages = usuarioTableClass::getAllCount($f, true, $lines);

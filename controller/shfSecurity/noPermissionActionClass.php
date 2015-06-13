@@ -15,13 +15,13 @@ use mvc\i18n\i18nClass as i18n;
  */
 class noPermissionActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      $this->defineView('noPermission', 'shfSecurity', session::getInstance()->getFormatOutput());
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+    public function execute() {
+        try {
+            $this->defineView('noPermission', 'shfSecurity', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

@@ -104,7 +104,7 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
             $fJoin2 = veterinarioTableClass::ID;
             $fJoin3 = vacunacionTableClass::ANIMAL;
             $fJoin4 = animalTableClass::ID;
-            
+
             $this->objVacuna = vacunaTableClass::getAll($fieldsVavuna, true);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario, true);

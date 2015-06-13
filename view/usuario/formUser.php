@@ -21,7 +21,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('usuario', ((isset($objUsuario) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objUsuario)): ?>
         <input type="hidden" name="<?php echo usuarioTableClass::getNameField(usuarioBaseTableClass::ID, TRUE) ?>" value="<?php echo $objUsuario[0]->$idUsuario ?>">
-    <?php endif; ?>
+    <?php endif;//close if ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
@@ -55,7 +55,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                         <option value="<?php echo $key->$idPregunta ?>">
                                             <?php echo $key->$pregunta ?>
                                         </option>
-                                    <?php endforeach; ?>
+                                    <?php endforeach;//close foreach ?>
                                 </select>
                             </th>
                         </tr>
@@ -67,7 +67,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <input required pattern="^[A-Za-z0-9]{1,20}$" maxlength="20"  title="No se puede usar caracteres especiales" type="text" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::RESPUESTA_SECRETA, true) ?>" placeholder="<?php echo i18n::__('answer', null, 'user') ?>">   
                             </th>
                         </tr>
-                    <?php endif; ?>
+                    <?php endif;//close if ?>
                             <tr>
                         <th>  <?php echo i18n::__('name', NULL, 'datos') ?>:</th>
                         <th> <input placeholder="<?php echo ((isset($objDatos) == FALSE) ? i18n::__('name', NULL, 'datos') : $objDatos[0]->$nombre = ucwords($objDatos[0]->$nombre)) ?>" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true) ?>" ></th>   
@@ -91,7 +91,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <option value="<?php echo $key->$idTipoDoc ?>">
                                     <?php echo $key->$descripcionTipoDoc ?>
                                 </option>
-                                <?php endforeach; ?>
+                                <?php endforeach;//close foreach ?>
                             </select>
                         </th>
                     </tr>
@@ -121,7 +121,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->$nom_ciudad ?>
                                     </option>
-                                <?php endforeach; ?>
+                                <?php endforeach;//close foreach ?>
                             </select>
                         </th>
                     </tr>

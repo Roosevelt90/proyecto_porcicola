@@ -497,9 +497,9 @@ namespace mvc\model\table {
          * asociativas y los valores por valores a tener en cuenta para el borrado.
          * Ejemplo $ids['id'] = 1
          * @throws \PDOException
-         * @author Roosevelt Diaz <rdiaz02@misena.edu.c
+         * @author Roosevelt Diaz <rdiaz02@misena.edu.co>
          */
-        public static function state($ids, $table) {
+        public static function stateToToggle($ids, $table) {
             try {
                 $fields = array(
                     'id',
@@ -518,7 +518,7 @@ namespace mvc\model\table {
 
                         $sql = $sql . " " . ' estado ' . " = " . "'  on '";
                         $sql = $sql . ' WHERE ' . ' id ' . ' = ' . $key->id;
-                    }
+                    }//close if
                     model::getInstance()->beginTransaction();
                     model::getInstance()->exec($sql);
                     model::getInstance()->commit();

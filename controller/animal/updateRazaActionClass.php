@@ -36,7 +36,7 @@ class updateRazaActionClass extends controllerClass implements controllerActionI
                 log::register(i18n::__('update'), razaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
                 session::getInstance()->setError(i18n::__('errorUpdate'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
-            }
+            }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

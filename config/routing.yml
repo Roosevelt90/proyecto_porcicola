@@ -866,15 +866,15 @@ animal_reporte:
 #    ----cargo---
 cargo_index:
   url:  /cargo/index
-  param: { module: empleado, action: indexCargo, format: html }
+  param: { module: personal, action: indexCargo, format: html }
   load:
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
     
 
 cargo_insert:
-  url:    /cargo/insertar
-  param:  { module: empleado, action: insertCargo, format: html }
+  url:  /cargo/insertar
+  param:  { module: personal, action: insertCargo, format: html }
   load:
       - model/base/cargoBaseTableClass.php
       - model/cargoTableClass.php
@@ -882,25 +882,30 @@ cargo_insert:
     
 cargo_create:
   url:    /cargo/crear
-  param:  { module: empleado, action: createCargo, format: html }
+  param:  { module: personal, action: createCargo, format: html }
   load:
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+
     
 cargo_edit:
   url:    /cargo/editar
-  param:  { module: empleado, action: editCargo, format: html }
+  param:  { module: personal, action: editCargo, format: html }
   load:
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
     
 cargo_update:
   url:    /cargo/actualizar
-  param:  { module: empleado, action: updateCargo, format: html }
+  param:  { module: personal, action: updateCargo, format: html }
   load:
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    
+animal_delete_filter:
+  url:  /borrar_filtro_animal    
     
 cargo_delete:
   url:    /cargo/eliminar
@@ -921,7 +926,7 @@ cargo_deleteSelect:
     ##----------------EMPLEADO------------##
 empleado_index:
   url: /empleado/index
-  param: { module: empleado, action: indexEmpleado, format: html }
+  param: { module: personal, action: indexEmpleado, format: html }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -929,15 +934,15 @@ empleado_index:
     - model/ciudadTableClass.php
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
        
 empleado_deleteSelect:
   url:    /empleado/eliminarSeleccion
-  param:  { module: empleado, action: deleteSelectEmpleado, format: json }
+  param:  { module: personal, action: deleteSelectEmpleado, format: json }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -948,7 +953,7 @@ empleado_deleteSelect:
      
 empleado_insert:
   url:    /empleado/insertar
-  param:  { module: empleado, action: insertEmpleado, format: html }
+  param:  { module: personal, action: insertEmpleado, format: html }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -956,8 +961,8 @@ empleado_insert:
     - model/ciudadTableClass.php
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
@@ -965,7 +970,7 @@ empleado_insert:
     
 empleado_create:
   url:    /empleado/crear
-  param:  { module: empleado, action: createEmpleado, format: html }
+  param:  { module: personal, action: createEmpleado, format: html }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -973,15 +978,15 @@ empleado_create:
     - model/ciudadTableClass.php
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
     
 empleado_edit:
   url:    /empleado/editar
-  param:  { module: empleado, action: editEmpleado, format: html }
+  param:  { module: personal, action: editEmpleado, format: html }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -989,8 +994,8 @@ empleado_edit:
     - model/ciudadTableClass.php
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
@@ -1000,7 +1005,7 @@ animal_delete_filter:
 
 empleado_update:
   url:    /empleado/actualizar
-  param:  { module: empleado, action: updateEmpleado, format: html }
+  param:  { module: personal, action: updateEmpleado, format: html }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -1008,8 +1013,8 @@ empleado_update:
     - model/ciudadTableClass.php
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
@@ -1017,7 +1022,7 @@ empleado_update:
 
 empleado_delete:
   url:    /empleado/eliminar
-  param:  { module: empleado, action: deleteEmpleado, format: json }
+  param:  { module: personal, action: deleteEmpleado, format: json }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
@@ -1040,11 +1045,11 @@ traducion:
         
 empleado_deleteFilters:
     url: /borrar_filtros
-    param: { module: empleado, action: deleteFiltersEmpleado, format: json}
+    param: { module: personal, action: deleteFiltersEmpleado, format: json}
     
 empleado_reporte:
     url: /empleado/reporte
-    param: { module: empleado, action: reportEmpleado, format: pdf }
+    param: { module: personal, action: reportEmpleado, format: pdf }
     load:
     - libs/fpdf/fpdf.php
     - libs/validate/validatorFieldClass.php
@@ -1054,8 +1059,8 @@ empleado_reporte:
     - model/ciudadTableClass.php
     - model/base/cargoBaseTableClass.php
     - model/cargoTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
@@ -1063,171 +1068,482 @@ empleado_reporte:
 
 empleado_delete_filters_empleado:
   url:    /borrar_filtros
-  param:  { module: empleado, action: deleteFiltersEmpleado, format: html }
+  param:  { module: personal, action: deleteFiltersEmpleado, format: html }
     
     
 
 empleado_deleteSelect:
   url:    /empleado/eliminarSeleccion
-  param:  { module: empleado, action: deleteSelectEmpleado, format: html }
+  param:  { module: personal, action: deleteSelectEmpleado, format: html }
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
-
-
-#---------------------PROCESO_VENTA-------------------#
-
-dpVenta_index:
-  url:    /dpVenta/index
-  param:  { module: dpVenta, action: index, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-
-dpVenta_insert:
-  url:    /dpVenta/insertar
-  param:  { module: dpVenta, action: insert, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-#    - model/base/usuarioBaseTableClass.php
-#    - model/usuarioTableClass.phps.php
     
-dpVenta_create:
-  url:    /dpVenta/crear
-  param:  { module: dpVenta, action: create, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
+    #----------------veterinario------------#
     
-dpVenta_edit:
-  url:    /dpVenta/editar
-  param:  { module: dpVenta, action: edit, format: html }
+veterinario_index:
+  url: /veterinario/index
+  param: { module: personal, action: indexVeterinario, format: html }
   load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    
-    
-dpVenta_update:
-  url:    /dpVenta/actualizar
-  param:  { module: dpVenta, action: update, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    
-dpVenta_delete:
-  url:    /dpVenta/eliminar
-  param:  { module: dpVenta, action: delete, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    
-dpVenta_deleteSelect:
-  url:    /dpVenta/eliminarSeleccion
-  param:  { module: dpVenta, action: deleteSelect, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    
-dpVenta_reporte:
-  url:    /dpVenta/reporte
-  param:  { module: dpVenta, action: report, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-#    - model/base/usuarioBaseTableClass.php
-#    - model/usuarioTableClass.phps.php
-
-dpVenta_view:
-  url:    /pVenta/vista
-  param:  { module: pVenta, action: vista, format: html }
-  load:
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    - hooks/logHookClass.php
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
-  
-    
-#--------------CABEZERA FACTURA------------------#
-    
-pVenta_index:
-  url:    /pVenta/index
-  param:  { module: pVenta, action: index, format: html }
-  load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
+    - hooks/logHookClass.php
 
-pVenta_insert:
-  url:    /pVenta/insertar
-  param:  { module: pVenta, action: insert, format: html }
+     
+veterinario_insert:
+  url:    /veterinario/insertar
+  param:  { module: personal, action: insertVeterinario, format: html }
   load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
     
-pVenta_create:
-  url:    /pVenta/crear
-  param:  { module: pVenta, action: create, format: html }
+veterinario_create:
+  url:    /veterinario/crear
+  param:  { module: personal, action: createVeterinario, format: html }
   load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php    
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
     
-pVenta_edit:
-  url:    /pVenta/editar
-  param:  { module: pVenta, action: edit, format: html }
+veterinario_edit:
+  url:    /veterinario/editar
+  param:  { module: personal, action: editVeterinario, format: html }
   load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php
-    
-pVenta_update:
-  url:    /pVenta/actualizar
-  param:  { module: pVenta, action: update, format: html }
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php 
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+
+veterinario_update:
+  url:    /veterinario/actualizar
+  param:  { module: personal, action: updateVeterinario, format: html }
   load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
-    - model/base/dpVentaBaseTableClass.php
-    - model/dpVentaTableClass.php  
+
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
   
-pVenta_delete:
-  url:    /pVenta/eliminar
-  param:  { module: pVenta, action: delete, format: html }
-  load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
+        
+veterinario_deleteFilters:
+    url: /borrar_filtros
+    param: { module: personal, action: deleteFiltersVeterinario, format: json}
+    
+veterinario_reporte:
+    url: /veterinario/reporte
+    param: { module: personal, action: reportVeterinario, format: pdf }
+    load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    
+
+veterinario_delete_filters_empleado:
+  url:    /borrar_filtros
+  param:  { module: personal, action: deleteFiltersVeterinario, format: html }
     
     
-pVenta_deleteSelect:
-  url:    /pVenta/eliminarSeleccion
-  param:  { module: pVenta, action: deleteSelect, format: html }
+
+veterinario_deleteSelect:
+  url:    /veterinario/eliminarSeleccion
+  param:  { module: personal, action: deleteSelectVeterinario, format: html }
   load:
-    - model/base/pVentaBaseTableClass.php
-    - model/pVentaTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+#-------------------proveedor-------------------#
+
+proveedor_index:
+  url: /proveedor/index
+  param: { module: personal, action: indexProveedor, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    
+   
+    
+proveedor_insert:
+  url:    /proveedor/insertar
+  param:  { module: personal, action: insertProveedor, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
+    
+proveedor_update:
+  url: /proveedor/update
+  param: { module: personal, action: updateProveedor, format: html}
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+proveedor_create:
+  url:    /proveedor/crear
+  param:  { module: personal, action: createProveedor, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+    
+proveedor_edit:
+  url:    /proveedor/editar
+  param:  { module: personal, action: editProveedor, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+proveedor_reporte:
+    url: /proveedor/reporte
+    param: { module: personal, action: reportProveedor, format: pdf }
+    load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   #----------------cliente------------------#
+
+cliente_index:
+  url: /cliente/index
+  param: { module: personal, action: indexCliente, format: html }
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+    
+cliente_delete_filters_empleado:
+  url:    /borrar_filtros
+  param:  { module: personal, action: deleteFiltersCliente, format: html }
+    
+    
+
+cliente_deleteSelect:
+  url:    /cliente/eliminarSeleccion
+  param:  { module: personal, action: deleteSelectCliente, format: html }
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+cliente_insert:
+  url:    /cliente/insertar
+  param:  { module: personal, action: insertCliente, format: html }
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/cargoBaseTableClass.php
+    - model/cargoTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+   
+    
+cliente_create:
+  url:    /cliente/crear
+  param:  { module: personal, action: createCliente, format: html }
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+    
+cliente_edit:
+  url:    /cliente/editar
+  param:  { module: personal, action: editCliente, format: html }
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+cliente_update:
+  url: /cliente/update
+  param: { module: personal, action: updateCliente, format: html}
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+cliente_reporte:
+    url: /cliente/reporte
+    param: { module: personal, action: reportCliente, format: pdf }
+    load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+
+#---------------------PROCESO_VENTA-------------------#
+#
+#dpVenta_index:
+#  url:    /dpVenta/index
+#  param:  { module: dpVenta, action: index, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#
+#dpVenta_insert:
+#  url:    /dpVenta/insertar
+#  param:  { module: dpVenta, action: insert, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/animalBaseTableClass.php
+#    - model/animalTableClass.php
+##    - model/base/usuarioBaseTableClass.php
+##    - model/usuarioTableClass.phps.php
+#    
+#dpVenta_create:
+#  url:    /dpVenta/crear
+#  param:  { module: dpVenta, action: create, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    
+#dpVenta_edit:
+#  url:    /dpVenta/editar
+#  param:  { module: dpVenta, action: edit, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/animalBaseTableClass.php
+#    - model/animalTableClass.php
+#    
+#    
+#dpVenta_update:
+#  url:    /dpVenta/actualizar
+#  param:  { module: dpVenta, action: update, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    
+#dpVenta_delete:
+#  url:    /dpVenta/eliminar
+#  param:  { module: dpVenta, action: delete, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    
+#dpVenta_deleteSelect:
+#  url:    /dpVenta/eliminarSeleccion
+#  param:  { module: dpVenta, action: deleteSelect, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    
+#dpVenta_reporte:
+#  url:    /dpVenta/reporte
+#  param:  { module: dpVenta, action: report, format: pdf }
+#  load:
+#    - libs/fpdf/fpdf.php
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/animalBaseTableClass.php
+#    - model/animalTableClass.php
+##    - model/base/usuarioBaseTableClass.php
+##    - model/usuarioTableClass.phps.php
+#
+#dpVenta_view:
+#  url:    /pVenta/vista
+#  param:  { module: pVenta, action: vista, format: html }
+#  load:
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    - hooks/logHookClass.php
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/bitacoraBaseTableClass.php
+#    - model/bitacoraTableClass.php
+#  
+#    
+##--------------CABEZERA FACTURA------------------#
+#    
+#pVenta_index:
+#  url:    /pVenta/index
+#  param:  { module: pVenta, action: index, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#
+#pVenta_insert:
+#  url:    /pVenta/insertar
+#  param:  { module: pVenta, action: insert, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    
+#pVenta_create:
+#  url:    /pVenta/crear
+#  param:  { module: pVenta, action: create, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php    
+#    
+#pVenta_edit:
+#  url:    /pVenta/editar
+#  param:  { module: pVenta, action: edit, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php
+#    
+#pVenta_update:
+#  url:    /pVenta/actualizar
+#  param:  { module: pVenta, action: update, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    - model/base/dpVentaBaseTableClass.php
+#    - model/dpVentaTableClass.php  
+#  
+#pVenta_delete:
+#  url:    /pVenta/eliminar
+#  param:  { module: pVenta, action: delete, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
+#    
+#    
+#pVenta_deleteSelect:
+#  url:    /pVenta/eliminarSeleccion
+#  param:  { module: pVenta, action: deleteSelect, format: html }
+#  load:
+#    - model/base/pVentaBaseTableClass.php
+#    - model/pVentaTableClass.php
     
 #---------------------------------------------------------------------------------
 vacunacion_index:
@@ -1572,7 +1888,7 @@ vacuna_deleteFiltersVacuna:
     - model/vacunaTableClass.php
   
   
-##------------FACTURA---------------------##
+##------------FACTUR COMPRAA---------------------##
 
 proceso_compra:
   url:      /proceso_compra
@@ -1670,21 +1986,6 @@ proceso_compra_eliminar_seleccion:
     - model/base/procesoCompraBaseTableClass.php
     - model/procesoCompraTableClass.php
     
-proceso_compra_reporte:
-  url:    /compra/reporte
-  param:  { module: factura, action: reportFacturaCompra, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    - model/base/procesoCompraBaseTableClass.php
-    - model/procesoCompraTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    
 compra_deleteFiltersCompra:
   url:     /borrar_filtros/compra
   param: { module: factura, action: deleteFilterFacturaCompra, format: html }
@@ -1710,3 +2011,167 @@ compra_view:
     - model/tipoInsumoTableClass.php
     - model/base/detalleProcesoCompraBaseTableClass.php
     - model/detalleProcesoCompraTableClass.php
+    
+compra_reporte:
+  url:    /compra/reporte
+  param:  { module: factura, action: reportCompra, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+
+##------------FACTURA VENTA---------------------##
+
+proceso_venta:
+  url:      /proceso_venta
+  param:  { module: factura, action: indexFacturaVenta, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+#    - model/base/detalleProcesoVentaBaseTableClass.php
+#    - model/detalleProcesoVentaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+proceso_venta_nuevo:
+  url:      /proceso_venta/nuevo_registro
+  param:  { module: factura, action: insertFacturaVenta, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+
+proceso_venta_crear:
+  url:      /proceso_venta/crear
+  param:  { module: factura, action: createFacturaVenta, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    
+#proceso_venta_edit:
+#  url:      /proceso_venta/edit
+#  param:  { module: factura, action: editFacturaVenta, format: html }
+#  load:
+#    - hooks/logHookClass.php
+#    - model/base/bitacoraBaseTableClass.php
+#    - model/bitacoraTableClass.php
+#    - model/base/procesoCompraBaseTableClass.php
+#    - model/procesoCompraTableClass.php
+#    - model/base/empleadoBaseTableClass.php
+#    - model/empleadoTableClass.php
+#    - model/base/proveedorBaseTableClass.php
+#    - model/proveedorTableClass.php
+#
+#proceso_venta_update:
+#  url:      /proceso_venta/update
+#  param:  { module: factura, action: updateFacturaVenta, format: html }
+#  load:
+#    - hooks/logHookClass.php
+#    - model/base/bitacoraBaseTableClass.php
+#    - model/bitacoraTableClass.php
+#    - model/base/procesoCompraBaseTableClass.php
+#    - model/procesoCompraTableClass.php
+#    - model/base/empleadoBaseTableClass.php
+#    - model/empleadoTableClass.php
+#    - model/base/proveedorBaseTableClass.php
+#    - model/proveedorTableClass.php
+
+proceso_venta_inhabilitar:
+  url:      /proceso_venta/eliminar
+  param:  { module: factura, action: deleteFacturaVenta, format: json }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+
+#proceso_venta_eliminar_seleccion:
+#  url:    /proceso_venta/eliminarSeleccion
+#  param:  { module: factura, action: deleteSelectFacturaVenta, format: html }
+#  load:
+#    - hooks/logHookClass.php
+#    - model/base/bitacoraBaseTableClass.php
+#    - model/bitacoraTableClass.php
+#    - model/base/procesoCompraBaseTableClass.php
+#    - model/procesoCompraTableClass.php
+    
+deleteFiltersVenta:
+  url:     /borrar_filtros/venta
+  param: { module: factura, action: deleteFilterFacturaVenta, format: html }
+
+#venta_view:
+#  url:    /view
+#  param: { module: factura, action: viewFacturaVenta, format: html }
+#  load:
+#    - hooks/logHookClass.php
+#    - model/base/bitacoraBaseTableClass.php
+#    - model/bitacoraTableClass.php
+#    - model/base/procesoCompraBaseTableClass.php
+#    - model/procesoCompraTableClass.php
+#    - model/base/detalleProcesoCompraBaseTableClass.php
+#    - model/detalleProcesoCompraTableClass.php
+#    - model/base/empleadoBaseTableClass.php
+#    - model/empleadoTableClass.php
+#    - model/base/proveedorBaseTableClass.php
+#    - model/proveedorTableClass.php
+#    - model/base/insumoBaseTableClass.php
+#    - model/insumoTableClass.php
+#    - model/base/tipoInsumoBaseTableClass.php
+#    - model/tipoInsumoTableClass.php
+#    - model/base/detalleProcesoCompraBaseTableClass.php
+#    - model/detalleProcesoCompraTableClass.php
+    
+venta_reporte:
+  url:    /venta/reporte
+  param:  { module: factura, action: reportVenta, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+

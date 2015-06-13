@@ -9,11 +9,10 @@
 <?php $valor = vacunaTableClass::VALOR ?>
 
 
-<?php  ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', ((isset($objVacuna) == TRUE) ? 'updateVacuna' : 'createVacuna')) ?>">
     <?php if (isset($objVacuna)): ?>
     <input type="hidden" name="<?php echo vacunaTableClass::getNameField(vacunaTableClass::ID, TRUE) ?>" value="<?php echo $objVacuna[0]->$id ?>">
-    <?php endif; ?>
+    <?php endif;//close if ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">

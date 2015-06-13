@@ -53,7 +53,7 @@ use mvc\view\viewClass as view ?>
                                     <option value="<?php echo $key->$idPregunta ?>">
                                         <?php echo $key->$pregunta ?>
                                     </option>
-                                <?php endforeach; ?>
+                                <?php endforeach;//close foreach ?>
                             </select>
                         </th>
                     </tr>

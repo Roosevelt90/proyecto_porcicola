@@ -16,4 +16,5 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </div>
-<?php view::includePartial('empleado/formEmpleado', array('objEmpleado'=>$objEmpleado,'objId'=>$id, 'objNumero_documento'=> $objNumero_documento, 'objCiudad'=>$objCiudad, 'objCargo'=>$objCargo, 'objTipo_doc'=>$objTipo_doc))?>
+<?php view::includeHandlerMessage()?>
+<?php view::includePartial('empleado/formEmpleado', array('objEmpleado'=>$objEmpleado, 'objCiudad'=>$objCiudad, 'objCargo'=>$objCargo, 'objTipo_doc'=>$objTipo_doc))?>

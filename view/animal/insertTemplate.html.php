@@ -12,5 +12,6 @@
     </div>
 </div>
 <br>
+<?php view::includeHandlerMessage() ?>
 <?php view::includePartial('animal/formAnimal', array('objRaza'=> $objRaza, 'objGenero'=> $objGenero, 'objLote'=> $objLote)) ?>
 

@@ -69,34 +69,26 @@ use mvc\i18n\i18nClass as i18n ?>
                         </ul>
                         <label class="fa  fa-3x" for="toggleboxInsumoLocalidad">Localidad</label>
                     </div>
-                    <!--MODULO EMPLEADO-->
+                    <!--MODULO PERSONAL-->
                     <div class="menuDesplegableEmpleado">
                         <input type="checkbox" id="toggleboxEmpleado" />
                         <ul>
-                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('empleado', 'indexCargo') ?>'" class="btn btn-ttc"><?php echo i18n::__('cargo') ?></a></li>
-                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('empleado', 'indexEmpleado') ?>'" class=" btn btn-ttc"><?php echo i18n::__('empleado') ?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCargo') ?>'" class="btn btn-ttc"><?php echo i18n::__('cargo') ?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>'" class=" btn btn-ttc"><?php echo i18n::__('empleado') ?></a></li>
+                            <li><a onclick="location.href= '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente')?>'" class="btn btn-ttc"><?php echo i18n::__('cliente')?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario')?>'"class="btn btn-ttc"><?php echo i18n::__('veterinario')?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor')?>'"class="btn btn-ttc"><?php echo i18n::__('proveedor')?></a></li>
                             <li><label for="toggleboxEmpleado"></label></li>
                         </ul>
-                        <label class="fa  fa-3x" for="toggleboxEmpleado"><?php echo i18n::__('empleado') ?></label>
+                        <label class="fa  fa-3x" for="toggleboxEmpleado"><?php echo i18n::__('personal') ?></label>
                     </div>
 
-<!--                    MENU DESPLEGABLE FACTURA
-                    <div class="menuDesplegabledpVenta">
-                        <input type="checkbox" id="toggleboxdpVenta" />
-                        <ul>
-                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('pVenta', 'index') ?>'"><?php echo i18n::__('pVenta') ?></a></li>
 
-                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('dpVenta', 'index') ?>'" class="btn btn-ttc"><?php echo i18n::__('dpVenta') ?></a></li>
-                            <li><label for="toggleboxdpVenta"></label></li>
-                        </ul>
-                        <label class="fa  fa-3x" for="toggleboxdpVenta"><?php echo i18n::__('factura') ?></label>
-                    </div>-->
-                    
-                       <!--MODULO FACTURA-->
                     <div class="menuDesplegableFactura">
                         <input type="checkbox" id="toggleboxFactura" />
                         <ul>
                             <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" class="btn btn-ttc"><?php echo i18n::__('facturaCompra') ?></a></li>
+                            <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>'" class="btn btn-ttc"><?php echo i18n::__('facturaVenta') ?></a></li>
                              <li><label for="toggleboxFactura"></label></li>
                         </ul>
                         <label class="fa  fa-3x" for="toggleboxFactura"><?php echo i18n::__('factura') ?></label>

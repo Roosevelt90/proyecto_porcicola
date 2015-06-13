@@ -36,7 +36,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     datosUsuarioTableClass::TELEFONO => $telefono
                 );
                 datosUsuarioTableClass::update($ids, $data);
-            }
+            }//close if
             routing::getInstance()->redirect('dataUser', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

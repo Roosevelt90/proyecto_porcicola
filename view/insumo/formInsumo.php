@@ -3,12 +3,12 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
-    <?php $id = insumoTableClass::ID ?>
-    <?php $nombre = insumoTableClass::NOMBRE ?>
+<?php $id = insumoTableClass::ID ?>
+<?php $nombre = insumoTableClass::NOMBRE ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('insumo', ((isset($objInsumo) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objInsumo)): ?>
         <input type="hidden" name="<?php echo insumoTableClass::getNameField(insumoTableClass::ID, TRUE) ?>" value="<?php echo $objInsumo[0]->$id ?>">
-<?php endif; ?>
+    <?php endif; //close if ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">

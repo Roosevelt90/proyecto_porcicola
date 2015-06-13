@@ -55,11 +55,10 @@ class viewVacunacionActionClass extends controllerClass implements controllerAct
 //                        $where[detalleVacunacionTableClass::ACCION] = $filter['accion'];
 //                    }
 
-                    $where[detalleVacunacionTableClass::ID_REGISTRO] = $idVacunacion;
 
-                    session::getInstance()->setAttribute('detalleVacunacionFiltersAnimal', $where);
-                } elseif (session::getInstance()->hasAttribute('detalleVacunacionFiltersAnimal')) {
-                    $where = session::getInstance()->getAttribute('detalleVacunacionFiltersAnimal');
+                    session::getInstance()->setAttribute('facturaVentaFilter', $where);
+                } elseif (session::getInstance()->hasAttribute('facturaVentaFilter')) {
+                    $where = session::getInstance()->getAttribute('facturaVentaFilter');
                 }//close if
 
                 $fieldsVacunacion = array(
@@ -88,7 +87,7 @@ class viewVacunacionActionClass extends controllerClass implements controllerAct
                 if (request::getInstance()->hasGet('page')) {
                     $page = request::getInstance()->getGet('page') - 1;
                     $page = $page * config::getRowGrid();
-                }
+                }//close if
 
                 $f = array(
                     detalleVacunacionTableClass::ID

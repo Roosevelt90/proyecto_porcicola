@@ -8,7 +8,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('factura', ((isset($objFacturaCompra) == TRUE) ? 'updateFacturaCompra' : 'createFacturaCompra')) ?>">
     <?php if (isset($objFacturaCompra)): ?>
     <input type="hidden" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" value="<?php echo $objFacturaCompra[0]->$id ?>">
-    <?php endif; ?>
+    <?php endif;//close if ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
@@ -33,7 +33,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <option value="">...</option>
                                 <?php foreach ($objEmpleado as $key): ?>
                                 <option value="<?php echo $key->$id ?>"> <?php echo $key->$nombreEmpleado ?></option>
-                                <?php endforeach; ?>
+                                <?php endforeach;//close foreach ?>
                             </select>
                         </th>   
                     
@@ -48,7 +48,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <option value="">...</option>
                                 <?php foreach ($objProveedor as $key): ?>
                                 <option value="<?php echo $key->$id ?>"> <?php echo $key->$nombreProveedor ?></option>
-                                <?php endforeach; ?>
+                                <?php endforeach;//close foreach ?>
                             </select>
                         </th>   
                     

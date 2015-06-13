@@ -26,8 +26,8 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                         insumoTableClass::ID => $id
                     );
                     insumoTableClass::delete($ids, false);
-                }
-            }
+                }//close foreach
+            }//close if
             routing::getInstance()->redirect('insumo', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

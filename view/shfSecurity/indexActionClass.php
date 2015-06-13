@@ -21,7 +21,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         routing::getInstance()->redirect(config::getDefaultModule(), config::getDefaultAction());
       } else {
         $this->defineView('loginForm', 'shfSecurity', session::getInstance()->getFormatOutput());
-      }
+      }//close if
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

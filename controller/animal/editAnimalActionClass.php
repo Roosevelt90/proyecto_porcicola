@@ -51,7 +51,7 @@ class editAnimalActionClass extends controllerClass implements controllerActionI
                 $this->defineView('edit', 'animal', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('animal', 'insertAnimal');
-            }
+            }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

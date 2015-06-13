@@ -16,7 +16,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     departamentoBaseTableClass::NOMBRE => $nombre
                 );
                 departamentoBaseTableClass::insert($data);
-            }
+            }//close if
             routing::getInstance()->redirect('departamento', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

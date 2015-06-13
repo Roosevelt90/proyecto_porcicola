@@ -2,6 +2,17 @@
 culture:                  Español
 dictionary:
   default:
+    cerrar:              Cerrar
+    buscar:              Buscar
+    ver:                 Ver
+    edit:                Editar
+    facturaVenta:         Facturas de venta
+    nombreCliente:        Nombre de cliente
+    personal:            Personal
+    Cliente:             Clientes
+    proveedor:           Proveedores
+    veterinario:         Veterinarios
+    telefono:            Telefono
     fechaInicio:          Fecha de inicio
     fechaFin:             Fecha final
     inhabilitar:         Inhabilitar factura
@@ -16,6 +27,14 @@ dictionary:
     contraseña:           Contraseña
     Recordar mis datos:   Recordar mis datos
     Olvidastes tu contraseña?:  Olvidastes tu contraseña?
+    id:                   Id
+    nombre_vacuna:        Nombre Vacuna
+    numero de documento:  Numero de documento
+    direccion:            Direccion
+    dosis:                Dosis
+    fecha_fabricacion_vacuna:  Fecha Fabricacion
+    fecha_vencimiento_vacuna:  Fecha Vencimiento
+    Escoja Idioma:        Selecione el Idioma/Select Lenguage
     Identificacion:       Identificacion
     Exit:                 Salir
     lunes:                Lunes
@@ -47,6 +66,10 @@ dictionary:
     deleteFilter:         Eliminar filtros
     user:                 Usuario
     empleado:             Empleado
+    nombre:               Nombre Completo
+    new:                  Nuevo Cliente
+    identificacion:       identificacion
+    cliente:              Nombre Cliente
     cargo:                Cargo
     dataUser:             Datos usuario
     credencial:           Credenciales
@@ -136,7 +159,7 @@ dictionary:
     lote:                 Lote
     raza:                 Raza
     Vacunas:              Vacunas
-    Registro:     Registro vacunas
+    Registro:             Registro vacunas
     vacunacion:           Vacunacion
     succesCreate:         El animal se ha registrado de forma exitosa   
     errorCreate:          No se ha podido crear el animal vuelve a intentarlo
@@ -161,6 +184,7 @@ dictionary:
     oldPass:              Nueva Contraseña
     read:                 Usuarios registrados en nuestro sistema
     delete:               Eliminar
+    direccion:            Direccion
     modify:               Modificar
     quest:                Pregunta de seguridad
     answer:               Respuesta de seguridad
@@ -181,6 +205,35 @@ dictionary:
     pVenta:               Factura Venta
     factura:              Factura
     
+  veterinario:
+    read:                 Veterinarios registrados
+    edit:                 Modificar Veterinario
+    direccion:            Direccion
+    telefono:             Telefono
+    new:                  Nuevo Veterinario
+    action:               Acciones
+    identification:       Id
+    Number of document:   Numero de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Veterinario
+    insertar:             Insertar Veterinario
+    
+  proveedor:
+    read:                 Proveedores registrados
+    edit:                 Modificar Proveedor
+    direccion:            Direccion
+    telefono:             Telefono
+    new:                  Nuevo proveedor
+    action:               Acciones
+    identification:       Id
+    Number of document:   Numero de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Proveedor
+    insertar:             Insertar proveedor
     
   depto:
     read:                 Departamento registrados en nuestro sistema
@@ -240,10 +293,28 @@ dictionary:
     insumo:               Insumo
     new:                  Registro de un nuevo insumo
     
+  cliente:
+    read:                 clientes registrado
+    edit:                 Modificar cliente
+    direccion:            Direccion
+    telefono:             Telefono
+    new:                  Nuevo cliente
+    action:               Acciones
+    identification:       Id
+    Number of document:   Numero de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Cliente
+    insertar:             Insertar cliente
+    
+    
+    
   empleado:
     read:                 Empleados registrado
     edit:                 Modificar empleado
     empleado:             Empleado
+    direccion:            Direccion
     telefono:             Telefono
     new:                  Nuevo empleado
     confirmDelete:        Eliminar empleado
@@ -255,8 +326,9 @@ dictionary:
     errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
     succesUpdate:         El empleado se ha modificado exitosamente 
     errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
-    view:                 Ver
+    view:                 Ver Empleado
     action:               Acciones
+    identificacion:       Identificacion
     identification:       Id
     Number of document:   Numero de documento
     document type:        Tipo documento
@@ -301,6 +373,8 @@ dictionary:
     filterReport:         Filtros de Reporte
     N°:                   N° del Registro de Vacunas
     editDetailVaccination: Editar Detalle de Registro Vacunas
+    
+ 
 
   cargo:
     read:                 Cargo registrados
@@ -348,6 +422,7 @@ dictionary:
    confirm:              Desea eliminar el registro 
    
 
+
    Olvidastes tu contraseña? :         Olvidastes tu contraseña?
    Recordar mis datos:                 Recordar mis datos
    
@@ -374,8 +449,8 @@ dictionary:
     00003:                Los datos de usuario y contrseña son inválidos.
     00004:                Las contraseñas no son iguales
     00005:                El nombre de usuario ya se encuentra registrado
-    
-    10005:                No se admite caracteres especiales
+    00023:                El campo  debe ser llenado solo con numeros    
+    10023:                No se admite caracteres especiales
     10006:                Hay campos vacios que son obligatorios
     10007:                Solo se permiten numeros
     
@@ -391,14 +466,14 @@ dictionary:
     10013:                La vacuna %id_vacuna% no se ha podido insertar
     10014:                La dosis %dosis_vacuna% no se ha podido insertar
     10015:                El dato ingresado pasa el numero maximo de caracteres
-    10016:                El veterinario %id_veterinario% no se ha podido modificar
-    10017:                El animal %id_animal% no se ha podido modificar
+    10016:                El cliente %telefono% no se ha podido insertar
+    10017:                El cliente %numero_documento% no se ha podido insertar
     10018:                La vacuna %id_vacuna% no se ha podido modificar
     10019:                La dosis %dosis_vacuna% no se ha podido modificar
     10020:                La fecha de vencimiento es inferior a la fecha actual
     10021:                La fecha de fabricacion es superior a la fecha actual
-    10022:                Se ha encontrado caracteres especiales en el campo %campo%
-    10023:                El campo %campo$ debe ser llenado solo con numeros
+    10022:                Se ha encontrado caracteres especiales en el ca
+    10023:                No se admite caracteres especialesmpo %campo%
     
     
     10030:                El animal seleccionado no existe en la base de datos

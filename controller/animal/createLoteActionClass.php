@@ -20,7 +20,7 @@ class createLoteActionClass extends controllerClass implements controllerActionI
 
                 if ($caracteres == true) {
                     throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
-                }
+                }//close if
                 $data = array(
                     loteTableClass::NOMBRE => $nombre
                 );
@@ -33,7 +33,7 @@ class createLoteActionClass extends controllerClass implements controllerActionI
                 log::register(i18n::__('create'), loteTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate'));
                 routing::getInstance()->redirect('animal', 'indexLote');
-            }
+            }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

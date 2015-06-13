@@ -13,7 +13,7 @@ class deleteFiltersAnimalActionClass extends controllerClass implements controll
         try {
             if (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
                 session::getInstance()->deleteAttribute('animalFiltersAnimal');
-            }
+            }//close if
 
             routing::getInstance()->redirect('animal', 'indexAnimal');
         } catch (PDOException $exc) {

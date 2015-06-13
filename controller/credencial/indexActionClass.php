@@ -18,10 +18,10 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     public function execute() {
         try {
             $fields = array(
-            credencialTableClass::ID,
-            credencialTableClass::NOMBRE
-             );
-             $this->objCredencial = credencialTableClass::getAll($fields, true);
+                credencialTableClass::ID,
+                credencialTableClass::NOMBRE
+            );
+            $this->objCredencial = credencialTableClass::getAll($fields, true);
             $this->defineView('index', 'credencial', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
@@ -31,5 +31,5 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             echo '</pre>';
         }
     }
-}
 
+}

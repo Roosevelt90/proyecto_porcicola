@@ -16,5 +16,6 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </div>
+<?php view::includeHandlerMessage() ?>
 <?php view::includePartial('lote/formLote', array('objLote' => $objLote)) ?>
 

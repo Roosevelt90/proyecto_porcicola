@@ -30,7 +30,7 @@ class deleteFacturaCompraActionClass extends controllerClass implements controll
                     'msg' => 'La eliminacion ha sido exitosa'
                 );
                
-                procesoCompraTableClass::state($ids);
+                procesoCompraTableClass::stateToToggle($ids);
 //                detalleVacunacionTableClass::delete($ids, true);
 //                session::getInstance()->setSuccess(i18n::__('succesDelete'));
 //                log::register(i18n::__('delete'), detalleVacunacionTableClass::getNameTable());

@@ -5,6 +5,7 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php $id = ciudadTableClass::ID ?>
 <?php $nombreCiudad = ciudadTableClass::NOMBRE ?>
+<?php $departamento_id = ciudadTableClass::ID_DEPTO?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('ciudad', ((isset($objCiudad) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objCiudad)): ?>
         <input type="hidden" name="<?php echo ciudadBaseTableClass::getNameField(ciudadBaseTableClass::ID, TRUE) ?>" value="<?php echo $objCiudad[0]->$id ?>">

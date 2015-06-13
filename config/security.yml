@@ -202,7 +202,7 @@ animal:
     credentials:
       - [admin]
       
-empleado:
+personal:
   indexEmpleado:
     security: true
     credentials:
@@ -231,6 +231,47 @@ empleado:
     security: true
     credentials:
       - [admin]
+  indexCliente:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertCliente:
+    security: true
+    credentials:
+      - [admin]
+  createCliente:
+    security: true
+    credentials:
+      - [admin]
+  editCliente:
+    security: true
+    credentials:
+      - [admin]
+  updateCliente:
+    security: true
+    credentials:
+      - [admin]     
+  indexVeterinario:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertVeterinario:
+    security: true
+    credentials:
+      - [admin]
+  createVeterinario:
+    security: true
+    credentials:
+      - [admin]
+  editVeterinario:
+    security: true
+    credentials:
+      - [admin]
+  updateVeterinario:
+    security: true
+    credentials:
+      - [admin]
+
       
 vacunacion:
   indexVacunacion:
@@ -345,52 +386,6 @@ vacunacion:
     security: true
     credentials:
       - [admin]
-      
-factura:
-  indexFacturaCompra:
-    security: true
-    credentials:
-      - [admin, invitado]
-  insertFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  createFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  editFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  updateFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  deleteFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  deleteSelectFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  reporteFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  deleteFiltersFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  traductorFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  viewFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
   deleteSelectDetalleVacunacion:
     security: true
     credentials:
@@ -456,6 +451,97 @@ factura:
     credentials:
       - [admin]
   deleteSelectVacuna:
+    security: true
+    credentials:
+      - [admin]
+
+      
+factura:
+  indexFacturaCompra:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  createFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  editFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  updateFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  reporteFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  traductorFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  viewFacturaCompra:
+    security: true
+    credentials:
+      - [admin]
+  indexFacturaVenta:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  createFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  editFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  updateFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  deleteFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  reporteFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  traductorFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
+  viewFacturaVenta:
     security: true
     credentials:
       - [admin]

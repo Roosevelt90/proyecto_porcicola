@@ -31,7 +31,7 @@ class recuperarActionClass extends controllerClass implements controllerActionIn
                     usuarioTableClass::RESPUESTA_SECRETA => $respuesta
                 );
                 usuarioTableClass::update($ids, $data);
-            }
+            }//close if
             routing::getInstance()->redirect('shfSecurity', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

@@ -49,7 +49,7 @@ class updateAnimalActionClass extends controllerClass implements controllerActio
                 log::register(i18n::__('update'), usuarioTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
                 session::getInstance()->setError(i18n::__('errorUpdate', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
-            }
+            }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

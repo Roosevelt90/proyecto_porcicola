@@ -27,7 +27,7 @@ class deleteSelectAnimalActionClass extends controllerClass implements controlle
                         animalTableClass::ID => $id
                     );
                     animalTableClass::delete($ids, true);
-                }
+                }//close foreach
 
                 log::register(i18n::__('delete'), animalTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'animal'));
@@ -36,7 +36,7 @@ class deleteSelectAnimalActionClass extends controllerClass implements controlle
                 log::register(i18n::__('errorDelete'), animalTableClass::getNameTable());
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo', null, 'user'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
-            }
+            }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

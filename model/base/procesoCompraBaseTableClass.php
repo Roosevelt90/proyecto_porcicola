@@ -154,7 +154,7 @@ class procesoCompraBaseTableClass extends tableBaseClass {
    * Ejemplo $fieldsAndValues['id'] = 1
      * instancia de \PDOException en caso de fracaso.
    */
-  public static function state($ids, $table = null) {
-    return parent::state($ids, self::getNameTable());
+  public static function stateToToggle($ids, $table = null) {
+    return parent::stateToToggle($ids, self::getNameTable());
   }
 }

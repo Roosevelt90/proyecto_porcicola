@@ -24,7 +24,7 @@ class indexRazaActionClass extends controllerClass implements controllerActionIn
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }
+            }//close if
 
             $f = array(
                 razaTableClass::ID

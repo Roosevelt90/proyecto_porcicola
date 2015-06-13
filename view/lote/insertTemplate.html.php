@@ -12,5 +12,6 @@
     </div>
 </div>
 <br>
+<?php view::includeHandlerMessage() ?>
 <?php view::includePartial('lote/formLote') ?>
 

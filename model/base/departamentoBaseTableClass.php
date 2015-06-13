@@ -6,7 +6,7 @@ class departamentoBaseTableClass extends tableBaseClass {
     private $id,
             $nombre;
     
-    const ID = 'departamento_id';
+    const ID = 'id';
     const NOMBRE = 'nombre';
     
 
@@ -91,7 +91,7 @@ function getId() {
    * instancia de \PDOException en caso de fracaso.
    */
   public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
-    return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+    return parent::getAll(self::getNameTable(), $fields, $deletedLogical,$page, $orderBy, $order, $limit, $offset, $where);
   }
 
   /**
@@ -108,4 +108,7 @@ function getId() {
     return parent::update($ids, $data, self::getNameTable());
   }
 
+    public static function getAllCount($fields, $deletedLogical = false, $lines = null, $table = null) {
+        return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
+    }
 }

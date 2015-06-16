@@ -14,12 +14,13 @@ class proveedorBaseTableClass extends tableBaseClass {
            
 
     const ID = 'id';
-    const NUMERO_DOCUMENTO = 'numero_documento';
-    const NOMBRE_COMPLETO = 'nombre_completo_proveedor';
-    const TELEFONO = 'telefono';
+    const NUMERO_DOC = 'numero_documento';
+    const NOMBRE = 'nombre_completo_proveedor';
+    const TEL = 'telefono';
     const DIRECCION = 'direccion';
-    const ID_CIUDAD = 'id_ciudad';
-    const TIPO_DOCUMENTO = 'tipo_documento_id';
+    const CIUDAD = 'id_ciudad';
+    const TIPO_DOC = 'tipo_documento_id';
+      const DELETED_AT = 'deleted_at';
     
     function getId() {
         return $this->id;

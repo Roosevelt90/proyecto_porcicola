@@ -12,12 +12,12 @@ class veterinarioBaseTableClass extends tableBaseClass {
            
 
     const ID = 'id';
-    const NUM_DOC = 'num_doc';
+    const NUMERO_DOC = 'numero_doc';
     const NOMBRE = 'nombre_completo';
     const CIUDAD = 'id_ciudad';
-    const TELEFONO= 'telefono';
+    const TEL = 'telefono';
     const DIRECCION = 'direccion'; 
-    const TIPO_DOCUMENTO = 'tipo_documento_id';
+    const TIPO_DOC = 'tipo_documento_id';
 
     function getId() {
         return $this->id;

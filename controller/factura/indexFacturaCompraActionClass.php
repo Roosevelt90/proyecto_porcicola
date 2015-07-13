@@ -45,7 +45,7 @@ class indexFacturaCompraActionClass extends controllerClass implements controlle
                 empleadoTableClass::NOMBRE
             );
             $fieldsProveedor = array(
-                proveedorTableClass::NOMBRE_COMPLETO
+                proveedorTableClass::NOMBRE
             );
             $fJoin1 = procesoCompraTableClass::EMPLEADO_ID;
             $fJoin2 = empleadoTableClass::ID;
@@ -70,7 +70,7 @@ class indexFacturaCompraActionClass extends controllerClass implements controlle
 
             $fieldsProveedores = array(
                 proveedorTableClass::ID,
-                proveedorTableClass::NOMBRE_COMPLETO
+                proveedorTableClass::NOMBRE
             );
             $this->objProveedor = proveedorTableClass::getAll($fieldsProveedores, false);
 

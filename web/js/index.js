@@ -14,6 +14,11 @@ function eliminar(id, variable, url) {
     });
 }
 
+function modelDelete(id){
+    var id = id;
+    $('#myModalDelete').val(id).modal({show: 'false'});
+}
+
 function paginador(objeto, url) {
     window.location.href = url + '?page=' + objeto;
 

@@ -4,7 +4,7 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php $id = procesoCompraTableClass::ID ?>
 <?php $nombreEmpleado = empleadoTableClass::NOMBRE ?>
-<?php $nombreProveedor = proveedorTableClass::NOMBRE_COMPLETO ?>
+<?php $nombreProveedor = proveedorTableClass::NOMBRE ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('factura', ((isset($objFacturaCompra) == TRUE) ? 'updateFacturaCompra' : 'createFacturaCompra')) ?>">
     <?php if (isset($objFacturaCompra)): ?>
     <input type="hidden" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" value="<?php echo $objFacturaCompra[0]->$id ?>">

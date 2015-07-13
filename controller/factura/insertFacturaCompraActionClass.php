@@ -23,7 +23,7 @@ class insertFacturaCompraActionClass extends controllerClass implements controll
             
             $fieldsProveedor = array(
             proveedorTableClass::ID,
-            proveedorTableClass::NOMBRE_COMPLETO
+            proveedorTableClass::NOMBRE
             );
             $this->objProveedor = proveedorTableClass::getAll($fieldsProveedor, false);
            

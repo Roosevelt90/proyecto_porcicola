@@ -37,7 +37,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     </tr>
                     <tr>
                         <th>
-                            <?php echo i18n::__('veterinario', null, 'veterinario') ?>: 
+                            <?php echo i18n::__('veterinario') ?>: 
 
                             <select name=" <?php echo vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true) ?>">
                                 <option>...</option>
@@ -60,6 +60,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
     </div>
 </div>
-
+</div>
+</main>
 
 

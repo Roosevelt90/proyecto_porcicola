@@ -10,7 +10,7 @@ body{
     background-size: cover;
     width:100%;
     height:auto;
-    background-image: url("../img/grilla.png");
+    /*background-image: url("../img/grilla.png");*/
 }
 #mvcMain {
   display: none;
@@ -19,11 +19,11 @@ body{
 #mvcIcon {
   display: block;
 }
-.logout{
+/*.logout{
     background-repeat: no-repeat;
     background-position:right;
     background-image: url("../img/logout.jpg") ;
-}
+}*/
 
 .btn-selected{
     background-color: #e0e0e0;

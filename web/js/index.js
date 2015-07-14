@@ -14,9 +14,25 @@ function eliminar(id, variable, url) {
     });
 }
 
-function modelDelete(id){
-    var id = id;
-    $('#myModalDelete').val(id).modal({show: 'false'});
+function myModalDetail (id){
+        $('#myModalDetail').modal({show: 'false'});
+            document.detailForm.detalle_registro_vacunas_id_registro.value = id;
+
+}
+
+function myModalDetailEdit (idCabecera, inputCabecera, idRegistro, inputRegistro){
+        $('#myModalUpdate').modal({show: 'false'});
+        alert("id: "+idCabecera+" "+" campo "+inputCabecera);
+            document.detailFormEdit.detalle_registro_vacunas_id_registro.value = idCabecera;
+//            document.detailFormEdit.inputRegistro.value = idRegistro;
+
+}
+
+function modalDelete(id, campo, url) {
+    $("#delete").on("click", function () {
+        eliminar(id, campo, url)
+    });
+    $('#myModalDelete').modal({show: 'false'});
 }
 
 function paginador(objeto, url) {
@@ -33,8 +49,8 @@ function confirmarEliminar(id) {
 }
 
 function borrarSeleccion() {
- $("#myModalEliminarMasivo").modal("toggle"); 
-    }
+    $("#myModalEliminarMasivo").modal("toggle");
+}
 
 
 
@@ -53,5 +69,5 @@ $(document).ready(function () {
 //                 $('#btnDeleteMasivo').removeClass('disabled');
 //             }
 //             });
- 
+
 });

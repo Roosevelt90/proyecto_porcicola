@@ -11,7 +11,7 @@ use mvc\view\viewClass as view ?>
     <div class="row">
         <div class="col-xs-4offset-3 text-center">
             <h2>
-                <?php echo i18n::__('editVaccination', null, 'vacunacion') ?> <?php echo $objVacunacion[0]->id ?>
+                Editar <?php echo i18n::__('registroVacunacion', null, 'vacunacion') ?> 
             </h2>
         </div>
     </div>

@@ -2,6 +2,7 @@
 culture:                  Español
 dictionary:
   default:
+    newRegistroVacunacion: Nuevo registro de vacunacion
     cerrar:              Cerrar
     buscar:              Buscar
     ver:                 Ver
@@ -161,6 +162,7 @@ dictionary:
     Vacunas:              Vacunas
     Registro:             Registro vacunas
     vacunacion:           Vacunacion
+    registroVacunacion:   Registro de vacunacion
     succesCreate:         El animal se ha registrado de forma exitosa   
     errorCreate:          No se ha podido crear el animal vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
@@ -357,6 +359,7 @@ dictionary:
   vacunacion:
     vacunacion:           Vacunacion
     vaccination:          VACUNACION
+    registroVacunacion:   Registro de vacunacion
     fechaRegistro:        Fecha del Registro
     viewDetail:           Ver Detalle
     insertDetail:         Insertar Detalle

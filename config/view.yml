@@ -50,9 +50,10 @@ default:
   index:
     stylesheet:
       - main.css
+      - carrousel.css
     javascript:
       - index.js
-
+      - carrousel.js
       
 animal:
   indexAnimal:

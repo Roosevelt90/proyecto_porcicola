@@ -17,7 +17,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <div class="table-responsive">
                 <div class="btn-group btn-group-lg btn-group-justified">
 
-                    <!--MODULO VACUNACION-->
+<!--                    MODULO VACUNACION
                     <div class="menuDesplegableVacunacion">
                         <input type="checkbox" id="toggleboxVacunacion" />
                         <ul>
@@ -26,7 +26,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             <li><label for="toggleboxVacunacion"></label></li>
                         </ul>
                         <label class="fa fa-3x" for="toggleboxVacunacion"><?php echo i18n::__('vacunacion', null, 'vacunacion') ?></label>
-                    </div>
+                    </div>-->
                     <!--MODULO USUARIO-->
                     <div class="menuDesplegable">
                         <input type="checkbox" id="togglebox" />
@@ -84,7 +84,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     </div>
 
 
-                    <div class="menuDesplegableFactura">
+<!--                    <div class="menuDesplegableFactura">
                         <input type="checkbox" id="toggleboxFactura" />
                         <ul>
                             <li><a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" class="btn btn-ttc"><?php echo i18n::__('facturaCompra') ?></a></li>
@@ -92,7 +92,7 @@ use mvc\i18n\i18nClass as i18n ?>
                              <li><label for="toggleboxFactura"></label></li>
                         </ul>
                         <label class="fa  fa-3x" for="toggleboxFactura"><?php echo i18n::__('factura') ?></label>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>

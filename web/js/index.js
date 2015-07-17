@@ -23,7 +23,7 @@ function myModalDetail (id){
 function myModalDetailEdit (idCabecera, inputCabecera, idRegistro, inputRegistro){
         $('#myModalUpdate').modal({show: 'false'});
         alert("id: "+idCabecera+" "+" campo "+inputCabecera);
-            document.detailFormEdit.detalle_registro_vacunas_id_registro.value = idCabecera;
+            document.detailFormEdit.detalle_registro_vacunas_id_registrovalue = idCabecera;
 //            document.detailFormEdit.inputRegistro.value = idRegistro;
 
 }

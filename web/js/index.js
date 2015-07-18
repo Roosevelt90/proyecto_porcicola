@@ -35,6 +35,20 @@ function modalDelete(id, campo, url) {
     $('#myModalDelete').modal({show: 'false'});
 }
 
+function myModalEnable(id, campo, url) {
+    $("#delete").on("click", function () {
+        eliminar(id, campo, url)
+    });
+    $('#myModalEnable').modal({show: 'false'});
+}
+
+function myModalDisable(id, campo, url) {
+    $("#delete").on("click", function () {
+        eliminar(id, campo, url)
+    });
+    $('#myModalDisable').modal({show: 'false'});
+}
+
 function paginador(objeto, url) {
     window.location.href = url + '?page=' + objeto;
 

@@ -67,8 +67,8 @@ use mvc\i18n\i18nClass as i18n ?>
                               <i class="material-icons">arrow_drop_down</i>
                           </button>
                           <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="facturacion">
-                              <a onclick="location.href = '<?php // echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('facturaCompra') ?></button></a>
-                              <a onclick="location.href = '<?php // echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('facturaVenta') ?></button></a>
+                              <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('facturaCompra') ?></button></a>
+                              <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('facturaVenta') ?></button></a>
                           </ul>
                       </div>
 

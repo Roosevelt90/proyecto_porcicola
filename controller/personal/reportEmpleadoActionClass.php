@@ -20,8 +20,8 @@ class reportEmpleadoActionClass extends controllerClass implements controllerAct
             $where = null;
             if (session::getInstance()->hasAttribute('empleadoFilters')) {
                 $where = session::getInstance()->getAttribute('empleadoFilters');
-            }//close if
-            $fields = array(
+            }
+$fields = array(
                 empleadoTableClass::ID,
                 empleadoTableClass::NUMERO_DOC,
                 empleadoTableClass::CIUDAD,
@@ -50,7 +50,7 @@ class reportEmpleadoActionClass extends controllerClass implements controllerAct
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }//close if
+            }
             $f = array(
                 empleadoTableClass::ID
             );
@@ -66,5 +66,7 @@ class reportEmpleadoActionClass extends controllerClass implements controllerAct
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
+
+
 
 }

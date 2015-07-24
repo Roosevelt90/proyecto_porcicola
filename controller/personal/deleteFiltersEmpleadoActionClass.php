@@ -13,7 +13,7 @@ class deleteFiltersEmpleadoActionClass extends controllerClass implements contro
         try {
             if (session::getInstance()->hasAttribute('empleadoFilters')) {
                 session::getInstance()->deleteAttribute('empleadoFilters');
-            }//close if
+            }
 
             routing::getInstance()->redirect('empleado', 'indexEmpleado');
         } catch (PDOException $exc) {

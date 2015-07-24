@@ -42,7 +42,7 @@ function myModalEnable(id, campo, url) {
     $('#myModalEnable').modal({show: 'false'});
 }
 
-function myModalDisable(id, campo, url) {
+function yModalDisable(id, campo, url) {
     $("#delete").on("click", function () {
         eliminar(id, campo, url)
     });

@@ -27,7 +27,7 @@ class deleteSelectCargoActionClass extends controllerClass implements controller
                         cargoTableClass::ID => $id
                     );
                     cargoTableClass::delete($ids, true);
-                }//close foreach
+                }
 
                 log::register(i18n::__('delete'), cargoTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'cargo'));
@@ -36,7 +36,7 @@ class deleteSelectCargoActionClass extends controllerClass implements controller
                 log::register(i18n::__('errorDelete'), cargoTableClass::getNameTable());
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo', null, 'user'));
                 routing::getInstance()->redirect('empleado', 'indexCargo');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

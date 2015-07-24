@@ -9,8 +9,10 @@ use mvc\request\requestClass as request;
 class indexCargoActionClass extends controllerClass implements controllerActionInterface {
     
     public function execute() {
-        try {
-            $fields = array(
+        try { echo 1;
+          
+
+            $fields = array (
                 cargoBaseTableClass::ID,
                 cargoBaseTableClass::DESCRIPCION
             );
@@ -21,7 +23,7 @@ class indexCargoActionClass extends controllerClass implements controllerActionI
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }//close if
+            }
             $f = array(
                 cargoTableClass::ID
             );
@@ -32,7 +34,7 @@ class indexCargoActionClass extends controllerClass implements controllerActionI
                 $this->page = request::getInstance()->getGet('page');
             }else{
                 $this->page = $page;
-            }//close if 
+            } 
             $this->objCargo = cargoTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
             
         $this->defineView('index', 'cargo', session::getInstance()->getFormatOutput());

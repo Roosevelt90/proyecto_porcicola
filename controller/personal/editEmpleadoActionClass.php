@@ -55,13 +55,13 @@ class editEmpleadoActionClass extends controllerClass implements controllerActio
             } else {
            
                 routing::getInstance()->redirect('personal', 'indexEmpleado');
-            }//close if
+            }
         
          
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
-    }
+  }
 
 }

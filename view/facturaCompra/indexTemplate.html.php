@@ -161,10 +161,6 @@ use mvc\request\requestClass as request ?>
                 <input type="hidden" id="idDelete" name="<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>">
             </form>
         </div>
-
-
-
-
     </div>
 </main>
 

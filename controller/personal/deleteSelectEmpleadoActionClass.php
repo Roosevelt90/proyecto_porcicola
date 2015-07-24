@@ -27,7 +27,7 @@ class deleteSelectEmpleadoActionClass extends controllerClass implements control
                         empleadoTableClass::ID => $id
                     );
                     empleadoTableClass::delete($ids, true);
-                }//close foreach
+                }
 
                 log::register(i18n::__('delete'), empleadoTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'empleado'));
@@ -36,7 +36,7 @@ class deleteSelectEmpleadoActionClass extends controllerClass implements control
                 log::register(i18n::__('errorDelete'), empleadoTableClass::getNameTable());
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo', null, 'user'));
                 routing::getInstance()->redirect('empleado', 'indexEmpleado');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

@@ -42,8 +42,9 @@ class updateEmpleadoActionClass extends controllerClass implements controllerAct
                     empleadoTableClass::CIUDAD => $ciudad
                 );
                 empleadoTableClass::update($ids, $data);
-                log::register('update', empleadoTableClass::getNameTable());
-            }//close if
+                 log::register('update', empleadoTableClass::getNameTable());
+           
+            }
             routing::getInstance()->redirect('personal', 'indexEmpleado');
   } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

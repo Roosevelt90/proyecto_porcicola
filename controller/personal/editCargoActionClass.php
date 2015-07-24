@@ -39,3 +39,4 @@ class editCargoActionClass extends controllerClass implements controllerActionIn
   }
 
 }
+

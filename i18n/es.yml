@@ -2,6 +2,13 @@
 culture:                  Español
 dictionary:
   default:
+    fechaFabricacion:     Fecha de fabricacion
+    fechaVencimiento:     Fecha de vencimiento
+    tipoInsumo:           Tipo de insumo
+    valorInsumo:          Valor de insumo
+    nombreInsumo:         Nombre del insumo
+    descripcion:          Descripcion
+    tipoInsumo:           Tipo de insumos
     newRegistroVacunacion: Nuevo registro de vacunacion
     cerrar:              Cerrar
     buscar:              Buscar
@@ -131,7 +138,6 @@ dictionary:
     nacido:               La vacuna fue aplicada al cerdo recien nacido
     cantidad:             Cantidad
     valorUni:             Valor unitario
-    
     edit:                 Editar
     crear:                Crear
    

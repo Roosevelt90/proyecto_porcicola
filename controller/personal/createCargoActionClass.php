@@ -29,7 +29,7 @@ class createCargoActionClass extends controllerClass implements controllerAction
             log::register(i18n::__('create'), cargoTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
             session::getInstance()->setError(i18n::__('errorCreate'));
             routing::getInstance()->redirect('personal', 'indexCargo');
-        }//close if
+        }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

@@ -156,4 +156,16 @@ class tipoInsumoBaseTableClass extends tableBaseClass {
     public static function getAllJoin($fields, $fields2, $fields3 = null, $fields4 = null, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
         return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
+    
+   /**
+   * Método para modificar el estado un registro de una tabla X en la base de datos
+   *
+   * @param array $ids Array con los campos por posiciones
+   * asociativas y los valores por valores a tener en cuenta para el borrado.
+   * Ejemplo $fieldsAndValues['id'] = 1
+     * instancia de \PDOException en caso de fracaso.
+   */
+  public static function stateToToggle($ids, $table = null) {
+    return parent::stateToToggle($ids, self::getNameTable());
+  }
 }

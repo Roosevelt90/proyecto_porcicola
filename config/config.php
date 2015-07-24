@@ -32,7 +32,7 @@ if (config::getDbUnixSocket() !== null) {
 config::setPathAbsolute('/var/www/html/proyecto_porcicola/');
 config::setUrlBase('http://www.proyectoporcicola.com/');
 
-config::setScope('prod'); // dev
+config::setScope('dev'); // dev
 
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');

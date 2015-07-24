@@ -85,6 +85,18 @@ use mvc\i18n\i18nClass as i18n ?>
                           </ul>
                       </div>
                       
+                      <div class="demo-avatar-dropdown" style="margin-left: 5px">
+                          <span><?php echo i18n::__('insumo') ?></span>
+                          <div class="mdl-layout-spacer"></div>
+                          <button id="insumo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                              <i class="material-icons">arrow_drop_down</i>
+                          </button>
+                          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="insumo">
+                              <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('insumo') ?></button></a>
+                              <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('insumo', 'indexTipoInsumo') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('tipoInsumo') ?></button></a>
+                          </ul>
+                      </div>
+                      
                       
                       <div class="mdl-layout-spacer"></div>
                       <a class="mdl-navigation__link" href="http://help.com"><i class="mdl-color-text--blue-grey-400 material-icons">help_outline</i></a>

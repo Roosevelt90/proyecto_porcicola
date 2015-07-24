@@ -22,10 +22,10 @@ class updateCargoActionClass extends controllerClass implements controllerAction
                 );
 
                 cargoTableClass::update($ids, $data);
-            }//close if
+            }
 
             routing::getInstance()->redirect('personal', 'indexCargo');
-        } catch (PDOException $exc) {
+   } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');
         }

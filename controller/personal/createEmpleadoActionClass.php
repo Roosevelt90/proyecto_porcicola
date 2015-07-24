@@ -58,3 +58,4 @@ class createEmpleadoActionClass extends controllerClass implements controllerAct
     }
 
 }
+

@@ -50,11 +50,9 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
                 procesoVentaTableClass::ACTIVA
             );
             $fieldsEmpleado = array(
-                empleadoTableClass::ID,
                 empleadoTableClass::NOMBRE
             );
             $fieldsCliente = array(
-                clienteTableClass::ID,
                 clienteTableClass::NOMBRE
             );
             $fJoin1 = procesoVentaTableClass::EMPLEADO_ID;

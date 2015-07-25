@@ -5,7 +5,7 @@ use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\session\sessionClass as session;
 class createActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {

@@ -4,6 +4,9 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\session\sessionClass as session;
 use mvc\request\requestClass as request;
+use mvc\config\configClass as config;
+use mvc\routing\routingClass as routing;
+
 
 class indexTipoInsumoActionClass extends controllerClass implements controllerActionInterface {
 
@@ -16,10 +19,10 @@ class indexTipoInsumoActionClass extends controllerClass implements controllerAc
         $page = $page * config::getRowGrid();
       }//close if
       $f = array(
-        vacunacionTableClass::ID
+          tipoInsumoTableClass::ID
       );
       $lines = config::getRowGrid();
-      $this->cntPages = vacunacionTableClass::getAllCount($f, true, $lines, $where);
+      $this->cntPages = tipoInsumoTableClass::getAllCount($f, true, $lines, $where);
 
 
       if (request::getInstance()->hasGet('page')) {

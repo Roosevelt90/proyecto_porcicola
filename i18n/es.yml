@@ -71,7 +71,7 @@ dictionary:
     buscar:               Buscar
     filterBy:             Buscar Por
     new:                  Nuevo registro
-    deleteFilter:         Eliminar filtros
+    deleteFilter:         Eliminar Busqueda
     user:                 Usuario
     empleado:             Empleado
     nombre:               Nombre Completo
@@ -110,11 +110,11 @@ dictionary:
     identification:       Id
     eliminar filtros:     Eliminar filtros
     borrar seleccion:     Eliminar Seleccion
-    factura:              Factura
+    factura:              Facturación
     pVenta:               Factura venta
     spanish:              Español
     english:              Ingles
-    filters:              Filtros
+    filters:              Buscar
     accion:               Accion
     usuarios:             Usuarios
     insumo:               Insumo
@@ -168,7 +168,7 @@ dictionary:
     Vacunas:              Vacunas
     Registro:             Registro vacunas
     vacunacion:           Vacunacion
-    registroVacunacion:   Registro de vacunacion
+    registroVacunacion:   Registro de Vacunación
     succesCreate:         El animal se ha registrado de forma exitosa   
     errorCreate:          No se ha podido crear el animal vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
@@ -256,6 +256,11 @@ dictionary:
     new:                  Registra una nueva ciudad
     edit:                 Modifica a la ciudad
     
+  bodega:
+    bodega:               Bodega
+    entrada:              Entrada de Bodega
+    salida:               Salida de Bodega
+    
     
   datos:
     read:                 Datos personales del usuario
@@ -300,6 +305,7 @@ dictionary:
     edit:                 Modificar insumo
     insumo:               Insumo
     new:                  Registro de un nuevo insumo
+    register:             Nuevo Insumo
     
   cliente:
     read:                 clientes registrado
@@ -404,6 +410,10 @@ dictionary:
    modify:                modificar
    register:              registrar
    details:               detalle
+   nueva:                 Nueva Factura de venta
+   
+  pCompra:                 
+   nueva:                 Nueva Factura de compra
     
   dpVenta:
    item:                  item
@@ -445,6 +455,7 @@ dictionary:
     new:                   Ingresar una nueva vacuna
     lote:                  Lote de la vacuna
     edit:                  Editar el registro de la vacuna
+    nueva:                 Nueva Vacuna
     
   facturaCompra:
     factura:               Facutras de compra

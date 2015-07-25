@@ -49,7 +49,7 @@ use mvc\request\requestClass as request ?>
 
                 <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('filters') ?></a>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFilterFacturaCompra') ?>" class="btn btn-info btn-xs" ><?php echo i18n::__('deleteFilter') ?></a>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nueva', null, 'pCompra') ?></a>
                 <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('borrar seleccion') ?></a>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportCompra') ?>" class="btn btn-info btn-xs" ><?php echo i18n::__('reporte') ?></a>
             </div>

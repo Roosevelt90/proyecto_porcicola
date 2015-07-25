@@ -10,7 +10,7 @@ config::setDbDriver('pgsql'); // mysql
 config::setDbName('proyecto_porcicola');
 config::setDbPort(5432); // 3306
 config::setDbUser('postgres');
-config::setDbPassword('diaz');
+config::setDbPassword('sena');
 // Esto solo es necesario en caso de necesitar un socket para la DB
 config::setDbUnixSocket(null); ///tmp/mysql.sock
 
@@ -32,7 +32,7 @@ if (config::getDbUnixSocket() !== null) {
 config::setPathAbsolute('/var/www/html/proyecto_porcicola/');
 config::setUrlBase('http://www.proyectoporcicola.com/');
 
-config::setScope('dev'); // dev
+config::setScope('prod'); // dev
 
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');

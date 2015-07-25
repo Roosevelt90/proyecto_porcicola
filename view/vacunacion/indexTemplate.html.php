@@ -25,19 +25,7 @@ use mvc\request\requestClass as request ?>
                 </div>
             </div>
             <br /> <br />
-            <div style="margin-bottom: 10px; margin-top: 30px" >
-                <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'traductorVacunacion') ?>" name="" method="POST">
-                    <select onchange="$('#frmTraductor').submit()" name="lenguaje">
-                        <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es">
-                            <?php echo i18n::__('spanish') ?> 
-                        </option>         
-                        <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?> value="en">
-                            <?php echo i18n::__('english') ?> 
-                        </option>
-                    </select>
-                    <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-                </form>
-            </div>
+      
             <div style="margin-bottom: 10px; margin-top: 30px">
 
                 <a href="#" data-target="#myModalFilter" data-toggle="modal" id="filter" class="btn btn-xs btn-default active"><?php echo i18n::__('filters') ?></a>

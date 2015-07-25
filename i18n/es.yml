@@ -15,7 +15,8 @@ dictionary:
     ver:                 Ver
     edit:                Editar
     facturaVenta:         Facturas de venta
-    nombreCliente:        Nombre de cliente
+    nombreCliente:       Nombre de cliente
+    cliente:             Cliente
     personal:            Personal
     Cliente:             Clientes
     proveedor:           Proveedores
@@ -25,6 +26,12 @@ dictionary:
     fechaFin:             Fecha final
     inhabilitar:         Inhabilitar factura
     habilitar:           Habilitar factura
+    inhMasa:             Inhabilitar la Selección
+    habMasa:             Habilitar la Selección
+    inhRegistro:         Inhabilitar el registro
+    habRegistro:         Habilitar el registro
+    inhDetalle:          Inhabilitar el Detalle
+    habDetalle:          Habilitar Detalle
     factura:              Facturas
     facturaCompra:        Facturas de compra
     confirmInhabilitar:   Esta seguro que desea inhabilitar esta factura
@@ -108,7 +115,7 @@ dictionary:
     animal:               Animal
     name:                 Nombre
     identification:       Id
-    eliminar filtros:     Eliminar filtros
+    eliminar filtros:     Eliminar Búsqueda
     borrar seleccion:     Eliminar Seleccion
     factura:              Facturación
     pVenta:               Factura venta
@@ -385,7 +392,7 @@ dictionary:
     fecha:                Fecha de la Vacunacion
     dosis:                Dosis
     detailVaccination:    DETALLE VACUNACION
-    filterReport:         Filtros de Reporte
+    filterReport:         Buscar para Reporte
     N°:                   N° del Registro de Vacunas
     editDetailVaccination: Editar Detalle de Registro Vacunas
     
@@ -461,7 +468,35 @@ dictionary:
     factura:               Facutras de compra
     fechaFactura:          Fecha de la factura
     new:                   Registro de una nueva factura de compra
- 
+    
+  ayuda:
+    registrar:           Nuevo registro
+    modificar:           Modifica el registro
+    buscar:              Con esta opción usted podrá obtener de una forma mas rápida y precisa los resultados deseados
+    eliBusqueda:         Deshace la búsqueda realizada y vuelve a mostrar todos los registros
+    reporte:             El sistema generará un documento de tipo informe con todos los registros existentes
+    eliminarMasa:        Una vez concluida la selección a través de esta opción usted podrá eliminar todos los registros indicados
+    verDetalle:          Ver los detalles correspondientes al registro
+    insertDetalle:       Inserte un detalle al registro
+    verDetalleFact:      Ver los detalles correspondientes a la factura
+    eliminar:            Elimina el registro
+    editDetalle:         Modifica el detalle del registro
+    inhabilitarDetalle:  Inhabilita el detalle del registro
+    habilitarDet:        Habilita el detalle del registro
+    eliSelDetalle:       Una vez concluida la selección a través de esta opción usted podrá eliminar los detalles indicados
+    buscarReporteDet:    Usted podrá generar la búsqueda de los datos a incluir en el documento de informe 
+    eliBusDetalle:       Deshace la búsqueda realizada y vuelve a mostrar todos los detalles
+    inhabilitar:         Inhabilita el registro
+    habilitar:           Habilita el registro
+    inhabilitarMasa:     Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los registros indicados
+    habilitarMasa:       Una vez concluida la selección a través de esta opción usted podrá habilitar todos los registros indicados
+    inhabilitarMasaDetalle: Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los detalles indicados
+    habilitarMasaDetalle: Una vez concluida la selección a través de esta opción usted podrá habilitar todos los detalles indicados
+    inhFactura:          Inhabilitar la Factura
+    habFactura:          Habilitar la Factura
+    insertFactura:       Inserte un detalle a la Factura
+    inhabilitarMasaFact:     Una vez concluida la selección a través de esta opción usted podrá inhabilitar todas las facturas indicadas
+    habilitarMasaFact:       Una vez concluida la selección a través de esta opción usted podrá habilitar todas las facturas indicadas
     
   errors:
     00001:                El módulo y la acción solicitada, no existe.

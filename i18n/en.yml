@@ -12,6 +12,7 @@ dictionary:
     identificacion:       Number of document
     nombre:               Name
     pVenta:               Factura venta
+    cliente:              Client
     Usuario y contraseña incorrectos: User and Password incorrect
     usuario:              User
     contraseña:           Password
@@ -64,7 +65,12 @@ dictionary:
     confirmDeleteMasive:  Want to remove the selected items?
     update:               Update
     delete:               Delete
-    
+    inhMasa:              Disable Selection
+    habMasa:              Enable Selection
+    inhRegistro:          Off the record
+    habRegistro:          Enable logging
+    inhDetalle:           Disable Detail
+    habDetalle:           Enable Detail
     modules:              Select module
     action:               Actions
     factura:              Facturacion
@@ -77,7 +83,7 @@ dictionary:
     insumo:               Input
     usuarios:             Users
     Seleccione modulo:    Select module
-    eliminar filtros:     Delete filters
+    eliminar filtros:     Remove Search
     borrar seleccion:     Delete selection
     filters:              Filters
     spanish:              Spanish
@@ -288,7 +294,7 @@ dictionary:
     fecha:                 Date Of Vaccination
     dosis:                 Dose of Vaccine
     detailVaccination:     DETAIL VACCINATION
-    filterReport:          Filter Report
+    filterReport:          Search Report
     N°:                    N° of Register Vaccines
     editDetailVaccination: Edit Detail Vaccination
     
@@ -302,6 +308,35 @@ dictionary:
     new:                   Ingresar una nueva vacuna
     lote:                  Lote de la vacuna
     edit:                  Editar el registro de la vacuna
+    
+  ayuda:
+    registrar:             New Record
+    modificar:             Modify the Registry
+    buscar:                With this option you can get a faster and precisely the desired results
+    eliBusqueda:           Undo the search performed and redisplay all the records
+    reporte:               The system generates a report type document all existing records
+    eliminarMasa:          Once the selection using this option you can delete all records suggested
+    verDetalle:            View Details Registration
+    verDetalleFact:        View details on the bill
+    insertDetalle:         Insert a registration Detail
+    eliminar:              Unregister
+    editDetalle:           Change the log Detail
+    inhabilitarDetalle:    Disables Record detail
+    habilitarDet:          Enables Record detail
+    eliSelDetalle:         Once the selection using this option you can delete the details set
+    buscarReporteDet:      You could generate search data to include in the report document
+    eliBusDetalle:         Undo the search performed and redisplay all the details
+    inhabilitar:           Disable logging
+    habilitar:             Enables logging
+    inhabilitarMasa:       Once the selection using this option you can disable all records suggested
+    habilitarMasa:         Once the selection using this option you can enable all records suggested
+    inhabilitarMasaDetalle: Once the selection using this option you can disable all the details set
+    habilitarMasaDetalle:   Once the selection using this option you can enable all the details set
+    inhFactura:            Disabling the Bill
+    habFactura:            Enable Bill
+    insertFactura:        Insert a bill detail
+    inhabilitarMasaFact:     Once the selection using this option you can disable all the invoices indicated
+    habilitarMasaFact:           Once the selection using this option you can enable all invoices indicated
     
   errors:
     00001:                El módulo y la acción solicitada, no existe.

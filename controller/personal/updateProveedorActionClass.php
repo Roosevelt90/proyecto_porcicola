@@ -42,6 +42,8 @@ class updateProveedorActionClass extends controllerClass implements controllerAc
                     proveedorTableClass::CIUDAD => $ciudad
                 );
                 proveedorTableClass::update($ids, $data);
+                  log::register('update', proveedorTableClass::getNameTable());
+           
             }
 
             routing::getInstance()->redirect('personal', 'indexProveedor');

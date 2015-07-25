@@ -9,7 +9,7 @@ use mvc\view\viewClass as view ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
-            <h2><?php echo i18n::__('edit',  NULL,  'Veterinario') ?> :</h2>
+            <h2><?php echo i18n::__('edit',  NULL,  'veterinario') ?> :</h2>
 
             <br>   
  

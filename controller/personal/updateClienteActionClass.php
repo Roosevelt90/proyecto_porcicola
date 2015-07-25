@@ -42,6 +42,8 @@ class updateClienteActionClass extends controllerClass implements controllerActi
                     clienteTableClass::CIUDAD => $ciudad
                 );
                 clienteTableClass::update($ids, $data);
+                  log::register('update', clienteTableClass::getNameTable());
+           
             }
 
             routing::getInstance()->redirect('personal', 'indexCliente');

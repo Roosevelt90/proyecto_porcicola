@@ -25,16 +25,13 @@ use mvc\i18n\i18nClass as i18n ?>
                         <th><?php echo i18n::__('identificacion')?></th>
 
                            <th>
-                 <?php if(isset($objProveedor)): ?>
-                            <input type="number" readonly value="<?php  echo $objProveedor[0]->$numero_documento ?>"></th>   
-                   <?php else: ?>
-                    <input type="number"  value=""  placeholder="<?php echo i18n::__('numero de documento')?>" name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::NUMERO_DOC, true) ?>"></th>   
-                        
-                        <?php endif; ?>
+               
+                    <input type="number"  value=""  placeholder="<?php echo i18n::__('identificacion')?>" name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::NUMERO_DOC, true) ?>"></th>   
+                  
                     </tr>
                         <th>   <?php echo i18n::__('nombre')?> </th>
 
-                        <th> <input required pattern="^[a-zA-Z]{3,20}$" placeholder="<?php echo i18n::__('nombre')?>" name="<?php echo proveedorBaseTableClass::getNameField(proveedorTableClass::NOMBRE, true) ?>"></th>   
+                        <th> <input  placeholder="<?php echo i18n::__('nombre')?>" name="<?php echo proveedorBaseTableClass::getNameField(proveedorTableClass::NOMBRE, true) ?>"></th>   
 
                     </tr>
                     <tr>

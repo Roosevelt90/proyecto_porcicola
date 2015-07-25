@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $tipo_documento_id=  tipoDocumentoTableClass::ID?>
 <?php $direccion = veterinarioTableClass::DIRECCION?>
 <?php $id_ciudad = ciudadTableClass::ID?>
-<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('personal', ((isset($objVeterinario) == TRUE) ? 'editVeterinario' : 'createVeterinario')) ?>">
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('personal', ((isset($objVeterinario) == TRUE) ? 'updateVeterinario' : 'createVeterinario')) ?>">
     <?php if (isset($objVeterinario)): ?>
     <input type="hidden" name="<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::ID, TRUE) ?>" value="<?php echo $objVeterinario[0]->$id?>">
     <?php endif; ?>
@@ -32,9 +32,9 @@ use mvc\i18n\i18nClass as i18n ?>
                     </tr>
        
                     <tr>
-                        <th>   nombre </th>
+                        <th>   <?php echo i18n::__('nombre')?> </th>
                    
-                        <th> <input required pattern="^[a-zA-Z]{3,20}$" placeholder="cliente" name="<?php echo veterinarioBaseTableClass::getNameField(veterinarioTableClass::NOMBRE, true) ?>"></th>   
+                        <th> <input required pattern="^[a-zA-Z]{3,20}$" placeholder="<?php echo i18n::__('nombre')?>" name="<?php echo veterinarioBaseTableClass::getNameField(veterinarioTableClass::NOMBRE, true) ?>"></th>   
                     
                     </tr>
                     <tr>

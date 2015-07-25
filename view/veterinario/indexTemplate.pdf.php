@@ -1,5 +1,12 @@
 <?php
 use mvc\routing\routingClass as routing;
+$tipo_doc= tipoDocumentoTableClass::DESCRIPCION;
+$numero_documento= veterinarioTableClass::NUMERO_DOC;
+$nombre = veterinarioTableClass::NOMBRE;
+$telefono = veterinarioTableClass::TEL;
+$direccion = veterinarioTableClass::DIRECCION;
+$ciudad = ciudadTableClass::NOMBRE;
+
 class PDF extends FPDF {
 // Pie de página
     function Footer() {
@@ -12,17 +19,17 @@ class PDF extends FPDF {
     }
 }
 // Creación del objeto de la clase heredada
-$pdf = new PDF('P', 'mm', 'Letter');
+$pdf = new PDF('L', 'mm', 'Letter');
 $pdf->AliasNbPages();
 $pdf->AddPage();
 //     Salto de línea
-$pdf->Ln(80);
+$pdf->Ln(40);
 //fondo
-$pdf->Image(routing::getInstance()->getUrlImg('background.jpg'), 0, 0, 218, 300);
+$pdf->Image(routing::getInstance()->getUrlImg('reporte_horizontal.jpg'), 0, 0, 218, 300);
 // Arial bold 15
 $pdf->SetFont('Arial', 'B', 25);
 // Movernos a la derecha
-$pdf->Cell(80);
+$pdf->Cell(90);
 // Título
 $pdf->Cell(30, 10, $mensaje, 0, 0, 'C');
 // Salto de línea
@@ -30,22 +37,22 @@ $pdf->Ln(20);
 $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
-$pdf->Cell(20, 10, utf8_encode('Id'), 1);
-$pdf->Cell(20, 10, utf8_encode('Peso'), 1);
-$pdf->Cell(20, 10, utf8_encode('Edad'), 1);
-$pdf->Cell(42, 10, utf8_encode('Fecha de nacimiento'), 1);
-$pdf->Cell(30, 10, utf8_encode('Genero'), 1);
-$pdf->Cell(30, 10, utf8_encode('Lote'), 1);
-$pdf->Cell(30, 10, utf8_encode('Raza'), 1);
+$pdf->Cell(5);
+$pdf->Cell(35, 10, utf8_encode('Tipo Documento'), 1);
+$pdf->Cell(43, 10, utf8_encode('Numero Documento'), 1);
+$pdf->Cell(43, 10, utf8_encode('Nombre Completo'), 1);
+$pdf->Cell(35, 10, utf8_encode('Telefono'), 1);
+$pdf->Cell(42, 10, utf8_encode('Direccion'), 1);
+$pdf->Cell(30, 10, utf8_encode('Ciudad'), 1);
 $pdf->Ln();
-foreach ($objAnimal as $key) {
-    $pdf->Cell(20, 10, utf8_encode($key->id), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->peso_animal), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->edad_animal), 1);
-    $pdf->Cell(42, 10, utf8_encode($key->fecha_ingreso), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->nombre_genero), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->nombre_lote), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->nombre_raza), 1);
+foreach ($objVeterinario as $key) {
+    $pdf->Cell(5);
+    $pdf->Cell(35, 10, utf8_encode($key->$tipo_doc), 1);
+    $pdf->Cell(43, 10, utf8_encode($key->$numero_documento), 1);
+    $pdf->Cell(43, 10, utf8_encode($key->$nombre), 1);
+    $pdf->Cell(35, 10, utf8_encode($key->$telefono), 1);
+    $pdf->Cell(42, 10, utf8_encode($key->$direccion), 1);
+    $pdf->Cell(30, 10, utf8_encode($key->$ciudad), 1);
     $pdf->Ln();
 }
 $pdf->Output();

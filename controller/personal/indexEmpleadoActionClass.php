@@ -29,10 +29,27 @@ class indexEmpleadoActionClass extends controllerClass implements controllerActi
                 if (isset($filter['nombre_completo']) and $filter['nombre_completo'] !== null and $filter['nombre_completo'] !== '') {
                     $where[empleadoTableClass::NOMBRE] = $filter['nombre_completo'];
                 }
-                
+                if (isset($filter['cargo']) and $filter['cargo'] !== null and $filter['cargo'] !== '') {
+                    $where[empleadoTableClass::CARGO] = $filter['cargo'];
+                }
+                if (isset($filter['tipo_doc']) and $filter['tipo_doc'] !== null and $filter['tipo_doc'] !== '') {
+                    $where[empleadoTableClass::TIPO_DOC] = $filter['tipo_doc'];
+                }
+               
                 session::getInstance()->setAttribute('empleadoDeleteFilters', $where);
             }       
                 
+            $fieldsCargo = array(
+            cargoTableClass::ID,
+            cargoTableClass::DESCRIPCION
+                    
+                    
+            );
+            $fieldsTipoDoc = array(
+            tipoDocumentoTableClass::ID,
+            tipoDocumentoTableClass::DESCRIPCION
+            );
+            
             $fields = array(
                 empleadoTableClass::ID,
                 empleadoTableClass::NUMERO_DOC,
@@ -80,7 +97,10 @@ class indexEmpleadoActionClass extends controllerClass implements controllerActi
                 $this->page = $page;
             } 
 
+            
             $this->objEmpleado = empleadoTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy,'ASC', config::getRowGrid(), $page, $where);
+            $this->objCargo = cargoTableClass::getAll($fieldsCargo, true);
+            $this->objtipoDoc = tipoDocumentoTableClass::getAll($fieldsTipoDoc, false);
             $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
            } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

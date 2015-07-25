@@ -25,17 +25,14 @@ use mvc\i18n\i18nClass as i18n ?>
                         <th><?php echo i18n::__('identificacion')?></th>
                    
                         <th>
-                 <?php if(isset($objCliente)): ?>
-                            <input type="number"  value="<?php  echo $objCliente[0]->$numero_documento ?>"></th>   
-                   <?php else: ?>
-                            <input type="number"  placeholder="<?php echo i18n::__('numero de documento')?>" name="<?php echo clienteBaseTableClass::getNameField(clienteTableClass::NUMERO_DOC, true) ?>"></th>   
-                        
-                        <?php endif; ?>
+               
+                            <input type="number"  placeholder="<?php echo i18n::__('identificacion')?>" name="<?php echo clienteBaseTableClass::getNameField(clienteTableClass::NUMERO_DOC, true) ?>"></th>   
+                      
                     </tr>
                     <tr>
                         <th>   <?php echo i18n::__('nombre')?> </th>
                     
-                        <th> <input  placeholder="<?php echo i18n::__('cliente')?>" name="<?php echo clienteBaseTableClass::getNameField(clienteTableClass::NOMBRE, true) ?>"></th>   
+                        <th> <input  placeholder="<?php echo i18n::__('nombre')?>" name="<?php echo clienteBaseTableClass::getNameField(clienteTableClass::NOMBRE, true) ?>"></th>   
                     
                     </tr>
                     <tr>

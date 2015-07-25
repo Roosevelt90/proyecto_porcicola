@@ -28,9 +28,16 @@ class indexVeterinarioActionClass extends controllerClass implements controllerA
                 if (isset($filter['nombre_completo']) and $filter['nombre_completo'] !== null and $filter['nombre_completo'] !== '') {
                     $where[veterinarioTableClass::NOMBRE] = $filter['nombre_completo'];
                 }
+                 if (isset($filter['tipo_doc']) and $filter['tipo_doc'] !== null and $filter['tipo_doc'] !== '') {
+                    $where[veterinarioTableClass::TIPO_DOC] = $filter['tipo_doc'];
+                }
                 
                 session::getInstance()->setAttribute('veterinarioDeleteFilters', $where);
-            }       
+            }  
+             $fieldsTipoDoc = array(
+            tipoDocumentoTableClass::ID,
+            tipoDocumentoTableClass::DESCRIPCION
+            );
           
             
                 
@@ -80,6 +87,7 @@ class indexVeterinarioActionClass extends controllerClass implements controllerA
             
 
             $this->objVeterinario = veterinarioTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null,  true, $orderBy,'ASC', config::getRowGrid(), $page, $where);
+            $this->objTipoDoc = tipoDocumentoTableClass::getAll($fieldsTipoDoc, false);
             $this->defineView('index', 'veterinario', session::getInstance()->getFormatOutput());
            } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

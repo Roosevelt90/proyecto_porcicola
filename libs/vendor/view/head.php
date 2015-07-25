@@ -80,6 +80,18 @@
                              
                           </ul>
                       </div>
+                     
+                      <div class="demo-avatar-dropdown" style="margin-left: 5px">
+                          <span><?php echo i18n::__('personal') ?></span>
+                          <div class="mdl-layout-spacer"></div>
+                          <button id="personal" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                              <i class="material-icons">arrow_drop_down</i>
+                          </button>
+                          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="personal">
+                              <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('empleado') ?></button></a>
+                             
+                          </ul>
+                      </div>
                       
                       <div class="demo-avatar-dropdown" style="margin-left: 5px">
                           <span><?php echo i18n::__('vacunacion', null, 'vacunacion') ?></span>

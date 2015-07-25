@@ -17,7 +17,7 @@ class indexProveedorActionClass extends controllerClass implements controllerAct
 
     public function execute() {
         try {
-               $where = NULL;
+            $where = NULL;
             if (request::getInstance()->hasPost('filter')) {
                 $filter = request::getInstance()->getPost('filter');
 //                validacion de datos
@@ -28,10 +28,17 @@ class indexProveedorActionClass extends controllerClass implements controllerAct
                 if (isset($filter['nombre_completo']) and $filter['nombre_completo'] !== null and $filter['nombre_completo'] !== '') {
                     $where[proveedorTableClass::NOMBRE] = $filter['nombre_completo'];
                 }
-                
+                if (isset($filter['tipo_doc']) and $filter['tipo_doc'] !== null and $filter['tipo_doc'] !== '') {
+                    $where[proveedorTableClass::TIPO_DOC] = $filter['tipo_doc'];
+                }
+
                 session::getInstance()->setAttribute('ProveedorDeleteFilters', $where);
-            }  
-                
+            }
+            $fieldsTipoDoc = array(
+                tipoDocumentoTableClass::ID,
+                tipoDocumentoTableClass::DESCRIPCION
+            );
+
             $fields = array(
                 proveedorTableClass::ID,
                 proveedorTableClass::NUMERO_DOC,
@@ -43,23 +50,22 @@ class indexProveedorActionClass extends controllerClass implements controllerAct
             );
             $fields2 = array(
                 ciudadTableClass::NOMBRE
-           
             );
             $fields3 = array(
                 tipoDocumentoTableClass::DESCRIPCION
             );
 
-          
+
             $fJoin1 = proveedorTableClass::CIUDAD;
             $fJoin2 = ciudadTableClass::ID;
             $fJoin3 = proveedorTableClass::TIPO_DOC;
             $fJoin4 = tipoDocumentoTableClass::ID;
-            
-            
-             $orderBy = array(
-                 proveedorTableClass::ID
-                     );
-             
+
+
+            $orderBy = array(
+                proveedorTableClass::ID
+            );
+
             $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
@@ -70,13 +76,14 @@ class indexProveedorActionClass extends controllerClass implements controllerAct
             );
             $lines = config::getRowGrid();
             $this->cntPages = proveedorTableClass::getAllCount($f, true, $lines);
-          if (request::getInstance()->hasGet('page')) {
+            if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
-            }else{
+            } else {
                 $this->page = $page;
-            } 
+            }
 
-            $this->objProveedor = proveedorTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null,  true, $orderBy,'ASC', config::getRowGrid(), $page, $where);
+            $this->objProveedor = proveedorTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objTipoDoc = tipoDocumentoTableClass::getAll($fieldsTipoDoc, false);
             $this->defineView('index', 'proveedor', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

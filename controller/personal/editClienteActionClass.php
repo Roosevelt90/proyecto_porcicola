@@ -46,9 +46,14 @@ class editClienteActionClass extends controllerClass implements controllerAction
 
                 $this->objTipo_documento = tipoDocumentoTableClass::getAll($fieldsTipo_doc, true);
 
-                $this->objCliente = clienteTableClass::getAll($fields, false, null, null, null, null, $where);
-            }
+                $this->objCliente = clienteTableClass::getAll($fields, true, null, null, null, null, $where);
+            
                 $this->defineView('edit', 'cliente', session::getInstance()->getFormatOutput());
+        }else {
+           
+                routing::getInstance()->redirect('personal', 'indexCliente');
+            }
+        
          
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
@@ -57,3 +62,4 @@ class editClienteActionClass extends controllerClass implements controllerAction
   }
 
 }
+

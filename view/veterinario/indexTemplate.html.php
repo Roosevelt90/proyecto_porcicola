@@ -20,15 +20,15 @@ USE mvc\request\requestClass as request ?>
 <?php
 
 use mvc\i18n\i18nClass as i18n ?>
- 
+
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>
-                <?php echo i18n::__('read',NULL,'veterinario')?>
+                <?php echo i18n::__('read', NULL, 'veterinario') ?>
         </div>
     </div>
- <!-- WINDOWS MODAL FILTERS -->
+    <!-- WINDOWS MODAL FILTERS -->
     <div class="modal fade" id="myModalFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -40,40 +40,62 @@ use mvc\i18n\i18nClass as i18n ?>
                     <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>">
 
 
-                        <div class="form-group">
-                            <label for="filterTelefono" class="col-sm-2 control-label" >telefono</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterTelefono" name="filter[telefono]" placeholder="telefono">
-                            </div>
-                        </div>
+                        <table class="table table-responsive ">    
+                            <tr>
+                                <th>  <?php echo i18n::__('name', NULL, 'veterinario') ?>:</th>
+                                <th> 
+                                    <input placeholder="<?php echo i18n::__('name', NULL, 'veterinario') ?>" type="text" name="filter[nombre_completo]" >
+                                </th>   
+                            </tr>
+                            <tr>
+                                <th>
+                                    <?php echo i18n::__('telefono', null, 'veterinario') ?>:
+                                </th>
+                                <th>
+                                    <input placeholder="<?php echo i18n::__('telefono', NULL, 'veterinario') ?>" type="text" name="filter[telefono]" >
+                                </th>
+                            </tr>
 
-                        <div class="form-group">
-                            <label for="filterNombre_completo" class="col-sm-2 control-label">nombre_completo</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterNombre_completo" name="filter[nombre_completo]" placeholder="nombre">
-                            </div>
-                        </div> 
+                            <tr>
+                                <th>
+                                    <?php echo i18n::__('document type', null, 'veterinario') ?>:
+                                </th>
+                                <th>
+                                    <select name="filter[tipo_doc]"> 
+                                        <option>...</option>
+                                        <?php foreach ($objTipoDoc as $key): ?>
+                                            <option value="<?php echo $key->id ?>">
+                                                <?php echo $key->descripcion ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </th>
+                            </tr>
+
+                        </table>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cerrar')?></button>
-                    <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar')?></button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cerrar') ?></button>
+                    <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
                 </div>
             </div>
         </div>
     </div>
-
-
     <form>
         <div class="row">
             <div class=" col-xs-12 text-center">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertVeterinario') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('insertar', null, 'veterinario') ?></a>
-                <a href="#" class="btn btn-xs btn-default" onclick="reporte()"><?php echo i18n::__('reporte') ?></a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportVeterinario') ?>" class="btn btn-xs btn-default"><?php echo i18n::__('reporte') ?></a>
 
+                
                 <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+             <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersVeterinario') ?>" class="btn btn-xs btn-primary">ELiminar filtros</a>  
+              
             </div>
         </div>
     </form>
+
     <table class="table table-bordered table-responsive">
         <thead>
             <tr class="active">
@@ -102,14 +124,37 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
                     <td>
-                        <a href="#" class="btn btn-warning btn-sm "><?php echo i18n::__('view',null, 'veterinario')?> </a>
-                        <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editVeterinario', array(veterinarioTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'veterinario')?></a>
-                        <!--<a href="#" data-toggle="modal" data-target="#myModalDelete <?php echo $key->$id ?>" class="btn btn-danger btn-xs">Eliminar</a>-->
+                        <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editVeterinario', array(veterinarioTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'veterinario') ?></a>
+                        <a href="#" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="#myModalDelete<?php echo $key->id ?>"><?php echo i18n::__('delete') ?></a>
+
+
+                        <!-- WINDOWS MODAL DELETE -->
+                        <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteVeterinario') ?>" method="POST">
+
+                            <div class="modal fade" id="myModalDelete<?php echo $key->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            desea eliminar ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteVeterinario') ?>')">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
 
                     <?php endforeach ?>
         </tbody>
     </table>
 </div>
+
 <!--    paginado-->
 <div class="text-right">
     <nav>

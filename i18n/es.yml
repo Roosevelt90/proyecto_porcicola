@@ -2,6 +2,7 @@
 culture:                  Español
 dictionary:
   default:
+    personal:             Personal
     fechaFabricacion:     Fecha de fabricacion
     fechaVencimiento:     Fecha de vencimiento
     tipoInsumo:           Tipo de insumo

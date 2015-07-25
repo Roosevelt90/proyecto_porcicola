@@ -18,14 +18,14 @@ class updateVeterinarioActionClass extends controllerClass implements controller
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::ID, true));
+                $id = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::ID, true));
 
-                $numero_documento = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::NUMERO_DOC, true));
-                $nombre_completo = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::NOMBRE, true));
-                $tipo_doc = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::TIPO_DOC, true));
-                $direccion = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::DIRECCION, true));
-                $ciudad = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::CIUDAD, true));
-                $telefono = request::getInstance()->getPost(veterinarioTableClass::getNameField(proveedorTableClass::TEL, true));
+                $numero_documento = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::NUMERO_DOC, true));
+                $nombre_completo = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::NOMBRE, true));
+                $tipo_doc = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::TIPO_DOC, true));
+                $direccion = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::DIRECCION, true));
+                $ciudad = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::CIUDAD, true));
+                $telefono = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::TEL, true));
 
                 veterinarioTableClass::validateEdit($nombre_completo, $direccion, $telefono, $numero_documento);
 

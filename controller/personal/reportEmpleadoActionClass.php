@@ -8,6 +8,10 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
+function __construct() {
+    
+}
+
 /**
  * Description of ejemploClass
  *
@@ -18,17 +22,19 @@ class reportEmpleadoActionClass extends controllerClass implements controllerAct
     public function execute() {
         try {
             $where = null;
-            if (session::getInstance()->hasAttribute('empleadoFilters')) {
-                $where = session::getInstance()->getAttribute('empleadoFilters');
+            if (request::getInstance()->hasRequest('reportEmpleado')) {
+                $report = request::getInstance()->getPost('reportEmpleado');
             }
-$fields = array(
+
+            $fields = array(
                 empleadoTableClass::ID,
                 empleadoTableClass::NUMERO_DOC,
                 empleadoTableClass::CIUDAD,
                 empleadoTableClass::NOMBRE,
                 empleadoTableClass::TEL,
                 empleadoTableClass::CARGO,
-                empleadoTableClass::TIPO_DOC
+                empleadoTableClass::TIPO_DOC,
+                empleadoTableClass::DIRECCION
             );
             $fields2 = array(
                 ciudadTableClass::NOMBRE
@@ -46,27 +52,17 @@ $fields = array(
             $fJoin4 = cargoTableClass::ID;
             $fJoin5 = empleadoTableClass::TIPO_DOC;
             $fJoin6 = tipoDocumentoTableClass::ID;
-            $page = 0;
-            if (request::getInstance()->hasGet('page')) {
-                $page = request::getInstance()->getGet('page') - 1;
-                $page = $page * config::getRowGrid();
-            }
-            $f = array(
+
+            $orderBy = array(
                 empleadoTableClass::ID
             );
-            $lines = config::getRowGrid();
-            $this->cntPages = empleadoTableClass::getAllCount($f, false, $lines);
-            $this->page = request::getInstance()->getGet('page');
-
-
-            $this->objEmpleado = empleadoTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, null, 'ASC', config::getRowGrid(), $page, $where);
-            $this->defineView('indexEmpleado', 'empleado', session::getInstance()->getFormatOutput());
-          } catch (PDOException $exc) {
+            $this->objEmpleado = empleadoTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', $where);
+            $this->mensaje = 'Informe de las empledo en nuestro sistema';
+            $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
-
-
 
 }

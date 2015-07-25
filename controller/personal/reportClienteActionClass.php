@@ -13,22 +13,24 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class reportProveedorActionClass extends controllerClass implements controllerActionInterface {
+class reportClienteActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             $where = null;
-            if (request::getInstance()->hasRequest('reportProveedor')) {
-                $report = request::getInstance()->getPost('reportProveedor');
+            if (request::getInstance()->hasRequest('reportCliente')) {
+                $report = request::getInstance()->getPost('reportCliene');
             }
+
+
             $fields = array(
-                proveedorTableClass::ID,
-                proveedorTableClass::NUMERO_DOC,
-                proveedorTableClass::CIUDAD,
-                proveedorTableClass::NOMBRE,
-                proveedorTableClass::TEL,
-                proveedorTableClass::TIPO_DOC,
-                proveedorTableClass::DIRECCION
+                clienteTableClass::ID,
+                clienteTableClass::NUMERO_DOC,
+                clienteTableClass::CIUDAD,
+                clienteTableClass::NOMBRE,
+                clienteTableClass::TEL,
+                clienteTableClass::TIPO_DOC,
+                clienteTableClass::DIRECCION
             );
             $fields2 = array(
                 ciudadTableClass::NOMBRE
@@ -38,19 +40,21 @@ class reportProveedorActionClass extends controllerClass implements controllerAc
             );
 
 
-            $fJoin1 = proveedorTableClass::CIUDAD;
+            $fJoin1 = clienteTableClass::CIUDAD;
             $fJoin2 = ciudadTableClass::ID;
-            $fJoin3 = proveedorTableClass::TIPO_DOC;
+            $fJoin3 = clienteTableClass::TIPO_DOC;
             $fJoin4 = tipoDocumentoTableClass::ID;
 
 
             $orderBy = array(
-                proveedorTableClass::ID
+                clienteTableClass::ID
             );
 
-            $this->objProveedor = proveedorTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', $where);
+
+
+            $this->objCliente = clienteTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', $where);
             $this->mensaje = 'Informe de clientes en nuestro sistema';
-            $this->defineView('index', 'proveedor', session::getInstance()->getFormatOutput());
+            $this->defineView('index', 'cliente', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

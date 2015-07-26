@@ -23,8 +23,8 @@ class updateAnimalActionClass extends controllerClass implements controllerActio
 
                 $id = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::ID, true));
                 $peso = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PESO, true));
-                $edad = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::EDAD, true));
-                $fecha = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::FECHA_INGRESO, true));
+                $precio_animal = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PRECIO_ANIMAL, true));
+                $fecha = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::FECHA_NACIMIENTO, true));
                 $genero = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::GENERO_ID, true));
                 $lote = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::LOTE_ID, true));
                 $raza = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::RAZA, true));
@@ -35,8 +35,9 @@ class updateAnimalActionClass extends controllerClass implements controllerActio
                 );
                 $data = array(
                     animalTableClass::PESO => $peso,
-                    animalTableClass::EDAD => $edad,
-                    animalTableClass::FECHA_INGRESO => $fecha,
+//                    animalTableClass::EDAD => $edad,
+                    animalTableClass::FECHA_NACIMIENTO => $fecha,
+                    animalTableClass::PRECIO_ANIMAL => $precio_animal,
                     animalTableClass::GENERO_ID => $genero,
                     animalTableClass::LOTE_ID => $lote,
                     animalTableClass::RAZA => $raza
@@ -49,7 +50,7 @@ class updateAnimalActionClass extends controllerClass implements controllerActio
                 log::register(i18n::__('update'), usuarioTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
                 session::getInstance()->setError(i18n::__('errorUpdate', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

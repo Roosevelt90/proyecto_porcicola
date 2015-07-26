@@ -32,8 +32,8 @@ class editAnimalActionClass extends controllerClass implements controllerActionI
                     generoTableClass::NOMBRE
                 );
                 $fieldsAnimal = array(
-                    animalTableClass::EDAD,
-                    animalTableClass::FECHA_INGRESO,
+                    animalTableClass::FECHA_NACIMIENTO,
+                    animalTableClass::PRECIO_ANIMAL,
                     animalTableClass::GENERO_ID,
                     animalTableClass::ID,
                     animalTableClass::LOTE_ID,
@@ -50,8 +50,8 @@ class editAnimalActionClass extends controllerClass implements controllerActionI
                 $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $where);             
                 $this->defineView('edit', 'animal', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('animal', 'insertAnimal');
-            }//close if
+                routing::getInstance()->redirect('animal', 'indexAnimal');
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

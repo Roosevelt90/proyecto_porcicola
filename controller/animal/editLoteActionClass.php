@@ -22,7 +22,7 @@ class editLoteActionClass extends controllerClass implements controllerActionInt
                 $this->defineView('edit', 'lote', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('lote', 'index');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

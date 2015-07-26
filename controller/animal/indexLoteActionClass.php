@@ -23,15 +23,20 @@ class indexLoteActionClass extends controllerClass implements controllerActionIn
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }//close if
-            
+            }
             $f = array(
                 loteTableClass::ID
             );
-            $lines = config::getRowGrid();
 
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+            } else {
+                $this->page = $page;
+            }
+
+            $lines = config::getRowGrid();
             $this->cntPages = loteTableClass::getAllCount($f, true, $lines);
-            $this->page = request::getInstance()->getGet('page');
+            //$this->page = request::getInstance()->getGet('page');
             $this->objLote = loteTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
             $this->defineView('index', 'lote', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

@@ -17,6 +17,8 @@ class createRazaActionClass extends controllerClass implements controllerActionI
 
                 $nombre = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::NOMBRE_RAZA, true));
 
+                razaTableClass::validatCreate($nombre);
+                
                 $data = array(
                     razaTableClass::NOMBRE_RAZA => $nombre
                 );
@@ -29,7 +31,7 @@ class createRazaActionClass extends controllerClass implements controllerActionI
                 log::register(i18n::__('create'), razaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

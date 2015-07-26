@@ -27,7 +27,7 @@ class deleteSelectRazaActionClass extends controllerClass implements controllerA
                         razaTableClass::ID => $id
                     );
                     razaTableClass::delete($ids, true);
-                }//close foreach
+                }
                 log::register(i18n::__('delete'), razaTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
@@ -35,7 +35,7 @@ class deleteSelectRazaActionClass extends controllerClass implements controllerA
                 log::register(i18n::__('errorDelete'), razaTableClass::getNameTable());
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

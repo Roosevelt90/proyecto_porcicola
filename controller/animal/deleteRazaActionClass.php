@@ -34,7 +34,7 @@ class deleteRazaActionClass extends controllerClass implements controllerActionI
                 log::register(i18n::__('delete'), razaTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

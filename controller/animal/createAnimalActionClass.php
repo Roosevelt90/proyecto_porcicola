@@ -22,17 +22,17 @@ class createAnimalActionClass extends controllerClass implements controllerActio
             if (request::getInstance()->isMethod('POST')) {
                 // DATOS DE ANIMAL
                 $peso = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PESO, true));
-                $edad = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::EDAD, true));
-                $fecha = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::FECHA_INGRESO, true));
+                $fecha = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::FECHA_NACIMIENTO, true));
+                $precio_animal = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PRECIO_ANIMAL, true));
                 $genero = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::GENERO_ID, true));
                 $lote = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::LOTE_ID, true));
                 $raza = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::RAZA, true));
 
                 //validar si los campos estan vacios
                 $datos = array(
-                    $peso,
-                    $edad,
+                    $peso,                 
                     $fecha,
+                    $precio_animal,
                     $genero,
                     $lote,
                     $raza
@@ -40,7 +40,7 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
                 if ($validatorEmpty == false) {
                     throw new PDOException(i18n::__(10006, null, 'errors', null, 10006));
-                }//close if
+                }
 
 
                 //Validar el formato de fecha
@@ -52,19 +52,19 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 $validacionNumericos = validator::getInstance()->validateCharactersNumber($peso);
                 if ($validacionNumericos == true) {
                     throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
-                }//close if
+                }
 
-                $validacionNumericos = validator::getInstance()->validateCharactersNumber($edad);
-                if ($validacionNumericos == true) {
-                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
-                }//close if
+//                $validacionNumericos = validator::getInstance()->validateCharactersNumber($edad);
+//                if ($validacionNumericos == true) {
+//                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
+//                }
 
 
                 //Insertar la informacion del usuario
                 $data = array(
                     animalTableClass::PESO => $peso,
-                    animalTableClass::EDAD => $edad,
-                    animalTableClass::FECHA_INGRESO => $fecha,
+                    animalTableClass::FECHA_NACIMIENTO => $fecha,
+                    animalTableClass::PRECIO_ANIMAL => $precio_animal,
                     animalTableClass::GENERO_ID => $genero,
                     animalTableClass::LOTE_ID => $lote,
                     animalTableClass::RAZA => $raza
@@ -77,7 +77,7 @@ class createAnimalActionClass extends controllerClass implements controllerActio
                 log::register(i18n::__('create'), animalTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'indexAnimal');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

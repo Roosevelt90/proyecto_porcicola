@@ -33,71 +33,71 @@ class reportAnimalActionClass extends controllerClass implements controllerActio
                     exit();*/
                     if ($edad_inicial == true or $edad_fin == true) {
                         throw new PDOException(i18n::__(10007, null, 'errors'));
-                    }//close if
+                    }
                     $where[animalTableClass::EDAD] = array(
                         $report['edad_inicial'],
                         $report['edad_fin']
                     );
-                }//close if
+                }
 
                 if (isset($report['peso_inicial']) and $report['peso_inicial'] !== null and $report['peso_inicial'] !== '' and isset($report['peso_fin']) and $report['peso_fin'] !== null and $report['peso_fin'] !== '') {
                     $peso_inicial = validate::getInstance()->validateCharactersNumber($report['peso_inicial']);
                     $peso_fin = validate::getInstance()->validateCharactersNumber($report['peso_fin']);
                     if ($edad_inicial == true or $edad_fin == true) {
                         throw new PDOException(i18n::__(10007, null, 'errors'));
-                    }//close if
+                    }
                     $where[animalTableClass::PESO] = array(
                         $report['peso_inicial'],
                         $report['peso_fin']
                     );
-                }//close if
+                }
 
                 if (isset($report['fecha_inicial']) and $report['fecha_inicial'] !== null and $report['fecha_inicial'] !== '' and isset($report['fecha_fin']) and $report['fecha_fin'] !== null and $report['fecha_fin'] !== '') {
                     $fecha_inicial = validate::getInstance()->validateDate($filter['fecha_inicial']);
                     $fecha_fin = validate::getInstance()->validateDate($filter['fecha_fin']);
                     if ($fecha_inicial == false or $fecha_fin == false) {
                         throw new PDOException(i18n::__(10008, null, 'errors'));
-                    }//close if
+                    }
                     $where[animalTableClass::FECHA_INGRESO] = array(
                         date(config::getFormatTimestamp(), strtotime($report['fecha_inicial'])),
                         date(config::getFormatTimestamp(), strtotime($report['fecha_fin']))
                     );
-                }//close if
+                }
                 
                 if (isset($report['genero']) and $report['genero'] !== null and $report['genero'] !== '' and $report['genero'] !== "default") {
                     $genero = validate::getInstance()->validateCharactersNumber($report['genero']);
                     if ($genero == true) {
                         throw new PDOException(i18n::__(10007, null, 'errors'));
-                    }//close if
+                    }
                     $where[animalTableClass::GENERO_ID] = $report['genero'];
-                }//close if
+                }
                 
                 
                 if (isset($report['lote']) and $report['lote'] !== null and $report['lote'] !== '' and $report['lote'] !== "default") {
                     $lote = validate::getInstance()->validateCharactersNumber($report['lote']);
                     if ($lote == true) {
                         throw new PDOException(i18n::__(10007, null, 'errors'));
-                    }//close if
+                    }
                     $where[animalTableClass::LOTE_ID] = $report['lote'];
-                }//close if
+                }
                 
                 
                 if (isset($report['raza']) and $report['raza'] !== null and $report['raza'] !== '' and $report['raza'] !== "default") {
                     $raza = validate::getInstance()->validateCharactersNumber($report['raza']);
                     if ($raza == true) {
                         throw new PDOException(i18n::__(10007, null, 'errors'));
-                    }//close if
+                    }
                     $where[animalTableClass::RAZA] = $report['raza'];
-                }//close if
-            }//close if
+                }
+            }
 
 
             $fields = array(
                 animalTableClass::ID,
                 animalTableClass::PESO,
-                animalTableClass::PRECIO,
+                animalTableClass::PRECIO_ANIMAL,
                 animalTableClass::EDAD,
-                animalTableClass::FECHA_INGRESO
+                animalTableClass::FECHA_NACIMIENTO
             );
             $fields2 = array(
                 generoTableClass::NOMBRE

@@ -27,7 +27,7 @@ class deleteSelectLoteActionClass extends controllerClass implements controllerA
                         loteTableClass::ID => $id
                     );
                     loteTableClass::delete($ids, true);
-                }//close foreach
+                }
                 log::register(i18n::__('delete'), loteTableClass::getNameTable());
                 session::getInstance()->setSuccess(i18n::__('succesDelete'));
                 routing::getInstance()->redirect('animal', 'indexLote');
@@ -35,7 +35,7 @@ class deleteSelectLoteActionClass extends controllerClass implements controllerA
                 log::register(i18n::__('errorDelete'), loteTableClass::getNameTable());
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo'));
                 routing::getInstance()->redirect('animal', 'indexLote');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

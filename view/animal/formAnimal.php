@@ -5,12 +5,12 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php $id_animal = animalTableClass::ID ?>
 <?php $peso = animalTableClass::PESO ?>
-<?php $edad = animalTableClass::EDAD ?>
-<?php $fecha = animalTableClass::FECHA_INGRESO ?>
+<?php $precio_animal =  animalTableClass::PRECIO_ANIMAL ?>
+<?php $fecha = animalTableClass::FECHA_NACIMIENTO ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $lote = loteTableClass::NOMBRE ?>
 <?php $raza = razaTableClass::NOMBRE_RAZA ?>
-<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objCiudad) == TRUE) ? 'updateAnimal' : 'createAnimal')) ?>">
+<form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objAnimal) == TRUE) ? 'updateAnimal' : 'createAnimal')) ?>">
     <?php if (isset($objAnimal)): ?>
         <input type="hidden" name="<?php echo animalTableClass::getNameField(animalTableClass::ID, TRUE) ?>" value="<?php echo $objAnimal[0]->$id_animal ?>">
     <?php endif; ?>
@@ -25,21 +25,20 @@ use mvc\i18n\i18nClass as i18n ?>
                             <input required  placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('peso', NULL, 'animal') : $objAnimal[0]->$peso = ucwords($objAnimal[0]->$peso)) ?>" type="number" min="0"  name="<?php echo animalTableClass::getNameField(animalTableClass::PESO, true) ?>" >
                         </th>   
                     </tr>
-                    <tr>
-                        <th>
-                            <?php echo i18n::__('edad', null, 'animal') ?>:
-                        </th>
-                        <th>
-                            <input placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('edad', NULL, 'animal') : $objAnimal[0]->$edad ) ?>" type="text" name="<?php echo animalTableClass::getNameField(animalTableClass::EDAD, true) ?>" >
-                        </th>
-                    </tr>
+                    
                     <tr>
                         <th>
                             <?php echo i18n::__('fecha', null, 'animal') ?>:
                         </th>
                         <th>
-                            <input type="date" name="<?php echo animalTableClass::getNameField(animalTableClass::FECHA_INGRESO, true) ?>" >               
+                            <input placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('fecha', NULL, 'animal') : $objAnimal[0]->$fecha ) ?>" type="datetime-local" name="<?php echo animalTableClass::getNameField(animalTableClass::FECHA_NACIMIENTO, true) ?>" >
                         </th>
+                    </tr>
+                    <tr>
+                        <th>  <?php echo i18n::__('precio', NULL, 'animal') ?>:</th>
+                        <th> 
+                            <input required  placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('precio', NULL, 'animal') : $objAnimal[0]->$precio_animal= ucwords($objAnimal[0]->$precio_animal)) ?>" type="number" min="0"  name="<?php echo animalTableClass::getNameField(animalTableClass::PRECIO_ANIMAL, true) ?>" >
+                        </th>   
                     </tr>
                     <tr>
                         <th>
@@ -95,3 +94,5 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
     </div>
 </form>
+</div>
+</main>

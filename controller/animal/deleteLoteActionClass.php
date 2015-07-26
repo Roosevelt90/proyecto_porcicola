@@ -34,7 +34,7 @@ class deleteLoteActionClass extends controllerClass implements controllerActionI
                 log::register(i18n::__('delete'), loteTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete'));
                 routing::getInstance()->redirect('animal', 'indexLote');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

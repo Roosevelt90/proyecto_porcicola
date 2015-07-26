@@ -10,18 +10,22 @@ class animalBaseTableClass extends tableBaseClass {
             $genero_id,
             $lote_id,
             $numero_identificacion,
+            $edad,
             $raza;
-
+            
+    
     const ID = 'id';
     const PESO = 'peso_animal';
-    const EDAD = 'fecha_nacimiento';
+    const FECHA_NACIMIENTO = 'fecha_nacimiento';
     const PARTO = 'numero_parto';
     const FECHA_FIN = 'fecha_fin';
-    const PRECIO = 'precio_animal';
+    const PRECIO_ANIMAL = 'precio_animal';
     const GENERO_ID = 'genero_id';
     const LOTE_ID = 'lote_id';
     const NUMERO = 'numero_identificacion';
     const RAZA = 'raza';
+    const EDAD= 'edad';
+    
 
     function getId() {
         return $this->id;
@@ -53,6 +57,9 @@ class animalBaseTableClass extends tableBaseClass {
 
     function getNumero_identificacion() {
         return $this->numero_identificacion;
+    }
+    function getEdad() {
+        return $this->edad;
     }
 
     function getRaza() {
@@ -89,6 +96,9 @@ class animalBaseTableClass extends tableBaseClass {
 
     function setNumero_identificacion($numero_identificacion) {
         $this->numero_identificacion = $numero_identificacion;
+    }
+    function setEdad($edad) {
+        $this->edad = $edad;
     }
 
     function setRaza($raza) {

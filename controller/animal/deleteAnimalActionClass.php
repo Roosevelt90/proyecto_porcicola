@@ -39,7 +39,7 @@ class deleteAnimalActionClass extends controllerClass implements controllerActio
                 log::register(i18n::__('delete'), animalTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete', null, 'animal'));
                 routing::getInstance()->redirect('animal', 'index');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

@@ -22,7 +22,7 @@ class editRazaActionClass extends controllerClass implements controllerActionInt
                 $this->defineView('edit', 'raza', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('raza', 'index');
-            }//close if
+            }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

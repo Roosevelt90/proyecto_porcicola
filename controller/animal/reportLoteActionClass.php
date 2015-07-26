@@ -20,7 +20,7 @@ class reportLoteActionClass extends controllerClass implements controllerActionI
             $where = null;
             if (session::getInstance()->hasAttribute('loteFiltersAnimal')) {
                 $where = session::getInstance()->getAttribute('loteFiltersAnimal');
-            }//close if
+            }
 
             $fields = array(
                 loteTableClass::ID,

@@ -23,11 +23,12 @@ USE mvc\request\requestClass as request ?>
 use mvc\i18n\i18nClass as i18n ?>
 
 <?php $countDetale = 1 ?>
+    <!--<div class="container container-fluid">-->
+
 <main class="mdl-layout__content mdl-color--grey-100">
   <div class="mdl-grid demo-content">
-    <div class="container container-fluid">
-      <div class="row">
-        <div class="col-xs-4-offset-4 titulo">
+      <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
           <h2>
             <?php echo i18n::__('empleado') ?>
           </h2>
@@ -95,8 +96,10 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
       </div>
       <form>
-        <div class="row">
-          <div class=" col-xs-12 text-center">
+        
+        
+        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
             <a id="filter" href="#myModalFilter"  class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
               <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -117,9 +120,11 @@ use mvc\i18n\i18nClass as i18n ?>
           </div>
         </div>
       </form>
-      <table class="table table-bordered table-responsive">
-        <thead>
-          <tr class="active">  <tr class="active">
+              <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+
+      <table class="">
+        <thead class="">
+          <tr class="active ">  <tr class="active">
             <td><input type="checkbox" id="chkAll"></td> 
             <th><?php echo i18n::__('identification', null, 'empleado') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'empleado') ?></th>
@@ -132,7 +137,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <th><?php echo i18n::__('action', null, 'empleado') ?></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="">
           <?php foreach ($objEmpleado as $key): ?>
             <tr>
               <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
@@ -173,7 +178,7 @@ use mvc\i18n\i18nClass as i18n ?>
               <?php endforeach ?>
         </tbody>
       </table>
-    </div>
+              </div>
     <!--    paginado-->
     <div class="text-right">
       <nav>
@@ -212,6 +217,7 @@ use mvc\i18n\i18nClass as i18n ?>
           </div>
         </div>
       </div>
-    </div>
   </div>
+    </div>
 </main>
+          <!--</div>-->

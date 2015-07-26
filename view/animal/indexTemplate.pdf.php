@@ -23,7 +23,7 @@ $pdf->AddPage();
 //     Salto de línea
 $pdf->Ln(80);
 //fondo
-$pdf->Image(routing::getInstance()->getUrlImg('background.jpg'), 0, 0, 218, 300);
+$pdf->Image(routing::getInstance()->getUrlImg('reporte_Vertical.jpg'), 0, 0, 218, 300);
 // Arial bold 15
 $pdf->SetFont('Arial', 'B', 25);
 // Movernos a la derecha
@@ -46,8 +46,8 @@ $pdf->Ln();
 foreach ($objAnimal as $key) {
     $pdf->Cell(20, 10, utf8_encode($key->id), 1);
     $pdf->Cell(20, 10, utf8_encode($key->peso_animal), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->edad_animal), 1);
-    $pdf->Cell(42, 10, utf8_encode($key->fecha_ingreso), 1);
+    $pdf->Cell(20, 10, utf8_encode($key->edad), 1);
+    $pdf->Cell(42, 10, utf8_encode($key->fecha_nacimiento), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre_genero), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre_lote), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre_raza), 1);

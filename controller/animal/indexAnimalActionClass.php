@@ -22,43 +22,49 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             if (request::getInstance()->hasPost('filter')) {
                 $filter = request::getInstance()->getPost('filter');
 
-
-                if (isset($filter['peso']) and $filter['peso'] !== null and $filter['peso'] !== '') {
-                    $peso = validate::getInstance()->validateCharactersNumber($filter['peso']);
-                    if ($peso == true) {
-                        throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
-                    } //close if
-                    $where[animalTableClass::PESO] = $filter['edad'];
-                } //close if
-
-
-                if (isset($filter['edad']) and $filter['edad'] !== null and $filter['edad'] !== '') {
-                    $edad = validate::getInstance()->validateCharactersNumber($filter['edad']);
-                    if ($edad == false) {
-                        throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
-                    } //close if
-                    $where[animalTableClass::EDAD] = $filter['edad'];
-                } //close if
+                if (isset($filter['genero']) and $filter['genero'] !== null and $filter['genero'] !== '') {
+                    $where [animalTableClass::GENERO_ID] = $filter['genero'];
+                }
+                if (isset($filter['raza']) and $filter['raza'] !== null and $filter['raza'] !== '') {
+                    $where [animalTableClass::RAZA] = $filter['raza'];
+                }
+                if (isset($filter['lote']) and $filter['lote'] !== null and $filter['lote'] !== '') {
+                    $where [animalTableClass::LOTE_ID] = $filter['lote'];
+                }
                 
-                if (isset($filter['fecha_inicial']) and isset($filter['fecha_fin']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '') {
-
-                    $date = validate::getInstance()->validateDate($filter['fecha_inicial']);
-                    if ($date == false) {
-                        throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
-                    }//close if
-                    $date = validate::getInstance()->validateDate($filter['fecha_fin']);
-                    if ($date == false) {
-                        throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
-                    }//close if
-                    $where[animalTableClass::FECHA_INGRESO] = array(
-                        date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
-                        date(config::getFormatTimestamp(), strtotime($filter['fecha_fin'] . ' 23.59.59'))
-                    );
-                }//close if
+//                
+//                if (isset($filter['peso']) and $filter['peso'] !== null and $filter['peso'] !== '') {
+//                    if ($peso == true) {
+//                        throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
+//                    } //close if
+//                    $where[animalTableClass::PESO] = $filter['edad'];
+//                } //close if
+//
+//
+//                if (isset($filter['edad']) and $filter['edad'] !== null and $filter['edad'] !== '') {
+//                    if ($edad == false) {
+//                        throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
+//                    } //close if
+//                    $where[animalTableClass::EDAD] = $filter['edad'];
+//                } //close if
+//                
+//                if (isset($filter['fecha_inicial']) and isset($filter['fecha_fin']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '') {
+//
+//                    if ($date == false) {
+//                        throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
+//                    }
+//                    if ($date == false) {
+//                        throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
+//                    }
+//                    $where[animalTableClass::FECHA_NACIMIENTO] = array(
+//                        date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
+//                        date(config::getFormatTimestamp(), strtotime($filter['fecha_fin'] . ' 23.59.59'))
+//                    );
+//                }
                 session::getInstance()->setAttribute('animalFiltersAnimal', $where);
-            } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
-                $where = session::getInstance()->getAttribute('animalFiltersAnimal');
-            }//close if
+      //      } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
+//                $where = session::getInstance()->getAttribute('animalFiltersAnimal');
+            }
 
 
             $fieldsRaza = array(
@@ -76,9 +82,8 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             $fields = array(
                 animalTableClass::ID,
                 animalTableClass::PESO,
-                animalTableClass::PRECIO,
-                animalTableClass::EDAD,
-                animalTableClass::FECHA_INGRESO
+                animalTableClass::PRECIO_ANIMAL,
+                animalTableClass::FECHA_NACIMIENTO               
             );
             $fields2 = array(
                 generoTableClass::NOMBRE
@@ -100,18 +105,26 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                 animalTableClass::ID
             );
 
-            $page = 0;
+          
+            
+           $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
-            }//close if
+            }
             $f = array(
                 animalTableClass::ID
             );
-            $lines = config::getRowGrid();
 
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+            } else {
+                $this->page = $page;
+            }
+
+            $lines = config::getRowGrid();
             $this->cntPages = animalTableClass::getAllCount($f, true, $lines, $where);
-            $this->page = request::getInstance()->getGet('page');
+           // $this->page = request::getInstance()->getGet('page');
             $this->objLote = loteTableClass::getAll($fieldsLote, false);
             $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
             $this->objRaza = razaTableClass::getAll($fieldsRaza, false);

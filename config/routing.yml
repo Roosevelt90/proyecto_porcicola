@@ -2757,3 +2757,170 @@ cliente_delete:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    
+    
+##------------ENTRADA BODEGA---------------------##
+
+entrada_bodega:
+  url:      /entrada_bodega
+  param:  { module: bodega, action: indexEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+   
+
+entrada_bodega:_nuevo:
+  url:      /entrada_bodega/nuevo_registro
+  param:  { module: bodega, action: insertEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+entrada_bodega:_crear:
+  url:      /entrada_bodega/crear
+  param:  { module: bodega, action: createEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+entrada_bodega_edit:
+  url:      /entrada_bodega/edit
+  param:  { module: bodega, action: editEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+entrada_bodega_update:
+  url:      /entrada_bodega/update
+  param:  { module: bodega, action: updateEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+entrada_bodega_inhabilitar:
+  url:      /entrada_bodega/eliminar
+  param:  { module: bodega, action: deleteEntrada, format: json }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+entrada_bodega_eliminar_seleccion:
+  url:    /entrada_bodega/eliminarSeleccion
+  param:  { module: bodega, action: deleteSelectEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+entrada_bodega_delete_filters:
+  url:     /borrar_filtros/entrada_bodega
+  param: { module: bodega, action: deleteFilterEntrada, format: html }
+
+entrada_bodega_view:
+  url:    /entrada_bodega/view
+  param: { module: bodega, action: viewEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+    
+entrada_bodega_reporte:
+  url:    /entrada_bodega/reporte
+  param:  { module: bodega, action: reportEntrada, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+entrada_bodega_CrearDetalle:
+  url:    /entrada_bodega/create_detalle
+  param:  { module: bodega, action: createDetalleEntrada, format: pdf }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+   

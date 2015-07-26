@@ -2,6 +2,7 @@
 culture:                  Español
 dictionary:
   default:
+    RegistrosEntrada:     Registros de entrada a la bodega
     personal:             Personal
     fechaFabricacion:     Fecha de fabricacion
     fechaVencimiento:     Fecha de vencimiento

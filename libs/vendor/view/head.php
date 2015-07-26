@@ -108,6 +108,17 @@ use mvc\i18n\i18nClass as i18n ?>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('vacuna', null, 'vacuna') ?></button></a>
               </ul>
             </div>
+            
+            <div class="demo-avatar-dropdown" style="margin-left: 5px">
+              <span>Bodega</span>
+              <div class="mdl-layout-spacer"></div>
+              <button id="bodega" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">arrow_drop_down</i>
+              </button>
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="bodega">
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>'" > <button class="mdl-menu__item">Entrada bodega</button></a>
+              </ul>
+            </div>
 
 
 

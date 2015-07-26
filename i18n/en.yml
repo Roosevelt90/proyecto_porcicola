@@ -10,6 +10,7 @@ dictionary:
     telefono:             Phone
     direccion:            Addres
     identificacion:       Number of document
+    nuev:                 New
     nombre:               Name
     pVenta:               Factura venta
     cliente:              Client
@@ -44,6 +45,12 @@ dictionary:
     diciembre:            December
     buscar:               Search
     filterBy:             Filter By
+    granja:               Hog Farm
+    sobre:                About
+    contacto:             Contact
+    legalInfor:           Legal Information
+    ingBusqueda:          Enter your Query...
+    configuracion:        Configuration
     new:                  New Register
     deleteFilter:         Delete Filters
     empleado:             Employe
@@ -101,6 +108,7 @@ dictionary:
     
   animal:
     animal:               Animal
+    parto:                Number from Deliveries
     
   veterinario:
     veterinario:          Veterinary

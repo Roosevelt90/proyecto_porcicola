@@ -1,22 +1,19 @@
-<?php
+<?php use mvc\routing\routingClass as routing ?>
 
-use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 
-<?php
-
-use mvc\i18n\i18nClass as i18n ?>
-
-<?php
-
-use mvc\view\viewClass as view ?>
+<?php use mvc\view\viewClass as view ?>
 
 <?php $idAnimal = animalTableClass::ID ?>
 <?php $peso = animalTableClass::PESO ?>
 <?php $edad = animalTableClass::EDAD ?>
+<?php $parto = animalTableClass::PARTO ?>
+<?php $precio = animalTableClass::PRECIO ?>
 <?php $fecha = animalTableClass::FECHA_INGRESO ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $lote = loteTableClass::NOMBRE ?>
 <?php $raza = razaTableClass::NOMBRE_RAZA ?>
+<?php $countDetale = 1 ?>
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
@@ -29,13 +26,26 @@ use mvc\view\viewClass as view ?>
         <div class="row">
             <div class="col-xs-3 text-center">
                 <!--<a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class=""></a>-->
-                <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-                <a href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"><?php echo i18n::__('deleteFilter') ?></a>  
+                <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                </div>
+                <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"><?php echo i18n::__('deleteFilter') ?></a>  
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                    <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+                </div>
+                 <!--<a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new', null, 'animal') ?></a>-->
+                <div class="mdl-tooltip mdl-tooltip--large" for="new">
+                    <?php echo i18n::__('registrar', null, 'ayuda') ?>
+                </div>
+                <a id="reporte" href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+                    <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                </div>
             </div>
-                <div class="col-xs-4-offset-2 nuevo">
-                    <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-                    <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
+            <div class="col-xs-4-offset-2 nuevo">
+                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
             </div>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -43,14 +53,15 @@ use mvc\view\viewClass as view ?>
             <thead>
                 <tr class="active">
                     <td><input type="checkbox" id="chkAll"></td> 
-                    <th>Id</th>
-                    <th>Peso</th>
-                    <th>Edad</th>
-                    <th>Fecha de nacimiento</th>
-                    <th>Genero</th>
-                    <th>Lote</th>
-                    <th>Raza</th>
-                    <th>Acciones</th>
+                    <th> <?php echo i18n::__('identification', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('fecha', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('peso', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('genero', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('parto', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('lote', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('raza', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('precio', null, 'animal') ?></th>
+                    <th><?php echo i18n::__('action', null, 'proveedor') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -58,16 +69,23 @@ use mvc\view\viewClass as view ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $key->$idAnimal ?>"></td>
 
-                        <td><?php echo $key->$idAnimal ?></td>
+                        <td><?php echo $key->$numero_identificacion ?></td>
+                        <td><?php echo $key->$edad ?></td> <td><?php echo $key->$fecha ?></td>
                         <td><?php echo $key->$peso ?></td>
-                        <td><?php echo $key->$edad ?></td>
-                        <td><?php echo $key->$fecha ?></td>
                         <td><?php echo $key->$genero ?></td>
+                        <td><?php echo $key->$parto ?></td>
                         <td><?php echo $key->$lote ?></td>
                         <td><?php echo $key->$raza ?></td>
+                        <td><?php echo $key->$precio ?></td>
                         <td>
-                            <a  href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editAnimal', array(animalTableClass::ID => $key->$idAnimal)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
-                            <a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$idAnimal ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>
+                            <a  id="editDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editAnimal', array(animalTableClass::ID => $key->$idAnimal)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
+                            <div class="mdl-tooltip mdl-tooltip--large" for="editDetalle<?php echo $countDetale ?>">
+                                <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                            </div>    
+                            <a id="eliminar<?php echo $countDetale ?>" data-toggle="modal" data-target="#myModalDelete<?php echo $key->$idAnimal ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>
+                            <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
+                                <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                            </div> 
                         </td>
                     </tr>
                     <!-- WINDOWS MODAL DELETE -->
@@ -88,7 +106,7 @@ use mvc\view\viewClass as view ?>
                         </div>
                     </div>
                 </div>
-
+                <?php $countDetale++ ?>
             <?php endforeach ?>
             </tbody>
         </table>
@@ -99,7 +117,7 @@ use mvc\view\viewClass as view ?>
             <ul class="pagination" id="slqPaginador">
                 <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
                 <?php $count = 0 ?>
-                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                     <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
                     <?php $count++ ?>        
                 <?php endfor; ?>
@@ -257,7 +275,7 @@ use mvc\view\viewClass as view ?>
                                 <input placeholder="<?php echo i18n::__('edad_inicial', NULL, 'animal') ?>" type="number" name="report[edad_inicial]" >
                             </th>
                         </tr>
-                        
+
                         <tr>
                             <th>
                                 <?php echo i18n::__('edad_fin', null, 'animal') ?>:

@@ -107,6 +107,14 @@ use mvc\i18n\i18nClass as i18n ?>
             <form>
                 <div class="row">
                     <div class=" col-xs-12 text-center">
+                          <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                            <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                        </div>
+                        <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersEmpleado') ?>" class="btn btn-xs btn-primary"><?php echo i18n::__('deleteFilter') ?> </a>  
+                        <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+                        </div>
                         <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertEmpleado') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('new', null, 'empleado') ?></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="new">
                             <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -115,14 +123,7 @@ use mvc\i18n\i18nClass as i18n ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
                             <?php echo i18n::__('reporte', null, 'ayuda') ?>
                         </div>
-                        <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-                            <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                        </div>
-                        <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersEmpleado') ?>" class="btn btn-xs btn-primary">ELiminar filtros</a>  
-                        <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-                            <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-                        </div>
+                      
                     </div>
                 </div>
             </form>
@@ -158,12 +159,12 @@ use mvc\i18n\i18nClass as i18n ?>
                           <td>
                               <a id="insert<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editEmpleado', array(empleadoTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'empleado') ?></a>
                               <div class="mdl-tooltip mdl-tooltip--large" for="insert<?php echo $countDetale ?>">
-
+                                <?php echo i18n::__('modificar', null, 'ayuda') ?>
                               </div> 
 
                               <a id="delete<?php echo $countDetale ?>" href="#" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="#myModalDelete<?php echo $key->id ?>"><?php echo i18n::__('delete') ?></a>
                               <div class="mdl-tooltip mdl-tooltip--large" for="delete<?php echo $countDetale ?>">
-
+                              <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                               </div> 
 
                               <!-- WINDOWS MODAL DELETE -->

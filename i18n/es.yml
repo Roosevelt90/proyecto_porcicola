@@ -10,6 +10,7 @@ dictionary:
     nombreInsumo:         Nombre del insumo
     descripcion:          Descripcion
     tipoInsumo:           Tipo de insumos
+    nuev:                 Nuevo
     newRegistroVacunacion: Nuevo registro de vacunacion
     cerrar:              Cerrar
     buscar:              Buscar
@@ -112,6 +113,7 @@ dictionary:
     errorDeleteBitacora:  Se ha producido un error al eliminar
     confirmDelete:        Desea eliminar el registro
     cancel:               Cancelar
+    configuracion:        Configuración
     confirm:              Eliminar registro
     animal:               Animal
     name:                 Nombre
@@ -148,7 +150,12 @@ dictionary:
     valorUni:             Valor unitario
     edit:                 Editar
     crear:                Crear
-   
+    granja:               Granja Porcicola
+    sobre:                Sobre
+    contacto:             Contacto
+    legalInfor:           Información Legal
+    ingBusqueda:          Ingrese su búsqueda...
+        
   veterinario:
     veterinario:         Veterinario
       
@@ -171,6 +178,7 @@ dictionary:
     fecha_inicial:        Fecha de nacimiento inicial
     fecha_fin:            Fecha de nacimiento final
     genero:               Genero
+    parto:                Numero de Partos
     lote:                 Lote
     raza:                 Raza
     Vacunas:              Vacunas
@@ -276,7 +284,7 @@ dictionary:
     name:                 Nombre
     tipoDoc:              Tipo de documento
     numberDoc:            Numero de documento
-    lastName:             Apellido
+    lastName:             Apellidos
     register:             Registrar
     tel:                  Telefono
     dir:                  Direccion

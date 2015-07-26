@@ -1,10 +1,10 @@
-<?php
-use mvc\routing\routingClass as routing ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $id = usuarioTableClass::ID ?>
 <?php $creacion = usuarioBaseTableClass::CREATED_AT ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
+<?php $countDetale = 1 ?>
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
@@ -17,9 +17,18 @@ use mvc\routing\routingClass as routing ?>
         <div class="form-group">
             <div class="row">
                 <div class="col-xs-4-offset-4 nuevo">
-                    <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active">Buscar</a>
-                    <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" class="btn btn-success btn-xs glyphicon glyphicon-plus">Nuevo</a>
-                    <a href="#" class="btn btn-danger btn-xs glyphicon glyphicon-trash" id="btnDeleteMasivo" onclick="borrarSeleccion()">Borrar</a>
+                    <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                </div>
+                    <a id="deleteMasa" href="#" class="btn btn-danger btn-xs glyphicon glyphicon-trash" id="btnDeleteMasivo" onclick="borrarSeleccion()"> <?php echo i18n::__('borrar seleccion') ?></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+                </div>
+                    <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" class="btn btn-success btn-xs glyphicon glyphicon-plus"> <?php echo i18n::__('nuev') ?></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="new">
+                    <?php echo i18n::__('registrar', null, 'ayuda') ?>
+                </div>
                 </div>
             </div>
                 <?php  view::includeHandlerMessage() ?>
@@ -42,8 +51,14 @@ use mvc\routing\routingClass as routing ?>
                                 <td><?php echo $usuario->$creacion ?></td>
                                 <td>
                                     <a href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-warning btn-sm glyphicon glyphicon-user">Ver</a>
-                                    <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-info  btn-sm fa fa-pencil-square-o"><?php echo i18n::__('modify', NULL, 'user') ?></a>
-                                    <a href="#" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->$id ?>"><?php echo i18n::__('delete', null, 'user') ?></a>
+                                    <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-info  btn-sm fa fa-pencil-square-o"><?php echo i18n::__('modify', NULL, 'user') ?></a>
+                                    <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                                    <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                                    </div> 
+                                    <a id="eliminar<?php echo $countDetale ?>" href="#" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->$id ?>"><?php echo i18n::__('delete', null, 'user') ?></a>
+                                <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
+                            <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                        </div> 
                                 </td>
                             </tr>
                             <!-- WINDOWS MODAL DELETE -->
@@ -68,6 +83,7 @@ use mvc\routing\routingClass as routing ?>
                                 </div>
                             </div>
                         </div>
+                       <?php $countDetale++ ?>
                     <?php endforeach//close foreach ?> 
                     </tbody>
                 </table>
@@ -116,8 +132,8 @@ use mvc\routing\routingClass as routing ?>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Buscar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('close', null, 'vacunacion') ?></button>
+                <button type="button" class="btn btn-primary"> <?php echo i18n::__('buscar') ?></button>
             </div>
         </div>
     </div>
@@ -128,14 +144,14 @@ use mvc\routing\routingClass as routing ?>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Confirmar eliminar los elementos seleccionados</h4>
+        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('deleteMasive') ?></h4>
       </div>
       <div class="modal-body">
-        Desea eliminar los elementos seleccionados
+     <?php echo i18n::__('confirmDeleteMasive') ?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('Exit') ?></button>
+        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
       </div>
     </div>
   </div>

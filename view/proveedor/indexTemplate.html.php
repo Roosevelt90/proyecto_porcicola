@@ -1,14 +1,9 @@
 
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\config\configClass as config ?>
-<?PHP
-USE mvc\request\requestClass as request ?>
-
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\config\configClass as config ?>
+<?php use mvc\request\requestClass as request ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id = proveedorTableClass::ID ?>
 <?php $numero_documento = proveedorTableClass::NUMERO_DOC ?>
 <?php $nombre_completo = proveedorTableClass::NOMBRE ?>
@@ -16,10 +11,8 @@ USE mvc\request\requestClass as request ?>
 <?php $telefono = proveedorTableClass::TEL ?>
 <?php $direccion = proveedorTableClass::DIRECCION ?>
 <?php $ciudad = ciudadTableClass::NOMBRE ?>
+<?php $countDetale = 1 ?>
 
-<?php
-
-use mvc\i18n\i18nClass as i18n ?>
 
 <div class="container container-fluid">
     <div class="row">
@@ -86,13 +79,26 @@ use mvc\i18n\i18nClass as i18n ?>
     <form>
         <div class="row">
             <div class=" col-xs-12 text-center">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertProveedor') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('insertar', null, 'cliente') ?></a>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportProveedor') ?>" class="btn btn-xs btn-default"><?php echo i18n::__('reporte') ?></a>
-
-
-                <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-             <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersProveedor') ?>" class="btn btn-xs btn-primary">ELiminar filtros</a>  
-               
+                <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
+                 <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                </div>
+                <a id="deleteFilter"href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersProveedor') ?>" class="btn btn-xs btn-primary"><?php echo i18n::__('deleteFilter') ?></a>  
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                     <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+               </div>
+                 <!--  <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-xs btn-default active"><?php echo i18n::__('borrar seleccion') ?></a>-->
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+                </div>
+                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertProveedor') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('insertar', null, 'cliente') ?></a>
+                 <div class="mdl-tooltip mdl-tooltip--large" for="new">
+                    <?php echo i18n::__('registrar', null, 'ayuda') ?>
+                </div>
+                <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportProveedor') ?>" class="btn btn-xs btn-default"><?php echo i18n::__('reporte') ?></a>
+                 <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+                  <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                </div>
             </div>
         </div>
     </form>
@@ -104,10 +110,9 @@ use mvc\i18n\i18nClass as i18n ?>
         <thead>
             <tr class="active">
                 <td><input type="checkbox" id="chkAll"></td> 
-                <th><?php echo i18n::__('identification', null, 'proveedor') ?></th>
+                <th><?php echo i18n::__('document type', null, 'proveedor') ?></th>
                 <th><?php echo i18n::__('Number of document', null, 'proveedor') ?></th>
                 <th><?php echo i18n::__('name', null, 'proveedor') ?> </th>
-                <th><?php echo i18n::__('document type', null, 'proveedor') ?></th>
                 <th><?php echo i18n::__('telefono', null, 'proveedor') ?></th>
                 <th><?php echo i18n::__('direccion', null, 'proveedor') ?></th>
                 <th><?php echo i18n::__('city', null, 'proveedor') ?></th>
@@ -119,19 +124,23 @@ use mvc\i18n\i18nClass as i18n ?>
             <?php foreach ($objProveedor as $key): ?>
                 <tr>
                     <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
-                    <td><?php echo $key->$id ?></td>
+                    <th><?php echo $key->$tipo_documento_id ?></th>
                     <td><?php echo $key->$numero_documento ?></td>
                     <td><?php echo $key->$nombre_completo ?></td>
-                    <th><?php echo $key->$tipo_documento_id ?></th>
                     <th><?php echo $key->$telefono ?></th>
                     <th><?php echo $key->$direccion ?></th>
                     <th><?php echo $key->$ciudad ?></th>
 
                     <td>
 
-                        <a href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editProveedor', array(proveedorTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'proveedor') ?></a>
-                        <a href="#" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="#myModalDelete<?php echo $key->id ?>"><?php echo i18n::__('delete') ?></a>
-
+                        <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editProveedor', array(proveedorTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'proveedor') ?></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                            <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                        </div> 
+                        <a id="eliminar<?php echo $countDetale ?>" href="#" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="#myModalDelete<?php echo $key->id ?>"><?php echo i18n::__('delete') ?></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
+                            <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                        </div> 
 
                         <!-- WINDOWS MODAL DELETE -->
                         <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteProveedor') ?>" method="POST">
@@ -154,7 +163,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 </div>
                             </div>
                         </form>
-
+                        <?php $countDetale++ ?>
                     <?php endforeach ?>
         </tbody>
     </table>
@@ -192,8 +201,8 @@ use mvc\i18n\i18nClass as i18n ?>
                     </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('Exit') ?></button>
+                <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
             </div>
         </div>
     </div>

@@ -1,14 +1,10 @@
-<?php
-use mvc\routing\routingClass as routing ?>
-
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = loteTableClass::ID ?>
 <?php $nombre = loteTableClass::NOMBRE ?>
+<?php  $countDetale = 1 ?>
 
-<?php
-use mvc\i18n\i18nClass as i18n ?>
-
-<?php
-use mvc\view\viewClass as view ?>
 
 <div class="container container-fluid">
     <div class="row">
@@ -21,8 +17,14 @@ use mvc\view\viewClass as view ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectLote') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertLote') ?>" class="btn btn-success btn-xs">Nuevo</a>
-                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
+                 <a id="deleteMasa" href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('borrar seleccion') ?></a>
+                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+                </div>
+                 <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertLote') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nuev') ?></a>
+               <div class="mdl-tooltip mdl-tooltip--large" for="new">
+                    <?php echo i18n::__('registrar', null, 'ayuda') ?>
+                </div>
             </div>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -30,9 +32,9 @@ use mvc\view\viewClass as view ?>
             <thead>
                 <tr class="active">
                     <td><input type="checkbox" id="chkAll"></td> 
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Acciones</th>
+                    <th><?php echo i18n::__('id') ?></th>
+                    <th><?php echo i18n::__('name') ?></th>
+                    <th><?php echo i18n::__('action') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -43,8 +45,14 @@ use mvc\view\viewClass as view ?>
                         <td><?php echo $key->$id ?></td>
                         <td><?php echo $key->$nombre ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editLote', array(loteTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
-                            <a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editLote', array(loteTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
+                            <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                                      <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                                  </div> 
+                            <a id="eliminar<?php echo $countDetale ?>" data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>
+                          <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
+                                      <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                                  </div> 
                         </td>
                     </tr>
                     <!-- WINDOWS MODAL DELETE -->
@@ -65,6 +73,7 @@ use mvc\view\viewClass as view ?>
                         </div>
                     </div>
                 </div>
+             <?php  $countDetale++ ?>
             <?php endforeach//close foreach ?>
             </tbody>
         </table>
@@ -95,8 +104,8 @@ use mvc\view\viewClass as view ?>
                 <?php echo i18n::__('confirmDeleteMasive') ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cerrar') ?></button>
+                <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm') ?></button>
             </div>
         </div>
     </div>

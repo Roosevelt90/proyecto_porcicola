@@ -1,7 +1,5 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id = datosUsuarioTableClass::ID ?>
 <?php $nombre = datosUsuarioTableClass::NOMBRE ?>
 <?php $apellidos = datosUsuarioTableClass::APELLIDOS ?>
@@ -11,10 +9,8 @@ use mvc\routing\routingClass as routing ?>
 <?php $telefono = datosUsuarioTableClass::TELEFONO ?>
 <?php $user = usuarioTableClass::USER ?>
 <?php $nom_ciudad = ciudadTableClass::NOMBRE ?>
+<?php  $countDetale = 1 ?>
 
-<?php
-
-use mvc\i18n\i18nClass as i18n ?>
 
 <div class="container container-fluid">
     <div class="row">
@@ -27,31 +23,37 @@ use mvc\i18n\i18nClass as i18n ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <a href="<?php  echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-success btn-xs">Nuevo</a>
-                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
+                <a id="deleteMasa" href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('borrar seleccion') ?></a>
+                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+                </div>
+                <a id="new" href="<?php  echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nuev') ?></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="new">
+                    <?php echo i18n::__('registrar', null, 'ayuda') ?>
+                </div>
             </div>
         </div>
         <table class="table table-bordered table-responsive table-condensed">
             <thead>
                 <tr class="active">
                     <td><input type="checkbox" id="chkAll"></td> 
-                    <th>Id</th>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Tipo de documento</th>
-                    <th>Numero de documento</th>
-                    <th>Telefono</th>
-                    <th>Direccion</th>
-                    <th>Ciudad</th>
-                    <th>Acciones</th>
+            
+                    <th><?php echo i18n::__('user') ?></th>
+                    <th><?php echo i18n::__('name', null, 'veterinario') ?></th>
+                    <th><?php echo i18n::__('lastName', null, 'datos') ?></th>
+                    <th><?php echo i18n::__('tipoDoc', null, 'datos') ?></th>
+                    <th><?php echo i18n::__('numberDoc', null, 'datos') ?></th>
+                    <th><?php echo i18n::__('tel', null, 'datos') ?></th>
+                    <th><?php echo i18n::__('dir', null, 'datos') ?></th>
+                    <th><?php echo i18n::__('city') ?></th>
+                    <th><?php echo i18n::__('action') ?></th>
                 </tr>
             </thead>
             <tbody>
 <?php foreach ($objDatos as $key): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>                 
-                        <td><?php echo $key->$id ?></td>
+                       
                         <td><?php echo $key->$user ?></td>
                         <td><?php echo $key->$nombre ?></td>
                         <td><?php echo $key->$apellidos ?></td>
@@ -61,10 +63,17 @@ use mvc\i18n\i18nClass as i18n ?>
                         <td><?php echo $key->$direccion ?></td>
                         <td><?php echo $key->$nom_ciudad ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'edit', array(datosUsuarioBaseTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
-                            <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
+                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'edit', array(datosUsuarioBaseTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
+                            <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                                      <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                                  </div> 
+                            <a id="eliminar<?php echo $countDetale ?>" href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm"><?php echo i18n::__('delete', null, 'user') ?></a>
+                             <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
+                                      <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                                  </div> 
                         </td>
                     </tr>
+                    <?php  $countDetale++ ?>
 <?php endforeach ?>
             </tbody>
         </table>

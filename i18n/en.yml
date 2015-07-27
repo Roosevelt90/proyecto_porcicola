@@ -2,28 +2,58 @@
 culture:                  English
 dictionary:
   default:
-    dpVenta:              Detalle 
+    RegistrosEntrada:     Records input to the warehouse
     personal:             People
-    veterinario:          Veterinario
-    proveedor:            Proveedor
-    cliente:              Cliente
-    telefono:             Phone
-    direccion:            Addres
-    identificacion:       Number of document
+    fechaFabricacion:     Date of manufacture
+    fechaVencimiento:     Expiration date
+    tipoInsumo:           Type of input
+    valorInsumo:          Value input
+    nombreInsumo:         Name input
+    descripción:          Description
     nuev:                 New
-    nombre:               Name
-    pVenta:               Factura venta
-    cliente:              Client
+    newRegistroVacunacion: New immunization record
+    cerrar:               Close
+    buscar:               Search
+    ver:                  Watch
+    edit:                 Edit
+    facturaVenta:         Bills of sale
+    nombreCliente:        Client Name
+    cliente:              Customer
+    personal:             Staff
+    Cliente:              Customers
+    proveedor:            Providers
+    veterinario:          veterinarians
+    telefono:             Phone
+    fechaInicio:          Start Date
+    fechaFin:             Final Date
+    inhabilitar:          Disable Bill
+    habilitar:            Enable Bill
+    inhMasa:              Disable Selection
+    habMasa:              Enable Selection
+    inhRegistro:          Off the Record
+    habRegistro:          Enable Logging
+    inhDetalle:           Disable Detail
+    habDetalle:           Enable Detail
+    factura:              Invoices
+    facturaCompra:        Purchase Invoices
+    confirmInhabilitar:   Are you sure you want to disable this bill
+    confirmHabilitar:     Are you sure you want to enable this bill
     Usuario y contraseña incorrectos: User and Password incorrect
+    proveedor:            Provisioner
     usuario:              User
     contraseña:           Password
-    Olvidastes tu contraseña?: Did your password?
     Recordar mis datos:   Remember you data
+    Olvidastes tu contraseña?: Did your password?
+    id:                   Id
+    nombre_vacuna:        name Vaccine
+    numero de documento:  Document number
+    direccion:            Street Address
+    dosis:                Dose
+    fecha_fabricacion_vacuna:  Manufacturing date
+    fecha_vencimiento_vacuna:  Expiration Date
     Escoja Idioma:        Select Lenguage/Selecione el Idioma
     Identificacion:       Identification
     Exit:                 Exit
-    Entrar:               Enter
-    reporte:              Report
     lunes:                Monday
     martes:               Tuesday
     miercoles:            Wenesday
@@ -43,19 +73,21 @@ dictionary:
     octubre:              October
     noviembre:            November
     diciembre:            December
+    Entrar:               Enter
+    disponible_venta:     Available for sale
+    reporte:              Report
+    report:               Report
     buscar:               Search
     filterBy:             Filter By
-    granja:               Hog Farm
-    sobre:                About
-    contacto:             Contact
-    legalInfor:           Legal Information
-    ingBusqueda:          Enter your Query...
-    configuracion:        Configuration
     new:                  New Register
     deleteFilter:         Delete Filters
-    empleado:             Employe
-    cargo:                Position
     user:                 User
+    empleado:             Employe
+    nombre:               Name
+    newCli:               New Client
+    identificacion:       Number of document
+    cliente:              Client
+    cargo:                Position
     dataUser:             Date user
     credencial:           Credential
     userCredencial:       Assigment of credential
@@ -63,59 +95,123 @@ dictionary:
     city:                 City
     raza:                 Race
     lote:                 Batch
+    localidad:            Locality
     insumo:               Input
-    empleado:             Employe
-    cargo:                Position
+    cantidad:             Quantity
     pass:                 Password
     register:             Register
-    deleteMasive:         Confirm delete selected items
-    confirmDeleteMasive:  Want to remove the selected items?
+    
+    dpVenta:              Detalle 
+    veterinario:          Veterinario
+    cliente:              Cliente
+    telefono:             Phone
+    direccion:            Addres
     update:               Update
     delete:               Delete
-    inhMasa:              Disable Selection
-    habMasa:              Enable Selection
-    inhRegistro:          Off the record
-    habRegistro:          Enable logging
-    inhDetalle:           Disable Detail
-    habDetalle:           Enable Detail
     modules:              Select module
     action:               Actions
-    factura:              Facturacion
     create:               Insert
+    errorCreateBitacora:  There was an error creating
     update:               Update
-    delete:               Delet
-    view:                 View
-    localidad:            Locality
+    errorUpdateBitacora:  There was an error change
+    errorDeleteBitacora:  There was an error deleting
+    confirmDelete:        To delete the record
+    cancel:               Cancel
+    configuracion:        Configuration
+    confirm:              Delete Record
     animal:               Animal
-    insumo:               Input
-    usuarios:             Users
-    Seleccione modulo:    Select module
+    name:                 Name
+    identification:       Id
     eliminar filtros:     Remove Search
-    borrar seleccion:     Delete selection
-    filters:              Filters
+    borrar seleccion:     Remove Selection
+    factura:              Billing
+    pVenta:               Bill Sale
     spanish:              Spanish
     english:              English
+    filters:              Search
     accion:               Action
-    eliminarIndividual:   Want to delete the record?
+    usuarios:             Users
+    deleteMasive:         Confirm delete selected items
+    confirmDeleteMasive:  You delete selected items
+    succesCreate:         The record has been inserted successfully  
+    errorCreate:          Unable to create the registry try again
+    succesDeleteMasivo:   They have been removed successfully selected records
+    errorDeleteMasivo:    Is not selected record
+    succesDelete:         Registration has been successfully removed
+    errorDelete:          Could not unregister try again later
+    succesUpdate:         The record has been successfully modified
+    errorUpdate:          It was an error by modifying the registry Please try later
+    eliminarIndividual:   Do you want to delete the record?
     confirmDelete:        Confirm Delete
     confirm:              Confirm
-    enfermedad:            The vaccine was applied by reason of illness
-    gestacion:              The vaccine was administered by controlling gestation
+    enfermedad:           The vaccine was applied due to illness
+    gestacion:            The vaccine was administered to control gestation
     parto:                The vaccine was administered to induce labor
     rutina:               The vaccine was applied for routine monitoring
     nacido:               The vaccine was administered to newborn pigs
-    cancel:               Cancel
-    
-  animal:
-    animal:               Animal
-    parto:                Number from Deliveries
-    
+    valorUni:             Unit value
+    edit:                 Edit
+    crear:                Create
+    granja:               Hog Farm
+    sobre:                About
+    contacto:             Contact
+    legalInfor:           Legal Information
+    ingBusqueda:          Type your search ...
+   
   veterinario:
     veterinario:          Veterinary
+    read:                 veterinarians registered
+    edit:                 Modify Veterinarian
+    direccion:            Addres
+    telefono:             Phone
+    new:                  New Veterinary
+    action:               Action
+    identification:       Id
+    Number of document:   Number of document
+    document type:        Document Type
+    name:                 Name
+    city:                 City
+    view:                 View Veterinary
+    insertar:             Insert Veterinary
     
-  dpVenta:
-    numer:                Number of Document
-    
+  animal:
+    date_birth:           Date of birth
+    precio_compra:        Purchase price
+    identification:       Number of Identification
+    peso_inicial:         Initial weight
+    peso_fin:             Final weight
+    precio:               Price
+    edit:                 Edit the registry of the animal
+    animal:               Animal
+    report:               Report
+    new:                  Register a new animal
+    peso:                 Weignt
+    edad:                 Age (months)
+    edad_inicial:         Initial Age
+    edad_fin:             Final Age
+    fecha:                Date of Birth
+    fecha_inicial:        Date of initial birth
+    fecha_fin:            Date of birth end
+    genero:               Gender
+    parto:                Number of Births
+    lote:                 Batch
+    raza:                 Race
+    Vacunas:              Immunizations
+    Registro:             Immunization Record
+    vacunacion:           Vaccination
+    registroVacunacion:   Immunization Registry
+    succesCreate:         The animal is registered successfully 
+    errorCreate:          Could not create the animal try again
+    succesDeleteMasivo:   They have been removed successfully selected records
+    errorDeleteMasivo:    Is not selected record
+    succesDelete:         Registration has been successfully removed
+    errorDelete:          Could not unregister try again later
+    succesUpdate:         The record has been successfully modifiednte 
+    errorUpdate:          It was an error by modifying the registry Please try later
+    read:                 Registration of animals in our system
+    confirm:              To delete the record
+  
+      
   user:
     usuario:              user
     newUser:              new user
@@ -128,70 +224,41 @@ dictionary:
     oldPass:              new password
     read:                 user register
     delete:               delete
+    direccion:            Street Adress
     modify:               modify
     quest:                quest of security
     answer:               answer of security
     delete:               delete
     confirmDelete:        delet user 
-    bodyDelete:           Desea eliminar el registro
-    date:                 Fecha de creacion
-    succesCreate:         El usuario se ha registrado de forma exitosa   
-    errorCreate:          No se ha podido crear el usuario vuelve a intentarlo
-    succesDeleteMasivo:   Se han eliminado los usuarios seleccionados exitosamente
-    errorDeleteMasivo:    No se ha seleccionado ningun registro
-    succesDelete:         Se ha eliminado el usuario exitosamente
-    errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
-    succesUpdate:         El usuario se ha modificado exitosamente 
-    errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
-  
-  cliente:
-    cliente:              Client
-    read:                 clientes registrado
-    edit:                 Modificar cliente
-    direccion:            Direccion
-    telefono:             Phone
-    new:                  Nuevo cliente
-    action:               Acciones
-    identification:       Id
-    Number of document:   Numero de documento
-    document type:        Tipo documento
-    name:                 Nombre
-    city:                 Ciudad
-    view:                 Ver Cliente
-    insertar:             Insertar cliente
-  
-  
+    bodyDelete:           To delete the record
+    date:                 Creation date
+    succesCreate:         The user is registered successfully
+    errorCreate:          It failed to create the user try again
+    succesDeleteMasivo:   Selected users have been deleted successfully
+    errorDeleteMasivo:    Is not selected record
+    succesDelete:         The user has been removed successfully
+    errorDelete:          Could not delete the user try again later
+    succesUpdate:         The user has been successfully modified
+    errorUpdate:          It was an error by modifying the user try again later
+    dpVenta:              Invoice detail sale
+    pVenta:               Bill Sale
+    factura:              Bill
+    
   proveedor:
-    proveedor:            Prr
-    read:                 Proveedores registrados
-    edit:                 Modify Proveedor
-    direccion:            Direccion
+    proveedor:            Provider
+    read:                 Registered Suppliers
+    edit:                 Modify Supplier
+    direccion:            Address
     telefono:             Phone
-    new:                  New proveedor
+    new:                  New provider
     action:               Actions
     identification:       Id
     Number of document:   Number of document
     document type:        Document type
     name:                 Name
-    city:                 Ciudad
-    view:                 View Proveedor
-    insertar:             Insert proveedor
-  
-  
-  veterinario:
-    read:                 Veterinarios registrados
-    edit:                 Modify Veterinario
-    direccion:            Addres
-    telefono:             Phone
-    new:                  New Veterinario
-    action:               Action
-    identification:       Id
-    Number of document:   Number of document
-    document type:        Document Type
-    name:                 Name
     city:                 City
-    view:                 View Veterinario
-    insertar:             Insert Veterinario
+    view:                 View Provider
+    insertar:             Insert provider
     
   depto:
     read:                 Departament register
@@ -206,88 +273,125 @@ dictionary:
     new:                  register one new city
     edit:                 edit the city
     
+  bodega:
+    bodega:               Cellar
+    entrada:              Cellar Input
+    salida:               Cellar Output
     
   datos:
-    read:                 Datos personales del usuario
-    new:                  Datos personales al usuario
-    name:                 Nombre
-    tipoDoc:              Tipo de documento
-    numberDoc:            Numero de documento
-    lastName:             Apellido
-    register:             Registrar
-    tel:                  Telefono
-    dir:                  Direccion
-    edit:                 Modificar los datos del usuario
+    read:                 Personal user data
+    new:                  Personal data to the user
+    name:                 Name
+    tipoDoc:              Document type
+    numberDoc:            Document number
+    lastName:             Surnames
+    register:             Record
+    tel:                  Phone
+    dir:                  Address
+    edit:                 Modify user data
     
   credencial:
-    read:                 Credeniales en nuestro sistema
-    new:                  Registra una nueva credencial
-    credencial:           Credencial
-    edit:                 Modificar el nombre de la credencial
+    read:                 Credeniales in our system
+    new:                  Registers a new credential
+    credencial:           Credential
+    edit:                 Changing the name of the credential
   
   userCredencial:
-    read:                 Roles asignados
+    read:                 assigned Roles
     new:                  Asignam
-    
+    user:                 User
+    credencial:           Credential
+    edit:                 Edit
     
   raza:
-    read:                 Razas registradas 
-    edit:                 Modificar raza
-    raza:                 Raza
-    new:                  nueva raza
-    delete:               Eliminar
-    confirmDelete:        Eliminar raza
+    read:                 Registered Breeds
+    edit:                 Modify Race
+    raza:                 Race
+    new:                  New Breed
+    delete:               Remove
+    confirmDelete:        Remove Race
     
   lote:
-    read:                 Lotes registrados 
-    edit:                 Modificar lote
-    lote:                 Lote
-    new:                  Registro de un nuevo lote
+    read:                 Lots Recorded
+    edit:                 Modify Batch
+    lote:                 Batch
+    new:                  Registering a new batch
     
   insumo:
-    read:                 Insumos registrados en nuestro sistema 
-    edit:                 Modificar insumo
-    insumo:               Insumo
-    new:                  Registro de un nuevo insumo
-    
+    read:                 Inputs in our system
+    edit:                 Modify input
+    insumo:               Input
+    new:                  Registering a new input
+    register:             New Input
+  
+  
+  cliente:
+    cliente:              Client
+    read:                 Registered customers
+    edit:                 Change customer
+    direccion:            Address
+    telefono:             Phone
+    new:                  New Customer
+    action:               Actions
+    identification:       Id
+    Number of document:   Document Number
+    document type:        Document Type
+    name:                 Name
+    city:                 City
+    view:                 See Customer
+    insertar:             Insert Customer
+
   empleado:
     read:                 Employe register
     edit:                 Edit employe
     empleado:             Employe
+    direccion:            Address
     telefono:             Phone
-    direccion:            Dire
     new:                  New employe
     confirmDelete:        Delete employe
     register:             Register
     delete:               Delete
-    succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
-    errorDeleteMasivo:    No se ha seleccionado ningun registro
-    succesDelete:         Se ha eliminado el empleado exitosamente
-    errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
-    succesUpdate:         El empleado se ha modificado exitosamente 
-    errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
+    succesDeleteMasivo:   They have been removed successfully selected employees
+    errorDeleteMasivo:    Is not selected record
+    succesDelete:         The employee has been removed successfully
+    errorDelete:          Could not delete the employee try again later
+    succesUpdate:         The employee has been successfully modified
+    errorUpdate:          It was an error by modifying the employee try again later
     view:                 View
-    identification:       identification
+    action:               Actions
+    identificacion:       Identification
+    identification:       Id
     Number of document:   Number of document
     document type:        Document type
     name:                 Name
     city:                 City
     cargo:                Position
-    actions:              Actions
+    succesCreate:         The employee is registered successfully 
+    errorCreate:          Could not create the employee try again
+    succesDeleteMasivo:   They have been removed successfully selected employees
+    errorDeleteMasivo:    Is not selected record
+    succesDelete:         The employee has been removed successfully
+    errorDelete:          Could not delete the employee try again later
+    succesUpdate:         The employee has been successfully modified
+    Seleccione modulo:    Select module
+    errorUpdate:          It was an error by modifying the employee try again later
     
-
-
-
   cargo:
-    read:                 position register
-    cargo:                position
-    edit:                 edit position
-    new:                  new position
-    delete:               delete
-    view:                 view
+    read:                 Position Register
+    cargo:                Position
+    edit:                 Edit position
+    new:                  New position
+    delete:               Delete
+    view:                 View
+    read:                 Registered Office
+    cargo:                Office
+    edit:                 Edit Charges
+    new:                  New post
+    delete:               Remove
+    view:                 Watch
     
   vacunacion:
-    vacunacion:          Vacunacion
+    vacunacion:           Vaccination
     vaccination:          VACCINATION
     fechaRegistro:        Date Register
     viewDetail:           View Detail
@@ -307,15 +411,63 @@ dictionary:
     editDetailVaccination: Edit Detail Vaccination
     
   vacuna:
-    vacuna:                Vacuna
-    nameVacuna:            Nombre de la vacuna
-    fecha_fabricacion:     Fecha de fabricacion de la vacuna
-    fecha_vencimiento:     Fecha de vencimiento de la vacuna
-    valor:                 Valor de la vacuna
-    read:                  Vacuna
-    new:                   Ingresar una nueva vacuna
-    lote:                  Lote de la vacuna
-    edit:                  Editar el registro de la vacuna
+    vacuna:                Vaccine
+    nameVacuna:            Vaccine Name
+    fecha_fabricacion:     Date of manufacture of the vaccine
+    fecha_vencimiento:     Expiration date of the vaccine
+    valor:                 Vaccine value
+    read:                  Vaccine
+    new:                   Enter a new vaccine
+    lote:                  Batch of vaccine
+    edit:                  Edit the registry of vaccine
+    nueva:                 New Vaccine
+    
+  pVenta:
+   id:                    Id
+   fecha:                 Date-Hour
+   user_id:               user_id
+   read:                  Invoices registered in our system
+   edit:                  Edit
+   new:                   Enter a new invoice
+   modify:                Modify
+   register:              Record
+   details:               Detail
+   nueva:                 New Bill of Sale
+   
+  pCompra:                 
+   nueva:                 New Purchase Invoice
+    
+  dpVenta:
+   item:                  Item
+   date:                  Date
+   numer:                 Number document
+   user:                  user_id
+   animal_id:             id animal
+   weight:                Weight
+   price:                 Price
+   details:               See Detail
+   read:                  Invoices registered in our system
+   edit:                  Edit
+   new:                   Enter a new invoice
+   modify:                Modify
+   register:              Record
+   insert:                Insert
+   succesCreate:          The bill is registered successfully 
+   errorCreate:           Could not create invoice try again
+   succesDeleteMasivo:    They have been removed successfully selected records
+   errorDeleteMasivo:     Is not selected record
+   succesDelete:          Registration has been successfully removed
+   errorDelete:           Could not unregister try again later
+   succesUpdate:          The record has been successfully modified
+   errorUpdate:           It was an error by modifying the registry Please try later
+   confirm:               To delete the record
+   Olvidastes tu contraseña? :         You Forgotten your password?
+   Recordar mis datos:                 Remember me
+  
+  facturaCompra:
+    factura:               Facutras purchase
+    fechaFactura:          Invoice date
+    new:                   Registering a new invoice
     
   ayuda:
     registrar:             New Record
@@ -325,8 +477,8 @@ dictionary:
     reporte:               The system generates a report type document all existing records
     eliminarMasa:          Once the selection using this option you can delete all records suggested
     verDetalle:            View Details Registration
-    verDetalleFact:        View details on the bill
     insertDetalle:         Insert a registration Detail
+    verDetalleFact:        View details on the bill
     eliminar:              Unregister
     editDetalle:           Change the log Detail
     inhabilitarDetalle:    Disables Record detail
@@ -342,36 +494,38 @@ dictionary:
     habilitarMasaDetalle:   Once the selection using this option you can enable all the details set
     inhFactura:            Disabling the Bill
     habFactura:            Enable Bill
-    insertFactura:        Insert a bill detail
-    inhabilitarMasaFact:     Once the selection using this option you can disable all the invoices indicated
-    habilitarMasaFact:           Once the selection using this option you can enable all invoices indicated
+    insertFactura:         Insert a bill detail
+    inhabilitarMasaFact:   Once the selection using this option you can disable all the invoices indicated
+    habilitarMasaFact:     Once the selection using this option you can enable all invoices indicated
     
   errors:
-    00001:                El módulo y la acción solicitada, no existe.
-    00002:                La dirección que solicita no está registrada.
-    00003:                Los datos de usuario y contrseña son inválidos.
-    00004:                Las contraseñas no son iguales
-    00005:                El nombre de usuario ya se encuentra registrado
-    
-    10005:                No se admite caracteres especiales
-    10006:                Hay campos vacios que son obligatorios
-    
-    
-    
-    
-    
-    10008:                The date format is incorrect
+    00001:                The module and the requested action does not exist.
+    00002:                Requesting the address it is not registered.
+    00003:                User data and contrseña are invalid.
+    00004:                Passwords are not equal
+    00005:                The user name is already registered
+    00023:                The field must be filled only with numbers    
+    10023:                Special characters are not supported
+    10006:                There are empty fields are mandatory
+    10007:                Only numbers are allowed
+    10008:                The date format does not match
     10009:                The date %fecha% is incorrect
     10010:                The date is greater than the current date
-    10011:                The veterinary %id_veterinario% could not be inserted
-    10012:                The animal %id_animal% could not be inserted
-    10013:                The input %id_vacuna% could not be inserted
-    10014:                The dosis %dosis_vacuna% could not be inserted
-    10015:                The data passes the maximum number of characters
-    10016:                The veterinary %id_veterinario% could not change
-    10017:                The animal %id_animal% could not change
-    10018:                The input %id_vacuna% could not change
-    10019:                The dosis %dosis_vacuna% could not change
+    10011:                The veterinarian %id_veterinario% could not be inserted 
+    10012:                Animal %id_animal% could not be inserted
+    10013:                The vaccine %id_vacuna% could not be inserted
+    10014:                The dose %dosis_vacuna% could not be inserted
+    10015:                The input data passes the maximum number of characters
+    10016:                The customer %telefono% could not be inserted
+    10017:                The customer %numero_documento% could not be inserted
+    10018:                The vaccine %id_vacuna% could not change
+    10019:                The dose %dosis_vacuna% could not change
+    10020:                The expiration date is less than the current date
+    10021:                The date of manufacture is greater than the current date
+    10022:                Special characters found in the field
+    10023:                Special characters are not supported in the field %campo%
+    10030:                The selected animal does not exist in the database
+    10031:                The veterinarian selected does not exist in the database
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

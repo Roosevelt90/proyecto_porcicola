@@ -10,7 +10,6 @@ dictionary:
     valorInsumo:          Valor de insumo
     nombreInsumo:         Nombre del insumo
     descripcion:          Descripcion
-    tipoInsumo:           Tipo de insumos
     nuev:                 Nuevo
     newRegistroVacunacion: Nuevo registro de vacunacion
     cerrar:              Cerrar
@@ -85,7 +84,7 @@ dictionary:
     user:                 Usuario
     empleado:             Empleado
     nombre:               Nombre Completo
-    new:                  Nuevo Cliente
+    newCli:               Nuevo Cliente
     identificacion:       identificacion
     cliente:              Nombre Cliente
     cargo:                Cargo
@@ -98,7 +97,6 @@ dictionary:
     lote:                 Lote
     localidad:            localidad
     insumo:               Insumo
-    tipoInsumo:           Tipo de insumo
     cantidad:             Cantidad
     pass:                 Contraseña
     register:             Registrar
@@ -110,7 +108,6 @@ dictionary:
     errorCreateBitacora:  Se ha producido un error al crear
     update:               Modificar
     errorUpdateBitacora:  Se ha producido un error al modificar
-    delete:               Eliminar
     errorDeleteBitacora:  Se ha producido un error al eliminar
     confirmDelete:        Desea eliminar el registro
     cancel:               Cancelar
@@ -128,7 +125,6 @@ dictionary:
     filters:              Buscar
     accion:               Accion
     usuarios:             Usuarios
-    insumo:               Insumo
     deleteMasive:         Confirmar eliminar los elementos seleccionados
     confirmDeleteMasive:  Desea eliminar los elementos seleccionados
     succesCreate:         El registro se ha insertado de forma exitosa   
@@ -147,7 +143,6 @@ dictionary:
     parto:                La vacuna fue aplicada para inducir el parto
     rutina:               La vacuna fue aplicada por control rutinario
     nacido:               La vacuna fue aplicada al cerdo recien nacido
-    cantidad:             Cantidad
     valorUni:             Valor unitario
     edit:                 Editar
     crear:                Crear
@@ -159,6 +154,19 @@ dictionary:
         
   veterinario:
     veterinario:         Veterinario
+    read:                 Veterinarios registrados
+    edit:                 Modificar Veterinario
+    direccion:            Direccion
+    telefono:             Telefono
+    new:                  Nuevo Veterinario
+    action:               Acciones
+    identification:       Id
+    Number of document:   Numero de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Veterinario
+    insertar:             Insertar Veterinario
       
   animal:
     date_birth:           Fecha de nacimiento
@@ -230,22 +238,10 @@ dictionary:
     pVenta:               Factura Venta
     factura:              Factura
     
-  veterinario:
-    read:                 Veterinarios registrados
-    edit:                 Modificar Veterinario
-    direccion:            Direccion
-    telefono:             Telefono
-    new:                  Nuevo Veterinario
-    action:               Acciones
-    identification:       Id
-    Number of document:   Numero de documento
-    document type:        Tipo documento
-    name:                 Nombre
-    city:                 Ciudad
-    view:                 Ver Veterinario
-    insertar:             Insertar Veterinario
+  
     
   proveedor:
+    proveedor:            Provider
     read:                 Proveedores registrados
     edit:                 Modificar Proveedor
     direccion:            Direccion
@@ -310,6 +306,8 @@ dictionary:
     edit:                 Modificar raza
     raza:                 Raza
     new:                  Registro de una nueva raza
+    delete:               Eliminar
+    confirmDelete:        Eliminar Raza
     
   lote:
     read:                 Lotes registrados 
@@ -325,6 +323,7 @@ dictionary:
     register:             Nuevo Insumo
     
   cliente:
+    cliente:              Cliente
     read:                 clientes registrado
     edit:                 Modificar cliente
     direccion:            Direccion
@@ -384,6 +383,12 @@ dictionary:
     new:                  Nuevo cargo
     delete:               Eliminar
     view:                 Ver
+    read:                 Cargo registrados
+    cargo:                Cargo
+    edit:                 Editar Cargos
+    new:                  Nuevo cargo
+    delete:               Eliminar
+    view:                 Ver
     
   vacunacion:
     vacunacion:           Vacunacion
@@ -406,17 +411,18 @@ dictionary:
     N°:                   N° del Registro de Vacunas
     editDetailVaccination: Editar Detalle de Registro Vacunas
     
- 
+  vacuna:
+    vacuna:                Vacuna
+    nameVacuna:            Nombre de la vacuna
+    fecha_fabricacion:     Fecha de fabricacion de la vacuna
+    fecha_vencimiento:     Fecha de vencimiento de la vacuna
+    valor:                 Valor de la vacuna
+    read:                  Vacuna
+    new:                   Ingresar una nueva vacuna
+    lote:                  Lote de la vacuna
+    edit:                  Editar el registro de la vacuna
+    nueva:                 Nueva Vacuna
 
-  cargo:
-    read:                 Cargo registrados
-    cargo:                Cargo
-    edit:                 Editar Cargos
-    new:                  Nuevo cargo
-    delete:               Eliminar
-    view:                 Ver
-    
-    
   pVenta:
    id:                    id
    fecha:                 fecha-hora
@@ -456,24 +462,9 @@ dictionary:
    succesUpdate:         El registro se ha modificado exitosamente 
    errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
    confirm:              Desea eliminar el registro 
-   
-
-
    Olvidastes tu contraseña? :         Olvidastes tu contraseña?
    Recordar mis datos:                 Recordar mis datos
-   
-  vacuna:
-    vacuna:                Vacuna
-    nameVacuna:            Nombre de la vacuna
-    fecha_fabricacion:     Fecha de fabricacion de la vacuna
-    fecha_vencimiento:     Fecha de vencimiento de la vacuna
-    valor:                 Valor de la vacuna
-    read:                  Vacuna
-    new:                   Ingresar una nueva vacuna
-    lote:                  Lote de la vacuna
-    edit:                  Editar el registro de la vacuna
-    nueva:                 Nueva Vacuna
-    
+ 
   facturaCompra:
     factura:               Facutras de compra
     fechaFactura:          Fecha de la factura
@@ -518,11 +509,6 @@ dictionary:
     10023:                No se admite caracteres especiales
     10006:                Hay campos vacios que son obligatorios
     10007:                Solo se permiten numeros
-    
-    
-    
-    
-    
     10008:                El formato de fecha no coincide
     10009:                La fecha %fecha% es incorrecta
     10010:                La fecha es mayor a la fecha actual
@@ -539,8 +525,6 @@ dictionary:
     10021:                La fecha de fabricacion es superior a la fecha actual
     10022:                Se ha encontrado caracteres especiales en el ca
     10023:                No se admite caracteres especialesmpo %campo%
-    
-    
     10030:                El animal seleccionado no existe en la base de datos
     10031:                El veterinario seleccionado no existe en la base de datos
 #    00001:  Lo que buscas no existe

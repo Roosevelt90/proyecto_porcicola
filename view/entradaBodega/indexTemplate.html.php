@@ -1,14 +1,8 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
-<?php
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\config\configClass as config ?>
-<?php
-use mvc\request\requestClass as request ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\config\configClass as config ?>
+<?php use mvc\request\requestClass as request ?>
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fechaEntrada = entradaBodegaTableClass::FECHA ?>
 <?php $id_empleado = empleadoTableClass::ID ?>
@@ -41,7 +35,7 @@ use mvc\request\requestClass as request ?>
         </div>
         <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('inhMasa') ?></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-          <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
+          <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
         </div>
         <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertEntrada') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nueva', null, 'pCompra') ?></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="new">
@@ -82,11 +76,11 @@ use mvc\request\requestClass as request ?>
                   <?php if ($key->$estado == true): ?>
                     <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-info fa "  class="btn btn-info btn-xs"><?php echo i18n::__('insertDetail', null, 'vacunacion') ?></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
-                      <?php echo i18n::__('insertFactura', null, 'ayuda') ?>
+                      <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                     </div> 
                     <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info btn-xs"> <?php echo i18n::__('viewDetail', null, 'vacunacion') ?></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
-                      <?php echo i18n::__('verDetalleFact', null, 'ayuda') ?>
+                      <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                     </div>  
                   <?php endif; ?>
 
@@ -107,7 +101,7 @@ use mvc\request\requestClass as request ?>
               </div>
               <div class="modal-footer">
                 <a href="#close2" title="Close" class="close2 btn btn-info">Cancelar</a>
-                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteEntrada') ?>')">Eliminar</button>
+                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteEntrada') ?>')"> <?php echo i18n::__('delete') ?></button>
               </div>
             </div>
           </div>
@@ -145,7 +139,7 @@ use mvc\request\requestClass as request ?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()">Insertar</button>
+                <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()"> <?php echo i18n::__('create') ?></button>
               </div>
             </div>
           </div>

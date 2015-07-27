@@ -1,14 +1,8 @@
-<?php
+<?php use mvc\routing\routingClass as routing ?>
 
-use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 
-<?php
-
-use mvc\i18n\i18nClass as i18n ?>
-
-<?php
-
-use mvc\view\viewClass as view ?>
+<?php use mvc\view\viewClass as view ?>
 
 <?php $idAnimal = animalTableClass::ID ?>
 <?php $peso = animalTableClass::PESO ?>
@@ -17,6 +11,7 @@ use mvc\view\viewClass as view ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $lote = loteTableClass::NOMBRE ?>
 <?php $raza = razaTableClass::NOMBRE_RAZA ?>
+<?php  $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--grey-100">
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">

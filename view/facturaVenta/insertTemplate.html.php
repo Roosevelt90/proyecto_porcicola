@@ -9,7 +9,7 @@
         <div class="col-xs-4-offset-4 titulo">
             <br>
             <h2>  <?php //echo i18n::__('new', null, 'facturaCompra')?>
-                venta
+                     <?php echo i18n::__('new', null, 'facturaVenta') ?> 
             </h2>
             
         </div>

@@ -1,8 +1,5 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 
 <?php $id = clienteTableClass::ID ?>
 <?php $numero_documento = clienteTableClass::NUMERO_DOC ?>

@@ -1,14 +1,8 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
-<?php
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\config\configClass as config ?>
-<?php
-use mvc\request\requestClass as request ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\config\configClass as config ?>
+<?php use mvc\request\requestClass as request ?>
 
 <?php $num_doc = animalTableClass::NUMERO ?>
 <?php $nom_veterinario = veterinarioTableClass::NOMBRE ?>
@@ -267,7 +261,7 @@ use mvc\request\requestClass as request ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()">Insertar</button>
+                <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()"><?php echo i18n::__('insert', null, 'dpVenta') ?></button>
                 <!--<input type="submit"  class="btn btn-primary" value=<?php echo i18n::__('confirm') ?> >-->
 
             </div>

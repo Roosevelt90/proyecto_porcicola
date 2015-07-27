@@ -27,7 +27,7 @@
                  <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
                 </div>
-                <a id="new" href="<?php  echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nuev') ?></a>
+                <a id="new" href="<?php  echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nuevDatos') ?></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>

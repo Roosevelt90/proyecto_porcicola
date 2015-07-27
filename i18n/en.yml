@@ -2,7 +2,7 @@
 culture:                  English
 dictionary:
   default:
-    RegistrosEntrada:     Records input to the warehouse
+    RegistrosEntrada:     Input of warehouse
     personal:             People
     fechaFabricacion:     Date of manufacture
     fechaVencimiento:     Expiration date
@@ -11,6 +11,8 @@ dictionary:
     nombreInsumo:         Name input
     descripción:          Description
     nuev:                 New
+    inhabil:              Disable
+    nuevDatos:            New User Data
     newRegistroVacunacion: New immunization record
     cerrar:               Close
     buscar:               Search
@@ -37,6 +39,8 @@ dictionary:
     factura:              Invoices
     facturaCompra:        Purchase Invoices
     confirmInhabilitar:   Are you sure you want to disable this bill
+    confirmInh:           Are you sure you want to disable records
+    conInhSel:            Are you sure you want to disable the selected invoices
     confirmHabilitar:     Are you sure you want to enable this bill
     Usuario y contraseña incorrectos: User and Password incorrect
     proveedor:            Provisioner
@@ -160,11 +164,11 @@ dictionary:
    
   veterinario:
     veterinario:          Veterinary
-    read:                 veterinarians registered
+    read:                 Veterinarians 
     edit:                 Modify Veterinarian
     direccion:            Addres
     telefono:             Phone
-    new:                  New Veterinary
+    new:                  Register a New Veterinary
     action:               Action
     identification:       Id
     Number of document:   Number of document
@@ -182,6 +186,7 @@ dictionary:
     peso_fin:             Final weight
     precio:               Price
     edit:                 Edit the registry of the animal
+    nuev:                 New Pig
     animal:               Animal
     report:               Report
     new:                  Register a new animal
@@ -208,7 +213,7 @@ dictionary:
     errorDelete:          Could not unregister try again later
     succesUpdate:         The record has been successfully modifiednte 
     errorUpdate:          It was an error by modifying the registry Please try later
-    read:                 Registration of animals in our system
+    read:                 Pigs
     confirm:              To delete the record
   
       
@@ -222,7 +227,7 @@ dictionary:
     editUser:             edit user
     edit:                 edit
     oldPass:              new password
-    read:                 user register
+    read:                 Users
     delete:               delete
     direccion:            Street Adress
     modify:               modify
@@ -246,11 +251,11 @@ dictionary:
     
   proveedor:
     proveedor:            Provider
-    read:                 Registered Suppliers
+    read:                 Suppliers
     edit:                 Modify Supplier
     direccion:            Address
     telefono:             Phone
-    new:                  New provider
+    new:                  Register a New provider
     action:               Actions
     identification:       Id
     Number of document:   Number of document
@@ -277,13 +282,16 @@ dictionary:
     bodega:               Cellar
     entrada:              Cellar Input
     salida:               Cellar Output
+    new:                  Register a New Entry Cellar
+    detalle:              Entry detail winery
     
   datos:
     read:                 Personal user data
-    new:                  Personal data to the user
+    new:                  Register Personal data to the user
     name:                 Name
     tipoDoc:              Document type
     numberDoc:            Document number
+    numRegistro:          Registration Document Number
     lastName:             Surnames
     register:             Record
     tel:                  Phone
@@ -291,10 +299,10 @@ dictionary:
     edit:                 Modify user data
     
   credencial:
-    read:                 Credeniales in our system
+    read:                 Credentials
     new:                  Registers a new credential
     credencial:           Credential
-    edit:                 Changing the name of the credential
+    edit:                 Changing the credential
   
   userCredencial:
     read:                 assigned Roles
@@ -304,7 +312,7 @@ dictionary:
     edit:                 Edit
     
   raza:
-    read:                 Registered Breeds
+    read:                 Breeds
     edit:                 Modify Race
     raza:                 Race
     new:                  New Breed
@@ -312,13 +320,13 @@ dictionary:
     confirmDelete:        Remove Race
     
   lote:
-    read:                 Lots Recorded
+    read:                 Lots 
     edit:                 Modify Batch
     lote:                 Batch
     new:                  Registering a new batch
     
   insumo:
-    read:                 Inputs in our system
+    read:                 Inputs
     edit:                 Modify input
     insumo:               Input
     new:                  Registering a new input
@@ -327,11 +335,11 @@ dictionary:
   
   cliente:
     cliente:              Client
-    read:                 Registered customers
+    read:                 Customers
     edit:                 Change customer
     direccion:            Address
     telefono:             Phone
-    new:                  New Customer
+    new:                  Register a New Customer
     action:               Actions
     identification:       Id
     Number of document:   Document Number
@@ -348,6 +356,7 @@ dictionary:
     direccion:            Address
     telefono:             Phone
     new:                  New employe
+    nuev:                 Register a New Employee
     confirmDelete:        Delete employe
     register:             Register
     delete:               Delete
@@ -399,6 +408,7 @@ dictionary:
     close:                Close
     editVaccination:      EDIT VACCINATION
     newVaccination:       NEW VACCINATION
+    edit:                 Edit Immunization Record
     
   detalleVacunacion:
     newDetailVaccination:  NEW DETAIL VACCINATION
@@ -419,7 +429,7 @@ dictionary:
     read:                  Vaccine
     new:                   Enter a new vaccine
     lote:                  Batch of vaccine
-    edit:                  Edit the registry of vaccine
+    edit:                  Edit the vaccine
     nueva:                 New Vaccine
     
   pVenta:
@@ -468,6 +478,10 @@ dictionary:
     factura:               Facutras purchase
     fechaFactura:          Invoice date
     new:                   Registering a new invoice
+    edit:                  Change Purchase Invoice
+    
+  facturaVenta:
+    new:                   Register a New Bill of Sale
     
   ayuda:
     registrar:             New Record

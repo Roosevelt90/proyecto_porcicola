@@ -64,11 +64,11 @@
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete', null, 'user') ?></h4>
                             </div>
                             <div class="modal-body">
-                                desea eliminar la raza??
+                                <?php echo i18n::__('confirmDelete') ?>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo razaTableClass::getNameField(razaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteRaza') ?>')">Eliminar</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
+                                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo razaTableClass::getNameField(razaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteRaza') ?>')"> <?php echo i18n::__('delete') ?></button>
                             </div>
                         </div>
                     </div>

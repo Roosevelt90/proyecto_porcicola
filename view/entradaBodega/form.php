@@ -1,7 +1,5 @@
-<?php
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $nombreEmpleado = empleadoTableClass::NOMBRE ?>
 <?php $id = empleadoTableClass::ID ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('bodega', ((isset($objEntrada) == TRUE) ? 'updateEntrada' : 'createEntrada')) ?>">

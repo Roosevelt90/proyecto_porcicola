@@ -2,7 +2,7 @@
 culture:                  Español
 dictionary:
   default:
-    RegistrosEntrada:     Registros de entrada a la bodega
+    RegistrosEntrada:     Entrada de bodega
     personal:             Personal
     fechaFabricacion:     Fecha de fabricacion
     fechaVencimiento:     Fecha de vencimiento
@@ -11,6 +11,8 @@ dictionary:
     nombreInsumo:         Nombre del insumo
     descripcion:          Descripcion
     nuev:                 Nuevo
+    inhabil:              Inhabilitar
+    nuevDatos:            Nuevo Datos de Usuario
     newRegistroVacunacion: Nuevo registro de vacunacion
     cerrar:              Cerrar
     buscar:              Buscar
@@ -37,6 +39,8 @@ dictionary:
     factura:              Facturas
     facturaCompra:        Facturas de compra
     confirmInhabilitar:   Esta seguro que desea inhabilitar esta factura
+    confirmInh:           Esta seguro que desea inhabilitar los registros
+    conInhSel:            Esta seguro que desea inhabilitar las facturas seleccionadas
     confirmHabilitar:     Esta seguro que desea habilitar esta factura
     Usuario y contraseña incorrectos:   Usuario y contraseña incorrectos
     proveedor:            Nombre del proveedor
@@ -154,11 +158,11 @@ dictionary:
         
   veterinario:
     veterinario:         Veterinario
-    read:                 Veterinarios registrados
+    read:                 Veterinarios 
     edit:                 Modificar Veterinario
     direccion:            Direccion
     telefono:             Telefono
-    new:                  Nuevo Veterinario
+    new:                  Registrar un Nuevo Veterinario
     action:               Acciones
     identification:       Id
     Number of document:   Numero de documento
@@ -178,7 +182,8 @@ dictionary:
     edit:                 Editar el registro del animal
     animal:               Animal
     report:               Reporte
-    new:                  Registra un nuevo animal
+    nuev:                 Nuevo Animal
+    new:                  Registrar un nuevo animal
     peso:                 Peso
     edad:                 Edad (meses)
     edad_inicial:         Edad inicial
@@ -202,7 +207,7 @@ dictionary:
     errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
     succesUpdate:         El registro se ha modificado exitosamente 
     errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
-    read:                 Registro de animales en nuestro sistema
+    read:                 Cerdos
     confirm:              Desea eliminar el registro
     
   user:
@@ -215,7 +220,7 @@ dictionary:
     editUser:             Modificar al usuario
     edit:                 Editar
     oldPass:              Nueva Contraseña
-    read:                 Usuarios registrados en nuestro sistema
+    read:                 Usuarios 
     delete:               Eliminar
     direccion:            Direccion
     modify:               Modificar
@@ -242,11 +247,11 @@ dictionary:
     
   proveedor:
     proveedor:            Provider
-    read:                 Proveedores registrados
+    read:                 Proveedores 
     edit:                 Modificar Proveedor
     direccion:            Direccion
     telefono:             Telefono
-    new:                  Nuevo proveedor
+    new:                  Registrar un Nuevo proveedor
     action:               Acciones
     identification:       Id
     Number of document:   Numero de documento
@@ -273,14 +278,17 @@ dictionary:
     bodega:               Bodega
     entrada:              Entrada de Bodega
     salida:               Salida de Bodega
+    new:                  Registrar una Nueva Entrada de Bodega
+    detalle:              Detalle de Entrada de Bodega
     
     
   datos:
     read:                 Datos personales del usuario
-    new:                  Datos personales al usuario
+    new:                  Registrar Datos personales del usuario
     name:                 Nombre
     tipoDoc:              Tipo de documento
     numberDoc:            Numero de documento
+    numRegistro:          Numero de documento del Registro
     lastName:             Apellidos
     register:             Registrar
     tel:                  Telefono
@@ -288,10 +296,10 @@ dictionary:
     edit:                 Modificar los datos del usuario
     
   credencial:
-    read:                 Credeniales en nuestro sistema
-    new:                  Registra una nueva credencial
+    read:                 Credeniales 
+    new:                  Registrar una Nueva credencial
     credencial:           Credencial
-    edit:                 Modificar el nombre de la credencial
+    edit:                 Modificar la credencial
   
   userCredencial:
     read:                 Roles asignados
@@ -302,33 +310,33 @@ dictionary:
     
     
   raza:
-    read:                 Razas registradas 
+    read:                 Razas 
     edit:                 Modificar raza
     raza:                 Raza
-    new:                  Registro de una nueva raza
+    new:                  Registrar una nueva raza
     delete:               Eliminar
     confirmDelete:        Eliminar Raza
     
   lote:
-    read:                 Lotes registrados 
+    read:                 Lotes
     edit:                 Modificar lote
     lote:                 Lote
-    new:                  Registro de un nuevo lote
+    new:                  Registrar un nuevo lote
     
   insumo:
-    read:                 Insumos registrados en nuestro sistema 
+    read:                 Insumos 
     edit:                 Modificar insumo
     insumo:               Insumo
-    new:                  Registro de un nuevo insumo
+    new:                  Registrar un nuevo insumo
     register:             Nuevo Insumo
     
   cliente:
     cliente:              Cliente
-    read:                 clientes registrado
+    read:                 clientes 
     edit:                 Modificar cliente
     direccion:            Direccion
     telefono:             Telefono
-    new:                  Nuevo cliente
+    new:                  Registrar un Nuevo cliente
     action:               Acciones
     identification:       Id
     Number of document:   Numero de documento
@@ -348,7 +356,8 @@ dictionary:
     telefono:             Telefono
     new:                  Nuevo empleado
     confirmDelete:        Eliminar empleado
-    register:             Registrar
+    register:             Registrar 
+    nuev:                 Registrar un Nuevo Empleado
     delete:               Eliminar
     succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
     errorDeleteMasivo:    No se ha seleccionado ningun registro
@@ -398,6 +407,7 @@ dictionary:
     viewDetail:           Ver Detalle
     insertDetail:         Insertar Detalle
     close:                Cerrar
+    edit:                 Editar el Registro de Vacunación
     editVaccination:      EDITAR VACUNACION
     newVaccination:       NUEVA VACUNACION
     
@@ -420,7 +430,7 @@ dictionary:
     read:                  Vacuna
     new:                   Ingresar una nueva vacuna
     lote:                  Lote de la vacuna
-    edit:                  Editar el registro de la vacuna
+    edit:                  Editar la vacuna
     nueva:                 Nueva Vacuna
 
   pVenta:
@@ -439,20 +449,20 @@ dictionary:
    nueva:                 Nueva Factura de compra
     
   dpVenta:
-   item:                  item
-   date:                  fecha
+   item:                  Item
+   date:                  Fecha
    numer:                 Numero documento
    user:                  usuario_id
    animal_id:             id animal
-   weight:                peso
-   price:                 precio
+   weight:                Peso
+   price:                 Precio
    details:               Ver Detalle
-   read:                  facturas registradas en nuestro sistema
-   edit:                  editar
-   new:                   ingrese una nueva factura
-   modify:                modificar
-   register:              registrar
-   insert:                insertar
+   read:                  Facturas registradas en nuestro sistema
+   edit:                  Editar
+   new:                   Ingrese una nueva factura
+   modify:                Modificar
+   register:              Registrar
+   insert:                Insertar
    succesCreate:         La factura se ha registrado de forma exitosa   
    errorCreate:          No se ha podido crear la factura vuelve a intentarlo
    succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
@@ -468,7 +478,11 @@ dictionary:
   facturaCompra:
     factura:               Facutras de compra
     fechaFactura:          Fecha de la factura
-    new:                   Registro de una nueva factura de compra
+    new:                   Registrar una nueva factura de compra
+    edit:                  Modificar la Factura de Compra
+    
+  facturaVenta:
+    new:                   Registrar una Nueva Factura de Venta
     
   ayuda:
     registrar:           Nuevo registro

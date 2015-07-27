@@ -1,6 +1,4 @@
-<?php
-
-use mvc\routing\routingClass as routing;
+<?php use mvc\routing\routingClass as routing;
 
 class PDF extends FPDF {
 

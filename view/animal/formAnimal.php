@@ -1,8 +1,5 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id_animal = animalTableClass::ID ?>
 <?php $peso = animalTableClass::PESO ?>
 <?php $precio_animal =  animalTableClass::PRECIO_ANIMAL ?>

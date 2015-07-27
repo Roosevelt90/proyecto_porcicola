@@ -1,15 +1,9 @@
 
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\config\configClass as config ?>
-<?php
-use mvc\request\requestClass as request ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\config\configClass as config ?>
+<?php use mvc\request\requestClass as request ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id = veterinarioTableClass::ID ?>
 <?php $numero_doc = veterinarioTableClass::NUMERO_DOC ?>
 <?php $nombre_completo = veterinarioTableClass::NOMBRE ?>
@@ -136,11 +130,11 @@ use mvc\i18n\i18nClass as i18n ?>
                   <div class="modalbox rotate">
                     <a href="#close" title="Close" class="close">X</a>
                     <div class="modal-body">
-                      desea eliminar ?
+                       <?php echo i18n::__('confirm', null, 'animal') ?>
                     </div>
                     <div class="modal-footer">
-                      <a href="#close2" title="Close" class="close2 btn btn-info">Cancelar</a>
-                      <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteVeterinario') ?>')">Eliminar</button>
+                      <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
+                      <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteVeterinario') ?>')"> <?php echo i18n::__('edit') ?></button>
                     </div>
                   </div>
                 </div>

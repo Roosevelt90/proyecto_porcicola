@@ -7,10 +7,13 @@
 <?php $idAnimal = animalTableClass::ID ?>
 <?php $peso = animalTableClass::PESO ?>
 <?php $fecha = animalTableClass::FECHA_NACIMIENTO ?>
+<?php $edad= animalTableClass::EDAD ?>
+<?php $parto = animalTableClass::PARTO ?>
 <?php $precio_animal = animalTableClass::PRECIO_ANIMAL ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $lote = loteTableClass::NOMBRE ?>
 <?php $raza = razaTableClass::NOMBRE_RAZA ?>
+<?php $numero = animalTableClass::NUMERO ?>
 <?php  $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--grey-100">
   <div class="mdl-grid demo-content">
@@ -25,14 +28,17 @@
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
         <div class="row">
           <div class="col-xs-3 text-center">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('report') ?></a>
+            
             <a href="#myModalFilter" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-            <!--<a href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>-->
             <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"><?php echo i18n::__('deleteFilter') ?></a>  
+            <!--<a href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>-->
+            
           </div>
           <div class="col-xs-4-offset-2 nuevo">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
+            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('borrar seleccion') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nuev', null, 'animal') ?></a>
+            
+            <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('report') ?></a>
           </div>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -40,30 +46,31 @@
           <thead>
             <tr class="active">
               <td><input type="checkbox" id="chkAll"></td> 
-              <th>Id</th>
-              <th>Peso</th>
-              <th>Precio</th>
-              <th>Fecha de nacimiento</th>
-
-              <th>Genero</th>
-              <th>Lote</th>
-              <th>Raza</th>
-              <th>Acciones</th>
+              <th><?php echo i18n::__('identification', null, 'animal') ?></th>
+              <th><?php echo i18n::__('date_birth', null, 'animal') ?></th>
+              <th><?php echo i18n::__('peso', null, 'animal') ?></th>
+              <th><?php echo i18n::__('edad', null, 'animal') ?></th>
+              <th><?php echo i18n::__('genero', null, 'animal') ?></th>
+              <th><?php echo i18n::__('parto', null, 'animal') ?></th>
+              <th><?php echo i18n::__('lote', null, 'animal') ?></th>
+              <th><?php echo i18n::__('raza', null, 'animal') ?></th>
+              <th><?php echo i18n::__('precio', null, 'animal') ?></th>
+              <th><?php echo i18n::__('action') ?></th>
             </tr>
           </thead>
           <tbody>
             <?php foreach ($objAnimal as $key): ?>
               <tr>
                 <td><input type="checkbox" name="chk[]" value="<?php echo $key->$idAnimal ?>"></td>
-
-                <td><?php echo $key->$idAnimal ?></td>
+                <td><?php $key->$numero ?></td>
+                <td><?php echo $key->$fecha ?></td>  
                 <td><?php echo $key->$peso ?></td>
-                <td><?php echo $key->$precio_animal ?></td>
-                <td><?php echo $key->$fecha ?></td>   
-
+                <td><?php echo $key->$edad ?></td>
                 <td><?php echo $key->$genero ?></td>
+                <td><?php echo $key->$parto?></td>
                 <td><?php echo $key->$lote ?></td>
                 <td><?php echo $key->$raza ?></td>
+                <td><?php echo $key->$precio_animal ?></td>
                 <td>
                   <a  href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editAnimal', array(animalTableClass::ID => $key->$idAnimal)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
                   <a  href="#myModalDelete<?php echo $key->$idAnimal ?>" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>
@@ -78,7 +85,7 @@
                 </div>
                 <div class="modal-footer">
                   <a href="#close2" title="Close" class="close2 btn btn-info"><?php echo i18n::__('cancel') ?></a>
-                  <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$idAnimal ?>, '<?php echo animalTableClass::getNameField(animalTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteAnimal') ?>')">Eliminar</button>
+                  <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$idAnimal ?>, '<?php echo animalTableClass::getNameField(animalTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteAnimal') ?>')"><?php echo i18n::__('delete') ?></button>
                 </div>
               </div>
             </div>
@@ -114,8 +121,8 @@
             <?php echo i18n::__('confirmDeleteMasive') ?>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cerrar') ?></button>
+            <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm') ?></button>
           </div>
         </div>
       </div>

@@ -1,14 +1,8 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
-<?php
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\config\configClass as config ?>
-<?php
-use mvc\request\requestClass as request ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\config\configClass as config ?>
+<?php use mvc\request\requestClass as request ?>
 
 <?php $id = procesoVentaTableClass::ID ?>
 <?php $fecha = procesoVentaTableClass::FECHA_HORA_VENTA ?>
@@ -166,7 +160,7 @@ use mvc\request\requestClass as request ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaVenta') ?>')"> <?php echo i18n::__('delete') ?></button>
+                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaVenta') ?>')"> <?php echo i18n::__('inhabil') ?></button>
             </div>
         </div>
     </div>
@@ -202,11 +196,11 @@ use mvc\request\requestClass as request ?>
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('borrar seleccion') ?></h4>
+                <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('inhMasa') ?></h4>
             </div>
             <div class="modal-body">
 
-                <?php echo i18n::__('deleteMasive') ?>
+                <?php echo i18n::__('conInhSel') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>

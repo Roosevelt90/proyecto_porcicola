@@ -100,8 +100,8 @@
                 ....
               </div>
               <div class="modal-footer">
-                <a href="#close2" title="Close" class="close2 btn btn-info">Cancelar</a>
-                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteEntrada') ?>')"> <?php echo i18n::__('delete') ?></button>
+                <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
+                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteEntrada') ?>')"> <?php echo i18n::__('inhabil') ?></button>
               </div>
             </div>
           </div>
@@ -176,11 +176,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('borrar seleccion') ?></h4>
+        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('inhMasa') ?></h4>
       </div>
       <div class="modal-body">
 
-        <?php echo i18n::__('deleteMasive') ?>
+        <?php echo i18n::__('confirmInh') ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>

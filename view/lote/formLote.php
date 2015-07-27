@@ -1,8 +1,5 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id = loteTableClass::ID ?>
 <?php $nombre = loteTableClass::NOMBRE ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objLote) == TRUE) ? 'updateLote' : 'createLote')) ?>">

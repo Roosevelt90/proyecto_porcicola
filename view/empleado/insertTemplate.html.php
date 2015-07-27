@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <br>
-            <h2>  <?php echo i18n::__('new', null, 'empleado')?>
+            <h2>  <?php echo i18n::__('nuev', null, 'empleado')?>
             </h2>
             
         </div>

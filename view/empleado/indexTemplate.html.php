@@ -1,13 +1,9 @@
 
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\config\configClass as config ?>
-<?PHP
-USE mvc\request\requestClass as request ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\config\configClass as config ?>
+<?php use mvc\request\requestClass as request ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 
 <?php $id = empleadoTableClass::ID ?>
 <?php $numero_doc = empleadoTableClass::NUMERO_DOC ?>
@@ -17,11 +13,6 @@ USE mvc\request\requestClass as request ?>
 <?php $cargo_id = cargoTableClass::DESCRIPCION ?>
 <?php $direccion = empleadoTableClass::DIRECCION ?>
 <?php $ciudad = ciudadTableClass::NOMBRE ?>
-
-<?php
-
-use mvc\i18n\i18nClass as i18n ?>
-
 <?php $countDetale = 1 ?>
     <!--<div class="container container-fluid">-->
 
@@ -169,8 +160,8 @@ use mvc\i18n\i18nClass as i18n ?>
                       desea eliminar ?
                     </div>
                     <div class="modal-footer">
-                      <a href="#close2" title="Close" class="close2 btn btn-info">Cancelar</a>
-                      <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteEmpleado') ?>')">Eliminar</button>
+                      <a href="#close2" title="Close" class="close2 btn btn-info"><?php echo i18n::__('cancel') ?></a>
+                      <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteEmpleado') ?>')"><?php echo i18n::__('delete') ?></button>
                     </div>
                   </div>
                 </div>
@@ -211,8 +202,8 @@ use mvc\i18n\i18nClass as i18n ?>
                 </table>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cerrar') ?></button>
+              <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm') ?></button>
             </div>
           </div>
         </div>

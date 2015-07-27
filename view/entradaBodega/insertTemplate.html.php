@@ -8,7 +8,7 @@
         <div class="col-xs-4-offset-4 titulo">
             <br>
             <h2>  
-              Nuevo registro
+             <?php echo i18n::__('new', null, 'bodega')?>
             </h2>
             
         </div>

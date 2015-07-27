@@ -17,107 +17,104 @@ class viewEntradaActionClass extends controllerClass implements controllerAction
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(entradaBodegaTableClass::ID)) {
-        $idEntrada = request::getInstance()->getRequest(detalleEntradaBodegaTableClass::ID);
 
-//                $fieldsVacuna = array(
-//                    vacunaTableClass::ID,
-//                    vacunaTableClass::NOMBRE_VACUNA
-//                );
-//
-//
-//                $orderBy = array(
-//                    detalleVacunacionTableClass::ID
-//                );
-//
-//
-//                $where = array(
-//                    detalleVacunacionTableClass::ID_REGISTRO => $idVacunacion
-//                );
-//
-//                if (request::getInstance()->hasPost('filter')) {
-//                    $where = null;
-//                    $filter = request::getInstance()->getPost('filter');
-//
-//                    if (isset($filter['fecha_inicial']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and isset($filter['fecha_final']) and $filter['fecha_final'] !== null and $filter['fecha_final'] !== '') {
-//                        $where[detalleVacunacionTableClass::FECHA] = array(
-//                            date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
-//                            date(config::getFormatTimestamp(), strtotime($filter['fecha_final'] . ' 23.59.59'))
-//                        );
-//                    }//close if
-//                    if (isset($filter['vacuna']) and $filter['vacuna'] !== null and $filter['vacuna'] !== '') {
-//                        $where[detalleVacunacionTableClass::VACUNA] = $filter['vacuna'];
-//                    }//close if
-//                    if (isset($filter['dosis']) and $filter['dosis'] !== null and $filter['dosis'] !== '') {
-//                        $where[detalleVacunacionTableClass::DOSIS] = $filter['dosis'];
-//                    }//close if
-////                    if (isset($filter['accion']) and $filter['accion'] !== null and $filter['accion'] !== '') {
-////                        $where[detalleVacunacionTableClass::ACCION] = $filter['accion'];
-////                    }
-//
-//
-//                    session::getInstance()->setAttribute('facturaVentaFilter', $where);
-//                } elseif (session::getInstance()->hasAttribute('facturaVentaFilter')) {
-//                    $where = session::getInstance()->getAttribute('facturaVentaFilter');
-//                }//close if
+      $where = null;
 
-        $fieldsEntrada = array(
-          entradaBodegaTableClass::ID,
-          entradaBodegaTableClass::FECHA
-        );
-        $fieldsEmpleado = array(
-          empleadoTableClass::NOMBRE
-        );
-        $whereEntrada = array(
-          entradaBodegaTableClass::getNameTable() . '.' . entradaBodegaTableClass::ID => $idEntrada
-        );
-        $fJoinEntrada1 = entradaBodegaTableClass::EMPLEADO;
-        $fJoinEntrada2 = empleadoTableClass::ID;
+//      if (request::getInstance()->hasRequest(entradaBodegaTableClass::ID)) {
+      $idEntrada = request::getInstance()->getRequest(detalleEntradaBodegaTableClass::ID);
 
+      $where = null;
 
-        $page = 0;
-        if (request::getInstance()->hasGet('page')) {
-          $page = request::getInstance()->getGet('page') - 1;
-          $page = $page * config::getRowGrid();
+      if (request::getInstance()->hasPost('filter')) {
+        $filter = request::getInstance()->getPost('filter');
+
+        if (isset($filter['tipoInsumo']) and $filter['tipoInsumo'] !== null and $filter['tipoInsumo'] !== '') {
+          $where[detalleEntradaBodegaTableClass::TIPO_INSUMO] = $filter['tipoInsumo'];
+        }//close if
+        if (isset($filter['Insumo']) and $filter['Insumo'] !== null and $filter['Insumo'] !== '') {
+          $where[detalleEntradaBodegaTableClass::ID_INSUMO] = $filter['Insumo'];
+        }//close if
+        if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
+          $where[detalleEntradaBodegaTableClass::CANDITDAD] = $filter['cantidad'];
         }//close if
 
-        $f = array(
-          detalleEntradaBodegaTableClass::ID
-        );
+        $where[detalleEntradaBodegaTableClass::ID_ENTRADA] = $idEntrada;
 
-        $whereCnt = array(
-          detalleEntradaBodegaTableClass::ID_ENTRADA => $idEntrada
-        );
-        $lines = config::getRowGrid();
-
-        $fieldsDetalleEntrada = array(
-          detalleEntradaBodegaTableClass::ID,
-          detalleEntradaBodegaTableClass::CANDITDAD,
-          detalleEntradaBodegaTableClass::ID_ENTRADA,
-        );
-
-        $fieldsDetalleInsumo = array(
-          insumoTableClass::NOMBRE
-        );
-        $fieldsDetalleTipoInsumo = array(
-          tipoInsumoTableClass::DESCRIPCION
-        );
+        session::getInstance()->setAttribute('detalleEntrada', $where);
+      } elseif (session::getInstance()->hasAttribute('detalleEntrada')) {
+        $where = session::getInstance()->getAttribute('detalleEntrada');
+      } else {
         $where = array(
           detalleEntradaBodegaTableClass::ID_ENTRADA => $idEntrada
         );
-        $fJoin1 = detalleEntradaBodegaTableClass::ID_INSUMO;
-        $fJoin2 = insumoTableClass::ID;
-        $fJoin3 = detalleEntradaBodegaTableClass::TIPO_INSUMO;
-        $fJoin4 = tipoInsumoTableClass::ID;
-
-        $this->cntPages = detalleEntradaBodegaTableClass::getAllCount($f, true, $lines, $whereCnt);
-        $this->objEntrada = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoinEntrada1, $fJoinEntrada2, null, null, null, null, true, null, null, config::getRowGrid(), $page, $whereEntrada);
-        $this->objDetalleEntrada = detalleEntradaBodegaTableClass::getAllJoin($fieldsDetalleEntrada, $fieldsDetalleInsumo, $fieldsDetalleTipoInsumo, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, null, 'ASC', config::getRowGrid(), $page, $where);
-        $this->defineView('view', 'vacunacion', session::getInstance()->getFormatOutput());
-      } else {
-        session::getInstance()->setError('pailas');
-        routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
       }//close if
+
+
+      $fieldsEntrada = array(
+        entradaBodegaTableClass::ID,
+        entradaBodegaTableClass::FECHA
+      );
+      $fieldsEmpleado = array(
+        empleadoTableClass::NOMBRE
+      );
+      $whereEntrada = array(
+        entradaBodegaTableClass::getNameTable() . '.' . entradaBodegaTableClass::ID => $idEntrada
+      );
+      $fJoinEntrada1 = entradaBodegaTableClass::EMPLEADO;
+      $fJoinEntrada2 = empleadoTableClass::ID;
+
+
+      $page = 0;
+      if (request::getInstance()->hasGet('page')) {
+        $page = request::getInstance()->getGet('page') - 1;
+        $page = $page * config::getRowGrid();
+      }//close if
+
+      $f = array(
+        detalleEntradaBodegaTableClass::ID
+      );
+
+      $whereCnt = array(
+        detalleEntradaBodegaTableClass::ID_ENTRADA => $idEntrada
+      );
+      $lines = config::getRowGrid();
+
+      $fieldsDetalleEntrada = array(
+        detalleEntradaBodegaTableClass::ID,
+        detalleEntradaBodegaTableClass::CANDITDAD,
+        detalleEntradaBodegaTableClass::ID_ENTRADA,
+      );
+
+      $fieldsDetalleInsumo = array(
+        insumoTableClass::NOMBRE
+      );
+      $fieldsDetalleTipoInsumo = array(
+        tipoInsumoTableClass::DESCRIPCION
+      );
+
+      $fJoin1 = detalleEntradaBodegaTableClass::ID_INSUMO;
+      $fJoin2 = insumoTableClass::ID;
+      $fJoin3 = detalleEntradaBodegaTableClass::TIPO_INSUMO;
+      $fJoin4 = tipoInsumoTableClass::ID;
+      $fieldsInsumo = array(
+        insumoTableClass::ID,
+        insumoTableClass::NOMBRE
+      );
+      $fieldsTipoInsumo = array(
+        tipoInsumoTableClass::ID,
+        tipoInsumoTableClass::DESCRIPCION
+      );
+
+      $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo, false);
+      $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
+      $this->cntPages = detalleEntradaBodegaTableClass::getAllCount($f, true, $lines, $whereCnt);
+      $this->objEntrada = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoinEntrada1, $fJoinEntrada2, null, null, null, null, true, null, null, config::getRowGrid(), $page, $whereEntrada);
+      $this->objDetalleEntrada = detalleEntradaBodegaTableClass::getAllJoin($fieldsDetalleEntrada, $fieldsDetalleInsumo, $fieldsDetalleTipoInsumo, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, null, 'ASC', config::getRowGrid(), $page, $where);
+      $this->defineView('view', 'entradaBodega', session::getInstance()->getFormatOutput());
+//      } else {
+//        session::getInstance()->setError('pailas');
+//        routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
+//      }//close if
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

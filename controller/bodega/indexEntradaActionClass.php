@@ -52,6 +52,9 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
       );
       $fieldsEmpleado = array(
         empleadoTableClass::NOMBRE,
+      );
+      $fieldsEmpleado2 = array(
+        empleadoTableClass::NOMBRE,
         empleadoTableClass::ID
       );
       $fJoin1 = entradaBodegaTableClass::EMPLEADO;
@@ -86,7 +89,7 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
       }//close if 
       $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo, false);
       $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
-      $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, false);
+      $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado2, false);
       $this->objEntradaBodega = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       $this->defineView('index', 'entradaBodega', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {

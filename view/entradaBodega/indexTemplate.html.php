@@ -43,7 +43,7 @@ use mvc\request\requestClass as request ?>
         <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
           <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
         </div>
-        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nueva', null, 'pCompra') ?></a>
+        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertEntrada') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nueva', null, 'pCompra') ?></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="new">
           <?php echo i18n::__('registrar', null, 'ayuda') ?>
         </div>
@@ -149,49 +149,6 @@ use mvc\request\requestClass as request ?>
               </div>
             </div>
           </div>
-
-          <!-- WINDOWS MODAL DETAIL VACCINATION -->
-          <!--                  <div class="modal fade" id="myModalDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('newDetailVaccination', null, 'detalleVacunacion') ?>:</h4>
-                                        </div>
-                                        <div class="modal-body">
-          
-                                            <form id="detailForm" class="form-horizontal" method="POST" action="<?php // echo routing::getInstance()->getUrlWeb('factura', 'createFacturaCompra')           ?>">
-          
-                                                <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleProcesoCompraBaseTableClass::getNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true) ?>">
-          
-                                                <h3><?php echo i18n::__('insumo') ?></h3>
-                                                <select name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::INSUMO_ID, true) ?>">
-                                                    <option value="">...</option>
-          <?php foreach ($objInsumo as $key): ?>
-                                                            <option value="<?php echo $key->id ?>"><?php echo $key->nombre_insumo ?></option>
-          <?php endforeach; //close foreach  ?>
-                                                </select>
-          
-          
-                                                <h3><?php echo i18n::__('cantidad') ?></h3>
-                                                <input type="number" name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::CANTIDAD, true) ?>">
-          
-                                                <h3><?php echo i18n::__('valorUni') ?></h3>
-                                                <input type="number" name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::VALOR_UNITARIO, true) ?>">
-          
-          
-          
-                                                </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></button>
-                                                    <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()">Insertar</button>
-                                                    <input type="submit"  class="btn btn-primary" value=<?php echo i18n::__('confirm') ?> >
-          
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>-->
           <?php $countDetale++ ?>
         <?php endforeach//close foreach  ?>
         </tbody>
@@ -212,32 +169,11 @@ use mvc\request\requestClass as request ?>
           </ul>
         </nav>
       </div> 
-      <form id="frmDelete" action="<?php //echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion')           ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>">
-      </form>
     </div>
   </div>
 </main>
 
 
-<!-- WINDOWS MODAL CHANGE STATE-->
-<div class="modal fade" id="myModalDisable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('inhabilitar') ?></h4>
-      </div>
-      <div class="modal-body">
-        ¿<?php echo i18n::__('confirmInhabilitar') ?>?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-        <button id="delete" name="delete" type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaCompra') ?>')"> <?php echo i18n::__('delete') ?></button>
-      </div>
-    </div>
-  </div>
-</div> 
 
 
 <!-- WINDOWS MODAL DELETE MASIVE -->
@@ -259,74 +195,3 @@ use mvc\request\requestClass as request ?>
     </div>
   </div>
 </div>
-
-<!-- WINDOWS MODAL FILTER -->
-<div class="modal fade" id="myModalFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
-      </div>
-      <div class="modal-body">
-        <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>">
-          <table>
-            <tr>
-              <th>
-                <?php echo i18n::__('fechaInicio') ?>
-              </th>
-              <th>
-                <input type="datetime-local" name="filter[fecha_inicio]">
-              </th>   
-
-            </tr>
-            <tr>
-              <th>
-                <?php echo i18n::__('fechaFin') ?>
-              </th>
-              <th>
-                <input type="datetime-local" name="filter[fecha_fin]">
-              </th>   
-
-            </tr>
-            <tr>
-              <th>  
-                <?php echo i18n::__('empleado', NULL, 'empleado') ?>:
-              </th>
-              <th> 
-                <select name="filter[empleado]">
-                  <option value="">...</option>
-                  <?php foreach ($objEmpleado as $key): ?>
-                    <option value="<?php echo $key->$id ?>"> <?php echo $key->$nombreEmpleado ?></option>
-                  <?php endforeach; //close foreach ?>
-                </select>
-              </th>   
-
-            </tr>
-
-            <tr>
-              <th>  
-                <?php echo i18n::__('proveedor') ?>:
-              </th>
-              <th> 
-                <select name="filter[proveedor]">
-                  <option value="">...</option>
-                  <?php foreach ($objProveedor as $key): ?>
-                    <option value="<?php echo $key->$id ?>"> <?php echo $key->$nombreProveedor ?></option>
-                  <?php endforeach; //close foreach ?>
-                </select>
-              </th>   
-
-            </tr>
-          </table>
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
-        <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
-      </div>
-    </div>
-  </div>
-</div>
-

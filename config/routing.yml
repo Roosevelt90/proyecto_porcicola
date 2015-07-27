@@ -2867,6 +2867,10 @@ entrada_bodega_eliminar_seleccion:
 entrada_bodega_delete_filters:
   url:     /borrar_filtros/entrada_bodega
   param: { module: bodega, action: deleteFilterEntrada, format: html }
+  
+detalle_entrada_bodega_delete_filters:
+  url:     /borrar_filtros/detalle_entrada
+  param: { module: bodega, action: deleteFilterDetalleEntrada, format: html }
 
 entrada_bodega_view:
   url:    /entrada_bodega/view

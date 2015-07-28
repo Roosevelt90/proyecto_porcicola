@@ -2928,3 +2928,203 @@ entrada_bodega_CrearDetalle:
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
    
+   
+   
+##------------SALIDA BODEGA---------------------##
+
+salida_bodega:
+  url:      /salida_bodega
+  param:  { module: bodega, action: indexSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleSalidaBodegaBaseTableClass.php
+    - model/detalleSalidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+   
+
+salida_bodega:_nuevo:
+  url:      /salida_bodega/nuevo_registro
+  param:  { module: bodega, action: insertSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+salida_bodega:_crear:
+  url:      /salida_bodega/crear
+  param:  { module: bodega, action: createSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+    
+salida_bodega_Edit:
+  url:      /salida_bodega/edit
+  param:  { module: bodega, action: editSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+salida_bodega_update:
+  url:      /salida_bodega/update
+  param:  { module: bodega, action: updateSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+salida_bodega_inhabilitar:
+  url:      /salida_bodega/eliminar
+  param:  { module: bodega, action: deleteSalida, format: json }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+salida_bodega_eliminar_seleccion:
+  url:    /salida_bodega/eliminarSeleccion
+  param:  { module: bodega, action: deleteSelectSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+    
+salida_bodega_delete_filtera:
+  url:     /borrar_filtros/salida_bodega
+  param: { module: bodega, action: deleteFilterSalida, format: html }
+  
+detalle_salida_bodega_delete_filters:
+  url:     /borrar_filtros/detalle_salida_bodega
+  param: { module: bodega, action: deleteFilterDetalleSalida, format: html }
+
+salida_bodega_view:
+  url:    /salida_bodega/view
+  param: { module: bodega, action: viewEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleSalidaBodegaBaseTableClass.php
+    - model/detalleSalidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+    
+salida_bodega_reporte:
+  url:    /salida_bodega/reporte
+  param:  { module: bodega, action: reportSalida, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+salida_bodega_crear_detalle:
+  url:    /salida_bodega/create_detalle
+  param:  { module: bodega, action: createDetalleSalida, format: pdf }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/detalleSalidaBodegaBaseTableClass.php
+    - model/detalleSalidaBodegaTableClass.php
+    - model/base/detalleEntradaBodegaBaseTableClass.php
+    - model/detalleEntradaBodegaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php

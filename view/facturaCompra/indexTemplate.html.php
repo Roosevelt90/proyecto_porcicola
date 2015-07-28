@@ -17,8 +17,6 @@
 <main class="mdl-layout__content mdl-color--grey-100">
     <div class="mdl-grid demo-content">
         <div class="container container-fluid">
-
-
             <div class="row">
                 <div class="col-xs-12 text-center">
 
@@ -27,20 +25,7 @@
                     </h2>
                 </div>
             </div>
-            <br /> <br />
-            <!--    <div style="margin-bottom: 10px; margin-top: 30px" >
-                    <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'traductorVacunacion') ?>" name="" method="POST">
-                        <select onchange="$('#frmTraductor').submit()" name="lenguaje">
-                            <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es">
-            <?php echo i18n::__('spanish') ?> 
-                            </option>         
-                            <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?> value="en">
-            <?php echo i18n::__('english') ?> 
-                            </option>
-                        </select>
-                        <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-                    </form>
-                </div>-->
+
             <div style="margin-bottom: 10px; margin-top: 30px">
                 <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="new">
@@ -50,7 +35,7 @@
                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
                 </div>
-                <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
+                <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
                     <?php echo i18n::__('buscar', null, 'ayuda') ?>
                 </div>
@@ -249,16 +234,14 @@
     </div>
 </div>
 
-<!-- WINDOWS MODAL FILTER -->
-<div class="modal fade" id="myModalFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
-            </div>
-            <div class="modal-body">
-                <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>">
+
+
+  <!-- WINDOWS MODAL DELETE -->
+                <div id="myModalFilter" class="modalmask">
+                  <div class="modalbox rotate">
+                    <a href="#close" title="Close" class="close">X</a>
+                    <div class="modal-body">
+             <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>">
                     <table>
                         <tr>
                             <th>
@@ -315,6 +298,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
                 <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
             </div>
-        </div>
-    </div>
-</div>
+                    </div>
+               
+                  </div>
+                </div>

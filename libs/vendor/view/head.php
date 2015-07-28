@@ -62,6 +62,7 @@
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="bodega">
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>'" > <button class="mdl-menu__item">Entrada bodega</button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>'" > <button class="mdl-menu__item">Salida bodega</button></a>
               </ul>
             </div>
 

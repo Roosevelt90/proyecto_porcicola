@@ -13,28 +13,28 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class indexEntradaActionClass extends controllerClass implements controllerActionInterface {
+class indexSalidaActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
       $where = null;
 
-            if (request::getInstance()->hasPost('filter')) {
+//            if (request::getInstance()->hasPost('filter')) {
+//
+//                $filter = request::getInstance()->getPost('filter');
+//                if (isset($filter['empleado']) and $filter['empleado'] !== null and $filter['empleado'] !== '') {
+//                    $where[entradaBodegaTableClass::EMPLEADO] = $filter['empleado'];
+//                }//close if
+//                session::getInstance()->setAttribute('entradaFilter', $where);
+//            } elseif (session::getInstance()->hasAttribute('entradaFilter')) {
+//                $where = session::getInstance()->getAttribute('entradaFilter');
+//            }//close if
 
-                $filter = request::getInstance()->getPost('filter');
-                if (isset($filter['empleado']) and $filter['empleado'] !== null and $filter['empleado'] !== '') {
-                    $where[entradaBodegaTableClass::EMPLEADO] = $filter['empleado'];
-                }//close if
-                session::getInstance()->setAttribute('entradaFilter', $where);
-            } elseif (session::getInstance()->hasAttribute('entradaFilter')) {
-                $where = session::getInstance()->getAttribute('entradaFilter');
-            }//close if
-
-      $fieldsEntrada = array(
-        entradaBodegaTableClass::ID,
-        entradaBodegaTableClass::FECHA,
-        entradaBodegaTableClass::EMPLEADO,
-        entradaBodegaTableClass::ESTADO
+      $fieldsSalida = array(
+      salidaBodegaTableClass::EMPLEADO,
+      salidaBodegaTableClass::ESTADO,
+      salidaBodegaTableClass::FECHA,
+      salidaBodegaTableClass::ID
       );
       $fieldsEmpleado = array(
         empleadoTableClass::NOMBRE,
@@ -43,10 +43,10 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
         empleadoTableClass::NOMBRE,
         empleadoTableClass::ID
       );
-      $fJoin1 = entradaBodegaTableClass::EMPLEADO;
+      $fJoin1 = salidaBodegaTableClass::EMPLEADO;
       $fJoin2 = empleadoTableClass::ID;
       $orderBy = array(
-        entradaBodegaTableClass::FECHA
+        salidaBodegaTableClass::FECHA
       );
       $fieldsInsumo = array(
         insumoTableClass::ID,
@@ -64,10 +64,10 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
       }//close if
 
       $f = array(
-        entradaBodegaTableClass::ID
+        salidaBodegaTableClass::ID
       );
       $lines = config::getRowGrid();
-      $this->cntPages = entradaBodegaTableClass::getAllCount($f, true, $lines, $where);
+      $this->cntPages = salidaBodegaTableClass::getAllCount($f, true, $lines, $where);
       if (request::getInstance()->hasGet('page')) {
         $this->page = request::getInstance()->getGet('page');
       } else {
@@ -76,8 +76,8 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
       $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo, false);
       $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
       $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado2, false);
-      $this->objEntradaBodega = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
-      $this->defineView('index', 'entradaBodega', session::getInstance()->getFormatOutput());
+      $this->objEntradaBodega = salidaBodegaTableClass::getAllJoin($fieldsSalida, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+      $this->defineView('index', 'salidaBodega', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

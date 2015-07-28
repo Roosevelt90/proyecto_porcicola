@@ -9,11 +9,11 @@ use mvc\view\viewClass as view ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
-<?php $id = entradaBodegaTableClass::ID ?>
-<?php $fechaEntrada = entradaBodegaTableClass::FECHA ?>
+<?php $id = salidaBodegaTableClass::ID ?>
+<?php $fechaEntrada = salidaBodegaTableClass::FECHA ?>
 <?php $id_empleado = empleadoTableClass::ID ?>
 <?php $nombre_empleado = empleadoTableClass::NOMBRE ?>
-<?php $estado = entradaBodegaTableClass::ESTADO ?>
+<?php $estado = salidaBodegaTableClass::ESTADO ?>
 <?php $countDetale = 1 ?>
 
 <main class="mdl-layout__content mdl-color--grey-100">
@@ -25,13 +25,13 @@ use mvc\request\requestClass as request ?>
         <div class="col-xs-12 text-center">
 
           <h2>
-            <?php echo i18n::__('RegistrosEntrada') ?> 
+           Registro de salida de bodega
           </h2>
         </div>
       </div>
       <br /> <br />
       <div style="margin-bottom: 10px; margin-top: 30px">
-        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertEntrada') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertSalida') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="new">
           <?php echo i18n::__('registrar', null, 'ayuda') ?>
         </div>
@@ -88,7 +88,7 @@ use mvc\request\requestClass as request ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                     </div> 
-                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info active btn-sm fa fa-eye"> </a>
+                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info active btn-sm fa fa-eye"> </a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                     </div>  
@@ -111,7 +111,7 @@ use mvc\request\requestClass as request ?>
               </div>
               <div class="modal-footer">
                 <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
-                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteEntrada') ?>')"> <?php echo i18n::__('inhabil') ?></button>
+                <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteSalida') ?>')"> <?php echo i18n::__('inhabil') ?></button>
               </div>
             </div>
           </div>
@@ -123,10 +123,10 @@ use mvc\request\requestClass as request ?>
               <div class="modal-body">
                 <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleEntrada') ?>">
 
-                  <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_ENTRADA, true) ?>">
+                  <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaBaseTableClass::ID_SALIDA, true) ?>">
 
                   <h3>tipo insumo</h3>
-                  <select name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::TIPO_INSUMO, true) ?>">
+                  <select name="<?php echo detalleSalidaBodegaBaseTableClass::getNameField(detalleSalidaBodegaTableClass::TIPO_INSUMO, true) ?>">
                     <option value="">...</option>
                     <?php foreach ($objTipoInsumo as $key): ?>
                       <option value="<?php echo $key->id ?>"><?php echo $key->descripcion ?></option>
@@ -134,7 +134,7 @@ use mvc\request\requestClass as request ?>
                   </select>
 
                   <h3><?php echo i18n::__('insumo') ?></h3>
-                  <select name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_INSUMO, true) ?>">
+                  <select name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::ID_INSUMO, true) ?>">
                     <option value="">...</option>
                     <?php foreach ($objInsumo as $key): ?>
                       <option value="<?php echo $key->id ?>"><?php echo $key->nombre_insumo ?></option>
@@ -143,7 +143,7 @@ use mvc\request\requestClass as request ?>
 
 
                   <h3><?php echo i18n::__('cantidad') ?></h3>
-                  <input type="number" name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::CANDITDAD, true) ?>">
+                  <input type="number" name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true) ?>">
 
                 </form>
               </div>
@@ -163,13 +163,13 @@ use mvc\request\requestClass as request ?>
       <div class="text-right">
         <nav>
           <ul class="pagination" id="slqPaginador">
-            <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
+            <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
             <?php $count = 0 ?>
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-              <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
+              <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
               <?php $count ++ ?>        
             <?php endfor//close for  ?>
-            <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
+            <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
           </ul>
         </nav>
       </div> 

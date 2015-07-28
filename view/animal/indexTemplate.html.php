@@ -1,20 +1,26 @@
-<?php use mvc\routing\routingClass as routing ?>
+<?php
 
-<?php use mvc\i18n\i18nClass as i18n ?>
+use mvc\routing\routingClass as routing ?>
 
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\i18n\i18nClass as i18n ?>
+
+<?php
+
+use mvc\view\viewClass as view ?>
 
 <?php $idAnimal = animalTableClass::ID ?>
 <?php $peso = animalTableClass::PESO ?>
 <?php $fecha = animalTableClass::FECHA_NACIMIENTO ?>
-<?php $edad= animalTableClass::EDAD ?>
+<?php $edad = animalTableClass::EDAD ?>
 <?php $parto = animalTableClass::PARTO ?>
 <?php $precio_animal = animalTableClass::PRECIO_ANIMAL ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $lote = loteTableClass::NOMBRE ?>
 <?php $raza = razaTableClass::NOMBRE_RAZA ?>
 
-<?php  $countDetale = 1 ?>
+<?php $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--grey-100">
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">
@@ -30,27 +36,27 @@
           <div class="col-xs-12 text-center">
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
-                    <?php echo i18n::__('registrar', null, 'ayuda') ?>
-                </div>
+              <?php echo i18n::__('registrar', null, 'ayuda') ?>
+            </div>
             <a id="deleteMasa" href="#" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-                </div> 
+              <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+            </div> 
             <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                </div>
-         <!--<a href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>-->
-       <a id="deleteFilter" class="btn btn-sm btn-primary fa fa-reply" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"></a>  
+              <?php echo i18n::__('buscar', null, 'ayuda') ?>
+            </div>
+     <!--<a href="#" data-target="#myModalReport" data-toggle="modal" class="btn btn-success btn-xs lead"><?php echo i18n::__('report') ?></a>-->
+            <a id="deleteFilter" class="btn btn-sm btn-primary fa fa-reply" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersAnimal') ?>"></a>  
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-                     <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-                </div> 
-            
+              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+            </div> 
+
             <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportAnimal') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
-          <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
-                  <?php echo i18n::__('reporte', null, 'ayuda') ?>
-                </div>
-            
+            <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+              <?php echo i18n::__('reporte', null, 'ayuda') ?>
+            </div>
+
           </div>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -61,9 +67,9 @@
               <th><?php echo i18n::__('identification', null, 'animal') ?></th>
               <th><?php echo i18n::__('date_birth', null, 'animal') ?></th>
               <th><?php echo i18n::__('peso', null, 'animal') ?></th>
-              
+
               <th><?php echo i18n::__('genero', null, 'animal') ?></th>
-             
+
               <th><?php echo i18n::__('lote', null, 'animal') ?></th>
               <th><?php echo i18n::__('raza', null, 'animal') ?></th>
               <th><?php echo i18n::__('precio', null, 'animal') ?></th>
@@ -77,21 +83,21 @@
                 <td><?php echo $key->$idAnimal ?></td>
                 <td><?php echo $key->$fecha ?></td>  
                 <td><?php echo $key->$peso ?></td>
-            
+
                 <td><?php echo $key->$genero ?></td>
-               
+
                 <td><?php echo $key->$lote ?></td>
                 <td><?php echo $key->$raza ?></td>
                 <td><?php echo $key->$precio_animal ?></td>
                 <td>
-                  <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editAnimal', array(animalTableClass::ID => $key->$idAnimal)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">edit</i></a>
+                  <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editAnimal', array(animalTableClass::ID => $key->$idAnimal)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
-                                      <?php echo i18n::__('modificar', null, 'ayuda') ?>
-                                  </div> 
-                  <a  id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$idAnimal ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">delete</i></a>
-                   <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
-                                      <?php echo i18n::__('eliminar', null, 'ayuda') ?>
-                                  </div> 
+                    <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                  </div> 
+                  <a  id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$idAnimal ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
+                    <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                  </div> 
                 </td>
               </tr>
               <!-- WINDOWS MODAL DELETE -->
@@ -107,7 +113,7 @@
                 </div>
               </div>
             </div>
-   <?php  $countDetale++ ?>
+            <?php $countDetale++ ?>
           <?php endforeach ?>
           </tbody>
         </table>
@@ -308,9 +314,9 @@
                                 <select name="report[genero]">
                                     <option value="default">...</option>
 <?php foreach ($objGenero as $key): ?>
-                                            <option value="<?php echo $key->id ?>">
+                                                <option value="<?php echo $key->id ?>">
   <?php echo $key->nombre_genero ?>
-                                            </option>
+                                                </option>
 <?php endforeach; ?>
                                 </select>
                             </th>
@@ -322,9 +328,9 @@
                             <th>
                                 <select name="report[lote]">
                                     <option value="default">...</option>
-<?php // foreach ($objLote as $key):  ?>
-                                        <option value="<?php // echo $key->id   ?>">
-<?php //echo $key->nombre_lote  ?>
+<?php // foreach ($objLote as $key):   ?>
+                                        <option value="<?php // echo $key->id     ?>">
+<?php //echo $key->nombre_lote   ?>
                                         </option>
 <?php //endforeach; ?>
                                 </select>
@@ -332,16 +338,16 @@
                         </tr>
                         <tr>
                             <th>
-<?php // echo i18n::__('raza', null, 'animal')  ?>:
+<?php // echo i18n::__('raza', null, 'animal')   ?>:
                             </th>
                             <th>
                                 <select name="report[raza]">
                                     <option value="default">... </option>
-<?php //foreach ($objRaza as $key):  ?>
+<?php //foreach ($objRaza as $key):   ?>
                                         <option value="<?php echo $key->id ?>">
-<?php // echo $key->nombre_raza  ?>
+<?php // echo $key->nombre_raza   ?>
                                         </option>
-<?php //endforeach;  ?>
+<?php //endforeach;   ?>
                                 </select>
                             </th>
                         </tr>

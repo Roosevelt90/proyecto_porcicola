@@ -175,7 +175,7 @@ dictionary:
   animal:
     date_birth:           Fecha de nacimiento
     precio_compra:        Precio de compra
-    identification:       Numero de identifacion
+    identification:       Numero de Identificación
     peso_inicial:         Peso inicial
     peso_fin:             Peso final
     precio:               Precio 
@@ -260,6 +260,7 @@ dictionary:
     city:                 Ciudad
     view:                 Ver Proveedor
     insertar:             Insertar proveedor
+    nuev:                 Nuevo Proveedor
     
   depto:
     read:                 Departamento registrados en nuestro sistema
@@ -332,7 +333,7 @@ dictionary:
     
   cliente:
     cliente:              Cliente
-    read:                 clientes 
+    read:                 Clientes 
     edit:                 Modificar cliente
     direccion:            Direccion
     telefono:             Telefono

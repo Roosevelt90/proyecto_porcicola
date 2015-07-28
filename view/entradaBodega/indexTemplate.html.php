@@ -25,23 +25,23 @@
       </div>
       <br /> <br />
       <div style="margin-bottom: 10px; margin-top: 30px">
-        <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('filters') ?></a>
-        <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-          <?php echo i18n::__('buscar', null, 'ayuda') ?>
-        </div>
-        <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFilterFacturaCompra') ?>" class="btn btn-info btn-xs" ><?php echo i18n::__('deleteFilter') ?></a>
-        <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-          <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-        </div>
-        <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('inhMasa') ?></a>
-        <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-          <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
-        </div>
-        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertEntrada') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nueva', null, 'pCompra') ?></a>
+        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertEntrada') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="new">
           <?php echo i18n::__('registrar', null, 'ayuda') ?>
         </div>
-        <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportCompra') ?>" class="btn btn-info btn-xs" ><?php echo i18n::__('reporte') ?></a>
+        <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-exchange"></a>
+        <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+          <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
+        </div>
+        <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
+        <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+          <?php echo i18n::__('buscar', null, 'ayuda') ?>
+        </div>
+        <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFilterFacturaCompra') ?>" class="btn btn-sm btn-primary fa fa-reply" ></a>
+        <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+          <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+        </div>
+        <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportCompra') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
           <?php echo i18n::__('reporte', null, 'ayuda') ?>
         </div>
@@ -74,17 +74,21 @@
                 <td>  
 
                   <?php if ($key->$estado == true): ?>
-                    <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-info fa "  class="btn btn-info btn-xs"><?php echo i18n::__('insertDetail', null, 'vacunacion') ?></a>
+<!--                    <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada)) ?>" class="btn btn-sm btn-default active fa fa-edit"></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                                      <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                                  </div> -->
+                    <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-default fa fa-navicon" ></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                     </div> 
-                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info btn-xs"> <?php echo i18n::__('viewDetail', null, 'vacunacion') ?></a>
+                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info active btn-sm fa fa-eye"> </a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                     </div>  
                   <?php endif; ?>
 
-                  <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-danger fa fa-trash-o" ><?php echo i18n::__((($key->$estado == true)) ? 'inhabilitar' : 'habilitar' ) ?></a>
+                  <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-danger fa fa-ban" ><?php echo i18n::__((($key->$estado == true)) ? 'inhabilitar' : 'habilitar' ) ?></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
                     <?php echo i18n::__('habilitar', null, 'ayuda') ?>
                   </div> 

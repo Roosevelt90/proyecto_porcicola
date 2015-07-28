@@ -42,24 +42,23 @@
                     </form>
                 </div>-->
             <div style="margin-bottom: 10px; margin-top: 30px">
-
-                <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('filters') ?></a>
-               <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                </div>
-                <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFilterFacturaCompra') ?>" class="btn btn-info btn-xs" ><?php echo i18n::__('deleteFilter') ?></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-                     <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-                </div>
-                <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('inhMasa') ?></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-                    <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
-                </div>
-                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nueva', null, 'pCompra') ?></a>
+                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
-                <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportCompra') ?>" class="btn btn-info btn-xs" ><?php echo i18n::__('reporte') ?></a>
+               <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-trash-o"></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
+                </div>
+                <a id="filter" href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
+               <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                </div>
+                <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFilterFacturaCompra') ?>" class="btn btn-sm btn-primary fa fa-reply" ></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                     <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+                </div>
+                <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportCompra') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
                   <?php echo i18n::__('reporte', null, 'ayuda') ?>
                 </div>
@@ -93,7 +92,7 @@
                               <td><?php echo $key->$proveedor ?></td>
                               <td>  
                                   <?php if ($key->$estado == true): ?>
-                                  <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))        ?>" class="btn btn-primary btn-xs"><?php // echo i18n::__('edit', null, 'user')    ?></a>-->
+                                  <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))        ?>" class="btn btn-default active btn-sm fa fa-edit"><?php // echo i18n::__('edit', null, 'user')    ?></a>-->
                                     <div class="mdl-tooltip mdl-tooltip--large" for="edit<?php echo $countDetale ?>">
                                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                   </div>  

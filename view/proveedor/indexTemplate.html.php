@@ -88,7 +88,7 @@
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
             </div>
-            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertProveedor') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('insertar', null, 'cliente') ?></a>
+            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertProveedor') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('nuev', null, 'proveedor') ?></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>

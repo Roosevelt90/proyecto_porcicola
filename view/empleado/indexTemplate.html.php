@@ -91,23 +91,23 @@
         
         <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <a id="filter" href="#myModalFilter"  class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-            <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-              <?php echo i18n::__('buscar', null, 'ayuda') ?>
-            </div>
-            <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersEmpleado') ?>" class="btn btn-xs btn-primary"><?php echo i18n::__('deleteFilter') ?> </a>  
-            <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-            </div>
-            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertEmpleado') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('new', null, 'empleado') ?></a>
+            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertEmpleado') ?>" class="btn btn-sm btn-default active fa fa-plus-square"> </a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
-            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportEmpleado') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('reporte') ?></a>
+            <a id="filter" href="#myModalFilter"  class="btn btn-sm btn-info active fa fa-search"></a>
+            <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+              <?php echo i18n::__('buscar', null, 'ayuda') ?>
+            </div>
+            <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersEmpleado') ?>" class="btn btn-sm btn-primary fa fa-reply"> </a>  
+            <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+            </div>
+            
+            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportEmpleado') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
               <?php echo i18n::__('reporte', null, 'ayuda') ?>
             </div>
-
           </div>
         </div>
       </form>
@@ -142,12 +142,12 @@
               <th><?php echo $key->$direccion ?></th>
 
               <td>
-                <a id="insert<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editEmpleado', array(empleadoTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'empleado') ?></a>
+                <a id="insert<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editEmpleado', array(empleadoTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">edit</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="insert<?php echo $countDetale ?>">
                   <?php echo i18n::__('modificar', null, 'ayuda') ?>
                 </div> 
 
-                <a id="delete<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="btn btn-sm btn-danger fa fa-trash-o" ><?php echo i18n::__('delete') ?></a>
+                <a id="delete<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" ><i class="material-icons">delete</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="delete<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 

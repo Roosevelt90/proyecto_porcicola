@@ -264,6 +264,7 @@ dictionary:
     city:                 City
     view:                 View Provider
     insertar:             Insert provider
+    nuev:                 New Provider
     
   depto:
     read:                 Departament register

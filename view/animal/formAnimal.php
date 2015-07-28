@@ -17,7 +17,7 @@
 
                 <table class="table table-responsive ">    
                     <tr>
-                        <th>  <?php echo i18n::__('peso', NULL, 'animal') ?>:</th>
+                        <th>  <?php echo i18n::__('kg', NULL, 'animal') ?>:</th>
                         <th> 
                             <input required  placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('peso', NULL, 'animal') : $objAnimal[0]->$peso = ucwords($objAnimal[0]->$peso)) ?>" type="number" min="0"  name="<?php echo animalTableClass::getNameField(animalTableClass::PESO, true) ?>" >
                         </th>   
@@ -32,7 +32,7 @@
                         </th>
                     </tr>
                     <tr>
-                        <th>  <?php echo i18n::__('precio', NULL, 'animal') ?>:</th>
+                        <th>  <?php echo i18n::__('pesos', NULL, 'animal') ?>:</th>
                         <th> 
                             <input required  placeholder="<?php echo ((isset($objAnimal) == FALSE) ? i18n::__('precio', NULL, 'animal') : $objAnimal[0]->$precio_animal= ucwords($objAnimal[0]->$precio_animal)) ?>" type="number" min="0"  name="<?php echo animalTableClass::getNameField(animalTableClass::PRECIO_ANIMAL, true) ?>" >
                         </th>   
@@ -43,7 +43,8 @@
                         </th>
                         <th>
                             <select name="<?php echo animalTableClass::getNameField(animalTableClass::GENERO_ID, true) ?>">
-                                <?php foreach ($objGenero as $key): ?>
+                                <option>...</option>                               
+                                    <?php foreach ($objGenero as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->nombre_genero ?>
                                     </option>
@@ -57,6 +58,7 @@
                         </th>
                         <th>
                             <select name="<?php echo animalTableClass::getNameField(animalTableClass::LOTE_ID, true) ?>">
+                                <option>...</option> 
                                 <?php foreach ($objLote as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->nombre_lote ?>
@@ -71,6 +73,7 @@
                         </th>
                         <th>
                             <select name="<?php echo animalTableClass::getNameField(animalTableClass::RAZA, true) ?>">
+                                <option>...</option> 
                                 <?php foreach ($objRaza as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->nombre_raza ?>

@@ -18,30 +18,30 @@
                     </h2>
                 </div>
             </div>
-            <br /> <br />
+            <div class="row">
       
-            <div style="margin-bottom: 10px; margin-top: 30px">
-
-                <a href="#" data-target="#myModalFilter" data-toggle="modal" id="filter" class="btn btn-info fa fa-search "><?php echo i18n::__('filters') ?></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                </div>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteFiltersVacunacion') ?>" id="deleteFilter" class="btn btn-info btn-xs" ><?php echo i18n::__('deleteFilter') ?></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-                     <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-                </div>
-                <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-xs btn-default active"><?php echo i18n::__('inhMasa') ?></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-                    <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
-                </div>
-                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'insertVacunacion') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('newRegistroVacunacion') ?></a>
+           <div class="col-xs-4-offset-4 nuevo">
+                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'insertVacunacion') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'reportVacunacion') ?>" id="reporte" class="btn btn-info btn-xs" ><?php echo i18n::__('reporte') ?></a>
+                <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-ellipsis-v"></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
+                </div>
+                <a href="#" data-target="#myModalFilter" data-toggle="modal" id="filter" class="btn btn-sm btn-info active fa fa-search"></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                    <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                </div>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteFiltersVacunacion') ?>" id="deleteFilter" class="btn btn-sm btn-primary fa fa-reply" ></a>
+                <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                     <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+                </div>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'reportVacunacion') ?>" id="reporte" class="btn btn-primary active btn-sm fa fa-download" ></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
                   <?php echo i18n::__('reporte', null, 'ayuda') ?>
                 </div>
+            </div>
             </div>
             <?php view::includeHandlerMessage() ?>
 
@@ -59,7 +59,7 @@
                             <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
                             <th><?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?> </th>
                             <th><?php echo i18n::__('animal', null, 'animal') ?> </th>
-                            <th><?php echo i18n::__('veterinario') ?> </th>
+                            <th><?php echo i18n::__('veterinario', null, 'veterinario') ?> </th>
                             <th><?php echo i18n::__('action') ?></th>
                         </tr>
                     </thead>
@@ -78,19 +78,19 @@
                               <td><?php echo $key->$nom_veterinario ?></td>
                               <td>          
                                   
-                                  <a id="editDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'editVacunacion', array(vacunacionTableClass::ID => $key->id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit', null, 'user') ?></a>
+                                  <a id="editDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'editVacunacion', array(vacunacionTableClass::ID => $key->id)) ?>" class="btn btn-default active btn-sm fa fa-edit"></a>
                                   <div class="mdl-tooltip mdl-tooltip--large" for="editDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                   </div>    
-                                  <a href="#" id="deleteRegistro<?php echo $countDetale ?>" class="btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" data-target="" onclick="modalDelete(<?php echo $key->id ?>, '<?php echo vacunacionBaseTableClass::getNameField(vacunacionTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion') ?>')"><?php echo i18n::__('inhRegistro') ?></a>
+                                  <a href="#" id="deleteRegistro<?php echo $countDetale ?>" class="btn btn-sm btn-default fa fa-ban" data-toggle="modal" data-target="" onclick="modalDelete(<?php echo $key->id ?>, '<?php echo vacunacionBaseTableClass::getNameField(vacunacionTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion') ?>')"></a>
                                   <div class="mdl-tooltip mdl-tooltip--large" for="deleteRegistro<?php echo $countDetale ?>">
                                       <?php echo i18n::__('inhabilitar', null, 'ayuda') ?>
                                   </div>    
-                                  <a href="#" class="btn btn-sm btn-info fa " id="insertDetalle<?php echo $countDetale ?>" data-toggle="modal" data-target="" onclick="myModalDetail(<?php echo $key->id ?>)" class="btn btn-info btn-xs"><?php echo i18n::__('insertDetail', null, 'vacunacion') ?></a>
+                                  <a href="#"  id="insertDetalle<?php echo $countDetale ?>" data-toggle="modal" data-target="" onclick="myModalDetail(<?php echo $key->id ?>)" class="btn btn-sm btn-primary fa fa-bars"></a>
                                   <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                                   </div> 
-                                  <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'viewVacunacion', array(vacunacionTableClass::ID => $key->id)) ?>" class="btn btn-info btn-xs"> <?php echo i18n::__('viewDetail', null, 'vacunacion') ?></a>
+                                  <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'viewVacunacion', array(vacunacionTableClass::ID => $key->id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
                                   <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                                   </div>    

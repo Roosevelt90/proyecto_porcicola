@@ -22,8 +22,8 @@ dictionary:
     nombreCliente:        Client Name
     cliente:              Customer
     personal:             Staff
-    Cliente:              Customers
-    proveedor:            Providers
+    Clientes:              Customers
+    proveedores:            Providers
     veterinario:          veterinarians
     telefono:             Phone
     fechaInicio:          Start Date
@@ -47,7 +47,7 @@ dictionary:
     usuario:              User
     contraseña:           Password
     Recordar mis datos:   Remember you data
-    Olvidastes tu contraseña?: Did your password?
+    Olvidastes tu contraseña?: Forgot your password?
     id:                   Id
     nombre_vacuna:        name Vaccine
     numero de documento:  Document number
@@ -56,7 +56,7 @@ dictionary:
     fecha_fabricacion_vacuna:  Manufacturing date
     fecha_vencimiento_vacuna:  Expiration Date
     Escoja Idioma:        Select Lenguage/Selecione el Idioma
-    Identificacion:       Identification
+    Identificacion:       Number of Identification
     Exit:                 Exit
     lunes:                Monday
     martes:               Tuesday
@@ -90,7 +90,6 @@ dictionary:
     nombre:               Name
     newCli:               New Client
     identificacion:       Number of document
-    cliente:              Client
     cargo:                Position
     dataUser:             Date user
     credencial:           Credential
@@ -184,13 +183,15 @@ dictionary:
     identification:       Number of Identification
     peso_inicial:         Initial weight
     peso_fin:             Final weight
+    pesos:                Price $
     precio:               Price
     edit:                 Edit the registry of the animal
     nuev:                 New Pig
     animal:               Animal
+    kg:                   Weight (Kg)
     report:               Report
     new:                  Register a new animal
-    peso:                 Weignt
+    peso:                 Weight
     edad:                 Age (months)
     edad_inicial:         Initial Age
     edad_fin:             Final Age
@@ -325,6 +326,7 @@ dictionary:
     edit:                 Modify Batch
     lote:                 Batch
     new:                  Registering a new batch
+    number:               Number
     
   insumo:
     read:                 Inputs
@@ -353,7 +355,7 @@ dictionary:
   empleado:
     read:                 Employe register
     edit:                 Edit employe
-    empleado:             Employe
+    empleado:             Employes
     direccion:            Address
     telefono:             Phone
     new:                  New employe
@@ -485,33 +487,33 @@ dictionary:
     new:                   Register a New Bill of Sale
     
   ayuda:
-    registrar:             New Record
-    modificar:             Modify the Registry
-    buscar:                With this option you can get a faster and precisely the desired results
-    eliBusqueda:           Undo the search performed and redisplay all the records
-    reporte:               The system generates a report type document all existing records
-    eliminarMasa:          Once the selection using this option you can delete all records suggested
-    verDetalle:            View Details Registration
-    insertDetalle:         Insert a registration Detail
-    verDetalleFact:        View details on the bill
-    eliminar:              Unregister
-    editDetalle:           Change the log Detail
-    inhabilitarDetalle:    Disables Record detail
-    habilitarDet:          Enables Record detail
-    eliSelDetalle:         Once the selection using this option you can delete the details set
-    buscarReporteDet:      You could generate search data to include in the report document
-    eliBusDetalle:         Undo the search performed and redisplay all the details
-    inhabilitar:           Disable logging
-    habilitar:             Enables logging
-    inhabilitarMasa:       Once the selection using this option you can disable all records suggested
-    habilitarMasa:         Once the selection using this option you can enable all records suggested
-    inhabilitarMasaDetalle: Once the selection using this option you can disable all the details set
-    habilitarMasaDetalle:   Once the selection using this option you can enable all the details set
-    inhFactura:            Disabling the Bill
-    habFactura:            Enable Bill
-    insertFactura:         Insert a bill detail
-    inhabilitarMasaFact:   Once the selection using this option you can disable all the invoices indicated
-    habilitarMasaFact:     Once the selection using this option you can enable all invoices indicated
+    registrar:             Insert:New Record
+    modificar:             Edit:Modify the Registry
+    buscar:                Search:With this option you can get a faster and precisely the desired results
+    eliBusqueda:           Remove Search:Undo the search performed and redisplay all the records
+    reporte:               Report:The system generates a report type document all existing records
+    eliminarMasa:          Remove Selection:Once the selection using this option you can delete all records suggested
+    verDetalle:            See Detail:View Details Registration
+    insertDetalle:         Insert Detail:Insert a registration Detail
+    verDetalleFact:        see Detail:View details on the bill
+    eliminar:              Delete:Deletes the record
+    editDetalle:           Modify Detail:Change the log Detail
+    inhabilitarDetalle:    Disable Detail:Disables Record detail
+    habilitarDet:          Enable Detail:Enables Record detail
+    eliSelDetalle:         Remove Selection:Once the selection using this option you can delete the details set
+    buscarReporteDet:      Search For Reports:You could generate search data to include in the report document
+    eliBusDetalle:         Remove Search:Undo the search performed and redisplay all the details
+    inhabilitar:           Disable:Disable logging
+    habilitar:             Enable:Enables logging
+    inhabilitarMasa:       Disable Selection:Once the selection using this option you can disable all records suggested
+    habilitarMasa:         Enable Selection:Once the selection using this option you can enable all records suggested
+    inhabilitarMasaDetalle: Disable Selection:Once the selection using this option you can disable all the details set
+    habilitarMasaDetalle:   Enable Selection:Once the selection using this option you can enable all the details set
+    inhFactura:            Disable:Disabling the Bill
+    habFactura:            Enable:Enable Bill
+    insertFactura:         Record:Insert a bill detail
+    inhabilitarMasaFact:   Disable Selection:Once the selection using this option you can disable all the invoices indicated
+    habilitarMasaFact:     Enable Selection:Once the selection using this option you can enable all invoices indicated
     
   errors:
     00001:                The module and the requested action does not exist.

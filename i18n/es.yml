@@ -4,59 +4,59 @@ dictionary:
   default:
     RegistrosEntrada:     Entrada de bodega
     personal:             Personal
-    fechaFabricacion:     Fecha de fabricacion
-    fechaVencimiento:     Fecha de vencimiento
-    tipoInsumo:           Tipo de insumo
-    valorInsumo:          Valor de insumo
-    nombreInsumo:         Nombre del insumo
-    descripcion:          Descripcion
+    fechaFabricacion:     Fecha de Fabricación
+    fechaVencimiento:     Fecha de Vencimiento
+    tipoInsumo:           Tipo de Insumo
+    valorInsumo:          Valor de Insumo
+    nombreInsumo:         Nombre del Insumo
+    descripcion:          Descripción
     nuev:                 Nuevo
     inhabil:              Inhabilitar
     nuevDatos:            Nuevo Datos de Usuario
-    newRegistroVacunacion: Nuevo registro de vacunacion
-    cerrar:              Cerrar
-    buscar:              Buscar
-    ver:                 Ver
-    edit:                Editar
+    newRegistroVacunacion: Nuevo Registro de Vacunación
+    cerrar:               Cerrar
+    buscar:               Buscar
+    ver:                  Ver
+    edit:                 Editar
     facturaVenta:         Facturas de venta
-    nombreCliente:       Nombre de cliente
-    cliente:             Cliente
-    personal:            Personal
-    Cliente:             Clientes
-    proveedor:           Proveedores
-    veterinario:         Veterinarios
-    telefono:            Telefono
-    fechaInicio:          Fecha de inicio
-    fechaFin:             Fecha final
-    inhabilitar:         Inhabilitar factura
-    habilitar:           Habilitar factura
-    inhMasa:             Inhabilitar la Selección
-    habMasa:             Habilitar la Selección
-    inhRegistro:         Inhabilitar el registro
-    habRegistro:         Habilitar el registro
-    inhDetalle:          Inhabilitar el Detalle
-    habDetalle:          Habilitar Detalle
+    nombreCliente:        Nombre de Cliente
+    cliente:              Cliente
+    personal:             Personal
+    Clientes:             Clientes
+    proveedores:          Proveedores
+    veterinario:          Veterinarios
+    telefono:             Teléfono
+    fechaInicio:          Fecha de Inicio
+    fechaFin:             Fecha Final
+    inhabilitar:          Inhabilitar Factura
+    habilitar:            Habilitar Factura
+    inhMasa:              Inhabilitar la Selección
+    habMasa:              Habilitar la Selección
+    inhRegistro:          Inhabilitar el Registro
+    habRegistro:          Habilitar el Registro
+    inhDetalle:           Inhabilitar el Detalle
+    habDetalle:           Habilitar Detalle
     factura:              Facturas
-    facturaCompra:        Facturas de compra
+    facturaCompra:        Facturas de Compra
     confirmInhabilitar:   Esta seguro que desea inhabilitar esta factura
     confirmInh:           Esta seguro que desea inhabilitar los registros
     conInhSel:            Esta seguro que desea inhabilitar las facturas seleccionadas
     confirmHabilitar:     Esta seguro que desea habilitar esta factura
     Usuario y contraseña incorrectos:   Usuario y contraseña incorrectos
-    proveedor:            Nombre del proveedor
+    proveedor:            Proveedor
     usuario:              Usuario
     contraseña:           Contraseña
     Recordar mis datos:   Recordar mis datos
-    Olvidastes tu contraseña?:  Olvidastes tu contraseña?
+    Olvidastes tu contraseña?:  Olvidó su contraseña?
     id:                   Id
     nombre_vacuna:        Nombre Vacuna
-    numero de documento:  Numero de documento
-    direccion:            Direccion
+    numero de documento:  Número de Documento
+    direccion:            Dirección
     dosis:                Dosis
     fecha_fabricacion_vacuna:  Fecha Fabricacion
     fecha_vencimiento_vacuna:  Fecha Vencimiento
     Escoja Idioma:        Selecione el Idioma/Select Lenguage
-    Identificacion:       Identificacion
+    Identificacion:       Identificación
     Exit:                 Salir
     lunes:                Lunes
     martes:               Martes
@@ -78,23 +78,22 @@ dictionary:
     noviembre:            Noviembre
     diciembre:            Diciembre
     Entrar:               Entrar
-    disponible_venta:     Disponible para la venta
+    disponible_venta:     Disponible para la Venta
     reporte:              Reporte
     report:               Reporte
     buscar:               Buscar
     filterBy:             Buscar Por
-    new:                  Nuevo registro
-    deleteFilter:         Eliminar Busqueda
+    new:                  Nuevo Registro
+    deleteFilter:         Eliminar Búsqueda
     user:                 Usuario
     empleado:             Empleado
     nombre:               Nombre Completo
     newCli:               Nuevo Cliente
-    identificacion:       identificacion
-    cliente:              Nombre Cliente
+    identificacion:       Número de Identificación
     cargo:                Cargo
     dataUser:             Datos usuario
     credencial:           Credenciales
-    userCredencial:       Asignacion de credencial
+    userCredencial:       Asignación de credencial
     depto:                Departamento
     city:                 Ciudad
     raza:                 Raza
@@ -106,7 +105,7 @@ dictionary:
     register:             Registrar
     update:               Actualizar
     delete:               Eliminar
-    modules:              Seleccione un modulo
+    modules:              Seleccione un Módulo
     action:               Acciones
     create:               Insertar
     errorCreateBitacora:  Se ha producido un error al crear
@@ -121,13 +120,13 @@ dictionary:
     name:                 Nombre
     identification:       Id
     eliminar filtros:     Eliminar Búsqueda
-    borrar seleccion:     Eliminar Seleccion
+    borrar seleccion:     Eliminar Selección
     factura:              Facturación
     pVenta:               Factura venta
     spanish:              Español
     english:              Ingles
     filters:              Buscar
-    accion:               Accion
+    accion:               Acción
     usuarios:             Usuarios
     deleteMasive:         Confirmar eliminar los elementos seleccionados
     confirmDeleteMasive:  Desea eliminar los elementos seleccionados
@@ -154,18 +153,18 @@ dictionary:
     sobre:                Sobre
     contacto:             Contacto
     legalInfor:           Información Legal
-    ingBusqueda:          Ingrese su búsqueda...
+    ingBusqueda:          Ingrese su Búsqueda...
         
   veterinario:
     veterinario:         Veterinario
     read:                 Veterinarios 
     edit:                 Modificar Veterinario
-    direccion:            Direccion
-    telefono:             Telefono
+    direccion:            Dirección
+    telefono:             Teléfono
     new:                  Registrar un Nuevo Veterinario
     action:               Acciones
     identification:       Id
-    Number of document:   Numero de documento
+    Number of document:   Número de documento
     document type:        Tipo documento
     name:                 Nombre
     city:                 Ciudad
@@ -175,29 +174,31 @@ dictionary:
   animal:
     date_birth:           Fecha de nacimiento
     precio_compra:        Precio de compra
-    identification:       Numero de Identificación
+    identification:       Número de Identificación
     peso_inicial:         Peso inicial
     peso_fin:             Peso final
+    pesos:                Precio $
     precio:               Precio 
-    edit:                 Editar el registro del animal
+    kg:                   Peso (Kg)
+    edit:                 Editar el Registro del Animal
     animal:               Animal
     report:               Reporte
     nuev:                 Nuevo Animal
-    new:                  Registrar un nuevo animal
+    new:                  Registrar un Nuevo Animal
     peso:                 Peso
     edad:                 Edad (meses)
     edad_inicial:         Edad inicial
     edad_fin:             Edad final
-    fecha:                Fecha de nacimiento
-    fecha_inicial:        Fecha de nacimiento inicial
-    fecha_fin:            Fecha de nacimiento final
-    genero:               Genero
-    parto:                Numero de Partos
+    fecha:                Fecha de Nacimiento
+    fecha_inicial:        Fecha de Nacimiento Inicial
+    fecha_fin:            Fecha de Nacimiento Final
+    genero:               Género
+    parto:                Número de Partos
     lote:                 Lote
     raza:                 Raza
     Vacunas:              Vacunas
-    Registro:             Registro vacunas
-    vacunacion:           Vacunacion
+    Registro:             Registro Vacunas
+    vacunacion:           Vacunación
     registroVacunacion:   Registro de Vacunación
     succesCreate:         El animal se ha registrado de forma exitosa   
     errorCreate:          No se ha podido crear el animal vuelve a intentarlo
@@ -208,12 +209,12 @@ dictionary:
     succesUpdate:         El registro se ha modificado exitosamente 
     errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
     read:                 Cerdos
-    confirm:              Desea eliminar el registro
+    confirm:              Desea Eliminar el Registro
     
   user:
     usuario:              Usuario
-    newUser:              Registro de un nuevo usuario 
-    user:                 Nombre de usuario
+    newUser:              Registro de un Nuevo Usuario 
+    user:                 Nombre de Usuario
     pass:                 Contraseña
     rePass:               Repetir contraseña
     register:             Registrar
@@ -222,14 +223,14 @@ dictionary:
     oldPass:              Nueva Contraseña
     read:                 Usuarios 
     delete:               Eliminar
-    direccion:            Direccion
+    direccion:            Dirección
     modify:               Modificar
     quest:                Pregunta de seguridad
     answer:               Respuesta de seguridad
     delete:               Eliminar
     confirmDelete:        Eliminar usuario
     bodyDelete:           Desea eliminar el registro
-    date:                 Fecha de creacion
+    date:                 Fecha de creación
     succesCreate:         El usuario se ha registrado de forma exitosa   
     errorCreate:          No se ha podido crear el usuario vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los usuarios seleccionados exitosamente
@@ -237,25 +238,25 @@ dictionary:
     succesDelete:         Se ha eliminado el usuario exitosamente
     errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
     succesUpdate:         El usuario se ha modificado exitosamente 
-    Seleccione modulo:    Select module
+    Seleccione modulo:    Seleccione el Módulo
     errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
-    dpVenta:              Detalle Factura venta
+    dpVenta:              Detalle Factura Venta
     pVenta:               Factura Venta
     factura:              Factura
     
   
     
   proveedor:
-    proveedor:            Provider
+    proveedor:            Proveedor
     read:                 Proveedores 
     edit:                 Modificar Proveedor
-    direccion:            Direccion
-    telefono:             Telefono
-    new:                  Registrar un Nuevo proveedor
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Registrar un Nuevo Proveedor
     action:               Acciones
     identification:       Id
-    Number of document:   Numero de documento
-    document type:        Tipo documento
+    Number of document:   Número de Documento
+    document type:        Tipo Documento
     name:                 Nombre
     city:                 Ciudad
     view:                 Ver Proveedor
@@ -263,7 +264,7 @@ dictionary:
     nuev:                 Nuevo Proveedor
     
   depto:
-    read:                 Departamento registrados en nuestro sistema
+    read:                 Departamentos registrados en nuestro sistema
     new:                  Registra un nuevo departamento
     depto:                Departamento
     edit:                 Modificar departamento
@@ -284,79 +285,80 @@ dictionary:
     
     
   datos:
-    read:                 Datos personales del usuario
-    new:                  Registrar Datos personales del usuario
+    read:                 Datos Personales del Usuario
+    new:                  Registrar Datos Personales del Usuario
     name:                 Nombre
-    tipoDoc:              Tipo de documento
-    numberDoc:            Numero de documento
-    numRegistro:          Numero de documento del Registro
+    tipoDoc:              Tipo de Documento
+    numberDoc:            Número de Documento
+    numRegistro:          Número de Documento del Registro
     lastName:             Apellidos
     register:             Registrar
-    tel:                  Telefono
-    dir:                  Direccion
-    edit:                 Modificar los datos del usuario
+    tel:                  Teléfono
+    dir:                  Dirección
+    edit:                 Modificar los Datos del Usuario
     
   credencial:
     read:                 Credeniales 
-    new:                  Registrar una Nueva credencial
+    new:                  Registrar una Nueva Credencial
     credencial:           Credencial
-    edit:                 Modificar la credencial
+    edit:                 Modificar la Credencial
   
   userCredencial:
-    read:                 Roles asignados
-    new:                  Asignam
-    user:                 usuario
+    read:                 Roles Asignados
+    new:                  Nuevo Rol
+    user:                 Usuario
     credencial:           Credencial
     edit:                 Editar
     
     
   raza:
     read:                 Razas 
-    edit:                 Modificar raza
+    edit:                 Modificar Raza
     raza:                 Raza
-    new:                  Registrar una nueva raza
+    new:                  Registrar una Nueva Raza
     delete:               Eliminar
     confirmDelete:        Eliminar Raza
     
   lote:
     read:                 Lotes
-    edit:                 Modificar lote
+    edit:                 Modificar Lote
     lote:                 Lote
-    new:                  Registrar un nuevo lote
+    new:                  Registrar un Nuevo Lote
+    number:               Número
     
   insumo:
     read:                 Insumos 
-    edit:                 Modificar insumo
+    edit:                 Modificar Insumo
     insumo:               Insumo
-    new:                  Registrar un nuevo insumo
+    new:                  Registrar un Nuevo Insumo
     register:             Nuevo Insumo
     
   cliente:
     cliente:              Cliente
     read:                 Clientes 
-    edit:                 Modificar cliente
-    direccion:            Direccion
-    telefono:             Telefono
-    new:                  Registrar un Nuevo cliente
+    edit:                 Modificar Cliente
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Registrar un Nuevo Cliente
     action:               Acciones
     identification:       Id
-    Number of document:   Numero de documento
-    document type:        Tipo documento
+    Number of document:   Número de Documento
+    document type:        Tipo Documento
     name:                 Nombre
     city:                 Ciudad
     view:                 Ver Cliente
-    insertar:             Insertar cliente
+    insertar:             Insertar Cliente
     
     
     
   empleado:
-    read:                 Empleados registrado
-    edit:                 Modificar empleado
-    empleado:             Empleado
-    direccion:            Direccion
-    telefono:             Telefono
-    new:                  Nuevo empleado
-    confirmDelete:        Eliminar empleado
+    read:                 Empleados Registrados
+    edit:                 Modificar Empleado
+    empleado:             Empleados
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Nuevo Empleado
+    confirmDelete:        Eliminar Empleado
     register:             Registrar 
     nuev:                 Registrar un Nuevo Empleado
     delete:               Eliminar
@@ -368,10 +370,10 @@ dictionary:
     errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
     view:                 Ver Empleado
     action:               Acciones
-    identificacion:       Identificacion
+    identificacion:       Identificación
     identification:       Id
-    Number of document:   Numero de documento
-    document type:        Tipo documento
+    Number of document:   Número de Documento
+    document type:        Tipo Documento
     name:                 Nombre
     city:                 Ciudad
     cargo:                Cargo
@@ -382,12 +384,12 @@ dictionary:
     succesDelete:         Se ha eliminado el empleado exitosamente
     errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
     succesUpdate:         El empleado se ha modificado exitosamente 
-    Seleccione modulo:    Seleccione modulo
+    Seleccione modulo:    Seleccione Módulo
     errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
 
 
   cargo:
-    read:                 Cargo registrados
+    read:                 Cargos
     cargo:                Cargo
     edit:                 Editar Cargos
     new:                  Nuevo cargo
@@ -401,9 +403,9 @@ dictionary:
     view:                 Ver
     
   vacunacion:
-    vacunacion:           Vacunacion
+    vacunacion:           Vacunación
     vaccination:          VACUNACION
-    registroVacunacion:   Registro de vacunacion
+    registroVacunacion:   Registro de Vacunación
     fechaRegistro:        Fecha del Registro
     viewDetail:           Ver Detalle
     insertDetail:         Insertar Detalle
@@ -415,7 +417,7 @@ dictionary:
   detalleVacunacion:
     newDetailVaccination: NUEVO DETALLE DE VACUNACION
     vacuna:               Vacuna
-    fecha:                Fecha de la Vacunacion
+    fecha:                Fecha de la Vacunación
     dosis:                Dosis
     detailVaccination:    DETALLE VACUNACION
     filterReport:         Buscar para Reporte
@@ -423,15 +425,15 @@ dictionary:
     editDetailVaccination: Editar Detalle de Registro Vacunas
     
   vacuna:
-    vacuna:                Vacuna
+    vacuna:                Vacunas
     nameVacuna:            Nombre de la vacuna
-    fecha_fabricacion:     Fecha de fabricacion de la vacuna
+    fecha_fabricacion:     Fecha de fabricación de la vacuna
     fecha_vencimiento:     Fecha de vencimiento de la vacuna
     valor:                 Valor de la vacuna
     read:                  Vacuna
-    new:                   Ingresar una nueva vacuna
-    lote:                  Lote de la vacuna
-    edit:                  Editar la vacuna
+    new:                   Ingresar una Nueva Vacuna
+    lote:                  Lote de la Vacuna
+    edit:                  Editar la Vacuna
     nueva:                 Nueva Vacuna
 
   pVenta:
@@ -444,75 +446,75 @@ dictionary:
    modify:                modificar
    register:              registrar
    details:               detalle
-   nueva:                 Nueva Factura de venta
+   nueva:                 Nueva Factura de Venta
    
   pCompra:                 
-   nueva:                 Nueva Factura de compra
+   nueva:                 Nueva Factura de Compra
     
   dpVenta:
    item:                  Item
    date:                  Fecha
-   numer:                 Numero documento
-   user:                  usuario_id
+   numer:                 Número Documento
+   user:                  Usuario_id
    animal_id:             id animal
    weight:                Peso
    price:                 Precio
    details:               Ver Detalle
-   read:                  Facturas registradas en nuestro sistema
+   read:                  Facturas Registradas en Nuestro Sistema
    edit:                  Editar
-   new:                   Ingrese una nueva factura
+   new:                   Ingrese una Nueva Factura
    modify:                Modificar
    register:              Registrar
    insert:                Insertar
-   succesCreate:         La factura se ha registrado de forma exitosa   
-   errorCreate:          No se ha podido crear la factura vuelve a intentarlo
-   succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
-   errorDeleteMasivo:    No se ha seleccionado ningun registro
-   succesDelete:         Se ha eliminado el registro exitosamente
-   errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
-   succesUpdate:         El registro se ha modificado exitosamente 
-   errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
-   confirm:              Desea eliminar el registro 
+   succesCreate:          La factura se ha registrado de forma exitosa   
+   errorCreate:           No se ha podido crear la factura vuelve a intentarlo
+   succesDeleteMasivo:    Se han eliminado los registros seleccionados exitosamente
+   errorDeleteMasivo:     No se ha seleccionado ningún registro
+   succesDelete:          Se ha eliminado el registro exitosamente
+   errorDelete:           No se ha podido eliminar el registro intentelo mas tarde
+   succesUpdate:          El registro se ha modificado exitosamente 
+   errorUpdate:           Se ha producido un error al modificar el registro intentelo mas tarde
+   confirm:               Desea eliminar el registro 
    Olvidastes tu contraseña? :         Olvidastes tu contraseña?
    Recordar mis datos:                 Recordar mis datos
  
   facturaCompra:
-    factura:               Facutras de compra
-    fechaFactura:          Fecha de la factura
-    new:                   Registrar una nueva factura de compra
+    factura:               Facutras de Compra
+    fechaFactura:          Fecha de la Factura
+    new:                   Registrar una Nueva Factura de Compra
     edit:                  Modificar la Factura de Compra
     
   facturaVenta:
     new:                   Registrar una Nueva Factura de Venta
     
   ayuda:
-    registrar:           Nuevo registro
-    modificar:           Modifica el registro
-    buscar:              Con esta opción usted podrá obtener de una forma mas rápida y precisa los resultados deseados
-    eliBusqueda:         Deshace la búsqueda realizada y vuelve a mostrar todos los registros
-    reporte:             El sistema generará un documento de tipo informe con todos los registros existentes
-    eliminarMasa:        Una vez concluida la selección a través de esta opción usted podrá eliminar todos los registros indicados
-    verDetalle:          Ver los detalles correspondientes al registro
-    insertDetalle:       Inserte un detalle al registro
-    verDetalleFact:      Ver los detalles correspondientes a la factura
-    eliminar:            Elimina el registro
-    editDetalle:         Modifica el detalle del registro
-    inhabilitarDetalle:  Inhabilita el detalle del registro
-    habilitarDet:        Habilita el detalle del registro
-    eliSelDetalle:       Una vez concluida la selección a través de esta opción usted podrá eliminar los detalles indicados
-    buscarReporteDet:    Usted podrá generar la búsqueda de los datos a incluir en el documento de informe 
-    eliBusDetalle:       Deshace la búsqueda realizada y vuelve a mostrar todos los detalles
-    inhabilitar:         Inhabilita el registro
-    habilitar:           Habilita el registro
-    inhabilitarMasa:     Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los registros indicados
-    habilitarMasa:       Una vez concluida la selección a través de esta opción usted podrá habilitar todos los registros indicados
-    inhabilitarMasaDetalle: Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los detalles indicados
-    habilitarMasaDetalle: Una vez concluida la selección a través de esta opción usted podrá habilitar todos los detalles indicados
-    inhFactura:          Inhabilitar la Factura
-    habFactura:          Habilitar la Factura
-    insertFactura:       Inserte un detalle a la Factura
-    inhabilitarMasaFact:     Una vez concluida la selección a través de esta opción usted podrá inhabilitar todas las facturas indicadas
-    habilitarMasaFact:       Una vez concluida la selección a través de esta opción usted podrá habilitar todas las facturas indicadas
+    registrar:           Insertar:Nuevo registro
+    modificar:           Editar:Modifica el registro
+    buscar:              Buscar:Con esta opción usted podrá obtener de una forma mas rápida y precisa los resultados deseados
+    eliBusqueda:         Eliminar Búsqueda:Deshace la búsqueda realizada y vuelve a mostrar todos los registros
+    reporte:             Reporte:El sistema generará un documento de tipo informe con todos los registros existentes
+    eliminarMasa:        Eliminar Selección:Una vez concluida la selección a través de esta opción usted podrá eliminar todos los registros indicados
+    verDetalle:          Ver Detalle:Ver los detalles correspondientes al registro
+    insertDetalle:       Insertar Detalle:Inserta un detalle al registro
+    verDetalleFact:      Ver Detalle:Ver los detalles correspondientes a la factura
+    eliminar:            Eliminar:Borra el registro
+    editDetalle:         Modificar Detalle:Modifica el detalle del registro
+    inhabilitarDetalle:  Inhabilitar Detalle:Inhabilita el detalle del registro
+    habilitarDet:        Habilitar Detalle:Habilita el detalle del registro
+    eliSelDetalle:       Eliminar Selección:Una vez concluida la selección a través de esta opción usted podrá eliminar los detalles indicados
+    buscarReporteDet:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe 
+    eliBusDetalle:       Eliminar Búsqueda:Deshace la búsqueda realizada y vuelve a mostrar todos los detalles
+    inhabilitar:         Inhabilitar:Inhabilita el registro
+    habilitar:           Habilitar:Habilita el registro
+    inhabilitarMasa:     Inhabilitar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los registros indicados
+    habilitarMasa:       Habilitar Selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todos los registros indicados
+    inhabilitarMasaDetalle: Inhabilitar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los detalles indicados
+    habilitarMasaDetalle: Habilitar selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todos los detalles indicados
+    inhFactura:          Inhabilitar:Inhabilitar la Factura
+    habFactura:          Habilitar:Habilitar la Factura
+    insertFactura:       Registrar:Inserte un detalle a la Factura
+    inhabilitarMasaFact:     Inhabiltar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todas las facturas indicadas
+    habilitarMasaFact:       Habilitar Selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todas las facturas indicadas
     
   errors:
     00001:                El módulo y la acción solicitada, no existe.

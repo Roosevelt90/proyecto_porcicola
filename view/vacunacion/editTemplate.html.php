@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-xs-4offset-3 text-center">
             <h2>
-                Editar <?php echo i18n::__('edit', null, 'vacunacion') ?> 
+                <?php echo i18n::__('edit', null, 'vacunacion') ?> 
             </h2>
         </div>
     </div>

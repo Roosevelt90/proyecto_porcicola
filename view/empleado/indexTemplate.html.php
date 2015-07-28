@@ -18,14 +18,15 @@
 
 <main class="mdl-layout__content mdl-color--grey-100">
   <div class="mdl-grid demo-content">
-      <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+      <div class="container container-fluid">
+        <div class="row">
+           <div class="col-xs-12 text-center">
           <h2>
-            <?php echo i18n::__('empleado') ?>
+            <?php echo i18n::__('empleado', null, 'empleado') ?>
           </h2>
         </div>
       </div>
-
+      </div>
       <div id="myModalFilter" class="modalmask">
         <div class="modalbox rotate">
           <div class="modal-header">
@@ -89,8 +90,8 @@
       <form>
         
         
-        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="row">
+           <div class="col-xs-12 text-center">
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertEmpleado') ?>" class="btn btn-sm btn-default active fa fa-plus-square"> </a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -108,46 +109,44 @@
             <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
               <?php echo i18n::__('reporte', null, 'ayuda') ?>
             </div>
-          </div>
+           </div>
         </div>
       </form>
-              <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
-
-      <table class="">
-        <thead class="">
-          <tr class="active ">  <tr class="active">
+        <table class="table table-bordered table-responsive">
+          <thead >
+          <tr class="active ">  
             <td><input type="checkbox" id="chkAll"></td> 
-            <th><?php echo i18n::__('identification', null, 'empleado') ?></th>
+           <th><?php echo i18n::__('document type', null, 'empleado') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'empleado') ?></th>
             <th><?php echo i18n::__('name', null, 'empleado') ?> </th>
-            <th><?php echo i18n::__('document type', null, 'empleado') ?></th>
             <th><?php echo i18n::__('telefono', null, 'empleado') ?></th>
-            <th><?php echo i18n::__('cargo', null, 'empleado') ?></th>
-            <th><?php echo i18n::__('city', null, 'empleado') ?></th>
             <th><?php echo i18n::__('direccion') ?></th>
+            <th><?php echo i18n::__('city', null, 'empleado') ?></th>
+            <th><?php echo i18n::__('cargo', null, 'empleado') ?></th>
             <th><?php echo i18n::__('action', null, 'empleado') ?></th>
           </tr>
         </thead>
-        <tbody class="">
+        <tbody>
           <?php foreach ($objEmpleado as $key): ?>
             <tr>
               <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
-              <td><?php echo $key->$id ?></td>
+             <th><?php echo $key->$tipo_doc ?></th>
               <td><?php echo $key->$numero_doc ?></td>
               <td><?php echo $key->$nombre_completo ?></td>
-              <th><?php echo $key->$tipo_doc ?></th>
               <th><?php echo $key->$telefono ?></th>
+               <th><?php echo $key->$direccion ?></th>
+               <th><?php echo $key->$ciudad ?></th>
               <th><?php echo $key->$cargo_id ?></th>
-              <th><?php echo $key->$ciudad ?></th>
-              <th><?php echo $key->$direccion ?></th>
+              
+             
 
               <td>
-                <a id="insert<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editEmpleado', array(empleadoTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">edit</i></a>
+                <a id="insert<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editEmpleado', array(empleadoTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="insert<?php echo $countDetale ?>">
                   <?php echo i18n::__('modificar', null, 'ayuda') ?>
                 </div> 
 
-                <a id="delete<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" ><i class="material-icons">delete</i></a>
+                <a id="delete<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" ><i class="material-icons">delete</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="delete<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 
@@ -169,7 +168,7 @@
               <?php endforeach ?>
         </tbody>
       </table>
-              </div>
+           
     <!--    paginado-->
     <div class="text-right">
       <nav>

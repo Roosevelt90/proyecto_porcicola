@@ -25,13 +25,13 @@
                     </h2>
                 </div>
             </div>
-
-            <div style="margin-bottom: 10px; margin-top: 30px">
+            <div class="row">
+            <div class="col-xs-4-offset-4 nuevo">
                 <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
-               <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-trash-o"></a>
+               <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-ellipsis-v"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
                 </div>
@@ -48,6 +48,7 @@
                   <?php echo i18n::__('reporte', null, 'ayuda') ?>
                 </div>
             </div>
+            </div>
             <?php view::includeHandlerMessage() ?>
 
             <table class="table table-bordered table-responsive ">
@@ -58,8 +59,8 @@
                             <th><input type="checkbox" id="chkAll"></th>
                             <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
                             <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
-                            <th><?php echo i18n::__('empleado', null, 'empleado') ?> </th>
-                            <th><?php echo i18n::__('proveedor') ?> </th>
+                            <th><?php echo i18n::__('empleado') ?> </th>
+                            <th><?php echo i18n::__('proveedor', null, 'proveedor') ?> </th>
                             <th><?php echo i18n::__('action') ?></th>
                         </tr>
                     </thead>
@@ -77,27 +78,27 @@
                               <td><?php echo $key->$proveedor ?></td>
                               <td>  
                                   <?php if ($key->$estado == true): ?>
-                                  <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))        ?>" class="btn btn-default active btn-sm fa fa-edit"><?php // echo i18n::__('edit', null, 'user')    ?></a>-->
+                                  <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))        ?>" class="btn btn-default active btn-sm fa fa-edit"></a>-->
                                     <div class="mdl-tooltip mdl-tooltip--large" for="edit<?php echo $countDetale ?>">
                                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                   </div>  
-                                  <a id="inhabilitar<?php echo $countDetale ?>" href="#" class=" btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" onclick="myModalDisable(<?php echo $key->$id ?>, '<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaCompra') ?>')" ><?php echo i18n::__((($key->$estado == true)) ? 'inhabilitar' : 'habilitar' ) ?></a>
+                                  <a id="inhabilitar<?php echo $countDetale ?>" href="#" class="btn btn-sm btn-default fa fa-ban" data-toggle="modal" onclick="myModalDisable(<?php echo $key->$id ?>, '<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaCompra') ?>')" ></a>
                                    <div class="mdl-tooltip mdl-tooltip--large" for="inhabilitar<?php echo $countDetale ?>">
                                       <?php echo i18n::__('inhFactura', null, 'ayuda') ?>
                                   </div> 
                                       <?php endif; ?>
                                   <?php if ($key->$estado == false): ?>
-                                    <a id="habilitar<?php echo $countDetale ?>"  href="#" class=" btn btn-sm btn-danger fa fa-trash-o" data-toggle="modal" onclick="myModalEnable(<?php echo $key->$id ?>, '<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaCompra') ?>')" ><?php echo i18n::__((($key->$estado == true)) ? 'inhabilitar' : 'habilitar' ) ?></a>
+                                    <a id="habilitar<?php echo $countDetale ?>"  href="#" class="btn btn-sm btn-info active fa fa-exchange" data-toggle="modal" onclick="myModalEnable(<?php echo $key->$id ?>, '<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaCompra') ?>')" ></a>
                                    <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
                                       <?php echo i18n::__('habilitar', null, 'ayuda') ?>
                                   </div> 
                                         <?php endif; ?>  
                                   
-                                    <a id="insertDetalle<?php echo $countDetale ?>" href="#" class="btn btn-sm btn-info fa " data-toggle="modal" data-target="#myModalDetail<?php echo $key->$id ?>" class="btn btn-info btn-xs"><?php echo i18n::__('insertDetail', null, 'vacunacion') ?></a>
+                                    <a id="insertDetalle<?php echo $countDetale ?>" href="#" class="btn btn-sm btn-primary fa fa-bars" data-toggle="modal" data-target="#myModalDetail<?php echo $key->$id ?>" ></a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('insertFactura', null, 'ayuda') ?>
                                   </div> 
-                                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('factura', 'viewFacturaCompra', array(procesoCompraTableClass::ID => $key->$id)) ?>" class=" btn btn-info btn-xs"> <?php echo i18n::__('viewDetail', null, 'vacunacion') ?></a>
+                                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('factura', 'viewFacturaCompra', array(procesoCompraTableClass::ID => $key->$id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('verDetalleFact', null, 'ayuda') ?>
                                   </div>  

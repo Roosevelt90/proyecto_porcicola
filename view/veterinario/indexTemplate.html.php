@@ -71,19 +71,19 @@
       <form>
         <div class="row">
           <div class=" col-xs-12 text-center">
-            <a id="filter" href="#myModalFilter" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-            <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-              <?php echo i18n::__('buscar', null, 'ayuda') ?>
-            </div>
-            <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersVeterinario') ?>" class="btn btn-xs btn-primary"><?php echo i18n::__('deleteFilter') ?></a>  
-            <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-            </div>
-            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertVeterinario') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('insertar', null, 'veterinario') ?></a>
+            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertVeterinario') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
-            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportVeterinario') ?>" class="btn btn-xs btn-default"><?php echo i18n::__('reporte') ?></a>
+            <a id="filter" href="#myModalFilter" data-target="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
+            <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+              <?php echo i18n::__('buscar', null, 'ayuda') ?>
+            </div>
+            <a id="deleteFilter" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersVeterinario') ?>" class="btn btn-sm btn-primary fa fa-reply"></a>  
+            <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+            </div>
+            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportVeterinario') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
               <?php echo i18n::__('reporte', null, 'ayuda') ?>
             </div>
@@ -99,8 +99,8 @@
             <th><?php echo i18n::__('Number of document', null, 'veterinario') ?></th>
             <th><?php echo i18n::__('name', null, 'veterinario') ?> </th>
             <th><?php echo i18n::__('telefono') ?></th>
-            <th><?php echo i18n::__('city', null, 'veterinario') ?></th>
             <th><?php echo i18n::__('direccion') ?></th>
+            <th><?php echo i18n::__('city', null, 'veterinario') ?></th>
             <th><?php echo i18n::__('action', null, 'veterinario') ?></th>
           </tr>
         </thead>
@@ -112,16 +112,14 @@
               <td><?php echo $key->$numero_doc ?></td>
               <td><?php echo $key->$nombre_completo ?></td>
               <th><?php echo $key->$telefono ?></th>
-              <th><?php echo $key->$ciudad ?></th>
               <th><?php echo $key->$direccion ?></th>
-
-
+              <th><?php echo $key->$ciudad ?></th>
               <td>
-                <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editVeterinario', array(veterinarioTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'veterinario') ?></a>
+                <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editVeterinario', array(veterinarioTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                   <?php echo i18n::__('modificar', null, 'ayuda') ?>
                 </div> 
-                <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->id ?>" class="btn btn-sm btn-danger fa fa-trash-o" ><?php echo i18n::__('delete') ?></a>
+                <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 
@@ -134,7 +132,7 @@
                     </div>
                     <div class="modal-footer">
                       <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
-                      <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteVeterinario') ?>')"> <?php echo i18n::__('edit') ?></button>
+                      <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteVeterinario') ?>')"> <?php echo i18n::__('delete') ?></button>
                     </div>
                   </div>
                 </div>

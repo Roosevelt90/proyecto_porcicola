@@ -100,8 +100,8 @@
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="personal">
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('cliente') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('empleado') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('proveedor') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('veterinario') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('proveedor', null, 'proveedor') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('veterinario', null, 'veterinario') ?></button></a>
               
               </ul>
             </div>
@@ -114,7 +114,7 @@
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="vacunacion">
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('registroVacunacion', null, 'vacunacion') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('vacuna', null, 'vacuna') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
               </ul>
             </div>
             

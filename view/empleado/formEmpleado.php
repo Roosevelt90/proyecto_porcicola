@@ -18,9 +18,25 @@
             <div class="col-xs-6-offset-3">
 
                 <table class="table table-responsive "> 
+                       <tr>
+                        <th>
+                            <?php echo i18n::__('document type', null, 'empleado') ?>:
+                        </th>
+                        <th>
+                            <select name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_DOC, true) ?>">
+                                 <option>...</option>                               
+                             <?php foreach ($objTipo_doc as $key): ?>
+                                    <option value="<?php echo $key->id ?>">
+                                        <?php echo $key->descripcion ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>                  
+
                     <tr>
 
-                        <th><?php echo i18n::__('identificacion') ?></th>
+                        <th><?php echo i18n::__('identificacion') ?>:</th>
 
                         <th>
 
@@ -29,27 +45,28 @@
 
                     </tr>
                     <tr>
-                        <th>  <?php echo i18n::__('empleado', NULL, 'empleado') ?>:</th>
+                        <th>  <?php echo i18n::__('empleado') ?>:</th>
                         <th> <input placeholder="<?php echo i18n::__('empleado', NULL, 'empleado') ?>" name="<?php echo empleadoBaseTableClass::getNameField(empleadoTableClass::NOMBRE, true) ?>"></th>   
 
                     </tr>
                     <tr>
-                        <th><?php echo i18n::__('telefono') ?></th>
+                        <th><?php echo i18n::__('telefono') ?>:</th>
                         <th> <input type="number" placeholder="<?php echo i18n::__('telefono') ?>" name="<?php echo empleadoBaseTableClass::getNameField(empleadoTableClass::TEL, true) ?>"></th>
 
                     </tr>
                     <tr>
-                        <th><?php echo i18n::__('direccion') ?></th>
+                        <th><?php echo i18n::__('direccion') ?>:</th>
                         <th> <input placeholder="<?php echo i18n::__('direccion') ?>" name="<?php echo empleadoBaseTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>"></th>
 
                     </tr>
                     <tr>
                         <th>
-                            <?php echo i18n::__('city') ?>
+                            <?php echo i18n::__('city') ?>:
                         </th>
 
                         <th>
                             <select name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CIUDAD, true) ?>">
+                                  <option>...</option>
                                 <?php foreach ($objCiudad as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->nombre_ciudad ?>
@@ -60,11 +77,12 @@
                     </tr>
                     <tr>
                         <th>
-                            <?php echo i18n::__('cargo', null, 'cargo') ?>
+                            <?php echo i18n::__('cargo', null, 'cargo') ?>:
                         </th>
 
                         <th>
                             <select name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CARGO, true) ?>">
+                                <option>...</option>
                                 <?php foreach ($objCargo as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->descripcion_cargo ?>
@@ -73,21 +91,7 @@
                             </select>
                         </th>
                     </tr>
-                    <tr>
-                        <th>
-                            <?php echo i18n::__('document type', null, 'empleado') ?>
-                        </th>
-                        <th>
-                            <select name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_DOC, true) ?>">
-                                <?php foreach ($objTipo_doc as $key): ?>
-                                    <option value="<?php echo $key->id ?>">
-                                        <?php echo $key->descripcion ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </th>
-                    </tr>                  
-
+                 
 
 
                     <tr>

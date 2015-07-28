@@ -76,23 +76,23 @@
       <form>
         <div class="row">
           <div class=" col-xs-12 text-center">
-            <a id="filter" href="#myModalFilter" class="btn btn-xs btn-default active"><?php echo i18n::__('buscar') ?></a>
-            <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-              <?php echo i18n::__('buscar', null, 'ayuda') ?>
-            </div>
-            <a id="deleteFilter"href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersProveedor') ?>" class="btn btn-xs btn-primary"><?php echo i18n::__('deleteFilter') ?></a>  
-            <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-            </div>
-              <!--  <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-xs btn-default active"><?php echo i18n::__('borrar seleccion') ?></a>-->
-            <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-              <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-            </div>
-            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertProveedor') ?>" class="btn btn-success btn-xs"> <?php echo i18n::__('nuev', null, 'proveedor') ?></a>
+             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertProveedor') ?>" class="btn btn-sm btn-default active fa fa-plus-square"> </a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
-            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportProveedor') ?>" class="btn btn-xs btn-default"><?php echo i18n::__('reporte') ?></a>
+            <!--  <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o"></a>-->
+            <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+              <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+            </div>
+            <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
+            <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+              <?php echo i18n::__('buscar', null, 'ayuda') ?>
+            </div>
+            <a id="deleteFilter"href="<?php echo routing::getInstance()->getUrlWeb('personal', 'deleteFiltersProveedor') ?>" class="btn btn-sm btn-primary fa fa-reply"></a>  
+            <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+              <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+            </div>
+            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'reportProveedor') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
               <?php echo i18n::__('reporte', null, 'ayuda') ?>
             </div>
@@ -126,11 +126,11 @@
 
               <td>
 
-                <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editProveedor', array(proveedorTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('edit', null, 'proveedor') ?></a>
+                <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editProveedor', array(proveedorTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                   <?php echo i18n::__('modificar', null, 'ayuda') ?>
                 </div> 
-                <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="btn btn-sm btn-danger fa fa-trash-o"><?php echo i18n::__('delete') ?></a>
+                <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 

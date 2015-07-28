@@ -42,20 +42,20 @@ $pdf->Cell(5);
 $pdf->Cell(35, 10, utf8_encode('Tipo Documento'), 1);
 $pdf->Cell(43, 10, utf8_encode('Numero Documento'), 1);
 $pdf->Cell(43, 10, utf8_encode('Nombre Completo'), 1);
-$pdf->Cell(30, 10, utf8_encode('cargo'), 1);
 $pdf->Cell(35, 10, utf8_encode('Telefono'), 1);
 $pdf->Cell(42, 10, utf8_encode('Direccion'), 1);
 $pdf->Cell(30, 10, utf8_encode('Ciudad'), 1);
+$pdf->Cell(30, 10, utf8_encode('cargo'), 1);
 $pdf->Ln();
 foreach ($objEmpleado as $key) {
     $pdf->Cell(5);
     $pdf->Cell(35, 10, utf8_encode($key->$tipo_doc), 1);
     $pdf->Cell(43, 10, utf8_encode($key->$numero_documento), 1);
     $pdf->Cell(43, 10, utf8_encode($key->$nombre), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->$cargo_id), 1);
     $pdf->Cell(35, 10, utf8_encode($key->$telefono), 1);
     $pdf->Cell(42, 10, utf8_encode($key->$direccion), 1);
     $pdf->Cell(30, 10, utf8_encode($key->$ciudad), 1);
+    $pdf->Cell(30, 10, utf8_encode($key->$cargo_id), 1);
     $pdf->Ln();
 }
 $pdf->Output();

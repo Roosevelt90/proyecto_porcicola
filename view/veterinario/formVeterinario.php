@@ -17,9 +17,25 @@
       <div class="col-xs-2-offset-3">
 
         <table class="table table-responsive "> 
+            <tr>
+            <th>
+              <?php echo i18n::__('document type', null, 'veterinario') ?>:
+
+            </th>
+            <th>
+              <select name="<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::TIPO_DOC, true) ?>">
+                  <option>...</option>                
+                  <?php foreach ($objTipo_doc as $key): ?>
+                  <option value="<?php echo $key->id ?>">
+                    <?php echo $key->descripcion ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+            </th>
+          </tr> 
           <tr>
 
-            <th><?php echo i18n::__('identificacion') ?></th>
+            <th><?php echo i18n::__('identificacion') ?>:</th>
 
             <th>
 
@@ -28,21 +44,28 @@
           </tr>
 
           <tr>
-            <th>   <?php echo i18n::__('nombre') ?> </th>
+            <th>   <?php echo i18n::__('nombre') ?>: </th>
 
             <th> <input required pattern="^[a-zA-Z]{3,20}$" placeholder="<?php echo i18n::__('nombre') ?>" name="<?php echo veterinarioBaseTableClass::getNameField(veterinarioTableClass::NOMBRE, true) ?>"></th>   
 
           </tr>
           <tr>
-            <th><?php echo i18n::__('telefono') ?></th>
+            <th><?php echo i18n::__('telefono') ?>:</th>
             <th> <input type="number" placeholder="<?php echo i18n::__('telefono') ?>" name="<?php echo veterinarioBaseTableClass::getNameField(veterinarioTableClass::TEL, true) ?>"></th>
+          </tr>
+           <tr>
+            <th><?php echo i18n::__('direccion') ?>:</th>
+            <th> <input  placeholder="<?php echo i18n::__('direccion') ?>" name="<?php echo veterinarioBaseTableClass::getNameField(veterinarioTableClass::DIRECCION, true) ?>"></th>
+
+          </tr>
           <tr>
             <th>
-              <?php echo i18n::__('city') ?>
+              <?php echo i18n::__('city') ?>:
             </th>
             <th>
               <select name="<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::CIUDAD, true) ?>">
-                <?php foreach ($objCiudad as $key): ?>
+               <option>...</option>                  
+               <?php foreach ($objCiudad as $key): ?>
                   <option value="<?php echo $key->id ?>">
                     <?php echo $key->nombre_ciudad ?>
                   </option>
@@ -50,31 +73,13 @@
               </select>
             </th>
           </tr>
-          <tr>
-            <th><?php echo i18n::__('direccion') ?></th>
-            <th> <input  placeholder="<?php echo i18n::__('direccion') ?>" name="<?php echo veterinarioBaseTableClass::getNameField(veterinarioTableClass::DIRECCION, true) ?>"></th>
-
-          </tr>
+         
 
 
           <tr>
 
           </tr>
-          <tr>
-            <th>
-              <?php echo i18n::__('document type', null, 'veterinario') ?>
-
-            </th>
-            <th>
-              <select name="<?php echo veterinarioTableClass::getNameField(veterinarioTableClass::TIPO_DOC, true) ?>">
-                <?php foreach ($objTipo_doc as $key): ?>
-                  <option value="<?php echo $key->id ?>">
-                    <?php echo $key->descripcion ?>
-                  </option>
-                <?php endforeach; ?>
-              </select>
-            </th>
-          </tr> 
+          
           <tr>
             <th colspan="2">
           <div class="titulo">

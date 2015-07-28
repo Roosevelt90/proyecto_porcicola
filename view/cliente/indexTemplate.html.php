@@ -3,7 +3,7 @@
 <?php use mvc\view\viewClass as view ?>
 <?php use mvc\config\configClass as config ?>
 <?php use mvc\request\requestClass as request ?>
-
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id = clienteTableClass::ID ?>
 <?php $numero_documento = clienteTableClass::NUMERO_DOC ?>
 <?php $nombre_completo = clienteTableClass::NOMBRE ?>
@@ -12,9 +12,7 @@
 <?php $direccion = clienteTableClass::DIRECCION ?>
 <?php $ciudad = ciudadTableClass::NOMBRE ?>
 <?php $countDetale = 1 ?>
-<?php
 
-use mvc\i18n\i18nClass as i18n ?>
 <main class="mdl-layout__content mdl-color--grey-100">
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">
@@ -110,10 +108,9 @@ use mvc\i18n\i18nClass as i18n ?>
         <thead>
           <tr class="active">
             <td><input type="checkbox" id="chkAll"></td> 
-            <th><?php echo i18n::__('identification', null, 'cliente') ?></th>
+            <th><?php echo i18n::__('document type', null, 'cliente') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'cliente') ?></th>
             <th><?php echo i18n::__('name', null, 'cliente') ?> </th>
-            <th><?php echo i18n::__('document type', null, 'cliente') ?></th>
             <th><?php echo i18n::__('telefono', null, 'cliente') ?></th>
             <th><?php echo i18n::__('direccion', null, 'cliente') ?></th>
             <th><?php echo i18n::__('city', null, 'cliente') ?></th>
@@ -125,21 +122,20 @@ use mvc\i18n\i18nClass as i18n ?>
           <?php foreach ($objCliente as $key): ?>
             <tr>
               <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
-              <td><?php echo $key->$id ?></td>
+              <th><?php echo $key->$tipo_documento_id ?></th>
               <td><?php echo $key->$numero_documento ?></td>
               <td><?php echo $key->$nombre_completo ?></td>
-              <th><?php echo $key->$tipo_documento_id ?></th>
               <th><?php echo $key->$telefono ?></th>
               <th><?php echo $key->$direccion ?></th>
               <th><?php echo $key->$ciudad ?></th>
 
 
               <td>
-                <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editCliente', array(clienteTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">edit</i></a>
+                <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editCliente', array(clienteTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                   <?php echo i18n::__('modificar', null, 'ayuda') ?>
                 </div>
-                <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">delete</i></a>
+                <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 

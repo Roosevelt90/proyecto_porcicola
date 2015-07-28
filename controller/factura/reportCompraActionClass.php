@@ -29,7 +29,7 @@ class reportCompraActionClass extends controllerClass implements controllerActio
                 empleadoTableClass::NOMBRE
             );
             $fieldsProveedor = array(
-                proveedorTableClass::NOMBRE_COMPLETO
+                proveedorTableClass::NOMBRE
             );
             $fJoin1 = procesoCompraTableClass::EMPLEADO_ID;
             $fJoin2 = empleadoTableClass::ID;

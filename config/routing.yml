@@ -1937,6 +1937,26 @@ proceso_compra:
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
 
+proceso_compra_new_detalle:
+  url:      /proceso_compra/nueco_detalle
+  param:  { module: factura, action: createDetalleFacturaCompra, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoCompraBaseTableClass.php
+    - model/procesoCompraTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
 proceso_compra:_nuevo:
   url:      /proceso_compra/nuevo_registro
   param:  { module: factura, action: insertFacturaCompra, format: html }

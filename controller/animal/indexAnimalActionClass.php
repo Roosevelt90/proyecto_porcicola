@@ -32,38 +32,28 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                     $where [animalTableClass::LOTE_ID] = $filter['lote'];
                 }
                 
-//                
-//                if (isset($filter['peso']) and $filter['peso'] !== null and $filter['peso'] !== '') {
-//                    if ($peso == true) {
-//                        throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
-//                    } //close if
-//                    $where[animalTableClass::PESO] = $filter['edad'];
-//                } //close if
-//
-//
-//                if (isset($filter['edad']) and $filter['edad'] !== null and $filter['edad'] !== '') {
-//                    if ($edad == false) {
-//                        throw new PDOException(i18n::__(10007, null, 'errors', null, 10005));
-//                    } //close if
-//                    $where[animalTableClass::EDAD] = $filter['edad'];
-//                } //close if
-//                
-//                if (isset($filter['fecha_inicial']) and isset($filter['fecha_fin']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '') {
-//
-//                    if ($date == false) {
-//                        throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
-//                    }
-//                    if ($date == false) {
-//                        throw new PDOException(i18n::__(10008, null, 'errors', null, 10005));
-//                    }
-//                    $where[animalTableClass::FECHA_NACIMIENTO] = array(
-//                        date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
-//                        date(config::getFormatTimestamp(), strtotime($filter['fecha_fin'] . ' 23.59.59'))
-//                    );
-//                }
+                
+                if (isset($filter['peso']) and $filter['peso'] !== null and $filter['peso'] !== '') {
+                 
+                    $where[animalTableClass::PESO] = $filter['peso'];
+                } //close if
+
+
+                if (isset($filter['edad']) and $filter['edad'] !== null and $filter['edad'] !== '') {
+                    
+                    $where[animalTableClass::EDAD] = $filter['edad'];
+                } //close if
+                
+                if (isset($filter['fecha_inicial']) and isset($filter['fecha_fin']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '') {
+
+                    $where[animalTableClass::FECHA_NACIMIENTO] = array(
+                        date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
+                        date(config::getFormatTimestamp(), strtotime($filter['fecha_fin'] . ' 23.59.59'))
+                    );
+                }
                 session::getInstance()->setAttribute('animalFiltersAnimal', $where);
-      //      } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
-//                $where = session::getInstance()->getAttribute('animalFiltersAnimal');
+            } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
+                $where = session::getInstance()->getAttribute('animalFiltersAnimal');
             }
 
 
@@ -83,7 +73,9 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                 animalTableClass::ID,
                 animalTableClass::PESO,
                 animalTableClass::PRECIO_ANIMAL,
-                animalTableClass::FECHA_NACIMIENTO               
+                animalTableClass::FECHA_NACIMIENTO,
+                animalTableClass::NUMERO,
+                animalTableClass::PARTO
             );
             $fields2 = array(
                 generoTableClass::NOMBRE

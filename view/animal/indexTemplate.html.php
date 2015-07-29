@@ -11,6 +11,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 
 <?php $idAnimal = animalTableClass::ID ?>
+<?php $numeroIdenficacion = animalTableClass::NUMERO ?>
 <?php $peso = animalTableClass::PESO ?>
 <?php $fecha = animalTableClass::FECHA_NACIMIENTO ?>
 <?php $edad = animalTableClass::EDAD ?>
@@ -25,7 +26,7 @@ use mvc\view\viewClass as view ?>
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">
       <div class="row">
-        <div class="col-xs-4-offset-4 titulo">
+        <div class="col-xs-4-offset-4 text-center">
           <h2>
             <?php echo i18n::__('read', NULL, 'animal') ?>
           </h2>
@@ -33,7 +34,7 @@ use mvc\view\viewClass as view ?>
       </div>
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
         <div class="row">
-          <div class="col-xs-12 text-center">
+          <div class="col-xs-12 text-left">
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -66,6 +67,7 @@ use mvc\view\viewClass as view ?>
               <td><input type="checkbox" id="chkAll"></td> 
               <th><?php echo i18n::__('identification', null, 'animal') ?></th>
               <th><?php echo i18n::__('date_birth', null, 'animal') ?></th>
+              <th>Partos</th>
               <th><?php echo i18n::__('peso', null, 'animal') ?></th>
 
               <th><?php echo i18n::__('genero', null, 'animal') ?></th>
@@ -80,12 +82,19 @@ use mvc\view\viewClass as view ?>
             <?php foreach ($objAnimal as $key): ?>
               <tr>
                 <td><input type="checkbox" name="chk[]" value="<?php echo $key->$idAnimal ?>"></td>
-                <td><?php echo $key->$idAnimal ?></td>
-                <td><?php echo $key->$fecha ?></td>  
+                <td><?php echo $key->$numeroIdenficacion ?></td>
+                <td><?php echo $key->$fecha ?></td>
+                <?php if ($key->$genero == 'hembra'): ?>
+                  <?php if ($key->$parto <= 5): ?>
+                    <td><?php echo $key->$parto ?></td>
+                  <?php else: ?>
+                    <td>Cerda lista para la venta</td>
+                  <?php endif; ?>
+                <?php else: ?>
+                  <td>...</td>
+                <?php endif; ?>
                 <td><?php echo $key->$peso ?></td>
-
                 <td><?php echo $key->$genero ?></td>
-
                 <td><?php echo $key->$lote ?></td>
                 <td><?php echo $key->$raza ?></td>
                 <td><?php echo $key->$precio_animal ?></td>
@@ -119,7 +128,7 @@ use mvc\view\viewClass as view ?>
         </table>
       </form>
       <!----PAGINADOR---->
-      <div class="text-right">
+      <div class="text-left">
         <nav>
           <ul class="pagination" id="slqPaginador">
             <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
@@ -160,36 +169,36 @@ use mvc\view\viewClass as view ?>
         </div>
         <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>">
           <table class="table table-responsive ">    
-<!--                        <tr>
-                  <th>  <?php echo i18n::__('peso', NULL, 'animal') ?>:</th>
-                  <th> 
-                      <input placeholder="<?php echo i18n::__('peso', NULL, 'animal') ?>" type="text" name="filter[peso]" >
-                  </th>   
-              </tr>
-              <tr>
-                  <th>
+            <tr>
+              <th>  <?php echo i18n::__('peso', NULL, 'animal') ?>:</th>
+              <th> 
+                <input placeholder="<?php echo i18n::__('peso', NULL, 'animal') ?>" type="text" name="filter[peso]" >
+              </th>   
+            </tr>
+<!--              <tr>
+                <th>
             <?php echo i18n::__('edad', null, 'animal') ?>:
-                  </th>
-                  <th>
-                      <input placeholder="<?php echo i18n::__('edad', NULL, 'animal') ?>" type="text" name="filter[edad]" >
-                  </th>
-              </tr>
-              <tr>
-                  <th>
-            <?php echo i18n::__('fecha', null, 'animal') ?>:
-                  </th>
-                  <th>
-                      <input type="date" name="filter[fecha_inicial]" >               
-                  </th>
-              </tr>
-              <tr>
-                  <th>
-            <?php echo i18n::__('fecha', null, 'animal') ?>:
-                  </th>
-                  <th>
-                      <input type="date" name="filter[fecha_fin]" >               
-                  </th>
-              </tr>-->
+                </th>
+                <th>
+                    <input placeholder="<?php echo i18n::__('edad', NULL, 'animal') ?>" type="text" name="filter[edad]" >
+                </th>
+            </tr>
+            <tr>-->
+            <th>
+              <?php echo i18n::__('fecha', null, 'animal') ?>:
+            </th>
+            <th>
+              <input type="date" name="filter[fecha_inicial]" >               
+            </th>
+            </tr>
+            <tr>
+              <th>
+                <?php echo i18n::__('fecha', null, 'animal') ?>:
+              </th>
+              <th>
+                <input type="date" name="filter[fecha_fin]" >               
+              </th>
+            </tr>
 
             <tr>
               <th>
@@ -197,7 +206,7 @@ use mvc\view\viewClass as view ?>
               </th>
               <th>
                 <select name="filter[genero]">
-                  <option>...</option>
+                  <option value="">...</option>
                   <?php foreach ($objGenero as $key): ?>
                     <option value="<?php echo $key->id ?>">
                       <?php echo $key->nombre_genero ?>
@@ -212,7 +221,7 @@ use mvc\view\viewClass as view ?>
               </th>
               <th>
                 <select name="filter[lote]">
-                  <option>...</option>
+                  <option value="">...</option>
                   <?php foreach ($objLote as $key): ?>
                     <option value="<?php echo $key->id ?>">
                       <?php echo $key->nombre_lote ?>
@@ -227,7 +236,7 @@ use mvc\view\viewClass as view ?>
               </th>
               <th>
                 <select name="filter[raza]">
-                  <option>... </option>
+                  <option value="">... </option>
                   <?php foreach ($objRaza as $key): ?>
                     <option value="<?php echo $key->id ?>">
                       <?php echo $key->nombre_raza ?>
@@ -314,9 +323,9 @@ use mvc\view\viewClass as view ?>
                                 <select name="report[genero]">
                                     <option value="default">...</option>
 <?php foreach ($objGenero as $key): ?>
-                                                <option value="<?php echo $key->id ?>">
+                                                      <option value="<?php echo $key->id ?>">
   <?php echo $key->nombre_genero ?>
-                                                </option>
+                                                      </option>
 <?php endforeach; ?>
                                 </select>
                             </th>
@@ -329,7 +338,7 @@ use mvc\view\viewClass as view ?>
                                 <select name="report[lote]">
                                     <option value="default">...</option>
 <?php // foreach ($objLote as $key):   ?>
-                                        <option value="<?php // echo $key->id     ?>">
+                                        <option value="<?php // echo $key->id        ?>">
 <?php //echo $key->nombre_lote   ?>
                                         </option>
 <?php //endforeach; ?>

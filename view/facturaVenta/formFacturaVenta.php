@@ -15,7 +15,7 @@
                     <table class="table table-responsive "> 
                         <tr>
                             <th>
-                                <?php i18n::__('fechaFactura', null, 'facturaCompra') ?>
+                                <?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?>
                             </th>
                             <th>
                                 <input type="datetime-local" name="<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::FECHA_HORA_VENTA, true) ?>">
@@ -53,7 +53,7 @@
                         </tr>                        
                         <tr>
                             <th colspan="2">
-                        <div class="titulo">
+                        <div class="text-center">
                             <input type="submit" value="<?php echo i18n::__(((isset($objFacturaCompra) == TRUE) ? 'edit' : 'register'), $culture = NULL, $dictionary = 'user') ?>">
                         </div>
                         </th>

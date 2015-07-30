@@ -21,7 +21,7 @@ use mvc\view\viewClass as view ?>
       <?php view::includeHandlerMessage() ?>
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRaza') ?>" method="POST">
         <div class="row">
-          <div class="col-xs-4-offset-4 text-left">
+             <div class="col-xs-12 text-center">
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRaza') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -37,7 +37,7 @@ use mvc\view\viewClass as view ?>
           <thead>
             <tr class="active">
               <td><input type="checkbox" id="chkAll"></td> 
-              <th><?php echo i18n::__('id') ?></th>
+              <th><?php echo i18n::__('number', null, 'lote') ?></th>
               <th><?php echo i18n::__('name') ?></th>
               <th><?php echo i18n::__('action') ?></th>
             </tr>

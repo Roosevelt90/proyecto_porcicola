@@ -49,7 +49,7 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="animal">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('animal') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
                 <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexLote')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('lote') ?></button></a>
                 <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexRaza')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('raza') ?></button></a>
               </ul>

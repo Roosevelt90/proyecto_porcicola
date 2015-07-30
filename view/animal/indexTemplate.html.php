@@ -34,7 +34,7 @@ use mvc\view\viewClass as view ?>
       </div>
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
         <div class="row">
-          <div class="col-xs-12 text-left">
+           <div class="col-xs-12 text-center">
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>

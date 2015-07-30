@@ -184,6 +184,7 @@ dictionary:
     peso_inicial:         Initial weight
     peso_fin:             Final weight
     pesos:                Price $
+    cerdo:                Pig
     precio:               Price
     edit:                 Edit the registry of the animal
     nuev:                 New Pig

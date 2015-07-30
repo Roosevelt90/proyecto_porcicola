@@ -32,7 +32,7 @@ use mvc\request\requestClass as request ?>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-4-offset-4 text-left">
+          <div class="col-xs-12 text-center">
           <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
           <div class="mdl-tooltip mdl-tooltip--large" for="new">
             <?php echo i18n::__('registrar', null, 'ayuda') ?>

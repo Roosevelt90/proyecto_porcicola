@@ -2,7 +2,7 @@
 culture:                  Español
 dictionary:
   default:
-    RegistrosEntrada:     Entrada de bodega
+    RegistrosEntrada:     Entrada de Bodega
     personal:             Personal
     fechaFabricacion:     Fecha de Fabricación
     fechaVencimiento:     Fecha de Vencimiento
@@ -178,6 +178,7 @@ dictionary:
     peso_inicial:         Peso inicial
     peso_fin:             Peso final
     pesos:                Precio $
+    cerdo:                Cerdo
     precio:               Precio 
     kg:                   Peso (Kg)
     edit:                 Editar el Registro del Animal

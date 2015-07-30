@@ -768,8 +768,23 @@ insumo_deleteSelect:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+
+insumo_reporte:
+    url: /insumo/reporte
+    param: { module: insumo, action: reportInsumo, format: pdf }
+    load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
     
-insumo_delete_filters_empleado:
+    
+insumo_delete_filters:
   url:    /borrar_filtros
   param:  { module: insumo, action: deleteFilter, format: html }
     
@@ -1070,10 +1085,7 @@ traducion:
     load:
         
         
-empleado_deleteFilters:
-    url: /borrar_filtros
-    param: { module: personal, action: deleteFiltersEmpleado, format: json}
-    
+
 empleado_reporte:
     url: /empleado/reporte
     param: { module: personal, action: reportEmpleado, format: pdf }
@@ -1093,7 +1105,7 @@ empleado_reporte:
     - hooks/logHookClass.php
     
 
-empleado_delete_filters_empleado:
+empleado_deleteFilters:
   url:    /borrar_filtros
   param:  { module: personal, action: deleteFiltersEmpleado, format: html }
     
@@ -1186,7 +1198,7 @@ veterinario_update:
   
         
 veterinario_deleteFilters:
-    url: /borrar_filtros
+    url:  /veterinario/borrar_filtros
     param: { module: personal, action: deleteFiltersVeterinario, format: json}
     
 veterinario_reporte:
@@ -1204,12 +1216,6 @@ veterinario_reporte:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
-    
-
-veterinario_delete_filters_empleado:
-  url:    /borrar_filtros
-  param:  { module: personal, action: deleteFiltersVeterinario, format: html }
-    
     
 
 veterinario_deleteSelect:
@@ -1329,7 +1335,7 @@ cliente_index:
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
     
-cliente_delete_filters_empleado:
+cliente_deleteFilters:
   url:    /borrar_filtros
   param:  { module: personal, action: deleteFiltersCliente, format: html }
     
@@ -2403,10 +2409,7 @@ traducion:
     load:
         
         
-empleado_deleteFilters:
-  url: /borrar_filtros
-  param: { module: personal, action: deleteFiltersEmpleado, format: json}
-    
+
 empleado_reporte:
   url: /empleado/reporte
   param: { module: personal, action: reportEmpleado, format: pdf }
@@ -2425,8 +2428,8 @@ empleado_reporte:
     - hooks/logHookClass.php
     
 
-empleado_delete_filters_empleado:
-  url:    /borrar_filtros
+empleado_deleteFilters:
+  url:    /empleado/borrar_filtros
   param:  { module: personal, action: deleteFiltersEmpleado, format: html }
     
     
@@ -2516,11 +2519,7 @@ veterinario_update:
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
   
-        
-veterinario_deleteFilters:
-    url: /borrar_filtros
-    param: { module: personal, action: deleteFiltersVeterinario, format: json}
-    
+       
 veterinario_reporte:
   url: /veterinario/reporte
   param: { module: personal, action: reportVeterinario, format: pdf }
@@ -2535,13 +2534,7 @@ veterinario_reporte:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
-    
-
-veterinario_deleteFilters:
-  url:    /veterinario/borrar_filtros
-  param:  { module: personal, action: deleteFiltersVeterinario, format: html }
-    
-    
+   
 
 veterinario_delete:
   url:    /personal/eliminar

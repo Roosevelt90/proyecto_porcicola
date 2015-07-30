@@ -5,7 +5,7 @@
     <div class="mdl-grid demo-content">
 <div class="container">
     <div class="row">
-        <div class="col-xs-4-offset-4 titulo">
+        <div class="col-xs-4-offset-4 text-center">
             <h2><?php echo i18n::__('edit', NULL, 'vacuna') ?> :</h2>
 
             <br>   

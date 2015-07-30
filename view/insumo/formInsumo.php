@@ -12,7 +12,7 @@
     <?php if (isset($objInsumo)): ?>
       <input type="hidden" name="<?php echo insumoTableClass::getNameField(insumoTableClass::ID, TRUE) ?>" value="<?php echo $objInsumo[0]->$id ?>">
     <?php endif; //close if ?>
-    <div class="container">
+    <div class="">
         <div class="row">
             <div class="col-xs-6-offset-3">
 
@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <th colspan="2">
-                    <div class="titulo">
+                    <div class="text-right">
                         <input type="submit" value="<?php echo i18n::__(((isset($objInsumo) == TRUE) ? 'edit' : 'register'), NULL, 'user') ?>">
                     </div>
                     </th>

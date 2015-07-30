@@ -123,7 +123,7 @@ use mvc\request\requestClass as request ?>
 
 
           </form>
-          <!-- WINDOWS MODAL DETAIL VACCINATION -->
+          <!-- WINDOWS MODAL DETAIL -->
           <div id="myModalDetail<?php echo $key->$id ?>" class="modalmask">
             <div class="modalbox rotate">
               <a href="#close" title="Close" class="close">X</a>

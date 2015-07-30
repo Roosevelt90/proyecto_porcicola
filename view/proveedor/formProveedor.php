@@ -72,7 +72,7 @@
           </tr>
            <tr>
             <th colspan="2">
-          <div class="titulo">
+          <div class="text-center">
             <input type="submit" value="<?php echo i18n::__(((isset($objProveedor) == TRUE) ? 'edit' : 'register'), $culture = NULL) ?>">
           </div>
           </th>

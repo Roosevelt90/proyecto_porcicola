@@ -42,8 +42,8 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
           //      log::register(i18n::__('update'), razaTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');
             } else {
-//                log::register(i18n::__('update'), razaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
-//                session::getInstance()->setError(i18n::__('errorUpdate'));
+//       log::register(i18n::__('update'), razaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
+  //          session::getInstance()->setError(i18n::__('errorUpdate'));
                 routing::getInstance()->redirect('vacunacion', 'updateVacuna');
             }//close if
         } catch (PDOException $exc) {

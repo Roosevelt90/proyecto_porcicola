@@ -29,8 +29,8 @@ use mvc\request\requestClass as request ?>
           </h2>
         </div>
       </div>
-      <br /> <br />
-      <div style="margin-bottom: 10px; margin-top: 30px">
+        <div class="row">
+        <div class="col-xs-12 text-center">
         <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertSalida') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="new">
           <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -51,6 +51,7 @@ use mvc\request\requestClass as request ?>
         <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
           <?php echo i18n::__('reporte', null, 'ayuda') ?>
         </div>
+      </div>
       </div>
       <?php view::includeHandlerMessage() ?>
 

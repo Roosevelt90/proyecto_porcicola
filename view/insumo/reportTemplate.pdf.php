@@ -1,36 +1,56 @@
 <?php use mvc\routing\routingClass as routing;
+$nombre= insumoTableClass::NOMBRE;
+$fabricacion= insumoTableClass::FECHA_FABRICACION;
+$vencimiento = insumoTableClass::FECHA_VENCIMIENTO;
+$tipo = tipoInsumoTableClass::DESCRIPCION;
+$valor = insumoTableClass::VALOR;
 
-class PDf extends FPDF{
+
+class PDF extends FPDF {
+// Pie de página
     function Footer() {
+        // Posición: a 1,5 cm del final
         $this->SetY(-15);
+        // Arial italic 8
         $this->SetFont('Arial', 'I', 8);
-        $this->Cell(0, 10, 'Page '. $this->PageNo() . '/{nb}', 0,0,'C' );
+        // Número de página
+        $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
     }
 }
-
-$pdf = new PDF('P', 'mm', 'letter');
+// Creación del objeto de la clase heredada
+$pdf = new PDF('L', 'mm', 'Letter');
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->Image(routing::getInstance()->getUrlImg('reporte_Vertical.jpg'), 0, 0, 216, 280);
+//     Salto de línea
 $pdf->Ln(40);
+//fondo
+$pdf->Image(routing::getInstance()->getUrlImg('reporte_horizontal.jpg'), 0, 0, 218, 300);
+// Arial bold 15
 $pdf->SetFont('Arial', 'B', 25);
-$pdf->Cell(93);
-$pdf->Cell(30, 10, $mensaje, 0,0, 'C');
-
+// Movernos a la derecha
+$pdf->Cell(90);
+// Título
+$pdf->Cell(30, 10, $mensaje, 0, 0, 'C');
+// Salto de línea
 $pdf->Ln(20);
-$pdf->SetFont('Arial', 'B', 15);
-$pdf->Cell(40);
-$pdf->Cell(20, 10, utf8_encode('Numero'), 1, 0, 'C');
-$pdf->Cell(60, 10, utf8_encode('Fecha'), 1, 0, 'C');
-$pdf->Cell(30, 10, utf8_encode('Animal'), 1, 0, 'C');
-$pdf->Cell(30, 10, utf8_encode('Veterinario'), 1, 0, 'C');
+$pdf->SetFont('Arial', '', 12);
+//for($i=1;$i<=40;$i++)
+//    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
+$pdf->Cell(5);
+$pdf->Cell(35, 10, utf8_encode('Tipo Insumo'), 1);
+$pdf->Cell(43, 10, utf8_encode('Nombre'), 1);
+$pdf->Cell(43, 10, utf8_encode('Fecha de Fabricacion'), 1);
+$pdf->Cell(35, 10, utf8_encode('Fecha de Vencimiento'), 1);
+$pdf->Cell(42, 10, utf8_encode('Valor'), 1);
+
 $pdf->Ln();
-foreach ($objVacunacion as $key){
-    $pdf->Cell(40);
-    $pdf->Cell(20, 10, utf8_encode($key->id), 1);
-    $pdf->Cell(60, 10, utf8_encode($key->fecha_registro), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->id_animal), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->id_veterinario), 1);
-  $pdf->Ln();  
-}//close foreach
+foreach ($objInsumo as $key) {
+    $pdf->Cell(5);
+    $pdf->Cell(35, 10, utf8_encode($key->$tipo), 1);
+    $pdf->Cell(43, 10, utf8_encode($key->$nombre), 1);
+    $pdf->Cell(43, 10, utf8_encode($key->$fabricacion), 1);
+    $pdf->Cell(35, 10, utf8_encode($key->$vencimiento), 1);
+    $pdf->Cell(42, 10, utf8_encode($key->$valor), 1);
+    $pdf->Ln();
+}
 $pdf->Output();

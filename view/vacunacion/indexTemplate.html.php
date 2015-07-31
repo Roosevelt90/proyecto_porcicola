@@ -29,7 +29,7 @@
                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
                 </div>
-                <a href="#" data-target="#myModalFilter" data-toggle="modal" id="filter" class="btn btn-sm btn-info active fa fa-search"></a>
+                <a href="#myModalFilter" data-toggle="modal" id="filter" class="btn btn-sm btn-info active fa fa-search"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="filter">
                     <?php echo i18n::__('buscar', null, 'ayuda') ?>
                 </div>
@@ -148,13 +148,14 @@
     </div>
 </main>
 <!-- WINDOWS MODAL FILTER -->
-<div class="modal fade" id="myModalFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div class="modalmask" id="myModalFilter">
+    <div class="modalbox rotate">
+      
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
             </div>
+         <a href="#close" title="Close" class="close">X</a>
             <div class="modal-body">
                 <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>">
                     <table class="table table-bordered">
@@ -214,7 +215,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
                 <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
             </div>
-        </div>
+        
     </div>
 </div>
 

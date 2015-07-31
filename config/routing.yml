@@ -762,26 +762,25 @@ insumo_delete:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
     
-#insumo_deleteSelect:
-#  url:    /insumo/eliminarSeleccion
-#  param:  { module: insumo, action: deleteSelect, format: html }
-#  load:
-#    - model/base/insumoBaseTableClass.php
-#    - model/insumoTableClass.php
+insumo_deleteSelect:
+  url:    /insumo/eliminarSeleccion
+  param:  { module: insumo, action: deleteSelect, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
-#insumo_reporte:
-#  url: /insumo/reporte
-#  param: { module: insumo, action: reportInsumo, format: pdf }
-#  load:
-#    - libs/fpdf/fpdf.php
-#    - libs/validate/validatorFieldClass.php
-#    - model/base/insumoBaseTableClass.php
-#    - model/insumoTableClass.php
-#    - model/base/tipoInsumoBaseTableClass.php
-#    - model/tipoInsumoTableClass.php
-#    - model/base/bitacoraBaseTableClass.php
-#    - model/bitacoraTableClass.php
-#    - hooks/logHookClass.php
+insumo_reporte:
+  url: /insumo/reporte
+  param: { module: insumo, action: reportInsumo, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
 #    
     
 insumo_delete_filters:

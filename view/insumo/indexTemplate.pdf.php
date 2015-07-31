@@ -1,4 +1,5 @@
-<?php use mvc\routing\routingClass as routing;
+<?php use mvc\routing\routingClass as routing; 
+$id = insumoTableClass::ID;
 $nombre= insumoTableClass::NOMBRE;
 $fabricacion= insumoTableClass::FECHA_FABRICACION;
 $vencimiento = insumoTableClass::FECHA_VENCIMIENTO;
@@ -40,7 +41,7 @@ $pdf->Cell(5);
 $pdf->Cell(35, 10, utf8_encode('Tipo Insumo'), 1);
 $pdf->Cell(43, 10, utf8_encode('Nombre'), 1);
 $pdf->Cell(43, 10, utf8_encode('Fecha de Fabricacion'), 1);
-$pdf->Cell(35, 10, utf8_encode('Fecha de Vencimiento'), 1);
+$pdf->Cell(45, 10, utf8_encode('Fecha de Vencimiento'), 1);
 $pdf->Cell(42, 10, utf8_encode('Valor'), 1);
 
 $pdf->Ln();
@@ -49,7 +50,7 @@ foreach ($objInsumo as $key) {
     $pdf->Cell(35, 10, utf8_encode($key->$tipo), 1);
     $pdf->Cell(43, 10, utf8_encode($key->$nombre), 1);
     $pdf->Cell(43, 10, utf8_encode($key->$fabricacion), 1);
-    $pdf->Cell(35, 10, utf8_encode($key->$vencimiento), 1);
+    $pdf->Cell(45, 10, utf8_encode($key->$vencimiento), 1);
     $pdf->Cell(42, 10, utf8_encode($key->$valor), 1);
     $pdf->Ln();
 }

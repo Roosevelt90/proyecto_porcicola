@@ -1,7 +1,7 @@
 <?php use mvc\routing\routingClass as routing ?>
 
 <?php use mvc\i18n\i18nClass as i18n ?>
-
+<?php use mvc\session\sessionClass  as session ?>
 <?php use mvc\view\viewClass as view ?>
 
 <?php $idAnimal = animalTableClass::ID ?>
@@ -29,6 +29,7 @@
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
         <div class="row">
            <div class="col-xs-12 text-center">
+                <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -37,6 +38,7 @@
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
             </div> 
+             <?php endif;?>
             <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
               <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -69,7 +71,9 @@
               <th><?php echo i18n::__('lote', null, 'animal') ?></th>
               <th><?php echo i18n::__('raza', null, 'animal') ?></th>
               <th><?php echo i18n::__('precio', null, 'animal') ?></th>
+              <?php if(session::getInstance()->hasCredential('admin') == 1):?>
               <th><?php echo i18n::__('action') ?></th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody>
@@ -92,7 +96,9 @@
                 <td><?php echo $key->$lote ?></td>
                 <td><?php echo $key->$raza ?></td>
                 <td><?php echo $key->$precio_animal ?></td>
+               <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                 <td>
+                             
                   <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editAnimal', array(animalTableClass::ID => $key->$idAnimal)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                     <?php echo i18n::__('modificar', null, 'ayuda') ?>
@@ -101,7 +107,9 @@
                   <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                     <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                   </div> 
+                 
                 </td>
+                 <?php endif; ?>
               </tr>
               <!-- WINDOWS MODAL DELETE -->
             <div id="myModalDelete<?php echo $key->$idAnimal ?>" class="modalmask">

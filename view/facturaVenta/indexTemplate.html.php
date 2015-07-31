@@ -107,13 +107,17 @@ use mvc\request\requestClass as request ?>
           <!-- WINDOWS MODAL DELETE -->
           <div id="changeState<?php echo $key->$id ?>" class="modalmask">
             <div class="modalbox rotate">
+                 <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('inhabilitar') ?></h4>
+                                </div>
               <a href="#close" title="Close" class="close">X</a>
               <div class="modal-body">
-                ....
+                <?php echo i18n::__('confirmInhabilitar') ?>
               </div>
               <div class="modal-footer">
-                <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
-                <button type="button" class="btn btn-danger fa fa-eraser"  onclick="eliminar(<?php echo $key->$id ?>, '<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaVenta') ?>')" > <?php echo i18n::__('inhabil') ?></button>
+                <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"> <?php echo i18n::__('cancel') ?></a>
+                <button type="button" class="btn btn-primary fa fa-ban"  onclick="eliminar(<?php echo $key->$id ?>, '<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('factura', 'deleteFacturaVenta') ?>')" > <?php echo i18n::__('inhabil') ?></button>
               </div>
             </div>
           </div>
@@ -181,8 +185,8 @@ use mvc\request\requestClass as request ?>
         <?php echo i18n::__('conInhSel') ?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
+          <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></a>
+        <button type="button" class="btn btn-primary fa fa-ban" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
       </div>
     </div>
   </div>
@@ -192,6 +196,10 @@ use mvc\request\requestClass as request ?>
 <!-- WINDOWS MODAL FILTER -->
 <div id="myModalFilter" class="modalmask">
   <div class="modalbox rotate">
+       <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
+        </div>
     <a href="#close" title="Close" class="close">X</a>
     <div class="modal-body">
       <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>">
@@ -248,8 +256,8 @@ use mvc\request\requestClass as request ?>
       </form>
     </div>
     <div class="modal-footer">
-      <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
-      <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
+      <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"> <?php echo i18n::__('cancel') ?></a>
+      <button type="button" class="btn btn-info fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
     </div>
   </div>
 </div>

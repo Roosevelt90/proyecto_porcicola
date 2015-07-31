@@ -98,8 +98,8 @@ use mvc\i18n\i18nClass as i18n ?>
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-                                    <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->id ?>, '<?php echo insumoBaseTableClass::getNameField(insumoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('insumo', 'delete') ?>')"> <?php echo i18n::__('delete') ?></button>
+                                    <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" > <?php echo i18n::__('cancel') ?></a>
+                                    <button type="button" class="btn btn-primary fa fa-eraser" onclick="eliminar(<?php echo $key->id ?>, '<?php echo insumoBaseTableClass::getNameField(insumoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('insumo', 'delete') ?>')"> <?php echo i18n::__('delete') ?></button>
                                 </div>
                             </div>
                         </div>
@@ -121,8 +121,8 @@ use mvc\i18n\i18nClass as i18n ?>
                             <?php echo i18n::__('deleteMasive') ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-                            <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
+                            <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" > <?php echo i18n::__('cancel') ?></a>
+                            <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
         <div class="modal-footer">
             <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
-            <button type="button" class="btn btn-primary fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
+            <button type="button" class="btn btn-info fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
         </div>
 
     </div>

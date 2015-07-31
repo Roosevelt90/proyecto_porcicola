@@ -141,8 +141,8 @@
                         <?php echo i18n::__('deleteMasive') ?>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-                        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
+                        <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" > <?php echo i18n::__('cancel') ?></a>
+                        <button type="button" class="btn btn-primary fa fa-ban" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
                     </div>
                 </div>
             </div>
@@ -217,8 +217,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default fa fa-times-circle-o" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
-                <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
+                <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o" ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
+                <button type="button" class="btn btn-info fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
             </div>
         
     </div>
@@ -289,8 +289,8 @@
                 <?php echo i18n::__('eliminarIndividual') ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php echo i18n::__('cancel') ?></button>
-                <button id="delete" name="delete" type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(, '<?php echo vacunacionBaseTableClass::getNameField(vacunacionTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion') ?>')"> <?php echo i18n::__('delete') ?></button>
+                <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o" > <?php echo i18n::__('cancel') ?></a>
+                <button id="delete" name="delete" type="button" class="btn btn-primary fa fa-ban" onclick="eliminar(, '<?php echo vacunacionBaseTableClass::getNameField(vacunacionTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion') ?>')"> <?php echo i18n::__('delete') ?></button>
             </div>
         </div>
     </div>

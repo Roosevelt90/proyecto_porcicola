@@ -39,6 +39,7 @@ dictionary:
     factura:              Invoices
     facturaCompra:        Purchase Invoices
     confirmInhabilitar:   Are you sure you want to disable this bill
+    confirmInhabil:       Are you sure you want to disable this record
     confirmInh:           Are you sure you want to disable records
     conInhSel:            Are you sure you want to disable the selected invoices
     confirmHabilitar:     Are you sure you want to enable this bill

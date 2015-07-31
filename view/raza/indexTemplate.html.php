@@ -64,13 +64,17 @@ use mvc\view\viewClass as view ?>
               <!-- WINDOWS MODAL DELETE -->
             <div id="myModalDelete<?php echo $key->$id ?>" class="modalmask">
               <div class="modalbox rotate">
+                   <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('confirmDelete') ?></h4>
+                                </div>
                 <a href="#close" title="Close" class="close">X</a>
                 <div class="modal-body">
-                  ....
+                 <?php echo i18n::__('eliminarIndividual') ?>
                 </div>
                 <div class="modal-footer">
-                  <a href="#close2" title="Close" class="close2 btn btn-info"> <?php echo i18n::__('cancel') ?></a>
-                  <button type="button" class="btn btn-danger fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo razaTableClass::getNameField(razaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteRaza') ?>')"> <?php echo i18n::__('delete') ?></button>
+                  <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"> <?php echo i18n::__('cancel') ?></a>
+                  <button type="button" class="btn btn-primary fa fa-eraser" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo razaTableClass::getNameField(razaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteRaza') ?>')"> <?php echo i18n::__('delete') ?></button>
                 </div>
               </div>
             </div>
@@ -101,13 +105,17 @@ use mvc\view\viewClass as view ?>
   <!-- WINDOWS MODAL DELETE MASIVE -->
   <div id="myModalEliminarMasivo" class="modalmask">
               <div class="modalbox rotate">
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('borrar seleccion') ?></h4>
+                        </div>
                 <a href="#close" title="Close" class="close">X</a>
                   <div class="modal-body">
             <?php echo i18n::__('confirmDeleteMasive') ?>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('Exit') ?></button>
-            <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
+              <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('Exit') ?></a>
+            <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
           </div>
               </div>
             </div>

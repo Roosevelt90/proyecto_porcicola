@@ -39,6 +39,7 @@ dictionary:
     factura:              Facturas
     facturaCompra:        Facturas de Compra
     confirmInhabilitar:   Esta seguro que desea inhabilitar esta factura
+    confirmInhabil:       Esta seguro que desea inhabilitar el registro
     confirmInh:           Esta seguro que desea inhabilitar los registros
     conInhSel:            Esta seguro que desea inhabilitar las facturas seleccionadas
     confirmHabilitar:     Esta seguro que desea habilitar esta factura
@@ -480,7 +481,7 @@ dictionary:
    Recordar mis datos:                 Recordar mis datos
  
   facturaCompra:
-    factura:               Facutras de Compra
+    factura:               Facturas de Compra
     fechaFactura:          Fecha de la Factura
     new:                   Registrar una Nueva Factura de Compra
     edit:                  Modificar la Factura de Compra

@@ -24,7 +24,7 @@ class createVacunacionActionClass extends controllerClass implements controllerA
                 $id_veterinario = request::getInstance()->getPost(vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true));
                 $fecha_registro = request::getInstance()->getPost(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true));
              
-                vacunacionTableClass::validate($id_animal, $id_veterinario, $fecha_registro);
+                vacunacionTableClass::validate($id_veterinario, $fecha_registro);
 
                 $data = array(
                     vacunacionTableClass::ANIMAL => $id_animal,

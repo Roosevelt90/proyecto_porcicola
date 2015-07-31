@@ -36,7 +36,7 @@ class createDetalleVacunacionActionClass extends controllerClass implements cont
                     detalleVacunacionTableClass::DOSIS => $dosis_vacuna,
                     detalleVacunacionTableClass::ACCION => $accion
                 );
-//                print_r($data);
+                print_r($data);
                 detalleVacunacionTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate'));
                 log::register(i18n::__('create'), detalleVacunacionTableClass::getNameTable());

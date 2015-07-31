@@ -770,9 +770,9 @@ insumo_deleteSelect:
     - model/insumoTableClass.php
 
 insumo_reporte:
-    url: /insumo/reporte
-    param: { module: insumo, action: reportInsumo, format: pdf }
-    load:
+  url: /insumo/reporte
+  param: { module: insumo, action: reportInsumo, format: pdf }
+  load:
     - libs/fpdf/fpdf.php
     - libs/validate/validatorFieldClass.php
     - model/base/insumoBaseTableClass.php

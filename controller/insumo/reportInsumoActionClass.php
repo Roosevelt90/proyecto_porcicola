@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 
 // * Description of ejemploClass
@@ -17,10 +18,7 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
 
     public function execute() {
         try {
-            $where = null;
-            if (session::getInstance()->hasAttribute('insumoFilters')) {
-                $where = session::getInstance()->getAttribute('insumoFilters');
-            }//close if
+           
 
             $fields = array(
             insumoTableClass::ID,
@@ -30,13 +28,21 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
             insumoTableClass::FECHA_VENCIMIENTO,
             insumoTableClass::VALOR
             );
+            
+             $fields2 = array(
+             tipoInsumoTableClass::DESCRIPCION
+            );
 
+            $fJoin1 = insumoTableClass::TIPO_INSUMO;
+            $fJoin2 = tipoInsumoTableClass::ID;
+             
             $orderBy = array(
             insumoTableClass::ID
             );
 
-            $this->objInsumo = insumoTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
+            $this->objInsumo = insumoTableClass::getAllJoin($fields, $fields2, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', null);
             $this->mensaje = 'Informe de los insumos en nuestro sistema';
+            log::register(i18n::__('reporte'), insumoTableClass::getNameTable());
             $this->defineView('index', 'insumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

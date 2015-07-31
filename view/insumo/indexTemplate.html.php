@@ -34,10 +34,10 @@ use mvc\i18n\i18nClass as i18n ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="new">
                         <?php echo i18n::__('registrar', null, 'ayuda') ?>
                     </div>
-                    <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o"></a>
+<!--                    <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                         <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-                    </div>
+                    </div>-->
                     <?php endif; ?>
                     <a id="filter" href="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="filter">

@@ -7,6 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php
 use mvc\config\configClass as config ?>
+<?php use mvc\session\sessionClass  as session ?>
 <?php
 use mvc\request\requestClass as request ?>
 <?php $id = entradaBodegaTableClass::ID ?>
@@ -32,6 +33,7 @@ use mvc\request\requestClass as request ?>
   
       <div class="row">
        <div class="col-xs-12 text-center">
+            <?php if(session::getInstance()->hasCredential('admin') == 1):?>
         <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'insertEntrada') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="new">
           <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -40,6 +42,7 @@ use mvc\request\requestClass as request ?>
         <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
           <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
         </div>
+        <?php endif; ?>
         <a id="filter" href="#myModalFilter"  class="btn btn-sm btn-info active fa fa-search"></a>
         <div class="mdl-tooltip mdl-tooltip--large" for="filter">
           <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -82,6 +85,7 @@ use mvc\request\requestClass as request ?>
                 <td>  
 
                   <?php if ($key->$estado == true): ?>
+                     <?php if(session::getInstance()->hasCredential('admin') == 1):?>
         <!--                    <a  id="editar<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada))  ?>" class="btn btn-sm btn-default active fa fa-edit"></a>
                           <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                     <?php echo i18n::__('modificar', null, 'ayuda') ?>
@@ -90,16 +94,18 @@ use mvc\request\requestClass as request ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                     </div> 
+                    <?php                            endif; ?>
                     <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info active btn-sm fa fa-eye"> </a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                     </div>  
                   <?php endif; ?>
-
+ <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                   <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-danger fa fa-ban" ><?php echo i18n::__((($key->$estado == true)) ? 'inhabilitar' : 'habilitar' ) ?></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
                     <?php echo i18n::__('habilitar', null, 'ayuda') ?>
                   </div> 
+                  <?php endif; ?>
                 </td>
               </tr>
           </form>

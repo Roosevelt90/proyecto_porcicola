@@ -161,9 +161,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <!-- WINDOWS MODAL FILTER -->
 <div class="modalmask" id="myModalFilter" >
     <div class="modalbox rotate">
-
-
-        <div class="modal-header">
+       <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
         </div>

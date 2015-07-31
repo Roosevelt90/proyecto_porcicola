@@ -36,7 +36,7 @@ $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
 $pdf->Cell(5);
-$pdf->Cell(15, 10, utf8_encode('Numero'), 1);
+$pdf->Cell(17, 10, utf8_encode('Numero'), 1);
 $pdf->Cell(43, 10, utf8_encode('Nombre de la vacuna'), 1);
 $pdf->Cell(20, 10, utf8_encode('Lote'), 1);
 $pdf->Cell(42, 10, utf8_encode('Fecha de Fabricacion'), 1);
@@ -45,7 +45,7 @@ $pdf->Cell(30, 10, utf8_encode('Valor'), 1);
 $pdf->Ln();
 foreach ($objVacuna as $key) {
     $pdf->Cell(5);
-    $pdf->Cell(15, 10, utf8_encode($key->id), 1);
+    $pdf->Cell(17, 10, utf8_encode($key->id), 1);
     $pdf->Cell(43, 10, utf8_encode($key->nombre_vacuna), 1);
     $pdf->Cell(20, 10, utf8_encode($key->lote_vacuna), 1);
     $pdf->Cell(42, 10, utf8_encode($key->fecha_fabricacion_vacuna), 1);

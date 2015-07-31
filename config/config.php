@@ -10,7 +10,7 @@ config::setDbDriver('pgsql'); // mysql
 config::setDbName('proyecto_porcicola');
 config::setDbPort(5432); // 3306
 config::setDbUser('postgres');
-config::setDbPassword('diaz');
+config::setDbPassword('sena');
 // Esto solo es necesario en caso de necesitar un socket para la DB
 config::setDbUnixSocket(null); ///tmp/mysql.sock
 

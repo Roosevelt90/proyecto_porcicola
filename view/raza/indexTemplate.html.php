@@ -1,10 +1,7 @@
-<?php
-
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
-<?php
-use mvc\view\viewClass as view ?>
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\session\sessionClass  as session ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = razaTableClass::ID ?>
 <?php $nombre = razaTableClass::NOMBRE_RAZA ?>
 <?php $countDetale = 1 ?>
@@ -22,6 +19,7 @@ use mvc\view\viewClass as view ?>
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRaza') ?>" method="POST">
         <div class="row">
              <div class="col-xs-12 text-center">
+                  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRaza') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -30,7 +28,7 @@ use mvc\view\viewClass as view ?>
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
             </div>
-
+<?php endif; ?>
           </div>
         </div>
         <table class="table table-bordered table-responsive">
@@ -39,7 +37,9 @@ use mvc\view\viewClass as view ?>
               <td><input type="checkbox" id="chkAll"></td> 
               <th><?php echo i18n::__('number', null, 'lote') ?></th>
               <th><?php echo i18n::__('name') ?></th>
+                <?php if(session::getInstance()->hasCredential('admin') == 1):?>
               <th><?php echo i18n::__('action') ?></th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +49,7 @@ use mvc\view\viewClass as view ?>
 
                 <td><?php echo $key->$id ?></td>
                 <td><?php echo $key->$nombre ?></td>
+                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                 <td>
                   <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editRaza', array(razaTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
@@ -58,8 +59,10 @@ use mvc\view\viewClass as view ?>
                   <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                     <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                   </div> 
+                  
   <!--<a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>-->
                 </td>
+                <?php endif; ?>
               </tr>
               <!-- WINDOWS MODAL DELETE -->
             <div id="myModalDelete<?php echo $key->$id ?>" class="modalmask">

@@ -4,7 +4,7 @@
 <?php use mvc\config\configClass as config ?>
 <?php use mvc\request\requestClass as request ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
-
+<?php use mvc\session\sessionClass  as session ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $numero_doc = empleadoTableClass::NUMERO_DOC ?>
 <?php $nombre_completo = empleadoTableClass::NOMBRE ?>
@@ -92,10 +92,12 @@
         
         <div class="row">
            <div class="col-xs-12 text-center">
+                <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertEmpleado') ?>" class="btn btn-sm btn-default active fa fa-plus-square"> </a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
+            <?php endif; ?>
             <a id="filter" href="#myModalFilter"  class="btn btn-sm btn-info active fa fa-search"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
               <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -123,7 +125,9 @@
             <th><?php echo i18n::__('direccion') ?></th>
             <th><?php echo i18n::__('city', null, 'empleado') ?></th>
             <th><?php echo i18n::__('cargo', null, 'empleado') ?></th>
+             <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <th><?php echo i18n::__('action', null, 'empleado') ?></th>
+            <?php endif; ?>
           </tr>
         </thead>
         <tbody>
@@ -138,7 +142,7 @@
                <th><?php echo $key->$ciudad ?></th>
               <th><?php echo $key->$cargo_id ?></th>
               
-             
+              <?php if(session::getInstance()->hasCredential('admin') == 1):?>
 
               <td>
                 <a id="insert<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editEmpleado', array(empleadoTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
@@ -150,7 +154,8 @@
                 <div class="mdl-tooltip mdl-tooltip--large" for="delete<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 
-
+              </td>
+              <?php                   endif; ?>
                 <!-- WINDOWS MODAL DELETE -->
                 <div id="myModalDelete<?php echo $key->$id ?>" class="modalmask">
                   <div class="modalbox rotate">

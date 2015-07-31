@@ -1,6 +1,7 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
+<?php use mvc\session\sessionClass  as session ?>
 <?php $id = loteTableClass::ID ?>
 <?php $nombre = loteTableClass::NOMBRE ?>
 <?php $countDetale = 1 ?>
@@ -18,6 +19,7 @@
       <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectLote') ?>" method="POST">
         <div class="row">
           <div class="col-xs-4-offset-4 nuevo">
+                <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertLote') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -26,6 +28,7 @@
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
             </div>
+            <?php endif; ?>
            </div>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -35,7 +38,9 @@
               <td><input type="checkbox" id="chkAll"></td> 
               <th><?php echo i18n::__('number', null, 'lote') ?></th>
               <th><?php echo i18n::__('name') ?></th>
+                <?php if(session::getInstance()->hasCredential('admin') == 1):?>
               <th><?php echo i18n::__('action') ?></th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +50,7 @@
 
                 <td><?php echo $key->$id ?></td>
                 <td><?php echo $key->$nombre ?></td>
+                  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                 <td>
                   <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editLote', array(loteTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
@@ -55,6 +61,7 @@
                     <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                   </div> 
                 </td>
+                <?php endif; ?>
               </tr>
 
               <!-- WINDOWS MODAL DELETE -->

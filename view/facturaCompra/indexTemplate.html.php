@@ -1,5 +1,4 @@
 <?php
-
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
@@ -9,7 +8,7 @@ use mvc\view\viewClass as view ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
-
+<?php use mvc\session\sessionClass  as session ?>
 <?php $id = procesoCompraTableClass::ID ?>
 <?php $fecha = procesoCompraTableClass::FECHA_HORA_COMPRA ?>
 <?php $empleado = empleadoTableClass::NOMBRE ?>
@@ -33,6 +32,7 @@ use mvc\request\requestClass as request ?>
       </div>
       <div class="row">
           <div class="col-xs-12 text-center">
+               <?php if(session::getInstance()->hasCredential('admin') == 1):?>
           <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'insertFacturaCompra') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
           <div class="mdl-tooltip mdl-tooltip--large" for="new">
             <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -41,6 +41,7 @@ use mvc\request\requestClass as request ?>
           <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
             <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
           </div>
+           <?php endif; ?>
           <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
           <div class="mdl-tooltip mdl-tooltip--large" for="filter">
             <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -68,6 +69,7 @@ use mvc\request\requestClass as request ?>
               <th><?php echo i18n::__('empleado') ?> </th>
               <th><?php echo i18n::__('proveedor', null, 'proveedor') ?> </th>
               <th><?php echo i18n::__('action') ?></th>
+            
             </tr>
           </thead>
           <tbody>
@@ -84,6 +86,7 @@ use mvc\request\requestClass as request ?>
                 <td><?php echo $key->$proveedor ?></td>
                 <td>  
                   <?php if ($key->$estado == true): ?>
+                      <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                             <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))            ?>" class="btn btn-default active btn-sm fa fa-edit"></a>-->
                     <div class="mdl-tooltip mdl-tooltip--large" for="edit<?php echo $countDetale ?>">
                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
@@ -93,16 +96,18 @@ use mvc\request\requestClass as request ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('insertFactura', null, 'ayuda') ?>
                     </div> 
+                    <?php                             endif; ?>
                     <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('factura', 'viewFacturaCompra', array(procesoCompraTableClass::ID => $key->$id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('verDetalleFact', null, 'ayuda') ?>
                     </div>  
                   <?php endif ?>
+                      <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                   <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class="btn btn-sm btn-info active fa fa-exchange" ></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
                     <?php echo i18n::__('habilitar', null, 'ayuda') ?>
                   </div> 
-
+<?php endif; ?>
 
                 </td>
               </tr>
@@ -181,7 +186,7 @@ use mvc\request\requestClass as request ?>
           <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
         </ul>
       </nav>
-    </div> 
+    </div>
     <form id="frmDelete" action="<?php //echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion')            ?>" method="POST">
       <input type="hidden" id="idDelete" name="<?php echo procesoCompraTableClass::getNameField(procesoCompraTableClass::ID, true) ?>">
     </form>

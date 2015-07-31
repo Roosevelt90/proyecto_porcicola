@@ -4,6 +4,7 @@
 <?php use mvc\config\configClass as config ?>
 <?php use mvc\request\requestClass as request ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\session\sessionClass  as session ?>
 <?php $id = clienteTableClass::ID ?>
 <?php $numero_documento = clienteTableClass::NUMERO_DOC ?>
 <?php $nombre_completo = clienteTableClass::NOMBRE ?>
@@ -78,14 +79,16 @@
       <form>
         <div class="row">
           <div class=" col-xs-12 text-center">
+               <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'insertCliente') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
             <!--                 <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o"></a>-->
-            <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+<!--            <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-            </div>
+            </div>-->
+            <?php endif; ?>
             <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
               <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -114,8 +117,9 @@
             <th><?php echo i18n::__('telefono', null, 'cliente') ?></th>
             <th><?php echo i18n::__('direccion', null, 'cliente') ?></th>
             <th><?php echo i18n::__('city', null, 'cliente') ?></th>
-
+ <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <th><?php echo i18n::__('action', null, 'cliente') ?></th>
+            <?php endif; ?>
           </tr>
         </thead>
         <tbody>
@@ -129,7 +133,7 @@
               <th><?php echo $key->$direccion ?></th>
               <th><?php echo $key->$ciudad ?></th>
 
-
+ <?php if(session::getInstance()->hasCredential('admin') == 1):?>
               <td>
                 <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('personal', 'editCliente', array(clienteTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
@@ -139,7 +143,8 @@
                 <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                   <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                 </div> 
-
+              </td>
+              <?php                   endif; ?>
                 <!-- WINDOWS MODAL DELETE -->
                 <div id="myModalDelete<?php echo $key->$id ?>" class="modalmask">
                   <div class="modalbox rotate">
@@ -171,10 +176,10 @@
             <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
             <?php $count = 0 ?>
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-              <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
+              <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
               <?php $count ++ ?>        
             <?php endfor; //close for  ?>
-            <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
+            <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
           </ul>
         </nav>
       </div>

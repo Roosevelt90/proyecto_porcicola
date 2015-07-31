@@ -1,11 +1,9 @@
 <?php
-
 use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
-
 /**
  * Description of veterinarioTableClass
  *
@@ -13,7 +11,6 @@ use mvc\routing\routingClass as routing;
  */
 class veterinarioTableClass extends veterinarioBaseTableClass {
   
-
 public static function validateCreate($nombre_completo, $direccion, $numero_documento, $telefono) {
         $flag = false;
         $patron = "^[a-zA-Z0-9]{3,20}$";
@@ -46,10 +43,7 @@ public static function validateCreate($nombre_completo, $direccion, $numero_docu
             $flag = true;
             session::getInstance()->setFirstCall(veterinarioTableClass::getNameField(veterinarioTableClass::NOMBRE, true), true);
         }
-
       
-
-
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('personal', 'insertVeterinario');
@@ -86,13 +80,9 @@ public static function validateEdit($nombre_completo, $direccion, $numero_docume
             $flag = true;
             session::getInstance()->setFirstCall(veterinarioTableClass::getNameField(veterinarioTableClass::NOMBRE, true), true);
         }
-
-
-
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('personal', 'editVeterinario');
         }
     }
-
 }

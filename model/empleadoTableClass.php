@@ -1,11 +1,9 @@
 <?php
-
 use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
 use mvc\request\requestClass as request;
 use mvc\session\sessionClass as session;
 use mvc\routing\routingClass as routing;
-
 /**
  * Description of credencialTableClass
  *
@@ -14,73 +12,86 @@ use mvc\routing\routingClass as routing;
 class empleadoTableClass extends empleadoBaseTableClass {
   
     public static function validateCreate($nombre_completo, $numero_documento, $telefono) {
-        
         $flag = false;
         
-        $patron = "^[a-zA-Z0-9]{3,20}$";
-        if(!ereg($patron, $nombre_completo)){
-            session::getInstance()->setError('pailanders');
-            $flag = TRUE;
-            session::getInstance()->setFirstCall(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
-            
-        }
-//        if (!is_numeric($telefono)) {
-//            session::getInstance()->setError('no no ');
-//            $flag = true;
-//            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TEL, true), true);
-//        }
-        if (!is_numeric($numero_documento)) {
-            session::getInstance()->setError('no ');
+        $patron ="^[a-zA-Z0-9]{3,20}$";
+       
+        if (empty($numero_documento)) {
+            session::getInstance()->setError('el campo número de documento no puede ser vacio');
             $flag = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_DOC, true), true);
         }
+        if (empty($telefono)) {
+            session::getInstance()->setError('el campo teléfono no puede ser vacio');
+            $flag = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TEL, true), true);
+        }
+        if (empty($direccion)) {
+            session::getInstance()->setError('el campo direción no puede ser vacio');
+            $flag = true;
+            session::getInstance()->setFirstCall(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true), true);
+        }
+        if (empty($nombre_completo) or ! isset($nombre_completo) or $nombre_completo == '') {
+            session::getInstance()->setError('el campo nombre no puede ser vacio');
+            $flag = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
+        } else if (strlen($nombre_completo) < 2) {
+            session::getInstance()->setError('Minimo dos caracteres en el nombre');
+            $flag = true;
+            session::getInstance()->setFlash(emple::getNameField(empleadoTableClass::NOMBRE, true), true);
+        } else if (!ereg($patron, $nombre_completo)) {
+            session::getInstance()->setError('No se permiten caracteres especiales en el nombre');
+            $flag = true;
+            session::getInstance()->setFirstCall(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
+        }
+      
+        
         
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('personal', 'insertEmpleado');
         }
+        
+        
+        
     }
  
     
     
     
-        public static function validateUpdate($date, $id_veterinario, $id_animal) {
         
+    public static function validateUpdate($nombre_completo, $direccion, $telefono, $numero_documento ) {
+          
         $flag = false;
-        
-        $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
-        
-        $dateNow = date("Y-m-d", strtotime("now"));
-        
-        if (preg_match($pattern, $date) == false) {
-            session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $date)));
+        $patron = "^[a-zA-Z0-9]{3,20}$";
+    
+        if (empty($numero_documento)) {
+            session::getInstance()->setError('vacio el campo num');
             $flag = true;
-            session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_DOC, true), true);
         }
-        if ($date > $dateNow) {
-            session::getInstance()->setError(i18n::__(10010, null, 'errors'));
+        if (empty($telefono)) {
+            session::getInstance()->setError('vacio el campo tel');
             $flag = true;
-            session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TEL, true), true);
         }
-        if (!is_numeric($id_veterinario)) {
-            session::getInstance()->setError(i18n::__(10016, null, 'errors', array('%id_veterinario%' => $id_veterinario)));
+        if (empty($direccion)) {
+            session::getInstance()->setError('vacio el campo direc');
             $flag = true;
-            session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true), true);
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true), true);
         }
-         if (!is_numeric($id_animal)) {
-            session::getInstance()->setError(i18n::__(10017, null, 'errors', array('%id_animal%' => $id_animal)));
+        if (empty($nombre_completo) or ! isset($nombre_completo) or $nombre_completo == '') {
+            session::getInstance()->setError('No puede ser vacio');
             $flag = true;
-            session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::ANIMAL, true), true);
-        }
-
-        if ($flag == true) {
-            request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('vacunacion', 'updateVacunacion');
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
+        } else if (strlen($nombre_completo) < 2) {
+            session::getInstance()->setError('Minimo dos caracteres');
+            $flag = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
+        } else if (!ereg($patron, $nombre_completo)) {
+            session::getInstance()->setError('No se permiten caracteres especiales');
+            $flag = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
         }
     }
-    
-    
-}
- 
-
-
+    }

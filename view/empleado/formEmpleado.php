@@ -7,8 +7,6 @@
 <?php $cargo_id = cargoTableClass::ID ?>
 <?php $ciudad = ciudadTableClass::ID ?>
 <?php $direccion = empleadoTableClass::DIRECCION ?>
-
-
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('personal', ((isset($objEmpleado) == TRUE) ? 'updateEmpleado' : 'createEmpleado')) ?>">
     <?php if (isset($objEmpleado)): ?>
         <input type="hidden" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" value="<?php echo $objEmpleado[0]->$id ?>">
@@ -40,9 +38,7 @@
 
                         <th>
 
-                          
                             <input type="number"  value="<?php // echo $objEmpleado[0]->$numero_documento ?>"  placeholder="<?php echo i18n::__('identificacion') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_DOC, true) ?>"></th>   
-
                     </tr>
                     <tr>
                         <th>  <?php echo i18n::__('empleado') ?>:</th>

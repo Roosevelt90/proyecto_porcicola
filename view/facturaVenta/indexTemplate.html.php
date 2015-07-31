@@ -60,7 +60,7 @@ use mvc\request\requestClass as request ?>
         <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacunacion')      ?>" method="POST">
 
           <thead>
-            <tr class="active">
+            <tr class="success">
               <th><input type="checkbox" id="chkAll"></th>
               <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
               <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>

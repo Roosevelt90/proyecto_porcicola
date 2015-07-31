@@ -31,7 +31,7 @@
         <?php view::includeHandlerMessage() ?>
         <table class="table table-bordered table-responsive">
           <thead>
-            <tr class="active">
+            <tr class="success">
               <td><input type="checkbox" id="chkAll"></td> 
               <th><?php echo i18n::__('number', null, 'lote') ?></th>
               <th><?php echo i18n::__('name') ?></th>

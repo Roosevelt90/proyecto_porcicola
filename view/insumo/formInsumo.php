@@ -12,11 +12,22 @@
     <?php if (isset($objInsumo)): ?>
       <input type="hidden" name="<?php echo insumoTableClass::getNameField(insumoTableClass::ID, TRUE) ?>" value="<?php echo $objInsumo[0]->$id ?>">
     <?php endif; //close if ?>
-    <div class="">
+    <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
 
                 <table class="table table-responsive ">    
+                      <tr>
+                        <th>  <?php echo i18n::__('tipoInsumo') ?>:</th>
+                        <th>
+                            <select name="<?php echo insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true) ?>">
+                                <option value=<?php echo null ?>>...</option>
+                                <?php foreach ($objTipoInsumo as $key): ?>
+                                  <option value="<?php echo $key->$id_tipoInsumo ?>"><?php echo $key->$tipoInsumo ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
                     <tr>
                         <th>  <?php echo i18n::__('insumo', NULL, 'insumo') ?>:</th>
                         <th> <input placeholder="<?php echo ((isset($objInsumo) == FALSE) ? i18n::__('insumo', NULL, 'insumo') : $objInsumo[0]->$nombre = ucwords($objInsumo[0]->$nombre)) ?>" type="text" name="<?php echo insumoTableClass::getNameField(insumoTableClass::NOMBRE, true) ?>" ></th>   
@@ -29,17 +40,7 @@
                         <th>  <?php echo i18n::__('fechaVencimiento') ?>:</th>
                         <th> <input  type="date" name="<?php echo insumoTableClass::getNameField(insumoTableClass::FECHA_VENCIMIENTO, true) ?>" ></th>   
                     </tr>
-                    <tr>
-                        <th>  <?php echo i18n::__('tipoInsumo') ?>:</th>
-                        <th>
-                            <select name="<?php echo insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true) ?>">
-                                <option value=<?php echo null ?>>...</option>
-                                <?php foreach ($objTipoInsumo as $key): ?>
-                                  <option value="<?php echo $key->$id_tipoInsumo ?>"><?php echo $key->$tipoInsumo ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </th>
-                    </tr>
+                  
                     <tr>
                         <th>  <?php echo i18n::__('valorInsumo') ?>:</th>
                         <th> <input placeholder="<?php echo ((isset($objInsumo) == FALSE) ? i18n::__('valorInsumo') : $objInsumo[0]->$valor = ucwords($objInsumo[0]->$valor)) ?>" type="text" name="<?php echo insumoTableClass::getNameField(insumoTableClass::VALOR, true) ?>" ></th>   

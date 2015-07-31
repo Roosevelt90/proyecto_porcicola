@@ -35,7 +35,7 @@
         </div>
         <table class="table table-bordered table-responsive table-condensed">
             <thead>
-                <tr class="active">
+                <tr class="success">
                     <td><input type="checkbox" id="chkAll"></td> 
             
                     <th><?php echo i18n::__('user') ?></th>

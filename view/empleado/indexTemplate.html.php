@@ -114,7 +114,7 @@
       </form>
         <table class="table table-bordered table-responsive">
           <thead >
-          <tr class="active ">  
+          <tr class="success ">  
             <td><input type="checkbox" id="chkAll"></td> 
            <th><?php echo i18n::__('document type', null, 'empleado') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'empleado') ?></th>

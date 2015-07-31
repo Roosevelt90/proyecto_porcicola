@@ -28,7 +28,7 @@
         </div>
         <table class="table table-bordered table-responsive">
             <thead>
-                <tr>
+                <tr class="success">
                     <td><input type="checkbox" id="chkAll"></td> 
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('name') ?></th>

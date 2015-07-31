@@ -93,7 +93,7 @@
 
       <table class="table table-bordered table-responsive">
         <thead>
-          <tr class="active">
+          <tr class="success">
             <td><input type="checkbox" id="chkAll"></td>
             <th><?php echo i18n::__('document type', null, 'veterinario') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'veterinario') ?></th>

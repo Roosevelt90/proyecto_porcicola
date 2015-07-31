@@ -36,7 +36,7 @@
             
                 <table class="table table-condensed table-bordered">
                     <thead>
-                        <tr class="active">
+                        <tr class="success">
                             <th><input type="checkbox" id="chkAll"></th>
                             <th><?php echo i18n::__('usuario', null, 'user') ?></th>
                             <th><?php echo i18n::__('date', null, 'user') ?></th>

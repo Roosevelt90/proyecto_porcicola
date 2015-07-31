@@ -3,6 +3,7 @@
 <?php use mvc\view\viewClass as view ?>
 <?php use mvc\config\configClass as config ?>
 <?php use mvc\request\requestClass as request ?>
+<?php use mvc\session\sessionClass  as session ?>
 
 <?php $num_doc = animalTableClass::NUMERO ?>
 <?php $nom_veterinario = veterinarioTableClass::NOMBRE ?>
@@ -21,6 +22,7 @@
             <div class="row">
       
            <div class="col-xs-4-offset-4 nuevo">
+               <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                 <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'insertVacunacion') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
@@ -29,6 +31,7 @@
                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('inhabilitarMasa', null, 'ayuda') ?>
                 </div>
+                <?php endif;?>
                 <a href="#myModalFilter" data-toggle="modal" id="filter" class="btn btn-sm btn-info active fa fa-search"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="filter">
                     <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -77,8 +80,9 @@
                               <td><?php echo $key->$num_doc ?></td>
                               <td><?php echo $key->$nom_veterinario ?></td>
                               <td>          
-                                  
+                                   <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                                   <a id="editDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'editVacunacion', array(vacunacionTableClass::ID => $key->id)) ?>" class="btn btn-default active btn-sm fa fa-edit"></a>
+                                  
                                   <div class="mdl-tooltip mdl-tooltip--large" for="editDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                   </div>    
@@ -90,6 +94,7 @@
                                   <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                                   </div> 
+                                  <?php endif; ?>
                                   <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'viewVacunacion', array(vacunacionTableClass::ID => $key->id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
                                   <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
@@ -212,7 +217,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
+                <button type="button" class="btn btn-default fa fa-times-circle-o" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
                 <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
             </div>
         

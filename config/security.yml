@@ -317,7 +317,7 @@ vacunacion:
   viewVacunacion:
     security: true
     credentials:
-      - [admin]
+      - [admin, invitado]
   deleteSelectDetalleVacunacion:
     security: true
     credentials:

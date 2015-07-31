@@ -193,8 +193,8 @@ use mvc\i18n\i18nClass as i18n ?>
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('close', null, 'vacunacion') ?></button>
-            <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
+            <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
+            <button type="button" class="btn btn-primary fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
         </div>
 
     </div>

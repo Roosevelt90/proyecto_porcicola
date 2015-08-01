@@ -4,7 +4,7 @@
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<br>
+
 <main class="mdl-layout__content mdl-color--blue-300">
   <div class="mdl-grid demo-content">
     <div class="container">
@@ -16,7 +16,7 @@ use mvc\view\viewClass as view ?>
         </div>
       </div>
     </div>
-    <br>
+    
 <?php view::includeHandlerMessage() ?>
 <?php view::includePartial('animal/formAnimal', array('objRaza' => $objRaza, 'objGenero' => $objGenero, 'objLote' => $objLote)) ?>
 

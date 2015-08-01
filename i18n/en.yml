@@ -288,6 +288,7 @@ dictionary:
     salida:               Cellar Output
     new:                  Register a New Entry Cellar
     detalle:              Entry detail winery
+    sal:                  Register a New Warehouse Outlet
     
   datos:
     read:                 Personal user data

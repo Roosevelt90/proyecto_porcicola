@@ -1,13 +1,12 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-
+<main class="mdl-layout__content mdl-color--purple-100">
 <div class="container">
     <div class="row">
-        <div class="col-xs-4-offset-4 text-center">
+        <div class="col-xs-4-offset-4 text-center purple">
             <h2><?php echo i18n::__('edit', NULL, 'raza') ?> :</h2>
-
-            <br>   
+  
             <h3><?php echo $objRaza[0]->nombre_raza = ucwords($objRaza[0]->nombre_raza) ?></h3>
         </div>
     </div>

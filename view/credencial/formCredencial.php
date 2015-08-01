@@ -16,8 +16,8 @@
                     </tr>
                     <tr>
                         <th colspan="2">
-                    <div class="titulo">
-                        <input type="submit" value="<?php echo i18n::__(((isset($objCredencial) == TRUE) ? 'edit' : 'register'), NULL,  'user') ?>">
+                    <div class="text-center">
+                        <input type="submit" class="btn" value="<?php echo i18n::__(((isset($objCredencial) == TRUE) ? 'edit' : 'register'), NULL,  'user') ?>">
                     </div>
                     </th>
                     </tr>

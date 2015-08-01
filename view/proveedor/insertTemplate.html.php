@@ -2,7 +2,7 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <br>
-<main class="mdl-layout__content mdl-color--grey-100">
+<main class="mdl-layout__content mdl-color--blue-300">
   <div class="mdl-grid demo-content">
     <div class="container">
       <div class="row">

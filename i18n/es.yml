@@ -284,6 +284,7 @@ dictionary:
     salida:               Salida de Bodega
     new:                  Registrar una Nueva Entrada de Bodega
     detalle:              Detalle de Entrada de Bodega
+    sal:                  Registrar una Nueva Salida de Bodega
     
     
   datos:
@@ -414,7 +415,7 @@ dictionary:
     close:                Cerrar
     edit:                 Editar el Registro de Vacunación
     editVaccination:      EDITAR VACUNACION
-    newVaccination:       NUEVA VACUNACION
+    newVaccination:       Nueva Vacunación
     
   detalleVacunacion:
     newDetailVaccination: NUEVO DETALLE DE VACUNACION

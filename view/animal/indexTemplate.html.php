@@ -15,7 +15,7 @@
 <?php $raza = razaTableClass::NOMBRE_RAZA ?>
 
 <?php $countDetale = 1 ?>
-<main class="mdl-layout__content mdl-color--grey-100">
+<main class="mdl-layout__content mdl-color--blue-100">
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">
       <div class="row">
@@ -133,7 +133,7 @@
         </table>
       </form>
       <!----PAGINADOR---->
-      <div class="text-left">
+      <div class="text-right">
         <nav>
           <ul class="pagination" id="slqPaginador">
             <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>')"><span aria-hidden="true">&Ll;</span></a></li>

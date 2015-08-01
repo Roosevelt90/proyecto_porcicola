@@ -13,7 +13,7 @@
 <?php $countDetale = 1 ?>
 
 
-<main class="mdl-layout__content mdl-color--grey-100">
+<main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
         <div class="container container-fluid">
             <div class="row">
@@ -81,7 +81,7 @@
                                     <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                     </div> 
-                                    <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
+                                    <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" data-toggle="modal" <?php echo $key->id ?>"><i class="material-icons">delete</i></a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                                     </div> 

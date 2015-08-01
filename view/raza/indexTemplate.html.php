@@ -5,7 +5,7 @@
 <?php $id = razaTableClass::ID ?>
 <?php $nombre = razaTableClass::NOMBRE_RAZA ?>
 <?php $countDetale = 1 ?>
-<main class="mdl-layout__content mdl-color--grey-100">
+<main class="mdl-layout__content mdl-color--blue-100">
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">
       <div class="row">

@@ -34,8 +34,8 @@
               </button>                            
 
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                <a href="#"> <button class="mdl-menu__item "><?php echo i18n::__('configuracion') ?></button></a>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"> <button class="mdl-menu__item"><?php echo i18n::__('Exit') ?></button></a>
+                <a href="#"> <button class="mdl-menu__item fa fa-cogs"><?php echo i18n::__('configuracion') ?></button></a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"> <button class="mdl-menu__item fa fa-sign-out"><?php echo i18n::__('Exit') ?></button></a>
               </ul>
 
             </div>
@@ -137,9 +137,9 @@
               <i class="material-icons">more_vert</i>
             </button>
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-              <li class="mdl-menu__item"><?php echo i18n::__('sobre') ?></li>
-              <li class="mdl-menu__item"><?php echo i18n::__('contacto') ?></li>
-              <li class="mdl-menu__item"><?php echo i18n::__('legalInfor') ?></li>
+              <li class="mdl-menu__item fa fa-laptop"><?php echo i18n::__('sobre') ?></li>
+              <li class="mdl-menu__item fa fa-phone-square"><?php echo i18n::__('contacto') ?></li>
+              <li class="mdl-menu__item fa fa-legal"><?php echo i18n::__('legalInfor') ?></li>
             </ul>
           </div>
         </header>

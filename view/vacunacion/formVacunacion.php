@@ -14,13 +14,14 @@
                 <table class="table"> 
                     <tr>
                         <th>
-                            <?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?>: <input placeholder="<?php echo ((isset($objVacunacion) == true) ? $objVacunacion[0]->fecha_registro : '') ?>" type="datetime-local" name="<?php echo vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true) ?>">
+                            <?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?>: </th>
+                        <th> <input placeholder="<?php echo ((isset($objVacunacion) == true) ? $objVacunacion[0]->fecha_registro : '') ?>" type="datetime-local" name="<?php echo vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true) ?>">
                         </th>
                     </tr>
                     <tr>
                         <th>
-                            <?php echo i18n::__('animal', null, 'animal') ?>: 
-
+                            <?php echo i18n::__('animal', null, 'animal') ?>: </th>
+                        <th>
                             <select name=" <?php echo vacunacionTableClass::getNameField(vacunacionTableClass::ANIMAL, true) ?>">
                                 <option>...</option>
                                 <?php foreach ($objAnimal as $key): ?>
@@ -34,8 +35,8 @@
                     </tr>
                     <tr>
                         <th>
-                            <?php echo i18n::__('veterinario', null, 'veterinario') ?>: 
-
+                            <?php echo i18n::__('veterinario', null, 'veterinario') ?>: </th>
+                        <th>
                             <select name=" <?php echo vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true) ?>">
                                 <option>...</option>
                                 <?php foreach ($objVeterinario as $key): ?>
@@ -48,8 +49,8 @@
                         </th>
                     </tr>
                     <tr>
-                        <th colspan="2" class="text-center active">
-                            <input type="submit" value="<?php echo i18n::__(((isset($objVacunacion)) ? 'update' : 'register')) ?>">
+                        <th colspan="2" class="text-center">
+                            <input type="submit" class="btn" value="<?php echo i18n::__(((isset($objVacunacion)) ? 'update' : 'register')) ?>">
                         </th>
                     </tr>
                 </table>

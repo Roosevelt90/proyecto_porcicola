@@ -48,7 +48,7 @@
                     <tr>
                         <th colspan="2">
                     <div class="text-center">
-                        <input type="submit" value="<?php echo i18n::__(((isset($objInsumo) == TRUE) ? 'edit' : 'register'), NULL, 'user') ?>">
+                        <input type="submit" class="btn" value="<?php echo i18n::__(((isset($objInsumo) == TRUE) ? 'edit' : 'register'), NULL, 'user') ?>">
                     </div>
                     </th>
                     </tr>

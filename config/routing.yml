@@ -90,7 +90,7 @@ shfSecurity_exception:
 
 ##----------------DATOS USUARIO-----------------##
 
-#dataUser_index:
+dataUser_index:
   url:    /datos/index
   param:  { module: dataUser, action: index, format: html }
   load:
@@ -100,12 +100,14 @@ shfSecurity_exception:
     - model/ciudadTableClass.php
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
-#    - model/base/usuarioBaseTableClass.php
-#    - model/usuarioTableClass.phps.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.phps.php
     - model/base/tipoDocumentoUsuarioBaseTableClass.php
     - model/tipoDocumentoUsuarioTableClass.php
-#    - model/recuperarBaseTableClass.php
-#    - model/recuperarTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 dataUser_insert:
   url:    /datos/insertar
@@ -333,7 +335,7 @@ default_reporte:
     - model/datosUsuarioTableClass.php
     - model/base/tipoDocumentoUsuarioBaseTableClass.php
     - model/tipoDocumentoUsuarioTableClass.php
-    - model/base/ciudadBasetableClass.php
+    - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
     
 #depto_reporte:
@@ -462,7 +464,7 @@ ciudad_deleteSelect:
 
 ##----------------DATOS USUARIO-----------------##
 
-#dataUser_index:
+dataUser_index:
   url:    /datos/index
   param:  { module: dataUser, action: index, format: html }
   load:
@@ -472,12 +474,14 @@ ciudad_deleteSelect:
     - model/ciudadTableClass.php
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
-#    - model/base/usuarioBaseTableClass.php
-#    - model/usuarioTableClass.phps.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.phps.php
     - model/base/tipoDocumentoUsuarioBaseTableClass.php
     - model/tipoDocumentoUsuarioTableClass.php
-#    - model/recuperarBaseTableClass.php
-#    - model/recuperarTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 dataUser_insert:
   url:    /datos/insertar

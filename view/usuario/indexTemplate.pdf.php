@@ -28,7 +28,7 @@ $pdf->Image(routing::getInstance()->getUrlImg('reporte_horizontal.jpg'), 0, 0, 3
 // Arial bold 15
 $pdf->SetFont('Arial', 'B', 25);
 // Movernos a la derecha
-$pdf->Cell(80);
+$pdf->Cell(90);
 // Título
 $pdf->Cell(30, 10, $mensaje, 0, 0, 'C');
 // Salto de línea
@@ -36,25 +36,27 @@ $pdf->Ln(20);
 $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);//usuarios usuarios usuaruis
+$pdf->Cell(10);
 $pdf->Cell(20, 10, utf8_encode('Id'), 1);
 //$pdf->Cell(20, 10, utf8_encode('ciudad'), 1);
-$pdf->Cell(30, 10, utf8_encode('nombre'), 1);
-$pdf->Cell(30, 10, utf8_encode('apellido '), 1);
-$pdf->Cell(30, 10, utf8_encode('identificacion '), 1);
-$pdf->Cell(20, 10, utf8_encode('ciudad '), 1);
-$pdf->Cell(20, 10, utf8_encode('telefono '), 1);
-$pdf->Cell(42, 10, utf8_encode('direccion '), 1);
+$pdf->Cell(30, 10, utf8_encode('Identificacion '), 1);
+$pdf->Cell(30, 10, utf8_encode('Nombre'), 1);
+$pdf->Cell(30, 10, utf8_encode('Apellido '), 1);
+$pdf->Cell(20, 10, utf8_encode('Telefono '), 1);
+$pdf->Cell(42, 10, utf8_encode('Direccion '), 1);
+$pdf->Cell(20, 10, utf8_encode('Ciudad '), 1);
 $pdf->Ln();
 foreach ($objDatos as $key) {
+    $pdf->Cell(10);
     $pdf->Cell(20, 10, utf8_encode($key->id), 1);
 //    $pdf->Cell(20, 10, utf8_encode($key->ciudad_id), 1);
+    $pdf->Cell(30, 10, utf8_encode($key->numero_documento), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre), 1);
     $pdf->Cell(30, 10, utf8_encode($key->apellidos), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->numero_documento), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->ciudad_id), 1);
     $pdf->Cell(20, 10, utf8_encode($key->telefono), 1);
     $pdf->Cell(42, 10, utf8_encode($key->direccion), 1);
-    ciudadTableClass::getNameCiudad($key->$ciudad);
+    $pdf->Cell(20, 10, utf8_encode($key->ciudad_id), 1);
+//    ciudadTableClass::getNameCiudad($key->$ciudad);
     $pdf->Ln();
 }
 

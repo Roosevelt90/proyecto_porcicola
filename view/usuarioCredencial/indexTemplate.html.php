@@ -6,7 +6,7 @@
 <?php $countDetale = 1 ?>
 <div class="container container-fluid">
     <div class="row">
-        <div class="col-xs-4-offset-4 titulo">
+        <div class="col-xs-4-offset-4 text-center">
             <h2>
                 <?php  echo i18n::__('read', NULL, 'userCredencial') ?>
             </h2>
@@ -14,15 +14,13 @@
     </div>
     <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'deleteSelect') ?>" method="POST">
         <div class="row">
-            <div class="col-xs-4-offset-4 nuevo">
-                <a id="deleteMasa" href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">      <?php echo i18n::__('borrar seleccion') ?></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-                </div>
-                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('nuev') ?></a>
+            <div class="col-xs-4-offset-4 text-center">
+                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                  <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
+               
+                
             </div>
         </div>
         <table class="table table-bordered table-responsive">
@@ -43,14 +41,11 @@
                         <td><?php echo $key->$usuario_id ?></td>
                         <td><?php echo $key->$credencial ?></td>
                         <td>
-                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'edit', array(usuarioCredencialTableClass::ID => usuarioCredencialTableClass::ID)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
+                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'edit', array(usuarioCredencialTableClass::ID => usuarioCredencialTableClass::ID)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                               <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                             <?php echo i18n::__('modificar', null, 'ayuda') ?>
                         </div> 
-                            <a id="eliminar<?php echo $countDetale ?>" href="#" onclick="confirmarEliminar(<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true) ?>)" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>
-                       <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
-                            <?php echo i18n::__('eliminar', null, 'ayuda') ?>
-                        </div> 
+                           
                         </td>
                     </tr>
                      <?php $countDetale++ ?>

@@ -2,6 +2,7 @@
 
 use mvc\model\table\tableBaseClass;
 
+
 class ciudadBaseTableClass extends tableBaseClass {
 
     private $id,

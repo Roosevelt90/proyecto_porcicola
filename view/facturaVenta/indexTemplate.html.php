@@ -154,7 +154,7 @@ use mvc\request\requestClass as request ?>
 </main>
 
 
-<!-- WINDOWS MODAL DETAIL VACCINATION -->
+<!-- WINDOWS MODAL DETAIL-->
 <div class="modal fade" id="myModalDetail<?php echo $key->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -169,9 +169,9 @@ use mvc\request\requestClass as request ?>
           <!--</form>-->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></button>
+          <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
         <!--<button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()">Insertar</button>-->
-        <input type="submit"  class="btn btn-primary" value=<?php echo i18n::__('confirm') ?> >
+        <input type="submit"  class="btn btn-info active fa fa-plus-square" value=<?php echo i18n::__('confirm') ?> >
 
       </div>
     </div>

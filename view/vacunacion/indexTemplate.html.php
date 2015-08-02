@@ -266,8 +266,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()"><?php echo i18n::__('insert', null, 'dpVenta') ?></button>
+                <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
+                <button type="button" class="btn btn-info active fa fa-plus-square" onclick="$('#detailForm').submit()"><?php echo i18n::__('insert', null, 'dpVenta') ?></button>
                 <!--<input type="submit"  class="btn btn-primary" value=<?php echo i18n::__('confirm') ?> >-->
 
             </div>

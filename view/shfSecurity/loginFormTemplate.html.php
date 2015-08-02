@@ -7,8 +7,7 @@ use mvc\view\viewClass as view ?>
 use mvc\session\sessionClass as session ?>
 <?php
 use mvc\date\dateClass as date ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\config\configClass as config ?>
 <?php
@@ -50,8 +49,9 @@ use mvc\request\requestClass as request ?>
 
                 <div class="left col-md-pull-8  col-md-4" style="margin-top: 5px">
                     <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'TraductorShfSecurity') ?>" method="POST">
+                       
                         <select name="language" onchange="$('#frmTraductor').submit()">
-                          <option value=""></option>
+                             <option value=""></option>
                             <option <?php echo(config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es">Español</option>
                             <option <?php echo(config::getDefaultCulture() == 'en') ? 'selected' : '' ?> value="en">English</option>
                         </select>

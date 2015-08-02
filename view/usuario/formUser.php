@@ -52,7 +52,9 @@ use mvc\i18n\i18nClass as i18n ?>
               </th>
               <th>
                 <select name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::RESTAURAR_ID, true) ?>">
-                  <?php foreach ($objRecuperar as $key): ?>
+<option>...</option>                 
+ <?php foreach ($objRecuperar as $key): ?>
+                    
                     <option value="<?php echo $key->$idPregunta ?>">
                       <?php echo $key->$pregunta ?>
                     </option>
@@ -89,7 +91,9 @@ use mvc\i18n\i18nClass as i18n ?>
             </th>
             <th>
               <select name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TIPO_DOC, true) ?>">
-                <?php foreach ($objTipoDoc as $key): ?>
+                <option>...</option>
+                  <?php foreach ($objTipoDoc as $key): ?>
+                    
                   <option value="<?php echo $key->$idTipoDoc ?>">
                     <?php echo $key->$descripcionTipoDoc ?>
                   </option>
@@ -119,7 +123,9 @@ use mvc\i18n\i18nClass as i18n ?>
             </th>
             <th>
               <select name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true) ?>">
-                <?php foreach ($objCiudad as $key): ?>
+                 <option>...</option>
+                  <?php foreach ($objCiudad as $key): ?>
+                   
                   <option value="<?php echo $key->id ?>">
                     <?php echo $key->$nom_ciudad ?>
                   </option>
@@ -137,8 +143,8 @@ use mvc\i18n\i18nClass as i18n ?>
           </tr>
           <tr>
             <th colspan="2">
-          <div class="titulo">
-            <input type="submit" value="<?php echo i18n::__(((isset($objUsuario) == TRUE) ? 'edit' : 'register'), $culture = NULL, $dictionary = 'user') ?>">
+          <div class="text-center">
+              <input type="submit" class="btn" value="<?php echo i18n::__(((isset($objUsuario) == TRUE) ? 'edit' : 'register'), $culture = NULL, $dictionary = 'user') ?>">
           </div>
           </th>
           </tr>

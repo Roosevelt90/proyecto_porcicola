@@ -4,7 +4,7 @@
 <main class="mdl-layout__content mdl-color--blue-grey-200">
 <div class="container">
     <div class="row">
-        <div class="col-xs-4-offset-4 text-center purple">
+        <div class="col-xs-4-offset-4 text-center ">
             <h2><?php echo i18n::__('edit', NULL, 'raza') ?> :</h2>
   
             <h3><?php echo $objRaza[0]->nombre_raza = ucwords($objRaza[0]->nombre_raza) ?></h3>

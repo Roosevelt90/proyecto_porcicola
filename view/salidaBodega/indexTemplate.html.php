@@ -127,7 +127,7 @@ use mvc\request\requestClass as request ?>
             </div>
           </div>
 
-          <!-- WINDOWS MODAL DTAILS -->
+          <!-- WINDOWS MODAL DETAILS -->
           <div id="myModalInserDetails<?php echo $key->$id ?>" class="modalmask">
             <div class="modalbox rotate">
               <a href="#close" title="Close" class="close">X</a>
@@ -159,8 +159,8 @@ use mvc\request\requestClass as request ?>
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="$('#detailForm').submit()"> <?php echo i18n::__('create') ?></button>
+                  <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
+                <button type="button" class="btn btn-info active fa fa-plus-square" onclick="$('#detailForm').submit()"> <?php echo i18n::__('create') ?></button>
               </div>
             </div>
           </div>

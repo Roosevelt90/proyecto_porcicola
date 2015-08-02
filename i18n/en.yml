@@ -229,6 +229,7 @@ dictionary:
     register:             register
     editUser:             edit user
     edit:                 edit
+    motivo:               Enter the reason that you want to remove
     oldPass:              new password
     read:                 Users
     delete:               delete
@@ -237,6 +238,7 @@ dictionary:
     quest:                quest of security
     answer:               answer of security
     delete:               delete
+    busq:                 Searching
     confirmDelete:        delet user 
     bodyDelete:           To delete the record
     date:                 Creation date

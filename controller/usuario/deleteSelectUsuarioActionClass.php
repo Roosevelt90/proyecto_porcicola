@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
+class deleteSelectUsuarioActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
@@ -33,7 +33,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                 usuarioTableClass::delete($ids, true);
 
                 session::getInstance()->setSuccess(i18n::__('succesDeleteMasivo', null, 'user'));
-                routing::getInstance()->redirect('usuario', 'index');
+                routing::getInstance()->redirect('usuario', 'indexUsuario');
             } else {
                 session::getInstance()->setError(i18n::__('errorDeleteMasivo', null, 'user'));
                 routing::getInstance()->redirect('usuario', 'index');

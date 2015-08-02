@@ -51,6 +51,7 @@ use mvc\request\requestClass as request ?>
                 <div class="left col-md-pull-8  col-md-4" style="margin-top: 5px">
                     <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'TraductorShfSecurity') ?>" method="POST">
                         <select name="language" onchange="$('#frmTraductor').submit()">
+                          <option value=""></option>
                             <option <?php echo(config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es">Español</option>
                             <option <?php echo(config::getDefaultCulture() == 'en') ? 'selected' : '' ?> value="en">English</option>
                         </select>

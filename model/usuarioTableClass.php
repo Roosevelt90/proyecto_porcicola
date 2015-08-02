@@ -38,6 +38,10 @@ class usuarioTableClass extends usuarioBaseTableClass {
     }
   }
 
+  
+
+  
+  
   public static function setRegisterLastLoginAt($id) {
     try {
       $sql = 'UPDATE ' . usuarioTableClass::getNameTable() . '
@@ -94,7 +98,7 @@ class usuarioTableClass extends usuarioBaseTableClass {
      }
    
   
-       if(!ereg($patron, $respuesta)){
+       if(!ereg($patron, $password)){
          session::getInstance()->setError('campo respuesta no permite carateres especiales');
          $flag = true;
          session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::RESPUESTA_SECRETA, true), true);
@@ -108,6 +112,24 @@ class usuarioTableClass extends usuarioBaseTableClass {
          }
        
  }
+  public static function getNameUsuario($id) {
+        try {
+            $sql = 'SELECT ' . usuarioTableClass::USER . ' AS usuario '
+                    . 'FROM ' . usuarioTableClass::getNameTable() . ' '
+                    . 'WHERE ' . usuarioTableClass::ID . ' = :id';
+            $params = array(
+                ':id' => $id
+            );
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->usuario;
+        } catch (PDOException $exc) {
+            throw $exc;
+        }
+    }
+ 
+ 
  
 // public static function validatUpdate($usuario, $password){
 //     $flag = FALSE;
@@ -132,7 +154,10 @@ class usuarioTableClass extends usuarioBaseTableClass {
 //            session::getInstance()->setError('la contraseña excede de el limite de caracteres permitidos');
 //           $flag = true;
 //           session::getInstance()->setFirstCall(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true),true);
-//             
+//        
+ 
+    
+     
          }
        
    

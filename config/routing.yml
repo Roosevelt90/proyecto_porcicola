@@ -87,13 +87,124 @@ shfSecurity_exception:
   param:  { module: shfSecurity, action: exception, format: html }
 ##-------------------------- shfSecurity --------------------------##
 
+
+##----------------DATOS USUARIO-----------------##
+
+#dataUser_index:
+  url:    /datos/index
+  param:  { module: dataUser, action: index, format: html }
+  load:
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.phps.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+#    - model/recuperarBaseTableClass.php
+#    - model/recuperarTableClass.php
+
+dataUser_insert:
+  url:    /datos/insertar
+  param:  { module: dataUser, action: insert, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+dataUser_create:
+  url:    /datos/crear
+  param:  { module: dataUser, action: create, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    
+dataUser_edit:
+  url:    /datos/editar
+  param:  { module: dataUser, action: edit, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+default_delete_filter:
+  url:  /borrar_filtro_usuario
+  param:    { module: usuario, action: deleteFiltersUsuario, format: html }
+    
+dataUser_update:
+  url:    /datos/actualizar
+  param:  { module: dataUser, action: update, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    - model/base/departamentoBaseTableClass.php
+    - model/departamentoTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/recuperarBaseTableClass.php
+    - model/recuperarTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+dataUser_delete:
+  url:    /datos/eliminar
+  param:  { module: dataUser, action: delete, format: html }
+  load:
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+dataUser_deleteSelect:
+  url:    /datos/eliminarSeleccion
+  param:  { module: dataUser, action: deleteSelect, format: html }
+  load:
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
+
 ##-------------------------- EJEMPLO --------------------------##
 usuario_index:
   url:    /usuarios/index
-  param:  { module: usuario, action: index, format: html }
+  param:  { module: usuario, action: indexUsuario, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    
 
 default_insert_Datos:
   url:  /usuarios/datos
@@ -108,7 +219,7 @@ default_insert_Datos:
 
 default_insert:
   url:    /usuarios/insertar
-  param:  { module: usuario, action: insert, format: html }
+  param:  { module: usuario, action: insertUsuario, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -124,7 +235,7 @@ default_insert:
 
 default_create:
   url:    /usuarios/crear
-  param:  { module: usuario, action: create, format: html }
+  param:  { module: usuario, action: createUsuario, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -143,7 +254,7 @@ default_create:
     
 default_edit:
   url:    /usuario/editar
-  param:  { module: usuario, action: edit, format: html }
+  param:  { module: usuario, action: editUsuario, format: html }
   load:
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
@@ -161,7 +272,7 @@ default_edit:
 
 default_update:
   url:    /usuario/actualizar
-  param:  { module: usuario, action: update, format: html }
+  param:  { module: usuario, action: updateUsuario, format: html }
   load:
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
@@ -176,10 +287,13 @@ default_update:
     - model/tipoDocumentoUsuarioTableClass.php
     - model/recuperarTableClass.php
     - libs/validate/validatorFieldsClass.php
-
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
 default_delete:
   url:    /usuario/eliminar
-  param:  { module: usuario, action: delete, format: json }
+  param:  { module: usuario, action: deleteUsuario, format: json }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -188,7 +302,7 @@ default_delete:
 
 default_deleteSelect:
   url:    /usuario/eliminarSeleccion
-  param:  { module: usuario, action: deleteSelect, format: html }
+  param:  { module: usuario, action: deleteSelectUsuario, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -197,7 +311,7 @@ default_deleteSelect:
     
 default_vista:
   url:    /usuario/vista
-  param:  { module: usuario, action: view, format: html }
+  param:  { module: usuario, action: viewUsuario, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -206,11 +320,26 @@ default_vista:
     - model/bitacoraTableClass.php
     - model/base/datosUsuarioBaseTableClass.php
     - model/datosusuarioTableClass.php
-      
     
-depto_reporte:
+default_reporte:
   url:    /usuario/reporte
-  param:  { module: usuario, action: report, format: pdf }
+  param:  { module: usuario, action: reportUsuario, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldsClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datosUsuarioBaseTableClass.php
+    - model/datosUsuarioTableClass.php
+    - model/base/tipoDocumentoUsuarioBaseTableClass.php
+    - model/tipoDocumentoUsuarioTableClass.php
+    - model/base/ciudadBasetableClass.php
+    - model/ciudadTableClass.php
+    
+#depto_reporte:
+#  url:    /usuario/reporte
+#  param:  { module: usuario, action: report, format: pdf }
+
 ##-------------------------- EJEMPLO --------------------------##
 
 

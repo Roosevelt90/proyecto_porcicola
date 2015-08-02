@@ -8,7 +8,7 @@
             <h2><?php echo i18n::__('edit',  NULL,  'credencial') ?> :</h2>
             <br>   
             <?php // print_r($objCredencial) ?>
-            <h3><?php echo $objCredencial[0]->nombre = ucwords($objCredencial[0]->ciudad) ?></h3>
+            <h3><?php echo $objCredencial[0]->nombre = ucwords($objCredencial[0]->nombre) ?></h3>
         </div>
     </div>
 </div>

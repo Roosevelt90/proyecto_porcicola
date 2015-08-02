@@ -96,8 +96,8 @@ class reportAnimalActionClass extends controllerClass implements controllerActio
                 animalTableClass::ID,
                 animalTableClass::PESO,
                 animalTableClass::PRECIO_ANIMAL,
-                animalTableClass::EDAD,
-                animalTableClass::FECHA_NACIMIENTO
+                animalTableClass::FECHA_NACIMIENTO,
+                animalTableClass::NUMERO
             );
             $fields2 = array(
                 generoTableClass::NOMBRE

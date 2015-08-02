@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
+class deleteSelectUsuCredencialActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {

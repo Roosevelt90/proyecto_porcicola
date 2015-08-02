@@ -25,7 +25,7 @@ $pdf->Image(routing::getInstance()->getUrlImg('reporte_Vertical.jpg'), 0, 0, 218
 // Arial bold 15
 $pdf->SetFont('Arial', 'B', 25);
 // Movernos a la derecha
-$pdf->Cell(80);
+$pdf->Cell(90);
 // Título
 $pdf->Cell(30, 10, $mensaje, 0, 0, 'C');
 // Salto de línea
@@ -33,18 +33,18 @@ $pdf->Ln(20);
 $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
-$pdf->Cell(20, 10, utf8_encode('Numero de Identificacion'), 1);
+$pdf->Cell(10);
+$pdf->Cell(40, 10, utf8_encode('N. Identificacion'), 1);
 $pdf->Cell(20, 10, utf8_encode('Peso'), 1);
-$pdf->Cell(20, 10, utf8_encode('Edad'), 1);
 $pdf->Cell(42, 10, utf8_encode('Fecha de nacimiento'), 1);
 $pdf->Cell(30, 10, utf8_encode('Genero'), 1);
 $pdf->Cell(30, 10, utf8_encode('Lote'), 1);
 $pdf->Cell(30, 10, utf8_encode('Raza'), 1);
 $pdf->Ln();
 foreach ($objAnimal as $key) {
-    $pdf->Cell(20, 10, utf8_encode($key->numero_identificacion), 1);
+  $pdf->Cell(10);
+    $pdf->Cell(40, 10, utf8_encode($key->numero_identificacion), 1);
     $pdf->Cell(20, 10, utf8_encode($key->peso_animal), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->edad), 1);
     $pdf->Cell(42, 10, utf8_encode($key->fecha_nacimiento), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre_genero), 1);
     $pdf->Cell(30, 10, utf8_encode($key->nombre_lote), 1);

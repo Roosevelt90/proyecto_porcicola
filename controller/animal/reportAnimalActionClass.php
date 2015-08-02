@@ -120,7 +120,7 @@ class reportAnimalActionClass extends controllerClass implements controllerActio
             );
 
             $this->objAnimal = animalTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', null, null, $where);
-            $this->mensaje = 'Informe de los cerdos en nuestro sistema';
+            $this->mensaje = 'Informe de Cerdos en Nuestro Sistema';
             $this->defineView('index', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

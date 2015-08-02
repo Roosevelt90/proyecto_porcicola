@@ -284,6 +284,7 @@ dictionary:
     bodega:               Bodega
     entrada:              Entrada de Bodega
     salida:               Salida de Bodega
+    detalle1:             Detalle de Salida de Bodega
     new:                  Registrar una Nueva Entrada de Bodega
     detalle:              Detalle de Entrada de Bodega
     sal:                  Registrar una Nueva Salida de Bodega

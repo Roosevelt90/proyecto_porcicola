@@ -131,7 +131,7 @@ class reportUsuarioActionClass extends controllerClass implements controllerActi
             );
 
             $this->objDatos = datosUsuarioTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
-            $this->mensaje = 'Informe de los usuarios en nuestro sistema';
+            $this->mensaje = 'Informe de Usuarios en Nuestro Sistema';
             $this->defineView('index', 'usuario', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

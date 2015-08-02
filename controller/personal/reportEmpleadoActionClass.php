@@ -57,7 +57,7 @@ class reportEmpleadoActionClass extends controllerClass implements controllerAct
                 empleadoTableClass::ID
             );
             $this->objEmpleado = empleadoTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', $where);
-            $this->mensaje = 'Informe de las empledo en nuestro sistema';
+            $this->mensaje = 'Informe de Empledos en Nuestro Sistema';
             $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

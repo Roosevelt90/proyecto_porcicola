@@ -39,7 +39,7 @@ class reportVentaActionClass extends controllerClass implements controllerAction
             $orderBy = array(
                 procesoVentaTableClass::FECHA_HORA_VENTA
             );
-            $this->mensaje = "Informe de las facturas de Venta";
+            $this->mensaje = "Informe de Facturas de Venta";
 
             $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC');
             $this->defineView('report', 'facturaVenta', session::getInstance()->getFormatOutput());

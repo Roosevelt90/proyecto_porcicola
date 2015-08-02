@@ -38,21 +38,21 @@ $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
 $pdf->Cell(5);
-$pdf->Cell(35, 10, utf8_encode('Tipo Documento'), 1);
-$pdf->Cell(43, 10, utf8_encode('Numero Documento'), 1);
-$pdf->Cell(43, 10, utf8_encode('Nombre Completo'), 1);
-$pdf->Cell(35, 10, utf8_encode('Telefono'), 1);
-$pdf->Cell(42, 10, utf8_encode('Direccion'), 1);
-$pdf->Cell(30, 10, utf8_encode('Ciudad'), 1);
+$pdf->Cell(35, 10, utf8_decode('Tipo Documento'), 1);
+$pdf->Cell(43, 10, utf8_decode('Numero Documento'), 1);
+$pdf->Cell(43, 10, utf8_decode('Nombre Completo'), 1);
+$pdf->Cell(35, 10, utf8_decode('Telefono'), 1);
+$pdf->Cell(42, 10, utf8_decode('Direccion'), 1);
+$pdf->Cell(30, 10, utf8_decode('Ciudad'), 1);
 $pdf->Ln();
 foreach ($objVeterinario as $key) {
     $pdf->Cell(5);
-    $pdf->Cell(35, 10, utf8_encode($key->$tipo_doc), 1);
-    $pdf->Cell(43, 10, utf8_encode($key->$numero_documento), 1);
-    $pdf->Cell(43, 10, utf8_encode($key->$nombre), 1);
-    $pdf->Cell(35, 10, utf8_encode($key->$telefono), 1);
-    $pdf->Cell(42, 10, utf8_encode($key->$direccion), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->$ciudad), 1);
+    $pdf->Cell(35, 10, utf8_decode($key->$tipo_doc), 1);
+    $pdf->Cell(43, 10, utf8_decode($key->$numero_documento), 1);
+    $pdf->Cell(43, 10, utf8_decode($key->$nombre), 1);
+    $pdf->Cell(35, 10, utf8_decode($key->$telefono), 1);
+    $pdf->Cell(42, 10, utf8_decode($key->$direccion), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->$ciudad), 1);
     $pdf->Ln();
 }
 $pdf->Output();

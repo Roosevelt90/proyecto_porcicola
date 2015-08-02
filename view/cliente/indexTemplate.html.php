@@ -35,22 +35,7 @@
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>">
 
             <table class="table table-responsive ">    
-              <tr>
-                <th>  <?php echo i18n::__('name', NULL, 'cliente') ?>:</th>
-                <th> 
-                  <input placeholder="<?php echo i18n::__('name', NULL, 'cliente') ?>" type="text" name="filter[nombre_completo]" >
-                </th>   
-              </tr>
-              <tr>
-                <th>
-                  <?php echo i18n::__('telefono', null, 'cliente') ?>:
-                </th>
-                <th>
-                  <input placeholder="<?php echo i18n::__('telefono', NULL, 'cliente') ?>" type="text" name="filter[telefono]" >
-                </th>
-              </tr>
-
-              <tr>
+                     <tr>
                 <th>
                   <?php echo i18n::__('document type', null, 'cliente') ?>:
                 </th>
@@ -65,8 +50,21 @@
                   </select>
                 </th>
               </tr>
-
-            </table>
+              <tr>
+                <th>  <?php echo i18n::__('name', NULL, 'cliente') ?>:</th>
+                <th> 
+                  <input placeholder="<?php echo i18n::__('name', NULL, 'cliente') ?>" type="text" name="filter[nombre_completo]" >
+                </th>   
+              </tr>
+              <tr>
+                <th>
+                  <?php echo i18n::__('telefono', null, 'cliente') ?>:
+                </th>
+                <th>
+                  <input placeholder="<?php echo i18n::__('telefono', NULL, 'cliente') ?>" type="text" name="filter[telefono]" >
+                </th>
+              </tr>
+           </table>
           </form>
           <div class="modal-footer">
             <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o"><?php echo i18n::__('cerrar') ?></a>

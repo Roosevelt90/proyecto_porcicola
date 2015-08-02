@@ -91,7 +91,10 @@ use mvc\request\requestClass as request ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="edit<?php echo $countDetale ?>">
                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
                     </div>  
-
+                     <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class="btn btn-sm btn-default fa fa-ban" ></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
+                    <?php echo i18n::__('habilitar', null, 'ayuda') ?>
+                  </div> 
                     <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalDetail<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" data-toggle="modal" data-target="#myModalDetail<?php echo $key->$id ?>" ></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('insertFactura', null, 'ayuda') ?>
@@ -102,12 +105,9 @@ use mvc\request\requestClass as request ?>
                       <?php echo i18n::__('verDetalleFact', null, 'ayuda') ?>
                     </div>  
                   <?php endif ?>
-                      <?php if(session::getInstance()->hasCredential('admin') == 1):?>
-                  <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class="btn btn-sm btn-info active fa fa-exchange" ></a>
-                  <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
-                    <?php echo i18n::__('habilitar', null, 'ayuda') ?>
-                  </div> 
-<?php endif; ?>
+                 
+                 
+
 
                 </td>
               </tr>
@@ -135,6 +135,10 @@ use mvc\request\requestClass as request ?>
           <!-- WINDOWS MODAL DETAIL -->
           <div id="myModalDetail<?php echo $key->$id ?>" class="modalmask">
             <div class="modalbox rotate">
+                 <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('insertDetail', null, 'vacunacion') ?></h4>
+                                </div>
               <a href="#close" title="Close" class="close">X</a>
               <div class="modal-body">
                 <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'createDetalleFacturaCompra')            ?>">

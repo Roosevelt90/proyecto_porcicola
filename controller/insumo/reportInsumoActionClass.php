@@ -41,7 +41,7 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
             );
 
             $this->objInsumo = insumoTableClass::getAllJoin($fields, $fields2, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', null);
-            $this->mensaje = 'Informe de los insumos en nuestro sistema';
+            $this->mensaje = 'Informe de Insumos en Nuestro Sistema';
             log::register(i18n::__('reporte'), insumoTableClass::getNameTable());
             $this->defineView('index', 'insumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

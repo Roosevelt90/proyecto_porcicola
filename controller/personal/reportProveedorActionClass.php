@@ -49,7 +49,7 @@ class reportProveedorActionClass extends controllerClass implements controllerAc
             );
 
             $this->objProveedor = proveedorTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', $where);
-            $this->mensaje = 'Informe de clientes en nuestro sistema';
+            $this->mensaje = 'Informe de Proveedores en Nuestro Sistema';
             $this->defineView('index', 'proveedor', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

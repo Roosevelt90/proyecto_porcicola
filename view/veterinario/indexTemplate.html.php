@@ -32,21 +32,7 @@
           </div>
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>">
             <table class="table table-responsive ">    
-              <tr>
-                <th>  <?php echo i18n::__('name', NULL, 'veterinario') ?>:</th>
-                <th> 
-                  <input placeholder="<?php echo i18n::__('name', NULL, 'veterinario') ?>" type="text" name="filter[nombre_completo]" >
-                </th>   
-              </tr>
-              <tr>
-                <th>
-                  <?php echo i18n::__('telefono', null, 'veterinario') ?>:
-                </th>
-                <th>
-                  <input placeholder="<?php echo i18n::__('telefono', NULL, 'veterinario') ?>" type="text" name="filter[telefono]" >
-                </th>
-              </tr>
-              <tr>
+                      <tr>
                 <th>
                   <?php echo i18n::__('document type', null, 'veterinario') ?>:
                 </th>
@@ -61,7 +47,21 @@
                   </select>
                 </th>
               </tr>
-            </table>
+              <tr>
+                <th>  <?php echo i18n::__('name', NULL, 'veterinario') ?>:</th>
+                <th> 
+                  <input placeholder="<?php echo i18n::__('name', NULL, 'veterinario') ?>" type="text" name="filter[nombre_completo]" >
+                </th>   
+              </tr>
+              <tr>
+                <th>
+                  <?php echo i18n::__('telefono', null, 'veterinario') ?>:
+                </th>
+                <th>
+                  <input placeholder="<?php echo i18n::__('telefono', NULL, 'veterinario') ?>" type="text" name="filter[telefono]" >
+                </th>
+              </tr>
+       </table>
           </form>
           <div class="modal-footer">
             <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o"><?php echo i18n::__('cerrar') ?></a>

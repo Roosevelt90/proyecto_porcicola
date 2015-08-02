@@ -38,20 +38,20 @@ $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
 $pdf->Cell(5);
-$pdf->Cell(35, 10, utf8_encode('Tipo Insumo'), 1);
-$pdf->Cell(43, 10, utf8_encode('Nombre'), 1);
-$pdf->Cell(43, 10, utf8_encode('Fecha de Fabricacion'), 1);
-$pdf->Cell(45, 10, utf8_encode('Fecha de Vencimiento'), 1);
-$pdf->Cell(42, 10, utf8_encode('Valor'), 1);
+$pdf->Cell(35, 10, utf8_decode('Tipo Insumo'), 1);
+$pdf->Cell(43, 10, utf8_decode('Nombre'), 1);
+$pdf->Cell(43, 10, utf8_decode('Fecha de Fabricación'), 1);
+$pdf->Cell(45, 10, utf8_decode('Fecha de Vencimiento'), 1);
+$pdf->Cell(42, 10, utf8_decode('Valor'), 1);
 
 $pdf->Ln();
 foreach ($objInsumo as $key) {
     $pdf->Cell(5);
-    $pdf->Cell(35, 10, utf8_encode($key->$tipo), 1);
-    $pdf->Cell(43, 10, utf8_encode($key->$nombre), 1);
-    $pdf->Cell(43, 10, utf8_encode($key->$fabricacion), 1);
-    $pdf->Cell(45, 10, utf8_encode($key->$vencimiento), 1);
-    $pdf->Cell(42, 10, utf8_encode($key->$valor), 1);
+    $pdf->Cell(35, 10, utf8_decode($key->$tipo), 1);
+    $pdf->Cell(43, 10, utf8_decode($key->$nombre), 1);
+    $pdf->Cell(43, 10, utf8_decode($key->$fabricacion), 1);
+    $pdf->Cell(45, 10, utf8_decode($key->$vencimiento), 1);
+    $pdf->Cell(42, 10, utf8_decode($key->$valor), 1);
     $pdf->Ln();
 }
 $pdf->Output();

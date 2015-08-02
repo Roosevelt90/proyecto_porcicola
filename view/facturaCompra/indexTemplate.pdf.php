@@ -30,22 +30,22 @@ $pdf->Ln(20);
 $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
-$pdf->Cell(20, 10, utf8_encode('N° Documento'), 1);
-$pdf->Cell(20, 10, utf8_encode('Peso'), 1);
-$pdf->Cell(20, 10, utf8_encode('Edad'), 1);
-$pdf->Cell(42, 10, utf8_encode('Fecha de nacimiento'), 1);
-$pdf->Cell(30, 10, utf8_encode('Genero'), 1);
-$pdf->Cell(30, 10, utf8_encode('Lote'), 1);
-$pdf->Cell(30, 10, utf8_encode('Raza'), 1);
+$pdf->Cell(20, 10, utf8_decode('N° Documento'), 1);
+$pdf->Cell(20, 10, utf8_decode('Peso'), 1);
+$pdf->Cell(20, 10, utf8_decode('Edad'), 1);
+$pdf->Cell(42, 10, utf8_decode('Fecha de nacimiento'), 1);
+$pdf->Cell(30, 10, utf8_decode('Genero'), 1);
+$pdf->Cell(30, 10, utf8_decode('Lote'), 1);
+$pdf->Cell(30, 10, utf8_decode('Raza'), 1);
 $pdf->Ln();
 foreach ($objAnimal as $key) {
-    $pdf->Cell(20, 10, utf8_encode($key->id), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->peso_animal), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->edad_animal), 1);
-    $pdf->Cell(42, 10, utf8_encode($key->fecha_ingreso), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->nombre_genero), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->nombre_lote), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->nombre_raza), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->id), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->peso_animal), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->edad_animal), 1);
+    $pdf->Cell(42, 10, utf8_decode($key->fecha_ingreso), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->nombre_genero), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->nombre_lote), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->nombre_raza), 1);
     $pdf->Ln();
 }//close foreach
 $pdf->Output();

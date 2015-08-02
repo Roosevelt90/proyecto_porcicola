@@ -51,7 +51,7 @@ class reportVeterinarioActionClass extends controllerClass implements controller
             
 
             $this->objVeterinario = veterinarioTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null,  true, $orderBy,'ASC', $where);
-            $this->mensaje ='Reporte de veterinarios';
+            $this->mensaje ='Informe de Veterinarios en Nuestro Sistema';
             $this->defineView('index', 'veterinario', session::getInstance()->getFormatOutput());
            } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

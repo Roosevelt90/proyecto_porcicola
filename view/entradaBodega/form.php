@@ -23,7 +23,7 @@
             </tr>
             <tr>
               <th>  
-                <?php echo i18n::__('empleado', NULL, 'empleado') ?>:
+                <?php echo i18n::__('empleado') ?>:
               </th>
               <th> 
                 <select name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::EMPLEADO, true) ?>">

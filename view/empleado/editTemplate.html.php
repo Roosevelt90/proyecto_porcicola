@@ -8,7 +8,7 @@
         <div class="col-xs-4-offset-4 text-center">
             <h2><?php echo i18n::__('edit',  NULL,  'empleado') ?> :</h2>
 
-            <br>   
+          <h3><?php echo $objEmpleado[0]->nombre_completo = ucwords($objEmpleado[0]->nombre_completo) ?></h3>
  
         </div>
     </div>

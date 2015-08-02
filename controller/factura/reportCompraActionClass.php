@@ -35,7 +35,7 @@ class reportCompraActionClass extends controllerClass implements controllerActio
             $fJoin2 = empleadoTableClass::ID;
             $fJoin3 = procesoCompraTableClass::PROVEEDOR_ID;
             $fJoin4 = proveedorTableClass::ID;
-       $this->mensaje = "Informe de las facturas de compra";
+       $this->mensaje = "Informe de Facturas de Compra";
 
             $this->objFacturaCompra = procesoCompraTableClass::getAllJoin($fieldsFacturaCompra, $fieldsEmpleado, $fieldsProveedor, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true);
             $this->defineView('report', 'facturaCompra', session::getInstance()->getFormatOutput());

@@ -53,7 +53,7 @@ class reportClienteActionClass extends controllerClass implements controllerActi
 
 
             $this->objCliente = clienteTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', $where);
-            $this->mensaje = 'Informe de clientes en nuestro sistema';
+            $this->mensaje = 'Informe de Clientes en Nuestro Sistema';
             $this->defineView('index', 'cliente', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

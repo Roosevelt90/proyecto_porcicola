@@ -33,23 +33,8 @@
           </div>
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor') ?>">
 
-            <table class="table table-responsive ">    
-              <tr>
-                <th>  <?php echo i18n::__('name', NULL, 'proveedor') ?>:</th>
-                <th> 
-                  <input placeholder="<?php echo i18n::__('name', NULL, 'proveedor') ?>" type="text" name="filter[nombre_completo]" >
-                </th>   
-              </tr>
-              <tr>
-                <th>
-                  <?php echo i18n::__('telefono', null, 'proveedor') ?>:
-                </th>
-                <th>
-                  <input placeholder="<?php echo i18n::__('telefono', NULL, 'proveedor') ?>" type="text" name="filter[telefono]" >
-                </th>
-              </tr>
-
-              <tr>
+            <table class="table table-responsive "> 
+                     <tr>
                 <th>
                   <?php echo i18n::__('document type', null, 'proveedor') ?>:
                 </th>
@@ -64,8 +49,21 @@
                   </select>
                 </th>
               </tr>
-
-            </table>
+              <tr>
+                <th>  <?php echo i18n::__('name', NULL, 'proveedor') ?>:</th>
+                <th> 
+                  <input placeholder="<?php echo i18n::__('name', NULL, 'proveedor') ?>" type="text" name="filter[nombre_completo]" >
+                </th>   
+              </tr>
+              <tr>
+                <th>
+                  <?php echo i18n::__('telefono', null, 'proveedor') ?>:
+                </th>
+                <th>
+                  <input placeholder="<?php echo i18n::__('telefono', NULL, 'proveedor') ?>" type="text" name="filter[telefono]" >
+                </th>
+              </tr>
+         </table>
           </form>
           <div class="modal-footer">
             <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"><?php echo i18n::__('cerrar') ?></a>

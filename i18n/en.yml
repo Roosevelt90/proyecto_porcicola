@@ -288,6 +288,7 @@ dictionary:
     bodega:               Cellar
     entrada:              Cellar Input
     salida:               Cellar Output
+    detalle1:             Output Detail Winery
     new:                  Register a New Entry Cellar
     detalle:              Entry detail winery
     sal:                  Register a New Warehouse Outlet

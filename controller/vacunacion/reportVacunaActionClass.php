@@ -36,7 +36,7 @@ class reportVacunaActionClass extends controllerClass implements controllerActio
             );
 
             $this->objVacuna = vacunaTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
-            $this->mensaje = 'Informe de las vacunas en nuestro sistema';
+            $this->mensaje = 'Informe de Vacunas en Nuestro Sistema';
             $this->defineView('index', 'vacuna', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

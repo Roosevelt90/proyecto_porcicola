@@ -165,6 +165,17 @@
         <div class="modal-body">
             <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>">
                 <table class="table table-bordered">
+                       <tr>
+                        <th>  <?php echo i18n::__('tipoInsumo') ?>:</th>
+                        <th>
+                            <select name="filter[tipoInsumo]">
+                                <option value=''>...</option>
+                                <?php foreach ($objTipoInsumo as $key): ?>
+                                    <option value="<?php echo $key->$id_tipoInsumo ?>"><?php echo $key->$tipoInsumo ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
                     <tr>
                         <th>  <?php echo i18n::__('insumo', NULL, 'insumo') ?>:</th>
                         <th> <input  type="text" name="filter[nombre]" ></th>   
@@ -177,17 +188,7 @@
                         <th>  <?php echo i18n::__('fechaVencimiento') ?>:</th>
                         <th> <input  type="date" name="filter[VencimientoInicial]" ></th>   
                     </tr>
-                    <tr>
-                        <th>  <?php echo i18n::__('tipoInsumo') ?>:</th>
-                        <th>
-                            <select name="filter[tipoInsumo]">
-                                <option value=''>...</option>
-                                <?php foreach ($objTipoInsumo as $key): ?>
-                                    <option value="<?php echo $key->$id_tipoInsumo ?>"><?php echo $key->$tipoInsumo ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </th>
-                    </tr>
+                 
 
                 </table>
 

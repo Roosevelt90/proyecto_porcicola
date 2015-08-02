@@ -33,7 +33,22 @@
             <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('buscar') ?></h4>
           </div>
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>">
-            <table class="table table-responsive ">    
+            <table class="table table-responsive ">   
+                     <tr>
+                <th>
+                  <?php echo i18n::__('document type', null, 'empleado') ?>:
+                </th>
+                <th>
+                  <select name="filter[tipo_doc]"> 
+                    <option>...</option>
+                    <?php foreach ($objtipoDoc as $key): ?>
+                      <option value="<?php echo $key->id ?>">
+                        <?php echo $key->descripcion ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                </th>
+              </tr>
               <tr>
                 <th>  <?php echo i18n::__('name', NULL, 'empleado') ?>:</th>
                 <th> 
@@ -63,23 +78,7 @@
                   </select>
                 </th>
               </tr>
-              <tr>
-                <th>
-                  <?php echo i18n::__('document type', null, 'empleado') ?>:
-                </th>
-                <th>
-                  <select name="filter[tipo_doc]"> 
-                    <option>...</option>
-                    <?php foreach ($objtipoDoc as $key): ?>
-                      <option value="<?php echo $key->id ?>">
-                        <?php echo $key->descripcion ?>
-                      </option>
-                    <?php endforeach; ?>
-                  </select>
-                </th>
-              </tr>
-
-            </table>
+           </table>
           </form>
           <div class="modal-footer">
             <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o"><?php echo i18n::__('cerrar') ?></a>

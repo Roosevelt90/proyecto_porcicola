@@ -190,7 +190,7 @@
             </tr>
             <tr>-->
             <th>
-              <?php echo i18n::__('fecha', null, 'animal') ?>:
+              <?php echo i18n::__('fechaInicio') ?>:
             </th>
             <th>
               <input type="date" name="filter[fecha_inicial]" >               
@@ -198,7 +198,7 @@
             </tr>
             <tr>
               <th>
-                <?php echo i18n::__('fecha', null, 'animal') ?>:
+                <?php echo i18n::__('fechaFin') ?>:
               </th>
               <th>
                 <input type="date" name="filter[fecha_fin]" >               

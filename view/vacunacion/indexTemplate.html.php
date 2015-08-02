@@ -198,7 +198,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <?php echo i18n::__('veterinario') ?>:
+                                <?php echo i18n::__('veterinario', null, 'veterinario') ?>:
                             </th>
                             <th>
                                 <select name="filter[veterinario]">

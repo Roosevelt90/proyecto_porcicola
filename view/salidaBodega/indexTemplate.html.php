@@ -94,7 +94,7 @@ use mvc\request\requestClass as request ?>
                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                     </div> 
                     <?php                             endif; ?>
-                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info active btn-sm fa fa-eye"> </a>
+                    <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewSalida', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-info active btn-sm fa fa-eye"> </a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                     </div>  
@@ -132,7 +132,7 @@ use mvc\request\requestClass as request ?>
             <div class="modalbox rotate">
               <a href="#close" title="Close" class="close">X</a>
               <div class="modal-body">
-                <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleEntrada') ?>">
+                <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleSalida') ?>">
 
                   <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaBaseTableClass::ID_SALIDA, true) ?>">
 

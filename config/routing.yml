@@ -3216,7 +3216,7 @@ detalle_salida_bodega_delete_filters:
 
 salida_bodega_view:
   url:    /salida_bodega/view
-  param: { module: bodega, action: viewEntrada, format: html }
+  param: { module: bodega, action: viewSalida, format: html }
   load:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php

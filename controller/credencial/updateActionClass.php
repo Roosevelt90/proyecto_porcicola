@@ -16,29 +16,20 @@ class updateActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-                $id = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::ID, true));
-                $idUsuario = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::USUARIO_ID, true));
-                $nombre = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true));
-                $apellidos = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true));
-                $cedula = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CEDULA, true));
-                $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
-                $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
-                $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
+                $id = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::ID, true));
+               
+                $nombre = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true));
+                
                 $ids = array(
-                    datosUsuarioTableClass::ID => $id
+                    credencialTableClass::ID => $id
                 );
                 $data = array(
-                    datosUsuarioTableClass::USUARIO_ID => $idUsuario,
-                    datosUsuarioTableClass::NOMBRE => $nombre,
-                    datosUsuarioTableClass::APELLIDOS => $apellidos,
-                    datosUsuarioTableClass::CEDULA => $cedula,
-                    datosUsuarioTableClass::DIRECCION => $direccion,
-                    datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
-                    datosUsuarioTableClass::TELEFONO => $telefono
+                    credencialTableClass::ID => $id,
+                    credencialTableClass::NOMBRE => $nombre
                 );
-                datosUsuarioTableClass::update($ids, $data);
+                credencialTableClass::update($ids, $data);
             }//close if
-            routing::getInstance()->redirect('dataUser', 'index');
+            routing::getInstance()->redirect('credencial', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

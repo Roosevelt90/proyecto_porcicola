@@ -1,10 +1,11 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = credencialTableClass::ID ?>
 <?php $nombre = credencialTableClass::NOMBRE ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('credencial', ((isset($objCredencial) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objCredencial)): ?>
-    <input type="hidden" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, TRUE) ?>" value="<?php echo $objCredencial[0]->$id ?>">
+    <input type="hidden" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, TRUE) ?>" value="<?php echo $objCredencial[0]->id ?>">
     <?php endif;//close if ?>
     <div class="container">
         <div class="row">

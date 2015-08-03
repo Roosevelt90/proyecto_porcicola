@@ -1,5 +1,6 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = usuarioCredencialTableClass::ID?>
 <?php $usuario_id = usuarioCredencialTableClass::USUARIO_ID ?>
 <?php $credencial = usuarioCredencialTableClass::CREDENCIAL_ID ?>

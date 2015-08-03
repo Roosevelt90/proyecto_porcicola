@@ -1,7 +1,7 @@
 shfSecurity:
   index:
     security: false
-  logoin:
+  login:
     security: false
   logout:
     security: true
@@ -16,41 +16,62 @@ default:
     credentials:
       - [admin, invitado]
       
+recuperar:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  consultar:
+    security: true
+    credentials:
+      - [admin]
+  recuperar:
+    security: true
+    credentials:
+      - [admin]
 config:
   index:
     security: false
   create:
     security: false
-
+  
 usuario:
-  index:
+  indexUsuario:
     security: true
     credentials:
       - [admin, invitado]
-  insert:
+  insertDatos:
     security: true
     credentials:
       - [admin]
-  create:
+  insertUsuario:
     security: true
     credentials:
       - [admin]
-  edit:
+  createUsuario:
     security: true
     credentials:
       - [admin]
-  update:
+  editUsuario:
     security: true
     credentials:
       - [admin]
-  delete:
+  updateUsuario:
     security: true
     credentials:
       - [admin]
-  deleteSelect:
+  deleteUsuario:
     security: true
     credentials:
       - [admin]
+  deleteSelectUsuario:
+    security: true
+    credentials:
+      - [admin]
+  viewUsuario:
+    security: true
+    credentials:
+      - [admin, invitado]
   reportUsuario:
     security: true
     credentials:
@@ -90,8 +111,65 @@ dataUser:
     credentials:
       - [admin]
       
+credencial:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+    credentials:
+      - [admin]
+  create:
+    security: true
+    credentials:
+      - [admin]
+  edit:
+    security: true
+    credentials:
+      - [admin]
+  update:
+    security: true
+    credentials:
+      - [admin]
+  delete:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelect:
+    security: true
+    credentials:
+      - [admin]
       
-      
+usuarioCredencial:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+    credentials:
+      - [admin]
+  create:
+    security: true
+    credentials:
+      - [admin]
+  edit:
+    security: true
+    credentials:
+      - [admin]
+  update:
+    security: true
+    credentials:
+      - [admin]
+  delete:
+    security: true
+    credentials:
+      - [admin]
+  delectSelect:
+    security: true
+    credentials:
+      - [admin]
       
 insumo:
   index:

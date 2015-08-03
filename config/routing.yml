@@ -346,231 +346,119 @@ default_reporte:
 
 
 ##----------------DEPARTAMENTO------------##
-depto_index:
-  url:    /depto/index
-  param:  { module: departamento, action: index, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-depto_deleteSelect:
-  url:    /depto/eliminarSeleccion
-  param:  { module: departamento, action: deleteSelect, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-depto_insert:
-  url:    /depto/insertar
-  param:  { module: departamento, action: insert, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
+#depto_index:
+#  url:    /depto/index
+#  param:  { module: departamento, action: index, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#depto_deleteSelect:
+#  url:    /depto/eliminarSeleccion
+#  param:  { module: departamento, action: deleteSelect, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#depto_insert:
+#  url:    /depto/insertar
+#  param:  { module: departamento, action: insert, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#
+#depto_create:
+#  url:    /depto/crear
+#  param:  { module: departamento, action: create, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#depto_edit:
+#  url:    /depto/editar
+#  param:  { module: departamento, action: edit, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#
+#depto_update:
+#  url:    /depto/actualizar
+#  param:  { module: departamento, action: update, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#
+#depto_delete:
+#  url:    /depto/eliminar
+#  param:  { module: departamento, action: delete, format: html }
+#  load:
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#
+#
+#
+###----------------CIUDAD-----------------##
+#
+#ciudad_index:
+#  url:    /ciudad/index
+#  param:  { module: ciudad, action: index, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#
+#ciudad_insert:
+#  url:    /ciudad/insertar
+#  param:  { module: ciudad, action: insert, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#ciudad_create:
+#  url:    /ciudad/crear
+#  param:  { module: ciudad, action: create, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#ciudad_edit:
+#  url:    /ciudad/editar
+#  param:  { module: ciudad, action: edit, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#ciudad_update:
+#  url:    /ciudad/actualizar
+#  param:  { module: ciudad, action: update, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
+#    - model/base/departamentoBaseTableClass.php
+#    - model/departamentoTableClass.php
+#    
+#ciudad_delete:
+#  url:    /ciudad/eliminar
+#  param:  { module: ciudad, action: delete, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
+#
+#ciudad_deleteSelect:
+#  url:    /ciudad/eliminarSeleccion
+#  param:  { module: ciudad, action: deleteSelect, format: html }
+#  load:
+#    - model/base/ciudadBaseTableClass.php
+#    - model/ciudadTableClass.php
 
-depto_create:
-  url:    /depto/crear
-  param:  { module: departamento, action: create, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-depto_edit:
-  url:    /depto/editar
-  param:  { module: departamento, action: edit, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-
-depto_update:
-  url:    /depto/actualizar
-  param:  { module: departamento, action: update, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-
-depto_delete:
-  url:    /depto/eliminar
-  param:  { module: departamento, action: delete, format: html }
-  load:
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-
-
-
-##----------------CIUDAD-----------------##
-
-ciudad_index:
-  url:    /ciudad/index
-  param:  { module: ciudad, action: index, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-
-ciudad_insert:
-  url:    /ciudad/insertar
-  param:  { module: ciudad, action: insert, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-ciudad_create:
-  url:    /ciudad/crear
-  param:  { module: ciudad, action: create, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-ciudad_edit:
-  url:    /ciudad/editar
-  param:  { module: ciudad, action: edit, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-ciudad_update:
-  url:    /ciudad/actualizar
-  param:  { module: ciudad, action: update, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    
-ciudad_delete:
-  url:    /ciudad/eliminar
-  param:  { module: ciudad, action: delete, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-
-ciudad_deleteSelect:
-  url:    /ciudad/eliminarSeleccion
-  param:  { module: ciudad, action: deleteSelect, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-
-
-
-
-##----------------DATOS USUARIO-----------------##
-
-dataUser_index:
-  url:    /datos/index
-  param:  { module: dataUser, action: index, format: html }
-  load:
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.phps.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
-    - model/base/recuperarBaseTableClass.php
-    - model/recuperarTableClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-
-dataUser_insert:
-  url:    /datos/insertar
-  param:  { module: dataUser, action: insert, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-    - model/base/recuperarBaseTableClass.php
-    - model/recuperarTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    
-dataUser_create:
-  url:    /datos/crear
-  param:  { module: dataUser, action: create, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
-    
-dataUser_edit:
-  url:    /datos/editar
-  param:  { module: dataUser, action: edit, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-    - model/base/recuperarBaseTableClass.php
-    - model/recuperarTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    
-dataUser_update:
-  url:    /datos/actualizar
-  param:  { module: dataUser, action: update, format: html }
-  load:
-    - model/base/ciudadBaseTableClass.php
-    - model/ciudadTableClass.php
-    - model/base/departamentoBaseTableClass.php
-    - model/departamentoTableClass.php
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-    - model/base/recuperarBaseTableClass.php
-    - model/recuperarTableClass.php
-    - model/base/tipoDocumentoUsuarioBaseTableClass.php
-    - model/tipoDocumentoUsuarioTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    
-dataUser_delete:
-  url:    /datos/eliminar
-  param:  { module: dataUser, action: delete, format: html }
-  load:
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    
-dataUser_deleteSelect:
-  url:    /datos/eliminarSeleccion
-  param:  { module: dataUser, action: deleteSelect, format: html }
-  load:
-    - model/base/datosUsuarioBaseTableClass.php
-    - model/datosUsuarioTableClass.php
-    
-    
-    
-    
 ############### CREDENCIAL ##########################
 
 credencial_index:

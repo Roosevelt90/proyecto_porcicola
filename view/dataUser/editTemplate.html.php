@@ -4,7 +4,7 @@
 <main class="mdl-layout__content mdl-color--blue-grey-200">
 <div class="container">
     <div class="row">
-        <div class="col-xs-4-offset-4 titulo">
+        <div class="col-xs-4-offset-4 text-center">
             <h2><?php echo i18n::__('edit',  NULL,  'datos') ?> :</h2>
 
             <br>   

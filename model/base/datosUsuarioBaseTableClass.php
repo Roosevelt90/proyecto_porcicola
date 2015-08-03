@@ -156,7 +156,7 @@ class datosUsuarioBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable4() {
-        return 'tipo_documento_usuario';
+        return 'tipo_documento';
     }
     /**
      * Método para borrar un registro de una tabla X en la base de datos

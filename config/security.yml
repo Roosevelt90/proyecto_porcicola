@@ -9,6 +9,8 @@ shfSecurity:
     security: false
   exception:
     security: false
+  TraductorShfSecurity:
+    security: true
 
 default:
   index:
@@ -71,15 +73,15 @@ usuario:
   viewUsuario:
     security: true
     credentials:
-      - [admin, invitado]
+      - [admin]
   reportUsuario:
     security: true
     credentials:
-      - [admin, invitado]
+      - [admin]
   deleteFiltersUsuario:
     security: true
     credentials:
-      - [admin, invitado]
+      - [admin]
       
 dataUser:
   index:
@@ -200,6 +202,15 @@ insumo:
     security: true
     credentials:
       - [admin]
+  reportInsumo:
+    security: true
+    credentials:
+      - [admin]
+  deleteFilter:
+    security: true
+    credentials:
+      - [admin]
+    
       
       
 animal:
@@ -231,6 +242,14 @@ animal:
     security: true
     credentials:
       - [admin]
+  reportAnimal:
+    security: true
+    credentials:
+      - [admin, invitado]
+  deleteFiltersAnimal:
+    security: true
+    credentials:
+      - [admin, invitado]
   indexRaza:
     security: true
     credentials:
@@ -313,11 +332,19 @@ personal:
     security: true
     credentials:
       - [admin]
-  deleteSelectEmpleado:
+  reportEmpleado:
     security: true
     credentials:
-      - [admin]
+      - [admin, invitado]
+  deleteFiltersEmpleado:
+    security: true
+    credentials:
+      - [admin, invitado]
   indexCliente:
+    security: true
+    credentials:
+      - [admin, invitado]
+  deleteFiltersCliente:
     security: true
     credentials:
       - [admin, invitado]
@@ -336,7 +363,11 @@ personal:
   updateCliente:
     security: true
     credentials:
-      - [admin]     
+      - [admin]   
+  reportCliente:
+    security: true
+    credentials:
+      - [admin, invitado]
   indexVeterinario:
     security: true
     credentials:
@@ -357,7 +388,42 @@ personal:
     security: true
     credentials:
       - [admin]
-
+  deleteFiltersVeterinario:
+    security: true
+    credentials:
+      - [admin, invitado]
+  reportVeterinario:
+    security: true
+    credentials:
+      - [admin, invitado]
+  indexProveedor:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertProveedor:
+    security: true
+    credentials:
+      - [admin]
+  createProveedor:
+    security: true
+    credentials:
+      - [admin]
+  editProveedor:
+    security: true
+    credentials:
+      - [admin]
+  updateProveedor:
+    security: true
+    credentials:
+      - [admin]
+  deleteFiltersProveedor:
+    security: true
+    credentials:
+      - [admin, invitado]
+  reportProveedor:
+    security: true
+    credentials:
+      - [admin, invitado]
       
 vacunacion:
   indexVacunacion:
@@ -388,10 +454,10 @@ vacunacion:
     security: true
     credentials:
       - [admin]
-  reporteVacunacion:
+  reportVacunacion:
     security: true
     credentials:
-      - [admin]
+      - [admin, invitado]
   deleteFiltersVacunacion:
     security: true
     credentials:
@@ -408,7 +474,7 @@ vacunacion:
     security: true
     credentials:
       - [admin]
-  deleteFiltersDetalleVacunacion:
+  deleteFilterDetalle:
     security: true
     credentials:
       - [admin]
@@ -444,74 +510,10 @@ vacunacion:
     security: true
     credentials:
       - [admin]  
-  indexVacuna:
-    security: true
-    credentials:
-      - [admin, invitado]
-  insertVacuna:
-    security: true
-    credentials:
-      - [admin]
-  createVacuna:
-    security: true
-    credentials:
-      - [admin]
-  editVacuna:
-    security: true
-    credentials:
-      - [admin]
-  updateVacuna:
-    security: true
-    credentials:
-      - [admin]
-  deleteVacuna:
-    security: true
-    credentials:
-      - [admin]
-  deleteSelectVacuna:
-    security: true
-    credentials:
-      - [admin]
   deleteSelectDetalleVacunacion:
     security: true
     credentials:
-      - [admin]
-  deleteFiltersDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  reporteDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  traductorDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  indexDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin, invitado]
-  insertDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  createDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  editDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  updateDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]
-  deleteDetalleVacunacion:
-    security: true
-    credentials:
-      - [admin]  
+      - [admin]     
   indexVacuna:
     security: true
     credentials:
@@ -540,8 +542,7 @@ vacunacion:
     security: true
     credentials:
       - [admin]
-
-      
+ 
 factura:
   indexFacturaCompra:
     security: true
@@ -571,15 +572,11 @@ factura:
     security: true
     credentials:
       - [admin]
-  reporteFacturaCompra:
+  reportCompra:
     security: true
     credentials:
       - [admin]
-  deleteFiltersFacturaCompra:
-    security: true
-    credentials:
-      - [admin]
-  traductorFacturaCompra:
+  deleteFilterFacturaCompra:
     security: true
     credentials:
       - [admin]
@@ -615,15 +612,11 @@ factura:
     security: true
     credentials:
       - [admin]
-  reporteFacturaVenta:
+  reportVenta:
     security: true
     credentials:
       - [admin]
-  deleteFiltersFacturaVenta:
-    security: true
-    credentials:
-      - [admin]
-  traductorFacturaVenta:
+  deleteFilterFacturaVenta:
     security: true
     credentials:
       - [admin]
@@ -632,5 +625,101 @@ factura:
     credentials:
       - [admin]
       
-      
+bodega:
+  indexEntrada:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertEntrada:
+    security: true
+    credentials:
+      - [admin]
+  createEntrada:
+    security: true
+    credentials:
+      - [admin]
+  editEntrada:
+    security: true
+    credentials:
+      - [admin]
+  updateEntrada:
+    security: true
+    credentials:
+      - [admin]
+  deleteEntrada:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectEntrada:
+    security: true
+    credentials:
+      - [admin]
+  deleteFilterEntrada:
+    security: true
+    credentials:
+      - [admin]
+  deleteFilterDetalleEntrada:
+    security: true
+    credentials:
+      - [admin]
+  viewEntrada:
+    security: true
+    credentials:
+      - [admin]
+  reportEntrada:
+    security: true
+    credentials:
+      - [admin]
+  createDetalleEntrada:
+    security: true
+    credentials:
+      - [admin]
+  indexSalida:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertSalida:
+    security: true
+    credentials:
+      - [admin]
+  createSalida:
+    security: true
+    credentials:
+      - [admin]
+  editSalida:
+    security: true
+    credentials:
+      - [admin]  
+  updateSalida:
+    security: true
+    credentials:
+      - [admin]
+  deleteSalida:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectSalida:
+    security: true
+    credentials:
+      - [admin]
+  deleteFilterSalida:
+    security: true
+    credentials:
+      - [admin]
+  deleteFilterDetalleSalida:
+    security: true
+    credentials:
+      - [admin]
+  viewSalida:
+    security: true
+    credentials:
+      - [admin]
+  reportSalida:
+    security: true
+    credentials:
+      - [admin]
+  createDetalleSalida:
+    security: true
+    credentials:
+      - [admin]
       

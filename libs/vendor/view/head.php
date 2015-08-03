@@ -49,9 +49,9 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="animal">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
-                <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexLote')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('lote') ?></button></a>
-                <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexRaza')     ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('raza') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal')     ?>'" > <button class="mdl-menu__item fa fa-paw"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
+                <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexLote')     ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
+                <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexRaza')     ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
               </ul>
             </div>
    <div class="demo-avatar-dropdown" style="margin-left: 5px">
@@ -61,8 +61,8 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="bodega">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>'" > <button class="mdl-menu__item">Entrada bodega</button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>'" > <button class="mdl-menu__item">Salida bodega</button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>'" > <button class="mdl-menu__item fa fa-indent"><?php echo i18n::__('RegistrosEntrada') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>'" > <button class="mdl-menu__item fa fa-outdent"><?php echo i18n::__('salida', null, 'bodega') ?></button></a>
               </ul>
             </div>
 
@@ -74,8 +74,8 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="facturacion">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('facturaCompra') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('facturaVenta') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaCompra') ?>'" > <button class="mdl-menu__item fa fa-list-alt"><?php echo i18n::__('facturaCompra') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>'" > <button class="mdl-menu__item fa fa-table"><?php echo i18n::__('facturaVenta') ?></button></a>
               </ul>
             </div>
 
@@ -86,7 +86,7 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="insumo">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('insumo') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>'" > <button class="mdl-menu__item fa fa-sitemap"><?php echo i18n::__('insumo') ?></button></a>
 
               </ul>
             </div>
@@ -98,10 +98,10 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="personal">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('cliente') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('empleado') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('proveedor', null, 'proveedor') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('veterinario', null, 'veterinario') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>'" > <button class="mdl-menu__item fa fa-user-md"><?php echo i18n::__('cliente') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>'" > <button class="mdl-menu__item fa fa-male"><?php echo i18n::__('empleado') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor') ?>'" > <button class="mdl-menu__item fa fa-shopping-cart"><?php echo i18n::__('proveedor', null, 'proveedor') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>'" > <button class="mdl-menu__item fa fa-stethoscope"><?php echo i18n::__('veterinario', null, 'veterinario') ?></button></a>
               
               </ul>
             </div>
@@ -115,8 +115,8 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="vacunacion">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('registroVacunacion', null, 'vacunacion') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item fa fa-medkit"><?php echo i18n::__('registroVacunacion', null, 'vacunacion') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
               </ul>
             </div>
             

@@ -51,6 +51,14 @@ usuario:
     security: true
     credentials:
       - [admin]
+  reportUsuario:
+    security: true
+    credentials:
+      - [admin, invitado]
+  deleteFiltersUsuario:
+    security: true
+    credentials:
+      - [admin, invitado]
       
 dataUser:
   index:

@@ -52,10 +52,11 @@
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal')     ?>'" > <button class="mdl-menu__item glyphicon glyphicon-piggy-bank"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
                 <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexLote')     ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
                 <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexRaza')     ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
+
               </ul>
             </div>
    <div class="demo-avatar-dropdown" style="margin-left: 5px">
-              <span>Bodega</span>
+              <span><?php echo i18n::__('bodega', null, 'bodega') ?></span>
               <div class="mdl-layout-spacer"></div>
               <button id="bodega" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                 <i class="material-icons">arrow_drop_down</i>
@@ -126,7 +127,7 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="vacunacion">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item fa fa-medkit"><?php echo i18n::__('registroVacunacion', null, 'vacunacion') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item fa fa-medkit"><?php echo i18n::__('registroVacunacion', null, 'animal') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
               </ul>
             </div>
@@ -136,10 +137,10 @@
 
 
             <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href="http://help.com"><i class="mdl-color-text--blue-grey-400 material-icons">help_outline</i></a>
+            <a onclick="location.href='<?php echo routing::getInstance()->getUrlImg('manual usuario Administrador.pdf')?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
           </nav>
         </div>
-      <?php endif; ?>
+ <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
         <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
           <div class="mdl-layout__header-row">

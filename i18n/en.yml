@@ -4,26 +4,26 @@ dictionary:
   default:
     RegistrosEntrada:     Input of warehouse
     personal:             People
-    fechaFabricacion:     Date of manufacture
-    fechaVencimiento:     Expiration date
-    tipoInsumo:           Type of input
-    valorInsumo:          Value input
-    nombreInsumo:         Name input
+    fechaFabricacion:     Date of Manufacture
+    fechaVencimiento:     Expiration Date
+    tipoInsumo:           Type of Input
+    valorInsumo:          Value Input
+    nombreInsumo:         Name Input
     descripción:          Description
     nuev:                 New
     inhabil:              Disable
     nuevDatos:            New User Data
-    newRegistroVacunacion: New immunization record
+    newRegistroVacunacion: New immunization Record
     cerrar:               Close
     buscar:               Search
     ver:                  Watch
     edit:                 Edit
-    facturaVenta:         Bills of sale
+    facturaVenta:         Bills of Sale
     nombreCliente:        Client Name
     cliente:              Customer
     personal:             Staff
-    Clientes:              Customers
-    proveedores:            Providers
+    Clientes:             Customers
+    proveedores:          Providers
     veterinario:          veterinarians
     telefono:             Phone
     fechaInicio:          Start Date
@@ -50,19 +50,19 @@ dictionary:
     Recordar mis datos:   Remember you data
     Olvidastes tu contraseña?: Forgot your password?
     id:                   Id
-    nombre_vacuna:        name Vaccine
-    numero de documento:  Document number
+    nombre_vacuna:        Name Vaccine
+    numero de documento:  Document Number
     direccion:            Street Address
     dosis:                Dose
-    fecha_fabricacion_vacuna:  Manufacturing date
+    fecha_fabricacion_vacuna:  Manufacturing Date
     fecha_vencimiento_vacuna:  Expiration Date
     Escoja Idioma:        Select Lenguage/Selecione el Idioma
-    Identificacion:       Number of Identification
+    Identificacion:       Identification
     Exit:                 Exit
     lunes:                Monday
     martes:               Tuesday
-    miercoles:            Wenesday
-    jueves:               Thusday
+    miercoles:            Wednesday
+    jueves:               Thursday
     viernes:              Friday
     sabado:               Saturday
     domingo:              Sunday
@@ -79,7 +79,7 @@ dictionary:
     noviembre:            November
     diciembre:            December
     Entrar:               Enter
-    disponible_venta:     Available for sale
+    disponible_venta:     Available for Sale
     reporte:              Report
     report:               Report
     buscar:               Search
@@ -90,11 +90,11 @@ dictionary:
     empleado:             Employe
     nombre:               Name
     newCli:               New Client
-    identificacion:       Number of document
+    identificacion:       Number of Document
     cargo:                Position
-    dataUser:             Date user
+    dataUser:             Date User
     credencial:           Credential
-    userCredencial:       Assigment of credential
+    userCredencial:       Assigment of Credential
     depto:                Departament
     city:                 City
     raza:                 Race
@@ -106,13 +106,13 @@ dictionary:
     register:             Register
     
     dpVenta:              Detalle 
-    veterinario:          Veterinario
-    cliente:              Cliente
+    veterinario:          Veterinary
+    cliente:              Client
     telefono:             Phone
     direccion:            Addres
     update:               Update
     delete:               Delete
-    modules:              Select module
+    modules:              Select Module
     action:               Actions
     create:               Insert
     errorCreateBitacora:  There was an error creating
@@ -166,12 +166,12 @@ dictionary:
     veterinario:          Veterinary
     read:                 Veterinarians 
     edit:                 Modify Veterinarian
-    direccion:            Addres
+    direccion:            Address
     telefono:             Phone
     new:                  Register a New Veterinary
     action:               Action
     identification:       Id
-    Number of document:   Number of document
+    Number of document:   Number of Document
     document type:        Document Type
     name:                 Name
     city:                 City
@@ -179,31 +179,32 @@ dictionary:
     insertar:             Insert Veterinary
     
   animal:
-    date_birth:           Date of birth
-    precio_compra:        Purchase price
+    date_birth:           Date of Birth
+    precio_compra:        Purchase Price
     identification:       Number of Identification
-    peso_inicial:         Initial weight
-    peso_fin:             Final weight
+    peso_inicial:         Initial Weight
+    peso_fin:             Final Weight
     pesos:                Price $
     cerdo:                Pig
     precio:               Price
-    edit:                 Edit the registry of the animal
+    edit:                 Edit the Registry of the Animal
     nuev:                 New Pig
     animal:               Animal
     kg:                   Weight (Kg)
     report:               Report
-    new:                  Register a new animal
+    new:                  Register a New Animal
     peso:                 Weight
     edad:                 Age (months)
     edad_inicial:         Initial Age
     edad_fin:             Final Age
     fecha:                Date of Birth
-    fecha_inicial:        Date of initial birth
-    fecha_fin:            Date of birth end
+    fecha_inicial:        Date of Initial Birth
+    fecha_fin:            Date of Birth end
     genero:               Gender
     parto:                Number of Births
     lote:                 Batch
     raza:                 Race
+    registro:             Delivery Record
     Vacunas:              Immunizations
     Registro:             Immunization Record
     vacunacion:           Vaccination
@@ -217,31 +218,31 @@ dictionary:
     succesUpdate:         The record has been successfully modifiednte 
     errorUpdate:          It was an error by modifying the registry Please try later
     read:                 Pigs
-    confirm:              To delete the record
+    confirm:              To delete the Record
   
       
   user:
-    usuario:              user
-    newUser:              new user
-    user:                 Name user
-    pass:                 password
-    rePass:               Repet password
-    register:             register
-    editUser:             edit user
-    edit:                 edit
+    usuario:              User
+    newUser:              New User
+    user:                 Name User
+    pass:                 Password
+    rePass:               Repet Password
+    register:             Register
+    editUser:             Edit User
+    edit:                 Edit
     motivo:               Enter the reason that you want to remove
-    oldPass:              new password
+    oldPass:              New Password
     read:                 Users
-    delete:               delete
-    direccion:            Street Adress
-    modify:               modify
-    quest:                quest of security
-    answer:               answer of security
-    delete:               delete
+    delete:               Delete
+    direccion:            Street Address
+    modify:               Modify
+    quest:                Quest of Security
+    answer:               Answer of Security
+    delete:               Delete
     busq:                 Searching
-    confirmDelete:        delet user 
+    confirmDelete:        Delete User 
     bodyDelete:           To delete the record
-    date:                 Creation date
+    date:                 Creation Date
     succesCreate:         The user is registered successfully
     errorCreate:          It failed to create the user try again
     succesDeleteMasivo:   Selected users have been deleted successfully
@@ -250,7 +251,7 @@ dictionary:
     errorDelete:          Could not delete the user try again later
     succesUpdate:         The user has been successfully modified
     errorUpdate:          It was an error by modifying the user try again later
-    dpVenta:              Invoice detail sale
+    dpVenta:              Invoice Detail Sale
     pVenta:               Bill Sale
     factura:              Bill
     
@@ -260,29 +261,29 @@ dictionary:
     edit:                 Modify Supplier
     direccion:            Address
     telefono:             Phone
-    new:                  Register a New provider
+    new:                  Register a New Provider
     action:               Actions
     identification:       Id
-    Number of document:   Number of document
-    document type:        Document type
+    Number of document:   Number of Document
+    document type:        Document Type
     name:                 Name
     city:                 City
     view:                 View Provider
-    insertar:             Insert provider
+    insertar:             Insert Provider
     nuev:                 New Provider
     
   depto:
-    read:                 Departament register
-    new:                  new departament
+    read:                 Departament Register
+    new:                  New Departament
     depto:                Departament
-    edit:                 edit departament
+    edit:                 Edit Departament
  
     
   city:
-    read:                 citys register
-    city:                 city
-    new:                  register one new city
-    edit:                 edit the city
+    read:                 Citys Register
+    city:                 City
+    new:                  Register one new city
+    edit:                 Edit the City
     
   bodega:
     bodega:               Cellar
@@ -294,26 +295,26 @@ dictionary:
     sal:                  Register a New Warehouse Outlet
     
   datos:
-    read:                 Personal user data
+    read:                 Personal User Data
     new:                  Register Personal data to the user
     name:                 Name
-    tipoDoc:              Document type
-    numberDoc:            Document number
+    tipoDoc:              Document Type
+    numberDoc:            Document Number
     numRegistro:          Registration Document Number
     lastName:             Surnames
     register:             Record
     tel:                  Phone
     dir:                  Address
-    edit:                 Modify user data
+    edit:                 Modify User Data
     
   credencial:
     read:                 Credentials
-    new:                  Registers a new credential
+    new:                  Registers a New Credential
     credencial:           Credential
-    edit:                 Changing the credential
+    edit:                 Changing the Credential
   
   userCredencial:
-    read:                 assigned Roles
+    read:                 Assigned Roles
     new:                  Asignam
     user:                 User
     credencial:           Credential
@@ -331,21 +332,21 @@ dictionary:
     read:                 Lots 
     edit:                 Modify Batch
     lote:                 Batch
-    new:                  Registering a new batch
+    new:                  Registering a New Batch
     number:               Number
     
   insumo:
     read:                 Inputs
-    edit:                 Modify input
+    edit:                 Modify Input
     insumo:               Input
-    new:                  Registering a new input
+    new:                  Registering a New Input
     register:             New Input
   
   
   cliente:
     cliente:              Client
     read:                 Customers
-    edit:                 Change customer
+    edit:                 Change Customer
     direccion:            Address
     telefono:             Phone
     new:                  Register a New Customer
@@ -359,18 +360,18 @@ dictionary:
     insertar:             Insert Customer
 
   empleado:
-    read:                 Employe register
-    edit:                 Edit employe
+    read:                 Employe Register
+    edit:                 Edit Employe
     empleado:             Employes
     direccion:            Address
     telefono:             Phone
-    new:                  New employe
+    new:                  New Employe
     nuev:                 Register a New Employee
-    confirmDelete:        Delete employe
+    confirmDelete:        Delete Employe
     register:             Register
     delete:               Delete
     succesDeleteMasivo:   They have been removed successfully selected employees
-    errorDeleteMasivo:    Is not selected record
+    errorDeleteMasivo:    Is not Selected Record
     succesDelete:         The employee has been removed successfully
     errorDelete:          Could not delete the employee try again later
     succesUpdate:         The employee has been successfully modified
@@ -379,8 +380,8 @@ dictionary:
     action:               Actions
     identificacion:       Identification
     identification:       Id
-    Number of document:   Number of document
-    document type:        Document type
+    Number of document:   Number of Document
+    document type:        Document Type
     name:                 Name
     city:                 City
     cargo:                Position
@@ -391,20 +392,20 @@ dictionary:
     succesDelete:         The employee has been removed successfully
     errorDelete:          Could not delete the employee try again later
     succesUpdate:         The employee has been successfully modified
-    Seleccione modulo:    Select module
+    Seleccione modulo:    Select Module
     errorUpdate:          It was an error by modifying the employee try again later
     
   cargo:
     read:                 Position Register
     cargo:                Position
-    edit:                 Edit position
-    new:                  New position
+    edit:                 Edit Position
+    new:                  New Position
     delete:               Delete
     view:                 View
     read:                 Registered Office
     cargo:                Office
     edit:                 Edit Charges
-    new:                  New post
+    new:                  New Post
     delete:               Remove
     view:                 Watch
     
@@ -434,11 +435,11 @@ dictionary:
     nameVacuna:            Vaccine Name
     fecha_fabricacion:     Date of manufacture of the vaccine
     fecha_vencimiento:     Expiration date of the vaccine
-    valor:                 Vaccine value
+    valor:                 Vaccine Value
     read:                  Vaccine
-    new:                   Enter a new vaccine
-    lote:                  Batch of vaccine
-    edit:                  Edit the vaccine
+    new:                   Enter a New Vaccine
+    lote:                  Batch of Vaccine
+    edit:                  Edit the Vaccine
     nueva:                 New Vaccine
     
   pVenta:
@@ -447,7 +448,7 @@ dictionary:
    user_id:               user_id
    read:                  Invoices registered in our system
    edit:                  Edit
-   new:                   Enter a new invoice
+   new:                   Enter a New Invoice
    modify:                Modify
    register:              Record
    details:               Detail
@@ -459,7 +460,7 @@ dictionary:
   dpVenta:
    item:                  Item
    date:                  Date
-   numer:                 Number document
+   numer:                 Number Document
    user:                  user_id
    animal_id:             id animal
    weight:                Weight
@@ -467,7 +468,7 @@ dictionary:
    details:               See Detail
    read:                  Invoices registered in our system
    edit:                  Edit
-   new:                   Enter a new invoice
+   new:                   Enter a New Invoice
    modify:                Modify
    register:              Record
    insert:                Insert
@@ -484,9 +485,9 @@ dictionary:
    Recordar mis datos:                 Remember me
   
   facturaCompra:
-    factura:               Facutras purchase
-    fechaFactura:          Invoice date
-    new:                   Registering a new invoice
+    factura:               Bills Purchase
+    fechaFactura:          Invoice Date
+    new:                   Registering a New Invoice
     edit:                  Change Purchase Invoice
     
   facturaVenta:

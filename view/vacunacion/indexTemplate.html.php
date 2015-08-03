@@ -15,7 +15,7 @@
                 <div class="col-xs-12 text-center">
 
                     <h2>
-                        <?php echo i18n::__('registroVacunacion', null, 'vacunacion') ?> 
+                        <?php echo i18n::__('registroVacunacion', null, 'animal') ?> 
                     </h2>
                 </div>
             </div>

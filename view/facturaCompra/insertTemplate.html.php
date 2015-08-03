@@ -6,14 +6,14 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 text-center">
-            <br>
+        
             <h2>  <?php echo i18n::__('new', null, 'facturaCompra')?>
             </h2>
             
         </div>
     </div>
 </div>
-<br>
+
 <?php view::includeHandlerMessage() ?>
 <?php view::includePartial('facturaCompra/formFacturaCompra', array('objEmpleado'=>$objEmpleado, 'objProveedor'=>$objProveedor)) ?>
 

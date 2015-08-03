@@ -62,7 +62,7 @@
               <td><input type="checkbox" id="chkAll"></td> 
               <th><?php echo i18n::__('identification', null, 'animal') ?></th>
               <th><?php echo i18n::__('date_birth', null, 'animal') ?></th>
-              <th>Partos</th>
+              <th><?php echo i18n::__('parto', null, 'animal') ?></th>
               <th><?php echo i18n::__('peso', null, 'animal') ?></th>
 
               <th><?php echo i18n::__('genero', null, 'animal') ?></th>

@@ -198,6 +198,7 @@ dictionary:
     parto:                Número de Partos
     lote:                 Lote
     raza:                 Raza
+    registro:             Registro de Parto
     Vacunas:              Vacunas
     Registro:             Registro Vacunas
     vacunacion:           Vacunación

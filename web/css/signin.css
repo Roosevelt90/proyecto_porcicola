@@ -7,7 +7,7 @@
 }
 
 #shfDevelopmentBar {
-    background-color: #993300;
+    background-color: blue;
     position: fixed;
     right: 0px;
     color: #ffffff;
@@ -28,7 +28,7 @@ body {
     background-size: cover;
     width:100%;
     height:auto;
-    background-image: url('../img/inicio_sesion.png');
+    background-image: url('../img/fondo_1.png');
 /*     background-size: 100% ;*/
 }
 .pp{
@@ -38,7 +38,7 @@ body {
   max-width: 500px;
   padding: 15px;
   margin: 0 auto;
-  background-color: #4fb5a0;
+  background-color: #0097a7;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(51,51,51);
 }
@@ -48,7 +48,8 @@ body {
 }
 
 .form-signin .checkbox {
-    font-weight: normal;
+    font-style: oblique;
+    
 }
 
 .form-signin .form-control {
@@ -66,15 +67,19 @@ body {
 }
 
 .form-signin input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    margin-bottom: 1px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .form-signin input[type="password"] {
     margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .alert {
@@ -85,13 +90,13 @@ body {
      max-width: 250px;
   padding: 15px;
   margin: 0 auto;
-    background-color: #73b565;
+    background-color: #42a5f5;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(51,51,51); 
 }
 .identificacion{
     max-width: 350px;
-    background-color: #73b565;
+    background-color: #42a5f5;
       border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(51,51,51);
 }

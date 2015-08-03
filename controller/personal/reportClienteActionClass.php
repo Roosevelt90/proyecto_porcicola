@@ -19,7 +19,7 @@ class reportClienteActionClass extends controllerClass implements controllerActi
         try {
             $where = null;
             if (request::getInstance()->hasRequest('reportCliente')) {
-                $report = request::getInstance()->getPost('reportCliene');
+                $report = request::getInstance()->getPost('reportCliente');
             }
 
 

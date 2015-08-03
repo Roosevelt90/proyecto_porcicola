@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo text-center">
-            <br>
+            
             <h2>  
     <?php echo i18n::__('sal', NULL, 'bodega') ?>
             </h2>
@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<br>
+
 <?php view::includeHandlerMessage() ?>
 <?php view::includePartial('salidaBodega/form', array('objEmpleado'=>$objEmpleado)) ?>
 

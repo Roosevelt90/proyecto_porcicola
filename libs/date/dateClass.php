@@ -92,12 +92,12 @@ use mvc\i18n\i18nClass as i18n;
             }
             
             if($month == "Jul"){
-               $month = i18n::__('julio', null);
+                $month = i18n::__('julio', null);
                 $flag = true;
             }
             
-            if($month == "Agu"){
-                $month = i18n::__('agosto', null);
+            if($month == "Aug"){
+                $month = i18n::__('agosto',null);
                 $flag = true;
             }
             
@@ -127,5 +127,4 @@ use mvc\i18n\i18nClass as i18n;
     }
 
 }
-
 

@@ -7,10 +7,7 @@
       <div class="row">
         <div class="col-xs-4-offset-4 text-center">
           <h2><?php echo i18n::__('edit', NULL, 'veterinario') ?> :</h2>
-
-          <br>   
-
-        </div>
+ </div>
       </div>
     </div>
     <?php view::includeHandlerMessage() ?>

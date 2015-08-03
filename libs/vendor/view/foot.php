@@ -21,8 +21,8 @@ use mvc\i18n\i18nClass as i18n ?>
         <i class="fa fa-leaf mvcPointer"></i> SHF <?php echo config::getSohoFrameworkVersion() ?>
     </div>
 <?php endif ?>
-<div class="copyright">
-    copyright <?php echo date('Y') ?> &copysr; 
+<div class="copyright fa fa-copyright">
+    copyright <?php echo date('Y') ?> 
 </div>
 <?php echo session::getInstance()->getFlash('mvcSQL') ?>
 <?php if (session::getInstance()->hasUserId()): ?>   

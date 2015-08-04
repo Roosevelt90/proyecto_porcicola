@@ -3,8 +3,7 @@
 use mvc\session\sessionClass as session ?>
 <?php
 use mvc\config\configClass as config ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php if (\mvc\config\configClass::getScope() === 'dev'): ?>
     <div id="mvcMain" class="shfDevelopmentBar">
         <i class="fa fa-leaf mvcPointer"></i> SHF <?php echo config::getSohoFrameworkVersion() ?> |

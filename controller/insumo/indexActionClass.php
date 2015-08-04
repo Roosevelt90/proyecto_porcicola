@@ -65,7 +65,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         insumoTableClass::FECHA_FABRICACION,
         insumoTableClass::FECHA_VENCIMIENTO,
         insumoTableClass::TIPO_INSUMO,
-        insumoTableClass::VALOR
+        insumoTableClass::VALOR,
+        insumoTableClass::CANTIDAD,
+        insumoTableClass::STOCK_MINIMO
       );
       $orderBy = array(
         insumoTableClass::ID
@@ -76,6 +78,17 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         tipoInsumoTableClass::ID,
         tipoInsumoTableClass::DESCRIPCION
       );
+
+      $objInsumo = insumoTableClass::getAllJoin($fieldsInsumo, $fieldsTipoInsumo, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+
+      foreach ($objInsumo as $key) {
+        if ($key->cantidad < $key->stock_minimo) {
+          session::getInstance()->setWarning("El insumo " . $key->nombre_insumo . " " .
+              "esta a punto de agotarse " . "le quedan " . $key->cantidad .
+              " " . "y " . "su cantidad minima es de " .$key->stock_minimo);
+        }
+      }
+
       $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipo, false);
       $this->objInsumo = insumoTableClass::getAllJoin($fieldsInsumo, $fieldsTipoInsumo, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       $this->defineView('index', 'insumo', session::getInstance()->getFormatOutput());

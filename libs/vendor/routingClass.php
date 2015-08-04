@@ -95,6 +95,14 @@ namespace mvc\routing {
     public function getUrlJs($javascript) {
       return configClass::getUrlBase() . 'js/' . $javascript;
     }
+    /**
+     * 
+     * @return un objeto guardado en la carpeta objeto usando para archivos que no sean imagenes
+     * @author Roosevelt Diaz Tapias<rdt-2012@hotmail.com>
+     */
+    public function getUrlObj($objeto) {
+      return configClass::getUrlBase() . 'objeto/' . $objeto;
+    }
 
     /**
      * $module = '@default_index';

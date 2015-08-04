@@ -18,7 +18,7 @@ function closeSucess(){
     $('div[class="alert alert-success alert-dismissible"]').alert('close');
 }
 $(document).ready(function () {
-    setTimeout(closeError, 5000);
-    setTimeout(closeSucess, 5000);
+    setTimeout(closeError, 8000);
+    setTimeout(closeSucess, 8000);
 });
 // FIN DE LA FUNCION

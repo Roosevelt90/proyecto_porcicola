@@ -175,7 +175,7 @@ namespace mvc\session {
         $_SESSION['mvcError'][] = $error;
       }
     }
-
+    
     /**
      *
      * @param string $information

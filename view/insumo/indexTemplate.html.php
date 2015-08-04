@@ -12,7 +12,6 @@
 <?php $valor = insumoTableClass::VALOR ?>
 <?php $countDetale = 1 ?>
 
-
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
         <div class="container container-fluid">
@@ -60,6 +59,8 @@
                             <th><?php echo i18n::__('fechaFabricacion') ?></th>
                             <th><?php echo i18n::__('fechaVencimiento') ?></th>
                             <th><?php echo i18n::__('valorInsumo') ?></th>
+                            <th>Cantidad</th>
+                            <th>Stock minimo</th>
                                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                             <th><?php echo i18n::__('action') ?></th>
                             <?php endif; ?>
@@ -75,6 +76,8 @@
                                 <td><?php echo $key->$fabricacion ?></td>
                                 <td><?php echo $key->$vencimiento ?></td>
                                 <td><?php echo $key->$valor ?></td>
+                                <td><?php echo $key->cantidad ?></td>
+                                <td><?php echo $key->stock_minimo ?></td>
                                     <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                                 <td>
                                     <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'edit', array(insumoTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>

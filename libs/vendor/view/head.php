@@ -1,6 +1,10 @@
-<?php use mvc\session\sessionClass as session ?>
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
+<?php
+
+use mvc\session\sessionClass as session ?>
+<?php
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
 
 <!DOCTYPE html>
 <html lang="<?php echo \mvc\config\configClass::getDefaultCulture() ?>">
@@ -49,13 +53,13 @@
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="animal">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal')     ?>'" > <button class="mdl-menu__item glyphicon glyphicon-piggy-bank"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
-                <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexLote')     ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
-                <a onclick="location.href = '<?php  echo routing::getInstance()->getUrlWeb('animal', 'indexRaza')     ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-piggy-bank"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRaza') ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
 
               </ul>
             </div>
-   <div class="demo-avatar-dropdown" style="margin-left: 5px">
+            <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('bodega', null, 'bodega') ?></span>
               <div class="mdl-layout-spacer"></div>
               <button id="bodega" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -67,7 +71,7 @@
               </ul>
             </div>
 
-              
+
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('factura') ?></span>
               <div class="mdl-layout-spacer"></div>
@@ -103,11 +107,11 @@
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>'" > <button class="mdl-menu__item fa fa-male"><?php echo i18n::__('empleado') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexProveedor') ?>'" > <button class="mdl-menu__item fa fa-shopping-cart"><?php echo i18n::__('proveedor', null, 'proveedor') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>'" > <button class="mdl-menu__item fa fa-stethoscope"><?php echo i18n::__('veterinario', null, 'veterinario') ?></button></a>
-              
+
               </ul>
             </div>
-              
-               <div class="demo-avatar-dropdown" style="margin-left: 5px">
+
+            <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('usuario') ?></span>
               <div class="mdl-layout-spacer"></div>
               <button id="personal" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -117,7 +121,7 @@
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-random"><?php echo i18n::__('userCredencial') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-tag"><?php echo i18n::__('credencial', null, 'credencial') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuario') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-user"><?php echo i18n::__('usuario', null, 'user') ?></button></a>
-               </ul>
+              </ul>
             </div>
 
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
@@ -131,30 +135,53 @@
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
               </ul>
             </div>
-            
-         
-
-
-
             <div class="mdl-layout-spacer"></div>
-            <a onclick="location.href='<?php echo routing::getInstance()->getUrlImg('manual usuario Administrador.pdf')?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
+            <?php if (session::getInstance()->hasCredential('admin')): ?>
+              <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('manual usuario Administrador.pdf') ?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
+            <?php else: ?>
+              <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('') ?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
+            <?php endif; ?>
           </nav>
         </div>
- <?php endif; ?>
+      <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
         <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
           <div class="mdl-layout__header-row">
             <span class="mdl-layout-title"><?php echo i18n::__('granja') ?></span>
             <div class="mdl-layout-spacer"></div>
-          
+
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
               <i class="material-icons">more_vert</i>
             </button>
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-              <li class="mdl-menu__item fa fa-laptop"><?php echo i18n::__('sobre') ?></li>
+              <a href="#myModalSobre"><li  class="mdl-menu__item fa fa-laptop"><?php echo i18n::__('sobre') ?></li></a>
               <li class="mdl-menu__item fa fa-phone-square"><?php echo i18n::__('contacto') ?></li>
-              <li class="mdl-menu__item fa fa-legal"><?php echo i18n::__('legalInfor') ?></li>
+              <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('') ?>'"> 
+                <li class="mdl-menu__item fa fa-legal"><?php echo i18n::__('legalInfor') ?></li>
+              </a>
             </ul>
           </div>
         </header>
       <?php endif; ?>
+
+      <div id="myModalSobre" class="modalmask">
+        <div class="modalbox rotate">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"> ... </h4>
+          </div>
+          <a href="#close" title="Close" class="close">X</a>
+          <div class="modal-body text-center">
+            SISTEMA JS
+            <br/>
+            <p>
+              Sistema de gestion para una granja porcicola
+              <br/>
+              Version 1.0
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="#close2" title="Close" class="close2 btn btn-default  close2"><?php echo i18n::__('cancel') ?></a>
+          </div>
+        </div>
+      </div>

@@ -20,6 +20,8 @@ class createVacunaActionClass extends controllerClass implements controllerActio
                 $fecha_fabricacion = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::FECHA_FABRICACION, true));
                 $fecha_vencimiento = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::FECHA_VENCIMIENTO, true));
                 $valor = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::VALOR, true));
+                $cantidad = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true));
+                $stock = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::STOCK_MINIMO, true));
                 
                 vacunaTableClass::validate($nombre, $lote, $fecha_fabricacion, $fecha_vencimiento, $valor);
                 
@@ -28,7 +30,9 @@ class createVacunaActionClass extends controllerClass implements controllerActio
                     vacunaTableClass::FECHA_FABRICACION => $fecha_fabricacion,
                     vacunaTableClass::FECHA_VENCIMIENTO => $fecha_vencimiento,
                     vacunaTableClass::LOTE_VACUNA => $lote,
-                    vacunaTableClass::VALOR => $valor
+                    vacunaTableClass::VALOR => $valor,
+                    vacunaTableClass::CANTIDAD => $cantidad,
+                    vacunaTableClass::STOCK_MINIMO => $stock
                 );
 
                 vacunaTableClass::insert($data);

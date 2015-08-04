@@ -17,7 +17,9 @@ class editVacunaActionClass extends controllerClass implements controllerActionI
                 vacunaTableClass::FECHA_VENCIMIENTO,
                 vacunaTableClass::LOTE_VACUNA,
                 vacunaTableClass::NOMBRE_VACUNA,
-                vacunaTableClass::VALOR
+                vacunaTableClass::VALOR,
+                vacunaTableClass::CANTIDAD,
+                vacunaTableClass::STOCK_MINIMO
                 );
                 $where = array(
                     vacunaTableClass::ID => request::getInstance()->getGet(vacunaTableClass::ID)
@@ -31,7 +33,9 @@ class editVacunaActionClass extends controllerClass implements controllerActionI
                 vacunaTableClass::FECHA_VENCIMIENTO,
                 vacunaTableClass::LOTE_VACUNA,
                 vacunaTableClass::NOMBRE_VACUNA,
-                vacunaTableClass::VALOR
+                vacunaTableClass::VALOR,
+                vacunaTableClass::CANTIDAD,
+                vacunaTableClass::STOCK_MINIMO
                 );
                 $where = array(
                     vacunaTableClass::ID => request::getInstance()->getGet($id)

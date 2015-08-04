@@ -61,8 +61,8 @@
                             <th><?php echo i18n::__('fechaFabricacion') ?></th>
                             <th><?php echo i18n::__('fechaVencimiento') ?></th>
                             <th><?php echo i18n::__('valorInsumo') ?></th>
-                            <th>Cantidad</th>
-                            <th>Stock minimo</th>
+                            <th><?php echo i18n::__('cantidad') ?></th>
+                            <th><?php echo i18n::__('stock') ?></th>
                                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                             <th><?php echo i18n::__('action') ?></th>
                             <?php endif; ?>

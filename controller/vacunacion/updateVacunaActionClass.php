@@ -23,7 +23,9 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
                 $fecha_vencimiento = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::FECHA_VENCIMIENTO, true));
                 $valor = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::VALOR, true));
                 $id  = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::ID, true));
-               
+                $cantidad = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true));
+                $stock = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::STOCK_MINIMO, true));
+                
                 vacunaTableClass::validateEdit($lote, $id);
              
 //                $id = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::ID, true));

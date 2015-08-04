@@ -103,6 +103,7 @@ dictionary:
     insumo:               Insumo
     cantidad:             Cantidad
     pass:                 Contraseña
+    stock:                Stock Minimo
     register:             Registrar
     update:               Actualizar
     delete:               Eliminar

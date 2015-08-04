@@ -8,7 +8,9 @@ class vacunaBaseTableClass extends tableBaseClass {
             $nombre_vacuna,
             $lote_vacuna,
             $fecha_fabricacion_vacuna,
-            $fecha_vencimiento_vacuna;
+            $fecha_vencimiento_vacuna,
+            $cantidad,
+            $stock;
 
     const ID = 'id';
     const NOMBRE_VACUNA = 'nombre_vacuna';
@@ -16,6 +18,8 @@ class vacunaBaseTableClass extends tableBaseClass {
     const FECHA_FABRICACION = 'fecha_fabricacion_vacuna';
     const FECHA_VENCIMIENTO = 'fecha_vencimiento_vacuna';
     const VALOR = 'valor_vacuna';
+    const CANTIDAD = 'cantidad';
+    const STOCK_MINIMO = 'stock_minimo';
 
     function getId() {
         return $this->id;

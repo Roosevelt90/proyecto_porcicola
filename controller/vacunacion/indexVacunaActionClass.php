@@ -48,7 +48,9 @@ class indexVacunaActionClass extends controllerClass implements controllerAction
                 vacunaTableClass::ID,
                 vacunaTableClass::LOTE_VACUNA,
                 vacunaTableClass::NOMBRE_VACUNA,
-                vacunaTableClass::VALOR
+                vacunaTableClass::VALOR,
+                vacunaTableClass::CANTIDAD,
+                vacunaTableClass::STOCK_MINIMO
             );
 
             $orderBy = array(

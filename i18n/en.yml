@@ -22,6 +22,7 @@ dictionary:
     nombreCliente:        Client Name
     cliente:              Customer
     personal:             Staff
+    stock:                Minimum Stock
     Clientes:             Customers
     proveedores:          Providers
     veterinario:          veterinarians

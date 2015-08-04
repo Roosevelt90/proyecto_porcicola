@@ -46,7 +46,7 @@ use mvc\request\requestClass as request ?>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('recuperar', 'index') ?>"><h4><?php echo i18n::__('Olvidastes tu contraseña?', null) ?></h4></a>
 
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo i18n::__('Entrar') ?></button>
+                <button class="btn btn-lg btn-primary btn-block fa fa-sign-in" type="submit"><?php echo i18n::__('Entrar') ?></button>
                 </form>
 
     <div class="left col-md-pull-8  col-md-4"  style="color: blue" style="margin-top: 5px"><?php echo i18n::__('Escoja Idioma') ?>

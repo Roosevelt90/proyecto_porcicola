@@ -57,8 +57,8 @@ use mvc\request\requestClass as request ?>
         </div>
       </div>
       <?php view::includeHandlerMessage() ?>
-
-      <table class="table table-bordered table-responsive ">
+        <div class="table-responsive">
+      <table class="table table-bordered">
         <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacunacion')      ?>" method="POST">
 
           <thead>
@@ -132,6 +132,7 @@ use mvc\request\requestClass as request ?>
         <?php endforeach//close foreach   ?>
         </tbody>
       </table>
+        </div>
       <!-- PAGINATOR -->
       <div class="text-right">
         <nav>

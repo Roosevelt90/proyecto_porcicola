@@ -49,8 +49,10 @@
                 </div>
             </div>
             <?php view::includeHandlerMessage() ?>
+            <div class="table-responsive">
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteSelect') ?>" method="POST">
-                <table class="table table-bordered table-responsive">
+                
+                <table class="table table-bordered">
                     <thead>
                         <tr class="success">
                             <td><input type="checkbox" id="chkAll"></td> 
@@ -113,7 +115,9 @@
                     <?php endforeach//close foreach   ?>
                     </tbody>
                 </table>
+               
             </form>
+                 </div>
             <!-- WINDOWS MODAL DELETE MASIVE -->
             <div class="modal fade" id="myModalEliminarMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

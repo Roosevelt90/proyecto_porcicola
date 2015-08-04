@@ -23,7 +23,8 @@
                 
         </div>
         </div>
-        <table class="table table-bordered table-responsive">
+        <div class="table-responsive">
+        <table class="table table-bordered">
             <thead>
                 <tr class="success">
                     <td><input type="checkbox" id="chkAll"></td> 
@@ -51,6 +52,7 @@
                 <?php endforeach//close foreach  ?>
             </tbody>
         </table>
+</div>
     </form>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('credencial', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, true) ?>">

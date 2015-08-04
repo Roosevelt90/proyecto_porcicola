@@ -9,9 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6-offset-3">
-
-        <table class="table table-responsive "> 
-          <table class="table table-responsive "> 
+  <table class="table table-responsive "> 
             <tr>
               <th>
                 Fecha

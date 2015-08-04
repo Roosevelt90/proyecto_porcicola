@@ -113,7 +113,8 @@
            </div>
         </div>
       </form>
-        <table class="table table-bordered table-responsive">
+      <div class="table-responsive">
+        <table class="table table-bordered">
           <thead >
           <tr class="success ">  
             <td><input type="checkbox" id="chkAll"></td> 
@@ -176,7 +177,7 @@
               <?php endforeach ?>
         </tbody>
       </table>
-           
+      </div>    
     <!--    paginado-->
     <div class="text-right">
       <nav>

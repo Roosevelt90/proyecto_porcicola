@@ -494,6 +494,18 @@ dictionary:
     new:                   Register a New Bill of Sale
     
   ayuda:
+    sistema:               Management System for Swine Farm
+    version:               Version 1.0
+    j:                     JS SYSTEM
+    cont:                  Contact Us
+    inf:                   General Information
+    apre:                  Apprentice SENA
+    ciu:                   Pradera
+    pais:                  Colombia
+    name:                  Geraldine Martinez         
+    fijo:                  267 10 24
+    cel:                   316 520 45 26
+    correo:                geryliz95@hotmail.com 
     registrar:             Insert:New Record
     modificar:             Edit:Modify the Registry
     buscar:                Search:With this option you can get a faster and precisely the desired results

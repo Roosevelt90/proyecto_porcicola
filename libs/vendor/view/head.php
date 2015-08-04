@@ -155,8 +155,8 @@ use mvc\i18n\i18nClass as i18n ?>
             </button>
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
               <a href="#myModalSobre"><li  class="mdl-menu__item fa fa-laptop"><?php echo i18n::__('sobre') ?></li></a>
-              <li class="mdl-menu__item fa fa-phone-square"><?php echo i18n::__('contacto') ?></li>
-              <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('') ?>'"> 
+              <a href="#myModalContact"> <li class="mdl-menu__item fa fa-phone"><?php echo i18n::__('contacto') ?></li></a>
+              <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('contrato informatico.pdf') ?>'"> 
                 <li class="mdl-menu__item fa fa-legal"><?php echo i18n::__('legalInfor') ?></li>
               </a>
             </ul>
@@ -168,20 +168,57 @@ use mvc\i18n\i18nClass as i18n ?>
         <div class="modalbox rotate">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"> ... </h4>
+            <h4 class="modal-title glyphicon glyphicon-blackboard" id="myModalLabel">  </h4>
           </div>
           <a href="#close" title="Close" class="close">X</a>
           <div class="modal-body text-center">
-            SISTEMA JS
+            <?php echo i18n::__('j', null, 'ayuda') ?>
             <br/>
             <p>
-              Sistema de gestion para una granja porcicola
+            <?php echo i18n::__('sistema', null, 'ayuda') ?>
               <br/>
-              Version 1.0
+               <?php echo i18n::__('version', null, 'ayuda') ?>
             </p>
           </div>
           <div class="modal-footer">
-            <a href="#close2" title="Close" class="close2 btn btn-default  close2"><?php echo i18n::__('cancel') ?></a>
+            <a href="#close2" title="Close" class="btn btn-default close2"><?php echo i18n::__('cerrar') ?></a>
+          </div>
+        </div>
+      </div>
+      
+      <div id="myModalContact" class="modalmask">
+        <div class="modalbox rotate">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title fa fa-phone-square" id="myModalLabel"> <strong><?php echo i18n::__('cont', null, 'ayuda') ?></strong></h4>
+          </div>
+          <a href="#close" title="Close" class="close">X</a>
+          <div class="modal-body text-left">
+   <p>
+       <strong>
+            <?php echo i18n::__('inf', null, 'ayuda') ?></strong>
+              <br/>
+               <?php echo i18n::__('apre', null, 'ayuda') ?>
+              <br />
+               <?php echo i18n::__('ciu', null, 'ayuda') ?>
+              <br/>
+               <?php echo i18n::__('pais', null, 'ayuda') ?>
+               <br/>
+            </p>
+          </div>
+           <div class="modal-body text-right">
+            <p>
+               <?php echo i18n::__('name', null, 'ayuda') ?>
+              <br />
+               <?php echo i18n::__('fijo', null, 'ayuda') ?>
+              <br/>
+               <?php echo i18n::__('cel', null, 'ayuda') ?>
+               <br/>
+               <?php echo i18n::__('correo', null, 'ayuda') ?>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="#close2" title="Close" class="btn btn-default close2"><?php echo i18n::__('cerrar') ?></a>
           </div>
         </div>
       </div>

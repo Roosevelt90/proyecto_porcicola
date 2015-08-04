@@ -495,6 +495,18 @@ dictionary:
     new:                   Registrar una Nueva Factura de Venta
     
   ayuda:
+    sistema:             Sistema de Gestión para una Granja Porcicola
+    version:             Version 1.0
+    j:                   SISTEMA JS
+    cont:                Contáctenos
+    inf:                 Información General
+    apre:                Aprendiz SENA
+    ciu:                 Pradera
+    pais:                Colombia
+    name:                Geraldine Martinez         
+    fijo:                267 10 24
+    cel:                 316 520 45 26
+    correo:              geryliz95@hotmail.com       
     registrar:           Insertar:Nuevo registro
     modificar:           Editar:Modifica el registro
     buscar:              Buscar:Con esta opción usted podrá obtener de una forma mas rápida y precisa los resultados deseados

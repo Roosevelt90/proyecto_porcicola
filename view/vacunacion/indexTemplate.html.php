@@ -47,8 +47,8 @@
             </div>
             </div>
             <?php view::includeHandlerMessage() ?>
-
-            <table class="table table-bordered table-responsive ">
+            <div class="table-responsive">
+            <table class="table table-bordered">
                 <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacunacion') ?>" method="POST">
 
                     <thead>
@@ -108,6 +108,7 @@
 
                 </tbody>
             </table>
+            </div>
             <!-- PAGINATOR -->
             <div class="text-right">
                 <nav>

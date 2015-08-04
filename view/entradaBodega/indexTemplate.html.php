@@ -59,8 +59,8 @@ use mvc\request\requestClass as request ?>
         </div>
       </div>
       <?php view::includeHandlerMessage() ?>
-
-      <table class="table table-bordered table-responsive ">
+        <div class="table-responsive">
+      <table class="table table-bordered">
           <thead>
             <tr class="success">
               <th>
@@ -174,7 +174,7 @@ use mvc\request\requestClass as request ?>
         </tbody>
       </table>
 
-
+        </div>
       <!-- PAGINATOR -->
       <div class="text-right">
         <nav>

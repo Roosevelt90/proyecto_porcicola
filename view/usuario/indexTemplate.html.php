@@ -51,7 +51,7 @@ use mvc\view\viewClass as view ?>
 
           <div class="table-responsive">
             <?php view::includeHandlerMessage() ?>
-            <table class="table table-bordered table-responsive">
+            <table class="table table-bordered">
               <thead>
                 <tr class="success">
                   <th><input type="checkbox" id="chkAll"></th>

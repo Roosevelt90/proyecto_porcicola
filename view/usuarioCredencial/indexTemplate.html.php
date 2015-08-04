@@ -24,7 +24,8 @@
                 
             </div>
         </div>
-        <table class="table table-bordered table-responsive">
+        <div class="table-responsive">
+        <table class="table table-bordered">
             <thead>
                 <tr class="success">
                     <th><input type="checkbox" id="chkAll"></th>
@@ -53,6 +54,7 @@
                 <?php endforeach ?>
             </tbody>
         </table>
+        </div>
     </form>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true) ?>">

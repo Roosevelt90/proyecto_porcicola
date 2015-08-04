@@ -103,9 +103,9 @@
           </div>
         </div>
       </form>
+      <div class="table-responsive">
 
-
-      <table class="table table-bordered table-responsive">
+      <table class="table table-bordered">
         <thead>
           <tr class="success">
             <td><input type="checkbox" id="chkAll"></td> 
@@ -163,6 +163,7 @@
                 <?php $countDetale++ ?>
               <?php endforeach ?>
         </tbody>
+    </div>
       </table>
     </div>
 

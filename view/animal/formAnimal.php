@@ -13,9 +13,9 @@
     <?php endif; ?>
     <div class="container">
         <div class="row">
-            <div class="col-xs-6-offset-3">
+             <div class="col-xs-6-offset-3">
 
-                <table class="table table-responsive ">    
+                <table class="table table-responsive">    
                     <tr>
                         <th> <?php echo i18n::__('identificacion') ?>:</th>
                         <th> 

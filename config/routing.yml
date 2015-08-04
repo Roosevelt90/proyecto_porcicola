@@ -313,7 +313,7 @@ default_deleteSelect:
     
 default_vista:
   url:    /usuario/vista
-  param:  { module: usuario, action: viewUsuario, format: html }
+  param:  { module: usuario, action: view, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -1002,15 +1002,15 @@ empleado_index:
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
        
-empleado_deleteSelect:
-  url:    /empleado/eliminarSeleccion
-  param:  { module: personal, action: deleteSelectEmpleado, format: json }
-  load:
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    - hooks/logHookClass.php
+#empleado_deleteSelect:
+#  url:    /empleado/eliminarSeleccion
+#  param:  { module: personal, action: deleteSelectEmpleado, format: json }
+#  load:
+#    - model/base/empleadoBaseTableClass.php
+#    - model/empleadoTableClass.php
+#    - model/base/bitacoraBaseTableClass.php
+#    - model/bitacoraTableClass.php
+#    - hooks/logHookClass.php
    
      
 empleado_insert:
@@ -2556,15 +2556,15 @@ venta_reporte:
 #    - hooks/logHookClass.php
 #   
 #
-#veterinario_delete:
-#  url:    /personal/eliminar
-#  param:  { module: personal, action: deleteVeterinario, format: json }
-#  load:
-#    - model/base/veterinarioBaseTableClass.php
-#    - model/veterinarioTableClass.php
-#    - hooks/logHookClass.php
-#    - model/base/bitacoraBaseTableClass.php
-#    - model/bitacoraTableClass.php
+veterinario_delete:
+  url:    /personal/eliminar
+  param:  { module: personal, action: deleteVeterinario, format: json }
+  load:
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
  
 ##-------------------proveedor-------------------#
@@ -2658,15 +2658,15 @@ venta_reporte:
 #    - model/bitacoraTableClass.php
 #    - hooks/logHookClass.php
 #    
-#proveedor_delete:
-#  url: /proveedor/eliminar
-#  param:  { module: personal, action: deleteProveedor, format: json }
-#  load:
-#    - model/base/proveedorBaseTableClass.php
-#    - model/proveedorTableClass.php
-#    - hooks/logHookClass.php
-#    - model/base/bitacoraBaseTableClass.php
-#    - model/bitacoraTableClass.php
+proveedor_delete:
+  url: /proveedor/eliminar
+  param:  { module: personal, action: deleteProveedor, format: json }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 proveedor_deleteFilters:
   url:  /proveedor/borrar_filtros
@@ -2781,15 +2781,15 @@ proveedor_deleteFilters:
 #    - model/bitacoraTableClass.php
 #    - hooks/logHookClass.php
 #    
-#cliente_delete:
-#  url:    /cliente/personal/eliminar
-#  param:  { module: personal, action: deleteCliente, format: json }
-#  load:
-#    - model/base/clienteBaseTableClass.php
-#    - model/clienteTableClass.php
-#    - hooks/logHookClass.php
-#    - model/base/bitacoraBaseTableClass.php
-#    - model/bitacoraTableClass.php
+cliente_delete:
+  url:    /cliente/personal/eliminar
+  param:  { module: personal, action: deleteCliente, format: json }
+  load:
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
     
 ##------------ENTRADA BODEGA---------------------##

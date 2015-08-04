@@ -15,7 +15,6 @@
 <?php $ciudad = ciudadTableClass::NOMBRE ?>
 <?php $countDetale = 1 ?>
     <!--<div class="container container-fluid">-->
-
 <main class="mdl-layout__content mdl-color--blue-100">
   <div class="mdl-grid demo-content">
       <div class="container container-fluid">
@@ -112,7 +111,8 @@
             </div>
            </div>
         </div>
-      </form>
+     
+      
       <div class="table-responsive">
         <table class="table table-bordered">
           <thead >
@@ -176,8 +176,11 @@
                 <?php $countDetale++ ?>
               <?php endforeach ?>
         </tbody>
-      </table>
-      </div>    
+        </form> 
+        </table>
+          
+      </div>   
+       
     <!--    paginado-->
     <div class="text-right">
       <nav>
@@ -191,8 +194,10 @@
           <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
         </ul>
       </nav>
-      <!--reporte-->
-      <div class="modal fade" id="myModalReporte" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+ </div>
+    <!--      reporte-->    
+<!--    <div class="modal fade" id="myModalReporte" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -215,8 +220,6 @@
             </div>
           </div>
         </div>
-      </div>
-  </div>
-    </div>
-</main>
-          <!--</div>-->
+      </div>-->
+  
+ 

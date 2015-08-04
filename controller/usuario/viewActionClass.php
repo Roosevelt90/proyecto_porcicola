@@ -1,5 +1,4 @@
 <?php
-
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
@@ -7,38 +6,29 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
 /**
  * Description of ejemploClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
-
     public function execute() {
         try {
             if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
                 $idUsuario = request::getInstance()->getRequest(usuarioTableClass::ID);
-
                 $fieldsUsuario = array(
                     usuarioTableClass::ID,
                     usuarioTableClass::USER
                 );
-
-
                 $orderBy = array(
                     datosUsuarioTableClass::ID
                 );
-
-
                 $where = array(
                     datosUsuarioTableClass::USUARIO_ID => $idUsuario
                 );
-
                 if (request::getInstance()->hasPost('filter')) {
                     $where = null;
                     $filter = request::getInstance()->getPost('filter');
-
                     if (isset($filter['fecha']) and $filter['fecha'] !== null and $filter['fecha'] !== '') {
                         $where[detalleVacunacionTableClass::FECHA] = $filter['fecha'];
                     }
@@ -51,14 +41,11 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
 //                    if (isset($filter['accion']) and $filter['accion'] !== null and $filter['accion'] !== '') {
 //                        $where[detalleVacunacionTableClass::ACCION] = $filter['accion'];
 //                    }
-
                     $where[datosUsuarioTableClass::USUARIO_ID] = $idUsuario;
-
                     session::getInstance()->setAttribute('detalleVacunacionFiltersAnimal', $where);
                 } elseif (session::getInstance()->hasAttribute('detalleVacunacionFiltersAnimal')) {
                     $where = session::getInstance()->getAttribute('detalleVacunacionFiltersAnimal');
                 }
-
                 $fieldsUsuario = array(
                     usuarioTableClass::ID,
                     usuarioTableClass::USER,
@@ -66,7 +53,6 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 $whereUsuario = array(
                     usuarioTableClass::ID => $idUsuario
                 );
-
                 $fieldsdatos = array(
                     datosUsuarioTableClass::ID,
                     datosUsuarioTableClass::NOMNRE,
@@ -75,22 +61,18 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                     datosUsuarioTableClass::TELEFONO,
                     datosUsuarioTableClass::NUMERO_DOCUMENTO
                 );
-
                 $page = 0;
                 if (request::getInstance()->hasGet('page')) {
                     $page = request::getInstance()->getGet('page') - 1;
                     $page = $page * config::getRowGrid();
                 }
-
                 $f = array(
                     datosUsuarioTableClass::ID
                 );
-
                 $whereCnt = array(
                     datosUsuarioTableClass::USUARIO_ID => $idUsuario
                 );
                 $lines = config::getRowGrid();
-
                 $fieldsDatos = array(
                     datosUsuarioTableClass::ID,
                     datosUsuarioTableClass::NOMNRE,
@@ -99,14 +81,11 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                     datosUsuarioTableClass::TELEFONO,
                     datosUsuarioTableClass::NUMERO_DOCUMENTO
                 );
-
                 $fieldsUsuario = array(
                     usuarioTableClass::USER
                 );
-
                 $fJoin1 = datosUsuarioTableClass::USUARIO_ID;
                 $fJoin2 = usuarioTableClass::ID;
-
                 $this->cntPages = datosUsuarioTableClass::getAllCount($f, true, $lines, $whereCnt);
                 $this->objUsuario = usuarioTableClass::getAll($fieldsUsuario, true, null, null, null, null, $whereUsuario);
                 $this->objDatos = datosUsuarioTableClass::getAllJoin($fieldsDatos, $fieldsUsuario, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
@@ -121,5 +100,4 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
-
 }

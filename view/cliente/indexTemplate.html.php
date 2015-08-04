@@ -82,10 +82,7 @@
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
-            <!--                 <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o"></a>-->
-<!--            <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-              <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-            </div>-->
+     
             <?php endif; ?>
             <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
@@ -102,10 +99,9 @@
             </div>
           </div>
         </div>
-      </form>
+    </form>
       <div class="table-responsive">
-
-      <table class="table table-bordered">
+ <table class="table table-bordered">
         <thead>
           <tr class="success">
             <td><input type="checkbox" id="chkAll"></td> 
@@ -163,8 +159,10 @@
                 <?php $countDetale++ ?>
               <?php endforeach ?>
         </tbody>
-    </div>
+    
       </table>
+          </div>
+      
     </div>
 
 
@@ -172,7 +170,7 @@
      <div class="text-right">
         <nav>
           <ul class="pagination" id="slqPaginador">
-            <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
+            <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
             <?php $count = 0 ?>
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
               <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
@@ -183,7 +181,8 @@
         </nav>
       </div>
     </div>
-    <!--reporte-->
+  
+<!--    reporte
     <div class="modal fade" id="myModalReporte" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -209,4 +208,4 @@
       </div>
     </div>
   </div>
-</main>
+</main>-->

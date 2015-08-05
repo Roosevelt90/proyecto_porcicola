@@ -27,7 +27,7 @@ class createDetalleSalidaActionClass extends controllerClass implements controll
         $cantidad = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true));
 
         //    detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
-echo $id_registro;
+echo $id_insumo;
         exit();
         $data = array(
           detalleSalidaBodegaTableClass::CANDITDAD => $cantidad,

@@ -8,6 +8,8 @@
 <?php $id_tipoInsumo = tipoInsumoTableClass::ID ?>
 <?php $idTipoInsumo = insumoTableClass::TIPO_INSUMO ?>
 <?php $valor = insumoTableClass::VALOR ?>
+<?php $cantidad = insumoTableClass::CANTIDAD ?>
+<?php $stock = insumoTableClass::STOCK_MINIMO ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('insumo', ((isset($objInsumo) == TRUE) ? 'update' : 'create')) ?>">
     <?php if (isset($objInsumo)): ?>
       <input type="hidden" name="<?php echo insumoTableClass::getNameField(insumoTableClass::ID, TRUE) ?>" value="<?php echo $objInsumo[0]->$id ?>">
@@ -44,6 +46,14 @@
                     <tr>
                         <th>  <?php echo i18n::__('valorInsumo') ?>:</th>
                         <th> <input placeholder="<?php echo ((isset($objInsumo) == FALSE) ? i18n::__('valorInsumo') : $objInsumo[0]->$valor = ucwords($objInsumo[0]->$valor)) ?>" type="text" name="<?php echo insumoTableClass::getNameField(insumoTableClass::VALOR, true) ?>" ></th>   
+                    </tr>
+                       <tr>
+                        <th>  <?php echo i18n::__('cantidad') ?>:</th>
+                        <th> <input placeholder="<?php echo ((isset($objInsumo) == FALSE) ? i18n::__('cantidad') : $objInsumo[0]->$cantidad = ucwords($objInsumo[0]->$cantidad)) ?>" type="number" name="<?php echo insumoTableClass::getNameField(insumoTableClass::CANTIDAD, true) ?>" ></th>   
+                    </tr>
+                      <tr>
+                        <th>  <?php echo i18n::__('stock') ?>:</th>
+                        <th> <input placeholder="<?php echo ((isset($objInsumo) == FALSE) ? i18n::__('stock') : $objInsumo[0]->$stock = ucwords($objInsumo[0]->$stock)) ?>" type="number" name="<?php echo insumoTableClass::getNameField(insumoTableClass::STOCK_MINIMO, true) ?>" ></th>   
                     </tr>
                     <tr>
                         <th colspan="2">

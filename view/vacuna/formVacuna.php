@@ -7,7 +7,8 @@
 <?php $fecha_fabricacion = vacunaTableClass::FECHA_FABRICACION ?>
 <?php $fecha_vencimiento = vacunaTableClass::FECHA_VENCIMIENTO ?>
 <?php $valor = vacunaTableClass::VALOR ?>
-
+<?php $cantidad = vacunaTableClass::CANTIDAD ?>
+<?php $stock = vacunaTableClass::STOCK_MINIMO ?>
 
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', ((isset($objVacuna) == TRUE) ? 'updateVacuna' : 'createVacuna')) ?>">
     <?php if (isset($objVacuna)): ?>
@@ -59,6 +60,14 @@
                             $ <input pattern="[0-9]{3} required="" min="0" placeholder="<?php echo ((isset($objVacuna) == FALSE) ? i18n::__('valor', NULL, 'vacuna') : $objVacuna[0]->$valor = ucwords($objVacuna[0]->$valor)) ?>" type="number" name="<?php echo vacunaTableClass::getNameField(vacunaTableClass::VALOR, true) ?>" >Pesos
                         </th>   
 
+                    </tr>
+                     <tr>
+                        <th>  <?php echo i18n::__('cantidad') ?>:</th>
+                        <th> <input placeholder="<?php echo ((isset($objVacuna) == FALSE) ? i18n::__('cantidad') : $objVacuna[0]->$cantidad = ucwords($objVacuna[0]->$cantidad)) ?>" type="number" name="<?php echo vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true) ?>" ></th>   
+                    </tr>
+                      <tr>
+                        <th>  <?php echo i18n::__('stock') ?>:</th>
+                        <th> <input placeholder="<?php echo ((isset($objVacuna) == FALSE) ? i18n::__('stock') : $objVacuna[0]->$stock = ucwords($objVacuna[0]->$stock)) ?>" type="number" name="<?php echo vacunaTableClass::getNameField(vacunaTableClass::STOCK_MINIMO, true) ?>" ></th>   
                     </tr>
                     <tr>
                         <th colspan="2">

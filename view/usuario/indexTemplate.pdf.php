@@ -37,7 +37,7 @@ $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);//usuarios usuarios usuaruis
 $pdf->Cell(10);
-$pdf->Cell(20, 10, utf8_decode('Id'), 1);
+//$pdf->Cell(20, 10, utf8_decode('Id'), 1);
 //$pdf->Cell(20, 10, utf8_encode('ciudad'), 1);
 $pdf->Cell(30, 10, utf8_decode('Identificacion '), 1);
 $pdf->Cell(30, 10, utf8_decode('Nombre'), 1);
@@ -48,7 +48,7 @@ $pdf->Cell(20, 10, utf8_decode('Ciudad '), 1);
 $pdf->Ln();
 foreach ($objDatos as $key) {
     $pdf->Cell(10);
-    $pdf->Cell(20, 10, utf8_decode($key->id), 1);
+//    $pdf->Cell(20, 10, utf8_decode($key->id), 1);
 //    $pdf->Cell(20, 10, utf8_encode($key->ciudad_id), 1);
     $pdf->Cell(30, 10, utf8_decode($key->numero_documento), 1);
     $pdf->Cell(30, 10, utf8_decode($key->nombre), 1);

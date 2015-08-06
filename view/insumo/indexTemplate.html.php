@@ -29,7 +29,7 @@
                     <div class="mdl-tooltip mdl-tooltip--large" for="new">
                         <?php echo i18n::__('registrar', null, 'ayuda') ?>
                     </div>
-                    <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o"></a>
+                    <a href="#myModalEliminarMasivo" data-toggle="modal" id="deleteMasa" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                         <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
                     </div>
@@ -86,7 +86,7 @@
                                     <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                     </div> 
-                                    <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" data-toggle="modal" <?php echo $key->id ?>"><i class="material-icons">delete</i></a>
+                                    <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" data-toggle="modal" <?php echo $key->id ?>><i class="material-icons">delete</i></a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                                     </div> 
@@ -119,22 +119,21 @@
             </form>
                  </div>
             <!-- WINDOWS MODAL DELETE MASIVE -->
-            <div class="modal fade" id="myModalEliminarMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
+            <div class="modalmask" id="myModalEliminarMasivo" >
+                <div class="modalbox rotate">
+                 <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('borrar seleccion') ?></h4>
                         </div>
+                        <a href="#close" title="Close" class="close">X</a>
                         <div class="modal-body">
-
-                            <?php echo i18n::__('deleteMasive') ?>
+                         <?php echo i18n::__('deleteMasive') ?>
                         </div>
                         <div class="modal-footer">
                             <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" > <?php echo i18n::__('cancel') ?></a>
                             <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()"> <?php echo i18n::__('confirm') ?></button>
                         </div>
-                    </div>
+                   
                 </div>
             </div>
             <!--            Paginador-->

@@ -30,10 +30,10 @@ use mvc\view\viewClass as view ?>
                <div class="mdl-tooltip mdl-tooltip--large" for="new">
                <?php echo i18n::__('registrar', null, 'ayuda') ?>
                </div>
-               <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o"  onclick="borrarSeleccion()"></a>
+<!--               <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o"  onclick="borrarSeleccion()"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-               </div>
+               </div>-->
                <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
                         <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -75,10 +75,10 @@ use mvc\view\viewClass as view ?>
                        <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                     </div> 
-                      <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $usuario->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
+<!--                      <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $usuario->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                        <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('eliminar', null, 'ayuda') ?>
-                                    </div> 
+                                    </div> -->
                     </td>
                   </tr>
                   <!-- WINDOWS MODAL DELETE -->
@@ -145,7 +145,7 @@ use mvc\view\viewClass as view ?>
 
               <tr>
                 <th>
-                  <?php echo i18n::__('fecha', null, 'animal') ?>:
+                  <?php echo i18n::__('fechaInicio') ?>:
                 </th>
                 <th>
                   <input type="date" name="filter[fecha_inicial]" >               
@@ -154,7 +154,7 @@ use mvc\view\viewClass as view ?>
 
               <tr>
                 <th>
-                  <?php echo i18n::__('fecha', null, 'animal') ?>:
+                  <?php echo i18n::__('fechaFin') ?>:
                 </th>
                 <th>
                   <input type="date" name="filter[fecha_fin]" >               
@@ -172,7 +172,7 @@ use mvc\view\viewClass as view ?>
     </div>
 
 
-
+<!--DELETE MASIVE-->
     <div id="myModalEliminarMasivo" class="modalmask">
       <div class="modalbox rotate">
         <div class="modal-header">

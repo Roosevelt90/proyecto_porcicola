@@ -18,19 +18,18 @@ class reportClienteActionClass extends controllerClass implements controllerActi
     public function execute() {
         try {
             $where = null;
-            if (request::getInstance()->hasRequest('reportCliente')) {
-                $report = request::getInstance()->getPost('reportCliente');
+            if (request::getInstance()->hasPost('reportCliente')) {
+                $report = request::getInstance()->getPost('reportCliene');
             }
 
 
             $fields = array(
-                clienteTableClass::ID,
-                clienteTableClass::NUMERO_DOC,
-                clienteTableClass::CIUDAD,
-                clienteTableClass::NOMBRE,
-                clienteTableClass::TEL,
-                clienteTableClass::TIPO_DOC,
-                clienteTableClass::DIRECCION
+            clienteTableClass::ID,
+            clienteTableClass::NUMERO_DOC,
+            clienteTableClass::NOMBRE,
+            clienteTableClass::TIPO_DOC,
+            clienteTableClass::TEL,
+            clienteTableClass::DIRECCION
             );
             $fields2 = array(
                 ciudadTableClass::NOMBRE

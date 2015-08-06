@@ -2,6 +2,7 @@
 culture:                  English
 dictionary:
   default:
+    subt:                 Total Parcial
     RegistrosEntrada:     Input of warehouse
     personal:             People
     fechaFabricacion:     Date of Manufacture
@@ -457,7 +458,11 @@ dictionary:
    
   pCompra:                 
    nueva:                 New Purchase Invoice
-    
+   fact:                  Invoice
+   detalle:               Purchase Invoice Detail
+   n:                     Registration Id
+   detalle1:              Sales Invoice Detail
+       
   dpVenta:
    item:                  Item
    date:                  Date
@@ -466,6 +471,7 @@ dictionary:
    animal_id:             id animal
    weight:                Weight
    price:                 Price
+   valor:                 Value
    details:               See Detail
    read:                  Invoices registered in our system
    edit:                  Edit
@@ -493,6 +499,7 @@ dictionary:
     
   facturaVenta:
     new:                   Register a New Bill of Sale
+    fact:                  Sales Receipt
     
   ayuda:
     sistema:               Management System for Swine Farm

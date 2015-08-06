@@ -71,21 +71,7 @@ use mvc\i18n\i18nClass as i18n ?>
               </th>
             </tr>
           <?php endif; ?>
-          <tr>
-            <th>  <?php echo i18n::__('name', NULL, 'datos') ?>:</th>
-            <th> <input required pattern="^[A-Za-z0-9]{1,20}$" maxlength="20"  title="No se puede usar caracteres especiales" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true) ?>" placeholder="<?php echo i18n::__('name', null, 'datos') ?>">
-            </th>   
-          </tr>
-          <tr>
-            <th>
-              <?php echo i18n::__('lastName', null, 'datos') ?>:
-            </th>
-            <th>
-              <input required pattern="^[A-Za-z0-9]{1,20}$" maxlength="20"  title="No se puede usar caracteres especiales" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true) ?>"placeholder="<?php echo i18n::__('lastName', null, 'datos') ?>">
-            </th>                        
-          </tr>
-
-          <tr>
+                <tr>
             <th>
               <?php echo i18n::__('tipoDoc', null, 'datos') ?>:
             </th>
@@ -110,6 +96,28 @@ use mvc\i18n\i18nClass as i18n ?>
             </th>
           </tr>
           <tr>
+            <th>  <?php echo i18n::__('name', NULL, 'datos') ?>:</th>
+            <th> <input required pattern="^[A-Za-z0-9]{1,20}$" maxlength="20"  title="No se puede usar caracteres especiales" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::NOMBRE, true) ?>" placeholder="<?php echo i18n::__('name', null, 'datos') ?>">
+            </th>   
+          </tr>
+          <tr>
+            <th>
+              <?php echo i18n::__('lastName', null, 'datos') ?>:
+            </th>
+            <th>
+              <input required pattern="^[A-Za-z0-9]{1,20}$" maxlength="20"  title="No se puede usar caracteres especiales" type="text" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::APELLIDOS, true) ?>"placeholder="<?php echo i18n::__('lastName', null, 'datos') ?>">
+            </th>                        
+          </tr>
+              <tr>
+            <th>
+              <?php echo i18n::__('tel', null, 'datos') ?>:
+            </th>
+            <th>
+              <input placeholder="<?php echo i18n::__('tel', null, 'datos') ?>" type="number" required min="0" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true) ?>"> 
+            </th>                        
+          </tr>
+      
+          <tr>
             <th>
               <?php echo i18n::__('dir', null, 'datos') ?>:
             </th>
@@ -133,14 +141,7 @@ use mvc\i18n\i18nClass as i18n ?>
               </select>
             </th>
           </tr>
-          <tr>
-            <th>
-              <?php echo i18n::__('tel', null, 'datos') ?>:
-            </th>
-            <th>
-              <input placeholder="<?php echo i18n::__('tel', null, 'datos') ?>" type="number" required min="0" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true) ?>"> 
-            </th>                        
-          </tr>
+       
           <tr>
             <th colspan="2">
           <div class="text-center">

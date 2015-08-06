@@ -2,6 +2,7 @@
 culture:                  Español
 dictionary:
   default:
+    subt:                 Subtotal
     RegistrosEntrada:     Entrada de Bodega
     personal:             Personal
     fechaFabricacion:     Fecha de Fabricación
@@ -458,6 +459,10 @@ dictionary:
    
   pCompra:                 
    nueva:                 Nueva Factura de Compra
+   fact:                  Factura de Compra
+   detalle:               Detalle de Factura de Compra
+   n:                     Id del Registro
+   detalle1:              Detalle de Factura de Venta
     
   dpVenta:
    item:                  Item
@@ -465,6 +470,7 @@ dictionary:
    numer:                 Número Documento
    user:                  Usuario_id
    animal_id:             id animal
+   valor:                 Valor
    weight:                Peso
    price:                 Precio
    details:               Ver Detalle
@@ -494,6 +500,7 @@ dictionary:
     
   facturaVenta:
     new:                   Registrar una Nueva Factura de Venta
+    fact:                  Factura de Venta
     
   ayuda:
     sistema:             Sistema de Gestión para una Granja Porcicola

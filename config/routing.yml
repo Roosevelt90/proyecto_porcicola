@@ -1126,7 +1126,7 @@ empleado_reporte:
     
 
 empleado_deleteFilters:
-  url:    /borrar_filtros
+  url:    /empleado/borrar_filtros
   param:  { module: personal, action: deleteFiltersEmpleado, format: html }
     
     
@@ -1356,7 +1356,7 @@ cliente_index:
     - hooks/logHookClass.php
     
 cliente_deleteFilters:
-  url:    /borrar_filtros
+  url:    /cliente/borrar_filtros
   param:  { module: personal, action: deleteFiltersCliente, format: html }
     
     
@@ -1436,7 +1436,6 @@ cliente_reporte:
     param: { module: personal, action: reportCliente, format: pdf }
     load:
     - libs/fpdf/fpdf.php
-    - libs/validate/validatorFieldClass.php
     - model/base/clienteBaseTableClass.php
     - model/clienteTableClass.php
     - model/base/ciudadBaseTableClass.php
@@ -2048,6 +2047,16 @@ proceso_compra_inhabilitar:
     - model/bitacoraTableClass.php
     - model/base/procesoCompraBaseTableClass.php
     - model/procesoCompraTableClass.php
+    
+detalle_proceso_compra_inhabilitar:
+  url:      /detalle_proceso_compra/eliminar
+  param:  { module: factura, action: deleteDetalleFacturaCompra, format: json }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/detalleProcesoCompraBaseTableClass.php
+    - model/detalleProcesoCompraTableClass.php
 
 proceso_compra_eliminar_seleccion:
   url:    /proceso_compra/eliminarSeleccion
@@ -2216,20 +2225,32 @@ venta_view:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
-    - model/base/procesoCompraBaseTableClass.php
-    - model/procesoCompraTableClass.php
-    - model/base/detalleProcesoCompraBaseTableClass.php
-    - model/detalleProcesoCompraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+    - model/base/detalleProcesoVentaBaseTableClass.php
+    - model/detalleProcesoVentaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-    - model/base/tipoInsumoBaseTableClass.php
-    - model/tipoInsumoTableClass.php
-    - model/base/detalleProcesoCompraBaseTableClass.php
-    - model/detalleProcesoCompraTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+ 
+    
+detalle_venta_deleteSelect:
+  url:    /venta/inhabilitarSeleccion
+  param:  { module: factura, action: deleteSelectDetalleFacturaVenta, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+    - model/base/detalleProcesoVentaBaseTableClass.php
+    - model/detalleProcesoVentaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
     
 venta_reporte:
   url:    /venta/reporte
@@ -2811,6 +2832,8 @@ entrada_bodega:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+    
+
    
 
 entrada_bodega:_nuevo:
@@ -2926,7 +2949,7 @@ entrada_bodega_view:
     
 entrada_bodega_reporte:
   url:    /entrada_bodega/reporte
-  param:  { module: bodega, action: reportEntrada, format: pdf }
+  param:  { module: bodega, action: reportEntradaBodega, format: pdf }
   load:
     - libs/fpdf/fpdf.php
     - hooks/logHookClass.php
@@ -2934,14 +2957,14 @@ entrada_bodega_reporte:
     - model/bitacoraTableClass.php
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
-    - model/base/detalleEntradaBodegaBaseTableClass.php
-    - model/detalleEntradaBodegaTableClass.php
+#   - model/base/detalleEntradaBodegaBaseTableClass.php
+#   - model/detalleEntradaBodegaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-    - model/base/tipoInsumoBaseTableClass.php
-    - model/tipoInsumoTableClass.php
+#   - model/base/insumoBaseTableClass.php
+#   - model/insumoTableClass.php
+#   - model/base/tipoInsumoBaseTableClass.php
+#   - model/tipoInsumoTableClass.php
 
 entrada_bodega_CrearDetalle:
   url:    /entrada_bodega/create_detalle
@@ -3125,22 +3148,22 @@ salida_bodega_view:
     
 salida_bodega_reporte:
   url:    /salida_bodega/reporte
-  param:  { module: bodega, action: reportSalida, format: pdf }
+  param:  { module: bodega, action: reportSalidaBodega, format: pdf }
   load:
     - libs/fpdf/fpdf.php
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
-    - model/base/entradaBodegaBaseTableClass.php
-    - model/entradaBodegaTableClass.php
-    - model/base/detalleEntradaBodegaBaseTableClass.php
-    - model/detalleEntradaBodegaTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+#    - model/base/detalleEntradaBodegaBaseTableClass.php
+#    - model/detalleEntradaBodegaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-    - model/base/tipoInsumoBaseTableClass.php
-    - model/tipoInsumoTableClass.php
+#    - model/base/insumoBaseTableClass.php
+#    - model/insumoTableClass.php
+#    - model/base/tipoInsumoBaseTableClass.php
+#    - model/tipoInsumoTableClass.php
 
 salida_bodega_crear_detalle:
   url:    /salida_bodega/create_detalle

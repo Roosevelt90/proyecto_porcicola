@@ -89,11 +89,14 @@ use mvc\session\sessionClass as session ?>
                   <td>  
                     <?php if ($key->$estado == true): ?>
                       <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                      <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))             ?>" class="btn btn-default active btn-sm fa fa-edit"></a>-->
+                         <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))             ?>" class="btn btn-default active btn-sm fa fa-edit"></a>-->
                         <div class="mdl-tooltip mdl-tooltip--large" for="edit<?php echo $countDetale ?>">
                           <?php echo i18n::__('modificar', null, 'ayuda') ?>
                         </div>  
-
+                         <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class="btn btn-sm btn-default fa fa-ban" ></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
+                      <?php echo i18n::__('habilitar', null, 'ayuda') ?>
+                    </div> 
                         <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalDetail<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" data-toggle="modal" data-target="#myModalDetail<?php echo $key->$id ?>" ></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                           <?php echo i18n::__('insertFactura', null, 'ayuda') ?>
@@ -104,10 +107,7 @@ use mvc\session\sessionClass as session ?>
                         <?php echo i18n::__('verDetalleFact', null, 'ayuda') ?>
                       </div>  
                     <?php endif ?>
-                    <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class="btn btn-sm btn-default fa fa-ban" ></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
-                      <?php echo i18n::__('habilitar', null, 'ayuda') ?>
-                    </div> 
+                   
 
 
 

@@ -52,7 +52,7 @@ use mvc\request\requestClass as request ?>
           <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
             <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
           </div>
-          <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportCompra') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
+          <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'reportEntradaBodega') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
           <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
             <?php echo i18n::__('reporte', null, 'ayuda') ?>
           </div>
@@ -92,23 +92,20 @@ use mvc\request\requestClass as request ?>
                       <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
                       </div> 
-
-
-                      <a id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
-                      <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
-                        <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
-                      </div>
-
-                      <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
+                      <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-default fa fa-ban" ></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
+                    <?php echo i18n::__('habilitar', null, 'ayuda') ?>
+                  </div> 
+  <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
                       <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                         <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                       </div> 
                     <?php endif; ?>
                   <?php endif; ?>
-                  <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-default fa fa-ban" ></a>
-                  <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
-                    <?php echo i18n::__('habilitar', null, 'ayuda') ?>
-                  </div> 
+                 <a id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
+                      <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
+                        <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
+                      </div>
                   </div> 
                 </td>
               </tr>

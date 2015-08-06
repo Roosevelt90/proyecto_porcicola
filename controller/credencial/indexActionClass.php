@@ -21,6 +21,25 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 credencialTableClass::ID,
                 credencialTableClass::NOMBRE
             );
+            
+              $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            
+               $f = array(
+                credencialTableClass::ID
+            );
+
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+            } else {
+                $this->page = $page;
+            }
+            
+            $lines = config::getRowGrid();
+            $this->cntPages = credencialTableClass::getAllCount($f, true, $lines, null);
             $this->objCredencial = credencialTableClass::getAll($fields, true);
             $this->defineView('index', 'credencial', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

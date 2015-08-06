@@ -25,16 +25,34 @@ class createDetalleFacturaCompraActionClass extends controllerClass implements c
         $insumo = request::getInstance()->getPost(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::INSUMO_ID, true));
         $cantidad = request::getInstance()->getPost(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::CANTIDAD, true));
         $valor = request::getInstance()->getPost(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::VALOR_UNITARIO, true));
-
         //    detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
-
+        $subtotal = $valor * $cantidad;
         $data = array(
-detalleProcesoCompraTableClass::CANTIDAD => $cantidad,
-detalleProcesoCompraTableClass::INSUMO_ID => $insumo,
-detalleProcesoCompraTableClass::PROCESO_COMPRA_ID => $id_registro,
-detalleProcesoCompraTableClass::VALOR_UNITARIO => $valor
+          detalleProcesoCompraTableClass::CANTIDAD => $cantidad,
+          detalleProcesoCompraTableClass::INSUMO_ID => $insumo,
+          detalleProcesoCompraTableClass::PROCESO_COMPRA_ID => $id_registro,
+          detalleProcesoCompraTableClass::VALOR_UNITARIO => $valor,
+          detalleProcesoCompraTableClass::SUBTOTAL => $subtotal
         );
-        print_r($data);
+
+        //Manejo de inventario
+        $fieldsInventario = array(
+          insumoTableClass::CANTIDAD
+        );
+        $whereInventario = array(
+          insumoTableClass::ID => $insumo
+        );
+        $objInsumoInventario = insumoTableClass::getAll($fieldsInventario, true, null, null, null, null, $whereInventario);
+        $insumoInventario = ($objInsumoInventario[0]->cantidad) + $cantidad;
+        $id_inventario_insumo = array(
+          insumoTableClass::ID => $insumo
+        );
+        $data_inventario_insuom = array(
+          insumoTableClass::CANTIDAD => $insumoInventario
+        );
+
+        
+        insumoTableClass::update($id_inventario_insumo, $data_inventario_insuom);
         detalleProcesoCompraTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('succesCreate'));
         log::register(i18n::__('create'), detalleProcesoCompraTableClass::getNameTable());

@@ -76,6 +76,19 @@ class detalleVacunacionTableClass extends detalleVacunacionBaseTableClass {
             routing::getInstance()->forward('vacunacion', 'indexVacunacion');
         }
     }
+ 
+    public static function validateInventario($dataBD, $dataActual){
+      $flag = false;
+      if($dataBD < $dataActual){
+            session::getInstance()->setError(i18n::__(20000, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleVacunacionTableClass::getNameField(detalleVacunacionTableClass::DOSIS, true), true);
+      }
+         if ($flag == true) {
+            request::getInstance()->setMethod('GET');
+            routing::getInstance()->forward('vacunacion', 'indexVacunacion');
+        }
+    }
     
 }
 

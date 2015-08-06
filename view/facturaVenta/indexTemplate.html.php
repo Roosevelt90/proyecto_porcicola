@@ -57,7 +57,7 @@ use mvc\request\requestClass as request ?>
         </div>
       </div>
       <?php view::includeHandlerMessage() ?>
-        <div class="table-responsive">
+        <div class=" table-responsive">
       <table class="table table-bordered">
         <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacunacion')      ?>" method="POST">
 

@@ -121,7 +121,8 @@ class viewFacturaCompraActionClass extends controllerClass implements controller
                 $orderByDetalle = array(
                     detalleProcesoCompraTableClass::ID
                 );
-
+//                print_r($whereDetalle);
+//                exit();
                 $this->objFacturaCompra = procesoCompraTableClass::getAllJoin($fieldsFacturaCompra, $fieldsEmpleado, $fieldsProveedor, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, null, null, null, null, $whereCompra);
                 $this->objDetalleFacturaCompra = detalleProcesoCompraTableClass::getAllJoin($fieldsDetalle, $fieldsInsumo, $fieldsTipoInsumo, null, $fJoinDetalleInsumo, $fJoinInsumo, $fJoinDetalleTipoInsumo, $fJoinTipoInsumo, null, null, false, $orderByDetalle, 'ASC', 10, $page, $whereDetalle);
                 $this->defineView('view', 'facturaCompra', session::getInstance()->getFormatOutput());

@@ -571,6 +571,8 @@ dictionary:
     10023:                No se admite caracteres especialesmpo %campo%
     10030:                El animal seleccionado no existe en la base de datos
     10031:                El veterinario seleccionado no existe en la base de datos
+    
+    20000:                No hay vacunas suficientes
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

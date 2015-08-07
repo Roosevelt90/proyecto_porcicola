@@ -574,13 +574,13 @@ Usuario_Credencial_update:
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
 
-Usuario_Credencial_delete:
-  url:    /userCredencial/eliminar
-  param:  { module: usuario, action: deleteUsuCredencial, format: html }
-  load:
-    - model/base/usuarioCredencialBaseTableClass.php
-    - model/usuarioCredencialTableClass.php
-    
+#Usuario_Credencial_delete:
+#  url:    /userCredencial/eliminar
+#  param:  { module: usuario, action: deleteUsuCredencial, format: html }
+#  load:
+#    - model/base/usuarioCredencialBaseTableClass.php
+#    - model/usuarioCredencialTableClass.php
+#    
 #Usuario_Credencial_deleteSelect:
 #  url:    /userCredencial/borrarSeleccion
 #  param:  { module: usuario, action: delectSelectUsuCredencial, format: html }
@@ -2154,8 +2154,28 @@ proceso_venta:
     - model/bitacoraTableClass.php
     - model/base/procesoVentaBaseTableClass.php
     - model/procesoVentaTableClass.php
-#    - model/base/detalleProcesoVentaBaseTableClass.php
-#    - model/detalleProcesoVentaTableClass.php
+    - model/base/detalleProcesoVentaBaseTableClass.php
+    - model/detalleProcesoVentaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/clienteBaseTableClass.php
+    - model/clienteTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+detalle_new_proceso_venta:
+  url:      /create/detalle_factura_venta
+  param:  { module: factura, action: createDetalleFacturaVenta, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/procesoVentaBaseTableClass.php
+    - model/procesoVentaTableClass.php
+    - model/base/detalleProcesoVentaBaseTableClass.php
+    - model/detalleProcesoVentaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
     - model/base/clienteBaseTableClass.php

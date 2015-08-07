@@ -198,7 +198,6 @@ dictionary:
     fecha_fin:            Fecha de Nacimiento Final
     genero:               Género
     parto:                Número de Partos
-    parto1:               Fecha de Parto
     lote:                 Lote
     raza:                 Raza
     registro:             Registro de Parto
@@ -259,7 +258,7 @@ dictionary:
     machos:              Machos nacidos vivos
     muertos:             Nacidos Muertos
     edit:                Modificar Registro Parto
-    new:                 Registrar un nuevo Parto
+    new:                 Registrar un nuevo registro Parto
     registroParto:       Registro Parto   
     
   proveedor:
@@ -324,15 +323,13 @@ dictionary:
     new:                  Registrar una Nueva Credencial
     credencial:           Credencial
     edit:                 Modificar la Credencial
-    nueva:                Nueva Asignación de la Credencial
   
   userCredencial:
     read:                 Roles Asignados
     new:                  Nuevo Rol
     user:                 Usuario
     credencial:           Credencial
-    edit:                 Editar 
-    ed:                   Editar la Asignación de la Credencial
+    edit:                 Editar
     
     
   raza:
@@ -595,6 +592,7 @@ dictionary:
     10032:                El Lote de la vacuna debe ser numerico
     10033:                El valor de la vacuna debe ser numerico
     20000:                No hay vacunas suficientes
+    20001:                El cerdo no existe
     10034:                El nombre de la vacuna no admite caracteres especiales
     10035:                El lote de la vacuna no admite caracteres especiales
     10036:                El valor de la vacuna no admite caracteres especiales

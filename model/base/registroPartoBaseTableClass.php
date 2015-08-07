@@ -5,7 +5,7 @@ use mvc\model\table\tableBaseClass;
 class registroPartoBaseTableClass extends tableBaseClass {
     
     private $id,
-            $fecha_parto,
+            $fecha_nacimiento,
             $hembras_nacidas_vivas,
             $machos_nacidos_vivos,
             $nacidos_muertos,
@@ -13,7 +13,7 @@ class registroPartoBaseTableClass extends tableBaseClass {
             $animal_id;
     
     const ID = 'id';
-    const FECHA_NACIMIENTO = 'fecha_parto';
+    const FECHA_NACIMIENTO = 'fecha_nacimiento';
     const HEMBRAS_NACIDAS_VIVAS = 'hembras_nacidas_vivas';
     const MACHOS_NACIDOS_VIVOS = 'machos_nacidos_vivos';
     const NACIDOS_MUERTOS = 'nacidos_muertos';
@@ -24,8 +24,8 @@ class registroPartoBaseTableClass extends tableBaseClass {
         return $this->id;
     }
 
-    function getFecha_parto() {
-        return $this->fecha_parto;
+    function getFecha_nacimiento() {
+        return $this->fecha_nacimiento;
     }
 
     function getHembras_nacidas_vivas() {
@@ -52,8 +52,8 @@ class registroPartoBaseTableClass extends tableBaseClass {
         $this->id = $id;
     }
 
-    function setFecha_parto($fecha_parto) {
-        $this->fecha_parto = $fecha_parto;
+    function setFecha_nacimiento($fecha_nacimiento) {
+        $this->fecha_nacimiento = $fecha_nacimiento;
     }
 
     function setHembras_nacidas_vivas($hembras_nacidas_vivas) {

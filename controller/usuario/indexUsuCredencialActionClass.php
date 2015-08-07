@@ -41,7 +41,7 @@ class indexUsuCredencialActionClass extends controllerClass implements controlle
             }
 
             $lines = config::getRowGrid();
-//            $this->cntPages = usuarioCredencialTableClass::getAllCount($f, true, $lines);
+            $this->cntPages = usuarioCredencialTableClass::getAllCount($f, true, $lines);
                   
             
             

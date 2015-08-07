@@ -11,21 +11,6 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
 
     public function execute() {
         try {
-            $where = null;
-             if (request::getInstance()->hasPost('filter')) {
-                $filter = request::getInstance()->getPost('filter');
-                                       
-//                    $where[registroPartoTableClass::FECHA_NACIMIENTO] = array(
-//                        date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
-//                        date(config::getFormatTimestamp(), strtotime($filter['fecha_fin'] . ' 23.59.59'))
-//                    );
-                 if (isset($filter['raza']) and $filter['raza'] !== null and $filter['raza'] !== '') {
-                    $where [registroPartoTableClass::RAZA_ID] = $filter['raza'];
-                }
-               
-                   session::getInstance()->setAttribute('usuarioFiltersUsuario', $where);
-
-             }
 
             $fields = array(
                 registroPartoTableClass::ID,
@@ -35,9 +20,6 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
                 registroPartoTableClass::NACIDOS_MUERTOS,
                 registroPartoTableClass::RAZA_ID,
                 registroPartoTableClass::ANIMAL_ID
-            );
-            $fields2 = array (
-            razaTableClass::NOMBRE_RAZA
             );
 
             $orderBy = array(
@@ -64,7 +46,6 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
 
             $this->cntPages = registroPartoTableClass::getAllCount($f, false, $lines);
            // $this->page = request::getInstance()->getGet('page');
-            $this->objRaza = razaTableClass::getAll($fields2, true);
             $this->objParto = registroPartoTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page);
             $this->defineView('index', 'registroParto', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

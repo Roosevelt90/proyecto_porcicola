@@ -17,7 +17,7 @@ use mvc\request\requestClass as request ?>
 
     <form class="form-signin" style="color: blue"role="form" action="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'login') ?>" method="POST">
         <div class="row">
-            <div class="col-lg-offset-2" style="color: lightskyblue">
+            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2" style="color: lightskyblue">
                 <h3 class="form-signin-heading identificacion text-center"><?php echo i18n::__('Identificacion') ?></h3>
             </div>
         </div>

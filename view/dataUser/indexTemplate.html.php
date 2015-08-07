@@ -35,7 +35,7 @@
       </div>
         </div>
         <div class="table-responsive">
-        <table class="table table-bordered table-condensed">
+        <table class="table table-bordered">
             <thead>
                 <tr class="success">
                     <td><input type="checkbox" id="chkAll"></td> 

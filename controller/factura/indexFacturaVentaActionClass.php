@@ -73,8 +73,13 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
         procesoVentaTableClass::FECHA_HORA_VENTA
       );
 
+      $fieldsAnimal = array(
+      animalTableClass::ID, 
+      animalTableClass::NUMERO
+      );
 
-
+      
+      $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
       $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado2, false);
       $this->objCliente = clienteTableClass::getAll($fieldsCliente2, false);
 

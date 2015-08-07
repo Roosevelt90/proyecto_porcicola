@@ -98,6 +98,12 @@ class registroPartoBaseTableClass extends tableBaseClass {
   public static function getNameTable() {
     return 'registro_parto';
   }
+   public static function getNameTable2() {
+    return 'animal';
+  }
+   public static function getNameTable3() {
+    return 'raza';
+  }
 
   /**
    * Método para borrar un registro de una tabla X en la base de datos
@@ -159,5 +165,12 @@ class registroPartoBaseTableClass extends tableBaseClass {
   public static function update($ids, $data, $table = null) {
     return parent::update($ids, $data, self::getNameTable());
   }
+  
+    public static function getAllJoin($fields, $fields2, $fields3 = null, $fields4 = null, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+    }
 
+   public static function getAllCount($fields, $deletedLogical = true, $lines = null, $table = null) {
+        return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
+    }
 }

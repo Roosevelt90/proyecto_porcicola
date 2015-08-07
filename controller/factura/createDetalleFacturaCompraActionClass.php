@@ -5,6 +5,7 @@ use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+use mvc\validatorFields\validatorFieldsClass as validator;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;

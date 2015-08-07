@@ -36,7 +36,7 @@
             <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-            </div> 
+            </div>
              <?php endif;?>
             <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="filter">
@@ -111,21 +111,22 @@
                 </td>
                  <?php endif; ?>
               </tr>
-              <!-- WINDOWS MODAL DELETE -->
-            <div id="myModalDelete<?php echo $key->$idAnimal ?>" class="modalmask">
+         
+  <!-- WINDOWS MODAL DELETE MASIVE -->
+  <div id="myModalEliminarMasivo" class="modalmask">
               <div class="modalbox rotate">
-                   <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('confirmDelete') ?></h4>
-                                </div>
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('borrar seleccion') ?></h4>
+                        </div>
                 <a href="#close" title="Close" class="close">X</a>
-                <div class="modal-body">
-                  ¿<?php echo i18n::__('confirmDelete') ?>?
-                </div>
-                <div class="modal-footer">
-                  <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"><?php echo i18n::__('cancel') ?></a>
-                  <button type="button" class="btn btn-primary fa fa-eraser" onclick="eliminar(<?php echo $key->$idAnimal ?>, '<?php echo animalTableClass::getNameField(animalTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteAnimal') ?>')"><?php echo i18n::__('delete') ?></button>
-                </div>
+                  <div class="modal-body">
+            <?php echo i18n::__('confirmDeleteMasive') ?>
+          </div>
+          <div class="modal-footer">
+              <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('Exit') ?></a>
+            <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
+          </div>
               </div>
             </div>
             <?php $countDetale++ ?>

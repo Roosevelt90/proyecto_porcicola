@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -37,6 +38,7 @@ class reportVacunaActionClass extends controllerClass implements controllerActio
 
             $this->objVacuna = vacunaTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
             $this->mensaje = 'Informe de Vacunas en Nuestro Sistema';
+             log::register(i18n::__('reporte'), vacunaTableClass::getNameTable());
             $this->defineView('index', 'vacuna', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

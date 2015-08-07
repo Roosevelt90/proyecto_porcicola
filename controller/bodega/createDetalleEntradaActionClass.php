@@ -8,6 +8,7 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -40,8 +41,9 @@ class createDetalleEntradaActionClass extends controllerClass implements control
         log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable());
         routing::getInstance()->redirect('bodega', 'indexEntrada');
       } else {
+        log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
         session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
-        routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
+        routing::getInstance()->redirect('bodega', 'indexEntrada');
       }//close if
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

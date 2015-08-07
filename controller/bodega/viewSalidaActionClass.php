@@ -7,7 +7,8 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -110,6 +111,7 @@ class viewSalidaActionClass extends controllerClass implements controllerActionI
       $this->cntPages = detalleSalidaBodegaTableClass::getAllCount($f, true, $lines, $whereCnt);
       $this->objEntrada = salidaBodegaTableClass::getAllJoin($fieldsSalida, $fieldsEmpleado, null, null, $fJoinEntrada1, $fJoinEntrada2, null, null, null, null, true, null, null, config::getRowGrid(), $page, $whereSalida);
       $this->objDetalleEntrada = detalleSalidaBodegaTableClass::getAllJoin($fieldsDetalleSalida, $fieldsDetalleInsumo, $fieldsDetalleTipoInsumo, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, null, 'ASC', config::getRowGrid(), $page, $where);
+      log::register(i18n::__('ver3', null, 'bodega'), detalleSalidaBodegaTableClass::getNameTable());
       $this->defineView('view', 'salidaBodega', session::getInstance()->getFormatOutput());
 //      } else {
 //        session::getInstance()->setError('pailas');

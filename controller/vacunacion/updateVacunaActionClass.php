@@ -4,8 +4,10 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
 use mvc\session\sessionClass as session;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -26,7 +28,7 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
                 $cantidad = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true));
                 $stock = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::STOCK_MINIMO, true));
                 
-                vacunaTableClass::validateEdit($lote, $id);
+                vacunaTableClass::validateEdit($lote, $id, $valor, $nombre, $fecha_fabricacion, $fecha_vencimiento);
              
 //                $id = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::ID, true));
 //                $nombre = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::NOMBRE_RAZA, true));
@@ -34,7 +36,25 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
 //                $ids = array(
 //                    razaTableClass::ID => $id
 //                );
-//
+
+                  $ids = array(
+                  vacunaTableClass::ID => $id
+        );
+                  
+                          $data = array(
+                          vacunaTableClass::NOMBRE_VACUNA => $nombre,
+                          vacunaTableClass::LOTE_VACUNA => $lote,
+                          vacunaTableClass::FECHA_FABRICACION => $fecha_fabricacion,
+                          vacunaTableClass::FECHA_VENCIMIENTO => $fecha_vencimiento,
+                          vacunaTableClass::VALOR => $valor,
+                          vacunaTableClass::CANTIDAD => $cantidad,
+                          vacunaTableClass::STOCK_MINIMO => $stock
+        );
+                
+// insumoTableClass::update($ids, $data);
+              session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+                log::register(i18n::__('update'), vacunaTableClass::getNameTable());
+                routing::getInstance()->redirect('vacunacion', 'indexVacuna');
 //                $data = array(
 //                    razaTableClass::NOMBRE_RAZA => $nombre
 //                );
@@ -42,12 +62,16 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
 //                razaTableClass::update($ids, $data); 
           //      session::getInstance()->setSuccess(i18n::__('succesUpdate'));
           //      log::register(i18n::__('update'), razaTableClass::getNameTable());
+              
+            }  else {
+                log::register(i18n::__('update'), vacunaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
+                session::getInstance()->setError(i18n::__('errorUpdate'));
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');
-            } else {
+            }//close if
 //       log::register(i18n::__('update'), razaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
   //          session::getInstance()->setError(i18n::__('errorUpdate'));
-                routing::getInstance()->redirect('vacunacion', 'updateVacuna');
-            }//close if
+           
+            
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

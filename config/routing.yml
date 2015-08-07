@@ -739,6 +739,7 @@ insumo_insert:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+
     
 insumo_create:
   url:    /insumo/crear
@@ -751,6 +752,7 @@ insumo_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 insumo_edit:
   url:    /insumo/editar
@@ -775,6 +777,7 @@ insumo_update:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 insumo_delete:
   url:    /insumo/eliminar
@@ -807,6 +810,11 @@ insumo_reporte:
 insumo_delete_filters:
   url:    /borrar_filtros
   param:  { module: insumo, action: deleteFilter, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+
     
 ##-------------------------- ANIMAL --------------------------##
 animal_index:
@@ -1855,6 +1863,9 @@ vacuna_index:
   load:
     - model/base/vacunaBaseTableClass.php
     - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 vacuna_insert:
   url:    /vacuna/insertar
@@ -2923,6 +2934,10 @@ entrada_bodega_eliminar_seleccion:
 entrada_bodega_delete_filters:
   url:     /borrar_filtros/entrada_bodega
   param: { module: bodega, action: deleteFilterEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
   
 detalle_entrada_bodega_delete_filters:
   url:     /borrar_filtros/detalle_entrada
@@ -3184,3 +3199,95 @@ salida_bodega_crear_detalle:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+    
+    
+########### REGISTRO PARTO ###########    
+registro_parto_index:
+  url:  /registro_parto/index
+  param: { module: animal, action: indexRegistroParto, format: html }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+registro_parto_insert:
+  url:    /registro_parto/insertar
+  param:  { module: animal, action: insertRegistroParto, format: html }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+registro_parto_create:
+  url:    /registro_parto/crear
+  param:  { module: animal, action: createRegistroParto, format: html }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+registro_parto_edit:
+  url:    /registro_parto/editar
+  param:  { module: animal, action: editRegistroParto, format: html }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+registro_parto_update:
+  url:    /registro_parto/actualizar
+  param:  { module: animal, action: updateRegistroParto, format: html }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php  
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    
+registro_parto_delete:
+  url:    /registro_parto/eliminar
+  param:  { module: animal, action: deleteRegistroParto, format: json }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+registro_parto_deleteSelect:
+  url:    /registro_parto/eliminarSeleccion
+  param:  { module: animal, action: deleteSelectRegistroParto, format: html }
+  load:
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+ 
+registro_parto_reporte:
+  url:    /registro_parto/reporte
+  param:  { module: animal, action: reportRegistroParto, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldsClass.php
+    - model/base/registroPartoBaseTableClass.php
+    - model/registroPartoTableClass.php
+    

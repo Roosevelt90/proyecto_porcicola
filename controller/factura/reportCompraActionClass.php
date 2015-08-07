@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
 
 /**
  * Description of ejemploClass
@@ -38,6 +39,7 @@ class reportCompraActionClass extends controllerClass implements controllerActio
        $this->mensaje = "Informe de Facturas de Compra";
 
             $this->objFacturaCompra = procesoCompraTableClass::getAllJoin($fieldsFacturaCompra, $fieldsEmpleado, $fieldsProveedor, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true);
+                       log::register(i18n::__('reporte'), procesoCompraTableClass::getNameTable());
             $this->defineView('report', 'facturaCompra', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

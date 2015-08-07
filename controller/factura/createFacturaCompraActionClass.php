@@ -4,10 +4,10 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
-use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validatorFields\validatorFieldsClass as validator;
 use hook\log\logHookClass as log;
-
+use mvc\session\sessionClass as session;
 /**
  * Description of ejemploClass
  *
@@ -31,6 +31,7 @@ class createFacturaCompraActionClass extends controllerClass implements controll
             procesoCompraTableClass::validateCreate($fecha);
 
             procesoCompraTableClass::insert($data);
+             session::getInstance()->setSuccess(i18n::__('succesCreate'));
             log::register(i18n::__('create'), procesoCompraTableClass::getNameTable());
             routing::getInstance()->redirect('factura', 'indexFacturaCompra');
         } catch (PDOException $exc) {

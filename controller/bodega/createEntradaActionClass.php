@@ -7,6 +7,7 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -26,9 +27,12 @@ class createEntradaActionClass extends controllerClass implements controllerActi
         entradaBodegaTableClass::FECHA => $fecha
       );
       entradaBodegaTableClass::insert($data);
+      session::getInstance()->setSuccess(i18n::__('succesCreate'));
       log::register(i18n::__('create'), entradaBodegaTableClass::getNameTable());
       routing::getInstance()->redirect('bodega', 'indexEntrada');
-    } catch (PDOException $exc) {
+    } 
+  
+   catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }

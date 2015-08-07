@@ -14,7 +14,7 @@ use mvc\i18n\i18nClass as i18n;
  */
 class vacunacionTableClass extends vacunacionBaseTableClass {
 
-  public static function validate($id_veterinario, $fecha_registro) {
+  public static function validate($id_veterinario, $fecha_registro, $id_animal) {
 
     $flag = false;
 
@@ -34,11 +34,31 @@ class vacunacionTableClass extends vacunacionBaseTableClass {
       $flag = true;
       session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
     }
+    
+//    if (!is_numeric($id_veterinario)) {
+//      session::getInstance()->setError(i18n::__(10056, null, 'errors', array('%id_veterinario%' => $id_veterinario)));
+//      $flag = true;
+//      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true), true);
+//    }
+//    if (!is_numeric($id_animal)) {
+//      session::getInstance()->setError(i18n::__(10057, null, 'errors', array('%id_animal%' => $id_animal)));
+//      $flag = true;
+//      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::ANIMAL, true), true);
+//    }
+    
     if ($fecha_registro > $dateNow) {
       session::getInstance()->setError(i18n::__(10010, null, 'errors', array('%fecha%' => $fecha_registro)));
       $flag = true;
       session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
     }
+    
+    if (empty($fecha_registro) or !isset($fecha_registro) or $fecha_registro == '') {
+
+        session::getInstance()->setError(i18n::__(10055, null, 'errors', array('%campo%' => $fecha_registro)));
+        $flag = true;
+        session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
+        }
+    
 
 //        $fieldsAnimal = array(
 //            animalTableClass::ID
@@ -93,17 +113,39 @@ class vacunacionTableClass extends vacunacionBaseTableClass {
       $flag = true;
       session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
     }
-    if (!is_numeric($id_veterinario)) {
-      session::getInstance()->setError(i18n::__(10016, null, 'errors', array('%id_veterinario%' => $id_veterinario)));
-      $flag = true;
-      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true), true);
-    }
-    if (!is_numeric($id_animal)) {
-      session::getInstance()->setError(i18n::__(10017, null, 'errors', array('%id_animal%' => $id_animal)));
-      $flag = true;
-      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::ANIMAL, true), true);
-    }
+//    if (!is_numeric($id_veterinario)) {
+//      session::getInstance()->setError(i18n::__(10056, null, 'errors', array('%id_veterinario%' => $id_veterinario)));
+//      $flag = true;
+//      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::VETERINARIO, true), true);
+//    }
+//    if (!is_numeric($id_animal)) {
+//      session::getInstance()->setError(i18n::__(10057, null, 'errors', array('%id_animal%' => $id_animal)));
+//      $flag = true;
+//      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::ANIMAL, true), true);
+//    }
+    
+     if (empty($fecha_registro) or !isset($fecha_registro) or $fecha_registro == '') {
 
+        session::getInstance()->setError(i18n::__(10055, null, 'errors', array('%campo%' => $fecha_registro)));
+        $flag = true;
+        session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
+        }
+
+            $fieldsVeterinario = array(
+      veterinarioTableClass::ID
+    );
+            
+     $objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario);
+     
+       foreach ($objVeterinario as $key => $value) {
+      foreach ($value as $key) {
+        if ($key != $id_veterinario) {
+          session::getInstance()->setError(i18n::__(10031, null, 'errors'));
+          $flag = true;
+        }
+      }
+    }
+        
     if ($flag == true) {
       request::getInstance()->setMethod('GET');
       routing::getInstance()->forward('vacunacion', 'updateVacunacion');

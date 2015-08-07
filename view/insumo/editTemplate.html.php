@@ -12,5 +12,6 @@
         </div>
     </div>
 </div>
+<?php view::includeHandlerMessage()?>
 <?php view::includePartial('insumo/formInsumo', array('objInsumo' => $objInsumo, 'objTipoInsumo' => $objTipoInsumo)) ?>
 

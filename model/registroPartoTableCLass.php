@@ -8,6 +8,6 @@ use mvc\config\configClass as config;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class registroParoTableClass extends registroPartoBaseTableClass {
+class registroPartoTableClass extends registroPartoBaseTableClass {
   
 }

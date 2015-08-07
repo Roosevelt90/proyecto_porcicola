@@ -7,6 +7,8 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -77,6 +79,7 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
       $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
       $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado2, false);
       $this->objEntradaBodega = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+      log::register(i18n::__('ver', null, 'bodega'), entradaBodegaTableClass::getNameTable());
       $this->defineView('index', 'entradaBodega', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

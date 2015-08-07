@@ -17,7 +17,9 @@ class editActionClass extends controllerClass implements controllerActionInterfa
           insumoTableClass::FECHA_FABRICACION,
           insumoTableClass::FECHA_VENCIMIENTO,
           insumoTableClass::TIPO_INSUMO,
-          insumoTableClass::VALOR
+          insumoTableClass::VALOR, 
+          insumoTableClass::CANTIDAD,
+          insumoTableClass::STOCK_MINIMO
         );
         $where = array(
           insumoTableClass::ID => request::getInstance()->getRequest(insumoTableClass::ID)

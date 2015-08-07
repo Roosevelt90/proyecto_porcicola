@@ -27,7 +27,7 @@ class createDetalleVacunacionActionClass extends controllerClass implements cont
         $dosis_vacuna = request::getInstance()->getPost(detalleVacunacionTableClass::getNameField(detalleVacunacionTableClass::DOSIS, true));
         $accion = request::getInstance()->getPost(detalleVacunacionTableClass::getNameField(detalleVacunacionTableClass::ACCION, true));
 
-//            detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
+//      detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion, $nombre, $id_detalle, $id_registro);
 
         $data = array(
           detalleVacunacionTableClass::ID_REGISTRO => $id_registro,

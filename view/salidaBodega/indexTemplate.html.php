@@ -85,7 +85,7 @@ use mvc\session\sessionClass as session ?>
                   <td>  
 
                     <?php if ($key->$estado == true): ?>
-
+                       <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                       <a  id="editar<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada))    ?>" class="btn btn-sm btn-default active fa fa-edit"></a>
                       <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
@@ -98,7 +98,7 @@ use mvc\session\sessionClass as session ?>
                       <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                         <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                       </div> 
-
+<?php endif; ?>
                     <?php endif; ?>
                     <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewSalida', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-primary active btn-sm fa fa-eye"> </a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">

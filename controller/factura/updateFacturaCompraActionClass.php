@@ -4,8 +4,10 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
 use mvc\session\sessionClass as session;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -40,11 +42,16 @@ class updateFacturaCompraActionClass extends controllerClass implements controll
 //                razaTableClass::update($ids, $data); 
           //      session::getInstance()->setSuccess(i18n::__('succesUpdate'));
           //      log::register(i18n::__('update'), razaTableClass::getNameTable());
-                routing::getInstance()->redirect('vacunacion', 'indexVacuna');
+          procesoCompraTableClass::update($ids, $data);
+          session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+                log::register(i18n::__('update'), procesoCompraTableClass::getNameTable());
+                routing::getInstance()->redirect('factura', 'indexFacturaCompra');
             } else {
 //                log::register(i18n::__('update'), razaTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
 //                session::getInstance()->setError(i18n::__('errorUpdate'));
-                routing::getInstance()->redirect('vacunacion', 'updateVacuna');
+                log::register(i18n::__('update'), procesoCompraTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
+                session::getInstance()->setError(i18n::__('errorUpdate'));
+                routing::getInstance()->redirect('factura', 'updateFacturaCompra');
             }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

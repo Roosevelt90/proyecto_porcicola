@@ -7,6 +7,8 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -121,6 +123,7 @@ class viewFacturaVentaActionClass extends controllerClass implements controllerA
 
                 $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, null, null, null, null, $whereVenta);
                 $this->objDetalleFacturaVenta = detalleProcesoVentaTableClass::getAllJoin($fieldsDetalle, $fieldsAnimal, null, null, $fJoinDetalle, $fJoinAnimal, null, null, null, null, false, $orderByDetalle, 'ASC', 10, $page, $whereDetalle);
+                       log::register(i18n::__('ver1', null, 'facturaVenta'), detalleProcesoVentaTableClass::getNameTable());
                 $this->defineView('view', 'facturaVenta', session::getInstance()->getFormatOutput());
             } else {
                 session::getInstance()->setError('pailas');

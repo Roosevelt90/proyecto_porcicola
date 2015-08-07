@@ -8,6 +8,7 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -38,9 +39,10 @@ echo $id_insumo;
                 print_r($data);
         detalleSalidaBodegaTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('succesCreate'));
-        log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable());
-        routing::getInstance()->redirect('bodega', 'indexEntrada');
+        log::register(i18n::__('create'), detalleSalidaBodegaTableClass::getNameTable());
+        routing::getInstance()->redirect('bodega', 'indexSalida');
       } else {
+           log::register(i18n::__('create'), detalleSalidaBodegaBaseTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
         session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
         routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
       }//close if

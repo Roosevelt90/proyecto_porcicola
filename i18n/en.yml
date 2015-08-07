@@ -163,6 +163,15 @@ dictionary:
     contacto:             Contact
     legalInfor:           Legal Information
     ingBusqueda:          Type your search ...
+    
+  parto:
+    read:                Partos registrados en nuestro sistema
+    hembras:             Hembras nacidas vivas
+    machos:              Machos nacidos vivos
+    muertos:             Nacidos Muertos
+    edit:                Modificar Registro Parto
+    new:                 Registrar un nuevo registro Parto
+    registroParto:       Registro Parto   
    
   veterinario:
     veterinario:          Veterinary
@@ -295,6 +304,10 @@ dictionary:
     new:                  Register a New Entry Cellar
     detalle:              Entry detail winery
     sal:                  Register a New Warehouse Outlet
+    ver:                  see entry cellar
+    ver1:                 see output winery
+    ver2:                 see details cellar entry
+    ver3:                 see details cellar output
     
   datos:
     read:                 Personal User Data
@@ -343,6 +356,7 @@ dictionary:
     insumo:               Input
     new:                  Registering a New Input
     register:             New Input
+    ver:                  see input
   
   
   cliente:
@@ -421,6 +435,7 @@ dictionary:
     editVaccination:      EDIT VACCINATION
     newVaccination:       NEW VACCINATION
     edit:                 Edit Immunization Record
+    ver:                  see vaccine
     
   detalleVacunacion:
     newDetailVaccination:  NEW DETAIL VACCINATION
@@ -496,10 +511,14 @@ dictionary:
     fechaFactura:          Invoice Date
     new:                   Registering a New Invoice
     edit:                  Change Purchase Invoice
+    ver:                   view invoice
+    ver1:                  see detailed invoice
     
   facturaVenta:
     new:                   Register a New Bill of Sale
     fact:                  Sales Receipt
+    ver:                   see sales invoice
+    ver1:                  see detailed bill of sale
     
   ayuda:
     sistema:               Management System for Swine Farm
@@ -549,7 +568,7 @@ dictionary:
     00004:                Passwords are not equal
     00005:                The user name is already registered
     00023:                The field must be filled only with numbers    
-    10023:                Special characters are not supported
+    10026:                Special characters are not supported
     10006:                There are empty fields are mandatory
     10007:                Only numbers are allowed
     10008:                The date format does not match
@@ -570,6 +589,46 @@ dictionary:
     10023:                Special characters are not supported in the field %campo%
     10030:                The selected animal does not exist in the database
     10031:                The veterinarian selected does not exist in the database
+    10032:                The batch of vaccine must be numeric
+    10033:                The value of the vaccine must be numeric
+    20000:                There is enough vaccine
+    10034:                The name of the vaccine does not support special characters
+    10035:                The batch of vaccine does not support special characters
+    10036:                The value of the vaccine does not support special characters
+    10037:                The name of the vaccine is not empty admits
+    10038:                The maximum number of characters for the name of the vaccine is 50
+    10039:                The batch of vaccine is not supported empty
+    10040:                The batch of vaccine must be at least 3 characters
+    10041:                The date of manufacture is not supported empty
+    10042:                The expiration date can not be empty
+    10043:                The value of the vaccine is not supported vacuum
+    10044:                The input type is not supported empty
+    10045:                The input type does not support special characters
+    10046:                The maximum number of characters for the type of input is 100
+    10047:                The input is not supported empty
+    10048:                The input does not support special characters
+    10049:                The maximum number of characters for the input is 50
+    10050:                The price of the input is not supported empty
+    10051:                The price of the input must be numeric
+    10052:                The input price can not be negative
+    10053:                The input price can not have special characters
+    10054:                The selected input type does not exist in the database
+    10055:                The date of registration is not supported empty
+    10056:                The vet id must be numeric
+    10057:                The id of the animal must be numeric
+    10058:                Date vaccination is not supported empty
+    10059:                The name of the vaccine is not empty admits
+    10060:                The id of the vaccine must be numeric
+    10061:                The vaccine selected does not exist in the database
+    10062:                The maximum number of characters for the dose is 10
+    10063:                The maximum number of characters for action is 50
+    10064:                The dose of the vaccine is not supported empty
+    10065:                The action of the vaccine is not supported empty
+    10066:                The dose of the vaccine must be numeric
+    10067:                The dose of the vaccine does not support special characters
+    10068:                The action of vaccination does not support special characters
+    10069:                Vaccination detail does not exist in the database
+    10070:                Immunization record does not exist in the database
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

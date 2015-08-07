@@ -31,7 +31,7 @@ class updateDetalleVacunacionActionClass extends controllerClass implements cont
                     detalleVacunacionTableClass::ID => $id
                 );
 
-//                detalleVacunacionTableClass::validateUpdate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
+//             detalleVacunacionTableClass::validateUpdate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion, $nombre, $id_detalle, $id_registro);
                 $data = array(
                     detalleVacunacionTableClass::VACUNA => $id_vacuna,
                     detalleVacunacionTableClass::FECHA => $fecha_vacunacion,

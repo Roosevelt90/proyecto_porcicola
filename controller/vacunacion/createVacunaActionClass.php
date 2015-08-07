@@ -40,7 +40,7 @@ class createVacunaActionClass extends controllerClass implements controllerActio
                 log::register(i18n::__('create'), vacunaTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');
             } else {
-                log::register(i18n::__('create'), razaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
+                log::register(i18n::__('create'), vacunaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate'));
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');
             }//close if

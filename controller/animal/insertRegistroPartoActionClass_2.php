@@ -8,12 +8,7 @@ class insertRegistroPartoActionClass extends controllerClass implements controll
 
     public function execute() {
         try {
-            $fieldsRaza = array(
-            razaTableClass::ID,
-            razaTableClass::NOMBRE_RAZA
-            );
-            
-            $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
+
             $this->defineView('insert', 'registroParto', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

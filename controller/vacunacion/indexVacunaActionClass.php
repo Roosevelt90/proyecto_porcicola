@@ -5,6 +5,10 @@ use mvc\controller\controllerClass;
 use mvc\session\sessionClass as session;
 use mvc\request\requestClass as request;
 use mvc\config\configClass as config;
+use mvc\routing\routingClass as routing;
+use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
+
 
 class indexVacunaActionClass extends controllerClass implements controllerActionInterface {
 
@@ -84,6 +88,7 @@ class indexVacunaActionClass extends controllerClass implements controllerAction
 
       $this->cntPages = vacunaTableClass::getAllCount($f, false, $lines);
       $this->objVacuna = vacunaTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+           log::register(i18n::__('ver', null, 'vacunacion'), vacunaTableClass::getNameTable());
       $this->defineView('index', 'vacuna', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

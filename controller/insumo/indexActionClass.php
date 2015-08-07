@@ -6,6 +6,9 @@ use mvc\session\sessionClass as session;
 use mvc\request\requestClass as request;
 use mvc\config\configClass as config;
 use mvc\routing\routingClass as routing;
+use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
@@ -91,6 +94,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
       $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipo, false);
       $this->objInsumo = insumoTableClass::getAllJoin($fieldsInsumo, $fieldsTipoInsumo, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+      log::register(i18n::__('ver', null, 'insumo'), insumoTableClass::getNameTable());
       $this->defineView('index', 'insumo', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

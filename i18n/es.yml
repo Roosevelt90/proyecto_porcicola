@@ -251,7 +251,14 @@ dictionary:
     pVenta:               Factura Venta
     factura:              Factura
     
-  
+  parto:
+    read:                Registros de Parto
+    hembras:             Hembras nacidas vivas
+    machos:              Machos nacidos vivos
+    muertos:             Nacidos Muertos
+    edit:                Modificar Registro Parto
+    new:                 Registrar un nuevo registro Parto
+    registroParto:       Registro Parto   
     
   proveedor:
     proveedor:            Proveedor
@@ -291,6 +298,10 @@ dictionary:
     new:                  Registrar una Nueva Entrada de Bodega
     detalle:              Detalle de Entrada de Bodega
     sal:                  Registrar una Nueva Salida de Bodega
+    ver:                  Ver Entrada de Bodega
+    ver1:                 Ver Salida de Bodega
+    ver2:                 Ver Detalle de Entrada de Bodega
+    ver3:                 Ver Detalle de salida de Bodega
     
     
   datos:
@@ -341,6 +352,7 @@ dictionary:
     insumo:               Insumo
     new:                  Registrar un Nuevo Insumo
     register:             Nuevo Insumo
+    ver:                  Ver Insumo
     
   cliente:
     cliente:              Cliente
@@ -422,6 +434,7 @@ dictionary:
     edit:                 Editar el Registro de Vacunación
     editVaccination:      EDITAR VACUNACION
     newVaccination:       Nueva Vacunación
+    ver:                  Ver Vacuna
     
   detalleVacunacion:
     newDetailVaccination: NUEVO DETALLE DE VACUNACION
@@ -497,10 +510,14 @@ dictionary:
     fechaFactura:          Fecha de la Factura
     new:                   Registrar una Nueva Factura de Compra
     edit:                  Modificar la Factura de Compra
+    ver:                   Ver Factura de Compra
+    ver1:                  Ver Detalle de Factura de Compra
     
   facturaVenta:
     new:                   Registrar una Nueva Factura de Venta
     fact:                  Factura de Venta
+    ver:                   Ver Factura de Venta
+    ver1:                  Ver Detalle de Factura de Venta
     
   ayuda:
     sistema:             Sistema de Gestión para una Granja Porcicola
@@ -550,7 +567,7 @@ dictionary:
     00004:                Las contraseñas no son iguales
     00005:                El nombre de usuario ya se encuentra registrado
     00023:                El campo  debe ser llenado solo con numeros    
-    10023:                No se admite caracteres especiales
+    10026:                No se admite caracteres especiales
     10006:                Hay campos vacios que son obligatorios
     10007:                Solo se permiten numeros
     10008:                El formato de fecha no coincide
@@ -565,14 +582,52 @@ dictionary:
     10017:                El cliente %numero_documento% no se ha podido insertar
     10018:                La vacuna %id_vacuna% no se ha podido modificar
     10019:                La dosis %dosis_vacuna% no se ha podido modificar
-    10020:                La fecha de vencimiento es inferior a la fecha actual
-    10021:                La fecha de fabricacion es superior a la fecha actual
-    10022:                Se ha encontrado caracteres especiales en el ca
-    10023:                No se admite caracteres especialesmpo %campo%
+    10020:                La fecha de vencimiento ingresada es inferior a la fecha actual
+    10021:                La fecha de fabricacion ingresada excede a la fecha actual
+    10022:                Se ha encontrado caracteres especiales en el campo
+    10023:                No se admite caracteres especiales %campo%
     10030:                El animal seleccionado no existe en la base de datos
     10031:                El veterinario seleccionado no existe en la base de datos
-    
+    10032:                El Lote de la vacuna debe ser numerico
+    10033:                El valor de la vacuna debe ser numerico
     20000:                No hay vacunas suficientes
+    10034:                El nombre de la vacuna no admite caracteres especiales
+    10035:                El lote de la vacuna no admite caracteres especiales
+    10036:                El valor de la vacuna no admite caracteres especiales
+    10037:                El nombre de la vacuna no se admite vacio
+    10038:                El numero maximo de caracteres para el nombre de la vacuna es de 50
+    10039:                El lote de la vacuna no se admite vacio
+    10040:                El lote de la vacuna debe tener minimo 3 caracteres
+    10041:                La fecha de fabricación no se admite vacia
+    10042:                La fecha de vencimiento no se admite vacia
+    10043:                El valor de la vacuna no se admite vacio
+    10044:                El tipo insumo no se admite vacio
+    10045:                El tipo insumo no admite caracteres especiales
+    10046:                El numero maximo de caracteres para el tipo de insumo es de 100
+    10047:                El insumo no se admite vacio
+    10048:                El insumo no admite caracteres especiales
+    10049:                El numero maximo de caracteres para el insumo es de 50
+    10050:                El precio del insumo no se admite vacio
+    10051:                El precio del insumo debe ser numerico
+    10052:                El precio del insumo no puede tener un valor negativo
+    10053:                El precio del insumo no puede tener caracteres especiales
+    10054:                El tipo insumo seleccionado no existe en la base de datos
+    10055:                La fecha del registro no se admite vacia
+    10056:                El id del veterinario debe ser numerico
+    10057:                El id del animal debe ser numerico
+    10058:                La fecha de vacunación no se admite vacia
+    10059:                El nombre de la vacuna no se admite vacio
+    10060:                El id de la vacuna debe ser numerico
+    10061:                La vacuna seleccionada no existe en la base de datos
+    10062:                El numero maximo de caracteres para la dosis es de 10
+    10063:                El numero maximo de caracteres para la acción es de 50
+    10064:                La dosis de la vacuna no se admite vacia
+    10065:                La acción de la vacuna no se admite vacia
+    10066:                La dosis de la vacuna debe ser numerica
+    10067:                La dosis de la vacuna no admite caracteres especiales
+    10068:                La accion de la vacunación no admite caracteres especiales
+    10069:                El detalle de Vacunación no existe en la base de datos
+    10070:                El registro de Vacunación no existe en la base de datos
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

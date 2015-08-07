@@ -2,12 +2,13 @@
 
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
-use mvc\config\configClass as config;
-use mvc\request\requestClass as request;
-use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
+use mvc\request\requestClass as request;
+use mvc\config\configClass as config;
+use mvc\routing\routingClass as routing;
 use mvc\i18n\i18nClass as i18n;
-
+use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -107,6 +108,7 @@ class indexFacturaCompraActionClass extends controllerClass implements controlle
 
 
       $this->objFacturaCompra = procesoCompraTableClass::getAllJoin($fieldsFacturaCompra, $fieldsEmpleado, $fieldsProveedor, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            log::register(i18n::__('ver', null, 'facturaCompra'), procesoCompraTableClass::getNameTable());
       $this->defineView('index', 'facturaCompra', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

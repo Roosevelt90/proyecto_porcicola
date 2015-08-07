@@ -26,6 +26,7 @@ class createSalidaActionClass extends controllerClass implements controllerActio
         salidaBodegaTableClass::FECHA => $fecha
       );
       salidaBodegaTableClass::insert($data);
+      session::getInstance()->setSuccess(i18n::__('succesCreate'));
       log::register(i18n::__('create'), salidaBodegaTableClass::getNameTable());
       routing::getInstance()->redirect('bodega', 'indexSalida');
     } catch (PDOException $exc) {

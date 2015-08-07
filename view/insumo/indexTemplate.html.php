@@ -119,7 +119,7 @@
             </form>
                  </div>
             <!-- WINDOWS MODAL DELETE MASIVE -->
-            <div class="modalmask" id="myModalEliminarMasivo" >
+<!--            <div class="modalmask" id="myModalEliminarMasivo" >
                 <div class="modalbox rotate">
                  <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -135,7 +135,7 @@
                         </div>
                    
                 </div>
-            </div>
+            </div>-->
             <!--            Paginador-->
             <div class="text-right">
                 <nav>

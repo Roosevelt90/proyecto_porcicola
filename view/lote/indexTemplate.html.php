@@ -24,10 +24,10 @@
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
-             <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
+<!--             <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
             <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
               <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-            </div>
+            </div>-->
             <?php endif; ?>
            </div>
         </div>
@@ -106,7 +106,7 @@
     </div>
 
   <!-- WINDOWS MODAL DELETE MASIVE -->
-  <div id="myModalEliminarMasivo" class="modalmask">
+<!--  <div id="myModalEliminarMasivo" class="modalmask">
               <div class="modalbox rotate">
                     <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -121,6 +121,6 @@
             <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
           </div>
               </div>
-            </div>
+            </div>-->
   </div>
 </main>

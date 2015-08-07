@@ -37,24 +37,24 @@ $pdf->SetFont('Arial', '', 10);
 $pdf->Cell(10);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);//usuarios usuarios usuaruis
-$pdf->Cell(30, 10, utf8_encode('Id'), 1);
-$pdf->Cell(20, 10, utf8_encode('nacimiento'), 1);
-$pdf->Cell(30, 10, utf8_encode('hembras_vivas'), 1);
-$pdf->Cell(30, 10, utf8_encode('machos_vivos'), 1);
-$pdf->Cell(20, 10, utf8_encode('muertos'), 1);
-$pdf->Cell(20, 10, utf8_encode('animal'), 1);
-$pdf->Cell(20, 10, utf8_encode('raza'), 1);
+$pdf->Cell(30, 10, utf8_decode('N. Documento'), 1);
+$pdf->Cell(20, 10, utf8_decode('Fecha'), 1);
+$pdf->Cell(30, 10, utf8_decode('Hembras Vivas'), 1);
+$pdf->Cell(30, 10, utf8_decode('Machos Vivos'), 1);
+$pdf->Cell(20, 10, utf8_decode('Muertos'), 1);
+$pdf->Cell(20, 10, utf8_decode('Animal'), 1);
+$pdf->Cell(20, 10, utf8_decode('Raza'), 1);
 
 $pdf->Ln();
 foreach ($objParto as $key) {
     $pdf->Cell(10);
-    $pdf->Cell(30, 10, utf8_encode($key->id), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->fecha_nacimiento), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->hembras_nacidas_vivas), 1);
-    $pdf->Cell(30, 10, utf8_encode($key->machos_nacidos_vivos), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->nacidos_muertos), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->animal_id), 1);
-    $pdf->Cell(20, 10, utf8_encode($key->raza_id), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->id), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->fecha_parto), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->hembras_nacidas_vivas), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->machos_nacidos_vivos), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->nacidos_muertos), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->animal_id), 1);
+    $pdf->Cell(20, 10, utf8_decode($key->raza_id), 1);
     
     $pdf->Ln();
 }

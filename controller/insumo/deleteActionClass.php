@@ -22,6 +22,10 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 $ids = array(
                     insumoTableClass::ID => $id
                 );
+                  $this->arrayAjax = array(
+                    'code' => 11,
+                    'msg' => 'La eliminacion ha sido exitosa'
+                );
                 insumoTableClass::delete($ids, true);
             }//close if
             $this->defineView('delete', 'insumo', session::getInstance()->getFormatOutput());

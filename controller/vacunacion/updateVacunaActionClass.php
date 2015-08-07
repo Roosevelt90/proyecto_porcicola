@@ -51,7 +51,7 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
                           vacunaTableClass::STOCK_MINIMO => $stock
         );
                 
-// insumoTableClass::update($ids, $data);
+ vacunaTableClass::update($ids, $data);
               session::getInstance()->setSuccess(i18n::__('succesUpdate'));
                 log::register(i18n::__('update'), vacunaTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');

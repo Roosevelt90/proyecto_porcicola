@@ -10,6 +10,7 @@ use mvc\routing\routingClass as routing ?>
 <?php $raza_id = razaTableClass::NOMBRE_RAZA ?>
 <?php $raza = registroPartoTableClass::RAZA_ID ?>
 <?php $animal_id = registroPartoTableClass::ANIMAL_ID ?>
+<?php $idR = razaTableClass::ID ?>
 <?php use mvc\view\viewClass as view ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php $countDetale = 1 ?>
@@ -26,15 +27,15 @@ use mvc\routing\routingClass as routing ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroParto') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 text-center">
-                 <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                  <div class="mdl-tooltip mdl-tooltip--large" for="new">
                         <?php echo i18n::__('registrar', null, 'ayuda') ?>
                     </div> 
-                 <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
+<!--                <a id="filter" href="#myModalFilter"  data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="filter">
                         <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                    </div>
-                  <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
+                    </div>-->
+                <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
                    <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
                         <?php echo i18n::__('reporte', null, 'ayuda') ?>
                     </div>
@@ -47,7 +48,7 @@ use mvc\routing\routingClass as routing ?>
 <?php view::includeHandlerMessage() ?>
         <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr class="success">
                     <td><input type="checkbox" id="chkAll"></td> 
                     <th>Id</th>
                     <th>Fecha Nacimiento</th>
@@ -148,9 +149,9 @@ use mvc\routing\routingClass as routing ?>
 <!-- FIN WINDOWS MODAL DELETE MASIVE -->
 
 <!-- WINDOWS MODAL FILTERS -->
-<div class="modal fade" id="myModalFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<!--<div class="modalmask" id="myModalFilter" >
+    <div class="modalbox rotate">
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Busqueda</h4>
@@ -158,15 +159,15 @@ use mvc\routing\routingClass as routing ?>
             <div class="modal-body">
                 <form id="filterForm"  class="form-horizontal"   method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>">
                       <table class="table table-responsive "> 
-<!--                   <tr>
+                   <tr>
                         <th>
-<?php //echo i18n::__('fecha', null, 'animal') ?>:
+<?php echo i18n::__('fecha', null, 'animal') ?>:
                         </th>
                         <th>
                             <input type="date" name="filter[fecha_inicial]" >               
                         </th>
-                    </tr></br>-->
-   <tr>
+                    </tr></br>
+   
                                     <tr>
                             <th>
                                 <?php echo i18n::__('raza', null, 'animal') ?>:
@@ -175,7 +176,7 @@ use mvc\routing\routingClass as routing ?>
                                 <select name="filter[raza]">
                                     <option>... </option>
                                     <?php foreach ($objRaza as $key): ?>
-                                        <option value="<?php echo $key->$id ?>">
+                                        <option value="<?php echo $key->$idR ?>">
                                             <?php echo $key->nombre_raza ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -183,24 +184,24 @@ use mvc\routing\routingClass as routing ?>
                             </th>
                         </tr>
 
-<!--                    <tr>
+                    <tr>
                         <th>
-<?php// echo i18n::__('fecha', null, 'animal') ?>:
+<?php echo i18n::__('fecha', null, 'animal') ?>:
                         </th>
                         <th>
                             <input type="date" name="filter[fecha_fin]" >               
                         </th>
-                    </tr>-->
+                    </tr>
 
                       </table>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="$('#filterForm').submit()">Buscar</button>
+                <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ">Cerrar</a>
+                <button type="button" class="btn btn-info fa fa-search" onclick="$('#filterForm').submit()">Buscar</button>
             </div>
-        </div>
+    
     </div>
-</div>
+</div>-->
   </div>
 </main>

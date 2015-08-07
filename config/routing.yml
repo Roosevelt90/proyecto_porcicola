@@ -1685,6 +1685,8 @@ vacunacion_update:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
 
 vacunacion_delete:
   url:    /registroVacunas/eliminar

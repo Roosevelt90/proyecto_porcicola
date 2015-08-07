@@ -63,11 +63,11 @@ class vacunacionTableClass extends vacunacionBaseTableClass {
 //        $fieldsAnimal = array(
 //            animalTableClass::ID
 //        );
-    $fieldsVeterinario = array(
-      veterinarioTableClass::ID
-    );
+//    $fieldsVeterinario = array(
+//      veterinarioTableClass::ID
+//    );
 //        $objAnimal = animalTableClass::getAll($fieldsAnimal);
-    $objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario);
+//    $objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario);
 
 
 //        foreach ($objAnimal as $key => $value) {
@@ -79,14 +79,14 @@ class vacunacionTableClass extends vacunacionBaseTableClass {
 //            }
 //        }
 
-    foreach ($objVeterinario as $key => $value) {
-      foreach ($value as $key) {
-        if ($key != $id_veterinario) {
-          session::getInstance()->setError(i18n::__(10031, null, 'errors'));
-          $flag = true;
-        }
-      }
-    }
+//    foreach ($objVeterinario as $key => $value) {
+//      foreach ($value as $key) {
+//        if ($key != $id_veterinario) {
+//          session::getInstance()->setError(i18n::__(10031, null, 'errors'));
+//          $flag = true;
+//        }
+//      }
+//    }
 
 
     if ($flag == true) {
@@ -102,17 +102,17 @@ class vacunacionTableClass extends vacunacionBaseTableClass {
     $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
 
     $dateNow = date("Y-m-d", strtotime("now"));
-    if (preg_match($pattern, $fecha_registro) == false) {
-      session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $date)));
-      $flag = true;
-      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
-    }
-
-    if ($fecha_registro > $dateNow) {
-      session::getInstance()->setError(i18n::__(10010, null, 'errors'));
-      $flag = true;
-      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
-    }
+//    if (preg_match($pattern, $fecha_registro) == false) {
+//      session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $fecha_registro)));
+//      $flag = true;
+//      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
+//    }
+//
+//    if ($fecha_registro > $dateNow) {
+//      session::getInstance()->setError(i18n::__(10010, null, 'errors'));
+//      $flag = true;
+//      session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
+//    }
 //    if (!is_numeric($id_veterinario)) {
 //      session::getInstance()->setError(i18n::__(10056, null, 'errors', array('%id_veterinario%' => $id_veterinario)));
 //      $flag = true;
@@ -131,20 +131,20 @@ class vacunacionTableClass extends vacunacionBaseTableClass {
         session::getInstance()->setFlash(vacunacionTableClass::getNameField(vacunacionTableClass::FECHA, true), true);
         }
 
-            $fieldsVeterinario = array(
-      veterinarioTableClass::ID
-    );
-            
-     $objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario);
-     
-       foreach ($objVeterinario as $key => $value) {
-      foreach ($value as $key) {
-        if ($key != $id_veterinario) {
-          session::getInstance()->setError(i18n::__(10031, null, 'errors'));
-          $flag = true;
-        }
-      }
-    }
+//      $fieldsVeterinario = array(
+//      veterinarioTableClass::ID
+//    );
+//            
+//     $objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario);
+//     
+//       foreach ($objVeterinario as $key => $value) {
+//      foreach ($value as $key) {
+//        if ($key != $id_veterinario) {
+//          session::getInstance()->setError(i18n::__(10031, null, 'errors'));
+//          $flag = true;
+//        }
+//      }
+//    }
         
     if ($flag == true) {
       request::getInstance()->setMethod('GET');

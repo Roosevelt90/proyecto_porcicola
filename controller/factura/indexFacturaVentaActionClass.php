@@ -73,12 +73,8 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
         procesoVentaTableClass::FECHA_HORA_VENTA
       );
 
-      $fieldsAnimal = array(
-        animalTableClass::ID,
-        animalTableClass::NUMERO
-      );
 
-      $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
+
       $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado2, false);
       $this->objCliente = clienteTableClass::getAll($fieldsCliente2, false);
 
@@ -101,7 +97,7 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
 
 
       $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
-      log::register(i18n::__('ver', null, 'facturaVenta'), procesoVentaTableClass::getNameTable());
+         log::register(i18n::__('ver', null, 'facturaVenta'), procesoVentaTableClass::getNameTable());
       $this->defineView('index', 'facturaVenta', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

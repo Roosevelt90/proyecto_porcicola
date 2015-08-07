@@ -5,6 +5,8 @@
 <?php $usuario_id = usuarioCredencialTableClass::USUARIO_ID ?>
 <?php $credencial = usuarioCredencialTableClass::CREDENCIAL_ID ?>
 <?php $countDetale = 1 ?>
+<main class="mdl-layout__content mdl-color--blue-100">
+  <div class="mdl-grid demo-content">
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 text-center">
@@ -16,7 +18,7 @@
     <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 text-center">
-                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+                <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insertUsuCredencial') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                  <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
@@ -38,12 +40,12 @@
             <tbody>
                 <?php foreach ($objUsuCrede as $key): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $objUsuCrede->$id ?>"></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $key->$usuario_id ?>"></td>
                      
                         <td><?php echo $key->$usuario_id ?></td>
                         <td><?php echo $key->$credencial ?></td>
                         <td>
-                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'edit', array(usuarioCredencialTableClass::ID => usuarioCredencialTableClass::ID)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
+                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'editUsuCredencial', array(usuarioCredencialTableClass::ID => usuarioCredencialTableClass::ID)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                               <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                             <?php echo i18n::__('modificar', null, 'ayuda') ?>
                         </div> 
@@ -56,7 +58,9 @@
         </table>
         </div>
     </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'delete') ?>" method="POST">
+    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteUsuCredencial') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true) ?>">
     </form>
 </div>
+  </div>
+</main>

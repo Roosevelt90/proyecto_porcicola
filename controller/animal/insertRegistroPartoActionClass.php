@@ -13,6 +13,12 @@ class insertRegistroPartoActionClass extends controllerClass implements controll
             razaTableClass::NOMBRE_RAZA
             );
             
+            $fieldsAnimal = array (
+            animalTableClass::ID,
+            animalTableClass::NUMERO
+            );
+            
+            $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
             $this->defineView('insert', 'registroParto', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

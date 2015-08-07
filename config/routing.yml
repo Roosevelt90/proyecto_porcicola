@@ -574,13 +574,13 @@ Usuario_Credencial_update:
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
 
-#Usuario_Credencial_delete:
-#  url:    /userCredencial/eliminar
-#  param:  { module: usuario, action: deleteUsuCredencial, format: html }
-#  load:
-#    - model/base/usuarioCredencialBaseTableClass.php
-#    - model/usuarioCredencialTableClass.php
-#    
+Usuario_Credencial_delete:
+  url:    /userCredencial/eliminar
+  param:  { module: usuario, action: deleteUsuCredencial, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    
 #Usuario_Credencial_deleteSelect:
 #  url:    /userCredencial/borrarSeleccion
 #  param:  { module: usuario, action: delectSelectUsuCredencial, format: html }
@@ -797,7 +797,7 @@ insumo_update:
     
 insumo_delete:
   url:    /insumo/eliminar
-  param:  { module: insumo, action: delete, format: html }
+  param:  { module: insumo, action: delete, format: json }
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
@@ -2154,28 +2154,8 @@ proceso_venta:
     - model/bitacoraTableClass.php
     - model/base/procesoVentaBaseTableClass.php
     - model/procesoVentaTableClass.php
-    - model/base/detalleProcesoVentaBaseTableClass.php
-    - model/detalleProcesoVentaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/clienteBaseTableClass.php
-    - model/clienteTableClass.php
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-
-detalle_new_proceso_venta:
-  url:      /create/detalle_factura_venta
-  param:  { module: factura, action: createDetalleFacturaVenta, format: html }
-  load:
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    - model/base/procesoVentaBaseTableClass.php
-    - model/procesoVentaTableClass.php
-    - model/base/detalleProcesoVentaBaseTableClass.php
-    - model/detalleProcesoVentaTableClass.php
+#    - model/base/detalleProcesoVentaBaseTableClass.php
+#    - model/detalleProcesoVentaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
     - model/base/clienteBaseTableClass.php
@@ -3249,6 +3229,8 @@ registro_parto_index:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
     
 registro_parto_insert:
   url:    /registro_parto/insertar
@@ -3261,7 +3243,9 @@ registro_parto_insert:
     - model/bitacoraTableClass.php
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
-    
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+
 registro_parto_create:
   url:    /registro_parto/crear
   param:  { module: animal, action: createRegistroParto, format: html }
@@ -3273,6 +3257,8 @@ registro_parto_create:
     - model/bitacoraTableClass.php
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
     
 registro_parto_edit:
   url:    /registro_parto/editar
@@ -3285,6 +3271,8 @@ registro_parto_edit:
     - model/bitacoraTableClass.php
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
     
 registro_parto_update:
   url:    /registro_parto/actualizar
@@ -3297,6 +3285,8 @@ registro_parto_update:
     - model/bitacoraTableClass.php  
     - model/base/razaBaseTableClass.php
     - model/razaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
     
 registro_parto_delete:
   url:    /registro_parto/eliminar

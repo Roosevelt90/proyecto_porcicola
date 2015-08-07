@@ -4,6 +4,7 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
 
 /**
  * Description of ejemploClass
@@ -21,15 +22,12 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 $ids = array(
                     insumoTableClass::ID => $id
                 );
-                insumoTableClass::delete($ids, false);
+                insumoTableClass::delete($ids, true);
             }//close if
-            routing::getInstance()->redirect('insumo', 'index');
+            $this->defineView('delete', 'insumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
+          session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

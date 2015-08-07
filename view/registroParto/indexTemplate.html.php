@@ -1,7 +1,7 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
-
+<?php use mvc\session\sessionClass  as session ?>
 <?php $id = registroPartoTableClass::ID ?>
 <?php $fecha = registroPartoTableClass::FECHA_NACIMIENTO ?>
 <?php $hembras = registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS ?>
@@ -10,15 +10,14 @@ use mvc\routing\routingClass as routing ?>
 <?php $raza_id = razaTableClass::NOMBRE_RAZA ?>
 <?php $raza = registroPartoTableClass::RAZA_ID ?>
 <?php $animal_id = registroPartoTableClass::ANIMAL_ID ?>
-<?php
-
-use mvc\view\viewClass as view ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
-
+<?php use mvc\view\viewClass as view ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php $countDetale = 1 ?>
+<main class="mdl-layout__content mdl-color--blue-100">
+  <div class="mdl-grid demo-content">
 <div class="container container-fluid">
     <div class="row">
-        <div class="col-xs-4-offset-4 titulo">
+        <div class="col-xs-4-offset-4 text-center">
             <h2>
 <?php echo i18n::__('read', NULL, 'parto') ?>
             </h2>
@@ -26,15 +25,27 @@ use mvc\i18n\i18nClass as i18n ?>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroParto') ?>" method="POST">
         <div class="row">
-            <div class="col-xs-4-offset-4 nuevo">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('report') ?></a>
-                <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-xs btn-default active">Buscar</a>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto') ?>" class="btn btn-success btn-xs">Nuevo</a>
-                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
+            <div class="col-xs-4-offset-4 text-center">
+                 <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+                 <div class="mdl-tooltip mdl-tooltip--large" for="new">
+                        <?php echo i18n::__('registrar', null, 'ayuda') ?>
+                    </div> 
+                 <a href="#" data-target="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                        <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                    </div>
+                  <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
+                   <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                    </div>
+
+<!--                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>-->
             </div>
         </div>
+        </form>
+        <div class="table-responsive"> 
 <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <td><input type="checkbox" id="chkAll"></td> 
@@ -63,13 +74,16 @@ use mvc\i18n\i18nClass as i18n ?>
 
                         <td>
                             <!--<a href="#" class="btn btn-warning btn-sm disabled">Ver</a>-->
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editRegistroParto', array(registroPartoBaseTableClass::ID => $key->$id)) ?>" class="btn btn-info  btn-sm"><?php echo i18n::__('modify', NULL, 'user') ?></a>
-                            <!--<a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>-->
-                            <a href="#" onclick="confirmarEliminar(<?php echo $key->$id  ?>)" class="btn btn-danger btn-sm">Eliminar</a>
+                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editRegistroParto', array(registroPartoBaseTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
+  <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                                        <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                                    </div>                             
+<!--<a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>-->
+<!--                            <a href="#" onclick="confirmarEliminar(<?php echo $key->$id  ?>)" class="btn btn-danger btn-sm">Eliminar</a>-->
                         </td>
                     </tr>
                     <!-- WINDOWS MODAL DELETE -->
-                <div class="modal fade" id="myModalDelete<?php echo $key->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--                <div class="modal fade" id="myModalDelete<?php echo $key->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -85,12 +99,13 @@ use mvc\i18n\i18nClass as i18n ?>
                             </div>
                         </div>
                     </div>
-                </div>
-            
+                </div>-->
+             <?php $countDetale++ ?>
 <?php endforeach ?>
             </tbody>
         </table>
-    </form>
+        </div>
+    
     
     
       <div class="text-right">
@@ -113,7 +128,7 @@ use mvc\i18n\i18nClass as i18n ?>
 </div>
 
 <!-- WINDOWS MODAL DELETE MASIVE -->
-<div class="modal fade" id="myModalEliminarMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="myModalEliminarMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -129,7 +144,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- FIN WINDOWS MODAL DELETE MASIVE -->
 
 <!-- WINDOWS MODAL FILTERS -->
@@ -160,7 +175,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <select name="filter[raza]">
                                     <option>... </option>
                                     <?php foreach ($objRaza as $key): ?>
-                                        <option value="<?php echo $key->id ?>">
+                                        <option value="<?php echo $key->$id ?>">
                                             <?php echo $key->nombre_raza ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -187,3 +202,5 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
     </div>
 </div>
+  </div>
+</main>

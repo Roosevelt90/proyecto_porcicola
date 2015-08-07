@@ -17,10 +17,10 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
-
-                <table class="table table-responsive ">    
+                <div class="table-responsive">
+                <table class="table table-bordered ">    
                     <tr>
-                        <th>  <?php echo i18n::__('fecha', NULL, 'animal') ?>:</th>
+                        <th>  <?php echo i18n::__('parto1', NULL, 'animal') ?>:</th>
                         <th> 
                             <input required  placeholder="<?php echo ((isset($objParto) == FALSE) ? i18n::__('fecha', NULL, 'animal') : $objParto[0]->$fecha = ucwords($objParto[0]->$fecha)) ?>" type="date" min="0"  name="<?php echo registroPartoTableClass::getNameField(registroPartoTableClass::FECHA_NACIMIENTO, true) ?>" >
                         </th>   
@@ -51,7 +51,8 @@ use mvc\i18n\i18nClass as i18n ?>
                         </th>
                         <th>
                             <select name="<?php echo registroPartoTableClass::getNameField(registroPartoTableClass::RAZA_ID, true) ?>">
-                                <?php foreach ($objRaza as $key): ?>
+                                <option>...</option>                              
+                              <?php foreach ($objRaza as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->nombre_raza ?>
                                     </option>
@@ -61,18 +62,26 @@ use mvc\i18n\i18nClass as i18n ?>
                     </tr>
                      <tr>
                         <th>  <?php echo i18n::__('animal', NULL, 'animal') ?>:</th>
-                        <th> 
-                            <input required  placeholder="<?php echo ((isset($objParto) == FALSE) ? i18n::__('animal', NULL, 'animal') : $objParto[0]->$animal_id= ucwords($objParto[0]->$animal_id)) ?>" type="number" min="0"  name="<?php echo registroPartoTableClass::getNameField(registroPartoTableClass::ANIMAL_ID, true) ?>" >
-                        </th>   
+                          <th>
+                            <select name="<?php echo registroPartoTableClass::getNameField(registroPartoTableClass::ANIMAL_ID, true) ?>">
+                                <option>...</option>                              
+                                    <?php foreach ($objAnimal as $key): ?>
+                                    <option value="<?php echo $key->$id ?>">
+                                        <?php echo $key->numero_identificacion ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>  
                     </tr>
                     <tr>
-                        <th colspan="2" class="active text-center">
+                        <th colspan="2" > <div class="text-center">
 
-                            <input type="submit" value="<?php echo i18n::__(((isset($objAnimal) == TRUE) ? 'edit' : 'register'), NULL, 'user') ?>">
-
+                            <input type="submit"  class="btn" value="<?php echo i18n::__(((isset($objAnimal) == TRUE) ? 'edit' : 'register'), NULL, 'user') ?>">
+                    </div>
                         </th>
                     </tr>
                 </table>
+                    </div>
             </div>
         </div>
     </div>

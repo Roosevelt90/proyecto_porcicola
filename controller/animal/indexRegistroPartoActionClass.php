@@ -28,16 +28,19 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
              }
 
             $fields = array(
-                registroPartoTableClass::ID,
-                registroPartoTableClass::FECHA_NACIMIENTO,
-                registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS,
-                registroPartoTableClass::MACHOS_NACIDOS_VIVOS,
-                registroPartoTableClass::NACIDOS_MUERTOS,
-                registroPartoTableClass::RAZA_ID,
-                registroPartoTableClass::ANIMAL_ID
+            registroPartoTableClass::ID,
+            registroPartoTableClass::ANIMAL_ID,
+            registroPartoTableClass::FECHA_NACIMIENTO,
+            registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS,
+            registroPartoTableClass::MACHOS_NACIDOS_VIVOS,
+            registroPartoTableClass::NACIDOS_MUERTOS,
+            registroPartoTableClass::RAZA_ID
             );
             $fields2 = array (
             razaTableClass::NOMBRE_RAZA
+            );
+              $fields3 = array (
+              animalTableClass::NUMERO
             );
 
             $orderBy = array(
@@ -64,6 +67,7 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
 
             $this->cntPages = registroPartoTableClass::getAllCount($f, false, $lines);
            // $this->page = request::getInstance()->getGet('page');
+             $this->objAnimal = animalTableClass::getAll($fields3, true);
             $this->objRaza = razaTableClass::getAll($fields2, true);
             $this->objParto = registroPartoTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page);
             $this->defineView('index', 'registroParto', session::getInstance()->getFormatOutput());

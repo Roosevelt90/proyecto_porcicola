@@ -59,7 +59,8 @@ class updateUsuarioActionClass extends controllerClass implements controllerActi
                 $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
                 $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
                 $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
-
+                $correo   = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CORREO, true));
+               
                 $datosUsuario = array(
                     datosUsuarioTableClass::NOMBRE => $nombre,
                     datosUsuarioTableClass::APELLIDOS => $apellidos,
@@ -67,7 +68,8 @@ class updateUsuarioActionClass extends controllerClass implements controllerActi
                     datosUsuarioTableClass::NUMERO_DOCUMENTO => $numeroDocumento,
                     datosUsuarioTableClass::DIRECCION => $direccion,
                     datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
-                    datosUsuarioTableClass::TELEFONO => $telefono
+                    datosUsuarioTableClass::TELEFONO => $telefono,
+                    datosUsuarioTableClass::CORREO => $correo
                 );
                 $idData = array(
                     datosUsuarioTableClass::USUARIO_ID => $id
@@ -81,11 +83,11 @@ class updateUsuarioActionClass extends controllerClass implements controllerActi
                 
                 session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'default'));
                 log::register(i18n::__('update'), usuarioTableClass::getNameTable());
-                routing::getInstance()->redirect('default', 'indexUsuario');
+                routing::getInstance()->redirect('usuario', 'indexUsuario');
                 } else {
                 log::register(i18n::__('update'), usuarioTableClass::getNameTable(), i18n::__('errorUpdateBitacora'));
                 session::getInstance()->setError(i18n::__('errorUpdate', null, 'default'));
-                routing::getInstance()->redirect('default', 'indexUsuario');
+                routing::getInstance()->redirect('usuario', 'indexUsuario');
                 }
                 } catch (PDOException $exc) {
                 session::getInstance()->setFlash('exc', $exc);

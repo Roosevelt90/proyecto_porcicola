@@ -101,7 +101,7 @@ dataUser_index:
     - model/base/departamentoBaseTableClass.php
     - model/departamentoTableClass.php
     - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.phps.php
+    - model/usuarioTableClass.php
     - model/base/tipoDocumentoUsuarioBaseTableClass.php
     - model/tipoDocumentoUsuarioTableClass.php
     - model/base/recuperarBaseTableClass.php
@@ -459,65 +459,80 @@ default_reporte:
 #    - model/base/ciudadBaseTableClass.php
 #    - model/ciudadTableClass.php
 
+
 ############### CREDENCIAL ##########################
 
 credencial_index:
   url:    /credencial/index
-  param:  { module: credencial, action: index, format: html }
+  param:  { module: usuario, action: indexCredencial, format: html }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
 
 credencial_insert:
   url:    /credencial/insertar
-  param:  { module: credencial, action: insert, format: html }
+  param:  { module: usuario, action: insertCredencial, format: html }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    
     
 credencial_create:
   url:    /credencial/crear
-  param:  { module: credencial, action: create, format: html }
+  param:  { module: usuario, action: createCredencial, format: html }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+   
+    
     
 credencial_edit:
   url:    /credencial/editar
-  param:  { module: credencial, action: edit, format: html }
+  param:  { module: usuario, action: editCredencial, format: html }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
     
 credencial_update:
   url:    /credencial/actualizar
-  param:  { module: credencial, action: update, format: html }
+  param:  { module: usuario, action: updateCredencial, format: html }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 credencial_delete:
   url:    /credencial/eliminar
-  param:  { module: credencial, action: delete, format: html }
+  param:  { module: usuario, action: deleteCredencial, format: json }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
 credencial_deleteSelect:
   url:    /credencial/eliminarSeleccion
-  param:  { module: credencial, action: deleteSelect, format: html }
+  param:  { module: usuario, action: deleteSelectCredencial, format: html }
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php  
     
     
 ############### USUARIO CREDENCIAL ##########################
     
     
-    
 Usuario_Credencial_index:
   url:    /userCredencial/index
-  param:  { module: usuarioCredencial, action: index, format: html }
+  param:  { module: usuario, action: indexUsuCredencial, format: html }
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
@@ -528,51 +543,52 @@ Usuario_Credencial_index:
     
 Usuario_Credencial_insert:
   url:    /userCredencial/insertar
-  param:  { module: usuarioCredencial, action: insert, format: html }
+  param:  { module: usuario, action: insertUsuCredencial, format: html }
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
-#    - model/usuarioBaseTableClass.php
-#    - model/usuarioTableClass.php
-#    - model/credencialBaseTableClass.php
-#    - model/credencialTableClass.php
     
 Usuario_Credencial_crear:
   url:    /userCredencial/crear
-  param:  { module: usuarioCredencial, action: create, format: html }
+  param:  { module: usuario, action: createUsuCredencial, format: html }
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
-    
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
 Usuario_Credencial_edit:
   url:    /userCredencial/editar
-  param:  { module: usuarioCredencial, action: edit, format: html }
+  param:  { module: usuario, action: editUsuCredencial, format: html }
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php
     
 Usuario_Credencial_update:
   url:    /userCredencial/actualizar
-  param:  { module: usuarioCredencial, action: update, format: html }
+  param:  { module: usuario, action: updateUsuCredencial, format: html }
   load:
     - model/base/usuarioCredencialBaseTableClass.php
     - model/usuarioCredencialTableClass.php 
- 
-Usuario_Credencial_delete:
-  url:    /userCredencial/eliminar
-  param:  { module: usuarioCredencial, action: delete, format: html }
-  load:
-    - model/base/usuarioCredencialBaseTableClass.php
-    - model/usuarioCredencialTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+
+#Usuario_Credencial_delete:
+#  url:    /userCredencial/eliminar
+#  param:  { module: usuario, action: deleteUsuCredencial, format: html }
+#  load:
+#    - model/base/usuarioCredencialBaseTableClass.php
+#    - model/usuarioCredencialTableClass.php
+#    
+#Usuario_Credencial_deleteSelect:
+#  url:    /userCredencial/borrarSeleccion
+#  param:  { module: usuario, action: delectSelectUsuCredencial, format: html }
+#  load:
+#    - model/base/usuarioCredencialBaseTableClass.php
+#    - model/usuarioCredencialTableClass.php 
     
-Usuario_Credencial_deleteSelect:
-  url:    /userCredencial/borrarSeleccion
-  param:  { module: usuarioCredencial, action: delectSelect, format: html }
-  load:
-    - model/base/usuarioCredencialBaseTableClass.php
-    - model/usuarioCredencialTableClass.php 
-    
-    
+  
 ########### RAZA ###########    
 raza_index:
   url:  /raza/index

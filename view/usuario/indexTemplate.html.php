@@ -48,10 +48,11 @@ use mvc\view\viewClass as view ?>
                     </div>
             </div>
           </div>
-
-          <div class="table-responsive">
+            <div class="row">
+                <div class="col-xs-0">
+          <div class="  table-responsive">
             <?php view::includeHandlerMessage() ?>
-            <table class="table table-bordered">
+            <table class="table  table-bordered">
               <thead>
                 <tr class="success">
                   <th><input type="checkbox" id="chkAll"></th>
@@ -67,7 +68,7 @@ use mvc\view\viewClass as view ?>
                     <td><?php echo $usuario->$usu ?></td>
                     <td><?php echo $usuario->$creacion ?></td>
                     <td>
-                        <a id="verDetalle<?php echo $countDetale ?>"href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'view', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i></a>
+                        <a id="verDetalle<?php echo $countDetale ?>"href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i></a>
                        <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                                       <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                                   </div>  
@@ -106,6 +107,8 @@ use mvc\view\viewClass as view ?>
               </tbody>
             </table>
           </div>
+                </div>
+            </div>
       </form>
       <div class="text-right">
         <nav>

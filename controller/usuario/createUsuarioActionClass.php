@@ -36,8 +36,10 @@ class createUsuarioActionClass extends controllerClass implements controllerActi
         $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
         $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
         $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
+        $correo = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CORREO, true));
         $credencialDefault = usuarioCredencialTableClass::CREDENCIAL_DEFAULT;
-
+        
+        
         usuarioTableClass::validatCreate($usuario, $password, $respuesta, $repetirPassword);
 
 
@@ -70,7 +72,8 @@ class createUsuarioActionClass extends controllerClass implements controllerActi
           datosUsuarioTableClass::NUMERO_DOCUMENTO => $numeroDocumento,
           datosUsuarioTableClass::DIRECCION => $direccion,
           datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
-          datosUsuarioTableClass::TELEFONO => $telefono
+          datosUsuarioTableClass::TELEFONO => $telefono,
+          datosUsuarioTableClass::CORREO => $correo
         );
         datosUsuarioTableClass::insert($dataUsuario);
 

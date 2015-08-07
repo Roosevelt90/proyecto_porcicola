@@ -218,6 +218,7 @@ dictionary:
     
   user:
     usuario:              Usuario
+    correo:               Correo Electrónico
     newUser:              Registro de un Nuevo Usuario 
     user:                 Nombre de Usuario
     pass:                 Contraseña

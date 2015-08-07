@@ -114,12 +114,12 @@ use mvc\i18n\i18nClass as i18n ?>
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('usuario') ?></span>
               <div class="mdl-layout-spacer"></div>
-              <button id="personal" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <button id="usuario" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                 <i class="material-icons">arrow_drop_down</i>
               </button>
               <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="usuario">
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-random"><?php echo i18n::__('userCredencial') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-tag"><?php echo i18n::__('credencial', null, 'credencial') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuCredencial') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-random"><?php echo i18n::__('userCredencial') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexCredencial') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-tag"><?php echo i18n::__('credencial', null, 'credencial') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuario') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-user"><?php echo i18n::__('usuario', null, 'user') ?></button></a>
               </ul>
             </div>

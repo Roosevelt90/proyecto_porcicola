@@ -234,6 +234,7 @@ dictionary:
       
   user:
     usuario:              User
+    correo:               Email
     newUser:              New User
     user:                 Name User
     pass:                 Password

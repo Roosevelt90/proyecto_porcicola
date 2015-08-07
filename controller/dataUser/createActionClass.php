@@ -23,6 +23,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $direccion = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::DIRECCION, true));
                 $idCiudad = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CIUDAD_ID, true));
                 $telefono = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::TELEFONO, true));
+                $correo = request::getInstance()->getPost(datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CORREO, true));
+                
                 $credencialDefault = '4';
                 $data = array(
                     datosUsuarioTableClass::USUARIO_ID => $idUsuario,
@@ -31,7 +33,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                     datosUsuarioTableClass::CEDULA => $cedula,
                     datosUsuarioTableClass::DIRECCION => $direccion,
                     datosUsuarioTableClass::CIUDAD_ID => $idCiudad,
-                    datosUsuarioTableClass::TELEFONO => $telefono
+                    datosUsuarioTableClass::TELEFONO => $telefono,
+                    datosUsuarioTableClass::CORREO => $correo
                 );
                 
                 

@@ -24,7 +24,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                     datosUsuarioTableClass::DIRECCION,
                     datosUsuarioTableClass::ID,
                     datosUsuarioTableClass::NOMBRE,
-                    datosUsuarioTableClass::TELEFONO
+                    datosUsuarioTableClass::TELEFONO,
+                    datosUsuarioTableClass::CORREO
                 );
                 $whereDatos = array(
                     datosUsuarioTableClass::ID => request::getInstance()->getRequest(datosUsuarioTableClass::ID)

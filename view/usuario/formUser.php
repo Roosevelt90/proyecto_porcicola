@@ -19,6 +19,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $nom_ciudad = ciudadTableClass::NOMBRE ?>
 <?php $descripcionTipoDoc = tipoDocumentoUsuarioTableClass::DESCRIPCION ?>
 <?php $idTipoDoc = tipoDocumentoUsuarioTableClass::ID ?>
+<?php $correo = datosUsuarioTableClass::CORREO ?> 
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('usuario', ((isset($objUsuario) == TRUE) ? 'updateUsuario' : 'createUsuario')) ?>">
   <?php if (isset($objUsuario)): ?>
     <input type="hidden" name="<?php echo usuarioTableClass::getNameField(usuarioBaseTableClass::ID, TRUE) ?>" value="<?php echo $objUsuario[0]->$idUsuario ?>">
@@ -141,7 +142,14 @@ use mvc\i18n\i18nClass as i18n ?>
               </select>
             </th>
           </tr>
-       
+            <tr>
+            <th>
+              <?php echo i18n::__('correo', null, 'user') ?>:
+            </th>
+            <th>
+                <input placeholder="<?php echo i18n::__('correo', null, 'user') ?>" type="text" required min="0" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CORREO, true) ?>"> 
+            </th>                        
+          </tr>
           <tr>
             <th colspan="2">
           <div class="text-center">

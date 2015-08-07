@@ -9,6 +9,7 @@
 <?php $telefono = datosUsuarioTableClass::TELEFONO ?>
 <?php $user = usuarioTableClass::USER ?>
 <?php $nom_ciudad = ciudadTableClass::NOMBRE ?>
+<?php $correo = datosUsuarioTableClass::CORREO ?> 
 <?php  $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--blue-100">
 
@@ -23,14 +24,14 @@
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'deleteSelect') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 nuevo">
-                <a id="new" href="<?php  echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+<!--                <a id="new" href="<?php  echo routing::getInstance()->getUrlWeb('dataUser', 'insert')   ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="new">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
                 <a id="deleteMasa" href="#" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
                  <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-                </div>
+                </div>-->
       </div>
         </div>
         <div class="table-responsive">
@@ -45,9 +46,10 @@
                     <th><?php echo i18n::__('tipoDoc', null, 'datos') ?></th>
                     <th><?php echo i18n::__('numberDoc', null, 'datos') ?></th>
                     <th><?php echo i18n::__('tel', null, 'datos') ?></th>
+                    <th><?php echo i18n::__('correo', null, 'user') ?></th>
                     <th><?php echo i18n::__('dir', null, 'datos') ?></th>
                     <th><?php echo i18n::__('city') ?></th>
-                    <th><?php echo i18n::__('action') ?></th>
+<!--                    <th><?php echo i18n::__('action') ?></th>-->
                 </tr>
             </thead>
             <tbody>
@@ -61,9 +63,10 @@
                         <td><?php echo $key->$tipoDocumento ?></td>
                         <td><?php echo $key->$numeroDocumento ?></td>
                         <td><?php echo $key->$telefono ?></td>
+                        <td><?php echo $key->$correo ?></td>
                         <td><?php echo $key->$direccion ?></td>
                         <td><?php echo $key->$nom_ciudad ?></td>
-                        <td>
+<!--                        <td>
                             <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'edit', array(datosUsuarioBaseTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">edit</i></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                       <?php echo i18n::__('modificar', null, 'ayuda') ?>
@@ -72,7 +75,7 @@
                              <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                                       <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                                   </div> 
-                        </td>
+                        </td>-->
                     </tr>
                     <?php  $countDetale++ ?>
 <?php endforeach ?>
@@ -80,7 +83,8 @@
         </table>
         </div>
     </form>
-     <div class="text-right">
+<!--    paginado-->
+<!--     <div class="text-right">
         <nav>
             <ul class="pagination" id="slqPaginador">
                 <?php $count = 0 ?>
@@ -91,7 +95,7 @@
  <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
             </ul>
         </nav>
-    </div>
+    </div>-->
     
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::ID, true) ?>">

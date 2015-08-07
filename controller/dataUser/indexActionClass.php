@@ -27,7 +27,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 datosUsuarioTableClass::ID,
                 datosUsuarioTableClass::NOMBRE,
                 datosUsuarioTableClass::TELEFONO,
-                datosUsuarioTableClass::USUARIO_ID
+                datosUsuarioTableClass::USUARIO_ID,
+                datosUsuarioTableClass::CORREO
             );
             $fields2 = array(
                 ciudadTableClass::NOMBRE

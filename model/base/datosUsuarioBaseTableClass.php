@@ -15,6 +15,7 @@ class datosUsuarioBaseTableClass extends tableBaseClass {
             $numero_documento,
             $tipo_doc_id,
             $usuario_id,
+            $correo,
             $ciudad_id;
 
     const ID = 'id';
@@ -29,6 +30,7 @@ class datosUsuarioBaseTableClass extends tableBaseClass {
     const TIPO_DOC = 'tipo_doc_id';
     const USUARIO_ID = 'usuario_id';
     const CIUDAD_ID = 'ciudad_id';
+    const CORREO = 'correo';
 
     function getId() {
         return $this->id;

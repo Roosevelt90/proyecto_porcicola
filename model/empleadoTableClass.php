@@ -11,7 +11,7 @@ use mvc\routing\routingClass as routing;
  */
 class empleadoTableClass extends empleadoBaseTableClass {
   
-    public static function validateCreate($nombre_completo, $numero_documento, $telefono) {
+    public static function validateCreate($nombre_completo, $direccion, $numero_documento, $telefono) {
         $flag = false;
         
         $patron ="^[a-zA-Z0-9]{3,20}$";

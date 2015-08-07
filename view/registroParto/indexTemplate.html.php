@@ -50,15 +50,15 @@ use mvc\routing\routingClass as routing ?>
             <thead>
                 <tr class="success">
                     <td><input type="checkbox" id="chkAll"></td> 
-                    <th>Id</th>
-                    <th>Fecha Nacimiento</th>
-                    <th>Hembras Vivas</th>
-                    <th>Machos Vivos</th>
-                    <th>Muertos</th>
-                    <th>Raza</th>
-                    <th>Madre</th>
+                    <th>    <?php echo i18n::__('Number of document', null, 'proveedor') ?></th>
+                    <th>    <?php echo i18n::__('parto1', null, 'animal') ?></th>
+                    <th>    <?php echo i18n::__('hembras', null, 'parto') ?></th>
+                    <th><?php echo i18n::__('machos', null, 'parto') ?></th>
+                    <th><?php echo i18n::__('muertos', null, 'parto') ?></th>
+                    <th><?php echo i18n::__('raza', null, 'raza') ?></th>
+                    <th><?php echo i18n::__('mother', null, 'raza') ?></th>
 
-                    <th>Acciones</th>
+                    <th><?php echo i18n::__('action') ?></th>
                 </tr>
             </thead>
             <tbody>

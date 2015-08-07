@@ -198,6 +198,7 @@ dictionary:
     fecha_fin:            Fecha de Nacimiento Final
     genero:               Género
     parto:                Número de Partos
+    parto1:               Fecha de parto
     lote:                 Lote
     raza:                 Raza
     registro:             Registro de Parto
@@ -339,6 +340,7 @@ dictionary:
     new:                  Registrar una Nueva Raza
     delete:               Eliminar
     confirmDelete:        Eliminar Raza
+    mother:               Madre
     
   lote:
     read:                 Lotes

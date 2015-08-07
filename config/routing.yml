@@ -1131,11 +1131,10 @@ traducion:
         
 
 empleado_reporte:
-    url: /empleado/reporte
-    param: { module: personal, action: reportEmpleado, format: pdf }
-    load:
+  url: /empleado/reporte
+  param: { module: personal, action: reportEmpleado, format: pdf }
+  load:
     - libs/fpdf/fpdf.php
-    - libs/validate/validatorFieldClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
     - model/base/ciudadBaseTableClass.php
@@ -1246,11 +1245,10 @@ veterinario_deleteFilters:
     param: { module: personal, action: deleteFiltersVeterinario, format: json}
     
 veterinario_reporte:
-    url: /veterinario/reporte
-    param: { module: personal, action: reportVeterinario, format: pdf }
-    load:
+  url: /veterinario/reporte
+  param: { module: personal, action: reportVeterinario, format: pdf }
+  load:
     - libs/fpdf/fpdf.php
-    - libs/validate/validatorFieldClass.php
     - model/base/veterinarioBaseTableClass.php
     - model/veterinarioTableClass.php
     - model/base/ciudadBaseTableClass.php
@@ -1349,11 +1347,10 @@ proveedor_edit:
     - model/bitacoraTableClass.php
     
 proveedor_reporte:
-    url: /proveedor/reporte
-    param: { module: personal, action: reportProveedor, format: pdf }
-    load:
+  url: /proveedor/reporte
+  param: { module: personal, action: reportProveedor, format: pdf }
+  load:
     - libs/fpdf/fpdf.php
-    - libs/validate/validatorFieldClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
     - model/base/ciudadBaseTableClass.php
@@ -1456,9 +1453,9 @@ cliente_update:
     - model/bitacoraTableClass.php
     
 cliente_reporte:
-    url: /cliente/reporte
-    param: { module: personal, action: reportCliente, format: pdf }
-    load:
+  url: /cliente/reporte
+  param: { module: personal, action: reportCliente, format: pdf }
+  load:
     - libs/fpdf/fpdf.php
     - model/base/clienteBaseTableClass.php
     - model/clienteTableClass.php

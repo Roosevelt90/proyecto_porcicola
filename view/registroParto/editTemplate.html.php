@@ -15,5 +15,5 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </div>
-<?php view::includePartial('registroParto/formParto', array('objRaza' => $objRaza, 'objAnimal' => $objAnimal)) ?>
+<?php view::includePartial('registroParto/formParto', array('objRaza' => $objRaza, 'objAnimal' => $objAnimal, 'objParto' => $objParto)) ?>
 

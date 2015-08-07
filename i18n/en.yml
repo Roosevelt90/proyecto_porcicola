@@ -198,6 +198,7 @@ dictionary:
     pesos:                Price $
     cerdo:                Pig
     precio:               Price
+    parto1:               Date Birth
     edit:                 Edit the Registry of the Animal
     nuev:                 New Pig
     animal:               Animal
@@ -343,6 +344,7 @@ dictionary:
     new:                  New Breed
     delete:               Remove
     confirmDelete:        Remove Race
+    mother:               Mother
     
   lote:
     read:                 Lots 

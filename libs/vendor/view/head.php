@@ -56,7 +56,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-piggy-bank"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRaza') ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
-
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>'" > <button class="mdl-menu__item fa fa-empire"><?php echo i18n::__('registro', null, 'animal') ?></button></a>
               </ul>
             </div>
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
@@ -156,7 +156,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
               <a href="#myModalSobre"><li  class="mdl-menu__item fa fa-laptop"><?php echo i18n::__('sobre') ?></li></a>
               <a href="#myModalContact"> <li class="mdl-menu__item fa fa-phone"><?php echo i18n::__('contacto') ?></li></a>
-              <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('contrato informatico.pdf') ?>'"> 
+              <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('contrato informatico_1.pdf') ?>'"> 
                 <li class="mdl-menu__item fa fa-legal"><?php echo i18n::__('legalInfor') ?></li>
               </a>
             </ul>

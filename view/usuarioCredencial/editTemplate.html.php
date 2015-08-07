@@ -9,11 +9,12 @@ use mvc\view\viewClass as view ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 text-center">
-            <h2><?php echo i18n::__('edit', NULL, 'parto') ?> :</h2>
-
-          
+            <h2><?php echo i18n::__('ed',  NULL,  'userCredencial') ?> 
+            <br>   
+            <?php // print_r($objCredencial) ?>
         </div>
     </div>
 </div>
-<?php view::includePartial('registroParto/formParto', array('objRaza' => $objRaza)) ?>
+<?php //view::includeHandlerMessage()?>
+<?php view::includePartial('usuarioCredencial/formUcrede', array('objUsuario' => $objUsuario,'objCredencial' =>$objCredencial))?>
 

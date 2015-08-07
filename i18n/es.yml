@@ -198,6 +198,7 @@ dictionary:
     fecha_fin:            Fecha de Nacimiento Final
     genero:               Género
     parto:                Número de Partos
+    parto1:               Fecha de Parto
     lote:                 Lote
     raza:                 Raza
     registro:             Registro de Parto
@@ -258,7 +259,7 @@ dictionary:
     machos:              Machos nacidos vivos
     muertos:             Nacidos Muertos
     edit:                Modificar Registro Parto
-    new:                 Registrar un nuevo registro Parto
+    new:                 Registrar un nuevo Parto
     registroParto:       Registro Parto   
     
   proveedor:
@@ -323,13 +324,15 @@ dictionary:
     new:                  Registrar una Nueva Credencial
     credencial:           Credencial
     edit:                 Modificar la Credencial
+    nueva:                Nueva Asignación de la Credencial
   
   userCredencial:
     read:                 Roles Asignados
     new:                  Nuevo Rol
     user:                 Usuario
     credencial:           Credencial
-    edit:                 Editar
+    edit:                 Editar 
+    ed:                   Editar la Asignación de la Credencial
     
     
   raza:

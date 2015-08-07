@@ -20,7 +20,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
                 <table class="table table-responsive ">    
                     <tr>
-                        <th>  <?php echo i18n::__('fecha', NULL, 'animal') ?>:</th>
+                        <th>  <?php echo i18n::__('parto1', NULL, 'animal') ?>:</th>
                         <th> 
                             <input required  placeholder="<?php echo ((isset($objParto) == FALSE) ? i18n::__('fecha', NULL, 'animal') : $objParto[0]->$fecha = ucwords($objParto[0]->$fecha)) ?>" type="date" min="0"  name="<?php echo registroPartoTableClass::getNameField(registroPartoTableClass::FECHA_NACIMIENTO, true) ?>" >
                         </th>   

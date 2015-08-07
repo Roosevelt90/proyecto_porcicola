@@ -28,13 +28,7 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
              }
 
             $fields = array(
-                registroPartoTableClass::ID,
-                registroPartoTableClass::FECHA_NACIMIENTO,
-                registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS,
-                registroPartoTableClass::MACHOS_NACIDOS_VIVOS,
-                registroPartoTableClass::NACIDOS_MUERTOS,
-                registroPartoTableClass::RAZA_ID,
-                registroPartoTableClass::ANIMAL_ID
+            registroPartoTableClass::ID
             );
             $fields2 = array (
             razaTableClass::NOMBRE_RAZA

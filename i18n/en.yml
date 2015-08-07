@@ -170,7 +170,7 @@ dictionary:
     machos:              Machos nacidos vivos
     muertos:             Nacidos Muertos
     edit:                Modificar Registro Parto
-    new:                 Registrar un nuevo registro Parto
+    new:                 Registrar un nuevo Parto
     registroParto:       Registro Parto   
    
   veterinario:
@@ -214,6 +214,7 @@ dictionary:
     genero:               Gender
     parto:                Number of Births
     lote:                 Batch
+    parto1:               date of birth
     raza:                 Race
     registro:             Delivery Record
     Vacunas:              Immunizations
@@ -328,6 +329,7 @@ dictionary:
     new:                  Registers a New Credential
     credencial:           Credential
     edit:                 Changing the Credential
+    nueva:                Assigning new Credential
   
   userCredencial:
     read:                 Assigned Roles
@@ -335,6 +337,7 @@ dictionary:
     user:                 User
     credencial:           Credential
     edit:                 Edit
+    ed:                   Edit Credential Mapping
     
   raza:
     read:                 Breeds

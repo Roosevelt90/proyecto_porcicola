@@ -27,6 +27,9 @@ class indexEntradaActionClass extends controllerClass implements controllerActio
                 if (isset($filter['empleado']) and $filter['empleado'] !== null and $filter['empleado'] !== '') {
                     $where[entradaBodegaTableClass::EMPLEADO] = $filter['empleado'];
                 }//close if
+                if (isset($filter['empleado']) and $filter['empleado'] !== null and $filter['empleado'] !== '') {
+                    $where[entradaBodegaTableClass::EMPLEADO] = $filter['empleado'];
+                }//close if
                 session::getInstance()->setAttribute('entradaFilter', $where);
             } elseif (session::getInstance()->hasAttribute('entradaFilter')) {
                 $where = session::getInstance()->getAttribute('entradaFilter');

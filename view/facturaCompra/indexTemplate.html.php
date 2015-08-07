@@ -139,7 +139,7 @@ use mvc\session\sessionClass as session ?>
                 </div>
                 <a href="#close" title="Close" class="close">X</a>
                 <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'createDetalleFacturaCompra') ?>">
-                  <div class="modal-body">
+                  <div class="modal-body text-center">
                     <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleProcesoCompraBaseTableClass::getNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true) ?>">
                     <?php echo i18n::__('insumo') ?>
                     <select name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::INSUMO_ID, true) ?>">
@@ -148,9 +148,12 @@ use mvc\session\sessionClass as session ?>
                         <option value="<?php echo $key->id ?>"><?php echo $key->nombre_insumo ?></option>
                       <?php endforeach; //close foreach    ?>
                     </select>
+                   
                     <?php echo i18n::__('cantidad') ?>
                     <input type="number" name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::CANTIDAD, true) ?>">
-                    <?php echo i18n::__('valorUni') ?>
+                     <br/>
+                    <br/>
+                      <?php echo i18n::__('valorUni') ?>
                     <input type="number" name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::VALOR_UNITARIO, true) ?>">
                   </div>
                   <div class="modal-footer">

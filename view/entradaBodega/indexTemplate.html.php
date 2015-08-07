@@ -63,24 +63,24 @@ use mvc\request\requestClass as request ?>
         <table class="table table-bordered">
           <thead>
             <tr class="success">
-              <th>
+<!--              <th>
           <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacunacion') ?>" method="POST">
             <input type="checkbox" id="chkAll">
-          </form></th>
-          <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
-          <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
-          <th><?php echo i18n::__('empleado', null, 'empleado') ?> </th>
-          <th><?php echo i18n::__('action') ?></th>
-          </tr>
+          </form></th>-->
+              <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
+              <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
+              <th><?php echo i18n::__('empleado', null, 'empleado') ?> </th>
+              <th><?php echo i18n::__('action') ?></th>
+            </tr>
           </thead>
           <tbody>
             <?php foreach ($objEntradaBodega as $key): ?>
               <tr> 
-                <td>
-                  <?php if ($key->$estado == true): ?> 
-                    <input type="checkbox" name="chk[]" value="<?php echo $key->id ?>">
-                  <?php endif; //close if   ?>
-                </td>
+  <!--                <td>
+                <?php if ($key->$estado == true): ?> 
+                              <input type="checkbox" name="chk[]" value="<?php echo $key->id ?>">
+                <?php endif; //close if   ?>
+                </td>-->
                 <td><?php echo $key->$id . ' ' . (($key->$estado == true) ? '' : 'Factura inhabilitada') ?></td>
                 <td><?php echo $key->$fechaEntrada ?></td>
                 <td><?php echo $key->$nombre_empleado ?></td>
@@ -88,29 +88,31 @@ use mvc\request\requestClass as request ?>
 
                   <?php if ($key->$estado == true): ?>
                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                      <a  id="editar<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada))              ?>" class="btn btn-default active btn-sm fa fa-edit"></a>
+                      <a  id="editar<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada))                     ?>" class="btn btn-default active btn-sm fa fa-edit"></a>
                       <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
                       </div> 
-                      <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-default fa fa-ban" ></a>
-                  <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
-                    <?php echo i18n::__('habilitar', null, 'ayuda') ?>
-                  </div> 
-  <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
+
+                      <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
                       <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                         <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                       </div> 
-                    <?php endif; ?>
-                  <?php endif; ?>
-                 <a id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
+                      <a id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewEntrada', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class="btn btn-primary active btn-sm fa fa-eye"> </a>
                       <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                         <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                       </div>
+                    <?php endif; ?>
+                  <?php endif; ?>
+                  <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-default fa fa-ban" ></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
+                    <?php echo i18n::__('habilitar', null, 'ayuda') ?>
+                  </div> 
                   </div> 
                 </td>
               </tr>
-
-              <!-- WINDOWS MODAL CHANGE STATE -->
+              <tr>
+                <th>
+                  <!-- WINDOWS MODAL CHANGE STATE -->
             <div id="changeState<?php echo $key->$id ?>" class="modalmask">
               <div class="modalbox rotate">
                 <div class="modal-header">
@@ -136,8 +138,8 @@ use mvc\request\requestClass as request ?>
                   <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('insertDetail', null, 'vacunacion') ?></h4>
                 </div>
                 <a href="#close" title="Close" class="close">X</a>
-                <div class="modal-body">
-                  <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleEntrada') ?>">
+                <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleEntrada') ?>">
+                  <div class="modal-body">
                     <div class="table table-responsive">
                       <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_ENTRADA, true) ?>">
                       tipo insumo
@@ -147,7 +149,6 @@ use mvc\request\requestClass as request ?>
                           <option value="<?php echo $key->id ?>"><?php echo $key->descripcion ?></option>
                         <?php endforeach; //close foreach   ?>
                       </select>
-
                       <?php echo i18n::__('insumo') ?>
                       <select name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_INSUMO, true) ?>">
                         <option value="">...</option>
@@ -155,18 +156,22 @@ use mvc\request\requestClass as request ?>
                           <option value="<?php echo $key->id ?>"><?php echo $key->nombre_insumo ?></option>
                         <?php endforeach; //close foreach    ?>
                       </select>
+                      <br/>
+                      <br/>
                       <?php echo i18n::__('cantidad') ?>
                       <input type="number" name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::CANDITDAD, true) ?>">
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
                 <div class="modal-footer">
                   <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
                   <button type="button" class="btn btn-info active fa fa-plus-square" onclick="$('#detailForm').submit()"> <?php echo i18n::__('create') ?></button>
                 </div>
+              </form>
               </div>
             </div>
-
+            </th>
+            </tr>
             <?php $countDetale++ ?>
           <?php endforeach//close foreach    ?>
           </tbody>

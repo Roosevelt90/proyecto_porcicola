@@ -2153,8 +2153,8 @@ proceso_venta:
     - model/bitacoraTableClass.php
     - model/base/procesoVentaBaseTableClass.php
     - model/procesoVentaTableClass.php
-#    - model/base/detalleProcesoVentaBaseTableClass.php
-#    - model/detalleProcesoVentaTableClass.php
+    - model/base/detalleProcesoVentaBaseTableClass.php
+    - model/detalleProcesoVentaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
     - model/base/clienteBaseTableClass.php

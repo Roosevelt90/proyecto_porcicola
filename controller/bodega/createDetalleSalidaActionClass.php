@@ -27,22 +27,39 @@ class createDetalleSalidaActionClass extends controllerClass implements controll
         $id_insumo = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::ID_INSUMO, true));
         $cantidad = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true));
 
+        $fieldsInsumo = array(
+          insumoTableClass::ID,
+          insumoTableClass::CANTIDAD
+        );
+        $whereInsumo = array(
+          insumoTableClass::ID => $id_insumo
+        );
+
+        //Manejo de inventario
+        $insumos = insumoTableClass::getAll($fieldsInsumo, true, null, null, null, null, $whereInsumo);
+        detalleSalidaBodegaTableClass::validateInventario($insumos, $cantidad);
+        echo $insumoInventario = $insumos[0]->cantidad - $cantidad;
+        $idsInventario = array(insumoTableClass::ID => $id_insumo);
+        $deleteInventario = array(
+          insumoTableClass::CANTIDAD => $insumoInventario
+        );
+        insumoTableClass::update($idsInventario, $deleteInventario);
+        
+        
         //    detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
-echo $id_insumo;
-        exit();
         $data = array(
           detalleSalidaBodegaTableClass::CANDITDAD => $cantidad,
           detalleSalidaBodegaTableClass::ID_SALIDA => $id_registro,
           detalleSalidaBodegaTableClass::ID_INSUMO => $id_insumo,
           detalleSalidaBodegaTableClass::TIPO_INSUMO => $tipo_insumo
         );
-                print_r($data);
+
         detalleSalidaBodegaTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('succesCreate'));
         log::register(i18n::__('create'), detalleSalidaBodegaTableClass::getNameTable());
         routing::getInstance()->redirect('bodega', 'indexSalida');
       } else {
-           log::register(i18n::__('create'), detalleSalidaBodegaBaseTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
+        log::register(i18n::__('create'), detalleSalidaBodegaBaseTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
         session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
         routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
       }//close if

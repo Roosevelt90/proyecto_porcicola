@@ -60,61 +60,63 @@ use mvc\session\sessionClass as session ?>
       <?php view::includeHandlerMessage() ?>
       <div class="table-responsive">
         <table class="table table-bordered">
+
+          <thead>
+            <tr class="success">
+              <th>
           <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacunacion') ?>" method="POST">
+            <input type="checkbox" id="chkAll">
+          </form>
+          </th>
+          <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
+          <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
+          <th><?php echo i18n::__('empleado', null, 'empleado') ?> </th>
+          <th><?php echo i18n::__('action') ?></th>
+          </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($objEntradaBodega as $key): ?>
+              <tr> 
+                <td>
+                  <?php if ($key->$estado == true): ?> 
+                    <input type="checkbox" name="chk[]" value="<?php echo $key->id ?>">
+                  <?php endif; //close if   ?>
+                </td>
+                <td><?php echo $key->$id . ' ' . (($key->$estado == true) ? '' : 'Factura inhabilitada') ?></td>
+                <td><?php echo $key->$fechaEntrada ?></td>
+                <td><?php echo $key->$nombre_empleado ?></td>
+                <td>  
 
-            <thead>
-              <tr class="success">
-                <th><input type="checkbox" id="chkAll"></th>
-                <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
-                <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
-                <th><?php echo i18n::__('empleado', null, 'empleado') ?> </th>
-                <th><?php echo i18n::__('action') ?></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($objEntradaBodega as $key): ?>
-                <tr> 
-                  <td>
-                    <?php if ($key->$estado == true): ?> 
-                      <input type="checkbox" name="chk[]" value="<?php echo $key->id ?>">
-                    <?php endif; //close if   ?>
-                  </td>
-                  <td><?php echo $key->$id . ' ' . (($key->$estado == true) ? '' : 'Factura inhabilitada') ?></td>
-                  <td><?php echo $key->$fechaEntrada ?></td>
-                  <td><?php echo $key->$nombre_empleado ?></td>
-                  <td>  
+                  <?php if ($key->$estado == true): ?>
+                    <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                      <a  id="editar<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada))         ?>" class="btn btn-sm btn-default active fa fa-edit"></a>
+                      <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
+                        <?php echo i18n::__('modificar', null, 'ayuda') ?>
+                      </div> 
+                      <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-default fa fa-ban" ></a>
+                      <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
+                        <?php echo i18n::__('habilitar', null, 'ayuda') ?>
+                      </div> 
+                      <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewSalida', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-primary active btn-sm fa fa-eye"> </a>
+                      <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
+                        <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
+                      </div>  
 
-                    <?php if ($key->$estado == true): ?>
-                      <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                        <a  id="editar<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$idEntrada))      ?>" class="btn btn-sm btn-default active fa fa-edit"></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
-                          <?php echo i18n::__('modificar', null, 'ayuda') ?>
-                        </div> 
-                        <a id="habilitar<?php echo $countDetale ?>"  href="#changeState<?php echo $key->$id ?>" class=" btn btn-sm btn-default fa fa-ban" ></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
-                          <?php echo i18n::__('habilitar', null, 'ayuda') ?>
-                        </div> 
-                        <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewSalida', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-primary active btn-sm fa fa-eye"> </a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
-                          <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
-                        </div>  
-
-                      <?php endif; ?>
                     <?php endif; ?>
+                  <?php endif; ?>
 
 
-                    <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
-                      <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
-                    </div> 
+                  <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
+                    <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
+                  </div> 
+                </td>
+              </tr>
+              <tr>
+                <th>
 
 
-                  </td>
-
-                </tr>
-            </form>
-
-            <!-- WINDOWS MODAL CHANGE STATE -->
+                  <!-- WINDOWS MODAL CHANGE STATE -->
             <div id="changeState<?php echo $key->$id ?>" class="modalmask">
               <div class="modalbox rotate">
                 <div class="modal-header">
@@ -140,8 +142,8 @@ use mvc\session\sessionClass as session ?>
                   <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('insertDetail', null, 'vacunacion') ?></h4>
                 </div>
                 <a href="#close" title="Close" class="close">X</a>
-                <div class="modal-body">
-                  <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleSalida') ?>">
+                <form id="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'createDetalleSalida') ?>">
+                  <div class="modal-body">
                     <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaBaseTableClass::ID_SALIDA, true) ?>">
 
                     <?php echo i18n::__('tipoInsumo') ?>
@@ -165,14 +167,17 @@ use mvc\session\sessionClass as session ?>
 
                     <?php echo i18n::__('cantidad') ?>
                     <input type="number" name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true) ?>">
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
-                  <button type="button" class="btn btn-info active fa fa-plus-square" onclick="$('#detailForm').submit()"> <?php echo i18n::__('create') ?></button>
-                </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
+                    <button type="submit" class="btn btn-info active fa fa-plus-square" > <?php echo i18n::__('create') ?></button>
+                  </div>
+                </form>
               </div>
             </div>
+            </th>
+            </tr>
             <?php $countDetale++ ?>
           <?php endforeach//close foreach    ?>
           </tbody>

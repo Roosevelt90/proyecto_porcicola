@@ -55,7 +55,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="success">
-                            <td><input type="checkbox" id="chkAll"></td> 
+                            <!--<td><input type="checkbox" id="chkAll"></td>--> 
                             <th><?php echo i18n::__('tipoInsumo') ?></th>
                             <th><?php echo i18n::__('nombreInsumo') ?></th>
                             <th><?php echo i18n::__('fechaFabricacion') ?></th>
@@ -71,7 +71,7 @@
                     <tbody>
                         <?php foreach ($objInsumo as $key): ?>
                             <tr>
-                                <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+                                <!--<td><input type="checkbox" name="chk[]" value="<?php // echo $key->$id ?>"></td>-->
 
                                 <td><?php echo $key->$tipoInsumo ?></td>
                                 <td><?php echo $key->$nombre ?></td>

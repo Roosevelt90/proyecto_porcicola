@@ -11,6 +11,6 @@ use mvc\routing\routingClass as routing;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class ciudadTableClass extends ciudadBaseTableClass  {
-  
+class ciudadTableClass extends ciudadBaseTableClass {
+    
 }

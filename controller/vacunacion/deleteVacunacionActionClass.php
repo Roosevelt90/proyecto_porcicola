@@ -37,7 +37,7 @@ class deleteVacunacionActionClass extends controllerClass implements controllerA
                
                 detalleVacunacionTableClass::delete($idsDetalle, true);
                 vacunacionTableClass::delete($ids, true);
-                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+                session::getInstance()->setSuccess(i18n::__('succesInhabil', null, 'vacunacion'));
                 log::register(i18n::__('delete'), vacunacionTableClass::getNameTable());
                 $this->defineView('delete', 'vacunacion', session::getInstance()->getFormatOutput());
             } else {

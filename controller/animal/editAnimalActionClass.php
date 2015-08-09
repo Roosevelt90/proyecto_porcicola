@@ -47,7 +47,7 @@ class editAnimalActionClass extends controllerClass implements controllerActionI
                 $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
                 $this->objLote = loteTableClass::getAll($fieldsLote);
                 $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
-                $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $where);             
+                $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $where);
                 $this->defineView('edit', 'animal', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('animal', 'indexAnimal');

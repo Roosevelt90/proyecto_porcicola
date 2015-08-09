@@ -32,7 +32,7 @@ class deleteFacturaVentaActionClass extends controllerClass implements controlle
                
                 procesoVentaTableClass::stateToToggle($ids);
 //                detalleVacunacionTableClass::delete($ids, true);
-//                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+//                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'facturaVenta'));
 //                log::register(i18n::__('delete'), detalleVacunacionTableClass::getNameTable());
                 $this->defineView('delete', 'facturaVenta', session::getInstance()->getFormatOutput());
             } else {

@@ -30,8 +30,9 @@
       <div id="myModalFilter" class="modalmask">
         <div class="modalbox rotate">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('buscar') ?></h4>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
           </div>
+             <a href="#close" title="Close" class="close">X</a>
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexCliente') ?>">
 
             <table class="table table-responsive ">    
@@ -50,6 +51,7 @@
                   </select>
                 </th>
               </tr>
+         
               <tr>
                 <th>  <?php echo i18n::__('name', NULL, 'cliente') ?>:</th>
                 <th> 
@@ -104,7 +106,7 @@
  <table class="table table-bordered">
         <thead>
           <tr class="success">
-            <td><input type="checkbox" id="chkAll"></td> 
+          
             <th><?php echo i18n::__('document type', null, 'cliente') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'cliente') ?></th>
             <th><?php echo i18n::__('name', null, 'cliente') ?> </th>
@@ -119,7 +121,7 @@
         <tbody>
           <?php foreach ($objCliente as $key): ?>
             <tr>
-              <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+            
               <th><?php echo $key->$tipo_documento_id ?></th>
               <td><?php echo $key->$numero_documento ?></td>
               <td><?php echo $key->$nombre_completo ?></td>
@@ -206,6 +208,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</main>-->
+    </div>-->
+  
+</main>

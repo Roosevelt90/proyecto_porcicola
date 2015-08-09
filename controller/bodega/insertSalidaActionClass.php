@@ -16,8 +16,8 @@ class insertSalidaActionClass extends controllerClass implements controllerActio
         try {
 
             $fieldsEmpleado = array(
-            empleadoTableClass::ID,
-            empleadoTableClass::NOMBRE
+                empleadoTableClass::ID,
+                empleadoTableClass::NOMBRE
             );
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);
             $this->defineView('insert', 'salidaBodega', session::getInstance()->getFormatOutput());

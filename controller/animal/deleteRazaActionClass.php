@@ -7,6 +7,7 @@ use mvc\routing\routingClass as routing;
 use hook\log\logHookClass as log;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+
 /**
  * Description of ejemploClass
  *
@@ -30,7 +31,7 @@ class deleteRazaActionClass extends controllerClass implements controllerActionI
                 );
                 $this->defineView('delete', 'raza', session::getInstance()->getFormatOutput());
                 log::register(i18n::__('delete'), razaTableClass::getNameTable());
-                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'raza'));
             } else {
                 log::register(i18n::__('delete'), razaTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete'));

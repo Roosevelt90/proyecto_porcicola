@@ -1,22 +1,24 @@
 <?php
+
 use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
+
 /**
  * Description of credencialTableClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class clienteTableClass extends clienteBaseTableClass {
-     
-    public static function validateCreate($nombre_completo, $direccion, $telefono, $numero_documento ) {
-          
+
+    public static function validateCreate($nombre_completo, $direccion, $telefono, $numero_documento) {
+
         $flag = false;
-        
-        $patron ="^[a-zA-Z0-9]{3,20}$";
-       
+
+        $patron = "^[a-zA-Z0-9]{3,20}$";
+
         if (empty($numero_documento)) {
             session::getInstance()->setError('vacio el campo num');
             $flag = true;
@@ -45,27 +47,20 @@ class clienteTableClass extends clienteBaseTableClass {
             $flag = true;
             session::getInstance()->setFirstCall(clienteTableClass::getNameField(clienteTableClass::NOMBRE, true), true);
         }
-      
-        
-        
+
+
+
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('personal', 'insertCliente');
         }
-        
-        
-        
     }
- 
-    
-    
-    
-        
-    public static function validateUpdate($nombre_completo, $direccion, $telefono, $numero_documento ) {
-          
+
+    public static function validateUpdate($nombre_completo, $direccion, $telefono, $numero_documento) {
+
         $flag = false;
         $patron = "^[a-zA-Z0-9]{3,20}$";
-    
+
         if (empty($numero_documento)) {
             session::getInstance()->setError('vacio el campo num');
             $flag = true;
@@ -95,4 +90,5 @@ class clienteTableClass extends clienteBaseTableClass {
             session::getInstance()->setFlash(clienteTableClass::getNameField(clienteTableClass::NOMBRE, true), true);
         }
     }
-    }
+
+}

@@ -16,12 +16,12 @@ class insertEntradaActionClass extends controllerClass implements controllerActi
         try {
 
             $fieldsEmpleado = array(
-            empleadoTableClass::ID,
-            empleadoTableClass::NOMBRE
+                empleadoTableClass::ID,
+                empleadoTableClass::NOMBRE
             );
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);
-            
-           
+
+
             $this->defineView('insert', 'entradaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

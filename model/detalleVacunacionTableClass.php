@@ -271,7 +271,7 @@ if (ereg($patternC, $accion) == false) {
       }
          if ($flag == true) {
             request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('salidaBodega', 'index');
+            routing::getInstance()->forward('vacunacion', 'indexVacunacion');
         }
     }
     

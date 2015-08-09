@@ -39,8 +39,8 @@ use mvc\session\sessionClass as session ?>
                     <table class="table table-bordered">
                         <thead>
                             <tr class="success">
-                                <td><input type="checkbox" id="chkAll"></td> 
-                                <th><?php echo i18n::__('id') ?></th>
+                              
+                                <th><?php echo i18n::__('number', null, 'lote') ?></th>
                                 <th><?php echo i18n::__('name') ?></th>
                                 <th><?php echo i18n::__('action') ?></th>
                             </tr>
@@ -48,7 +48,7 @@ use mvc\session\sessionClass as session ?>
                         <tbody>
                             <?php foreach ($objCredencial as $key): ?>
                                 <tr>
-                                    <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+                                  
                                     <td><?php echo $key->$id ?></td>
                                     <td><?php echo $key->$nombre ?></td>
                                     <td>

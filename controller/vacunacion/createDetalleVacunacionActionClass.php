@@ -59,7 +59,7 @@ class createDetalleVacunacionActionClass extends controllerClass implements cont
 
         
         detalleVacunacionTableClass::insert($data);
-        session::getInstance()->setSuccess(i18n::__('succesCreate'));
+        session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'detalleVacunacion'));
         log::register(i18n::__('create'), detalleVacunacionTableClass::getNameTable());
         routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
       } else {

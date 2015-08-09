@@ -40,7 +40,7 @@ class updateVacunacionActionClass extends controllerClass implements controllerA
                 );
                 vacunacionTableClass::update($ids, $data);
 
-                session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'vacunacion'));
                 log::register(i18n::__('update'), vacunacionTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             }//close if

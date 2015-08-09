@@ -25,6 +25,7 @@ class indexClienteActionClass extends controllerClass implements controllerActio
                 if (isset($filter['telefono']) and $filter['telefono'] !== null and $filter['telefono'] !== '') {
                     $where [clienteTableClass::TEL] = $filter['telefono'];
                 }
+                
                 if (isset($filter['nombre_completo']) and $filter['nombre_completo'] !== null and $filter['nombre_completo'] !== '') {
                     $where[clienteTableClass::NOMBRE] = $filter['nombre_completo'];
                 }

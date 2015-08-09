@@ -21,15 +21,14 @@ class createRegistroPartoActionClass extends controllerClass implements controll
                 $muertos = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::NACIDOS_MUERTOS, true));
                 $raza = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::RAZA_ID, true));
                 $animal_id = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::ANIMAL_ID, true));
-                
+
 //                $caracteres = validator::getInstance()->validatorCharactersSpecial($nombre);
 //
 //                if ($caracteres == true) {
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
-                
 //                loteTableClass::validatCreate($nombre);
-                
+
                 $data = array(
                     registroPartoTableClass::FECHA_NACIMIENTO => $fecha,
                     registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS => $hembras,
@@ -37,11 +36,10 @@ class createRegistroPartoActionClass extends controllerClass implements controll
                     registroPartoTableClass::NACIDOS_MUERTOS => $muertos,
                     registroPartoTableClass::RAZA_ID => $raza,
                     registroPartoTableClass::ANIMAL_ID => $animal_id,
-                    
                 );
 
                 registroPartoTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('succesCreate'));
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'parto'));
                 log::register(i18n::__('create'), registroPartoTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexRegistroParto');
             } else {

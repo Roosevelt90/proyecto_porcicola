@@ -17,20 +17,20 @@ class insertAnimalActionClass extends controllerClass implements controllerActio
 
     public function execute() {
         try {
-            
+
             $fieldsRaza = array(
-            razaTableClass::ID,
-            razaTableClass::NOMBRE_RAZA
+                razaTableClass::ID,
+                razaTableClass::NOMBRE_RAZA
             );
             $fieldsLote = array(
-            loteTableClass::ID,
-            loteTableClass::NOMBRE
+                loteTableClass::ID,
+                loteTableClass::NOMBRE
             );
             $fieldsGenero = array(
-            generoTableClass::ID,
-            generoTableClass::NOMBRE
+                generoTableClass::ID,
+                generoTableClass::NOMBRE
             );
-            
+
             $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
             $this->objLote = loteTableClass::getAll($fieldsLote);
             $this->objGenero = generoTableClass::getAll($fieldsGenero, false);

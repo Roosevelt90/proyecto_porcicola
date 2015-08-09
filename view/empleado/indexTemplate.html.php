@@ -29,7 +29,7 @@
       <div id="myModalFilter" class="modalmask">
         <div class="modalbox rotate">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('buscar') ?></h4>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
           </div>
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexEmpleado') ?>">
             <table class="table table-responsive ">   
@@ -117,7 +117,7 @@
         <table class="table table-bordered">
           <thead >
           <tr class="success ">  
-            <td><input type="checkbox" id="chkAll"></td> 
+         
            <th><?php echo i18n::__('document type', null, 'empleado') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'empleado') ?></th>
             <th><?php echo i18n::__('name', null, 'empleado') ?> </th>
@@ -133,7 +133,7 @@
         <tbody>
           <?php foreach ($objEmpleado as $key): ?>
             <tr>
-              <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+            
              <th><?php echo $key->$tipo_doc ?></th>
               <td><?php echo $key->$numero_doc ?></td>
               <td><?php echo $key->$nombre_completo ?></td>
@@ -197,7 +197,7 @@
     </div>
  </div>
     <!--      reporte-->    
-<!--    <div class="modal fade" id="myModalReporte" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--   <div class="modal fade" id="myModalReporte" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -221,5 +221,6 @@
           </div>
         </div>
       </div>-->
+</main>
   
  

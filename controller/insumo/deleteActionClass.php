@@ -5,6 +5,9 @@ use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
+use mvc\i18n\i18nClass as i18n;
+use hook\log\logHookClass as log;
+use mvc\validatorFields\validatorFieldsClass as validator;
 
 /**
  * Description of ejemploClass
@@ -27,8 +30,17 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'msg' => 'La eliminacion ha sido exitosa'
                 );
                 insumoTableClass::delete($ids, true);
-            }//close if
-            $this->defineView('delete', 'insumo', session::getInstance()->getFormatOutput());
+               $this->defineView('delete', 'insumo', session::getInstance()->getFormatOutput());
+           log::register(i18n::__('delete'), insumoTableClass::getNameTable());
+                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'insumo'));
+               }//close if
+            else {
+                log::register(i18n::__('delete'), insumoTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
+                session::getInstance()->setError(i18n::__('errorDelete'));
+                routing::getInstance()->redirect('insumo', 'index');
+            }
+            
+          
         } catch (PDOException $exc) {
           session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

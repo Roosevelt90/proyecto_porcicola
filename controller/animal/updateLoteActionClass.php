@@ -27,10 +27,10 @@ class updateLoteActionClass extends controllerClass implements controllerActionI
 //                if ($caracteres == true) {
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
-                
+
                 loteTableClass::validatCreate($nombre);
-                
-                
+
+
                 $ids = array(
                     loteTableClass::ID => $id
                 );
@@ -39,8 +39,8 @@ class updateLoteActionClass extends controllerClass implements controllerActionI
                     loteTableClass::NOMBRE => $nombre
                 );
 
-                loteTableClass::update($ids, $data); 
-                session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+                loteTableClass::update($ids, $data);
+                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'lote'));
                 log::register(i18n::__('update'), loteTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexLote');
             } else {

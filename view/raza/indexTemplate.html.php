@@ -35,7 +35,9 @@
         <table class="table table-bordered">
           <thead>
             <tr class="success">
+                  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
               <td><input type="checkbox" id="chkAll"></td> 
+              <?php endif; ?>
               <th><?php echo i18n::__('number', null, 'lote') ?></th>
               <th><?php echo i18n::__('name') ?></th>
                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
@@ -46,8 +48,9 @@
           <tbody>
             <?php foreach ($objRaza as $key): ?>
               <tr>
+                    <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                 <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
-
+<?php endif; ?>
                 <td><?php echo $key->$id ?></td>
                 <td><?php echo $key->$nombre ?></td>
                  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
@@ -119,7 +122,7 @@
             <?php echo i18n::__('confirmDeleteMasive') ?>
           </div>
           <div class="modal-footer">
-              <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('Exit') ?></a>
+              <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('cancel') ?></a>
             <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
           </div>
               </div>

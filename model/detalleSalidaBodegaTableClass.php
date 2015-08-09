@@ -10,18 +10,4 @@ use mvc\config\configClass as config;
  */
 class detalleSalidaBodegaTableClass extends detalleSalidaBodegaBaseTableClass {
   
-  public static function validateInventario($insumoBD, $insumoActual){
-          $flag = false;
-      if($insumoBD < $insumoActual){
-            session::getInstance()->setError(i18n::__(20000, null, 'errors'));
-            $flag = true;
-            session::getInstance()->setFlash(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::ID_INSUMO, true), true);
-      }
-         if ($flag == true) {
-            request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('vacunacion', 'indexVacunacion');
-        }
-    
-  }
-  
 }

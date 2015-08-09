@@ -43,7 +43,7 @@ class updateFacturaCompraActionClass extends controllerClass implements controll
           //      session::getInstance()->setSuccess(i18n::__('succesUpdate'));
           //      log::register(i18n::__('update'), razaTableClass::getNameTable());
           procesoCompraTableClass::update($ids, $data);
-          session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+          session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'facturaCompra'));
                 log::register(i18n::__('update'), procesoCompraTableClass::getNameTable());
                 routing::getInstance()->redirect('factura', 'indexFacturaCompra');
             } else {

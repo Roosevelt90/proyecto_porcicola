@@ -33,7 +33,7 @@ class createVacunacionActionClass extends controllerClass implements controllerA
                 );
 
                 vacunacionTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('succesCreate'));
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'vacunacion'));
                 log::register(i18n::__('create'), vacunacionTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             } else {

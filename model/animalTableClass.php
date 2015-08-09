@@ -31,8 +31,6 @@ class animalTableClass extends animalBaseTableClass {
             $flag = true;
             session::getInstance()->setFlash(animalTableClass::getNameField(animalTableClass::PESO, true), true);
         }
-
-
 //        if ($genero !== 1 or $genero !== 2) {
 //            session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%campo%' => 'Genero')));
 //            $flag = true;

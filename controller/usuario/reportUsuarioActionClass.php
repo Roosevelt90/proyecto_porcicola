@@ -124,7 +124,9 @@ class reportUsuarioActionClass extends controllerClass implements controllerActi
                 datosUsuarioTableClass::DIRECCION
                 
             );
-            
+           
+                        
+         
 
             $orderBy = array(
                 datosUsuarioTableClass::ID

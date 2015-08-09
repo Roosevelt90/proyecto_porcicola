@@ -21,15 +21,15 @@ class createLoteActionClass extends controllerClass implements controllerActionI
 //                if ($caracteres == true) {
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
-                
+
                 loteTableClass::validatCreate($nombre);
-                
+
                 $data = array(
                     loteTableClass::NOMBRE => $nombre
                 );
 
                 loteTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('succesCreate'));
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'lote'));
                 log::register(i18n::__('create'), loteTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexLote');
             } else {

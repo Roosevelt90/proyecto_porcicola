@@ -55,7 +55,7 @@ class createDetalleFacturaCompraActionClass extends controllerClass implements c
         
         insumoTableClass::update($id_inventario_insumo, $data_inventario_insuom);
         detalleProcesoCompraTableClass::insert($data);
-        session::getInstance()->setSuccess(i18n::__('succesCreate'));
+        session::getInstance()->setSuccess(i18n::__('succesCreate1', null, 'facturaCompra'));
         log::register(i18n::__('create'), detalleProcesoCompraTableClass::getNameTable());
         routing::getInstance()->redirect('factura', 'indexFacturaCompra');
       } else {

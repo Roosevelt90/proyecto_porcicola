@@ -9,5 +9,5 @@ use mvc\config\configClass as config;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class compraInsumoTableClass extends compraInsumoBaseTableClass {
-  
+    
 }

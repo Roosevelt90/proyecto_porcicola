@@ -26,15 +26,11 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>   
       <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
-        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-900 mdl-color-text--blue-grey-900">
           <header class="demo-drawer-header">
-            <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-              <img src="<?php echo routing::getInstance()->getUrlImg('diaz.jpg') ?>" class="demo-avatar">
-            <?php endif; ?>
+            <img src="<?php echo routing::getInstance()->getUrlImg('diaz.jpg') ?>" class="demo-avatar">
             <div class="demo-avatar-dropdown">
-              <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                <span>main@main.com</span>
-              <?php endif; ?>
+              <span>main@main.com</span>
               <div class="mdl-layout-spacer"></div>
 
               <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -48,7 +44,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
             </div>
           </header>
-          <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-300 mdl-color-text--blue-grey-900">
 
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('animal') ?></span>
@@ -114,7 +110,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
               </ul>
             </div>
-
+  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('usuario') ?></span>
               <div class="mdl-layout-spacer"></div>
@@ -127,7 +123,8 @@ use mvc\i18n\i18nClass as i18n ?>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuario') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-user"><?php echo i18n::__('usuario', null, 'user') ?></button></a>
               </ul>
             </div>
-
+<?php endif; ?>
+              
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('vacunacion', null, 'vacunacion') ?></span>
               <div class="mdl-layout-spacer"></div>
@@ -149,7 +146,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
       <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
-        <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+        <header class="demo-header mdl-layout__header  mdl-color--green-50 mdl-color-text--grey-700">
           <div class="mdl-layout__header-row">
             <span class="mdl-layout-title"><?php echo i18n::__('granja') ?></span>
             <div class="mdl-layout-spacer"></div>
@@ -179,9 +176,9 @@ use mvc\i18n\i18nClass as i18n ?>
             <?php echo i18n::__('j', null, 'ayuda') ?>
             <br/>
             <p>
-              <?php echo i18n::__('sistema', null, 'ayuda') ?>
+            <?php echo i18n::__('sistema', null, 'ayuda') ?>
               <br/>
-              <?php echo i18n::__('version', null, 'ayuda') ?>
+               <?php echo i18n::__('version', null, 'ayuda') ?>
             </p>
           </div>
           <div class="modal-footer">
@@ -189,7 +186,7 @@ use mvc\i18n\i18nClass as i18n ?>
           </div>
         </div>
       </div>
-
+      
       <div id="myModalContact" class="modalmask">
         <div class="modalbox rotate">
           <div class="modal-header">
@@ -198,27 +195,27 @@ use mvc\i18n\i18nClass as i18n ?>
           </div>
           <a href="#close" title="Close" class="close">X</a>
           <div class="modal-body text-left">
-            <p>
-              <strong>
-                <?php echo i18n::__('inf', null, 'ayuda') ?></strong>
+   <p>
+       <strong>
+            <?php echo i18n::__('inf', null, 'ayuda') ?></strong>
               <br/>
-              <?php echo i18n::__('apre', null, 'ayuda') ?>
+               <?php echo i18n::__('apre', null, 'ayuda') ?>
               <br />
-              <?php echo i18n::__('ciu', null, 'ayuda') ?>
+               <?php echo i18n::__('ciu', null, 'ayuda') ?>
               <br/>
-              <?php echo i18n::__('pais', null, 'ayuda') ?>
-              <br/>
+               <?php echo i18n::__('pais', null, 'ayuda') ?>
+               <br/>
             </p>
           </div>
-          <div class="modal-body text-right">
+           <div class="modal-body text-right">
             <p>
-              <?php echo i18n::__('name', null, 'ayuda') ?>
+               <?php echo i18n::__('name', null, 'ayuda') ?>
               <br />
-              <?php echo i18n::__('fijo', null, 'ayuda') ?>
+               <?php echo i18n::__('fijo', null, 'ayuda') ?>
               <br/>
-              <?php echo i18n::__('cel', null, 'ayuda') ?>
-              <br/>
-              <?php echo i18n::__('correo', null, 'ayuda') ?>
+               <?php echo i18n::__('cel', null, 'ayuda') ?>
+               <br/>
+               <?php echo i18n::__('correo', null, 'ayuda') ?>
             </p>
           </div>
           <div class="modal-footer">

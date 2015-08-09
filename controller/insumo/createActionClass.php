@@ -36,7 +36,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
 
                 insumoTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('succesCreate'));
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'insumo'));
                 log::register(i18n::__('create'), insumoTableClass::getNameTable());
             routing::getInstance()->redirect('insumo', 'index');
             }//close if

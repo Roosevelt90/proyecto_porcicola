@@ -26,13 +26,13 @@ class updateRazaActionClass extends controllerClass implements controllerActionI
                 );
 
                 razaTableClass::validatUpdate($nombre);
-                
+
                 $data = array(
                     razaTableClass::NOMBRE_RAZA => $nombre
                 );
 
-                razaTableClass::update($ids, $data); 
-                session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+                razaTableClass::update($ids, $data);
+                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'raza'));
                 log::register(i18n::__('update'), razaTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexRaza');
             } else {

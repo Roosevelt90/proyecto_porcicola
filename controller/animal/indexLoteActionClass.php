@@ -18,7 +18,7 @@ class indexLoteActionClass extends controllerClass implements controllerActionIn
             $orderBy = array(
                 loteTableClass::ID
             );
-     
+
             $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;

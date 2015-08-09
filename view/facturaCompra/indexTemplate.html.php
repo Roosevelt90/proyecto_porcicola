@@ -148,7 +148,8 @@ use mvc\session\sessionClass as session ?>
                         <option value="<?php echo $key->id ?>"><?php echo $key->nombre_insumo ?></option>
                       <?php endforeach; //close foreach    ?>
                     </select>
-                   
+                   <br />
+                   <br />
                     <?php echo i18n::__('cantidad') ?>
                     <input type="number" name="<?php echo detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::CANTIDAD, true) ?>">
                      <br/>

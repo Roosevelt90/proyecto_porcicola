@@ -30,7 +30,7 @@ class deleteSelectDetalleVacunacionActionClass extends controllerClass implement
                 }//close foreach
 
                 routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
-                session::getInstance()->setSuccess(i18n::__('succesDeleteMasivo'));
+                session::getInstance()->setSuccess(i18n::__('succesInhabilMasive', null, 'detalleVacunacion'));
                 log::register(i18n::__('borrar seleccion'), detalleVacunacionTableClass::getNameTable());
             } else {
                 routing::getInstance()->redirect('vacunacion', 'indexDetalleVacunacion');

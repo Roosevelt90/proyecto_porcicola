@@ -112,63 +112,60 @@ dataUser:
     security: true
     credentials:
       - [admin]
-      
-credencial:
-  index:
+  indexCredencial:
     security: true
     credentials:
       - [admin]
-  insert:
+  insertCredencial:
     security: true
     credentials:
       - [admin]
-  create:
+  createCredencial:
     security: true
     credentials:
       - [admin]
-  edit:
+  editCredencial:
     security: true
     credentials:
       - [admin]
-  update:
+  updateCredencial:
     security: true
     credentials:
       - [admin]
-  delete:
+  deleteCredencial:
     security: true
     credentials:
       - [admin]
-  deleteSelect:
+  deleteSelectCredencial:
     security: true
     credentials:
       - [admin]
       
-usuarioCredencial:
-  index:
+  indexUsuCredencial:
     security: true
     credentials:
       - [admin]
-  insert:
+  insertUsuCredencial:
     security: true
     credentials:
       - [admin]
-  create:
+  createUsuCredencial:
     security: true
     credentials:
       - [admin]
-  edit:
+  editUsuCredencial:
     security: true
     credentials:
       - [admin]
-  update:
+  updateUsuCredencial:
     security: true
     credentials:
       - [admin]
-  delete:
+  deleteUsuCredencial:
     security: true
     credentials:
       - [admin]
-  delectSelect:
+  delectSelectUsuCredencial:
     security: true
     credentials:
       - [admin]
@@ -214,6 +211,38 @@ insumo:
       
       
 animal:
+  indexRegistroParto:
+    security: true
+    credentials:
+      - [admin, invitado]
+  insertRegistroParto:
+    security: true
+    credentials:
+      - [admin]
+  createRegistroParto:
+    security: true
+    credentials:
+      - [admin]
+  editRegistroParto:
+    security: true
+    credentials:
+      - [admin]
+  updateRegistroParto:
+    security: true
+    credentials:
+      - [admin]
+  deleteRegistroParto:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelectRegistroParto:
+    security: true
+    credentials:
+      - [admin]
+  reportRegistroParto:
+    security: true
+    credentials:
+      - [admin, invitado]
   indexAnimal:
     security: true
     credentials:
@@ -478,7 +507,7 @@ vacunacion:
     security: true
     credentials:
       - [admin, invitado]
-  reporteDetalleVacunacion:
+  reportDetalleVacunacion:
     security: true
     credentials:
       - [admin, invitado]

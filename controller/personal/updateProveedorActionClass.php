@@ -27,8 +27,7 @@ class updateProveedorActionClass extends controllerClass implements controllerAc
                 $ciudad = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::CIUDAD, true));
                 $telefono = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::TEL, true));
 
-                proveedorTableClass::validateEdit($nombre_completo, $direccion, $telefono, $numero_documento);
-
+                
                 $ids = array(
                     proveedorTableClass::ID => $id
                 );

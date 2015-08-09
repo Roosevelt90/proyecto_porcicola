@@ -55,7 +55,7 @@ use mvc\view\viewClass as view ?>
             <table class="table  table-bordered">
               <thead>
                 <tr class="success">
-                  <th><input type="checkbox" id="chkAll"></th>
+                 
                   <th><?php echo i18n::__('usuario', null, 'user') ?></th>
                   <th><?php echo i18n::__('date', null, 'user') ?></th>
                   <th><?php echo i18n::__('action') ?></th>
@@ -64,7 +64,7 @@ use mvc\view\viewClass as view ?>
               <tbody>
                 <?php foreach ($objUsuarios as $usuario): ?>   
                   <tr>
-                    <td><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
+                  
                     <td><?php echo $usuario->$usu ?></td>
                     <td><?php echo $usuario->$creacion ?></td>
                     <td>
@@ -133,38 +133,38 @@ use mvc\view\viewClass as view ?>
       <div class="modalbox rotate">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel"> <?php echo i18n::__('busq', null, 'user') ?></h4>
+          <h4 class="modal-title" id="myModalLabel"> <?php echo i18n::__('filterBy') ?>:</h4>
         </div>
+           <a href="#close" title="Close" class="close">X</a>
         <div class="modal-body">
           <form id="filterForm"  class="form-horizontal"   method="POST" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuario') ?>">
 
             <div class="form-group">
+                <div>
               <label for="filterNombre_usuario" class="col-sm-2 control-label" ><?php echo i18n::__('usuario', null, 'user') ?></label>
-              <div class="col-sm-10">
+              
                 <input type="text" class="form-control" id="filterNombre_usuario" name="filter[nombre_usuaio]" placeholder="nombre_usuario">
               </div>
-            </div>
-            <table>
+            <br />
+           <br />
 
-              <tr>
-                <th>
+             
+              <div>
                   <?php echo i18n::__('fechaInicio') ?>:
-                </th>
-                <th>
+             
                   <input type="date" name="filter[fecha_inicial]" >               
-                </th>
-              </tr></br>
-
-              <tr>
-                <th>
+              </div>
+    <br />
+<br />
+             
+              <div>
                   <?php echo i18n::__('fechaFin') ?>:
-                </th>
-                <th>
+               
                   <input type="date" name="filter[fecha_fin]" >               
-                </th>
-              </tr>
-            </table>
-
+              </div>
+            
+         
+</div>
           </form>
         </div>
         <div class="modal-footer">

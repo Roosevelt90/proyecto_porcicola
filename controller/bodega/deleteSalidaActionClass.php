@@ -23,15 +23,15 @@ class deleteSalidaActionClass extends controllerClass implements controllerActio
                 $id = request::getInstance()->getPost(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true));
 
                 $ids = array(
-                  salidaBodegaTableClass::ID => $id
+                    salidaBodegaTableClass::ID => $id
                 );
                 $this->arrayAjax = array(
                     'code' => 11,
                     'msg' => 'La eliminacion ha sido exitosa'
                 );
-               
+
                 salidaBodegaTableClass::stateToToggle($ids);
-                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+                session::getInstance()->setSuccess(i18n::__('succesDelete1', null, 'bodega'));
 //                log::register(i18n::__('delete'), detalleVacunacionTableClass::getNameTable());
                 $this->defineView('delete', 'salidaBodega', session::getInstance()->getFormatOutput());
             } else {

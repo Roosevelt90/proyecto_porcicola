@@ -28,7 +28,7 @@ class updateEmpleadoActionClass extends controllerClass implements controllerAct
                 $telefono = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TEL, true));
                 $direccion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true));
 
-                empleadoTableClass::validateEdit($nombre_completo, $direccion, $telefono, $numero_documento);
+                empleadoTableClass::validateUpdate($nombre_completo, $direccion, $telefono, $numero_documento);
 
                 $ids = array(
                     empleadoTableClass::ID => $id

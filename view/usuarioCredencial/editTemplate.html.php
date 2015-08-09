@@ -9,7 +9,7 @@ use mvc\view\viewClass as view ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-4-offset-4 text-center">
-          <h2>   Editar la credencial del usuario <?php $objUsuario[0]->user_name ?></h2>
+            <h2><?php echo i18n::__('ed',  NULL,  'userCredencial') ?> 
             <br>   
             <?php // print_r($objCredencial) ?>
         </div>

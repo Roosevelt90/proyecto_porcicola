@@ -26,7 +26,9 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
             insumoTableClass::NOMBRE,
             insumoTableClass::FECHA_FABRICACION,
             insumoTableClass::FECHA_VENCIMIENTO,
-            insumoTableClass::VALOR
+            insumoTableClass::VALOR,
+            insumoTableClass::CANTIDAD,
+            insumoTableClass::STOCK_MINIMO
             );
             
              $fields2 = array(

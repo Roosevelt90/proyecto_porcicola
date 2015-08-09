@@ -20,7 +20,7 @@ class indexRazaActionClass extends controllerClass implements controllerActionIn
                 razaTableClass::ID
             );
 
-             $page = 0;
+            $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
@@ -38,7 +38,7 @@ class indexRazaActionClass extends controllerClass implements controllerActionIn
             $lines = config::getRowGrid();
 
             $this->cntPages = razaTableClass::getAllCount($f, false, $lines);
-           // $this->page = request::getInstance()->getGet('page');
+            // $this->page = request::getInstance()->getGet('page');
             $this->objRaza = razaBaseTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page);
             $this->defineView('index', 'raza', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

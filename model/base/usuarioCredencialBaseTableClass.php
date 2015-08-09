@@ -18,7 +18,6 @@ class usuarioCredencialBaseTableClass extends tableBaseClass {
   const USUARIO_ID = 'usuario_id';
   const CREDENCIAL_ID = 'credencial_id';
   const CREATED_AT = 'created_at';
-  const DELETED_AT = 'deleted_at';
   const CREDENCIAL_DEFAULT = 4;
   
   function getId() {

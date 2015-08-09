@@ -31,7 +31,7 @@ class deleteVacunaActionClass extends controllerClass implements controllerActio
                 );
                 $this->defineView('delete', 'vacuna', session::getInstance()->getFormatOutput());
                 log::register(i18n::__('delete'), vacunaTableClass::getNameTable());
-                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'vacuna'));
             } else {
                 log::register(i18n::__('delete'), vacunaTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete'));

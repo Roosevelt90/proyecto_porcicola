@@ -5,7 +5,6 @@ use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 
-
 /**
  * Description of ejemploClass
  *
@@ -17,9 +16,9 @@ class updateActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
                 $id = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::ID, true));
-               
+
                 $nombre = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true));
-                
+
                 $ids = array(
                     credencialTableClass::ID => $id
                 );

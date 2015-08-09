@@ -15,18 +15,6 @@ class empleadoTableClass extends empleadoBaseTableClass {
         $flag = false;
         
         $patron ="^[a-zA-Z0-9]{3,20}$";
-        
-        $fields= (empleadoTableClass::NUMERO_DOC);
-      $objEmpleado = empleadoTableClass::getAll($fields, true);
-      
-      foreach ($objEmpleado as $key){
-        if($key->numero_doc == $numero_documento){
-           session::getInstance()->setError('Este documento de identidad ya es encuentra registrado en la base de datos');
-            $flag = true;
-            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_DOC, true), true);
-    
-        }
-      }
        
         if (empty($numero_documento)) {
             session::getInstance()->setError('el campo número de documento no puede ser vacio');

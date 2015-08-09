@@ -180,10 +180,13 @@ class usuarioBaseTableClass extends tableBaseClass {
    * Obtiene el nombre de la tabla
    * @return string
    */
-  public static function getNameTable() {
-    return 'usuario';
-  }
-  
+    public static function getNameTable() {
+        return 'usuario';
+    }
+
+    public static function getNameTable2() {
+        return 'ciudad';
+    }
 
   /**
    * Método para borrar un registro de una tabla X en la base de datos
@@ -268,5 +271,27 @@ class usuarioBaseTableClass extends tableBaseClass {
   public static function update($ids, $data, $table = null) {
     return parent::update($ids, $data, self::getNameTable());
   }
+  
+
+    /**
+     * Método para leer todos los registros de una tabla
+     *
+     * @param array $fields Array con los nombres de los campos a solicitar
+     * @param boolean $deletedLogical [optional] Indicación de borrado lógico
+     * o borrado físico
+     * @param array $orderBy [optional] Array con el o los nombres de los campos
+     * por los cuales se ordenará la consulta
+     * @param string $order [optional] Forma de ordenar la consulta
+     * (por defecto NULL), pude ser ASC o DESC
+     * @param integer $limit [optional] Cantidad de resultados a mostrar
+     * @param integer $offset [optional] Página solicitadad sobre la cantidad
+     * de datos a mostrar
+     * @return mixed una instancia de una clase estandar, la cual tendrá como
+     * variables publica los nombres de las columnas de la consulta o una
+     * instancia de \PDOException en caso de fracaso.
+     */
+    public static function getAllJoin($fields, $fields2, $fields3 = null, $fields4 = null, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
+        return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+    }
 
 }

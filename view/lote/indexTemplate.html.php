@@ -36,7 +36,7 @@
         <table class="table table-bordered">
           <thead>
             <tr class="success">
-              <td><input type="checkbox" id="chkAll"></td> 
+            
               <th><?php echo i18n::__('number', null, 'lote') ?></th>
               <th><?php echo i18n::__('name') ?></th>
                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
@@ -47,7 +47,7 @@
           <tbody>
             <?php foreach ($objLote as $key): ?>
               <tr>
-                <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+              
 
                 <td><?php echo $key->$id ?></td>
                 <td><?php echo $key->$nombre ?></td>

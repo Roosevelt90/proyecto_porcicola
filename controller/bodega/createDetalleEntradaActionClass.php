@@ -17,38 +17,39 @@ use mvc\validatorFields\validatorFieldsClass as validator;
  */
 class createDetalleEntradaActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
 
 
-   echo     $id_registro = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_ENTRADA, true));
-        $tipo_insumo = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::TIPO_INSUMO, true));
-        $id_insumo = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_INSUMO, true));
-        $cantidad = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::CANDITDAD, true));
+//                echo
+                $id_registro = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_ENTRADA, true));
+                $tipo_insumo = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::TIPO_INSUMO, true));
+                $id_insumo = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_INSUMO, true));
+                $cantidad = request::getInstance()->getPost(detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::CANDITDAD, true));
 
-        //    detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
+                //    detalleVacunacionTableClass::validate($fecha_vacunacion, $id_vacuna, $dosis_vacuna, $accion);
 
-        $data = array(
-          detalleEntradaBodegaTableClass::CANDITDAD => $cantidad,
-          detalleEntradaBodegaTableClass::ID_ENTRADA => $id_registro,
-          detalleEntradaBodegaTableClass::ID_INSUMO => $id_insumo,
-          detalleEntradaBodegaTableClass::TIPO_INSUMO => $tipo_insumo
-        );
+                $data = array(
+                    detalleEntradaBodegaTableClass::CANDITDAD => $cantidad,
+                    detalleEntradaBodegaTableClass::ID_ENTRADA => $id_registro,
+                    detalleEntradaBodegaTableClass::ID_INSUMO => $id_insumo,
+                    detalleEntradaBodegaTableClass::TIPO_INSUMO => $tipo_insumo
+                );
 //                print_r($data);
-        detalleEntradaBodegaTableClass::insert($data);
-        session::getInstance()->setSuccess(i18n::__('succesCreate'));
-        log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable());
-        routing::getInstance()->redirect('bodega', 'indexEntrada');
-      } else {
-        log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
-        session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
-        routing::getInstance()->redirect('bodega', 'indexEntrada');
-      }//close if
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+                detalleEntradaBodegaTableClass::insert($data);
+                session::getInstance()->setSuccess(i18n::__('succesCreate2', null, 'bodega'));
+                log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable());
+                routing::getInstance()->redirect('bodega', 'indexEntrada');
+            } else {
+                log::register(i18n::__('create'), detalleEntradaBodegaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
+                session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
+                routing::getInstance()->redirect('bodega', 'indexEntrada');
+            }//close if
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

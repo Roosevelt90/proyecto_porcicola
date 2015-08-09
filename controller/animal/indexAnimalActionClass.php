@@ -25,25 +25,28 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                 if (isset($filter['genero']) and $filter['genero'] !== null and $filter['genero'] !== '') {
                     $where [animalTableClass::GENERO_ID] = $filter['genero'];
                 }
+                if (isset($filter['numero']) and $filter['numero'] !== null and $filter['numero'] !== '') {
+                    $where [animalTableClass::NUMERO] = $filter['numero'];
+                }
                 if (isset($filter['raza']) and $filter['raza'] !== null and $filter['raza'] !== '') {
                     $where [animalTableClass::RAZA] = $filter['raza'];
                 }
                 if (isset($filter['lote']) and $filter['lote'] !== null and $filter['lote'] !== '') {
                     $where [animalTableClass::LOTE_ID] = $filter['lote'];
                 }
-                
-                
+
+
                 if (isset($filter['peso']) and $filter['peso'] !== null and $filter['peso'] !== '') {
-                 
+
                     $where[animalTableClass::PESO] = $filter['peso'];
                 } //close if
 
 
                 if (isset($filter['edad']) and $filter['edad'] !== null and $filter['edad'] !== '') {
-                    
+
                     $where[animalTableClass::EDAD] = $filter['edad'];
                 } //close if
-                
+
                 if (isset($filter['fecha_inicial']) and isset($filter['fecha_fin']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '' and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '') {
 
                     $where[animalTableClass::FECHA_NACIMIENTO] = array(
@@ -97,9 +100,9 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                 animalTableClass::ID
             );
 
-          
-            
-           $page = 0;
+
+
+            $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
@@ -116,7 +119,7 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
 
             $lines = config::getRowGrid();
             $this->cntPages = animalTableClass::getAllCount($f, true, $lines, $where);
-           // $this->page = request::getInstance()->getGet('page');
+            // $this->page = request::getInstance()->getGet('page');
             $this->objLote = loteTableClass::getAll($fieldsLote, false);
             $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
             $this->objRaza = razaTableClass::getAll($fieldsRaza, false);

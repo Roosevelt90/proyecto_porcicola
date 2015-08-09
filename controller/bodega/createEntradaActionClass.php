@@ -16,26 +16,24 @@ use mvc\validatorFields\validatorFieldsClass as validator;
  */
 class createEntradaActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
+    public function execute() {
+        try {
 
-      $fecha = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true));
-      $empleado = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::EMPLEADO, true));
+            $fecha = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true));
+            $empleado = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::EMPLEADO, true));
 
-      $data = array(
-        entradaBodegaTableClass::EMPLEADO => $empleado,
-        entradaBodegaTableClass::FECHA => $fecha
-      );
-      entradaBodegaTableClass::insert($data);
-      session::getInstance()->setSuccess(i18n::__('succesCreate'));
-      log::register(i18n::__('create'), entradaBodegaTableClass::getNameTable());
-      routing::getInstance()->redirect('bodega', 'indexEntrada');
-    } 
-  
-   catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+            $data = array(
+                entradaBodegaTableClass::EMPLEADO => $empleado,
+                entradaBodegaTableClass::FECHA => $fecha
+            );
+            entradaBodegaTableClass::insert($data);
+            session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'bodega'));
+            log::register(i18n::__('create'), entradaBodegaTableClass::getNameTable());
+            routing::getInstance()->redirect('bodega', 'indexEntrada');
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

@@ -28,7 +28,7 @@
       <div id="myModalFilter" class="modalmask">
         <div class="modalbox rotate">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('buscar') ?></h4>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
           </div>
           <form class="form-horizontal" id="filterForm" method ="POST" action="<?php echo routing::getInstance()->getUrlWeb('personal', 'indexVeterinario') ?>">
             <table class="table table-responsive ">    
@@ -97,7 +97,7 @@
       <table class="table table-bordered">
         <thead>
           <tr class="success">
-            <td><input type="checkbox" id="chkAll"></td>
+           
             <th><?php echo i18n::__('document type', null, 'veterinario') ?></th>
             <th><?php echo i18n::__('Number of document', null, 'veterinario') ?></th>
             <th><?php echo i18n::__('name', null, 'veterinario') ?> </th>
@@ -112,7 +112,7 @@
         <tbody>
           <?php foreach ($objVeterinario as $key): ?>
             <tr>
-              <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+           
               <th><?php echo $key->$tipo_doc ?></th>
               <td><?php echo $key->$numero_doc ?></td>
               <td><?php echo $key->$nombre_completo ?></td>

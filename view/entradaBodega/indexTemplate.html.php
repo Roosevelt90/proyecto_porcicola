@@ -142,13 +142,15 @@ use mvc\request\requestClass as request ?>
                   <div class="modal-body">
                     <div class="table table-responsive">
                       <input type="hidden" value="<?php echo $key->$id ?>" name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_ENTRADA, true) ?>">
-                      tipo insumo
+                    <?php echo i18n::__('tipoInsumo') ?>
                       <select name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::TIPO_INSUMO, true) ?>">
                         <option value="">...</option>
                         <?php foreach ($objTipoInsumo as $key): ?>
                           <option value="<?php echo $key->id ?>"><?php echo $key->descripcion ?></option>
                         <?php endforeach; //close foreach   ?>
                       </select>
+                      <br />
+                      <br />
                       <?php echo i18n::__('insumo') ?>
                       <select name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::ID_INSUMO, true) ?>">
                         <option value="">...</option>

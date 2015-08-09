@@ -40,7 +40,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         );
 
         insumoTableClass::update($ids, $data);
-          session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+          session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'insumo'));
                 log::register(i18n::__('update'), insumoTableClass::getNameTable());
                 routing::getInstance()->redirect('insumo', 'index');
       }//close if

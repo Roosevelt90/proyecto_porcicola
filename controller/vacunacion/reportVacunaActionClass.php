@@ -29,7 +29,9 @@ class reportVacunaActionClass extends controllerClass implements controllerActio
                 vacunaTableClass::LOTE_VACUNA,
                 vacunaTableClass::FECHA_FABRICACION,
                 vacunaTableClass::FECHA_VENCIMIENTO,
-                vacunaTableClass::VALOR
+                vacunaTableClass::VALOR,
+                vacunaTableClass::CANTIDAD,
+                vacunaTableClass::STOCK_MINIMO
             );
 
             $orderBy = array(

@@ -27,7 +27,7 @@ class updateVeterinarioActionClass extends controllerClass implements controller
                 $ciudad = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::CIUDAD, true));
                 $telefono = request::getInstance()->getPost(veterinarioTableClass::getNameField(veterinarioTableClass::TEL, true));
 
-                veterinarioTableClass::validateEdit($nombre_completo, $direccion, $telefono, $numero_documento);
+                veterinarioTableClass::validateEdit($nombre_completo, $direccion, $numero_documento, $telefono);
 
                 $ids = array(
                     veterinarioTableClass::ID => $id

@@ -55,12 +55,12 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr class="success">
-                            <!--<td><input type="checkbox" id="chkAll"></td>--> 
+                          
                             <th><?php echo i18n::__('tipoInsumo') ?></th>
-                            <th><?php echo i18n::__('nombreInsumo') ?></th>
+                            <th><?php echo i18n::__('insumo', null, 'insumo') ?></th>
                             <th><?php echo i18n::__('fechaFabricacion') ?></th>
                             <th><?php echo i18n::__('fechaVencimiento') ?></th>
-                            <th><?php echo i18n::__('valorInsumo') ?></th>
+                            <th><?php echo i18n::__('valor', null, 'dpVenta') ?></th>
                             <th><?php echo i18n::__('cantidad') ?></th>
                             <th><?php echo i18n::__('stock') ?></th>
                                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
@@ -71,7 +71,7 @@
                     <tbody>
                         <?php foreach ($objInsumo as $key): ?>
                             <tr>
-                                <!--<td><input type="checkbox" name="chk[]" value="<?php // echo $key->$id ?>"></td>-->
+                                
 
                                 <td><?php echo $key->$tipoInsumo ?></td>
                                 <td><?php echo $key->$nombre ?></td>

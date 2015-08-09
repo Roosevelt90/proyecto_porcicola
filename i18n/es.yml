@@ -19,6 +19,7 @@ dictionary:
     buscar:               Buscar
     ver:                  Ver
     edit:                 Editar
+    updateDetail:         Modificar Detalle
     facturaVenta:         Facturas de venta
     nombreCliente:        Nombre de Cliente
     cliente:              Cliente
@@ -133,7 +134,7 @@ dictionary:
     usuarios:             Usuarios
     deleteMasive:         Confirmar eliminar los elementos seleccionados
     confirmDeleteMasive:  Desea eliminar los elementos seleccionados
-    succesCreate:         El registro se ha insertado de forma exitosa   
+    succesCreate:         El registro se ha creado de forma exitosa   
     errorCreate:          No se ha podido crear el registro vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
     errorDeleteMasivo:    No se ha seleccionado ningun registro
@@ -173,6 +174,9 @@ dictionary:
     city:                 Ciudad
     view:                 Ver Veterinario
     insertar:             Insertar Veterinario
+    succesCreate:         El veterinario se ha creado de forma exitosa
+    succesUpdate:         El veterinario se ha modificado de forma exitosa
+    succesDelete:         El veterinario se ha eliminado de forma exitosa
       
   animal:
     date_birth:           Fecha de nacimiento
@@ -210,10 +214,10 @@ dictionary:
     errorCreate:          No se ha podido crear el animal vuelve a intentarlo
     succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
     errorDeleteMasivo:    No se ha seleccionado ningun registro
-    succesDelete:         Se ha eliminado el registro exitosamente
-    errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
-    succesUpdate:         El registro se ha modificado exitosamente 
-    errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
+    succesDelete:         Se ha eliminado el animal exitosamente
+    errorDelete:          No se ha podido eliminar el animal intentelo mas tarde
+    succesUpdate:         El animal se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar el animal intentelo mas tarde
     read:                 Cerdos
     confirm:              Desea Eliminar el Registro
     
@@ -261,6 +265,8 @@ dictionary:
     edit:                Modificar Registro Parto
     new:                 Registrar un nuevo registro Parto
     registroParto:       Registro Parto   
+    succesCreate:        El Registro de Parto se ha creado de forma exitosa
+    succesUpdate:        El Registro de Parto se ha modificado de forma exitosa
     
   proveedor:
     proveedor:            Proveedor
@@ -278,6 +284,9 @@ dictionary:
     view:                 Ver Proveedor
     insertar:             Insertar proveedor
     nuev:                 Nuevo Proveedor
+    succesCreate:         El proveedor se ha creado de forma exitosa
+    succesUpdate:         El proveedor se ha modificado de forma exitosa
+    succesDelete:         El proveedor se ha eliminado de forma exitosa
     
   depto:
     read:                 Departamentos registrados en nuestro sistema
@@ -304,7 +313,30 @@ dictionary:
     ver1:                 Ver Salida de Bodega
     ver2:                 Ver Detalle de Entrada de Bodega
     ver3:                 Ver Detalle de salida de Bodega
-    
+    succesCreate:         La Entrada de Bodega se ha creado de forma exitosa 
+    succesCreate1:        La Salida de Bodega se ha creado de forma exitosa 
+    succesCreate2:        El Detalle de Entrada de Bodega se ha creado de forma exitosa 
+    succesCreate3:        El Detalle de Salida de Bodega se ha creado de forma exitosa 
+    succesDelete:         La Entrada de Bodega se ha inhabilitado de forma exitosa
+    succesDelete1:        La Salida de Bodega se ha inhabilitado de forma exitosa
+    succesDelete2:        El Detalle de Entrada de Bodega se ha inhabilitado de forma exitosa
+    succesDelete3:        El Detalle de Salida de Bodega se ha inhabilitado de forma exitosa
+    succesMasive:         Las Entradas de Bodega seleccionadas se han inhabilitado de forma exitosa
+    succesMasive1:        Las Salidas de Bodega seleccionadas se han inhabilitado de forma exitosa
+    succesMasive2:        Los Detalles de Entrada de Bodega seleccionados se han inhabilitado de forma exitosa
+    succesMasive3:        Los Detalles de Salida de Bodega seleccionados se han inhabilitado de forma exitosa
+    succesUpdate:         La Entrada de Bodega se ha modificado de forma exitosa 
+    succesUpdate1:        La Salida de Bodega se ha modificado de forma exitosa
+    succesUpdate2:        El Detalle de la Entrada de Bodega se ha modificado de forma exitosa 
+    succesUpdate3:        El Detalle de la Salida de Bodega se ha modificado de forma exitosa 
+    succesDelete4:        La Entrada de Bodega se ha habilitado de forma exitosa
+    succesDelete5:        La Salida de Bodega se ha habilitado de forma exitosa
+    succesDelete6:        El Detalle de Entrada de Bodega se ha habilitado de forma exitosa
+    succesDelete7:        El Detalle de Salida de Bodega se ha habilitado de forma exitosa
+    succesMasive4:        Las Entradas de Bodega seleccionadas se han habilitado de forma exitosa
+    succesMasive5:        Las Salidas de Bodega seleccionadas se han habilitado de forma exitosa
+    succesMasive6:        Los Detalles de Entrada de Bodega seleccionados se han habilitado de forma exitosa
+    succesMasive7:        Los Detalles de Salida de Bodega seleccionados se han habilitado de forma exitosa
     
   datos:
     read:                 Datos Personales del Usuario
@@ -324,6 +356,7 @@ dictionary:
     new:                  Registrar una Nueva Credencial
     credencial:           Credencial
     edit:                 Modificar la Credencial
+    nueva:                Nueva Asignación de la credencial
   
   userCredencial:
     read:                 Roles Asignados
@@ -331,6 +364,7 @@ dictionary:
     user:                 Usuario
     credencial:           Credencial
     edit:                 Editar
+    ed:                   Editar la Asignación de la Credencial
     
     
   raza:
@@ -341,6 +375,10 @@ dictionary:
     delete:               Eliminar
     confirmDelete:        Eliminar Raza
     mother:               Madre
+    succesUpdate:         La raza se ha modificado de forma exitosa
+    succesCreate:         La raza se ha creado de forma exitosa
+    succesDelete:         La raza se ha eliminado de forma exitosa
+    succesDeleteMasive:   Las razas seleccionadas se han eliminado de forma exitosa
     
   lote:
     read:                 Lotes
@@ -348,6 +386,9 @@ dictionary:
     lote:                 Lote
     new:                  Registrar un Nuevo Lote
     number:               Número
+    succesCreate:         El lote se ha creado de forma exitosa
+    succesUpdate:         El lote se ha modificado de forma exitosa
+    succesDelete:         El lote se ha eliminado de forma exitosa
     
   insumo:
     read:                 Insumos 
@@ -356,6 +397,9 @@ dictionary:
     new:                  Registrar un Nuevo Insumo
     register:             Nuevo Insumo
     ver:                  Ver Insumo
+    succesUpdate:         El insumo se ha modificado de forma exitosa
+    succesCreate:         El insumo se ha creado de forma exitosa
+    succesDelete:         El insumo se ha eliminado de forma exitosa
     
   cliente:
     cliente:              Cliente
@@ -372,6 +416,9 @@ dictionary:
     city:                 Ciudad
     view:                 Ver Cliente
     insertar:             Insertar Cliente
+    succesCreate:         El cliente se ha creado de forma exitosa
+    succesUpdate:         El cliente se ha modificado de forma exitosa
+    succesDelete:         El cliente se ha eliminado de forma exitosa
     
     
     
@@ -388,11 +435,12 @@ dictionary:
     delete:               Eliminar
     succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
     errorDeleteMasivo:    No se ha seleccionado ningun registro
-    succesDelete:         Se ha eliminado el empleado exitosamente
+    succesDelete:         El empleado se ha eliminado de forma exitosa
     errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
-    succesUpdate:         El empleado se ha modificado exitosamente 
+    succesUpdate:         El empleado se ha modificado de forma exitosa
     errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
     view:                 Ver Empleado
+    succesCreate:         El empleado se ha creado de forma exitosa
     action:               Acciones
     identificacion:       Identificación
     identification:       Id
@@ -438,16 +486,30 @@ dictionary:
     editVaccination:      EDITAR VACUNACION
     newVaccination:       Nueva Vacunación
     ver:                  Ver Vacuna
+    succesCreate:         El Registro de Vacunación se ha creado de forma exitosa
+    succesUpdate:         El Registro de Vacunación se ha modificado de forma exitosa
+    succesInhabil:        El Registro de Vacunación se ha inhabilitado de forma exitosa
+    succesInhabilMasive:  Los Registros de Vacunación seleccionados se han inhabilitado de forma exitosa
+    succesHabilMasive:    Los Registros de Vacunación seleccionados se han habilitado de forma exitosa
+    succesHabil:          El Registro de Vacunación se ha habilitado de forma exitosa
     
   detalleVacunacion:
     newDetailVaccination: NUEVO DETALLE DE VACUNACION
     vacuna:               Vacuna
     fecha:                Fecha de la Vacunación
-    dosis:                Dosis
+    fechaIni:             Fecha de la Vacunación Inicial
+    fechaFin:             Fecha de la Vacunación Final
+    dosis:                Dosis (cm)
     detailVaccination:    DETALLE VACUNACION
     filterReport:         Buscar para Reporte
     N°:                   N° del Registro de Vacunas
     editDetailVaccination: Editar Detalle de Registro Vacunas
+    succesCreate:         El Detalle de Registro de Vacunación se ha creado de forma exitosa
+    succesUpdate:         El Detalle de Registro de Vacunación se ha modificado de forma exitosa
+    succesInhabil:        El Detalle de Registro de Vacunación se ha inhabilitado de forma exitosa
+    succesInhabilMasive:  Los Detalles de Registro de Vacunación seleccionados se han inhabilitado de forma exitosa
+    succesHabilMasive:    Los Detalles de Registros de Vacunación seleccionados se han habilitado de forma exitosa
+    succesHabil:          El Detalle de Registro de Vacunación se ha habilitado de forma exitosa
     
   vacuna:
     vacuna:                Vacunas
@@ -460,6 +522,10 @@ dictionary:
     lote:                  Lote de la Vacuna
     edit:                  Editar la Vacuna
     nueva:                 Nueva Vacuna
+    succesCreate:          La vacuna se ha creado de forma exitosa
+    succesUpdate:          La vacuna se ha modificado de forma exitosa
+    succesDelete:          La vacuna se ha eliminado de forma exitosa
+    SuccesDeleteMasive:    Las vacunas seleccionadas se han eliminado de forma exitosa        
 
   pVenta:
    id:                    id
@@ -515,12 +581,37 @@ dictionary:
     edit:                  Modificar la Factura de Compra
     ver:                   Ver Factura de Compra
     ver1:                  Ver Detalle de Factura de Compra
+    succesCreate:          La Factura de Compra se ha creado de forma exitosa
+    succesCreate1:         El Detalle de la Factura de Compra se ha creado de forma exitosa
+    succesUpdate:          La Factura de Compra se ha modificado de forma exitosa
+    succesUpdate1:         El Detalle de la Factura de Compra se ha modificado de forma exitosa
+    succesDelete:          La Factura de Compra se ha inhabilitado de forma exitosa
+    succesDelete1:         El detalle de la Factura de Compra se ha inhabilitado de forma exitosa
+    succesMasive:          Las Facturas de Compra seleccionadas se han inhabilitado de forma exitosa
+    succesMasive1:         Los Detalles de Factura de Compra seleccionados se han inhabilitado de forma exitosa
+    succesDelete3:         La Factura de Compra se ha habilitado de forma exitosa
+    succesDelete4:         El detalle de la Factura de Compra se ha habilitado de forma exitosa
+    succesMasive2:         Las Facturas de Compra seleccionadas se han habilitado de forma exitosa
+    succesMasive3:         Los Detalles de Factura de Compra seleccionados se han habilitado de forma exitosa
     
   facturaVenta:
     new:                   Registrar una Nueva Factura de Venta
     fact:                  Factura de Venta
     ver:                   Ver Factura de Venta
     ver1:                  Ver Detalle de Factura de Venta
+    succesCreate:          La Factura de Venta se ha creado de forma exitosa
+    succesCreate1:         El Detalle de la Factura de Venta se ha creado de forma exitosa
+    succesUpdate:          La Factura de Venta se ha modificado de forma exitosa
+    succesUpdate1:         El Detalle de la Factura de Venta se ha modificado de forma exitosa
+    succesDelete:          La Factura de Venta se ha inhabilitado de forma exitosa
+    succesDelete1:         El detalle de la Factura de Venta se ha inhabilitado de forma exitosa
+    succesMasive:          Las Facturas de Venta seleccionadas se han inhabilitado de forma exitosa
+    succesMasive1:         Los Detalles de Factura de Venta seleccionados se han inhabilitado de forma exitosa
+    succesDelete3:         La Factura de Venta se ha habilitado de forma exitosa
+    succesDelete4:         El detalle de la Factura de Venta se ha habilitado de forma exitosa
+    succesMasive2:         Las Facturas de Venta seleccionadas se han habilitado de forma exitosa
+    succesMasive3:         Los Detalles de Factura de Venta seleccionados se han habilitado de forma exitosa
+
     
   ayuda:
     sistema:             Sistema de Gestión para una Granja Porcicola

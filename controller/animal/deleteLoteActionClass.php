@@ -31,7 +31,7 @@ class deleteLoteActionClass extends controllerClass implements controllerActionI
                 );
                 $this->defineView('delete', 'lote', session::getInstance()->getFormatOutput());
                 log::register(i18n::__('delete'), loteTableClass::getNameTable());
-                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+                session::getInstance()->setSuccess(i18n::__('succesDelete', null, 'lote'));
             } else {
                 log::register(i18n::__('delete'), loteTableClass::getNameTable(), i18n::__('errorDeleteBitacora'));
                 session::getInstance()->setError(i18n::__('errorDelete'));

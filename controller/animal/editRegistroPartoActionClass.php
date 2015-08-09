@@ -20,22 +20,22 @@ class editRegistroPartoActionClass extends controllerClass implements controller
                     registroPartoTableClass::ANIMAL_ID,
                     registroPartoTableClass::RAZA_ID
                 );
-                
+
                 $fieldsRaza = array(
                     razaTableClass::ID,
                     razaTableClass::NOMBRE_RAZA
                 );
-            $fieldsAnimal = array (
-            animalTableClass::ID,
-            animalTableClass::NUMERO
-            );
-            
-         
-                
+                $fieldsAnimal = array(
+                    animalTableClass::ID,
+                    animalTableClass::NUMERO
+                );
+
+
+
                 $where = array(
                     registroPartoTableClass::ID => request::getInstance()->getRequest(registroPartoTableClass::ID)
                 );
-                
+
                 $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
                 $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
                 $this->objParto = registroPartoTableClass::getAll($fields, false, null, null, null, null, $where);

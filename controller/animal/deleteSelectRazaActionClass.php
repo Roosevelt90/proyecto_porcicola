@@ -29,7 +29,7 @@ class deleteSelectRazaActionClass extends controllerClass implements controllerA
                     razaTableClass::delete($ids, true);
                 }
                 log::register(i18n::__('delete'), razaTableClass::getNameTable());
-                session::getInstance()->setSuccess(i18n::__('succesDelete'));
+                session::getInstance()->setSuccess(i18n::__('succesDeleteMasive', null, 'raza'));
                 routing::getInstance()->redirect('animal', 'indexRaza');
             } else {
                 log::register(i18n::__('errorDelete'), razaTableClass::getNameTable());

@@ -39,7 +39,7 @@ class updateDetalleVacunacionActionClass extends controllerClass implements cont
                 );
 
                 detalleVacunacionTableClass::update($ids, $data);
-//                session::getInstance()->setSuccess(i18n::__('succesUpdate',null,'usuarios'));
+//                session::getInstance()->setSuccess(i18n::__('succesUpdate',null,'detalleVacunacion'));
                 log::register(i18n::__('update'), detalleVacunacionTableClass::getNameTable());      
 //                routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion', array('id' => $id_registro));
             }//close if

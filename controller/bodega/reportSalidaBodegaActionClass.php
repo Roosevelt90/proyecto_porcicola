@@ -21,26 +21,26 @@ class reportSalidaBodegaActionClass extends controllerClass implements controlle
 
 
             $fields = array(
-            salidaBodegaTableClass::ID,
-            salidaBodegaTableClass::FECHA,
-            salidaBodegaTableClass::EMPLEADO
+                salidaBodegaTableClass::ID,
+                salidaBodegaTableClass::FECHA,
+                salidaBodegaTableClass::EMPLEADO
             );
             $fieldsEmpleado = array(
                 empleadoTableClass::ID,
                 empleadoTableClass::NOMBRE
             );
-     
-           
+
+
             $fJoin1 = salidaBodegaTableClass::EMPLEADO;
             $fJoin2 = empleadoTableClass::ID;
-         
+
             $orderBy = array(
-            salidaBodegaTableClass::FECHA
+                salidaBodegaTableClass::FECHA
             );
             $this->mensaje = "Informe de Salidas de Bodega";
 
             $this->objSalida = salidaBodegaTableClass::getAllJoin($fields, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC');
-              log::register(i18n::__('reporte'), salidaBodegaTableClass::getNameTable());
+            log::register(i18n::__('reporte'), salidaBodegaTableClass::getNameTable());
             $this->defineView('reportSalida', 'bodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

@@ -28,7 +28,7 @@ class deleteSelectVacunaActionClass extends controllerClass implements controlle
                     );
                     vacunaTableClass::delete($ids, true);
                 }//close foreach
-                session::getInstance()->setSuccess(i18n::__('succesDeleteMasivo'));
+                session::getInstance()->setSuccess(i18n::__('SuccesDeleteMasive', null, 'vacuna'));
                 log::register(i18n::__('borrar seleccion'), vacunaTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');
             } else {

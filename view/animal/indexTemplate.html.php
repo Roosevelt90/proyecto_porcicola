@@ -60,7 +60,7 @@
         <table class="table table-bordered">
           <thead>
             <tr class="success">
-              <td><input type="checkbox" id="chkAll"></td> 
+              
               <th><?php echo i18n::__('identification', null, 'animal') ?></th>
               <th><?php echo i18n::__('date_birth', null, 'animal') ?></th>
               <th><?php echo i18n::__('parto', null, 'animal') ?></th>
@@ -79,7 +79,7 @@
           <tbody>
             <?php foreach ($objAnimal as $key): ?>
               <tr>
-                <td><input type="checkbox" name="chk[]" value="<?php echo $key->$idAnimal ?>"></td>
+           
                 <td><?php echo $key->$numeroIdenficacion ?></td>
                 <td><?php echo $key->$fecha ?></td>
                 <?php if ($key->$genero == 'hembra'): ?>
@@ -112,23 +112,23 @@
                  <?php endif; ?>
               </tr>
          
-  <!-- WINDOWS MODAL DELETE MASIVE -->
-  <div id="myModalEliminarMasivo" class="modalmask">
+  <!-- WINDOWS MODAL DELETE  -->
+  <div id="myModalDelete<?php echo $key->$idAnimal ?>" class="modalmask">
               <div class="modalbox rotate">
-                    <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('borrar seleccion') ?></h4>
-                        </div>
-                <a href="#close" title="Close" class="close">X</a>
-                  <div class="modal-body">
-            <?php echo i18n::__('confirmDeleteMasive') ?>
-          </div>
-          <div class="modal-footer">
-              <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('Exit') ?></a>
-            <button type="button" class="btn btn-primary fa fa-eraser" onclick="$('#frmDeleteAll').submit()">   <?php echo i18n::__('confirm') ?></button>
-          </div>
-              </div>
-            </div>
+                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('confirmDelete') ?></h4>
+                                </div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <div class="modal-body">
+                     <?php echo i18n::__('eliminarIndividual') ?>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#close2" title="Close" class="btn btn-default fa fa-times-circle-o close2"><?php echo i18n::__('cancel') ?></a>
+                      <button type="button" class="btn btn-primary fa fa-eraser" onclick="eliminar(<?php echo $key->$idAnimal ?>, '<?php echo animalTableClass::getNameField(animalTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteAnimal') ?>')"><?php echo i18n::__('delete') ?></button>
+                    </div>
+                  </div>
+                </div>
             <?php $countDetale++ ?>
           <?php endforeach ?>
           </tbody>
@@ -174,14 +174,30 @@
     <div id="myModalFilter" class="modalmask">
       <div class="modalbox rotate">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('buscar') ?></h4>
+          <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
         </div>
+               <a href="#close" title="Close" class="close">X</a>
         <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>">
-          <table class="table table-responsive ">    
+          <table class="table table-responsive ">  
+                   <tr>
+              <th>
+                <?php echo i18n::__('identificacion') ?>:
+              </th>
+              <th>
+                <select name="filter[numero]">
+                  <option value="">...</option>
+                  <?php foreach ($objAnimal as $key): ?>
+                    <option value="<?php echo $key->numero_identificacion ?>">
+                      <?php echo $key->numero_identificacion ?>
+                    </option>
+                  <?php endforeach; ?>
+                </select>
+              </th>
+            </tr>
             <tr>
               <th>  <?php echo i18n::__('peso', NULL, 'animal') ?>:</th>
               <th> 
-                <input placeholder="<?php echo i18n::__('peso', NULL, 'animal') ?>" type="text" name="filter[peso]" >
+                <input placeholder="<?php echo i18n::__('peso', NULL, 'animal') ?>" type="number" name="filter[peso]" >
               </th>   
             </tr>
 <!--              <tr>
@@ -191,8 +207,8 @@
                 <th>
                     <input placeholder="<?php echo i18n::__('edad', NULL, 'animal') ?>" type="text" name="filter[edad]" >
                 </th>
-            </tr>
-            <tr>-->
+            </tr>-->
+            <tr>
             <th>
               <?php echo i18n::__('fechaInicio') ?>:
             </th>

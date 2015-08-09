@@ -27,7 +27,7 @@ class updateClienteActionClass extends controllerClass implements controllerActi
                 $ciudad = request::getInstance()->getPost(clienteTableClass::getNameField(clienteTableClass::CIUDAD, true));
                 $telefono = request::getInstance()->getPost(clienteTableClass::getNameField(clienteTableClass::TEL, true));
 
-                clienteTableClass::validateEdit($nombre_completo, $direccion, $telefono, $numero_documento);
+                clienteTableClass::validateUpdate($nombre_completo, $direccion, $telefono, $numero_documento);
 
                 $ids = array(
                     clienteTableClass::ID => $id
@@ -42,9 +42,13 @@ class updateClienteActionClass extends controllerClass implements controllerActi
                     clienteTableClass::CIUDAD => $ciudad
                 );
                 clienteTableClass::update($ids, $data);
-                  log::register('update', clienteTableClass::getNameTable());
+                
+                log::register(i18n::__('update'), clienteTableClass::getNameTable());
+                   routing::getInstance()->redirect('personal', 'indexCliente');
+                
            
             }
+           
 
             routing::getInstance()->redirect('personal', 'indexCliente');
    } catch (PDOException $exc) {

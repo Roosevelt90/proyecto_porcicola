@@ -21,22 +21,22 @@ class updateRegistroPartoActionClass extends controllerClass implements controll
             if (request::getInstance()->isMethod('POST')) {
                 $id = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::ID, true));
                 $fecha = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::FECHA_NACIMIENTO, true));
-                $hembras = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS, true));                
+                $hembras = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::HEMBRAS_NACIDAS_VIVAS, true));
                 $machos = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::MACHOS_NACIDOS_VIVOS, true));
                 $muertos = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::NACIDOS_MUERTOS, true));
                 $raza = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::RAZA_ID, true));
                 $animal_id = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::ANIMAL_ID, true));
-                
+
                 //  $fecha = request::getInstance()->getPost(registroPartoTableClass::getNameField(registroPartoTableClass::FECHA_NACIMIENTO, true));
 //                $caracteres = validator::getInstance()->validatorCharactersSpecial($nombre);
 //
 //                if ($caracteres == true) {
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
-                
-                
-                
-                
+
+
+
+
                 $ids = array(
                     registroPartoTableClass::ID => $id
                 );
@@ -48,11 +48,10 @@ class updateRegistroPartoActionClass extends controllerClass implements controll
                     registroPartoTableClass::NACIDOS_MUERTOS => $muertos,
                     registroPartoTableClass::RAZA_ID => $raza,
                     registroPartoTableClass::ANIMAL_ID => $animal_id,
-                    
                 );
 
-                registroPartoTableClass::update($ids, $data); 
-                session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+                registroPartoTableClass::update($ids, $data);
+                session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'parto'));
                 log::register(i18n::__('update'), registroPartoTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexRegistroParto');
             } else {

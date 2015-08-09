@@ -30,7 +30,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr class="success">
-                    <th><input type="checkbox" id="chkAll"></th>
+            
                 
                     <th><?php echo i18n::__('user', null, 'userCredencial') ?></th>
                     <th><?php echo i18n::__('credencial', null, 'credencial') ?></th>
@@ -40,7 +40,7 @@
             <tbody>
                 <?php foreach ($objUsuCrede as $key): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $key->$usuario_id ?>"></td>
+                       
                      
                         <td><?php echo $key->$usuario_id ?></td>
                         <td><?php echo $key->$credencial ?></td>

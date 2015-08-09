@@ -39,7 +39,7 @@ $pdf->SetFont('Arial', '', 12);
 $pdf->Cell(10);
 //$pdf->Cell(20, 10, utf8_decode('Id'), 1);
 //$pdf->Cell(20, 10, utf8_encode('ciudad'), 1);
-$pdf->Cell(30, 10, utf8_decode('Identificacion '), 1);
+$pdf->Cell(40, 10, utf8_decode('N. de Identificacion '), 1);
 $pdf->Cell(30, 10, utf8_decode('Nombre'), 1);
 $pdf->Cell(30, 10, utf8_decode('Apellido '), 1);
 $pdf->Cell(20, 10, utf8_decode('Telefono '), 1);
@@ -50,7 +50,7 @@ foreach ($objDatos as $key) {
     $pdf->Cell(10);
 //    $pdf->Cell(20, 10, utf8_decode($key->id), 1);
 //    $pdf->Cell(20, 10, utf8_encode($key->ciudad_id), 1);
-    $pdf->Cell(30, 10, utf8_decode($key->numero_documento), 1);
+    $pdf->Cell(40, 10, utf8_decode($key->numero_documento), 1);
     $pdf->Cell(30, 10, utf8_decode($key->nombre), 1);
     $pdf->Cell(30, 10, utf8_decode($key->apellidos), 1);
     $pdf->Cell(20, 10, utf8_decode($key->telefono), 1);

@@ -5,7 +5,8 @@ $fabricacion= insumoTableClass::FECHA_FABRICACION;
 $vencimiento = insumoTableClass::FECHA_VENCIMIENTO;
 $tipo = tipoInsumoTableClass::DESCRIPCION;
 $valor = insumoTableClass::VALOR;
-
+$cantidad = insumoTableClass::CANTIDAD;
+$stock = insumoTableClass::STOCK_MINIMO;
 
 class PDF extends FPDF {
 // Pie de página
@@ -38,20 +39,24 @@ $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
 $pdf->Cell(5);
-$pdf->Cell(35, 10, utf8_decode('Tipo Insumo'), 1);
+$pdf->Cell(30, 10, utf8_decode('Tipo Insumo'), 1);
 $pdf->Cell(43, 10, utf8_decode('Nombre'), 1);
 $pdf->Cell(43, 10, utf8_decode('Fecha de Fabricación'), 1);
 $pdf->Cell(45, 10, utf8_decode('Fecha de Vencimiento'), 1);
-$pdf->Cell(42, 10, utf8_decode('Valor'), 1);
+$pdf->Cell(25, 10, utf8_decode('Valor'), 1);
+$pdf->Cell(25, 10, utf8_decode('Cantidad'), 1);
+$pdf->Cell(30, 10, utf8_decode('Stock Minimo'), 1);
 
 $pdf->Ln();
 foreach ($objInsumo as $key) {
     $pdf->Cell(5);
-    $pdf->Cell(35, 10, utf8_decode($key->$tipo), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->$tipo), 1);
     $pdf->Cell(43, 10, utf8_decode($key->$nombre), 1);
     $pdf->Cell(43, 10, utf8_decode($key->$fabricacion), 1);
     $pdf->Cell(45, 10, utf8_decode($key->$vencimiento), 1);
-    $pdf->Cell(42, 10, utf8_decode($key->$valor), 1);
+    $pdf->Cell(25, 10, utf8_decode($key->$valor), 1);
+    $pdf->Cell(25, 10, utf8_decode($key->$cantidad), 1);
+    $pdf->Cell(30, 10, utf8_decode($key->$stock), 1);
     $pdf->Ln();
 }
 $pdf->Output();

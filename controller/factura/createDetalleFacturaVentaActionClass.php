@@ -50,7 +50,7 @@ class createDetalleFacturaVentaActionClass extends controllerClass implements co
         animalTableClass::delete($fieldsAnimalDelete, true);
 
         detalleProcesoVentaTableClass::insert($data);
-        session::getInstance()->setSuccess(i18n::__('succesCreate'));
+        session::getInstance()->setSuccess(i18n::__('succesCreate1', null, 'facturaVenta'));
         log::register(i18n::__('create'), detalleProcesoVentaTableClass::getNameTable());
         routing::getInstance()->redirect('factura', 'indexFacturaVenta');
       } else {

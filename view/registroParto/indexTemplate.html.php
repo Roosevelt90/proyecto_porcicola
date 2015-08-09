@@ -27,10 +27,12 @@ use mvc\routing\routingClass as routing ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroParto') ?>" method="POST">
         <div class="row">
             <div class="col-xs-4-offset-4 text-center">
+                  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                 <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                  <div class="mdl-tooltip mdl-tooltip--large" for="new">
                         <?php echo i18n::__('registrar', null, 'ayuda') ?>
                     </div> 
+                <?php endif; ?>
 <!--                <a id="filter" href="#myModalFilter"  data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
                   <div class="mdl-tooltip mdl-tooltip--large" for="filter">
                         <?php echo i18n::__('buscar', null, 'ayuda') ?>
@@ -49,7 +51,7 @@ use mvc\routing\routingClass as routing ?>
         <table class="table table-bordered">
             <thead>
                 <tr class="success">
-                    <td><input type="checkbox" id="chkAll"></td> 
+                    
                     <th>    <?php echo i18n::__('Number of document', null, 'proveedor') ?></th>
                     <th>    <?php echo i18n::__('parto1', null, 'animal') ?></th>
                     <th>    <?php echo i18n::__('hembras', null, 'parto') ?></th>
@@ -57,14 +59,15 @@ use mvc\routing\routingClass as routing ?>
                     <th><?php echo i18n::__('muertos', null, 'parto') ?></th>
                     <th><?php echo i18n::__('raza', null, 'raza') ?></th>
                     <th><?php echo i18n::__('mother', null, 'raza') ?></th>
-
+  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                     <th><?php echo i18n::__('action') ?></th>
+                    <?php endif; ?>
                 </tr>
             </thead>
             <tbody>
 <?php foreach ($objParto as $key): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
+                        
                         <th><?php echo $key->$id ?></th>
                         <th><?php echo $key->$fecha ?></th>
                         <td><?php echo $key->$hembras ?></td>
@@ -72,7 +75,7 @@ use mvc\routing\routingClass as routing ?>
                         <td><?php echo $key->$muertos ?></td>
                         <th><?php echo $key->$raza ?></th>
                         <th><?php echo $key->$animal_id ?></th>
-
+  <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                         <td>
                             <!--<a href="#" class="btn btn-warning btn-sm disabled">Ver</a>-->
                             <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editRegistroParto', array(registroPartoBaseTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
@@ -82,6 +85,7 @@ use mvc\routing\routingClass as routing ?>
 <!--<a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>-->
 <!--                            <a href="#" onclick="confirmarEliminar(<?php echo $key->$id  ?>)" class="btn btn-danger btn-sm">Eliminar</a>-->
                         </td>
+                        <?php endif; ?>
                     </tr>
                     <!-- WINDOWS MODAL DELETE -->
 <!--                <div class="modal fade" id="myModalDelete<?php echo $key->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

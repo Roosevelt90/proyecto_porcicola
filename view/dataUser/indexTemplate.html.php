@@ -41,7 +41,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <table class="table table-bordered">
                     <thead>
                         <tr class="success">
-                            <td><input type="checkbox" id="chkAll"></td> 
+                          
 
                             <th><?php echo i18n::__('user') ?></th>
                             <th><?php echo i18n::__('name', null, 'veterinario') ?></th>
@@ -58,7 +58,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     <tbody>
                         <?php foreach ($objDatos as $key): ?>
                             <tr>
-                                <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>                 
+                                              
 
                                 <td><?php echo $key->$user ?></td>
                                 <td><?php echo $key->$nombre ?></td>

@@ -4,9 +4,10 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
-use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validatorFields\validatorFieldsClass as validator;
 use hook\log\logHookClass as log;
+use mvc\session\sessionClass as session;
 
 /**
  * Description of ejemploClass
@@ -44,13 +45,10 @@ class createEmpleadoActionClass extends controllerClass implements controllerAct
             );
 
             empleadoTableClass::insert($data);
+           
             log::register(i18n::__('create'), empleadoTableClass::getNameTable());
             routing::getInstance()->redirect('personal', 'indexEmpleado');
-              } else {
-                log::register(i18n::__('create'), empleadoTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
-                session::getInstance()->setError(i18n::__('errorCreate'));
-                routing::getInstance()->redirect('personal', 'indexEmpleado');
-            }
+              } 
     } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

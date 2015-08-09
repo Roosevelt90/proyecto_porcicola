@@ -52,7 +52,7 @@ class updateVacunaActionClass extends controllerClass implements controllerActio
         );
                 
  vacunaTableClass::update($ids, $data);
-              session::getInstance()->setSuccess(i18n::__('succesUpdate'));
+              session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'vacuna'));
                 log::register(i18n::__('update'), vacunaTableClass::getNameTable());
                 routing::getInstance()->redirect('vacunacion', 'indexVacuna');
 //                $data = array(

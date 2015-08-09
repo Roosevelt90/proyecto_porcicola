@@ -12,6 +12,7 @@ dictionary:
     nombreInsumo:         Name Input
     descripción:          Description
     nuev:                 New
+    updateDetail:         Detail Update
     inhabil:              Disable
     nuevDatos:            New User Data
     newRegistroVacunacion: New immunization Record
@@ -172,6 +173,8 @@ dictionary:
     edit:                Modificar Registro Parto
     new:                 Registrar un nuevo registro Parto
     registroParto:       Registro Parto   
+    succesCreate:        The Birth Registry has successfully created
+    succesUpdate:        The Birth Registry has been modified successfully
    
   veterinario:
     veterinario:          Veterinary
@@ -188,6 +191,9 @@ dictionary:
     city:                 City
     view:                 View Veterinary
     insertar:             Insert Veterinary
+    succesCreate:         Vet has been inserted successfully
+    succesUpdate:         Vet has been modified successfully
+    succesDelete:         Vet has been removed successfully
     
   animal:
     date_birth:           Date of Birth
@@ -227,7 +233,7 @@ dictionary:
     errorDeleteMasivo:    Is not selected record
     succesDelete:         Registration has been successfully removed
     errorDelete:          Could not unregister try again later
-    succesUpdate:         The record has been successfully modifiednte 
+    succesUpdate:         The record has been successfully modified
     errorUpdate:          It was an error by modifying the registry Please try later
     read:                 Pigs
     confirm:              To delete the Record
@@ -284,6 +290,9 @@ dictionary:
     view:                 View Provider
     insertar:             Insert Provider
     nuev:                 New Provider
+    succesCreate:         The provider has been inserted successfully
+    succesUpdate:         The provider has been modified successfully
+    succesDelete:         The provider has been removed successfully
     
   depto:
     read:                 Departament Register
@@ -310,6 +319,30 @@ dictionary:
     ver1:                 see output winery
     ver2:                 see details cellar entry
     ver3:                 see details cellar output
+    succesCreate:         Entry Bodega was created successfully
+    succesCreate1:        Output Bodega was created successfully
+    succesCreate2:        Entry detail Bodega was created successfully
+    succesCreate3:        Output detail Bodega was created successfully
+    succesDelete:         Entry Bodega has successfully disabled
+    succesDelete1:        Output Winery has successfully disabled
+    succesDelete2:        Entry Detail Bodega has successfully disabled
+    succesDelete3:        Output Detail Bodega has successfully disabled
+    succesMasive:         Inputs are selected Bodega successfully disabled
+    succesMasive1:        The selected outputs are disabled Bodega successfully
+    succesMasive2:        Details of the selected entry Bodega have successfully disabled
+    succesMasive3:        Details of the selected output Bodega have successfully disabled
+    succesUpdate:         Entry Bodega has been modified successfully
+    succesUpdate1:        Bodega Output has been modified successfully
+    succesUpdate2:        The detail of the entrance of Bodega has been modified successfully
+    succesUpdate3:        The detail Bodega output has been modified successfully
+    succesDelete4:        Entry Bodega is enabled successfully
+    succesDelete5:        The output is enabled Bodega successfully
+    succesDelete6:        Entry Detail Bodega is enabled successfully
+    succesDelete7:        The detail output has been enabled Bodega successfully
+    succesMasive4:        The selected entries have been enabled Bodega successfully
+    succesMasive5:        The selected outputs are enabled Bodega successfully
+    succesMasive6:        Details of the selected entry Bodega have been enabled successfully
+    succesMasive7:        Details of the selected output are enabled Bodega successfully
     
   datos:
     read:                 Personal User Data
@@ -329,6 +362,7 @@ dictionary:
     new:                  Registers a New Credential
     credencial:           Credential
     edit:                 Changing the Credential
+    nueva:                Reassignment credential
   
   userCredencial:
     read:                 Assigned Roles
@@ -336,7 +370,7 @@ dictionary:
     user:                 User
     credencial:           Credential
     edit:                 Edit
-    
+    ed:                   Edit Credential Mapping
   raza:
     read:                 Breeds
     edit:                 Modify Race
@@ -345,6 +379,10 @@ dictionary:
     delete:               Remove
     confirmDelete:        Remove Race
     mother:               Mother
+    succesUpdate:         The race has been modified successfully
+    succesCreate:         The race has been inserted successfully
+    succesDelete:         The race has been successfully removed
+    succesDeleteMasive:   Selected races have successfully removed
     
   lote:
     read:                 Lots 
@@ -352,6 +390,9 @@ dictionary:
     lote:                 Batch
     new:                  Registering a New Batch
     number:               Number
+    succesCreate:         The batch has been successfully inserted
+    succesUpdate:         The lot has been changed successfully
+    succesDelete:         The batch has been removed successfully
     
   insumo:
     read:                 Inputs
@@ -360,7 +401,9 @@ dictionary:
     new:                  Registering a New Input
     register:             New Input
     ver:                  see input
-  
+    succesUpdate:         The input has been modified successfully
+    succesCreate:         The input has been inserted successfully
+    succesDelete:         The input has been removed successfully
   
   cliente:
     cliente:              Client
@@ -377,6 +420,10 @@ dictionary:
     city:                 City
     view:                 See Customer
     insertar:             Insert Customer
+    succesCreate:         The client has been inserted successfully
+    succesUpdate:         The client has been modified successfully
+    succesDelete:         The client has been removed successfully
+ 
 
   empleado:
     read:                 Employe Register
@@ -404,6 +451,7 @@ dictionary:
     name:                 Name
     city:                 City
     cargo:                Position
+    succesCreate:         The employee has been inserted successfully
     succesCreate:         The employee is registered successfully 
     errorCreate:          Could not create the employee try again
     succesDeleteMasivo:   They have been removed successfully selected employees
@@ -439,16 +487,30 @@ dictionary:
     newVaccination:       NEW VACCINATION
     edit:                 Edit Immunization Record
     ver:                  see vaccine
+    succesCreate:         Immunization Registry has successfully created
+    succesUpdate:         Immunization Registry has been modified successfully
+    succesInhabil:        Immunization Registry has successfully disabled
+    succesInhabilMasive:  Vaccination Records selected are disabled successfully
+    succesHabilMasive:    Vaccination Records selected are enabled successfully
+    succesHabil:          Immunization Registry has successfully enabled
     
   detalleVacunacion:
     newDetailVaccination:  NEW DETAIL VACCINATION
     vacuna:                Vaccine
     fecha:                 Date Of Vaccination
-    dosis:                 Dose of Vaccine
+    fechaIni:              Date of initial vaccination
+    fechaFin:              Date of final vaccination
+    dosis:                 Dose of Vaccine (cm)
     detailVaccination:     DETAIL VACCINATION
     filterReport:          Search Report
     N°:                    N° of Register Vaccines
     editDetailVaccination: Edit Detail Vaccination
+    succesCreate:         The detail Immunization Registry has successfully created
+    succesUpdate:         The detail Immunization Registry has been modified successfully
+    succesInhabil:        The detail Immunization Registry has successfully disabled
+    succesInhabilMasive:  The selected Record Detail vaccination have successfully disabled
+    succesHabilMasive:    Details of the selected vaccination records have been enabled successfully
+    succesHabil:          Registration Detail Vaccination is enabled successfully
     
   vacuna:
     vacuna:                Vaccine
@@ -461,6 +523,10 @@ dictionary:
     lote:                  Batch of Vaccine
     edit:                  Edit the Vaccine
     nueva:                 New Vaccine
+    succesCreate:          The vaccine has been successfully created
+    succesUpdate:          The vaccine has been successfully modified
+    succesDelete:          The vaccine has been successfully removed
+    SuccesDeleteMasive:    Selected vaccines have been successfully removed
     
   pVenta:
    id:                    Id
@@ -516,12 +582,36 @@ dictionary:
     edit:                  Change Purchase Invoice
     ver:                   view invoice
     ver1:                  see detailed invoice
+    succesCreate:          The invoice has been created successfully
+    succesCreate1:         Detail of the invoice has been created successfully
+    succesUpdate:          The invoice has been modified successfully
+    succesUpdate1:         Detail of the invoice has been modified successfully
+    succesDelete:          The invoice has been successfully disabled
+    succesDelete1:         The details of the invoice has been successfully disabled
+    succesMasive:          Purchase Invoices are selected successfully disabled
+    succesMasive1:         The Invoice Details Buy selected have successfully disabled
+    succesDelete3:         he invoice has been enabled successfully
+    succesDelete4:         The details of the Bill of Entry is enabled successfully
+    succesMasive2:         Purchase invoices selected are enabled successfully
+    succesMasive3:         The Invoice Details Buy selected have been enabled successfully
     
   facturaVenta:
     new:                   Register a New Bill of Sale
     fact:                  Sales Receipt
     ver:                   see sales invoice
     ver1:                  see detailed bill of sale
+    succesCreate:          The Bill of Sale was created successfully
+    succesCreate1:         Detail of the sales invoice was created successfully
+    succesUpdate:          The bill of sale has been changed successfully
+    succesUpdate1:         Detail of a bill of sale has been changed successfully
+    succesDelete:          The Bill of Sale is disabled successfully
+    succesDelete1:         The details of the Bill of Sale is disabled successfully
+    succesMasive:          Selected Sale Invoices are disabled successfully
+    succesMasive1:         The selected Invoice Details Sales have successfully disabled
+    succesDelete3:         The Bill of Sale is enabled successfully
+    succesDelete4:         The details of the Bill of Sale is enabled successfully
+    succesMasive2:         Bills of Sale selected are enabled successfully
+    succesMasive3:         The selected Invoice Details Sale have been enabled successfully
     
   ayuda:
     sistema:               Management System for Swine Farm

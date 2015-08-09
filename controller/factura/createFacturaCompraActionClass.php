@@ -31,7 +31,7 @@ class createFacturaCompraActionClass extends controllerClass implements controll
             procesoCompraTableClass::validateCreate($fecha);
 
             procesoCompraTableClass::insert($data);
-             session::getInstance()->setSuccess(i18n::__('succesCreate'));
+             session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'facturaCompra'));
             log::register(i18n::__('create'), procesoCompraTableClass::getNameTable());
             routing::getInstance()->redirect('factura', 'indexFacturaCompra');
         } catch (PDOException $exc) {

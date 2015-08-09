@@ -9,5 +9,5 @@ use mvc\config\myConfigClass as config;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class bitacoraTableClass extends bitacoraBaseTableClass {
-  
+    
 }

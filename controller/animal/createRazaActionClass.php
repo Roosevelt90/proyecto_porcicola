@@ -18,13 +18,13 @@ class createRazaActionClass extends controllerClass implements controllerActionI
                 $nombre = request::getInstance()->getPost(razaTableClass::getNameField(razaTableClass::NOMBRE_RAZA, true));
 
                 razaTableClass::validatCreate($nombre);
-                
+
                 $data = array(
                     razaTableClass::NOMBRE_RAZA => $nombre
                 );
-                
+
                 razaTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('succesCreate'));
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'raza'));
                 log::register(i18n::__('create'), razaTableClass::getNameTable());
                 routing::getInstance()->redirect('animal', 'indexRaza');
             } else {

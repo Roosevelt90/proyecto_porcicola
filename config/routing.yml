@@ -801,6 +801,10 @@ insumo_delete:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
     
 insumo_deleteSelect:
   url:    /insumo/eliminarSeleccion
@@ -2153,8 +2157,8 @@ proceso_venta:
     - model/bitacoraTableClass.php
     - model/base/procesoVentaBaseTableClass.php
     - model/procesoVentaTableClass.php
-    - model/base/detalleProcesoVentaBaseTableClass.php
-    - model/detalleProcesoVentaTableClass.php
+#    - model/base/detalleProcesoVentaBaseTableClass.php
+#    - model/detalleProcesoVentaTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
     - model/base/clienteBaseTableClass.php
@@ -2957,6 +2961,10 @@ entrada_bodega_delete_filters:
 detalle_entrada_bodega_delete_filters:
   url:     /borrar_filtros/detalle_entrada
   param: { module: bodega, action: deleteFilterDetalleEntrada, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 entrada_bodega_view:
   url:    /entrada_bodega/view
@@ -3150,10 +3158,18 @@ salida_bodega_eliminar_seleccion:
 salida_bodega_delete_filter:
   url:     /borrar_filtros/salida_bodega
   param: { module: bodega, action: deleteFilterSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
   
 detalle_salida_bodega_delete_filters:
   url:     /borrar_filtros/detalle_salida_bodega
   param: { module: bodega, action: deleteFilterDetalleSalida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 
 salida_bodega_view:
   url:    /salida_bodega/view

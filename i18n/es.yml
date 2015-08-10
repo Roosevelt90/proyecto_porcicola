@@ -723,6 +723,15 @@ dictionary:
     10068:                La accion de la vacunación no admite caracteres especiales
     10069:                El detalle de Vacunación no existe en la base de datos
     10070:                El registro de Vacunación no existe en la base de datos
+    10071:                La Cantidad de Vacunas debe ser numerica
+    10072:                El Stock Minimo de Vacunas debe ser numerico
+    10073:                La Cantidad de Vacunas no se admite vacía
+    10074:                El Stock Minimo de Vacunas no se admite vacío
+    10075:                La Cantidad de Vacunas no admite un valor negativo
+    10076:                El Stock Minimo de Vacunas no admite un valor negativo
+    10077:                La Cantidad de Vacunas no admite caracteres especiales
+    10078:                El Stock Minimo de Vacunas no admite caracteres especiales
+    10079:                El Lote de la Vacuna no admite un valor negativo
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

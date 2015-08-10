@@ -166,13 +166,13 @@ dictionary:
     ingBusqueda:          Type your search ...
     
   parto:
-    read:                Partos registrados en nuestro sistema
-    hembras:             Hembras nacidas vivas
-    machos:              Machos nacidos vivos
-    muertos:             Nacidos Muertos
-    edit:                Modificar Registro Parto
-    new:                 Registrar un nuevo registro Parto
-    registroParto:       Registro Parto   
+    read:                Births registered in our system
+    hembras:             Females born alive
+    machos:              Live births males
+    muertos:             Born Dead
+    edit:                Modify Registry Childbirth
+    new:                 Register a new birth registration
+    registroParto:       Birth registration  
     succesCreate:        The Birth Registry has successfully created
     succesUpdate:        The Birth Registry has been modified successfully
    
@@ -722,6 +722,15 @@ dictionary:
     10068:                The action of vaccination does not support special characters
     10069:                Vaccination detail does not exist in the database
     10070:                Immunization record does not exist in the database
+    10071:                The amount of vaccine must be numeric
+    10072:                The Stock Minimum Vaccines must be numeric
+    10073:                The amount of vaccine is not supported empty
+    10074:                The Stock Minimo not supported Vaccine empty
+    10075:                The amount of vaccine does not support a negative value
+    10076:                The Stock Minimum Vaccine does not support a negative value
+    10077:                The amount of vaccine does not support special characters
+    10078:                The Stock Minimum Vaccine does not support special characters
+    10079:                The batch of vaccine does not support a negative value
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

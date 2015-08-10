@@ -23,8 +23,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $cantidad = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::CANTIDAD, true));
         $stock = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::STOCK_MINIMO, true)); 
         
-//        insumoTableClass::validateEdit($id_tipo_insumo, $tipo_insumo, $insumo, $fecha_fabricacion, $fecha_vencimiento, $precio);
-        
+//       insumoTableClass::validateEdit($id_tipo_insumo, $tipo_insumo, $insumo, $fecha_fabricacion, $fecha_vencimiento, $precio);
+//        
         $ids = array(
           insumoTableClass::ID => $id
         );

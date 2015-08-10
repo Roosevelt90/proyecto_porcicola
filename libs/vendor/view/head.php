@@ -26,7 +26,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>   
       <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
-        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-900 mdl-color-text--blue-grey-900">
+        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey active mdl-color-text--blue-grey-900">
           <header class="demo-drawer-header">
             <img src="<?php echo routing::getInstance()->getUrlImg('diaz.jpg') ?>" class="demo-avatar">
             <div class="demo-avatar-dropdown">
@@ -44,7 +44,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
             </div>
           </header>
-          <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-300 mdl-color-text--blue-grey-900">
+          <nav class="demo-navigation mdl-navigation mdl-color--cyan-500 mdl-color-text--blue-grey-900">
 
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('animal') ?></span>
@@ -56,7 +56,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-piggy-bank"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRaza') ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
-                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>'" > <button class="mdl-menu__item fa fa-empire"><?php echo i18n::__('registro', null, 'animal') ?></button></a>
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>'" > <button class="mdl-menu__item fa fa-file-text-o"><?php echo i18n::__('registro', null, 'animal') ?></button></a>
               </ul>
             </div>
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
@@ -138,7 +138,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </div>
             <div class="mdl-layout-spacer"></div>
             <?php if (session::getInstance()->hasCredential('admin')): ?>
-              <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('manual usuario Administrador.pdf') ?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
+              <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('manual usuario Administrador.pdf') ?>'"<i class="mdl-color-text--cyan-A700 text-center titulo mdl-color--teal material-icons">help_outline</i></a>
             <?php else: ?>
               <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('') ?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
             <?php endif; ?>
@@ -146,7 +146,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>
       <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
-        <header class="demo-header mdl-layout__header  mdl-color--green-50 mdl-color-text--grey-700">
+        <header class="demo-header mdl-layout__header  mdl-color-text--grey-900">
           <div class="mdl-layout__header-row">
             <span class="mdl-layout-title"><?php echo i18n::__('granja') ?></span>
             <div class="mdl-layout-spacer"></div>

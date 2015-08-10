@@ -19,29 +19,31 @@ class insumoTableClass extends insumoBaseTableClass {
         $dateNow = date("Y-m-d", strtotime("now"));
         $patternC = "^[a-zA-Z0-9]{3,20}$";
      
-            if (empty($tipo_insumo) or !isset($tipo_insumo) or $tipo_insumo == '') {
-
-            session::getInstance()->setError(i18n::__(10044, null, 'errors', array('%campo%' => $tipo_insumo)));
-            $flag = true;
-            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true), true);
-        }else if (strlen($tipo_insumo) > 100) {
-            session::getInstance()->setError(i18n::__(10046, null, 'errors', array('%campo%' => $tipo_insumo)));
-            $flag = true;
-            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true), true);
-        }
-        
-            if (ereg($patternC, $tipo_insumo) == false) {
-            session::getInstance()->setError(i18n::__(10045, null, 'errors', array('%campo%' => $tipo_insumo)));
-            $flag = true;
-            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true), true);
-        }
+//            if (empty($tipo_insumo) or !isset($tipo_insumo) or $tipo_insumo == '') {
+//
+//            session::getInstance()->setError(i18n::__(10044, null, 'errors', array('%campo%' => $tipo_insumo)));
+//            $flag = true;
+//            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true), true);
+//        }else if (strlen($tipo_insumo) > 100) {
+//            session::getInstance()->setError(i18n::__(10046, null, 'errors', array('%campo%' => $tipo_insumo)));
+//            $flag = true;
+//            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true), true);
+//        }
+//        
+//            if (ereg($patternC, $tipo_insumo) == false) {
+//            session::getInstance()->setError(i18n::__(10045, null, 'errors', array('%campo%' => $tipo_insumo)));
+//            $flag = true;
+//            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO, true), true);
+//        }
         
         if (empty($insumo) or !isset($insumo) or $insumo == '') {
 
             session::getInstance()->setError(i18n::__(10047, null, 'errors', array('%campo%' => $insumo)));
             $flag = true;
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::NOMBRE, true), true);
-        }else if (strlen($insumo) > 50) {
+        }
+        
+        if (strlen($insumo) > 50) {
             session::getInstance()->setError(i18n::__(10049, null, 'errors', array('%campo%' => $insumo)));
             $flag = true;
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::NOMBRE, true), true);
@@ -70,22 +72,22 @@ class insumoTableClass extends insumoBaseTableClass {
         if ($fecha_vencimiento < $dateNow) {
             session::getInstance()->setError(i18n::__(10020, null, 'errors'));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_VENCIMIENTO, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_VENCIMIENTO, true), true);
         }
         if ($fecha_fabricacion > $dateNow) {
             session::getInstance()->setError(i18n::__(10021, null, 'errors'));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_FABRICACION, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_FABRICACION, true), true);
         }
         if (preg_match($pattern, $fecha_fabricacion) == false) {
             session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $fecha_fabricacion)));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_FABRICACION, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_FABRICACION, true), true);
         }
         if (preg_match($pattern, $fecha_vencimiento) == false) {
             session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $fecha_vencimiento)));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_VENCIMIENTO, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_VENCIMIENTO, true), true);
         }
         
         if (empty($precio) or !isset($precio) or $precio == '') {
@@ -107,20 +109,20 @@ class insumoTableClass extends insumoBaseTableClass {
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::VALOR, true), true);
         }
         
-    $fieldsTipoInsumo = array(
-    tipoInsumoTableClass::ID
-    );
-        
- $objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo);
- 
-     foreach ($objTipoInsumo as $key => $value) {
-      foreach ($value as $key) {
-        if ($key != $id_tipo_insumo) {
-          session::getInstance()->setError(i18n::__(10054, null, 'errors'));
-          $flag = true;
-        }
-      }
-    }
+//    $fieldsTipoInsumo = array(
+//    tipoInsumoTableClass::ID
+//    );
+//        
+// $objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo);
+// 
+//     foreach ($objTipoInsumo as $key => $value) {
+//      foreach ($value as $key) {
+//        if ($key != $id_tipo_insumo) {
+//          session::getInstance()->setError(i18n::__(10054, null, 'errors'));
+//          $flag = true;
+//        }
+//      }
+//    }
  
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
@@ -187,22 +189,22 @@ class insumoTableClass extends insumoBaseTableClass {
         if ($fecha_vencimiento < $dateNow) {
             session::getInstance()->setError(i18n::__(10020, null, 'errors'));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_VENCIMIENTO, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_VENCIMIENTO, true), true);
         }
         if ($fecha_fabricacion > $dateNow) {
             session::getInstance()->setError(i18n::__(10021, null, 'errors'));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_FABRICACION, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_FABRICACION, true), true);
         }
         if (preg_match($pattern, $fecha_fabricacion) == false) {
             session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $fecha_fabricacion)));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_FABRICACION, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_FABRICACION, true), true);
         }
         if (preg_match($pattern, $fecha_vencimiento) == false) {
             session::getInstance()->setError(i18n::__(10009, null, 'errors', array('%fecha%' => $fecha_vencimiento)));
             $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::FECHA_VENCIMIENTO, true), true);
+            session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::FECHA_VENCIMIENTO, true), true);
         }
         
         if (empty($precio) or !isset($precio) or $precio == '') {

@@ -30,10 +30,10 @@
                 <div class="mdl-tooltip mdl-tooltip--large" for="nueva">
                     <?php echo i18n::__('registrar', null, 'ayuda') ?>
                 </div>
-                <a id="eliminarSeleccion" href="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-trash-o"></a>
+<!--                <a id="eliminarSeleccion" href="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-trash-o"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="eliminarSeleccion">
                     <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-                </div>
+                </div>-->
                 <?php endif; ?>
                 <a id="filter" href="#myModalFilter" data-toggle="modal" class="btn btn-sm btn-info active fa fa-search"></a>
                <div class="mdl-tooltip mdl-tooltip--large" for="filter">
@@ -55,9 +55,9 @@
                 <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteSelectVacuna') ?>" method="POST">
                     <thead>
                         <tr class="success">
-                             <?php if(session::getInstance()->hasCredential('admin') == 1):?>
+                        <!--        <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                             <th><input type="checkbox" id="chkAll"></th> 
-                          <?php endif; ?>
+                          <?php endif; ?> -->
                             <th><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></th>
                             <th><?php echo i18n::__('lote') ?></th>
                             <th><?php echo i18n::__('fecha_fabricacion', null, 'vacuna') ?></th>
@@ -73,9 +73,9 @@
                     <tbody>
                         <?php foreach ($objVacuna as $key): ?>
                             <tr>
-                                 <?php if(session::getInstance()->hasCredential('admin') == 1):?>
+                           <!--        <?php if(session::getInstance()->hasCredential('admin') == 1):?>
                                 <td><input type="checkbox" name="chk[]" value="<?php echo $key->$id ?>"></td>
-<?php endif; ?>
+<?php endif; ?> -->
                                 
                                 <td><?php echo $key->$nomVacuna ?></td>
                                 <td><?php echo $key->$loteVacuna ?></td>
@@ -143,7 +143,7 @@
 
 
             <!-- WINDOWS MODAL DELETE MASIVE -->
-            <div class="modalmask" id="myModalEliminarMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--            <div class="modalmask" id="myModalEliminarMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modalbox rotate">
                
                         <div class="modal-header">
@@ -161,7 +161,7 @@
                         </div>
               
                 </div>
-            </div>
+            </div>-->
 
             <!-- WINDOWS MODAL FILTER -->
             <div class="modalmask" id="myModalFilter" >
@@ -214,6 +214,22 @@
                                         </th>
                                         <th>
                                             <input type="number" min="0" name="filter[valor]">
+                                        </th>
+                                    </tr>
+                                                        <tr>
+                                        <th>
+                                            <?php echo i18n::__('cantidad') ?>:
+                                        </th>
+                                        <th>
+                                            <input type="number" min="0" name="filter[cantidad]">
+                                        </th>
+                                    </tr>
+                                                                        <tr>
+                                        <th>
+                                            <?php echo i18n::__('stock') ?>:
+                                        </th>
+                                        <th>
+                                            <input type="number" min="0" name="filter[stock]">
                                         </th>
                                     </tr>
                                 </table>

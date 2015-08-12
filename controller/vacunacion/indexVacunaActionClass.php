@@ -41,6 +41,12 @@ class indexVacunaActionClass extends controllerClass implements controllerAction
         if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== '') {
           $where[vacunaTableClass::VALOR] = $filter['valor'];
         }//close if
+        if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
+          $where[vacunaTableClass::CANTIDAD] = $filter['cantidad'];
+        }//close if
+        if (isset($filter['stock']) and $filter['stock'] !== null and $filter['stock'] !== '') {
+          $where[vacunaTableClass::STOCK_MINIMO] = $filter['stock'];
+        }//close if
         session::getInstance()->setAttribute('vacunaFilters', $where);
       } elseif (session::getInstance()->hasAttribute('vacunaFilters')) {
         $where = session::getInstance()->getAttribute('vacunaFilters');

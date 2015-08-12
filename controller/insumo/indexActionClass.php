@@ -33,6 +33,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         if (isset($filter['tipoInsumo']) and $filter['tipoInsumo'] !== null and $filter['tipoInsumo'] !== '') {
           $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::TIPO_INSUMO] = $filter['tipoInsumo'];
         }//close if
+        if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== '') {
+          $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::VALOR] = $filter['valor'];
+        }//close if
+        if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
+          $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::CANTIDAD] = $filter['cantidad'];
+        }//close if
+         if (isset($filter['stock']) and $filter['stock'] !== null and $filter['stock'] !== '') {
+          $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::STOCK_MINIMO] = $filter['stock'];
+        }//close if
 
         session::getInstance()->setAttribute('vacunacionFiltersAInsumo', $where);
       } elseif (session::getInstance()->hasAttribute('vacunacionFiltersAInsumo')) {

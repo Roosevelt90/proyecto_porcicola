@@ -26,7 +26,7 @@ use mvc\i18n\i18nClass as i18n ?>
         </div>   
       <?php endif; ?>
       <?php if (session::getInstance()->hasUserId()): ?>   
-        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey active mdl-color-text--blue-grey-900">
+        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey mdl-color-text--blue-grey-900">
           <header class="demo-drawer-header">
             <img src="<?php echo routing::getInstance()->getUrlImg('diaz.jpg') ?>" class="demo-avatar">
             <div class="demo-avatar-dropdown">
@@ -140,7 +140,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <?php if (session::getInstance()->hasCredential('admin')): ?>
               <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('manual usuario Administrador.pdf') ?>'"<i class="mdl-color-text--cyan-A700 text-center titulo mdl-color--teal material-icons">help_outline</i></a>
             <?php else: ?>
-              <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('') ?>'"<i class="mdl-color-text--blue-400 material-icons">help_outline</i></a>
+              <a href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('manual usuario Administrador.pdf') ?>'"<i class="mdl-color-text--cyan-A700 text-center titulo mdl-color--teal material-icons">help_outline</i></a>
             <?php endif; ?>
           </nav>
         </div>

@@ -578,7 +578,7 @@ vacunacion:
   reportVacuna:
     security: true
     credentials:
-      - [admin]
+      - [admin, invitado]
  
 factura:
   indexFacturaCompra:

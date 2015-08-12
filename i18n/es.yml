@@ -81,7 +81,9 @@ dictionary:
     noviembre:            Noviembre
     diciembre:            Diciembre
     Entrar:               Entrar
-    disponible_venta:     Disponible para la Venta
+    disponible_venta:     Cerda Disponible para la Venta
+    acceso:               Acceso Restringido
+    permiso:              Usted no tiene permisos para entrar aquí
     reporte:              Reporte
     report:               Reporte
     buscar:               Buscar

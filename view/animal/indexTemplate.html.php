@@ -86,7 +86,7 @@
                   <?php if ($key->$parto <= 5): ?>
                     <td><?php echo $key->$parto ?></td>
                   <?php else: ?>
-                    <td>Cerda lista para la venta</td>
+                    <td><?php echo i18n::__('disponible_venta') ?></td>
                   <?php endif; ?>
                 <?php else: ?>
                   <td>...</td>

@@ -83,7 +83,9 @@ dictionary:
     noviembre:            November
     diciembre:            December
     Entrar:               Enter
-    disponible_venta:     Available for Sale
+    disponible_venta:     Animal Available for Sale
+    acceso:               Restricted Access
+    permiso:              You are not allowed to enter here
     reporte:              Report
     report:               Report
     buscar:               Search

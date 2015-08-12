@@ -32,7 +32,7 @@ class indexVacunaActionClass extends controllerClass implements controllerAction
         }//close if
 
         if (isset($filter['fecha_f']) and $filter['fecha_f'] !== null and $filter['fecha_f'] !== '') {
-          $where[vacunaTableClass::FECHA_VENCIMIENTO] = $filter['fecha_f'];
+          $where[vacunaTableClass::FECHA_FABRICACION] = $filter['fecha_f'];
         }//close if
 
         if (isset($filter['fecha_v']) and $filter['fecha_v'] !== null and $filter['fecha_v'] !== '') {

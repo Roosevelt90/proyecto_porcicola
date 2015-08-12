@@ -32,14 +32,14 @@ $pdf->Cell(70);
 $pdf->Cell(20, 10, utf8_decode('N.'), 1, 0, 'C');
 $pdf->Cell(60, 10, utf8_decode('Fecha'), 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Animal'), 1, 0, 'C');
-$pdf->Cell(30, 10, utf8_decode('Veterinario'), 1, 0, 'C');
+$pdf->Cell(50, 10, utf8_decode('Veterinario'), 1, 0, 'C');
 $pdf->Ln();
 foreach ($objVacunacion as $key) {
     $pdf->Cell(70);
     $pdf->Cell(20, 10, utf8_decode($key->id), 1, 0, 'C');
     $pdf->Cell(60, 10, utf8_decode($key->fecha_registro), 1, 0, 'C');
     $pdf->Cell(30, 10, utf8_decode($key->$num_animal), 1, 0, 'C');
-    $pdf->Cell(30, 10, utf8_decode($key->$nombreVeterinario), 1, 0, 'C');
+    $pdf->Cell(50, 10, utf8_decode($key->$nombreVeterinario), 1, 0, 'C');
     $pdf->Ln();
 }//close foreach
 $pdf->Ln(15);

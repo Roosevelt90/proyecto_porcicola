@@ -1700,6 +1700,8 @@ vacunacion_delete:
     - model/bitacoraTableClass.php
     - model/base/detalleVacunacionBaseTableClass.php
     - model/detalleVacunacionTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
 
 vacunacion_deleteSelect:
   url:    /registroVacunas/eliminarSeleccion

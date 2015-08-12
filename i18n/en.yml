@@ -61,6 +61,7 @@ dictionary:
     fecha_vencimiento_vacuna:  Expiration Date
     Escoja Idioma:        Select Lenguage/Selecione el Idioma
     Identificacion:       Identification
+    item:                 Item
     Exit:                 Exit
     lunes:                Monday
     martes:               Tuesday
@@ -651,6 +652,8 @@ dictionary:
     inhFactura:            Disable:Disabling the Bill
     habFactura:            Enable:Enable Bill
     insertFactura:         Record:Insert a bill detail
+    h:                     Enable:Enable the Registry
+    i:                     Disable:Disable the Registry
     inhabilitarMasaFact:   Disable Selection:Once the selection using this option you can disable all the invoices indicated
     habilitarMasaFact:     Enable Selection:Once the selection using this option you can enable all invoices indicated
     

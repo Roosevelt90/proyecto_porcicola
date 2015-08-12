@@ -158,6 +158,7 @@ dictionary:
     contacto:             Contacto
     legalInfor:           Información Legal
     ingBusqueda:          Ingrese su Búsqueda...
+    item:                 Item
         
   veterinario:
     veterinario:         Veterinario
@@ -650,6 +651,8 @@ dictionary:
     habilitarMasaDetalle: Habilitar selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todos los detalles indicados
     inhFactura:          Inhabilitar:Inhabilitar la Factura
     habFactura:          Habilitar:Habilitar la Factura
+    h:                   Habilitar:Habilitar el Registro
+    i:                   Inhabilitar:Inhabilitar el Registro
     insertFactura:       Registrar:Inserte un detalle a la Factura
     inhabilitarMasaFact:     Inhabiltar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todas las facturas indicadas
     habilitarMasaFact:       Habilitar Selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todas las facturas indicadas

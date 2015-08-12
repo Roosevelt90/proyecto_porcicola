@@ -17,11 +17,12 @@
 
                 <table class="table table-responsive">    
                     <tr>
-                   
+                 
                         <th> <?php echo i18n::__('identificacion') ?>:</th>
                         <th> 
-                          <input required  type="text"   name="<?php echo animalTableClass::getNameField(animalTableClass::NUMERO, true) ?>" >
-                        </th>   
+                     <input required  type="text"   name="<?php echo animalTableClass::getNameField(animalTableClass::NUMERO, true) ?>" >
+               </th> 
+                        
                     </tr>
                     <tr>
                         <th>  <?php echo i18n::__('kg', NULL, 'animal') ?>:</th>

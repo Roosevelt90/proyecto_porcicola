@@ -26,8 +26,11 @@ class reportVacunacionActionClass extends controllerClass implements controllerA
                 vacunacionTableClass::VETERINARIO,
                 vacunacionTableClass::FECHA
             );
+              $orderBy = array(
+              vacunacionTableClass::ID
+            );
             $this->mensaje = "Informe del Control de Vacunacion";
-            $this->objVacunacion = vacunacionTableClass::getAll($fields, true, null, null, null, null);
+            $this->objVacunacion = vacunacionTableClass::getAll($fields, true, $orderBy, null, null, null, null);
 
             log::register(i18n::__('reporte'), vacunacionTableClass::getNameTable());
             $this->defineView('report', 'vacunacion', session::getInstance()->getFormatOutput());

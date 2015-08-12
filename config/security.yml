@@ -41,7 +41,7 @@ usuario:
   indexUsuario:
     security: true
     credentials:
-      - [admin, invitado]
+      - [admin]
   insertDatos:
     security: true
     credentials:
@@ -79,36 +79,6 @@ usuario:
     credentials:
       - [admin]
   deleteFiltersUsuario:
-    security: true
-    credentials:
-      - [admin]
-      
-dataUser:
-  index:
-    security: true
-    credentials:
-      - [admin]
-  insert:
-    security: true
-    credentials:
-      - [admin]
-  create:
-    security: true
-    credentials:
-      - [admin]
-  edit:
-    security: true
-    credentials:
-      - [admin]
-  update:
-    security: true
-    credentials:
-      - [admin]
-  delete:
-    security: true
-    credentials:
-      - [admin]
-  deleteSelect:
     security: true
     credentials:
       - [admin]
@@ -169,6 +139,37 @@ dataUser:
     security: true
     credentials:
       - [admin]
+      
+dataUser:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+    credentials:
+      - [admin]
+  create:
+    security: true
+    credentials:
+      - [admin]
+  edit:
+    security: true
+    credentials:
+      - [admin]
+  update:
+    security: true
+    credentials:
+      - [admin]
+  delete:
+    security: true
+    credentials:
+      - [admin]
+  deleteSelect:
+    security: true
+    credentials:
+      - [admin]
+ 
       
 insumo:
   index:

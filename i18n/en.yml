@@ -85,7 +85,7 @@ dictionary:
     Entrar:               Enter
     disponible_venta:     Animal Available for Sale
     acceso:               Restricted Access
-    permiso:              You are not allowed to enter here
+    permiso:              You do not have permission to access this action
     reporte:              Report
     report:               Report
     s:                    Reports

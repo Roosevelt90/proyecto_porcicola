@@ -94,20 +94,21 @@ use mvc\session\sessionClass as session ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="habilitar<?php echo $countDetale ?>">
                           <?php echo i18n::__('habilitar', null, 'ayuda') ?>
                         </div> 
+                          <?php endif; ?>
                         <a   id="verDetalle<?php echo $countDetale ?>"  href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewSalida', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class=" btn btn-primary active btn-sm fa fa-eye"> </a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                           <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
                         </div>  
 
-                      <?php endif; ?>
+                    
                     <?php endif; ?>
 
-
+                    <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                     <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                       <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
                     </div> 
-
+                          <?php endif; ?>
 
                   </td>
 

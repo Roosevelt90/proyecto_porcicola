@@ -83,7 +83,7 @@ dictionary:
     Entrar:               Entrar
     disponible_venta:     Cerda Disponible para la Venta
     acceso:               Acceso Restringido
-    permiso:              Usted no tiene permisos para entrar aquí
+    permiso:              Usted no tiene permisos para acceder a esta acción 
     reporte:              Reporte
     report:               Reporte
     s:                    Reportes

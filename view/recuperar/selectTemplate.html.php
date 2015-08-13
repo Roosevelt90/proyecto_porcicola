@@ -11,8 +11,9 @@ use mvc\view\viewClass as view ?>
 <?php $usuario = usuarioBaseTableClass::USER ?>
 <?php $idPregunta = recuperarTableClass::ID ?>
 <?php $pregunta = recuperarTableClass::PREGUNTA_SECRETA ?>
-
-<div class="container">
+<main class="mdl-layout__content mdl-color--blue-100">
+      <div class="mdl-grid demo-content">
+<div class="container container-fluid">
     <div class="row">
         <div class="col-xs-4-offset-4 titulo">
             <h2>Restaurar Contraseña</h2>
@@ -22,7 +23,7 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </div>
-
+ 
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('recuperar', 'recuperar') ?>">
     <input type="hidden" name="<?php echo usuarioTableClass::getNameField(usuarioBaseTableClass::ID, TRUE) ?>" value="<?php echo $objUsuario[0]->$idUsuario ?>">
     <div class="container">
@@ -77,3 +78,5 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 </form>
+               </div>
+</main>

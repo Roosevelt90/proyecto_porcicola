@@ -81,13 +81,13 @@ class indexReportActionClass extends controllerClass implements controllerAction
             );
 
             $lines = config::getRowGrid();
-            $this->cntPages = reporteTableClass::getAllCount($f, true, $lines);
+            $this->cntPages = reporteTableClass::getAllCount($f, false, $lines);
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
             } else {
                 $this->page = $page;
             }
-            $this->objReporte= reporteTableClass::getAll($fieldsReporte, true, $orderBy, 'ASC', config::getRowGrid(), $page);
+            $this->objReporte= reporteTableClass::getAll($fieldsReporte, false, $orderBy, 'ASC', config::getRowGrid(), $page);
 //            $this->objTipoDoc = tipoDocumentoTableClass::getAll($fieldsTipoDoc, false);
 
             $this->defineView('indexReport', 'reporte', session::getInstance()->getFormatOutput());

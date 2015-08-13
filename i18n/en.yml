@@ -260,6 +260,10 @@ dictionary:
     direccion:            Street Address
     modify:               Modify
     quest:                Quest of Security
+    quest1:               Security
+    escriba:              Enter your username
+    seleccione:           Select your secret question
+    resp:                 Select your secret answer
     answer:               Answer of Security
     delete:               Delete
     busq:                 Searching

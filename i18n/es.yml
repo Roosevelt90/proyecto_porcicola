@@ -242,6 +242,10 @@ dictionary:
     direccion:            Dirección
     modify:               Modificar
     quest:                Pregunta de seguridad
+    quest1:               Seguridad
+    escriba:              Escriba su nombre de usuario
+    seleccione:           Seleccione su pregunta secreta
+    resp:                 Escriba su respuesta secreta
     answer:               Respuesta de seguridad
     delete:               Eliminar
     busq:                 Búsqueda

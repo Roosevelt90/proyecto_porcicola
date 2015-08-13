@@ -86,6 +86,7 @@ dictionary:
     permiso:              Usted no tiene permisos para entrar aquí
     reporte:              Reporte
     report:               Reporte
+    s:                    Reportes
     buscar:               Buscar
     filterBy:             Buscar Por
     new:                  Nuevo Registro
@@ -397,6 +398,7 @@ dictionary:
     read:                 Insumos 
     edit:                 Modificar Insumo
     insumo:               Insumo
+    infor:                Informe
     new:                  Registrar un Nuevo Insumo
     register:             Nuevo Insumo
     ver:                  Ver Insumo

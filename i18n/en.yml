@@ -88,6 +88,7 @@ dictionary:
     permiso:              You are not allowed to enter here
     reporte:              Report
     report:               Report
+    s:                    Reports
     buscar:               Search
     filterBy:             Filter By
     new:                  New Register
@@ -401,6 +402,7 @@ dictionary:
     read:                 Inputs
     edit:                 Modify Input
     insumo:               Input
+    infor:                Report
     new:                  Registering a New Input
     register:             New Input
     ver:                  see input

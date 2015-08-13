@@ -85,6 +85,17 @@ use mvc\i18n\i18nClass as i18n ?>
             </div>
 
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
+              <span><?php echo i18n::__('infor', null, 'insumo') ?></span>
+              <div class="mdl-layout-spacer"></div>
+              <button id="reporte" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">arrow_drop_down</i>
+              </button>
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="reporte">
+                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>'" > <button class="mdl-menu__item fa fa-list-ol"><?php echo i18n::__('report') ?></button></a>
+                 </ul>
+            </div>  
+              
+            <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('insumo') ?></span>
               <div class="mdl-layout-spacer"></div>
               <button id="insumo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -110,6 +121,9 @@ use mvc\i18n\i18nClass as i18n ?>
 
               </ul>
             </div>
+              
+     
+              
   <?php if(session::getInstance()->hasCredential('admin') == 1):?>
             <div class="demo-avatar-dropdown" style="margin-left: 5px">
               <span><?php echo i18n::__('usuario') ?></span>

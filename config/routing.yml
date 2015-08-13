@@ -3334,3 +3334,19 @@ registro_parto_reporte:
     - model/base/registroPartoBaseTableClass.php
     - model/registroPartoTableClass.php
     
+reporte_index:
+  url:    /reporte
+  param:  { module: reporte, action: indexReport, format: html }
+  load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldsClass.php
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    
+reporte_deleteFilters:
+  url:    /borrar_filtros
+  param:  { module: reporte, action: deleteFiltersReporte, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
